@@ -205,7 +205,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="w-40 h-[320px] bg-nyt-charcoal rounded-2xl overflow-hidden flex flex-col p-4 gap-3 ring-2 ring-nyt-green/40">
+              <div className="w-40 h-[320px] bg-nyt-charcoal rounded-2xl overflow-hidden flex flex-col p-4 gap-3">
                 <div className="h-1.5 w-10 bg-nyt-green/40 rounded-full mx-auto" />
                 <div className="flex items-center justify-between">
                   <div className="h-2.5 w-14 bg-white/15 rounded" />
@@ -271,7 +271,7 @@ export default function Home() {
               <div className="p-10 lg:p-14 space-y-6">
                 <div className="flex flex-wrap gap-2">
                   {["Emerging Technologies","Best Company","Highly Recommended"].map((t) => (
-                    <span key={t} className="text-[10px] font-bold uppercase tracking-wide border border-nyt-green/40 text-nyt-lime px-3 py-1 rounded">
+                    <span key={t} className="text-[10px] font-bold uppercase tracking-wide text-nyt-lime px-3 py-1 rounded">
                       {t}
                     </span>
                   ))}
@@ -286,7 +286,7 @@ export default function Home() {
 
                 <div className="space-y-2 pt-2">
                   {COMPLIANCE_ITEMS.slice(0, 5).map((item) => (
-                    <div key={item.id} className={`rounded overflow-hidden ${activeCompliance === item.id ? "bg-nyt-green/10 border border-nyt-green/30" : "border border-white/10"}`}>
+                    <div key={item.id} className={`rounded overflow-hidden ${activeCompliance === item.id ? "bg-nyt-green/10" : "border border-white/10"}`}>
                       <button
                         onClick={() => setActiveCompliance(item.id)}
                         className="w-full flex items-center justify-between px-4 py-3 text-left"
@@ -302,7 +302,7 @@ export default function Home() {
                           {item.badges && (
                             <div className="flex flex-wrap gap-1.5 mt-2">
                               {item.badges.map((b, i) => (
-                                <span key={i} className="text-[10px] border border-nyt-green/30 text-nyt-lime px-2 py-0.5 rounded font-semibold">{b}</span>
+                                <span key={i} className="text-[10px] text-nyt-lime px-2 py-0.5 rounded font-semibold">{b}</span>
                               ))}
                             </div>
                           )}
@@ -371,7 +371,7 @@ export default function Home() {
               { stat: "200+", label: "Tech Experts", icon: "code" as const },
               { stat: "50+", label: "Industries", icon: "settings" as const },
             ].map((item) => (
-              <div key={item.label} className="bg-white border border-slate-200 rounded-lg p-7 text-center">
+              <div key={item.label} className="bg-white rounded-lg p-7 text-center">
                 <AppIcon name={item.icon} size={26} color="primary" className="mx-auto mb-4" />
                 <p className="text-3xl font-black text-slate-900 mb-1">{item.stat}</p>
                 <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider">{item.label}</p>
@@ -496,7 +496,7 @@ export default function Home() {
               {WORK_ITEMS.map((item) => {
                 if (item.id !== activeWork) return null;
                 return (
-                  <div key={item.id} className="bg-white/5 border border-white/10 rounded-lg p-8 space-y-5">
+                  <div key={item.id} className="bg-white/5 rounded-lg p-8 space-y-5">
                     <div>
                       <p className="text-xs font-bold uppercase tracking-widest text-nyt-green mb-2">Production Deployment</p>
                       <h3 className="text-2xl font-black text-white">{item.name}</h3>
@@ -505,17 +505,17 @@ export default function Home() {
                     </div>
 
                     <div className="grid grid-cols-2 gap-4">
-                      <div className="bg-white/5 border border-white/10 rounded p-4">
+                      <div className="bg-white/5 rounded p-4">
                         <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">Primary Outcome</p>
                         <p className="text-sm font-bold text-white">{item.highlight}</p>
                       </div>
-                      <div className="bg-white/5 border border-white/10 rounded p-4">
+                      <div className="bg-white/5 rounded p-4">
                         <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">Architecture Benefit</p>
                         <p className="text-sm font-bold text-white">{item.highlightSub}</p>
                       </div>
                     </div>
 
-                    <div className="h-44 bg-white/5 border border-white/10 rounded flex items-center justify-center text-slate-500">
+                    <div className="h-44 bg-white/5 rounded flex items-center justify-center text-slate-500">
                       <div className="text-center space-y-2">
                         <AppIcon name="globe" size={32} className="mx-auto opacity-30" />
                         <p className="text-sm">{item.name} — App Preview</p>
@@ -545,14 +545,14 @@ export default function Home() {
                   <p className="text-xs text-slate-400 mt-1">Managing remote requests dynamically</p>
                 </div>
                 <div className="flex gap-2 flex-wrap justify-center">
-                  <span className="text-[10px] border border-nyt-green/40 text-nyt-lime px-3 py-1 rounded font-semibold">INTELLIGENCE LAYER</span>
-                  <span className="text-[10px] border border-nyt-lime/40 text-nyt-lime px-3 py-1 rounded font-semibold">LATENCY MONITOR</span>
+                  <span className="text-[10px] text-nyt-lime px-3 py-1 rounded font-semibold">INTELLIGENCE LAYER</span>
+                  <span className="text-[10px] text-nyt-lime px-3 py-1 rounded font-semibold">LATENCY MONITOR</span>
                 </div>
               </div>
             </div>
 
             <div className="space-y-5">
-              <span className="text-xs font-bold uppercase tracking-widest text-nyt-green border border-nyt-green/30 px-3 py-1 rounded inline-block">
+              <span className="text-xs font-bold uppercase tracking-widest text-nyt-green px-3 py-1 rounded inline-block">
                 Enterprise Framework
               </span>
               <h2 className="text-3xl font-extrabold text-slate-900 leading-tight">
@@ -598,13 +598,13 @@ export default function Home() {
             <div className="flex gap-2">
               <button
                 onClick={() => setCurrentTestimonial((p) => (p === 0 ? TESTIMONIALS.length - 1 : p - 1))}
-                className="h-9 w-9 rounded-full border border-slate-300 hover:border-nyt-green flex items-center justify-center text-slate-500 hover:text-nyt-green transition"
+                className="h-9 w-9 rounded-full flex items-center justify-center text-slate-500 hover:text-nyt-green transition"
               >
                 <AppIcon name="chevron-down" size={16} className="rotate-90" />
               </button>
               <button
                 onClick={() => setCurrentTestimonial((p) => (p === TESTIMONIALS.length - 1 ? 0 : p + 1))}
-                className="h-9 w-9 rounded-full border border-slate-300 hover:border-nyt-green flex items-center justify-center text-slate-500 hover:text-nyt-green transition"
+                className="h-9 w-9 rounded-full flex items-center justify-center text-slate-500 hover:text-nyt-green transition"
               >
                 <AppIcon name="chevron-down" size={16} className="-rotate-90" />
               </button>
@@ -632,7 +632,7 @@ export default function Home() {
           </div>
 
           {/* Testimonial card */}
-          <div className="border border-slate-200 rounded-lg p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start">
+          <div className="rounded-lg p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start">
             <div className="shrink-0 w-full md:w-64 aspect-[4/5] bg-slate-100 rounded-lg flex items-center justify-center relative group">
               <div className="absolute inset-0 bg-slate-900/50 rounded-lg" />
               <div className="absolute inset-0 flex items-center justify-center">
@@ -686,7 +686,7 @@ export default function Home() {
             {[FAQS.slice(0,4), FAQS.slice(4)].map((group, gi) => (
               <div key={gi} className="space-y-3">
                 {group.map((faq) => (
-                  <div key={faq.id} className="bg-white border border-slate-200 rounded-lg overflow-hidden">
+                  <div key={faq.id} className="bg-white rounded-lg overflow-hidden">
                     <button
                       onClick={() => setExpandedFaq(expandedFaq === faq.id ? null : faq.id)}
                       className="w-full flex items-center justify-between px-5 py-4 text-left"
@@ -704,7 +704,7 @@ export default function Home() {
                         {faq.bulletPoints && (
                           <div className="flex flex-wrap gap-2 mt-3">
                             {faq.bulletPoints.map((pt, i) => (
-                              <span key={i} className="text-xs border border-nyt-green/30 text-nyt-green px-2.5 py-1 rounded font-semibold bg-nyt-green/5">
+                              <span key={i} className="text-xs text-nyt-green px-2.5 py-1 rounded font-semibold bg-nyt-green/5">
                                 {pt}
                               </span>
                             ))}
@@ -736,7 +736,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
 
             {/* Big card */}
-            <div className="lg:col-span-7 border border-slate-200 rounded-lg overflow-hidden hover:border-nyt-green transition-colors">
+            <div className="lg:col-span-7 rounded-lg overflow-hidden transition-colors">
               <div className="h-56 bg-gradient-to-br from-nyt-green/10 to-nyt-lime/10 flex items-center justify-center">
                 <AppIcon name="code" size={64} color="primary" className="opacity-50" />
               </div>
@@ -754,7 +754,7 @@ export default function Home() {
                 { tag: "Risk Assessment", tagColor: "text-purple-600", title: "Fraud Detection in Telecom: Prevention Strategies", desc: "Implementing real-time threat intelligence and verification layers for networks.", icon: "shield" as const },
                 { tag: "Engineering", tagColor: "text-amber-600", title: "React Native vs Flutter: The 2024 Developer's Guide", desc: "Choosing the right cross-platform framework for your next mobile product.", icon: "code" as const },
               ].map((c) => (
-                <div key={c.title} className="border border-slate-200 rounded-lg p-5 flex gap-4 hover:border-nyt-green transition-colors">
+                <div key={c.title} className="rounded-lg p-5 flex gap-4 transition-colors">
                   <div className="h-14 w-14 shrink-0 bg-nyt-green/10 rounded flex items-center justify-center">
                     <AppIcon name={c.icon} size={24} color="primary" />
                   </div>
@@ -801,7 +801,7 @@ export default function Home() {
           </div>
 
           {/* Main white card */}
-          <div className="bg-white border border-slate-200 rounded-xl p-8 grid grid-cols-1 lg:grid-cols-2 gap-10">
+          <div className="bg-white rounded-xl p-8 grid grid-cols-1 lg:grid-cols-2 gap-10">
 
             {/* Left — contact info + testimonial */}
             <div className="space-y-6">
@@ -844,13 +844,13 @@ export default function Home() {
                 <div className="flex gap-2 pt-1">
                   <button
                     onClick={() => setCurrentTestimonial((p) => (p === 0 ? TESTIMONIALS.length - 1 : p - 1))}
-                    className="h-8 w-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition"
+                    className="h-8 w-8 rounded-full flex items-center justify-center hover:bg-white/10 transition"
                   >
                     <AppIcon name="chevron-down" size={14} className="rotate-90 text-white" />
                   </button>
                   <button
                     onClick={() => setCurrentTestimonial((p) => (p === TESTIMONIALS.length - 1 ? 0 : p + 1))}
-                    className="h-8 w-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition"
+                    className="h-8 w-8 rounded-full flex items-center justify-center hover:bg-white/10 transition"
                   >
                     <AppIcon name="chevron-down" size={14} className="-rotate-90 text-white" />
                   </button>
@@ -905,7 +905,7 @@ export default function Home() {
                       required
                       value={captchaInput}
                       onChange={(e) => setCaptchaInput(e.target.value)}
-                      className="w-12 border border-slate-300 rounded text-center text-sm py-1.5 focus:outline-none focus:border-nyt-green text-slate-900"
+                      className="w-12 rounded text-center text-sm py-1.5 focus:outline-none focus:border-nyt-green text-slate-900"
                     />
                   </div>
                   <button
@@ -924,7 +924,7 @@ export default function Home() {
           </div>
 
           {/* ── Get your ideas validated ── */}
-          <div className="mt-8 bg-slate-50 border border-slate-100 rounded-xl p-10 relative overflow-hidden">
+          <div className="mt-8 bg-slate-50 rounded-xl p-10 relative overflow-hidden">
             {/* Background blob vector */}
             <div className="absolute right-0 top-0 bottom-0 w-80 pointer-events-none overflow-hidden">
               <svg viewBox="0 0 320 200" className="absolute right-0 top-0 h-full w-full opacity-10" fill="none">
@@ -1082,7 +1082,7 @@ export default function Home() {
             <div className="flex items-center gap-6">
               <a href="#" className="text-xs text-slate-400 hover:text-nyt-green transition">Privacy Policy</a>
               <a href="#" className="text-xs text-slate-400 hover:text-nyt-green transition">Sitemap</a>
-              <div className="flex items-center gap-1.5 border border-white/20 px-3 py-1 rounded text-[10px] font-bold">
+              <div className="flex items-center gap-1.5 px-3 py-1 rounded text-[10px] font-bold">
                 <AppIcon name="lock" size={11} color="primary" />
                 <span className="text-white font-extrabold">DMCA</span>
                 <span className="text-slate-300">PROTECTED</span>
