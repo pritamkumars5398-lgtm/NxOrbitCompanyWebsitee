@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --color-nyt-green: #6cb790;
+  --color-nyt-lime: #a5d088;
+  --color-nyt-dark: #1f264a;
+  --color-nyt-slate: #374047;
+  --color-nyt-charcoal: #04101d;
+  --font-inter: var(--font-inter);
+}
+
+:root {
+  --background: #f7f9fc;
+  --foreground: #04101d;
+  --font-sans: var(--font-inter), sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #04101d;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f264a;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6cb790;
+}
+
+/* Hide scrollbar for horizontal scroll */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dark .glass-panel {
+  background: rgba(4, 16, 29, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
