@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-// Load Inter font – matches Techugo's typography
+// Load Inter font
 const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
@@ -10,8 +10,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Techugo – Digital Marketing & Development Agency",
-  description: "Techugo provides cutting‑edge digital marketing, web development, and branding solutions.",
+  title: "NXTorbit – Mobile App & Software Development Company",
+  description: "NXTorbit delivers enterprise-grade mobile apps, web platforms, AI solutions, and cloud engineering for global businesses.",
 };
 
 export default function RootLayout({

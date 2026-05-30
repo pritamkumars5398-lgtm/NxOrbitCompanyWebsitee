@@ -37,6 +37,18 @@ body {
   background: #6cb790;
 }
 
+/* Vertical app screenshot scroll animation */
+@keyframes appScroll {
+  0%,18%   { transform: translateY(0); }
+  25%,43%  { transform: translateY(-25%); }
+  50%,68%  { transform: translateY(-50%); }
+  75%,93%  { transform: translateY(-75%); }
+  100%     { transform: translateY(0); }
+}
+.animate-app-scroll {
+  animation: appScroll 14s ease-in-out infinite;
+}
+
 /* Hide scrollbar for horizontal scroll */
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }

@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { AppIcon } from "./shared/components/AppIcon";
 import { AppButton } from "./shared/components/AppButton";
+import Navbar from "./shared/components/Navbar";
+import Footer from "./shared/components/Footer";
 import {
   COMPLIANCE_ITEMS,
   WORK_ITEMS,
@@ -15,7 +17,6 @@ export default function Home() {
   const [activeCompliance, setActiveCompliance] = useState<number>(2);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [expandedFaq, setExpandedFaq] = useState<number | null>(0);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [captchaInput, setCaptchaInput] = useState("");
   const [captchaStatus, setCaptchaStatus] = useState<"idle" | "success" | "error">("idle");
 
@@ -28,46 +29,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white text-nyt-charcoal font-sans antialiased">
 
-      {/* ── NAVBAR ─────────────────────────────────────────────── */}
-      <header className="sticky top-0 z-50 bg-white border-b border-slate-200">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
-          <a href="/">
-            <div style={{ height: '52px', overflow: 'hidden' }}>
-              <img
-                src="/nxtorbit-logo.png"
-                alt="NXTorbit"
-                style={{ height: '98px', width: 'auto', marginTop: '-20px' }}
-              />
-            </div>
-          </a>
-
-          <nav className="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-600">
-            {["Services","Technology","Industries","Portfolio","Company","Blog"].map((item) => (
-              <a key={item} href={`#${item.toLowerCase()}`} className="flex items-center gap-1 hover:text-nyt-green transition-colors">
-                {item}
-                {item !== "Blog" && <AppIcon name="chevron-down" size={13} />}
-              </a>
-            ))}
-          </nav>
-
-          <AppButton variant="primary" size="medium" href="#contact" className="hidden md:inline-flex">
-            Contact Us
-          </AppButton>
-
-          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-2 text-slate-600">
-            <AppIcon name={mobileMenuOpen ? "close" : "menu"} size={22} />
-          </button>
-        </div>
-
-        {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-slate-100 bg-white px-6 py-3 space-y-2">
-            {["Services","Technology","Industries","Portfolio","Company","Blog"].map((l) => (
-              <a key={l} href="#" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm font-semibold text-slate-600 hover:text-nyt-green">{l}</a>
-            ))}
-            <AppButton variant="primary" size="medium" href="#contact" className="w-full mt-2">Contact Us</AppButton>
-          </div>
-        )}
-      </header>
+      <Navbar />
 
       {/* ── HERO ───────────────────────────────────────────────── */}
       <section className="relative bg-gradient-to-br from-slate-50 to-white py-16 lg:py-24 overflow-hidden">
@@ -173,8 +135,8 @@ export default function Home() {
                 With 13+ years of expertise and 1400+ successful apps, NXTorbit's team of 200+ developers transforms your vision into award-winning digital products.
               </p>
               <div className="flex flex-wrap gap-3">
-                <AppButton variant="primary" size="large" href="#contact">Get a Free Quote</AppButton>
-                <AppButton variant="outline" size="large" href="#work">View Portfolio</AppButton>
+                <AppButton variant="primary" size="small" href="#contact">Get a Free Quote</AppButton>
+                <AppButton variant="outline" size="small" href="#work">View Portfolio</AppButton>
               </div>
 
               {/* Rating badges */}
@@ -192,57 +154,181 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right – Phone mockups */}
-            <div className="flex justify-center gap-4 items-end">
-              <div className="w-32 h-[240px] bg-slate-800 rounded-2xl overflow-hidden hidden sm:flex flex-col p-3 gap-2 -mb-4">
-                <div className="h-1.5 w-8 bg-white/20 rounded-full mx-auto" />
-                <div className="flex-1 bg-nyt-green/20 rounded-lg flex items-center justify-center">
-                  <AppIcon name="globe" size={28} color="primary" />
-                </div>
-                <div className="space-y-1">
-                  <div className="h-1.5 w-full bg-white/10 rounded" />
-                  <div className="h-1.5 w-2/3 bg-white/10 rounded" />
-                </div>
-              </div>
+            {/* Right – 3D Phone mockups with vertical scroll */}
+            <div className="flex justify-center items-end gap-5">
 
-              <div className="w-40 h-[320px] bg-nyt-charcoal rounded-2xl overflow-hidden flex flex-col p-4 gap-3">
-                <div className="h-1.5 w-10 bg-nyt-green/40 rounded-full mx-auto" />
-                <div className="flex items-center justify-between">
-                  <div className="h-2.5 w-14 bg-white/15 rounded" />
-                  <div className="h-6 w-6 rounded-full bg-nyt-green flex items-center justify-center">
-                    <AppIcon name="bolt" size={12} className="text-white" />
-                  </div>
+              {/* Left phone – 3D tilted */}
+              <div className="hidden sm:flex flex-col w-[118px] h-[228px] rounded-[28px] overflow-hidden -mb-6 flex-shrink-0"
+                style={{background:'linear-gradient(145deg,#2d3748,#1a202c)',boxShadow:'8px 16px 40px rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.08)',transform:'perspective(900px) rotateY(14deg) rotateX(4deg)'}}>
+                <div className="flex items-center justify-center gap-1.5 pt-3 pb-1">
+                  <div className="w-8 h-1 bg-white/15 rounded-full" />
+                  <div className="w-2 h-2 rounded-full bg-white/20" />
                 </div>
-                <div className="flex-1 rounded-xl bg-nyt-green/10 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="h-14 w-14 mx-auto rounded-full border-2 border-nyt-green flex items-center justify-center mb-2">
-                      <AppIcon name="server" size={22} color="primary" />
+                <div className="flex-1 mx-2 mb-2 rounded-2xl overflow-hidden bg-gradient-to-b from-[#0f1923] to-[#162030] flex flex-col p-2.5 gap-1.5">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[7px] font-black text-white tracking-wider">daylyy</span>
+                    <div className="w-4 h-4 rounded-full bg-nyt-green/30 flex items-center justify-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-nyt-green" />
                     </div>
-                    <p className="text-[9px] text-nyt-lime font-bold">NXTorbit AI</p>
+                  </div>
+                  <div className="flex gap-1">
+                    {["#6cb790","#61DAFB","#FF6B8A","#F59E0B"].map((c,i)=>(
+                      <div key={i} className="w-7 h-7 rounded-full flex-shrink-0" style={{background:`${c}33`,border:`1.5px solid ${c}66`}} />
+                    ))}
+                  </div>
+                  <div className="flex-1 rounded-xl overflow-hidden" style={{background:'linear-gradient(135deg,#1e3a2f,#0f2318)'}}>
+                    <div className="h-full flex items-center justify-center text-2xl">🌿</div>
+                  </div>
+                  <div className="flex gap-2 text-white/40">
+                    <span className="text-[7px]">♥ 2.1k</span>
+                    <span className="text-[7px]">💬 84</span>
                   </div>
                 </div>
-                <div className="bg-white/5 rounded-lg p-2.5">
-                  <div className="flex items-center justify-between mb-1">
-                    <span className="text-[9px] text-slate-300">System Active</span>
-                    <span className="text-[9px] text-nyt-lime font-bold">+14%</span>
-                  </div>
-                  <div className="h-1 bg-white/10 rounded-full">
-                    <div className="h-full w-4/5 bg-nyt-green rounded-full" />
-                  </div>
-                </div>
+                <div className="flex justify-center pb-2"><div className="w-8 h-1 bg-white/20 rounded-full" /></div>
               </div>
 
-              <div className="w-32 h-[260px] bg-slate-800 rounded-2xl overflow-hidden hidden sm:flex flex-col p-3 gap-2 -mb-2">
-                <div className="h-1.5 w-8 bg-white/20 rounded-full mx-auto" />
-                <div className="grid grid-cols-2 gap-1.5 flex-1">
-                  {["📱","🎯","📊","🚀"].map((e, i) => (
-                    <div key={i} className="rounded-lg bg-white/5 flex items-center justify-center text-base">{e}</div>
-                  ))}
+              {/* Center phone – main with vertical scrolling app screens */}
+              <div className="flex flex-col w-[153px] h-[308px] rounded-[34px] overflow-hidden flex-shrink-0 relative"
+                style={{background:'linear-gradient(160deg,#1a1f2e,#0d1117)',boxShadow:'0 30px 80px rgba(0,0,0,0.5),0 0 0 1.5px rgba(255,255,255,0.07),inset 0 1px 0 rgba(255,255,255,0.12)',transform:'perspective(900px) rotateY(-4deg) rotateX(3deg)'}}>
+                {/* Side buttons */}
+                <div className="absolute -right-0.5 top-16 w-1 h-8 rounded-r bg-white/10" />
+                <div className="absolute -left-0.5 top-12 w-1 h-5 rounded-l bg-white/10" />
+                <div className="absolute -left-0.5 top-20 w-1 h-5 rounded-l bg-white/10" />
+                {/* Notch */}
+                <div className="flex justify-center pt-2.5 pb-1 relative z-10">
+                  <div className="flex items-center gap-1.5 bg-black/60 rounded-full px-3 py-1">
+                    <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
+                    <div className="w-8 h-1 bg-white/15 rounded-full" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-slate-600" />
+                  </div>
                 </div>
-                <div className="h-6 bg-nyt-green/20 rounded-lg flex items-center justify-center">
-                  <span className="text-[8px] font-bold text-nyt-lime">BUILD WITH US</span>
+                {/* Scrolling screens */}
+                <div className="flex-1 mx-2 rounded-2xl overflow-hidden">
+                  <div className="animate-app-scroll" style={{height:'400%',display:'flex',flexDirection:'column'}}>
+
+                    {/* Screen 1 – Social */}
+                    <div className="flex-shrink-0 bg-gradient-to-b from-[#0f1923] to-[#162030] flex flex-col p-3 gap-2" style={{height:'25%'}}>
+                      <div className="flex items-center justify-between">
+                        <span className="text-[8px] font-black text-white tracking-wider">daylyy</span>
+                        <div className="w-5 h-5 rounded-full bg-nyt-green/20 flex items-center justify-center"><div className="w-2 h-2 rounded-full bg-nyt-green" /></div>
+                      </div>
+                      <div className="flex gap-1.5">
+                        {["#6cb790","#61DAFB","#FF6B8A"].map((c,i)=>(
+                          <div key={i} className="w-8 h-8 rounded-full flex-shrink-0" style={{background:`${c}33`,border:`1.5px solid ${c}66`}} />
+                        ))}
+                      </div>
+                      <div className="flex-1 rounded-xl overflow-hidden" style={{background:'linear-gradient(135deg,#1e3a2f,#0f2318)'}}>
+                        <div className="h-full flex items-center justify-center text-3xl">🌿</div>
+                      </div>
+                      <div className="flex gap-3 text-white/50">
+                        <span className="text-[7px]">♥ 2.1k</span><span className="text-[7px]">💬 84</span><span className="text-[7px]">↗ 32</span>
+                      </div>
+                    </div>
+
+                    {/* Screen 2 – Cars */}
+                    <div className="flex-shrink-0 bg-gradient-to-b from-[#04101d] to-[#071829] flex flex-col p-3 gap-2" style={{height:'25%'}}>
+                      <div className="flex items-center justify-between">
+                        <span className="text-[7px] font-black text-slate-400 tracking-widest uppercase">Alba Motors</span>
+                        <span className="text-[7px] text-nyt-lime font-bold">Catalog</span>
+                      </div>
+                      <div className="flex-1 rounded-xl bg-slate-900 flex items-center justify-center relative overflow-hidden">
+                        <div className="text-4xl">🚗</div>
+                        <div className="absolute bottom-1 left-2">
+                          <div className="text-[6px] font-bold text-white">Porsche 911</div>
+                          <div className="text-[7px] font-black text-nyt-lime">$189,400</div>
+                        </div>
+                      </div>
+                      <div className="bg-nyt-green rounded-lg py-1.5 text-center">
+                        <span className="text-[7px] font-black text-white">BOOK RESERVATION</span>
+                      </div>
+                    </div>
+
+                    {/* Screen 3 – Finance */}
+                    <div className="flex-shrink-0 bg-gradient-to-b from-[#0a0e1a] to-[#111827] flex flex-col p-3 gap-1.5" style={{height:'25%'}}>
+                      <div className="flex items-center justify-between">
+                        <span className="text-[8px] font-black text-white">Portfolio</span>
+                        <span className="text-[7px] text-nyt-green font-bold">▲ Live</span>
+                      </div>
+                      <div>
+                        <p className="text-[7px] text-slate-400">Balance</p>
+                        <p className="text-sm font-black text-white">$24,830</p>
+                        <p className="text-[7px] text-nyt-lime font-bold">+12.4% this month</p>
+                      </div>
+                      <div className="flex-1 flex items-end gap-0.5 pb-1">
+                        {[40,55,35,70,50,85,60,90,45,75].map((h,i)=>(
+                          <div key={i} className="flex-1 rounded-t" style={{height:`${h}%`,background:i===7?'#6cb790':'rgba(108,183,144,0.25)'}} />
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Screen 4 – Fitness */}
+                    <div className="flex-shrink-0 bg-gradient-to-b from-[#0d1f12] to-[#0a1a0f] flex flex-col p-3 gap-2" style={{height:'25%'}}>
+                      <div className="flex items-center justify-between">
+                        <span className="text-[8px] font-black text-white">Activity</span>
+                        <span className="text-[6px] text-slate-400">Today</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <div className="relative w-12 h-12 flex-shrink-0">
+                          <svg viewBox="0 0 48 48" className="w-full h-full -rotate-90">
+                            <circle cx="24" cy="24" r="20" fill="none" stroke="rgba(108,183,144,0.15)" strokeWidth="4"/>
+                            <circle cx="24" cy="24" r="20" fill="none" stroke="#6cb790" strokeWidth="4" strokeDasharray="125.6" strokeDashoffset="35" strokeLinecap="round"/>
+                          </svg>
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <span className="text-[8px] font-black text-nyt-lime">72%</span>
+                          </div>
+                        </div>
+                        <div>
+                          <p className="text-[8px] font-black text-white">8,432 steps</p>
+                          <p className="text-[7px] text-slate-400">340 cal</p>
+                        </div>
+                      </div>
+                      <div className="flex-1 space-y-1.5">
+                        {[["Running","68%","#6cb790"],["Cycling","45%","#61DAFB"],["Sleep","82%","#a5d088"]].map(([l,p,c])=>(
+                          <div key={l as string}>
+                            <div className="flex justify-between mb-0.5">
+                              <span className="text-[6px] text-slate-400">{l}</span>
+                              <span className="text-[6px] text-slate-300 font-bold">{p}</span>
+                            </div>
+                            <div className="h-1 bg-white/10 rounded-full">
+                              <div className="h-full rounded-full" style={{width:p as string,background:c as string}} />
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                  </div>
                 </div>
+                <div className="flex justify-center py-2"><div className="w-10 h-1 bg-white/25 rounded-full" /></div>
               </div>
+
+              {/* Right phone – 3D tilted */}
+              <div className="hidden sm:flex flex-col w-[118px] h-[248px] rounded-[28px] overflow-hidden -mb-3 flex-shrink-0"
+                style={{background:'linear-gradient(145deg,#2a3244,#181e2c)',boxShadow:'-8px 16px 40px rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.06)',transform:'perspective(900px) rotateY(-14deg) rotateX(4deg)'}}>
+                <div className="flex items-center justify-center gap-1.5 pt-3 pb-1">
+                  <div className="w-2 h-2 rounded-full bg-white/20" />
+                  <div className="w-8 h-1 bg-white/15 rounded-full" />
+                </div>
+                <div className="flex-1 mx-2 mb-2 rounded-2xl overflow-hidden bg-gradient-to-b from-slate-700 to-slate-900 flex flex-col p-2.5 gap-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-[7px] font-black text-amber-400 tracking-wider">NIK BAKERS</span>
+                    <span className="text-[6px] text-white/40 bg-amber-400/10 px-1.5 py-0.5 rounded">Live</span>
+                  </div>
+                  <div className="grid grid-cols-2 gap-1 flex-1">
+                    {["🎂","🍰","🥐","☕"].map((e,i)=>(
+                      <div key={i} className="rounded-xl bg-white/5 flex flex-col items-center justify-center gap-0.5 py-1.5">
+                        <span className="text-lg">{e}</span>
+                        <span className="text-[6px] text-white/40">$12.99</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="bg-amber-500 rounded-lg py-1.5 text-center">
+                    <span className="text-[7px] font-black text-white">ORDER NOW</span>
+                  </div>
+                </div>
+                <div className="flex justify-center pb-2"><div className="w-8 h-1 bg-white/20 rounded-full" /></div>
+              </div>
+
             </div>
 
           </div>
@@ -264,45 +350,52 @@ export default function Home() {
       {/* ── ENTERPRISE PROFICIENCY ─────────────────────────────── */}
       <section className="py-16 bg-white">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="bg-nyt-dark rounded-xl overflow-hidden">
+          <div className="bg-[#0f1624] rounded-xl overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-2">
 
-              {/* Left */}
-              <div className="p-10 lg:p-14 space-y-6">
-                <div className="flex flex-wrap gap-2">
-                  {["Emerging Technologies","Best Company","Highly Recommended"].map((t) => (
-                    <span key={t} className="text-[10px] font-bold uppercase tracking-wide text-nyt-lime px-3 py-1 rounded">
-                      {t}
-                    </span>
-                  ))}
-                </div>
-                <h2 className="text-xl md:text-2xl font-extrabold text-white leading-snug">
-                  Enterprise Proficiency with{" "}
-                  <span className="text-nyt-green">Absolute Precision</span>
-                </h2>
-                <p className="text-slate-400 text-sm leading-relaxed">
-                  We build software with strict compliance, secure encryption, and enterprise-grade architectures that let businesses scale globally with confidence.
-                </p>
+              {/* ── Left — heading + accordion ── */}
+              <div className="p-10 lg:p-14 space-y-8 border-r border-white/5">
 
-                <div className="space-y-2 pt-2">
+                <div className="space-y-4">
+                  <p className="text-xs font-bold uppercase tracking-widest text-nyt-green">Enterprise Grade</p>
+                  <h2 className="text-2xl md:text-3xl font-extrabold text-white leading-snug">
+                    Enterprise Proficiency<br />with{" "}
+                    <span className="text-nyt-green">Absolute Precision</span>
+                  </h2>
+                  <p className="text-slate-400 text-sm leading-relaxed max-w-md">
+                    We design and ship software that meets the toughest enterprise standards — from SOC 2 audits to GDPR compliance — giving your stakeholders full confidence from day one.
+                  </p>
+                </div>
+
+                {/* Clean accordion */}
+                <div className="space-y-0 divide-y divide-white/5">
                   {COMPLIANCE_ITEMS.slice(0, 5).map((item) => (
-                    <div key={item.id} className={`rounded overflow-hidden ${activeCompliance === item.id ? "bg-nyt-green/10" : "border border-white/10"}`}>
+                    <div key={item.id}>
                       <button
                         onClick={() => setActiveCompliance(item.id)}
-                        className="w-full flex items-center justify-between px-4 py-3 text-left"
+                        className="w-full flex items-center justify-between py-4 text-left group"
                       >
-                        <span className={`text-sm font-semibold ${activeCompliance === item.id ? "text-nyt-lime" : "text-slate-300"}`}>
-                          {item.title}
-                        </span>
-                        <AppIcon name="chevron-down" size={15} className={`text-slate-400 transition-transform ${activeCompliance === item.id ? "rotate-180" : ""}`} />
+                        <div className="flex items-center gap-3">
+                          <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 transition-colors ${activeCompliance === item.id ? "bg-nyt-green" : "bg-white/20"}`} />
+                          <span className={`text-sm font-semibold transition-colors ${activeCompliance === item.id ? "text-white" : "text-slate-400 group-hover:text-slate-200"}`}>
+                            {item.title}
+                          </span>
+                        </div>
+                        <AppIcon
+                          name="chevron-down"
+                          size={16}
+                          className={`flex-shrink-0 transition-transform duration-200 ${activeCompliance === item.id ? "rotate-180 text-nyt-green" : "text-slate-600"}`}
+                        />
                       </button>
                       {activeCompliance === item.id && (
-                        <div className="px-4 pb-4">
-                          <p className="text-xs text-slate-400 leading-relaxed">{item.content}</p>
+                        <div className="pb-5 pl-4.5">
+                          <p className="text-sm text-slate-400 leading-relaxed mb-3">{item.content}</p>
                           {item.badges && (
-                            <div className="flex flex-wrap gap-1.5 mt-2">
+                            <div className="flex flex-wrap gap-2">
                               {item.badges.map((b, i) => (
-                                <span key={i} className="text-[10px] text-nyt-lime px-2 py-0.5 rounded font-semibold">{b}</span>
+                                <span key={i} className="text-[10px] font-bold text-nyt-lime bg-nyt-green/10 px-2.5 py-1 rounded-full">
+                                  {b}
+                                </span>
                               ))}
                             </div>
                           )}
@@ -311,43 +404,76 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-              </div>
 
-              {/* Right */}
-              <div className="p-10 lg:p-14 flex flex-col items-center justify-center gap-8 bg-white/5">
-                <div className="relative">
-                  <div className="h-44 w-44 rounded-full border-4 border-nyt-green flex items-center justify-center">
-                    <div className="text-center">
-                      <p className="text-5xl font-black text-nyt-green">AI</p>
-                      <p className="text-[10px] text-slate-400 font-semibold tracking-widest uppercase mt-1">Powered</p>
-                    </div>
-                  </div>
-                  <div className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-nyt-green" />
-                </div>
-
-                <div className="grid grid-cols-2 gap-3 w-full max-w-xs">
-                  {[
-                    { title: "Top Company", sub: "Clutch 2024", icon: "star" as const },
-                    { title: "Top Developer", sub: "GoodFirms", icon: "code" as const },
-                    { title: "ISO Certified", sub: "Secure Build", icon: "shield" as const },
-                    { title: "100+ Clients", sub: "Enterprise", icon: "globe" as const },
-                  ].map((a) => (
-                    <div key={a.title} className="border border-white/10 rounded-lg p-4 text-center">
-                      <AppIcon name={a.icon} size={18} color="primary" className="mx-auto mb-1.5" />
-                      <p className="text-xs font-bold text-white">{a.title}</p>
-                      <p className="text-[10px] text-slate-400 mt-0.5">{a.sub}</p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="grid grid-cols-3 gap-6 text-center w-full max-w-xs">
-                  {[["200+","Developers"],["13+","Years"],["50+","Industries"]].map(([n,l]) => (
+                {/* Stats row */}
+                <div className="flex gap-8 pt-4 border-t border-white/5">
+                  {[["1400+","Projects"],["200+","Engineers"],["13+","Years"]].map(([n,l]) => (
                     <div key={l}>
                       <p className="text-2xl font-black text-white">{n}</p>
-                      <p className="text-[9px] text-slate-400 uppercase tracking-wider font-semibold mt-0.5">{l}</p>
+                      <p className="text-[10px] text-slate-500 uppercase tracking-wider mt-0.5">{l}</p>
                     </div>
                   ))}
                 </div>
+              </div>
+
+              {/* ── Right — certification & award badges ── */}
+              <div className="p-10 lg:p-14 flex flex-col justify-center gap-8">
+
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-5">Industry Recognition</p>
+                  {/* Award badges — 2 col */}
+                  <div className="grid grid-cols-2 gap-3">
+                    {[
+                      { platform: "Clutch", badge: "Top App Dev Company", year: "2024", color: "#E63329", stars: 5, rating: "4.9" },
+                      { platform: "GoodFirms", badge: "Top Mobile Developer", year: "2024", color: "#00B5D3", stars: 5, rating: "4.8" },
+                      { platform: "AppFutura", badge: "Top Development Firm", year: "2023", color: "#F47B20", stars: 5, rating: "4.8" },
+                      { platform: "Manifest", badge: "Most Reviewed Company", year: "2024", color: "#6B54E0", stars: 5, rating: "4.9" },
+                    ].map((a) => (
+                      <div key={a.platform} className="bg-white/5 rounded-xl p-4 hover:bg-white/8 transition-colors">
+                        <div className="flex items-center gap-2 mb-2">
+                          <div className="w-2.5 h-2.5 rounded-sm flex-shrink-0" style={{background: a.color}} />
+                          <span className="text-xs font-black text-white">{a.platform}</span>
+                          <span className="text-[9px] text-slate-500 ml-auto">{a.year}</span>
+                        </div>
+                        <p className="text-[10px] text-slate-400 leading-tight mb-2">{a.badge}</p>
+                        <div className="flex items-center gap-1">
+                          <div className="flex">
+                            {[...Array(a.stars)].map((_,i) => (
+                              <svg key={i} viewBox="0 0 10 10" className="w-2.5 h-2.5" fill={a.color}>
+                                <path d="M5 1l1.12 2.27 2.5.36-1.81 1.76.43 2.5L5 6.77 2.76 7.9l.43-2.5L1.38 3.63l2.5-.36z"/>
+                              </svg>
+                            ))}
+                          </div>
+                          <span className="text-[10px] font-bold text-white ml-1">{a.rating}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Certification badges */}
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">Certifications & Compliance</p>
+                  <div className="grid grid-cols-3 gap-3">
+                    {[
+                      { name: "ISO 27001", sub: "Information Security", color: "#0066CC" },
+                      { name: "SOC 2", sub: "Type II Certified", color: "#6cb790" },
+                      { name: "CMMI", sub: "Level 3", color: "#F59E0B" },
+                      { name: "GDPR", sub: "Compliant", color: "#10B981" },
+                      { name: "HIPAA", sub: "Secure Systems", color: "#8B5CF6" },
+                      { name: "PCI DSS", sub: "Payments Ready", color: "#EC4899" },
+                    ].map((c) => (
+                      <div key={c.name} className="bg-white/5 rounded-lg p-3 text-center hover:bg-white/8 transition-colors">
+                        <div className="w-6 h-6 rounded mx-auto mb-1.5 flex items-center justify-center" style={{background:`${c.color}22`}}>
+                          <div className="w-2.5 h-2.5 rounded-sm" style={{background: c.color}} />
+                        </div>
+                        <p className="text-[10px] font-black text-white">{c.name}</p>
+                        <p className="text-[9px] text-slate-500 mt-0.5">{c.sub}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
               </div>
 
             </div>
@@ -412,8 +538,8 @@ export default function Home() {
               <p className="text-slate-500 text-lg leading-relaxed">
                 We design and develop digital products with AI at the core, leveraging machine learning, generative AI, &amp; intelligent automation to create systems that continuously learn, adapt, and improve.
               </p>
-              <AppButton variant="primary" size="large" href="#contact">
-                Let's Build Something That Scales &nbsp;→
+              <AppButton variant="primary" size="small" href="#contact">
+                Let's Build Something That Scales →
               </AppButton>
             </div>
           </div>
@@ -1000,98 +1126,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── FOOTER ─────────────────────────────────────────────── */}
-      <footer className="bg-nyt-charcoal text-white py-16">
-        <div className="mx-auto max-w-7xl px-6">
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 mb-12 pb-12 border-b border-white/10">
-
-            <div className="lg:col-span-4 space-y-4">
-              {/* Inline SVG logo — no background, works on dark footer */}
-              <svg width="160" height="48" viewBox="0 0 320 96" xmlns="http://www.w3.org/2000/svg">
-                {/* Blue orbital arc */}
-                <path d="M 108 18 Q 140 4 158 36 Q 168 58 140 72" fill="none" stroke="#4BC8E0" strokeWidth="5" strokeLinecap="round"/>
-                {/* Green ball on arc */}
-                <circle cx="108" cy="18" r="11" fill="#6cb790"/>
-                {/* NXT text */}
-                <text x="60" y="68" fontFamily="Arial Black, Arial, sans-serif" fontSize="52" fontWeight="900" fill="white" letterSpacing="-1">NXT</text>
-                {/* orbit text */}
-                <text x="168" y="68" fontFamily="Arial, sans-serif" fontSize="48" fontWeight="400" fill="white">orbit</text>
-                {/* small green dot above i in orbit */}
-                <circle cx="254" cy="22" r="5" fill="#6cb790"/>
-              </svg>
-              <p className="text-sm text-slate-400 leading-relaxed max-w-xs">
-                NXTorbit is a global technology company delivering enterprise-grade mobile, web, AI, and cloud solutions since 2011.
-              </p>
-              <div className="flex gap-3 pt-1">
-                <a href="#" aria-label="LinkedIn" className="text-slate-400 hover:text-nyt-green transition"><AppIcon name="linkedin" size={18} /></a>
-                <a href="#" aria-label="Twitter" className="text-slate-400 hover:text-nyt-green transition"><AppIcon name="twitter" size={18} /></a>
-                <a href="#" aria-label="Instagram" className="text-slate-400 hover:text-nyt-green transition"><AppIcon name="instagram" size={18} /></a>
-              </div>
-            </div>
-
-            <div className="lg:col-span-2 space-y-4">
-              <h4 className="text-xs font-black uppercase tracking-widest text-white border-b border-white/10 pb-3">Company</h4>
-              <ul className="space-y-2.5 text-sm text-slate-400">
-                {["About Us","Blog","Career","Contact Us","TechTalks"].map((l) => (
-                  <li key={l}><a href="#" className="hover:text-nyt-green transition">{l}</a></li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="lg:col-span-2 space-y-4">
-              <h4 className="text-xs font-black uppercase tracking-widest text-white border-b border-white/10 pb-3">Services</h4>
-              <ul className="space-y-2.5 text-sm text-slate-400">
-                {["Android Dev","iOS Dev","React Native","Flutter","Blockchain","AI / ML"].map((l) => (
-                  <li key={l}><a href="#services" className="hover:text-nyt-green transition">{l}</a></li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="lg:col-span-2 space-y-4">
-              <h4 className="text-xs font-black uppercase tracking-widest text-white border-b border-white/10 pb-3">Case Studies</h4>
-              <ul className="space-y-2.5 text-sm text-slate-400">
-                {["Daylyy","TrueFan","Airtel Xstream","Alba Cars","JoshCam","Mother Dairy"].map((l) => (
-                  <li key={l}><a href="#work" className="hover:text-nyt-green transition">{l}</a></li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="lg:col-span-2 space-y-4">
-              <h4 className="text-xs font-black uppercase tracking-widest text-white border-b border-white/10 pb-3">Our Offices</h4>
-              <div className="space-y-4 text-xs text-slate-400">
-                <div className="flex gap-2">
-                  <span className="shrink-0">🇮🇳</span>
-                  <div><p className="font-bold text-white text-sm mb-0.5">India HQ</p><p>5th Floor, Let's Connect, Noida UP 201301</p></div>
-                </div>
-                <div className="flex gap-2">
-                  <span className="shrink-0">🇺🇸</span>
-                  <div><p className="font-bold text-white text-sm mb-0.5">USA</p><p>22375 Broderick Dr, Suite 225, Dulles VA</p></div>
-                </div>
-                <div className="flex gap-2">
-                  <span className="shrink-0">🇦🇪</span>
-                  <div><p className="font-bold text-white text-sm mb-0.5">UAE</p><p>R320-OF09, Um Hurair Second, Dubai</p></div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-xs text-slate-400">© {new Date().getFullYear()} NXTorbit Technology Pvt. Ltd. All rights reserved.</p>
-            <div className="flex items-center gap-6">
-              <a href="#" className="text-xs text-slate-400 hover:text-nyt-green transition">Privacy Policy</a>
-              <a href="#" className="text-xs text-slate-400 hover:text-nyt-green transition">Sitemap</a>
-              <div className="flex items-center gap-1.5 px-3 py-1 rounded text-[10px] font-bold">
-                <AppIcon name="lock" size={11} color="primary" />
-                <span className="text-white font-extrabold">DMCA</span>
-                <span className="text-slate-300">PROTECTED</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </footer>
+      <Footer />
 
     </div>
   );
