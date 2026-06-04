@@ -27,7 +27,7 @@ export default function Footer() {
           <div className="lg:col-span-2 space-y-4">
             <h4 className="text-xs font-black uppercase tracking-widest text-white border-b border-white/10 pb-3">Company</h4>
             <ul className="space-y-2.5 text-sm text-slate-400">
-              {[["About Us","/#why-us"],["Blog","/#insights"],["Career","/career"],["Contact Us","/contact"],["TechTalks","/#insights"]].map(([l,h]) => (
+              {[["About Us","/#why-us"],["Blog","/blog"],["Career","/career"],["Contact Us","/contact"],["TechTalks","/#insights"]].map(([l,h]) => (
                 <li key={l}><a href={h} className="hover:text-nyt-green transition">{l}</a></li>
               ))}
             </ul>
@@ -36,8 +36,15 @@ export default function Footer() {
           <div className="lg:col-span-2 space-y-4">
             <h4 className="text-xs font-black uppercase tracking-widest text-white border-b border-white/10 pb-3">Services</h4>
             <ul className="space-y-2.5 text-sm text-slate-400">
-              {["Mobile App Dev","Web Development","AI / ML","UI/UX Design","Blockchain","DevOps"].map((l) => (
-                <li key={l}><a href="/#services" className="hover:text-nyt-green transition">{l}</a></li>
+              {[
+                ["Mobile App Dev", "/services/mobile"],
+                ["Web Development", "/services/web"],
+                ["AI / ML", "/services/ai"],
+                ["UI/UX Design", "/services/design"],
+                ["Blockchain", "/services/blockchain"],
+                ["DevOps", "/services/devops"]
+              ].map(([l, h]) => (
+                <li key={l}><a href={h} className="hover:text-nyt-green transition">{l}</a></li>
               ))}
             </ul>
           </div>
@@ -45,7 +52,7 @@ export default function Footer() {
           <div className="lg:col-span-2 space-y-4">
             <h4 className="text-xs font-black uppercase tracking-widest text-white border-b border-white/10 pb-3">Case Studies</h4>
             <ul className="space-y-2.5 text-sm text-slate-400">
-              {[["Daylyy","/#work"],["TrueFan","/#work"],["Airtel Xstream","/#work"],["Alba Cars","/#work"],["JoshCam","/#work"],["Mother Dairy","/#work"]].map(([l,h]) => (
+              {[["Daylyy","/portfolio"],["TrueFan","/portfolio"],["Airtel Xstream","/portfolio"],["Alba Cars","/portfolio"],["JoshCam","/portfolio"],["Mother Dairy","/portfolio"]].map(([l,h]) => (
                 <li key={l}><a href={h} className="hover:text-nyt-green transition">{l}</a></li>
               ))}
             </ul>
