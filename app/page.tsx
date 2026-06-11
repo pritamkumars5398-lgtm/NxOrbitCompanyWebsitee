@@ -723,12 +723,14 @@ export default function Home() {
             </div>
             <div className="flex gap-2">
               <button
+                suppressHydrationWarning
                 onClick={() => setCurrentTestimonial((p) => (p === 0 ? TESTIMONIALS.length - 1 : p - 1))}
                 className="h-9 w-9 rounded-full flex items-center justify-center text-slate-500 hover:text-nyt-green transition"
               >
                 <AppIcon name="chevron-down" size={16} className="rotate-90" />
               </button>
               <button
+                suppressHydrationWarning
                 onClick={() => setCurrentTestimonial((p) => (p === TESTIMONIALS.length - 1 ? 0 : p + 1))}
                 className="h-9 w-9 rounded-full flex items-center justify-center text-slate-500 hover:text-nyt-green transition"
               >
@@ -969,12 +971,14 @@ export default function Home() {
                 </p>
                 <div className="flex gap-2 pt-1">
                   <button
+                    suppressHydrationWarning
                     onClick={() => setCurrentTestimonial((p) => (p === 0 ? TESTIMONIALS.length - 1 : p - 1))}
                     className="h-8 w-8 rounded-full flex items-center justify-center hover:bg-white/10 transition"
                   >
                     <AppIcon name="chevron-down" size={14} className="rotate-90 text-white" />
                   </button>
                   <button
+                    suppressHydrationWarning
                     onClick={() => setCurrentTestimonial((p) => (p === TESTIMONIALS.length - 1 ? 0 : p + 1))}
                     className="h-8 w-8 rounded-full flex items-center justify-center hover:bg-white/10 transition"
                   >
@@ -991,35 +995,35 @@ export default function Home() {
 
                 {/* Name */}
                 <div className="border-b border-slate-300 focus-within:border-nyt-green transition-colors">
-                  <input required placeholder="Name *" className="w-full py-2.5 text-sm text-slate-800 bg-transparent focus:outline-none placeholder-slate-400" />
+                  <input suppressHydrationWarning required placeholder="Name *" className="w-full py-2.5 text-sm text-slate-800 bg-transparent focus:outline-none placeholder-slate-400" />
                 </div>
 
                 {/* Email */}
                 <div className="border-b border-slate-300 focus-within:border-nyt-green transition-colors">
-                  <input required type="email" placeholder="Email *" className="w-full py-2.5 text-sm text-slate-800 bg-transparent focus:outline-none placeholder-slate-400" />
+                  <input suppressHydrationWarning required type="email" placeholder="Email *" className="w-full py-2.5 text-sm text-slate-800 bg-transparent focus:outline-none placeholder-slate-400" />
                 </div>
 
                 {/* Phone with country code */}
                 <div className="flex items-end gap-3 border-b border-slate-300 focus-within:border-nyt-green transition-colors">
-                  <select className="py-2.5 text-sm text-slate-700 bg-transparent focus:outline-none shrink-0 cursor-pointer">
+                  <select suppressHydrationWarning className="py-2.5 text-sm text-slate-700 bg-transparent focus:outline-none shrink-0 cursor-pointer">
                     <option>India (+91)</option>
                     <option>US (+1)</option>
                     <option>UAE (+971)</option>
                     <option>UK (+44)</option>
                   </select>
                   <AppIcon name="chevron-down" size={14} className="text-slate-400 mb-3 shrink-0 -ml-5" />
-                  <input required placeholder="Phone Number *" className="flex-1 py-2.5 text-sm text-slate-800 bg-transparent focus:outline-none placeholder-slate-400" />
+                  <input suppressHydrationWarning required placeholder="Phone Number *" className="flex-1 py-2.5 text-sm text-slate-800 bg-transparent focus:outline-none placeholder-slate-400" />
                 </div>
 
                 {/* Attach file */}
                 <div className="border-b border-slate-300 focus-within:border-nyt-green transition-colors flex items-center justify-between">
-                  <input type="file" className="w-full py-2.5 text-sm text-slate-500 bg-transparent focus:outline-none file:mr-3 file:border-0 file:bg-transparent file:text-nyt-green file:font-semibold file:text-sm cursor-pointer" />
+                  <input suppressHydrationWarning type="file" className="w-full py-2.5 text-sm text-slate-500 bg-transparent focus:outline-none file:mr-3 file:border-0 file:bg-transparent file:text-nyt-green file:font-semibold file:text-sm cursor-pointer" />
                   <AppIcon name="arrow-right" size={16} className="text-nyt-green shrink-0 -rotate-45" />
                 </div>
 
                 {/* Query */}
                 <div className="border-b border-slate-300 focus-within:border-nyt-green transition-colors">
-                  <input required placeholder="Query *" className="w-full py-2.5 text-sm text-slate-800 bg-transparent focus:outline-none placeholder-slate-400" />
+                  <input suppressHydrationWarning required placeholder="Query *" className="w-full py-2.5 text-sm text-slate-800 bg-transparent focus:outline-none placeholder-slate-400" />
                 </div>
 
                 {/* Captcha + Submit */}
@@ -1027,6 +1031,7 @@ export default function Home() {
                   <div className="flex items-center gap-2">
                     <span className="text-sm text-slate-600">What's <strong>7 + 2</strong> =</span>
                     <input
+                      suppressHydrationWarning
                       type="text"
                       required
                       value={captchaInput}
@@ -1035,6 +1040,7 @@ export default function Home() {
                     />
                   </div>
                   <button
+                    suppressHydrationWarning
                     type="submit"
                     className="bg-nyt-green text-white font-extrabold text-sm px-7 py-3 rounded flex items-center gap-2 hover:brightness-105 transition tracking-wide uppercase"
                   >
