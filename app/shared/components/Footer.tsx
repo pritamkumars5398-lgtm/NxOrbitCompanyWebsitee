@@ -59,18 +59,37 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-2 space-y-4">
-            <h4 className="text-xs font-black uppercase tracking-widest text-white border-b border-white/10 pb-3">Our Offices</h4>
+            <h4 className="text-xs font-black uppercase tracking-widest text-white border-b border-white/10 pb-3">Contact Us</h4>
             <div className="space-y-4 text-xs text-slate-400">
-              {[
-                ["🇮🇳","India HQ","5th Floor, Let's Connect, Noida UP 201301"],
-                ["🇺🇸","USA","22375 Broderick Dr, Suite 225, Dulles VA"],
-                ["🇦🇪","UAE","R320-OF09, Um Hurair Second, Dubai"],
-              ].map(([flag,city,addr]) => (
-                <div key={city as string} className="flex gap-2">
-                  <span className="shrink-0">{flag}</span>
-                  <div><p className="font-bold text-white text-sm mb-0.5">{city}</p><p>{addr}</p></div>
+              <div className="flex gap-2">
+                <span className="shrink-0">🏢</span>
+                <div>
+                  <p className="font-bold text-white text-sm mb-0.5">India HQ</p>
+                  <p>Office No. 903, Kamdhenu 23 west, TTC Industrial area, MIDC Industrial area, Pawne, Navi Mumbai, 400705.</p>
                 </div>
-              ))}
+              </div>
+              <div className="flex gap-2">
+                <span className="shrink-0">📞</span>
+                <div>
+                  <p className="font-bold text-white text-sm mb-0.5">Phone</p>
+                  <p>+91 9763804442</p>
+                </div>
+              </div>
+              <div className="flex gap-2">
+                <span className="shrink-0">✉️</span>
+                <div>
+                  <p className="font-bold text-white text-sm mb-0.5">Email</p>
+                  <p>info@itnextsolutions.com</p>
+                </div>
+              </div>
+              <div className="flex gap-2">
+                <span className="shrink-0">🕒</span>
+                <div>
+                  <p className="font-bold text-white text-sm mb-0.5">Business Hours</p>
+                  <p>Mon - Fri: 10:30 AM - 7:30 PM</p>
+                  <p>Sat: flexible hours</p>
+                </div>
+              </div>
             </div>
           </div>
 

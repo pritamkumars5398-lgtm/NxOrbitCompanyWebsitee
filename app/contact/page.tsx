@@ -6,10 +6,7 @@ import { AppButton } from "../shared/components/AppButton";
 import { AppIcon } from "../shared/components/AppIcon";
 
 const OFFICES = [
-  { flag: "🇮🇳", city: "Noida, India", addr: "5th Floor, Let's Connect Business Park, A-57, Sector 136, Noida, U.P, 201304", phone: "+91 987-014-0055" },
-  { flag: "🇺🇸", city: "Virginia, USA", addr: "22375 Broderick Dr, Suite 225, Dulles VA 20166, USA", phone: "+1 360-322-4913" },
-  { flag: "🇨🇦", city: "Ontario, Canada", addr: "311, 4893 Clarendon St, Vancouver BC, V5R 3J3", phone: "+1 604-000-0000" },
-  { flag: "🇦🇪", city: "Dubai, UAE", addr: "R320 – OF09, Office OF09-177, Um Hurair Second, Dubai, UAE", phone: "+971 4-000-0000" },
+  { flag: "🇮🇳", city: "Navi Mumbai, India", addr: "Office No. 903, Kamdhenu 23 west, TTC Industrial area, MIDC Industrial area, Pawne, Navi Mumbai, 400705.", phone: "+91 9763804442" },
 ];
 
 const TESTIMONIALS_MINI = [
@@ -62,17 +59,23 @@ export default function ContactPage() {
             <div className="space-y-6">
               <div>
                 <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider mb-1">Write Us</p>
-                <a href="mailto:sales@nxtorbit.com" className="text-xl font-extrabold text-slate-900 hover:text-nyt-green transition">
-                  sales@nxtorbit.com
+                <a href="mailto:info@itnextsolutions.com" className="text-xl font-extrabold text-slate-900 hover:text-nyt-green transition">
+                  info@itnextsolutions.com
                 </a>
               </div>
 
               <div>
                 <p className="text-xs text-slate-400 font-semibold mb-3">We are just a call away</p>
                 <div className="space-y-1.5">
-                  <p className="font-extrabold text-slate-900 text-sm">+91 987-014-0055 <span className="text-xs text-slate-400 font-normal">(Sales)</span></p>
-                  <p className="font-bold text-slate-700 text-sm">+1 360-322-4913 <span className="text-xs text-slate-400 font-normal">(US)</span></p>
-                  <p className="font-bold text-slate-700 text-sm">+91 995-806-8889 <span className="text-xs text-slate-400 font-normal">(HR)</span></p>
+                  <p className="font-extrabold text-slate-900 text-sm">+91 9763804442</p>
+                </div>
+              </div>
+
+              <div>
+                <p className="text-xs text-slate-400 font-semibold mb-1">Business Hours</p>
+                <div className="space-y-1.5">
+                  <p className="font-bold text-slate-700 text-sm">Mon - Fri: 10:30 AM - 7:30 PM</p>
+                  <p className="font-bold text-slate-700 text-sm">Sat: flexible hours</p>
                 </div>
               </div>
 
@@ -113,7 +116,7 @@ export default function ContactPage() {
                 </div>
                 <div className="flex items-end gap-2 border-b border-slate-300 focus-within:border-nyt-green transition-colors">
                   <select className="py-2.5 text-sm text-slate-700 bg-transparent focus:outline-none shrink-0 cursor-pointer">
-                    <option>India (+91)</option><option>US (+1)</option><option>UAE (+971)</option><option>UK (+44)</option>
+                    <option>India (+91)</option>
                   </select>
                   <AppIcon name="chevron-down" size={13} className="text-slate-400 mb-3 shrink-0 -ml-4" />
                   <input required placeholder="Phone Number *" className="flex-1 py-2.5 text-sm text-slate-800 bg-transparent focus:outline-none placeholder-slate-400" />
@@ -159,7 +162,7 @@ export default function ContactPage() {
                 <h3 className="text-xl font-extrabold text-slate-900">Get your ideas validated.</h3>
                 <p className="text-nyt-green font-semibold">Let NXTorbit give you an honest opinion.</p>
                 <p className="text-sm font-bold text-slate-700">Book your 45min. consultation.</p>
-                <a href="mailto:sales@nxtorbit.com" className="inline-flex items-center gap-2 bg-nyt-green text-white font-bold text-sm px-5 py-2.5 rounded hover:brightness-105 transition mt-2">
+                <a href="mailto:info@itnextsolutions.com" className="inline-flex items-center gap-2 bg-nyt-green text-white font-bold text-sm px-5 py-2.5 rounded hover:brightness-105 transition mt-2">
                   Connect With Us <AppIcon name="arrow-right" size={14} />
                 </a>
               </div>
@@ -168,9 +171,9 @@ export default function ContactPage() {
                 <div>
                   <p className="font-extrabold text-slate-900">Ankit Singh</p>
                   <p className="text-xs text-slate-400 italic">COO</p>
-                  <p className="text-xs text-slate-500 mt-1">sales@nxtorbit.com</p>
+                  <p className="text-xs text-slate-500 mt-1">info@itnextsolutions.com</p>
                   <div className="flex items-center gap-3 mt-1">
-                    <span className="text-xs text-slate-500">+91 704 2209 821</span>
+                    <span className="text-xs text-slate-500">+91 9763804442</span>
                     <a href="#" className="text-xs text-nyt-green font-bold hover:underline">LinkedIn</a>
                   </div>
                 </div>

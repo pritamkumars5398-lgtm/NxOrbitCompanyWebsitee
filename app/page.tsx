@@ -39,84 +39,84 @@ export default function Home() {
 
           {/* React */}
           <svg className="absolute top-10 left-[6%] opacity-[0.12] w-20 h-20" viewBox="0 0 100 100" fill="none">
-            <circle cx="50" cy="50" r="7" fill="#61DAFB"/>
-            <ellipse cx="50" cy="50" rx="46" ry="18" stroke="#61DAFB" strokeWidth="3"/>
-            <ellipse cx="50" cy="50" rx="46" ry="18" stroke="#61DAFB" strokeWidth="3" transform="rotate(60 50 50)"/>
-            <ellipse cx="50" cy="50" rx="46" ry="18" stroke="#61DAFB" strokeWidth="3" transform="rotate(120 50 50)"/>
+            <circle cx="50" cy="50" r="7" fill="#61DAFB" />
+            <ellipse cx="50" cy="50" rx="46" ry="18" stroke="#61DAFB" strokeWidth="3" />
+            <ellipse cx="50" cy="50" rx="46" ry="18" stroke="#61DAFB" strokeWidth="3" transform="rotate(60 50 50)" />
+            <ellipse cx="50" cy="50" rx="46" ry="18" stroke="#61DAFB" strokeWidth="3" transform="rotate(120 50 50)" />
           </svg>
 
           {/* Android */}
           <svg className="absolute top-6 right-[8%] opacity-[0.12] w-16 h-16" viewBox="0 0 100 100">
-            <line x1="30" y1="38" x2="20" y2="22" stroke="#3DDC84" strokeWidth="5" strokeLinecap="round"/>
-            <line x1="70" y1="38" x2="80" y2="22" stroke="#3DDC84" strokeWidth="5" strokeLinecap="round"/>
-            <circle cx="28" cy="19" r="4" fill="#3DDC84"/>
-            <circle cx="72" cy="19" r="4" fill="#3DDC84"/>
-            <rect x="18" y="42" width="64" height="38" rx="8" fill="#3DDC84"/>
-            <circle cx="38" cy="58" r="4" fill="white"/>
-            <circle cx="62" cy="58" r="4" fill="white"/>
-            <rect x="10" y="44" width="8" height="24" rx="4" fill="#3DDC84"/>
-            <rect x="82" y="44" width="8" height="24" rx="4" fill="#3DDC84"/>
-            <rect x="30" y="82" width="8" height="14" rx="4" fill="#3DDC84"/>
-            <rect x="62" y="82" width="8" height="14" rx="4" fill="#3DDC84"/>
+            <line x1="30" y1="38" x2="20" y2="22" stroke="#3DDC84" strokeWidth="5" strokeLinecap="round" />
+            <line x1="70" y1="38" x2="80" y2="22" stroke="#3DDC84" strokeWidth="5" strokeLinecap="round" />
+            <circle cx="28" cy="19" r="4" fill="#3DDC84" />
+            <circle cx="72" cy="19" r="4" fill="#3DDC84" />
+            <rect x="18" y="42" width="64" height="38" rx="8" fill="#3DDC84" />
+            <circle cx="38" cy="58" r="4" fill="white" />
+            <circle cx="62" cy="58" r="4" fill="white" />
+            <rect x="10" y="44" width="8" height="24" rx="4" fill="#3DDC84" />
+            <rect x="82" y="44" width="8" height="24" rx="4" fill="#3DDC84" />
+            <rect x="30" y="82" width="8" height="14" rx="4" fill="#3DDC84" />
+            <rect x="62" y="82" width="8" height="14" rx="4" fill="#3DDC84" />
           </svg>
 
           {/* Flutter */}
           <svg className="absolute bottom-20 left-[3%] opacity-[0.12] w-14 h-14" viewBox="0 0 100 100">
-            <polygon points="10,50 50,10 90,50 70,50 50,30 30,50" fill="#54C5F8"/>
-            <polygon points="30,50 50,30 70,50 50,70" fill="#01579B"/>
-            <polygon points="50,70 70,50 90,70 70,90" fill="#29B6F6"/>
+            <polygon points="10,50 50,10 90,50 70,50 50,30 30,50" fill="#54C5F8" />
+            <polygon points="30,50 50,30 70,50 50,70" fill="#01579B" />
+            <polygon points="50,70 70,50 90,70 70,90" fill="#29B6F6" />
           </svg>
 
           {/* Swift */}
           <svg className="absolute top-[40%] left-[1%] opacity-[0.10] w-14 h-14" viewBox="0 0 100 100">
-            <rect width="100" height="100" rx="22" fill="#F05138"/>
-            <path d="M75 65c-2 3-5 6-9 8-5 3-11 4-17 3-7-1-13-5-18-11-3-4-5-9-5-14 0 0 6 8 14 10 5 2 11 1 15-2-3-3-14-16-16-34 7 8 15 15 22 18-4-6-7-13-7-20 0 0 10 11 19 18 5 5 9 11 10 18 1 4 0 8-1 11-3 8-7 15-7 15z" fill="white"/>
+            <rect width="100" height="100" rx="22" fill="#F05138" />
+            <path d="M75 65c-2 3-5 6-9 8-5 3-11 4-17 3-7-1-13-5-18-11-3-4-5-9-5-14 0 0 6 8 14 10 5 2 11 1 15-2-3-3-14-16-16-34 7 8 15 15 22 18-4-6-7-13-7-20 0 0 10 11 19 18 5 5 9 11 10 18 1 4 0 8-1 11-3 8-7 15-7 15z" fill="white" />
           </svg>
 
           {/* Node.js */}
           <svg className="absolute bottom-[30%] right-[5%] opacity-[0.12] w-16 h-16" viewBox="0 0 100 100">
-            <path d="M50 5L90 28v44L50 95 10 72V28z" fill="#68A063"/>
+            <path d="M50 5L90 28v44L50 95 10 72V28z" fill="#68A063" />
             <text x="50" y="58" textAnchor="middle" fill="white" fontSize="22" fontWeight="bold" fontFamily="Arial">JS</text>
           </svg>
 
           {/* Firebase */}
           <svg className="absolute top-[15%] right-[20%] opacity-[0.10] w-12 h-12" viewBox="0 0 100 100">
-            <path d="M20 80L35 30l15 20 10-40 20 70z" fill="#FFA000"/>
-            <path d="M20 80l15-30 15 10 10-20 20 40z" fill="#F57C00"/>
-            <path d="M35 50l15 10 10-20L80 80 20 80z" fill="#FFCA28"/>
+            <path d="M20 80L35 30l15 20 10-40 20 70z" fill="#FFA000" />
+            <path d="M20 80l15-30 15 10 10-20 20 40z" fill="#F57C00" />
+            <path d="M35 50l15 10 10-20L80 80 20 80z" fill="#FFCA28" />
           </svg>
 
           {/* Kotlin */}
           <svg className="absolute bottom-[15%] left-[20%] opacity-[0.10] w-14 h-14" viewBox="0 0 100 100">
-            <polygon points="5,5 55,5 5,55" fill="#7F52FF"/>
-            <polygon points="5,55 5,95 50,50 95,5 55,5" fill="#C811E1"/>
-            <polygon points="5,95 95,95 50,50" fill="#E44857"/>
+            <polygon points="5,5 55,5 5,55" fill="#7F52FF" />
+            <polygon points="5,55 5,95 50,50 95,5 55,5" fill="#C811E1" />
+            <polygon points="5,95 95,95 50,50" fill="#E44857" />
           </svg>
 
           {/* JavaScript */}
           <svg className="absolute top-[55%] right-[2%] opacity-[0.10] w-14 h-14" viewBox="0 0 100 100">
-            <rect width="100" height="100" fill="#F7DF1E"/>
+            <rect width="100" height="100" fill="#F7DF1E" />
             <text x="10" y="72" fill="#323330" fontSize="38" fontWeight="bold" fontFamily="Arial">JS</text>
           </svg>
 
           {/* Apple/iOS */}
           <svg className="absolute top-[28%] left-[14%] opacity-[0.10] w-12 h-12" viewBox="0 0 100 100">
-            <path d="M68 25c-4 5-10 8-16 8-1-6 2-12 5-16 4-5 11-8 16-8 1 6-1 11-5 16z" fill="#555"/>
-            <path d="M82 65c-2 4-4 8-7 11-3 5-7 8-12 8s-7-3-13-3-9 3-13 3c-5 0-9-3-12-8C17 66 12 53 12 41c0-14 9-22 18-22 5 0 9 3 13 3s9-4 15-4c6 0 12 3 15 9-13 7-11 25 9 38z" fill="#555"/>
+            <path d="M68 25c-4 5-10 8-16 8-1-6 2-12 5-16 4-5 11-8 16-8 1 6-1 11-5 16z" fill="#555" />
+            <path d="M82 65c-2 4-4 8-7 11-3 5-7 8-12 8s-7-3-13-3-9 3-13 3c-5 0-9-3-12-8C17 66 12 53 12 41c0-14 9-22 18-22 5 0 9 3 13 3s9-4 15-4c6 0 12 3 15 9-13 7-11 25 9 38z" fill="#555" />
           </svg>
 
           {/* GraphQL */}
           <svg className="absolute bottom-[5%] right-[15%] opacity-[0.10] w-12 h-12" viewBox="0 0 100 100">
-            <polygon points="50,5 90,28 90,72 50,95 10,72 10,28" fill="none" stroke="#E535AB" strokeWidth="5"/>
-            <line x1="50" y1="5" x2="50" y2="95" stroke="#E535AB" strokeWidth="3"/>
-            <line x1="10" y1="28" x2="90" y2="72" stroke="#E535AB" strokeWidth="3"/>
-            <line x1="90" y1="28" x2="10" y2="72" stroke="#E535AB" strokeWidth="3"/>
-            <circle cx="50" cy="5" r="6" fill="#E535AB"/>
-            <circle cx="90" cy="28" r="6" fill="#E535AB"/>
-            <circle cx="90" cy="72" r="6" fill="#E535AB"/>
-            <circle cx="50" cy="95" r="6" fill="#E535AB"/>
-            <circle cx="10" cy="72" r="6" fill="#E535AB"/>
-            <circle cx="10" cy="28" r="6" fill="#E535AB"/>
+            <polygon points="50,5 90,28 90,72 50,95 10,72 10,28" fill="none" stroke="#E535AB" strokeWidth="5" />
+            <line x1="50" y1="5" x2="50" y2="95" stroke="#E535AB" strokeWidth="3" />
+            <line x1="10" y1="28" x2="90" y2="72" stroke="#E535AB" strokeWidth="3" />
+            <line x1="90" y1="28" x2="10" y2="72" stroke="#E535AB" strokeWidth="3" />
+            <circle cx="50" cy="5" r="6" fill="#E535AB" />
+            <circle cx="90" cy="28" r="6" fill="#E535AB" />
+            <circle cx="90" cy="72" r="6" fill="#E535AB" />
+            <circle cx="50" cy="95" r="6" fill="#E535AB" />
+            <circle cx="10" cy="72" r="6" fill="#E535AB" />
+            <circle cx="10" cy="28" r="6" fill="#E535AB" />
           </svg>
 
         </div>
@@ -143,7 +143,7 @@ export default function Home() {
               <div className="pt-4 border-t border-slate-200">
                 <p className="text-xs text-slate-400 font-semibold mb-3 uppercase tracking-wider">Recognized by</p>
                 <div className="flex flex-wrap gap-5 items-center">
-                  {[["Clutch","4.9"],["GoodFirms","4.8"],["AppFutura","4.8"],["DesignRush","4.9"],["Manifest","4.7"]].map(([name, r]) => (
+                  {[["Clutch", "4.9"], ["GoodFirms", "4.8"], ["AppFutura", "4.8"], ["DesignRush", "4.9"], ["Manifest", "4.7"]].map(([name, r]) => (
                     <div key={name} className="flex items-center gap-1.5">
                       <span className="text-xs font-bold text-slate-700">{name}</span>
                       <span className="text-[10px] text-amber-400">★★★★★</span>
@@ -159,7 +159,7 @@ export default function Home() {
 
               {/* Left phone – 3D tilted */}
               <div className="hidden sm:flex flex-col w-[118px] h-[228px] rounded-[28px] overflow-hidden -mb-6 flex-shrink-0"
-                style={{background:'linear-gradient(145deg,#2d3748,#1a202c)',boxShadow:'8px 16px 40px rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.08)',transform:'perspective(900px) rotateY(14deg) rotateX(4deg)'}}>
+                style={{ background: 'linear-gradient(145deg,#2d3748,#1a202c)', boxShadow: '8px 16px 40px rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.08)', transform: 'perspective(900px) rotateY(14deg) rotateX(4deg)' }}>
                 <div className="flex items-center justify-center gap-1.5 pt-3 pb-1">
                   <div className="w-8 h-1 bg-white/15 rounded-full" />
                   <div className="w-2 h-2 rounded-full bg-white/20" />
@@ -172,11 +172,11 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="flex gap-1">
-                    {["#6cb790","#61DAFB","#FF6B8A","#F59E0B"].map((c,i)=>(
-                      <div key={i} className="w-7 h-7 rounded-full flex-shrink-0" style={{background:`${c}33`,border:`1.5px solid ${c}66`}} />
+                    {["#6cb790", "#61DAFB", "#FF6B8A", "#F59E0B"].map((c, i) => (
+                      <div key={i} className="w-7 h-7 rounded-full flex-shrink-0" style={{ background: `${c}33`, border: `1.5px solid ${c}66` }} />
                     ))}
                   </div>
-                  <div className="flex-1 rounded-xl overflow-hidden" style={{background:'linear-gradient(135deg,#1e3a2f,#0f2318)'}}>
+                  <div className="flex-1 rounded-xl overflow-hidden" style={{ background: 'linear-gradient(135deg,#1e3a2f,#0f2318)' }}>
                     <div className="h-full flex items-center justify-center text-2xl">🌿</div>
                   </div>
                   <div className="flex gap-2 text-white/40">
@@ -189,7 +189,7 @@ export default function Home() {
 
               {/* Center phone – main with vertical scrolling app screens */}
               <div className="flex flex-col w-[153px] h-[308px] rounded-[34px] overflow-hidden flex-shrink-0 relative"
-                style={{background:'linear-gradient(160deg,#1a1f2e,#0d1117)',boxShadow:'0 30px 80px rgba(0,0,0,0.5),0 0 0 1.5px rgba(255,255,255,0.07),inset 0 1px 0 rgba(255,255,255,0.12)',transform:'perspective(900px) rotateY(-4deg) rotateX(3deg)'}}>
+                style={{ background: 'linear-gradient(160deg,#1a1f2e,#0d1117)', boxShadow: '0 30px 80px rgba(0,0,0,0.5),0 0 0 1.5px rgba(255,255,255,0.07),inset 0 1px 0 rgba(255,255,255,0.12)', transform: 'perspective(900px) rotateY(-4deg) rotateX(3deg)' }}>
                 {/* Side buttons */}
                 <div className="absolute -right-0.5 top-16 w-1 h-8 rounded-r bg-white/10" />
                 <div className="absolute -left-0.5 top-12 w-1 h-5 rounded-l bg-white/10" />
@@ -204,20 +204,20 @@ export default function Home() {
                 </div>
                 {/* Scrolling screens */}
                 <div className="flex-1 mx-2 rounded-2xl overflow-hidden">
-                  <div className="animate-app-scroll" style={{height:'400%',display:'flex',flexDirection:'column'}}>
+                  <div className="animate-app-scroll" style={{ height: '400%', display: 'flex', flexDirection: 'column' }}>
 
                     {/* Screen 1 – Social */}
-                    <div className="flex-shrink-0 bg-gradient-to-b from-[#0f1923] to-[#162030] flex flex-col p-3 gap-2" style={{height:'25%'}}>
+                    <div className="flex-shrink-0 bg-gradient-to-b from-[#0f1923] to-[#162030] flex flex-col p-3 gap-2" style={{ height: '25%' }}>
                       <div className="flex items-center justify-between">
                         <span className="text-[8px] font-black text-white tracking-wider">daylyy</span>
                         <div className="w-5 h-5 rounded-full bg-nyt-green/20 flex items-center justify-center"><div className="w-2 h-2 rounded-full bg-nyt-green" /></div>
                       </div>
                       <div className="flex gap-1.5">
-                        {["#6cb790","#61DAFB","#FF6B8A"].map((c,i)=>(
-                          <div key={i} className="w-8 h-8 rounded-full flex-shrink-0" style={{background:`${c}33`,border:`1.5px solid ${c}66`}} />
+                        {["#6cb790", "#61DAFB", "#FF6B8A"].map((c, i) => (
+                          <div key={i} className="w-8 h-8 rounded-full flex-shrink-0" style={{ background: `${c}33`, border: `1.5px solid ${c}66` }} />
                         ))}
                       </div>
-                      <div className="flex-1 rounded-xl overflow-hidden" style={{background:'linear-gradient(135deg,#1e3a2f,#0f2318)'}}>
+                      <div className="flex-1 rounded-xl overflow-hidden" style={{ background: 'linear-gradient(135deg,#1e3a2f,#0f2318)' }}>
                         <div className="h-full flex items-center justify-center text-3xl">🌿</div>
                       </div>
                       <div className="flex gap-3 text-white/50">
@@ -226,7 +226,7 @@ export default function Home() {
                     </div>
 
                     {/* Screen 2 – Cars */}
-                    <div className="flex-shrink-0 bg-gradient-to-b from-[#04101d] to-[#071829] flex flex-col p-3 gap-2" style={{height:'25%'}}>
+                    <div className="flex-shrink-0 bg-gradient-to-b from-[#04101d] to-[#071829] flex flex-col p-3 gap-2" style={{ height: '25%' }}>
                       <div className="flex items-center justify-between">
                         <span className="text-[7px] font-black text-slate-400 tracking-widest uppercase">Alba Motors</span>
                         <span className="text-[7px] text-nyt-lime font-bold">Catalog</span>
@@ -244,7 +244,7 @@ export default function Home() {
                     </div>
 
                     {/* Screen 3 – Finance */}
-                    <div className="flex-shrink-0 bg-gradient-to-b from-[#0a0e1a] to-[#111827] flex flex-col p-3 gap-1.5" style={{height:'25%'}}>
+                    <div className="flex-shrink-0 bg-gradient-to-b from-[#0a0e1a] to-[#111827] flex flex-col p-3 gap-1.5" style={{ height: '25%' }}>
                       <div className="flex items-center justify-between">
                         <span className="text-[8px] font-black text-white">Portfolio</span>
                         <span className="text-[7px] text-nyt-green font-bold">▲ Live</span>
@@ -255,14 +255,14 @@ export default function Home() {
                         <p className="text-[7px] text-nyt-lime font-bold">+12.4% this month</p>
                       </div>
                       <div className="flex-1 flex items-end gap-0.5 pb-1">
-                        {[40,55,35,70,50,85,60,90,45,75].map((h,i)=>(
-                          <div key={i} className="flex-1 rounded-t" style={{height:`${h}%`,background:i===7?'#6cb790':'rgba(108,183,144,0.25)'}} />
+                        {[40, 55, 35, 70, 50, 85, 60, 90, 45, 75].map((h, i) => (
+                          <div key={i} className="flex-1 rounded-t" style={{ height: `${h}%`, background: i === 7 ? '#6cb790' : 'rgba(108,183,144,0.25)' }} />
                         ))}
                       </div>
                     </div>
 
                     {/* Screen 4 – Fitness */}
-                    <div className="flex-shrink-0 bg-gradient-to-b from-[#0d1f12] to-[#0a1a0f] flex flex-col p-3 gap-2" style={{height:'25%'}}>
+                    <div className="flex-shrink-0 bg-gradient-to-b from-[#0d1f12] to-[#0a1a0f] flex flex-col p-3 gap-2" style={{ height: '25%' }}>
                       <div className="flex items-center justify-between">
                         <span className="text-[8px] font-black text-white">Activity</span>
                         <span className="text-[6px] text-slate-400">Today</span>
@@ -270,8 +270,8 @@ export default function Home() {
                       <div className="flex items-center gap-3">
                         <div className="relative w-12 h-12 flex-shrink-0">
                           <svg viewBox="0 0 48 48" className="w-full h-full -rotate-90">
-                            <circle cx="24" cy="24" r="20" fill="none" stroke="rgba(108,183,144,0.15)" strokeWidth="4"/>
-                            <circle cx="24" cy="24" r="20" fill="none" stroke="#6cb790" strokeWidth="4" strokeDasharray="125.6" strokeDashoffset="35" strokeLinecap="round"/>
+                            <circle cx="24" cy="24" r="20" fill="none" stroke="rgba(108,183,144,0.15)" strokeWidth="4" />
+                            <circle cx="24" cy="24" r="20" fill="none" stroke="#6cb790" strokeWidth="4" strokeDasharray="125.6" strokeDashoffset="35" strokeLinecap="round" />
                           </svg>
                           <div className="absolute inset-0 flex items-center justify-center">
                             <span className="text-[8px] font-black text-nyt-lime">72%</span>
@@ -283,14 +283,14 @@ export default function Home() {
                         </div>
                       </div>
                       <div className="flex-1 space-y-1.5">
-                        {[["Running","68%","#6cb790"],["Cycling","45%","#61DAFB"],["Sleep","82%","#a5d088"]].map(([l,p,c])=>(
+                        {[["Running", "68%", "#6cb790"], ["Cycling", "45%", "#61DAFB"], ["Sleep", "82%", "#a5d088"]].map(([l, p, c]) => (
                           <div key={l as string}>
                             <div className="flex justify-between mb-0.5">
                               <span className="text-[6px] text-slate-400">{l}</span>
                               <span className="text-[6px] text-slate-300 font-bold">{p}</span>
                             </div>
                             <div className="h-1 bg-white/10 rounded-full">
-                              <div className="h-full rounded-full" style={{width:p as string,background:c as string}} />
+                              <div className="h-full rounded-full" style={{ width: p as string, background: c as string }} />
                             </div>
                           </div>
                         ))}
@@ -304,7 +304,7 @@ export default function Home() {
 
               {/* Right phone – 3D tilted */}
               <div className="hidden sm:flex flex-col w-[118px] h-[248px] rounded-[28px] overflow-hidden -mb-3 flex-shrink-0"
-                style={{background:'linear-gradient(145deg,#2a3244,#181e2c)',boxShadow:'-8px 16px 40px rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.06)',transform:'perspective(900px) rotateY(-14deg) rotateX(4deg)'}}>
+                style={{ background: 'linear-gradient(145deg,#2a3244,#181e2c)', boxShadow: '-8px 16px 40px rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.06)', transform: 'perspective(900px) rotateY(-14deg) rotateX(4deg)' }}>
                 <div className="flex items-center justify-center gap-1.5 pt-3 pb-1">
                   <div className="w-2 h-2 rounded-full bg-white/20" />
                   <div className="w-8 h-1 bg-white/15 rounded-full" />
@@ -315,7 +315,7 @@ export default function Home() {
                     <span className="text-[6px] text-white/40 bg-amber-400/10 px-1.5 py-0.5 rounded">Live</span>
                   </div>
                   <div className="grid grid-cols-2 gap-1 flex-1">
-                    {["🎂","🍰","🥐","☕"].map((e,i)=>(
+                    {["🎂", "🍰", "🥐", "☕"].map((e, i) => (
                       <div key={i} className="rounded-xl bg-white/5 flex flex-col items-center justify-center gap-0.5 py-1.5">
                         <span className="text-lg">{e}</span>
                         <span className="text-[6px] text-white/40">$12.99</span>
@@ -340,7 +340,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 text-center">
           <p className="text-xs text-slate-400 font-semibold uppercase tracking-widest mb-7">Trusted by 1500+ Businesses Worldwide</p>
           <div className="flex flex-wrap justify-center gap-x-10 gap-y-3 items-center">
-            {["GODFREY PHILLIPS","GYAN DAIRY","TRUEFAN","KFC","BYJU'S","AIRTEL","MOTHER DAIRY","NIK BAKERS"].map((b) => (
+            {["GODFREY PHILLIPS", "GYAN DAIRY", "TRUEFAN", "KFC", "BYJU'S", "AIRTEL", "MOTHER DAIRY", "NIK BAKERS"].map((b) => (
               <span key={b} className="text-xs font-black text-slate-400 tracking-widest">{b}</span>
             ))}
           </div>
@@ -407,7 +407,7 @@ export default function Home() {
 
                 {/* Stats row */}
                 <div className="flex gap-8 pt-4 border-t border-white/5">
-                  {[["1400+","Projects"],["200+","Engineers"],["13+","Years"]].map(([n,l]) => (
+                  {[["1400+", "Projects"], ["200+", "Engineers"], ["13+", "Years"]].map(([n, l]) => (
                     <div key={l}>
                       <p className="text-2xl font-black text-white">{n}</p>
                       <p className="text-[10px] text-slate-500 uppercase tracking-wider mt-0.5">{l}</p>
@@ -431,16 +431,16 @@ export default function Home() {
                     ].map((a) => (
                       <div key={a.platform} className="bg-white/5 rounded-xl p-4 hover:bg-white/8 transition-colors">
                         <div className="flex items-center gap-2 mb-2">
-                          <div className="w-2.5 h-2.5 rounded-sm flex-shrink-0" style={{background: a.color}} />
+                          <div className="w-2.5 h-2.5 rounded-sm flex-shrink-0" style={{ background: a.color }} />
                           <span className="text-xs font-black text-white">{a.platform}</span>
                           <span className="text-[9px] text-slate-500 ml-auto">{a.year}</span>
                         </div>
                         <p className="text-[10px] text-slate-400 leading-tight mb-2">{a.badge}</p>
                         <div className="flex items-center gap-1">
                           <div className="flex">
-                            {[...Array(a.stars)].map((_,i) => (
+                            {[...Array(a.stars)].map((_, i) => (
                               <svg key={i} viewBox="0 0 10 10" className="w-2.5 h-2.5" fill={a.color}>
-                                <path d="M5 1l1.12 2.27 2.5.36-1.81 1.76.43 2.5L5 6.77 2.76 7.9l.43-2.5L1.38 3.63l2.5-.36z"/>
+                                <path d="M5 1l1.12 2.27 2.5.36-1.81 1.76.43 2.5L5 6.77 2.76 7.9l.43-2.5L1.38 3.63l2.5-.36z" />
                               </svg>
                             ))}
                           </div>
@@ -464,8 +464,8 @@ export default function Home() {
                       { name: "PCI DSS", sub: "Payments Ready", color: "#EC4899" },
                     ].map((c) => (
                       <div key={c.name} className="bg-white/5 rounded-lg p-3 text-center hover:bg-white/8 transition-colors">
-                        <div className="w-6 h-6 rounded mx-auto mb-1.5 flex items-center justify-center" style={{background:`${c.color}22`}}>
-                          <div className="w-2.5 h-2.5 rounded-sm" style={{background: c.color}} />
+                        <div className="w-6 h-6 rounded mx-auto mb-1.5 flex items-center justify-center" style={{ background: `${c.color}22` }}>
+                          <div className="w-2.5 h-2.5 rounded-sm" style={{ background: c.color }} />
                         </div>
                         <p className="text-[10px] font-black text-white">{c.name}</p>
                         <p className="text-[9px] text-slate-500 mt-0.5">{c.sub}</p>
@@ -512,7 +512,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 text-center">
           <p className="text-xs text-slate-400 font-semibold uppercase tracking-widest mb-7">Our Products Are Well Funded By</p>
           <div className="flex flex-wrap justify-center gap-x-10 gap-y-3 items-center">
-            {["Saama Capital","Y Combinator","Sequoia Capital","Incubate Fund","Goldman Sachs","Matrix Partners"].map((f) => (
+            {["Saama Capital", "Y Combinator", "Sequoia Capital", "Incubate Fund", "Goldman Sachs", "Matrix Partners"].map((f) => (
               <span key={f} className="text-xs font-black text-slate-400 tracking-wide">{f}</span>
             ))}
           </div>
@@ -605,11 +605,10 @@ export default function Home() {
                 <button
                   key={item.id}
                   onClick={() => setActiveWork(item.id)}
-                  className={`w-full flex items-center justify-between px-4 py-3 rounded text-sm font-semibold text-left transition-all ${
-                    activeWork === item.id
+                  className={`w-full flex items-center justify-between px-4 py-3 rounded text-sm font-semibold text-left transition-all ${activeWork === item.id
                       ? "bg-nyt-green text-white"
                       : "text-slate-400 hover:text-white hover:bg-white/5"
-                  }`}
+                    }`}
                 >
                   <span>{item.name}</span>
                   <span>→</span>
@@ -811,7 +810,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-            {[FAQS.slice(0,4), FAQS.slice(4)].map((group, gi) => (
+            {[FAQS.slice(0, 4), FAQS.slice(4)].map((group, gi) => (
               <div key={gi} className="space-y-3">
                 {group.map((faq) => (
                   <div key={faq.id} className="bg-white rounded-lg overflow-hidden">
@@ -910,11 +909,11 @@ export default function Home() {
         {/* Background vectors */}
         <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
           <svg className="absolute -right-20 top-10 opacity-[0.06] w-96 h-96" viewBox="0 0 400 400" fill="none">
-            <circle cx="200" cy="200" r="180" stroke="#6cb790" strokeWidth="40"/>
-            <circle cx="200" cy="200" r="100" stroke="#6cb790" strokeWidth="20"/>
+            <circle cx="200" cy="200" r="180" stroke="#6cb790" strokeWidth="40" />
+            <circle cx="200" cy="200" r="100" stroke="#6cb790" strokeWidth="20" />
           </svg>
           <svg className="absolute -left-16 bottom-20 opacity-[0.05] w-72 h-72" viewBox="0 0 300 300" fill="none">
-            <path d="M150 20 Q280 80 270 150 Q260 230 150 280 Q40 230 30 150 Q20 80 150 20Z" fill="#6cb790"/>
+            <path d="M150 20 Q280 80 270 150 Q260 230 150 280 Q40 230 30 150 Q20 80 150 20Z" fill="#6cb790" />
           </svg>
         </div>
 
@@ -935,8 +934,8 @@ export default function Home() {
             <div className="space-y-6">
               <div>
                 <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider mb-1">Write Us</p>
-                <a href="mailto:sales@nxtorbit.com" className="text-xl font-extrabold text-slate-900 hover:text-nyt-green transition">
-                  sales@nxtorbit.com
+                <a href="mailto:info@itnextsolutions.com" className="text-xl font-extrabold text-slate-900 hover:text-nyt-green transition">
+                  info@itnextsolutions.com
                 </a>
               </div>
 
@@ -944,14 +943,16 @@ export default function Home() {
                 <p className="text-xs text-slate-400 font-semibold mb-3">We are just a call away</p>
                 <div className="space-y-1.5">
                   <p className="font-extrabold text-slate-900 text-sm">
-                    +91 987-014-0055 <span className="text-xs text-slate-400 font-normal">(Sales)</span>
+                    +91 9763804442
                   </p>
-                  <p className="font-bold text-slate-700 text-sm">
-                    +1 360-322-4913 <span className="text-xs text-slate-400 font-normal">(US Sales)</span>
-                  </p>
-                  <p className="font-bold text-slate-700 text-sm">
-                    +91 995-806-8889 <span className="text-xs text-slate-400 font-normal">(HR)</span>
-                  </p>
+                </div>
+              </div>
+
+              <div>
+                <p className="text-xs text-slate-400 font-semibold mb-1">Business Hours</p>
+                <div className="space-y-1.5">
+                  <p className="font-bold text-slate-700 text-sm">Mon - Fri: 10:30 AM - 7:30 PM</p>
+                  <p className="font-bold text-slate-700 text-sm">Sat: flexible hours</p>
                 </div>
               </div>
 
@@ -1007,9 +1008,6 @@ export default function Home() {
                 <div className="flex items-end gap-3 border-b border-slate-300 focus-within:border-nyt-green transition-colors">
                   <select suppressHydrationWarning className="py-2.5 text-sm text-slate-700 bg-transparent focus:outline-none shrink-0 cursor-pointer">
                     <option>India (+91)</option>
-                    <option>US (+1)</option>
-                    <option>UAE (+971)</option>
-                    <option>UK (+44)</option>
                   </select>
                   <AppIcon name="chevron-down" size={14} className="text-slate-400 mb-3 shrink-0 -ml-5" />
                   <input suppressHydrationWarning required placeholder="Phone Number *" className="flex-1 py-2.5 text-sm text-slate-800 bg-transparent focus:outline-none placeholder-slate-400" />
@@ -1060,8 +1058,8 @@ export default function Home() {
             {/* Background blob vector */}
             <div className="absolute right-0 top-0 bottom-0 w-80 pointer-events-none overflow-hidden">
               <svg viewBox="0 0 320 200" className="absolute right-0 top-0 h-full w-full opacity-10" fill="none">
-                <path d="M320 0 Q200 20 180 100 Q160 180 320 200Z" fill="#6cb790"/>
-                <path d="M320 30 Q240 50 220 100 Q200 150 320 170Z" fill="#a5d088"/>
+                <path d="M320 0 Q200 20 180 100 Q160 180 320 200Z" fill="#6cb790" />
+                <path d="M320 30 Q240 50 220 100 Q200 150 320 170Z" fill="#a5d088" />
               </svg>
             </div>
 
@@ -1083,9 +1081,9 @@ export default function Home() {
                 <div>
                   <p className="font-extrabold text-slate-900">Ankit Singh</p>
                   <p className="text-xs text-slate-400 italic">COO</p>
-                  <p className="text-xs text-slate-500 mt-1">sales@nxtorbit.com</p>
+                  <p className="text-xs text-slate-500 mt-1">info@itnextsolutions.com</p>
                   <div className="flex items-center gap-3 mt-1">
-                    <span className="text-xs text-slate-500">+91 704 2209 821</span>
+                    <span className="text-xs text-slate-500">+91 9763804442</span>
                     <a href="#" className="text-xs text-nyt-green font-bold hover:underline">LinkedIn</a>
                   </div>
                 </div>
@@ -1101,10 +1099,7 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { city: "Noida, India", addr: "5th Floor, Let's Connect Business Park, A-57, Sector 136, Noida, U.P, 201304" },
-                { city: "Ontario, Canada", addr: "311, 4893 Clarendon st, Vancouver BC, V5R 3J3" },
-                { city: "Virginia, USA", addr: "22375 Broderick Dr, Suite 225, Dulles VA 20166, USA" },
-                { city: "Dubai", addr: "R320 – OF09, Office OF09-177, Um Hurair Second, Dubai, UAE" },
+                { city: "Navi Mumbai, India", addr: "Office No. 903, Kamdhenu 23 west, TTC Industrial area, MIDC Industrial area, Pawne, Navi Mumbai, 400705." },
               ].map((o) => (
                 <div key={o.city}>
                   <p className="font-extrabold text-slate-900 text-sm underline decoration-nyt-green underline-offset-2 mb-1">{o.city}</p>

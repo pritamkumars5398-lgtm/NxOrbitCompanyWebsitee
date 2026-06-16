@@ -5,9 +5,9 @@ import { AppButton } from "../shared/components/AppButton";
 import { WORK_ITEMS, TESTIMONIALS } from "../core/constants/app.constant";
 
 export const metadata: Metadata = {
-  title: "Portfolio & Case Studies | NXTorbit",
+  title: "Case Studies | NXTorbit",
   description:
-    "Explore NXTorbit's portfolio of 1400+ mobile apps, web platforms, and digital products across fintech, healthcare, entertainment, and more.",
+    "Explore NXTorbit's case studies detailing our most impactful projects across mobile apps, web platforms, and digital products.",
 };
 
 const PORTFOLIO_META = [
@@ -22,14 +22,7 @@ const PORTFOLIO_META = [
 
 const INDUSTRIES = ["All", "Social", "Automotive", "Entertainment", "Creator Tools", "Telecom", "FMCG/Logistics", "Retail"];
 
-const STATS = [
-  { value: "1400+", label: "Apps & Platforms Delivered" },
-  { value: "35+", label: "Countries Reached" },
-  { value: "50+", label: "Industries Served" },
-  { value: "100M+", label: "End Users Impacted" },
-];
-
-export default function PortfolioPage() {
+export default function CaseStudiesPage() {
   const enriched = WORK_ITEMS.map((item) => ({
     ...item,
     ...(PORTFOLIO_META.find((m) => m.id === item.id) || {}),
@@ -58,38 +51,20 @@ export default function PortfolioPage() {
           <div className="max-w-3xl">
             <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-nyt-green mb-4">
               <span className="w-6 h-px bg-nyt-green" />
-              Our Work
+              Case Studies
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-5">
-              Products That Perform<br />
-              <span className="text-nyt-green">At Any Scale</span>
+              Deep Dives Into Our<br />
+              <span className="text-nyt-green">Impactful Projects</span>
             </h1>
             <p className="text-lg text-slate-300 leading-relaxed mb-8 max-w-2xl">
-              From apps serving millions of daily users to enterprise platforms processing billions in transactions — here's a snapshot of what we've built.
+              Explore in-depth case studies detailing how we've helped businesses achieve their goals through innovative technology solutions.
             </p>
             <div className="flex flex-wrap gap-3">
               <AppButton variant="primary" size="large" href="/contact">
                 Start Your Project
               </AppButton>
-              <AppButton
-                variant="ghost"
-                size="large"
-                href="#case-studies"
-                className="text-white border border-white/20 hover:bg-white/10 hover:text-white"
-              >
-                View Case Studies
-              </AppButton>
             </div>
-          </div>
-
-          {/* Stats */}
-          <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden">
-            {STATS.map((stat) => (
-              <div key={stat.label} className="bg-white/5 px-6 py-5 text-center">
-                <p className="text-2xl md:text-3xl font-extrabold text-nyt-green">{stat.value}</p>
-                <p className="text-xs font-semibold text-slate-400 mt-1 uppercase tracking-wide">{stat.label}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -118,11 +93,6 @@ export default function PortfolioPage() {
       {/* ── CASE STUDIES GRID ── */}
       <section id="case-studies" className="py-20 bg-slate-50">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-10">
-            <p className="text-xs font-bold uppercase tracking-widest text-nyt-green mb-2">Case Studies</p>
-            <h2 className="text-3xl font-extrabold text-slate-900">Featured Projects</h2>
-          </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {enriched.map((item) => (
               <article
@@ -174,70 +144,6 @@ export default function PortfolioPage() {
                   </a>
                 </div>
               </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── TESTIMONIALS ── */}
-      <section className="py-20 bg-white" id="testimonials">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="text-center mb-14">
-            <p className="text-xs font-bold uppercase tracking-widest text-nyt-green mb-3">Client Voices</p>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">
-              What Our Clients Say
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {TESTIMONIALS.map((t) => (
-              <div
-                key={t.name}
-                className="bg-slate-50 border border-slate-100 rounded-2xl p-6 hover:border-nyt-green/20 hover:shadow-lg transition-all duration-300"
-              >
-                <div className="flex gap-1 mb-4">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <svg key={i} width="14" height="14" viewBox="0 0 14 14" fill="#6cb790">
-                      <path d="M7 1l1.8 3.6L13 5.3l-3 2.9.7 4.1L7 10.3l-3.7 1.9.7-4.1-3-2.9 4.2-.7L7 1z"/>
-                    </svg>
-                  ))}
-                </div>
-                <blockquote className="text-sm text-slate-600 leading-relaxed mb-5 italic">
-                  &ldquo;{t.quote}&rdquo;
-                </blockquote>
-                <div className="flex items-center gap-3">
-                  <div className={`w-9 h-9 rounded-full ${t.avatarBg} flex items-center justify-center text-sm font-bold text-slate-600`}>
-                    {t.name.split(" ").map((n) => n[0]).join("")}
-                  </div>
-                  <div>
-                    <p className="text-sm font-bold text-slate-900">{t.name}</p>
-                    <p className="text-xs text-slate-500">{t.role} · {t.company}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── INDUSTRIES SERVED ── */}
-      <section className="py-16 bg-slate-50 border-t border-slate-100">
-        <div className="mx-auto max-w-7xl px-6 text-center">
-          <p className="text-xs font-bold uppercase tracking-widest text-nyt-green mb-3">Expertise</p>
-          <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-8">Industries We've Shipped For</h2>
-          <div className="flex flex-wrap justify-center gap-3">
-            {[
-              "Healthcare", "Fintech", "E-Commerce", "Entertainment", "Logistics",
-              "Education", "Automotive", "Real Estate", "Social", "Travel & Hospitality",
-              "On-Demand Services", "SaaS", "Retail", "Media", "Gaming",
-            ].map((industry) => (
-              <span
-                key={industry}
-                className="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-semibold text-slate-700
-                  hover:border-nyt-green hover:text-nyt-green hover:bg-nyt-green/5 transition-colors duration-200 cursor-default"
-              >
-                {industry}
-              </span>
             ))}
           </div>
         </div>

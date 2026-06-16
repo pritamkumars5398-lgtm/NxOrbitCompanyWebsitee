@@ -206,8 +206,8 @@ export default async function IndustryPage({
             <AppButton variant="primary" size="large" href="/contact">
               {data.ctaText}
             </AppButton>
-            <AppButton variant="outline" size="large" href="tel:+919870140055">
-              Call +91 987-014-0055
+            <AppButton variant="outline" size="large" href="tel:+919763804442">
+              Call +91 9763804442
             </AppButton>
           </div>
         </div>

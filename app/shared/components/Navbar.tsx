@@ -40,7 +40,7 @@ const NAV_ITEMS = [
   {
     label: "Portfolio",
     items: [
-      { label: "Case Studies",           href: "/portfolio" },
+      { label: "Case Studies",           href: "/case-studies" },
       { label: "Client Success Stories", href: "/#testimonials" },
       { label: "View All Work",          href: "/portfolio" },
     ],
@@ -177,10 +177,10 @@ export default function Navbar() {
         {/* Right actions — desktop */}
         <div className="hidden md:flex items-center gap-4">
           <a
-            href="tel:+919870140055"
+            href="tel:+919763804442"
             className="text-sm font-semibold text-slate-500 hover:text-nyt-green transition-colors duration-150"
           >
-            +91 987-014-0055
+            +91 9763804442
           </a>
           <AppButton variant="primary" size="small" href="/contact">
             Contact Us
@@ -256,10 +256,10 @@ export default function Navbar() {
 
           <div className="px-6 py-4 space-y-3">
             <a
-              href="tel:+919870140055"
+              href="tel:+919763804442"
               className="block text-sm font-semibold text-slate-500 hover:text-nyt-green transition-colors"
             >
-              +91 987-014-0055
+              +91 9763804442
             </a>
             <AppButton variant="primary" size="small" href="/contact" className="w-full">
               Contact Us
