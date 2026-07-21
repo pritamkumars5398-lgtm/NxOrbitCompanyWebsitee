@@ -31,6 +31,7 @@ export default async function ServicePage({
   const { slug } = await params;
   const data = SERVICES_DATA[slug];
   if (!data) notFound();
+  const heroImageSrc = data.heroImage || `/assets/service-hero-${data.slug}.svg`;
 
   return (
     <div className="min-h-screen bg-white text-nyt-charcoal font-sans antialiased">
@@ -39,24 +40,30 @@ export default async function ServicePage({
       {/* ── HERO ── */}
       <section className="relative bg-gradient-to-br from-[#0A2E4D] via-[#0A2E4D] to-[#006B7D] py-20 lg:py-28 overflow-hidden text-white">
         <div className="relative mx-auto max-w-7xl px-6 z-10">
-          <div className="max-w-3xl">
-            <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#3CCFC7] mb-4 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-[#3CCFC7]/30">
-              <span className="w-2 h-2 rounded-full bg-[#82C458] animate-pulse" />
-              {data.category}
-            </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-5">
-              {data.tagline}
-            </h1>
-            <p className="text-lg text-slate-200 leading-relaxed mb-8 max-w-2xl">
-              {data.description}
-            </p>
-            <div className="flex flex-row items-center gap-3 flex-wrap sm:flex-nowrap">
-              <AppButton variant="primary" size="large" href="/contact" className="min-w-[200px] sm:min-w-[220px]">
-                {data.ctaText}
-              </AppButton>
-              <AppButton variant="outline" size="large" href="/portfolio" className="min-w-[200px] sm:min-w-[220px] !text-white !border-[#3CCFC7] hover:!bg-[#3CCFC7] hover:!text-[#0A2E4D]">
-                View Our Work
-              </AppButton>
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(340px,480px)]">
+            <div className="max-w-3xl">
+              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#3CCFC7] mb-4 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-[#3CCFC7]/30">
+                <span className="w-2 h-2 rounded-full bg-[#82C458] animate-pulse" />
+                {data.category}
+              </p>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-5">
+                {data.tagline}
+              </h1>
+              <p className="text-lg text-slate-200 leading-relaxed mb-8 max-w-2xl">
+                {data.description}
+              </p>
+              <div className="flex flex-row items-center gap-3 flex-wrap sm:flex-nowrap">
+                <AppButton variant="primary" size="large" href="/contact" className="flex-1 min-w-[200px] sm:min-w-[220px] max-w-[260px]">
+                  {data.ctaText}
+                </AppButton>
+                <AppButton variant="outline" size="large" href="/portfolio" className="flex-1 min-w-[200px] sm:min-w-[220px] max-w-[260px] !text-white !border-[#3CCFC7] hover:!bg-[#3CCFC7] hover:!text-[#0A2E4D]">
+                  View Our Work
+                </AppButton>
+              </div>
+            </div>
+
+            <div className="relative rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-2xl shadow-[#007a8c]/15 backdrop-blur-xl overflow-hidden">
+              <img src={heroImageSrc} alt={`${data.title} hero image`} className="w-full h-auto block rounded-[1.75rem] object-cover max-h-[420px]" />
             </div>
           </div>
 
@@ -158,20 +165,23 @@ export default async function ServicePage({
       </section>
 
       {/* ── CTA BANNER ── */}
-      <section className="py-20 bg-gradient-to-br from-nyt-dark to-slate-900">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <p className="text-xs font-bold uppercase tracking-widest text-nyt-green mb-4">Ready to Start?</p>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-5">
+      <section className="py-20 bg-gradient-to-r from-[#006B7D] via-[#00BBA9] to-[#006B7D] text-white relative overflow-hidden border-b border-white/10">
+        <div className="relative mx-auto max-w-4xl px-6 text-center z-10">
+          <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#3CCFC7] mb-4 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20">
+            <span className="w-2 h-2 rounded-full bg-[#82C458] animate-pulse" />
+            Ready to Start?
+          </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-5">
             Let's Build Something Exceptional Together
           </h2>
-          <p className="text-slate-400 text-lg mb-8 max-w-xl mx-auto">
+          <p className="text-slate-100 text-lg mb-8 max-w-xl mx-auto">
             Get a free 30-minute consultation with one of our {data.title.toLowerCase()} experts. No commitment required.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <AppButton variant="primary" size="large" href="/contact">
+          <div className="flex flex-row items-center justify-center gap-4 flex-wrap sm:flex-nowrap">
+            <AppButton variant="secondary" size="large" href="/contact" className="w-full sm:w-[290px] text-center !bg-[#0A2E4D] !border-[#0A2E4D] hover:!bg-[#0A2E4D]/90">
               Schedule a Free Consultation
             </AppButton>
-            <AppButton variant="outline" size="large" href="tel:+919763804442">
+            <AppButton variant="outline" size="large" href="tel:+919763804442" className="w-full sm:w-[290px] text-center !text-white !border-white/40 hover:!bg-white hover:!text-[#006B7D]">
               Call +91 9763804442
             </AppButton>
           </div>

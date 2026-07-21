@@ -13,6 +13,7 @@ export type ServicePage = {
   process: ProcessStep[];
   techStack: string[];
   ctaText: string;
+  heroImage: string;
   metaTitle: string;
   metaDescription: string;
 };
@@ -73,6 +74,7 @@ export const SERVICES_DATA: Record<string, ServicePage> = {
     ],
     techStack: ["React Native", "Flutter", "Swift", "Kotlin", "Firebase", "AWS", "GraphQL", "Redux"],
     ctaText: "Start Your Mobile Project",
+    heroImage: "/assets/service-hero-mobile.jpg",
     metaTitle: "Mobile App Development Company | NXTorbit",
     metaDescription:
       "NXTorbit builds high-performance iOS and Android mobile apps for startups and enterprises. 1400+ apps delivered across 35+ countries. Get a free consultation.",
@@ -133,6 +135,7 @@ export const SERVICES_DATA: Record<string, ServicePage> = {
     ],
     techStack: ["React", "Next.js", "Node.js", "TypeScript", "PostgreSQL", "Redis", "AWS", "Docker"],
     ctaText: "Build Your Web Application",
+    heroImage: "/assets/service-hero-web.jpg",
     metaTitle: "Web App Development Company | NXTorbit",
     metaDescription:
       "NXTorbit engineers scalable React and Next.js web applications for enterprises and startups. Full-stack development with 99.9% uptime SLA.",
@@ -193,9 +196,11 @@ export const SERVICES_DATA: Record<string, ServicePage> = {
     ],
     techStack: ["Python", "TensorFlow", "PyTorch", "OpenAI", "Anthropic", "HuggingFace", "LangChain", "AWS SageMaker"],
     ctaText: "Explore AI Solutions",
+    heroImage: "/assets/service-hero-ai.jpg",
     metaTitle: "AI & ML Development Services | NXTorbit",
     metaDescription:
       "NXTorbit builds AI-powered applications, LLM integrations, and custom ML solutions for enterprises. Transform your business with intelligent automation.",
+
   },
 
   design: {
@@ -253,9 +258,15 @@ export const SERVICES_DATA: Record<string, ServicePage> = {
     ],
     techStack: ["Figma", "Adobe XD", "Principle", "Zeplin", "Lottie", "Framer", "Maze", "InVision"],
     ctaText: "Start Your Design Project",
+    heroImage: "/assets/service-hero-design-ux.jpg",
     metaTitle: "UI/UX Design Services | NXTorbit",
     metaDescription:
       "NXTorbit's UI/UX design team creates beautiful, high-converting digital experiences for mobile and web. Research-driven design that scales.",
+
+
+
+
+
   },
 
   blockchain: {
@@ -313,6 +324,7 @@ export const SERVICES_DATA: Record<string, ServicePage> = {
     ],
     techStack: ["Solidity", "Ethereum", "Polygon", "Hardhat", "ethers.js", "Web3.js", "IPFS", "The Graph"],
     ctaText: "Build Your Blockchain Solution",
+    heroImage: "/assets/service-hero-blockchain.jpg",
     metaTitle: "Blockchain Development Company | NXTorbit",
     metaDescription:
       "NXTorbit builds DeFi protocols, NFT platforms, and enterprise blockchain solutions. Expert Solidity developers and Web3 product teams.",
@@ -373,6 +385,7 @@ export const SERVICES_DATA: Record<string, ServicePage> = {
     ],
     techStack: ["AWS", "GCP", "Azure", "Terraform", "Kubernetes", "Docker", "GitHub Actions", "Prometheus"],
     ctaText: "Modernize Your Infrastructure",
+    heroImage: "/assets/service-hero-devops.jpg",
     metaTitle: "DevOps & Cloud Engineering Services | NXTorbit",
     metaDescription:
       "NXTorbit provides DevOps consulting, CI/CD pipelines, Kubernetes, and cloud migration for engineering teams. Ship faster with confidence.",

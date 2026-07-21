@@ -236,20 +236,23 @@ export default function PortfolioPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-20 bg-gradient-to-br from-nyt-dark to-slate-900">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <p className="text-xs font-bold uppercase tracking-widest text-nyt-green mb-4">Start Building</p>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-5">
+      <section className="py-20 bg-gradient-to-r from-[#006B7D] via-[#00BBA9] to-[#006B7D] text-white relative overflow-hidden border-b border-white/10">
+        <div className="relative mx-auto max-w-4xl px-6 text-center z-10">
+          <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#3CCFC7] mb-4 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20">
+            <span className="w-2 h-2 rounded-full bg-[#82C458] animate-pulse" />
+            Start Building
+          </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-5">
             Ready to Add Your Project to This List?
           </h2>
-          <p className="text-slate-400 text-lg mb-8 max-w-xl mx-auto">
+          <p className="text-slate-100 text-lg mb-8 max-w-xl mx-auto">
             Every great product started with a conversation. Let's have yours.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <AppButton variant="primary" size="large" href="/contact">
+          <div className="flex flex-row items-center justify-center gap-4 flex-wrap sm:flex-nowrap">
+            <AppButton variant="secondary" size="large" href="/contact" className="w-full sm:w-[290px] text-center !bg-[#0A2E4D] !border-[#0A2E4D] hover:!bg-[#0A2E4D]/90">
               Start Your Project
             </AppButton>
-            <AppButton variant="outline" size="large" href="tel:+919763804442">
+            <AppButton variant="outline" size="large" href="tel:+919763804442" className="w-full sm:w-[290px] text-center !text-white !border-white/40 hover:!bg-white hover:!text-[#006B7D]">
               Call +91 9763804442
             </AppButton>
           </div>

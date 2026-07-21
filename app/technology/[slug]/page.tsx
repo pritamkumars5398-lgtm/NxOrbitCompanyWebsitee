@@ -233,20 +233,23 @@ export default async function TechnologyPage({
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-20 bg-gradient-to-br from-nyt-dark via-slate-900 to-slate-800">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <p className="text-xs font-bold uppercase tracking-widest text-nyt-green mb-4">Get Started</p>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-5">
+      <section className="py-20 bg-gradient-to-r from-[#006B7D] via-[#00BBA9] to-[#006B7D] text-white relative overflow-hidden border-b border-white/10">
+        <div className="relative mx-auto max-w-4xl px-6 text-center z-10">
+          <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#3CCFC7] mb-4 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20">
+            <span className="w-2 h-2 rounded-full bg-[#82C458] animate-pulse" />
+            Get Started
+          </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-5">
             Ready to Build with {data.title}?
           </h2>
-          <p className="text-slate-400 text-lg mb-8 max-w-xl mx-auto">
+          <p className="text-slate-100 text-lg mb-8 max-w-xl mx-auto">
             Talk to our engineers about your project. We'll scope it, price it, and tell you exactly how we'd approach it — for free.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <AppButton variant="primary" size="large" href="/contact">
+          <div className="flex flex-row items-center justify-center gap-4 flex-wrap sm:flex-nowrap">
+            <AppButton variant="secondary" size="large" href="/contact" className="w-full sm:w-[290px] text-center !bg-[#0A2E4D] !border-[#0A2E4D] hover:!bg-[#0A2E4D]/90">
               {data.ctaText}
             </AppButton>
-            <AppButton variant="outline" size="large" href="/contact">
+            <AppButton variant="outline" size="large" href="/contact" className="w-full sm:w-[290px] text-center !text-white !border-white/40 hover:!bg-white hover:!text-[#006B7D]">
               Schedule a Call
             </AppButton>
           </div>

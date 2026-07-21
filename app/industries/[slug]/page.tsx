@@ -216,11 +216,11 @@ export default async function IndustryPage({
           <p className="text-slate-500 text-lg mb-8 max-w-xl mx-auto">
             Get a free consultation with an engineer who understands your industry. No generic pitches — just real technical guidance.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <AppButton variant="primary" size="large" href="/contact">
+          <div className="flex flex-row items-center justify-center gap-4 flex-wrap sm:flex-nowrap">
+            <AppButton variant="primary" size="large" href="/contact" className="w-full sm:w-[290px] text-center">
               {data.ctaText}
             </AppButton>
-            <AppButton variant="outline" size="large" href="tel:+919763804442">
+            <AppButton variant="outline" size="large" href="tel:+919763804442" className="w-full sm:w-[290px] text-center">
               Call +91 9763804442
             </AppButton>
           </div>

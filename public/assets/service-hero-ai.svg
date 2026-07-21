@@ -1,0 +1,33 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#081F30" />
+      <stop offset="1" stop-color="#005D72" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" rx="60" fill="url(#bg)" />
+  <circle cx="260" cy="180" r="120" fill="#3CCFC7" fill-opacity="0.18" />
+  <circle cx="960" cy="260" r="180" fill="#00BBA9" fill-opacity="0.16" />
+  <rect x="260" y="220" width="640" height="460" rx="54" fill="#082838" stroke="#00BBA9" stroke-width="6" />
+  <path d="M470 420C470 390 500 372 534 372H666C700 372 730 390 730 420V486C730 516 700 534 666 534H534C500 534 470 516 470 486V420Z" fill="#003D4B" stroke="#3CCFC7" stroke-width="6" />
+  <rect x="480" y="430" width="220" height="26" rx="13" fill="#3CCFC7" />
+  <rect x="480" y="470" width="140" height="20" rx="10" fill="#00E7D5" />
+  <rect x="480" y="500" width="240" height="20" rx="10" fill="#0AAFAA" />
+  <path d="M592 538C592 543 587 548 582 548C577 548 572 543 572 538C572 533 577 528 582 528C587 528 592 533 592 538Z" fill="#3CCFC7" />
+  <circle cx="600" cy="440" r="16" fill="#82C458" />
+  <circle cx="720" cy="510" r="18" fill="#00BBA9" />
+  <circle cx="560" cy="540" r="14" fill="#00BBA9" />
+  <path d="M560 540L470 425" stroke="#3CCFC7" stroke-width="8" />
+  <path d="M720 510L790 380" stroke="#3CCFC7" stroke-width="8" />
+  <path d="M700 420L860 340" stroke="#00BBA9" stroke-width="6" stroke-dasharray="18 14" />
+  <path d="M520 460L430 330" stroke="#00BBA9" stroke-width="6" />
+  <circle cx="430" cy="330" r="28" fill="#00BBA9" />
+  <rect x="410" y="310" width="40" height="40" rx="10" fill="#081F30" stroke="#3CCFC7" stroke-width="4" />
+  <path d="M330 680C330 520 420 460 540 460C660 460 750 520 750 680V780H330V680Z" fill="#04394D" stroke="#3CCFC7" stroke-width="8" />
+  <path d="M540 520C500 520 470 548 470 588V660C470 700 500 728 540 728C580 728 610 700 610 660V588C610 548 580 520 540 520Z" fill="#0CDAC6" />
+  <rect x="980" y="460" width="120" height="120" rx="32" fill="#00BBA9" fill-opacity="0.16" />
+  <rect x="980" y="460" width="120" height="120" rx="32" stroke="#3CCFC7" stroke-width="6" />
+  <path d="M1040 500L1040 560" stroke="#00BBA9" stroke-width="10" stroke-linecap="round" />
+  <path d="M1000 530H1080" stroke="#00BBA9" stroke-width="10" stroke-linecap="round" />
+  <path d="M980 620C980 600 1000 580 1020 580C1040 580 1060 600 1060 620C1060 640 1040 660 1020 660C1000 660 980 640 980 620Z" fill="#3CCFC7" />
+</svg>

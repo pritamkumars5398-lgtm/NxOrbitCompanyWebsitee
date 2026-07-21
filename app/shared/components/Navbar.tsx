@@ -100,7 +100,7 @@ export default function Navbar() {
   };
 
   return (
-    <header ref={navRef} className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#00BBA9]/15 shadow-sm shadow-[#0A2E4D]/5">
+    <header ref={navRef} className="sticky top-0 z-50 bg-white border-b border-[#00BBA9]/15 shadow-sm shadow-[#0A2E4D]/5">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
 
         {/* Logo */}
@@ -109,6 +109,7 @@ export default function Navbar() {
             <img
               src="/nxtorbit-logo.png"
               alt="NXTorbit"
+              className="mix-blend-multiply"
               style={{ height: "98px", width: "auto", marginTop: "-20px" }}
             />
           </div>
