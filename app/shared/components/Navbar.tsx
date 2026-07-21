@@ -100,7 +100,7 @@ export default function Navbar() {
   };
 
   return (
-    <header ref={navRef} className="sticky top-0 z-50 bg-white border-b border-slate-100 shadow-sm">
+    <header ref={navRef} className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#00BBA9]/15 shadow-sm shadow-[#0A2E4D]/5">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
 
         {/* Logo */}
@@ -125,39 +125,36 @@ export default function Navbar() {
                   aria-haspopup="true"
                   className={`flex items-center gap-1.5 px-3.5 py-2 text-sm font-semibold rounded-lg transition-colors duration-150
                     ${openMenu === item.label
-                      ? "text-nyt-green bg-nyt-green/5"
-                      : "text-slate-600 hover:text-nyt-green hover:bg-slate-50"
+                      ? "text-[#006B7D] bg-[#00BBA9]/10"
+                      : "text-[#0A2E4D] hover:text-[#00BBA9] hover:bg-[#F3F7F9]"
                     }`}
                 >
                   {item.label}
                   <AppIcon
                     name="chevron-down"
                     size={12}
-                    className={`transition-transform duration-200 ${openMenu === item.label ? "rotate-180" : ""}`}
+                    className={`transition-transform duration-200 ${openMenu === item.label ? "rotate-180 text-[#006B7D]" : ""}`}
                   />
                 </button>
 
                 {/* Dropdown — always rendered, animated via CSS */}
                 <div
-                  role="menu"
-                  className={`absolute top-full left-0 mt-1.5 w-60 bg-white rounded-xl shadow-lg z-50
-                    transition-all duration-200 ease-out origin-top-left
+                  className={`absolute left-0 mt-1.5 w-60 rounded-xl bg-white/95 backdrop-blur-md border border-[#00BBA9]/20 shadow-xl shadow-[#0A2E4D]/10 py-1 transition-all duration-200 origin-top-left
                     ${openMenu === item.label
-                      ? "opacity-100 translate-y-0 scale-100 pointer-events-auto"
-                      : "opacity-0 -translate-y-1 scale-95 pointer-events-none"
+                      ? "opacity-100 scale-100 pointer-events-auto"
+                      : "opacity-0 scale-95 pointer-events-none"
                     }`}
-                  style={{ border: "1px solid #e8edf2" }}
                 >
-                  <div className="py-1.5">
+                  <div role="menu" aria-orientation="vertical">
                     {item.items.map((sub) => (
                       <a
                         key={sub.label}
                         href={sub.href}
                         role="menuitem"
                         onClick={() => setOpenMenu(null)}
-                        className="block px-4 py-2.5 text-sm font-medium text-slate-600
-                          hover:text-nyt-green hover:bg-slate-50 transition-colors duration-100
-                          first:rounded-t-lg last:rounded-b-lg"
+                        className="block px-4 py-2.5 text-sm font-medium text-slate-700
+                          hover:text-[#006B7D] hover:bg-[#F3F7F9] transition-colors duration-100
+                          first:rounded-t-xl last:rounded-b-xl"
                       >
                         {sub.label}
                       </a>
@@ -169,8 +166,8 @@ export default function Navbar() {
               <a
                 key={item.label}
                 href={item.href}
-                className="px-3.5 py-2 text-sm font-semibold text-slate-600 hover:text-nyt-green
-                  hover:bg-slate-50 transition-colors duration-150 rounded-lg"
+                className="px-3.5 py-2 text-sm font-semibold text-[#0A2E4D] hover:text-[#00BBA9]
+                  hover:bg-[#F3F7F9] transition-colors duration-150 rounded-lg"
               >
                 {item.label}
               </a>

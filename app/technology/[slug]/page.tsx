@@ -5,6 +5,8 @@ import Footer from "../../shared/components/Footer";
 import { AppButton } from "../../shared/components/AppButton";
 import { TECHNOLOGY_DATA } from "../../core/data/technology";
 
+import { TechHeroVisual } from "../components/TechHeroVisual";
+
 export async function generateStaticParams() {
   return Object.keys(TECHNOLOGY_DATA).map((slug) => ({ slug }));
 }
@@ -37,54 +39,51 @@ export default async function TechnologyPage({
       <Navbar />
 
       {/* ── HERO ── */}
-      <section className="relative bg-gradient-to-br from-nyt-dark via-slate-900 to-slate-800 py-20 lg:py-28 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-nyt-green/10 rounded-full translate-x-1/2 -translate-y-1/2" />
-          <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-nyt-lime/5 rounded-full -translate-x-1/2 translate-y-1/2" />
-          {/* Grid pattern */}
-          <svg className="absolute inset-0 w-full h-full opacity-[0.03]" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#grid)" />
-          </svg>
-        </div>
-
-        <div className="relative mx-auto max-w-7xl px-6">
-          <div className="max-w-3xl">
-            <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-nyt-green mb-4">
-              <span className="w-6 h-px bg-nyt-green" />
-              {data.category}
-            </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-5">
-              {data.tagline}
-            </h1>
-            <p className="text-lg text-slate-300 leading-relaxed mb-8 max-w-2xl">
-              {data.description}
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <AppButton variant="primary" size="large" href="/contact">
-                {data.ctaText}
-              </AppButton>
-              <AppButton
-                variant="ghost"
-                size="large"
-                href="/#work"
-                className="text-white border border-white/20 hover:bg-white/10 hover:text-white"
-              >
-                View Portfolio
-              </AppButton>
+      <section className="relative bg-white py-20 lg:py-24 overflow-hidden border-b border-slate-100">
+        <div className="relative mx-auto max-w-7xl px-6 z-10">
+          
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left Column: Text & Buttons */}
+            <div className="lg:col-span-7">
+              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#006B7D] mb-4 bg-[#F3F7F9] px-3.5 py-1.5 rounded-full border border-[#00BBA9]/20 shadow-xs">
+                <span className="w-2 h-2 rounded-full bg-[#00BBA9] animate-pulse" />
+                {data.category}
+              </p>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0A2E4D] leading-tight mb-5">
+                {data.tagline}
+              </h1>
+              <p className="text-lg text-slate-600 leading-relaxed mb-8 max-w-2xl">
+                {data.description}
+              </p>
+              <div className="flex flex-row items-center gap-3 flex-wrap sm:flex-nowrap">
+                <AppButton variant="primary" size="large" href="/contact" className="min-w-[200px] sm:min-w-[220px]">
+                  {data.ctaText}
+                </AppButton>
+                <AppButton
+                  variant="outline"
+                  size="large"
+                  href="/portfolio"
+                  className="min-w-[200px] sm:min-w-[220px]"
+                >
+                  View Portfolio
+                </AppButton>
+              </div>
             </div>
+
+            {/* Right Column: Technology Official Vector Logo Visual Card */}
+            <div className="lg:col-span-5">
+              <TechHeroVisual slug={data.slug} title={data.title} techStack={data.techStack} />
+            </div>
+
           </div>
 
-          {/* Stats row */}
-          <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden">
+          {/* Stats row with Light Glassmorphism */}
+          <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4">
             {data.heroStats.map((stat) => (
-              <div key={stat.label} className="bg-white/5 backdrop-blur-sm px-6 py-5 text-center">
-                <p className="text-2xl md:text-3xl font-extrabold text-nyt-green">{stat.value}</p>
-                <p className="text-xs font-semibold text-slate-400 mt-1 uppercase tracking-wide">{stat.label}</p>
+              <div key={stat.label} className="glass-panel rounded-2xl px-6 py-6 text-center glass-card-hover">
+                <p className="text-3xl md:text-4xl font-extrabold text-[#006B7D]">{stat.value}</p>
+                <p className="text-xs font-semibold text-slate-500 mt-1 uppercase tracking-wide">{stat.label}</p>
               </div>
             ))}
           </div>

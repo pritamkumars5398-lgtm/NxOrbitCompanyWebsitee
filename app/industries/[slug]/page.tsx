@@ -37,44 +37,58 @@ export default async function IndustryPage({
       <Navbar />
 
       {/* ── HERO ── */}
-      <section className="relative bg-gradient-to-br from-slate-50 via-white to-emerald-50/40 py-20 lg:py-28 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <svg className="absolute right-0 top-0 h-full opacity-[0.04]" viewBox="0 0 400 600" fill="none">
-            <circle cx="300" cy="150" r="200" stroke="#6cb790" strokeWidth="60" />
-            <circle cx="300" cy="450" r="120" stroke="#a5d088" strokeWidth="40" />
-          </svg>
-        </div>
-
-        <div className="relative mx-auto max-w-7xl px-6">
-          <div className="max-w-3xl">
-            <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-nyt-green mb-4">
-              <span className="w-6 h-px bg-nyt-green" />
-              {data.category}
-            </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-5">
-              {data.tagline}
-            </h1>
-            <p className="text-lg text-slate-500 leading-relaxed mb-8 max-w-2xl">
-              {data.description}
-            </p>
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-              <AppButton variant="primary" size="large" href="/contact" className="w-full sm:w-[260px]">
-                {data.ctaText}
-              </AppButton>
-              <AppButton variant="outline" size="large" href="/portfolio" className="w-full sm:w-[260px]">
-                See Our Work
-              </AppButton>
-            </div>
-          </div>
-
-          {/* Stats */}
-          <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-px bg-slate-200 rounded-2xl overflow-hidden shadow-sm">
-            {data.heroStats.map((stat) => (
-              <div key={stat.label} className="bg-white px-6 py-5 text-center">
-                <p className="text-2xl md:text-3xl font-extrabold text-nyt-green">{stat.value}</p>
-                <p className="text-xs font-semibold text-slate-500 mt-1 uppercase tracking-wide">{stat.label}</p>
+      <section className="relative bg-[#F3F7F9] py-20 lg:py-24 overflow-hidden border-b border-[#00BBA9]/15">
+        <div className="relative mx-auto max-w-7xl px-6 z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left Column: Glass Card Showcase */}
+            <div className="lg:col-span-7">
+              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#006B7D] mb-4 bg-white/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-[#00BBA9]/20 shadow-xs">
+                <span className="w-2 h-2 rounded-full bg-[#82C458] animate-pulse" />
+                {data.category}
+              </p>
+              <h1 className="text-4xl md:text-5xl font-extrabold text-[#0A2E4D] leading-tight mb-5">
+                {data.tagline}
+              </h1>
+              <p className="text-lg text-slate-600 leading-relaxed mb-8">
+                {data.description}
+              </p>
+              <div className="flex flex-row items-center gap-3 flex-wrap sm:flex-nowrap">
+                <AppButton variant="primary" size="large" href="/contact" className="min-w-[200px] sm:min-w-[220px]">
+                  {data.ctaText}
+                </AppButton>
+                <AppButton variant="outline" size="large" href="/portfolio" className="min-w-[200px] sm:min-w-[220px]">
+                  See Our Work
+                </AppButton>
               </div>
-            ))}
+            </div>
+
+            {/* Right Column: Visual Feature Glass Panel */}
+            <div className="lg:col-span-5">
+              <div className="glass-panel rounded-3xl p-8 border border-white/80 shadow-2xl relative overflow-hidden">
+                <div className="space-y-6">
+                  <div className="flex items-center justify-between border-b border-slate-200/60 pb-4">
+                    <span className="text-xs font-black uppercase tracking-wider text-[#006B7D]">Industry Matrix</span>
+                    <span className="text-xs font-bold text-[#82C458] bg-[#82C458]/10 px-2.5 py-0.5 rounded-full">● Live Compliance</span>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-4 pt-2">
+                    {data.heroStats.map((stat) => (
+                      <div key={stat.label} className="bg-white/90 rounded-2xl p-4 border border-[#00BBA9]/15 shadow-sm">
+                        <p className="text-2xl font-extrabold text-[#006B7D]">{stat.value}</p>
+                        <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider mt-1">{stat.label}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="bg-[#0A2E4D] text-white rounded-2xl p-5 text-xs space-y-2">
+                    <p className="font-extrabold text-[#3CCFC7]">Enterprise Security & Scalability</p>
+                    <p className="text-slate-300 leading-relaxed">Built for zero-downtime operations, strict regulatory compliance, and seamless multi-region deployment.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>

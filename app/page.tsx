@@ -5,6 +5,7 @@ import { AppIcon } from "./shared/components/AppIcon";
 import { AppButton } from "./shared/components/AppButton";
 import Navbar from "./shared/components/Navbar";
 import Footer from "./shared/components/Footer";
+import AOSProvider from "./shared/components/AOSProvider";
 import {
   COMPLIANCE_ITEMS,
   TESTIMONIALS,
@@ -25,12 +26,13 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-nyt-charcoal font-sans antialiased">
+    <AOSProvider>
+      <div className="min-h-screen bg-white text-nyt-charcoal font-sans antialiased">
 
       <Navbar />
 
       {/* ── HERO ───────────────────────────────────────────────── */}
-      <section className="relative bg-gradient-to-br from-slate-50 to-white py-16 lg:py-24 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[#F3F7F9] via-[#F3F7F9]/80 to-white py-16 lg:py-24 overflow-hidden border-b border-[#00BBA9]/10">
 
         {/* ── Floating tech icon background ── */}
         <div className="absolute inset-0 pointer-events-none select-none">
@@ -132,9 +134,9 @@ export default function Home() {
               <p className="text-slate-500 text-base md:text-lg leading-relaxed max-w-lg">
                 With 13+ years of expertise and 1400+ successful apps, NXTorbit's team of 200+ developers transforms your vision into award-winning digital products.
               </p>
-              <div className="flex flex-wrap gap-3">
-                <AppButton variant="primary" size="small" href="#contact">Get a Free Quote</AppButton>
-                <AppButton variant="outline" size="small" href="/portfolio">View Portfolio</AppButton>
+              <div className="flex flex-row items-center gap-3">
+                <AppButton variant="primary" size="small" href="#contact" className="min-w-[160px]">Get a Free Quote</AppButton>
+                <AppButton variant="outline" size="small" href="/portfolio" className="min-w-[160px]">View Portfolio</AppButton>
               </div>
 
               {/* Rating badges */}
@@ -797,190 +799,265 @@ export default function Home() {
         <div className="mx-auto max-w-5xl px-6 relative z-10">
 
           {/* Section header */}
-          <div className="mb-10">
-            <h2 className="text-3xl font-extrabold text-slate-900 flex items-center gap-3">
-              Get in touch <span className="text-2xl">📧</span>
+          <div className="mb-10" data-aos="fade-up">
+            <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#006B7D] mb-2 bg-[#F3F7F9] px-3.5 py-1.5 rounded-full border border-[#00BBA9]/20 shadow-xs">
+              <span className="w-2 h-2 rounded-full bg-[#82C458] animate-pulse" />
+              Let's Connect
+            </p>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#0A2E4D]">
+              Get In Touch <span className="text-[#00BBA9]">📧</span>
             </h2>
-            <p className="text-nyt-green font-semibold text-lg mt-1">We'd love to hear from you.</p>
+            <p className="text-slate-500 font-medium text-base mt-1">We'd love to hear about your next big project.</p>
           </div>
 
-          {/* Main white card */}
-          <div className="bg-white rounded-xl p-8 grid grid-cols-1 lg:grid-cols-2 gap-10">
+          {/* ── BENTO GRID LAYOUT ── */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
-            {/* Left — contact info + testimonial */}
-            <div className="space-y-6">
-              <div>
-                <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider mb-1">Write Us</p>
-                <a href="mailto:info@itnextsolutions.com" className="text-xl font-extrabold text-slate-900 hover:text-nyt-green transition">
-                  info@itnextsolutions.com
-                </a>
-              </div>
+            {/* Left Bento Cards Column */}
+            <div className="lg:col-span-5 space-y-6">
 
-              <div>
-                <p className="text-xs text-slate-400 font-semibold mb-3">We are just a call away</p>
-                <div className="space-y-1.5">
-                  <p className="font-extrabold text-slate-900 text-sm">
+              {/* Bento Card 1: Contact Details */}
+              <div className="glass-panel rounded-3xl p-7 space-y-5 bento-card-animated" data-aos="fade-right" data-aos-delay="100">
+                <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+                  <span className="text-xs font-black uppercase tracking-wider text-[#006B7D]">Direct Channel</span>
+                  <span className="text-xs font-bold text-[#82C458] bg-[#82C458]/10 px-2.5 py-1 rounded-full flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-[#82C458] animate-pulse" />
+                    Fast Response
+                  </span>
+                </div>
+
+                <div>
+                  <p className="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Write Us</p>
+                  <a href="mailto:info@itnextsolutions.com" className="text-lg md:text-xl font-extrabold text-[#0A2E4D] hover:text-[#00BBA9] transition-colors">
+                    info@itnextsolutions.com
+                  </a>
+                </div>
+
+                <div className="pt-2 border-t border-slate-100/60">
+                  <p className="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Phone Inquiry</p>
+                  <a href="tel:+919763804442" className="text-base font-extrabold text-[#0A2E4D] hover:text-[#00BBA9] transition-colors">
                     +91 9763804442
-                  </p>
+                  </a>
                 </div>
-              </div>
 
-              <div>
-                <p className="text-xs text-slate-400 font-semibold mb-1">Business Hours</p>
-                <div className="space-y-1.5">
-                  <p className="font-bold text-slate-700 text-sm">Mon - Fri: 10:30 AM - 7:30 PM</p>
-                  <p className="font-bold text-slate-700 text-sm">Sat: flexible hours</p>
-                </div>
-              </div>
-
-              {/* Testimonial card */}
-              <div className="bg-nyt-green rounded-xl p-6 text-white space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="h-12 w-12 rounded-full bg-white/20 flex items-center justify-center text-lg font-black shrink-0">
-                    {TESTIMONIALS[currentTestimonial].name[0]}
-                  </div>
+                <div className="pt-2 border-t border-slate-100/60 flex justify-between items-center">
                   <div>
-                    <p className="font-extrabold text-sm">{TESTIMONIALS[currentTestimonial].name}</p>
-                    <p className="text-white/70 text-xs italic">{TESTIMONIALS[currentTestimonial].company}</p>
+                    <p className="text-xs text-slate-400 font-bold uppercase tracking-wider">Business Hours</p>
+                    <p className="font-bold text-slate-700 text-xs mt-0.5">Mon - Fri: 10:30 AM - 7:30 PM</p>
+                  </div>
+                  <span className="text-xs font-semibold text-slate-500 bg-[#F3F7F9] px-3 py-1 rounded-full border border-slate-200/60">IST (UTC+5:30)</span>
+                </div>
+              </div>
+
+              {/* Bento Card 2: Interactive Testimonial Carousel Tile */}
+              <div className="bg-gradient-to-br from-[#0A2E4D] to-[#006B7D] rounded-3xl p-7 text-white space-y-4 bento-card-animated relative overflow-hidden" data-aos="fade-right" data-aos-delay="200">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#3CCFC7]/10 rounded-full blur-2xl pointer-events-none" />
+                
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-[#3CCFC7] bg-white/10 px-3 py-1 rounded-full border border-white/20">Client Review</span>
+                  <div className="flex gap-1">
+                    {[...Array(5)].map((_, i) => <AppIcon key={i} name="star" size={13} className="text-amber-400" />)}
                   </div>
                 </div>
-                <p className="text-sm leading-relaxed text-white/90 italic">
+
+                <p className="text-sm leading-relaxed text-slate-200 italic pt-1">
                   "{TESTIMONIALS[currentTestimonial].quote}"
                 </p>
-                <div className="flex gap-2 pt-1">
-                  <button
-                    suppressHydrationWarning
-                    onClick={() => setCurrentTestimonial((p) => (p === 0 ? TESTIMONIALS.length - 1 : p - 1))}
-                    className="h-8 w-8 rounded-full flex items-center justify-center hover:bg-white/10 transition"
-                  >
-                    <AppIcon name="chevron-down" size={14} className="rotate-90 text-white" />
-                  </button>
-                  <button
-                    suppressHydrationWarning
-                    onClick={() => setCurrentTestimonial((p) => (p === TESTIMONIALS.length - 1 ? 0 : p + 1))}
-                    className="h-8 w-8 rounded-full flex items-center justify-center hover:bg-white/10 transition"
-                  >
-                    <AppIcon name="chevron-down" size={14} className="-rotate-90 text-white" />
-                  </button>
+
+                <div className="flex items-center justify-between pt-3 border-t border-white/10">
+                  <div className="flex items-center gap-3">
+                    <div className="h-10 w-10 rounded-full bg-gradient-to-br from-[#00BBA9] to-[#3CCFC7] flex items-center justify-center text-white text-sm font-black shrink-0 shadow-md">
+                      {TESTIMONIALS[currentTestimonial].name[0]}
+                    </div>
+                    <div>
+                      <p className="font-extrabold text-xs text-white">{TESTIMONIALS[currentTestimonial].name}</p>
+                      <p className="text-slate-300 text-[11px] italic">{TESTIMONIALS[currentTestimonial].company}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-1.5">
+                    <button
+                      suppressHydrationWarning
+                      onClick={() => setCurrentTestimonial((p) => (p === 0 ? TESTIMONIALS.length - 1 : p - 1))}
+                      className="h-8 w-8 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/15 transition active:scale-95"
+                    >
+                      <AppIcon name="chevron-down" size={14} className="rotate-90 text-white" />
+                    </button>
+                    <button
+                      suppressHydrationWarning
+                      onClick={() => setCurrentTestimonial((p) => (p === TESTIMONIALS.length - 1 ? 0 : p + 1))}
+                      className="h-8 w-8 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/15 transition active:scale-95"
+                    >
+                      <AppIcon name="chevron-down" size={14} className="-rotate-90 text-white" />
+                    </button>
+                  </div>
                 </div>
               </div>
+
             </div>
 
-            {/* Right — line-style form */}
-            <div>
-              <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider mb-6">Or fill this form</p>
-              <form className="space-y-5" onSubmit={handleCaptchaVerify}>
-
-                {/* Name */}
-                <div className="border-b border-slate-300 focus-within:border-nyt-green transition-colors">
-                  <input suppressHydrationWarning required placeholder="Name *" className="w-full py-2.5 text-sm text-slate-800 bg-transparent focus:outline-none placeholder-slate-400" />
+            {/* Right Bento Column: Main Interactive Form Card */}
+            <div className="lg:col-span-7">
+              <div className="glass-panel rounded-3xl p-8 bento-card-animated" data-aos="fade-left" data-aos-delay="150">
+                <div className="flex items-center justify-between mb-6 border-b border-slate-100 pb-4">
+                  <h3 className="text-lg font-extrabold text-[#0A2E4D] flex items-center gap-2">
+                    Send Us a Message <span className="text-base">🚀</span>
+                  </h3>
+                  <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-[#00BBA9] animate-pulse" />
+                    Confidential & Secure
+                  </span>
                 </div>
 
-                {/* Email */}
-                <div className="border-b border-slate-300 focus-within:border-nyt-green transition-colors">
-                  <input suppressHydrationWarning required type="email" placeholder="Email *" className="w-full py-2.5 text-sm text-slate-800 bg-transparent focus:outline-none placeholder-slate-400" />
-                </div>
+                <form className="space-y-4" onSubmit={handleCaptchaVerify}>
 
-                {/* Phone with country code */}
-                <div className="flex items-end gap-3 border-b border-slate-300 focus-within:border-nyt-green transition-colors">
-                  <select suppressHydrationWarning className="py-2.5 text-sm text-slate-700 bg-transparent focus:outline-none shrink-0 cursor-pointer">
-                    <option>India (+91)</option>
-                  </select>
-                  <AppIcon name="chevron-down" size={14} className="text-slate-400 mb-3 shrink-0 -ml-5" />
-                  <input suppressHydrationWarning required placeholder="Phone Number *" className="flex-1 py-2.5 text-sm text-slate-800 bg-transparent focus:outline-none placeholder-slate-400" />
-                </div>
+                  {/* Input Grid */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {/* Name */}
+                    <div className="space-y-1">
+                      <label className="text-xs font-bold text-slate-700">Full Name *</label>
+                      <input
+                        suppressHydrationWarning
+                        required
+                        placeholder="Enter your name"
+                        className="w-full px-4 py-3 text-sm text-[#0A2E4D] bg-[#F3F7F9]/80 rounded-xl border border-slate-200/80 focus:border-[#00BBA9] focus:ring-4 focus:ring-[#00BBA9]/15 focus:bg-white transition-all duration-200 outline-none placeholder-slate-400 font-medium"
+                      />
+                    </div>
 
-                {/* Attach file */}
-                <div className="border-b border-slate-300 focus-within:border-nyt-green transition-colors flex items-center justify-between">
-                  <input suppressHydrationWarning type="file" className="w-full py-2.5 text-sm text-slate-500 bg-transparent focus:outline-none file:mr-3 file:border-0 file:bg-transparent file:text-nyt-green file:font-semibold file:text-sm cursor-pointer" />
-                  <AppIcon name="arrow-right" size={16} className="text-nyt-green shrink-0 -rotate-45" />
-                </div>
+                    {/* Email */}
+                    <div className="space-y-1">
+                      <label className="text-xs font-bold text-slate-700">Email Address *</label>
+                      <input
+                        suppressHydrationWarning
+                        required
+                        type="email"
+                        placeholder="Enter your email"
+                        className="w-full px-4 py-3 text-sm text-[#0A2E4D] bg-[#F3F7F9]/80 rounded-xl border border-slate-200/80 focus:border-[#00BBA9] focus:ring-4 focus:ring-[#00BBA9]/15 focus:bg-white transition-all duration-200 outline-none placeholder-slate-400 font-medium"
+                      />
+                    </div>
+                  </div>
 
-                {/* Query */}
-                <div className="border-b border-slate-300 focus-within:border-nyt-green transition-colors">
-                  <input suppressHydrationWarning required placeholder="Query *" className="w-full py-2.5 text-sm text-slate-800 bg-transparent focus:outline-none placeholder-slate-400" />
-                </div>
+                  {/* Phone & Attach File Row */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {/* Phone */}
+                    <div className="space-y-1">
+                      <label className="text-xs font-bold text-slate-700">Phone Number *</label>
+                      <div className="flex items-center bg-[#F3F7F9]/80 rounded-xl border border-slate-200/80 focus-within:border-[#00BBA9] focus-within:ring-4 focus-within:ring-[#00BBA9]/15 focus-within:bg-white transition-all duration-200 px-3">
+                        <select suppressHydrationWarning className="py-3 text-xs font-semibold text-[#0A2E4D] bg-transparent focus:outline-none shrink-0 cursor-pointer pr-1">
+                          <option>IN (+91)</option>
+                        </select>
+                        <input
+                          suppressHydrationWarning
+                          required
+                          placeholder="9763804442"
+                          className="w-full py-3 text-sm text-[#0A2E4D] bg-transparent focus:outline-none placeholder-slate-400 font-medium pl-1"
+                        />
+                      </div>
+                    </div>
 
-                {/* Captcha + Submit */}
-                <div className="flex items-center justify-between pt-2 gap-4">
-                  <div className="flex items-center gap-2">
-                    <span className="text-sm text-slate-600">What's <strong>7 + 2</strong> =</span>
-                    <input
+                    {/* Attachment */}
+                    <div className="space-y-1">
+                      <label className="text-xs font-bold text-slate-700">Attach Document (Optional)</label>
+                      <input
+                        suppressHydrationWarning
+                        type="file"
+                        className="w-full px-3 py-2.5 text-xs text-slate-500 bg-[#F3F7F9]/80 rounded-xl border border-slate-200/80 focus:outline-none file:mr-2 file:border-0 file:bg-[#00BBA9]/10 file:text-[#006B7D] file:font-bold file:px-3 file:py-1 file:rounded-lg cursor-pointer"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Message Query */}
+                  <div className="space-y-1">
+                    <label className="text-xs font-bold text-slate-700">Project Requirements / Query *</label>
+                    <textarea
                       suppressHydrationWarning
-                      type="text"
                       required
-                      value={captchaInput}
-                      onChange={(e) => setCaptchaInput(e.target.value)}
-                      className="w-12 rounded text-center text-sm py-1.5 focus:outline-none focus:border-nyt-green text-slate-900"
+                      rows={3}
+                      placeholder="Tell us about your project goals, timelines, or technology requirements..."
+                      className="w-full px-4 py-3 text-sm text-[#0A2E4D] bg-[#F3F7F9]/80 rounded-xl border border-slate-200/80 focus:border-[#00BBA9] focus:ring-4 focus:ring-[#00BBA9]/15 focus:bg-white transition-all duration-200 outline-none placeholder-slate-400 font-medium resize-none"
                     />
                   </div>
-                  <button
-                    suppressHydrationWarning
-                    type="submit"
-                    className="bg-nyt-green text-white font-extrabold text-sm px-7 py-3 rounded flex items-center gap-2 hover:brightness-105 transition tracking-wide uppercase"
-                  >
-                    Submit <AppIcon name="arrow-right" size={15} className="text-white" />
-                  </button>
-                </div>
 
-                {captchaStatus === "success" && <p className="text-xs text-nyt-green font-bold">✓ Verified.</p>}
-                {captchaStatus === "error" && <p className="text-xs text-red-500 font-bold">✗ Incorrect answer.</p>}
-              </form>
+                  {/* Captcha + Submit */}
+                  <div className="flex flex-col sm:flex-row items-center justify-between pt-3 gap-4 border-t border-slate-100">
+                    <div className="flex items-center gap-2 bg-[#F3F7F9] px-4 py-2 rounded-xl border border-slate-200/60">
+                      <span className="text-xs font-semibold text-slate-600">Verification: <strong>7 + 2 =</strong></span>
+                      <input
+                        suppressHydrationWarning
+                        type="text"
+                        required
+                        value={captchaInput}
+                        onChange={(e) => setCaptchaInput(e.target.value)}
+                        className="w-12 rounded-lg text-center text-sm py-1 font-bold focus:outline-none border border-slate-300 focus:border-[#00BBA9] text-[#0A2E4D] bg-white"
+                      />
+                    </div>
+
+                    <button
+                      suppressHydrationWarning
+                      type="submit"
+                      className="w-full sm:w-auto bg-gradient-to-r from-[#006B7D] to-[#00BBA9] text-white font-extrabold text-sm px-8 py-3.5 rounded-full flex items-center justify-center gap-2 hover:brightness-110 active:scale-95 transition-all duration-200 tracking-wide uppercase shadow-md shadow-[#00BBA9]/20"
+                    >
+                      Submit Inquiry <AppIcon name="arrow-right" size={15} className="text-white" />
+                    </button>
+                  </div>
+
+                  {captchaStatus === "success" && <p className="text-xs text-[#00BBA9] font-bold text-center">✓ Message sent successfully. We will reach out shortly!</p>}
+                  {captchaStatus === "error" && <p className="text-xs text-red-500 font-bold text-center">✗ Verification answer incorrect. Please try again.</p>}
+                </form>
+              </div>
             </div>
 
           </div>
 
-          {/* ── Get your ideas validated ── */}
-          <div className="mt-8 bg-slate-50 rounded-xl p-10 relative overflow-hidden">
-            {/* Background blob vector */}
-            <div className="absolute right-0 top-0 bottom-0 w-80 pointer-events-none overflow-hidden">
-              <svg viewBox="0 0 320 200" className="absolute right-0 top-0 h-full w-full opacity-10" fill="none">
-                <path d="M320 0 Q200 20 180 100 Q160 180 320 200Z" fill="#6cb790" />
-                <path d="M320 30 Q240 50 220 100 Q200 150 320 170Z" fill="#a5d088" />
-              </svg>
-            </div>
-
+          {/* ── Bento Tile: 45-min Consultation ── */}
+          <div className="mt-8 glass-panel rounded-3xl p-8 border border-white/80 glass-card-hover relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
             <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-              <div className="space-y-3">
-                <h3 className="text-xl font-extrabold text-slate-900">Get your ideas validated.</h3>
-                <p className="text-nyt-green font-semibold">Let NXTorbit give you an honest opinion.</p>
-                <p className="text-sm font-bold text-slate-700">Book your 45min. consultation.</p>
+              <div className="space-y-2">
+                <span className="text-[10px] font-black uppercase tracking-widest text-[#006B7D] bg-[#00BBA9]/10 px-3 py-1 rounded-full">Free Strategy Session</span>
+                <h3 className="text-2xl font-extrabold text-[#0A2E4D]">Get Your Ideas Validated.</h3>
+                <p className="text-slate-600 text-sm font-medium">Book a complimentary 45-minute architectural consultation with our senior engineering team.</p>
                 <a
-                  href="#"
-                  className="inline-flex items-center gap-2 border-2 border-nyt-green text-nyt-green font-bold text-sm px-5 py-2.5 rounded hover:bg-nyt-green hover:text-white transition mt-2"
+                  href="mailto:info@itnextsolutions.com"
+                  className="inline-flex items-center gap-2 bg-[#0A2E4D] text-white font-extrabold text-xs px-6 py-3 rounded-full hover:bg-[#006B7D] transition-all duration-200 mt-2 tracking-wide uppercase"
                 >
-                  Connect With Us <AppIcon name="arrow-right" size={14} />
+                  Schedule Consultation <AppIcon name="arrow-right" size={14} className="text-white" />
                 </a>
               </div>
 
-              <div className="flex items-center gap-4 shrink-0">
-                <div className="h-14 w-14 rounded-full bg-slate-300 flex items-center justify-center text-xl font-black text-white shrink-0">A</div>
+              <div className="flex items-center gap-4 shrink-0 bg-white/80 p-4 rounded-2xl border border-slate-200/60 shadow-xs">
+                <div className="h-12 w-12 rounded-full bg-gradient-to-br from-[#006B7D] to-[#00BBA9] flex items-center justify-center text-lg font-black text-white shrink-0 shadow-md">
+                  A
+                </div>
                 <div>
-                  <p className="font-extrabold text-slate-900">Ankit Singh</p>
-                  <p className="text-xs text-slate-400 italic">COO</p>
-                  <p className="text-xs text-slate-500 mt-1">info@itnextsolutions.com</p>
+                  <p className="font-extrabold text-[#0A2E4D] text-sm">Ankit Singh</p>
+                  <p className="text-xs text-[#006B7D] font-bold">Chief Operating Officer</p>
+                  <p className="text-xs text-slate-500 mt-0.5">info@itnextsolutions.com</p>
                   <div className="flex items-center gap-3 mt-1">
-                    <span className="text-xs text-slate-500">+91 9763804442</span>
-                    <a href="#" className="text-xs text-nyt-green font-bold hover:underline">LinkedIn</a>
+                    <span className="text-xs text-slate-500 font-medium">+91 9763804442</span>
+                    <a href="#" className="text-xs text-[#00BBA9] font-bold hover:underline">LinkedIn Profile</a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* ── Our Offices ── */}
-          <div className="mt-14">
+          {/* ── Bento Tile: Our Offices ── */}
+          <div className="mt-8 glass-panel rounded-3xl p-8 border border-white/80 glass-card-hover" data-aos="fade-up" data-aos-delay="300">
             <div className="flex items-center gap-3 mb-6">
-              <div className="text-3xl">🏢</div>
-              <h3 className="text-2xl font-extrabold text-slate-900">Our Offices</h3>
+              <span className="text-2xl">🏢</span>
+              <h3 className="text-xl font-extrabold text-[#0A2E4D]">Global Offices</h3>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { city: "Navi Mumbai, India", addr: "Office No. 903, Kamdhenu 23 west, TTC Industrial area, MIDC Industrial area, Pawne, Navi Mumbai, 400705." },
+                { city: "Navi Mumbai, India", addr: "Office No. 903, Kamdhenu 23 west, TTC Industrial area, MIDC Industrial area, Pawne, Navi Mumbai, 400705.", phone: "+91 9763804442" },
               ].map((o) => (
-                <div key={o.city}>
-                  <p className="font-extrabold text-slate-900 text-sm underline decoration-nyt-green underline-offset-2 mb-1">{o.city}</p>
+                <div key={o.city} className="bg-white/90 rounded-2xl p-5 border border-slate-200/60 space-y-2">
+                  <p className="font-extrabold text-[#0A2E4D] text-sm flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#00BBA9]" />
+                    {o.city}
+                  </p>
                   <p className="text-xs text-slate-500 leading-relaxed">{o.addr}</p>
+                  <p className="text-xs font-bold text-[#006B7D] pt-1">{o.phone}</p>
                 </div>
               ))}
             </div>
@@ -1006,6 +1083,7 @@ export default function Home() {
 
       <Footer />
 
-    </div>
+      </div>
+    </AOSProvider>
   );
 }

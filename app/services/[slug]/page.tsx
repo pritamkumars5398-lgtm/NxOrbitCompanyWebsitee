@@ -37,40 +37,35 @@ export default async function ServicePage({
       <Navbar />
 
       {/* ── HERO ── */}
-      <section className="relative bg-gradient-to-br from-slate-50 via-white to-emerald-50/30 py-20 lg:py-28 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-nyt-green/5 rounded-full translate-x-1/3 -translate-y-1/3" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-nyt-lime/5 rounded-full -translate-x-1/3 translate-y-1/3" />
-        </div>
-
-        <div className="relative mx-auto max-w-7xl px-6">
+      <section className="relative bg-gradient-to-br from-[#0A2E4D] via-[#0A2E4D] to-[#006B7D] py-20 lg:py-28 overflow-hidden text-white">
+        <div className="relative mx-auto max-w-7xl px-6 z-10">
           <div className="max-w-3xl">
-            <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-nyt-green mb-4">
-              <span className="w-6 h-px bg-nyt-green" />
+            <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#3CCFC7] mb-4 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-[#3CCFC7]/30">
+              <span className="w-2 h-2 rounded-full bg-[#82C458] animate-pulse" />
               {data.category}
             </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-5">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-5">
               {data.tagline}
             </h1>
-            <p className="text-lg text-slate-500 leading-relaxed mb-8 max-w-2xl">
+            <p className="text-lg text-slate-200 leading-relaxed mb-8 max-w-2xl">
               {data.description}
             </p>
-            <div className="flex flex-wrap gap-3">
-              <AppButton variant="primary" size="large" href="/contact">
+            <div className="flex flex-row items-center gap-3 flex-wrap sm:flex-nowrap">
+              <AppButton variant="primary" size="large" href="/contact" className="min-w-[200px] sm:min-w-[220px]">
                 {data.ctaText}
               </AppButton>
-              <AppButton variant="outline" size="large" href="/#work">
+              <AppButton variant="outline" size="large" href="/portfolio" className="min-w-[200px] sm:min-w-[220px] !text-white !border-[#3CCFC7] hover:!bg-[#3CCFC7] hover:!text-[#0A2E4D]">
                 View Our Work
               </AppButton>
             </div>
           </div>
 
-          {/* Stats row */}
-          <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-px bg-slate-200 rounded-2xl overflow-hidden shadow-sm">
+          {/* Stats row with Dark Glassmorphism */}
+          <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4">
             {data.heroStats.map((stat) => (
-              <div key={stat.label} className="bg-white px-6 py-5 text-center">
-                <p className="text-2xl md:text-3xl font-extrabold text-nyt-green">{stat.value}</p>
-                <p className="text-xs font-semibold text-slate-500 mt-1 uppercase tracking-wide">{stat.label}</p>
+              <div key={stat.label} className="glass-panel-dark rounded-2xl px-6 py-6 text-center glass-card-hover">
+                <p className="text-3xl md:text-4xl font-extrabold text-[#3CCFC7]">{stat.value}</p>
+                <p className="text-xs font-semibold text-slate-300 mt-1 uppercase tracking-wide">{stat.label}</p>
               </div>
             ))}
           </div>
