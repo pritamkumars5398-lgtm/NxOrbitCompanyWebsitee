@@ -7,13 +7,11 @@ import Navbar from "./shared/components/Navbar";
 import Footer from "./shared/components/Footer";
 import {
   COMPLIANCE_ITEMS,
-  WORK_ITEMS,
   TESTIMONIALS,
   FAQS,
 } from "./core/constants/app.constant";
 
 export default function Home() {
-  const [activeWork, setActiveWork] = useState<string>("daylyy");
   const [activeCompliance, setActiveCompliance] = useState<number>(2);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [expandedFaq, setExpandedFaq] = useState<number | null>(0);
@@ -136,7 +134,7 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap gap-3">
                 <AppButton variant="primary" size="small" href="#contact">Get a Free Quote</AppButton>
-                <AppButton variant="outline" size="small" href="#work">View Portfolio</AppButton>
+                <AppButton variant="outline" size="small" href="/portfolio">View Portfolio</AppButton>
               </div>
 
               {/* Rating badges */}
@@ -585,75 +583,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── PORTFOLIO ──────────────────────────────────────────── */}
-      <section id="work" className="py-20 bg-nyt-charcoal">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-10 gap-4">
-            <div>
-              <p className="text-xs text-nyt-green font-bold uppercase tracking-widest mb-2">Our Portfolio</p>
-              <h2 className="text-2xl font-extrabold text-white">Proven Deployments.</h2>
-              <p className="text-slate-400 mt-1 text-sm">Award-winning products trusted by millions of users.</p>
-            </div>
-            <a href="#contact" className="text-sm font-bold text-nyt-lime hover:text-nyt-green transition shrink-0">View All Work →</a>
-          </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-
-            {/* Sidebar nav */}
-            <div className="lg:col-span-4 space-y-1 bg-white/5 rounded-lg p-3">
-              {WORK_ITEMS.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => setActiveWork(item.id)}
-                  className={`w-full flex items-center justify-between px-4 py-3 rounded text-sm font-semibold text-left transition-all ${activeWork === item.id
-                      ? "bg-nyt-green text-white"
-                      : "text-slate-400 hover:text-white hover:bg-white/5"
-                    }`}
-                >
-                  <span>{item.name}</span>
-                  <span>→</span>
-                </button>
-              ))}
-            </div>
-
-            {/* Display panel */}
-            <div className="lg:col-span-8">
-              {WORK_ITEMS.map((item) => {
-                if (item.id !== activeWork) return null;
-                return (
-                  <div key={item.id} className="bg-white/5 rounded-lg p-8 space-y-5">
-                    <div>
-                      <p className="text-xs font-bold uppercase tracking-widest text-nyt-green mb-2">Production Deployment</p>
-                      <h3 className="text-2xl font-black text-white">{item.name}</h3>
-                      <p className="text-base font-semibold text-slate-300 mt-1">{item.tagline}</p>
-                      <p className="text-sm text-slate-400 mt-2 leading-relaxed">{item.desc}</p>
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="bg-white/5 rounded p-4">
-                        <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">Primary Outcome</p>
-                        <p className="text-sm font-bold text-white">{item.highlight}</p>
-                      </div>
-                      <div className="bg-white/5 rounded p-4">
-                        <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">Architecture Benefit</p>
-                        <p className="text-sm font-bold text-white">{item.highlightSub}</p>
-                      </div>
-                    </div>
-
-                    <div className="h-44 bg-white/5 rounded flex items-center justify-center text-slate-500">
-                      <div className="text-center space-y-2">
-                        <AppIcon name="globe" size={32} className="mx-auto opacity-30" />
-                        <p className="text-sm">{item.name} — App Preview</p>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
-          </div>
-        </div>
-      </section>
 
       {/* ── AI / SMART APPS ────────────────────────────────────── */}
       <section id="smart-apps" className="py-20 bg-white border-t border-slate-100">
@@ -848,60 +778,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── LATEST INSIGHTS ────────────────────────────────────── */}
-      <section id="insights" className="py-20 bg-white border-t border-slate-100">
-        <div className="mx-auto max-w-7xl px-6">
 
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12 gap-4">
-            <div>
-              <h2 className="text-2xl font-extrabold text-slate-900">Latest Insights</h2>
-              <p className="text-slate-400 text-sm mt-1">Learn about technology and its impact on modern businesses.</p>
-            </div>
-            <a href="#" className="text-sm font-bold text-nyt-green hover:underline shrink-0">Browse All Blogs →</a>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-
-            {/* Big card */}
-            <div className="lg:col-span-7 rounded-lg overflow-hidden transition-colors">
-              <div className="h-56 bg-gradient-to-br from-nyt-green/10 to-nyt-lime/10 flex items-center justify-center">
-                <AppIcon name="code" size={64} color="primary" className="opacity-50" />
-              </div>
-              <div className="p-7 space-y-2">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-nyt-green">Guide</p>
-                <h3 className="font-extrabold text-slate-900 text-xl leading-snug">Step-by-Step Guide to Hire Node.js Developers: Skills, Cost & Platforms</h3>
-                <p className="text-sm text-slate-400 leading-relaxed">Everything about evaluating backend capabilities and budgeting for high-scale Node.js deployments.</p>
-              </div>
-            </div>
-
-            {/* Side cards */}
-            <div className="lg:col-span-5 space-y-4">
-              {[
-                { tag: "Sector Report", tagColor: "text-nyt-green", title: "Artificial Intelligence in the Transportation Industry", desc: "Driving the next era of mobility using predictive fleet tracking algorithms.", icon: "globe" as const },
-                { tag: "Risk Assessment", tagColor: "text-purple-600", title: "Fraud Detection in Telecom: Prevention Strategies", desc: "Implementing real-time threat intelligence and verification layers for networks.", icon: "shield" as const },
-                { tag: "Engineering", tagColor: "text-amber-600", title: "React Native vs Flutter: The 2024 Developer's Guide", desc: "Choosing the right cross-platform framework for your next mobile product.", icon: "code" as const },
-              ].map((c) => (
-                <div key={c.title} className="rounded-lg p-5 flex gap-4 transition-colors">
-                  <div className="h-14 w-14 shrink-0 bg-nyt-green/10 rounded flex items-center justify-center">
-                    <AppIcon name={c.icon} size={24} color="primary" />
-                  </div>
-                  <div>
-                    <p className={`text-[9px] font-bold uppercase tracking-wider ${c.tagColor} mb-1`}>{c.tag}</p>
-                    <h4 className="font-bold text-slate-900 text-sm leading-snug">{c.title}</h4>
-                    <p className="text-xs text-slate-400 mt-1 line-clamp-2">{c.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-          </div>
-
-          <div className="text-center mt-10">
-            <AppButton variant="outline" size="medium" href="#">Browse All Insights</AppButton>
-          </div>
-
-        </div>
-      </section>
 
       {/* ── CONTACT ────────────────────────────────────────────── */}
       <section id="contact" className="py-16 bg-white relative overflow-hidden">

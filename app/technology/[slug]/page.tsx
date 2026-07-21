@@ -45,7 +45,7 @@ export default async function TechnologyPage({
           <svg className="absolute inset-0 w-full h-full opacity-[0.03]" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1"/>
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1" />
               </pattern>
             </defs>
             <rect width="100%" height="100%" fill="url(#grid)" />
@@ -206,7 +206,7 @@ export default async function TechnologyPage({
                   <li key={point} className="flex items-start gap-3 text-sm text-slate-600">
                     <span className="mt-1 w-4 h-4 rounded-full bg-nyt-green/15 flex items-center justify-center shrink-0">
                       <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
-                        <path d="M1 4L3 6L7 2" stroke="#6cb790" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M1 4L3 6L7 2" stroke="#6cb790" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </span>
                     {point}

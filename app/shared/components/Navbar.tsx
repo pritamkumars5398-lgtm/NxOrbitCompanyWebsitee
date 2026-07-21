@@ -3,7 +3,13 @@ import { useState, useRef, useEffect } from "react";
 import { AppButton } from "./AppButton";
 import { AppIcon } from "./AppIcon";
 
-const NAV_ITEMS = [
+type NavItem = {
+  label: string;
+  href?: string;
+  items?: { label: string; href: string }[];
+};
+
+const NAV_ITEMS: NavItem[] = [
   {
     label: "Services",
     items: [
@@ -49,13 +55,11 @@ const NAV_ITEMS = [
     label: "Company",
     items: [
       { label: "About NXTorbit", href: "/#why-us" },
-      { label: "Blog & Insights", href: "/blog" },
       { label: "Career",          href: "/career" },
       { label: "Contact Us",      href: "/contact" },
       { label: "Our Offices",     href: "/contact#offices" },
     ],
   },
-  { label: "Blog", href: "/blog" },
 ];
 
 export default function Navbar() {

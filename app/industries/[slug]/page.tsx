@@ -57,11 +57,11 @@ export default async function IndustryPage({
             <p className="text-lg text-slate-500 leading-relaxed mb-8 max-w-2xl">
               {data.description}
             </p>
-            <div className="flex flex-wrap gap-3">
-              <AppButton variant="primary" size="large" href="/contact">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              <AppButton variant="primary" size="large" href="/contact" className="w-full sm:w-[260px]">
                 {data.ctaText}
               </AppButton>
-              <AppButton variant="outline" size="large" href="/portfolio">
+              <AppButton variant="outline" size="large" href="/portfolio" className="w-full sm:w-[260px]">
                 See Our Work
               </AppButton>
             </div>
