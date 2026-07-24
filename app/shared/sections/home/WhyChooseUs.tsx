@@ -176,14 +176,20 @@ export function WhyChooseUs() {
                 </div>
               </motion.div>
 
-              {/* Local Embedded Project Asset (100% Saved inside Project Files) */}
+              {/* Local Project Asset Image /assets/why_choose_us_woman.jpg */}
               <div className="relative z-10 w-[300px] sm:w-[360px] ml-auto">
                 <img
-                  src={whyChooseUsWomanSvgData}
+                  src="/assets/why_choose_us_woman.jpg"
                   alt="Young businesswoman smiling warmly"
                   className="w-full h-auto object-cover rounded-3xl transition-transform duration-700 hover:scale-[1.02] shadow-xl"
+                  onError={(e) => {
+                    // Fallback cleanly to high-res online source if local file is missing
+                    e.currentTarget.src = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop";
+                  }}
                 />
               </div>
+
+
 
 
 
