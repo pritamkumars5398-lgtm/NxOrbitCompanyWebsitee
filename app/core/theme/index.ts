@@ -1,16 +1,16 @@
 export const Colors = {
-  primary: "#6cb790", // NYTorbit Green
-  secondary: "#a5d088", // NYTorbit Lime
+  primary: "#00BBA9", // NXTorbit Teal
+  secondary: "#3CCFC7", // NXTorbit Aqua
   success: "#22C55E",
   warning: "#F59E0B",
   danger: "#EF4444",
 
-  textPrimary: "#04101d", // Dark charcoal
-  textSecondary: "#374047", // Slate
+  textPrimary: "#0A2E4D", // Navy
+  textSecondary: "#006B7D", // Ocean
 
-  background: "#f7f9fc", // Light bg
+  background: "#F3F7F9", // Light bg
   surface: "#ffffff",
-  darkBackground: "#04101d",
+  darkBackground: "#0A2E4D",
 };
 
 export const Typography = {

@@ -9,7 +9,7 @@ NXTorbit company website — software agency based in Noida, India.
 
 **Why:** Production website for NXTorbit (formerly Techugo), a mobile/web/AI development company.
 
-**How to apply:** Always preserve the green theme (`#6cb790` / `nyt-green`), keep App Router conventions, and follow Tailwind v4 class naming.
+**How to apply:** Brand palette was migrated from the old green (`#6cb790`) to a navy/teal palette derived from the logo: navy `#0A2E4D`, ocean `#006B7D`, teal `#00BBA9`, aqua `#3CCFC7`, ice `#F3F7F9` (see [[ui-redesign-2026-07]]). The `nyt-green`/`nyt-lime`/`nyt-dark`/`nyt-charcoal` Tailwind aliases in `app/globals.css` and `app/core/theme/index.ts` now map to this new palette — don't reintroduce raw `#6cb790`/`#a5d088` hex codes, use the aliases or new hex values instead. Keep App Router conventions and follow Tailwind v4 class naming.
 
 ## Stack
 - Next.js 16.2.6 with App Router (async params — `params: Promise<{ slug: string }>`)

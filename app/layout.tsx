@@ -2,28 +2,42 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-// Load Inter font
+import { CursorGlow } from "@/app/shared/backdrop/CursorGlow";
+import { Footer } from "@/app/shared/layout/Footer";
+import { Header } from "@/app/shared/layout/Header";
+import { ScrollProgress } from "@/app/shared/layout/ScrollProgress";
+import { SmoothScroll } from "@/app/shared/layout/SmoothScroll";
+
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
   variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
-  title: "NXTorbit – Mobile App & Software Development Company",
-  description: "NXTorbit delivers enterprise-grade mobile apps, web platforms, AI solutions, and cloud engineering for global businesses.",
+  title: "NXTorbit — Product Engineering for Mobile, Web, AI & Cloud",
+  description:
+    "NXTorbit designs and engineers mobile apps, web platforms, AI systems, and cloud infrastructure.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col bg-slate-50 text-slate-900 font-sans">
-        {children}
+    <html lang="en" className={`${inter.variable} antialiased`}>
+      <body className="flex min-h-dvh flex-col bg-surface font-sans text-ink-800">
+        <a href="#main" className="skip-link">
+          Skip to content
+        </a>
+
+        <SmoothScroll>
+          <ScrollProgress />
+          <CursorGlow />
+          <Header />
+          <main id="main" className="flex-1">
+            {children}
+          </main>
+          <Footer />
+        </SmoothScroll>
       </body>
     </html>
   );

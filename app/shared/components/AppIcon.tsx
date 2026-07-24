@@ -23,7 +23,13 @@ interface AppIconProps {
     | "server"
     | "globe"
     | "database"
-    | "shield";
+    | "shield"
+    | "clock"
+    | "building"
+    | "cash"
+    | "book"
+    | "heart"
+    | "target";
   size?: number | string;
   color?: "primary" | "secondary" | "success" | "danger" | "textPrimary" | "textSecondary" | "white" | "inherit";
   className?: string;
@@ -398,6 +404,106 @@ export const AppIcon: React.FC<AppIconProps> = ({
             strokeLinejoin="round"
             d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
           />
+        </svg>
+      );
+    case "clock":
+      return (
+        <svg
+          style={iconStyles}
+          className={className}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke={fillOrStrokeColor}
+          strokeWidth={2}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+      );
+    case "building":
+      return (
+        <svg
+          style={iconStyles}
+          className={className}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke={fillOrStrokeColor}
+          strokeWidth={2}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M3 21h18M5 21V5a1 1 0 011-1h5a1 1 0 011 1v16m6 0v-9a1 1 0 00-1-1h-4M9 7h1m-1 4h1m-1 4h1m4 3v-3h3v3"
+          />
+        </svg>
+      );
+    case "cash":
+      return (
+        <svg
+          style={iconStyles}
+          className={className}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke={fillOrStrokeColor}
+          strokeWidth={2}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M12 8c-1.66 0-3 .9-3 2s1.34 2 3 2 3 .9 3 2-1.34 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V6.5m0 9V17m0-9c-1.11 0-2.08.402-2.599 1M4 6h16v12H4V6z"
+          />
+        </svg>
+      );
+    case "book":
+      return (
+        <svg
+          style={iconStyles}
+          className={className}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke={fillOrStrokeColor}
+          strokeWidth={2}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
+          />
+        </svg>
+      );
+    case "heart":
+      return (
+        <svg
+          style={iconStyles}
+          className={className}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke={fillOrStrokeColor}
+          strokeWidth={2}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+          />
+        </svg>
+      );
+    case "target":
+      return (
+        <svg
+          style={iconStyles}
+          className={className}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke={fillOrStrokeColor}
+          strokeWidth={2}
+        >
+          <circle cx="12" cy="12" r="9" />
+          <circle cx="12" cy="12" r="5" />
+          <circle cx="12" cy="12" r="1" fill={fillOrStrokeColor} />
         </svg>
       );
     default:

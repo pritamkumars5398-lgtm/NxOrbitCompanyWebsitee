@@ -63,29 +63,29 @@ export default function Footer() {
           <div className="lg:col-span-2 space-y-4">
             <h4 className="text-xs font-black uppercase tracking-widest text-white border-b border-white/10 pb-3">Contact Us</h4>
             <div className="space-y-4 text-xs text-slate-400">
-              <div className="flex gap-2">
-                <span className="shrink-0">🏢</span>
+              <div className="flex gap-2.5">
+                <AppIcon name="building" size={16} className="shrink-0 mt-0.5 text-nyt-lime" />
                 <div>
                   <p className="font-bold text-white text-sm mb-0.5">India HQ</p>
                   <p>Office No. 903, Kamdhenu 23 west, TTC Industrial area, MIDC Industrial area, Pawne, Navi Mumbai, 400705.</p>
                 </div>
               </div>
-              <div className="flex gap-2">
-                <span className="shrink-0">📞</span>
+              <div className="flex gap-2.5">
+                <AppIcon name="phone" size={16} className="shrink-0 mt-0.5 text-nyt-lime" />
                 <div>
                   <p className="font-bold text-white text-sm mb-0.5">Phone</p>
                   <p>+91 9763804442</p>
                 </div>
               </div>
-              <div className="flex gap-2">
-                <span className="shrink-0">✉️</span>
+              <div className="flex gap-2.5">
+                <AppIcon name="mail" size={16} className="shrink-0 mt-0.5 text-nyt-lime" />
                 <div>
                   <p className="font-bold text-white text-sm mb-0.5">Email</p>
                   <p>info@itnextsolutions.com</p>
                 </div>
               </div>
-              <div className="flex gap-2">
-                <span className="shrink-0">🕒</span>
+              <div className="flex gap-2.5">
+                <AppIcon name="clock" size={16} className="shrink-0 mt-0.5 text-nyt-lime" />
                 <div>
                   <p className="font-bold text-white text-sm mb-0.5">Business Hours</p>
                   <p>Mon - Fri: 10:30 AM - 7:30 PM</p>
