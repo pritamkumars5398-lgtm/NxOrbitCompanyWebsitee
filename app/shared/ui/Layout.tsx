@@ -139,7 +139,7 @@ export function SectionHeading({
         className,
       )}
     >
-      <div className={cn("flex flex-col gap-4", align === "center" ? "max-w-2xl" : "max-w-2xl")}>
+      <div className={cn("flex flex-col gap-4", align === "center" ? "items-center max-w-2xl" : "max-w-2xl")}>
         {eyebrow && <Eyebrow tone={tone === "light" ? "light" : "brand"}>{eyebrow}</Eyebrow>}
         <h2
           className={cn(

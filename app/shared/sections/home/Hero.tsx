@@ -20,11 +20,13 @@ import { HeroVisual } from "./HeroVisual";
  */
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden pt-20 pb-16 sm:pt-24 lg:pt-28 lg:pb-20">
-
-      <Aurora />
-      <Particles className="opacity-70" density={34} />
-      <Grain />
+    <section className="relative isolate overflow-hidden bg-slate-50/40 pt-20 pb-16 sm:pt-24 lg:pt-28 lg:pb-20">
+      {/* ── Left Side Dotted Grid Accent ── */}
+      <div className="absolute left-8 top-28 -z-10 grid grid-cols-5 gap-2.5 opacity-20">
+        {Array.from({ length: 25 }).map((_, i) => (
+          <span key={i} className="size-1.5 rounded-full bg-slate-900" />
+        ))}
+      </div>
 
       <Container>
         <div className="grid items-center gap-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-20">
@@ -42,7 +44,7 @@ export function Hero() {
               as="h1"
               text={HERO.headline}
               gradientFrom={HERO.gradientFrom}
-              className="text-display-lg sm:text-display-xl"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-[1.15] tracking-tight"
             />
 
             <motion.p
@@ -58,12 +60,20 @@ export function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: EASE.outExpo, delay: 0.58 }}
-              className="flex flex-wrap items-center gap-3"
+              className="flex flex-wrap items-center gap-4"
             >
-              <Button href={HERO.primaryCta.href} size="lg" variant="primary" withArrow magnetic>
+              <Button 
+                href={HERO.primaryCta.href} 
+                size="lg" 
+                className="rounded-full bg-brand-950 text-white hover:bg-brand-900 px-8 py-4 font-bold shadow-lg transition-all"
+              >
                 {HERO.primaryCta.label}
               </Button>
-              <Button href={HERO.secondaryCta.href} size="lg" variant="outline">
+              <Button 
+                href={HERO.secondaryCta.href} 
+                size="lg"
+                className="rounded-full bg-teal-500 text-white hover:bg-teal-600 px-8 py-4 font-bold shadow-lg transition-all"
+              >
                 {HERO.secondaryCta.label}
               </Button>
             </motion.div>

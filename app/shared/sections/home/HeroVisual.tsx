@@ -7,43 +7,55 @@ import { RealPhoneImage } from "@/app/shared/ui/RealPhoneImage";
 
 export function HeroVisual() {
   return (
-    <div className="relative flex items-center justify-center">
-      {/* Ambient background radial glow */}
-      <div className="pointer-events-none absolute -right-6 top-1/2 -z-10 h-[34rem] w-[28rem] -translate-y-1/2 sm:h-[40rem] sm:w-[34rem]">
-        <div className="absolute inset-0 rounded-[40%_60%_70%_30%/50%_60%_40%_50%] bg-gradient-to-tr from-[#003840] via-[#00808C] to-[#00A896] opacity-60 blur-3xl" />
+    <div className="relative flex items-center justify-center p-4">
+      {/* ── Dotted Grid Accents ── */}
+      <div className="absolute -left-6 -top-12 -z-10 grid grid-cols-5 gap-2.5 opacity-30">
+        {Array.from({ length: 25 }).map((_, i) => (
+          <span key={i} className="size-1.5 rounded-full bg-brand-800" />
+        ))}
       </div>
 
+      {/* ── Background Curved Wave Shape ── */}
+      <div 
+        aria-hidden
+        className="pointer-events-none absolute -right-20 -top-24 -z-10 h-[34rem] w-[34rem] rounded-full bg-gradient-to-br from-brand-800 via-brand-600 to-teal-500 opacity-95 shadow-2xl transition-all duration-700" 
+        style={{ borderRadius: "40% 60% 30% 70% / 60% 40% 60% 40%" }}
+      />
+      <div 
+        aria-hidden
+        className="pointer-events-none absolute -right-12 -top-16 -z-10 h-[30rem] w-[30rem] rounded-full bg-teal-400/20 blur-2xl" 
+      />
+
+      {/* ── Main Hero Image with Curved Shield Mask & White Border ── */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.96, y: 20 }}
+        initial={{ opacity: 0, scale: 0.94, y: 30 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: EASE.outExpo }}
-        className="relative overflow-hidden rounded-[2rem] border-2 border-white/10 bg-slate-950/20 p-2 shadow-[0_30px_70px_rgba(0,0,0,0.5)] backdrop-blur-md max-w-full lg:max-w-lg"
+        transition={{ duration: 0.85, ease: EASE.outExpo }}
+        className="relative z-10 overflow-hidden rounded-tl-[10rem] rounded-br-[10rem] rounded-tr-[3rem] rounded-bl-[3rem] border-[12px] border-white bg-slate-100 shadow-[0_25px_60px_rgba(0,0,0,0.18)] max-w-full lg:max-w-md aspect-[4/3]"
       >
-        <div className="relative overflow-hidden rounded-[1.6rem]">
-          <img
-            src="/assets/consultancy-hero.png"
-            alt="NXTorbit Consultancy"
-            className="w-full h-auto object-cover max-h-[460px] aspect-[4/3] rounded-[1.5rem]"
-          />
-          {/* Subtle gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none" />
-        </div>
+        <img
+          src="/assets/consulting-team.png"
+          alt="NXTorbit Consultancy Team"
+          className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+        />
+        {/* Soft lighting overlay */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-brand-900/10 via-transparent to-white/10 pointer-events-none" />
       </motion.div>
 
       {/* Floating proof chips */}
       <FloatCard
-        className="absolute -top-4 -right-2 sm:-right-4 z-20"
-        delay={0.6}
-        drift={-8}
+        className="absolute -top-6 right-0 z-20"
+        delay={0.65}
+        drift={-6}
         icon={<CircleCheck aria-hidden className="size-4 text-teal-500" strokeWidth={2} />}
         title="Client Satisfaction"
         detail="98% Positive Rating"
       />
 
       <FloatCard
-        className="absolute -bottom-4 -left-2 sm:-left-4 z-20"
-        delay={0.8}
-        drift={10}
+        className="absolute -bottom-6 left-0 z-20"
+        delay={0.85}
+        drift={8}
         icon={<Sparkles aria-hidden className="size-4 text-teal-500" strokeWidth={2} />}
         title="Consulting Experts"
         detail="250+ Global Engineers"

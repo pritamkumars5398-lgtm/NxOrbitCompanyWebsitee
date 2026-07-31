@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
 import "./globals.css";
 
 import { CursorGlow } from "@/app/shared/backdrop/CursorGlow";
@@ -8,12 +8,10 @@ import { Header } from "@/app/shared/layout/Header";
 import { ScrollProgress } from "@/app/shared/layout/ScrollProgress";
 import { SmoothScroll } from "@/app/shared/layout/SmoothScroll";
 
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-inter",
-});
+// Using system fonts fallback to avoid Google Fonts connection error during offline builds
+const inter = {
+  variable: "",
+};
 
 export const metadata: Metadata = {
   title: "NXTorbit — Product Engineering for Mobile, Web, AI & Cloud",
