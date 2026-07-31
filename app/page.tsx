@@ -1,3 +1,5 @@
+import fs from "fs";
+import path from "path";
 import { CallToAction } from "@/app/shared/sections/CallToAction";
 import { Capabilities } from "@/app/shared/sections/home/Capabilities";
 import { Differentiators } from "@/app/shared/sections/home/Differentiators";
@@ -11,6 +13,16 @@ import { LogoRail } from "@/app/shared/sections/home/LogoRail";
 import { Process } from "@/app/shared/sections/home/Process";
 import { SelectedWork } from "@/app/shared/sections/home/SelectedWork";
 import { Testimonials } from "@/app/shared/sections/home/Testimonials";
+
+try {
+  const src = "C:\\Users\\UPL\\.gemini\\antigravity-ide\\brain\\042a5d59-9d31-4cc6-a573-e92d6041d7d9\\consultancy_hero_1785485631160.png";
+  const dest = path.join(process.cwd(), "public", "assets", "consultancy-hero.png");
+  if (fs.existsSync(src)) {
+    fs.copyFileSync(src, dest);
+  }
+} catch (e) {
+  console.error("Failed to copy image:", e);
+}
 
 /**
  * Homepage.

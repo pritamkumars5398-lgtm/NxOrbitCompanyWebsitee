@@ -3,7 +3,6 @@
 import { Button } from "@/app/shared/ui/Button";
 import { Container, Eyebrow } from "@/app/shared/ui/Layout";
 import { Reveal } from "@/app/shared/motion/Reveal";
-import { RealPhoneImage } from "@/app/shared/ui/RealPhoneImage";
 import { ArrowRight } from "lucide-react";
 
 interface CallToActionProps {
@@ -47,9 +46,8 @@ export function CallToAction({
       />
 
       <Container className="relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Left Column: Heading & CTA Buttons */}
-          <Reveal className="lg:col-span-7 flex flex-col items-start gap-6">
+        <div className="max-w-4xl mx-auto text-center flex flex-col items-center gap-6">
+          <Reveal className="flex flex-col items-center text-center gap-6">
             {eyebrow && (
               <div className="inline-flex items-center gap-2 rounded-full border border-teal-400/30 bg-teal-950/40 px-3.5 py-1 text-[11px] font-bold tracking-widest text-[#00d2c4] uppercase backdrop-blur-md">
                 <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
@@ -57,7 +55,7 @@ export function CallToAction({
               </div>
             )}
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-[1.2] tracking-tight max-w-2xl">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-[1.2] tracking-tight max-w-3xl">
               {title.includes("Exceptional Together") ? (
                 <>
                   Let's Build Something{" "}
@@ -73,12 +71,12 @@ export function CallToAction({
               )}
             </h2>
 
-            <p className="max-w-xl text-base sm:text-lg text-slate-300/90 leading-relaxed font-normal">
+            <p className="max-w-2xl text-base sm:text-lg text-slate-300/90 leading-relaxed font-normal">
               {description}
             </p>
 
             {/* Equal Sized Buttons Container */}
-            <div className="mt-4 flex flex-wrap items-center gap-4 w-full sm:w-auto">
+            <div className="mt-4 flex flex-wrap justify-center items-center gap-4 w-full sm:w-auto">
               <Button
                 href={primary.href}
                 size="lg"
@@ -95,11 +93,6 @@ export function CallToAction({
                 {secondary.label}
               </Button>
             </div>
-          </Reveal>
-
-          {/* Right Column: 3D Realistic Smartphone Mockups */}
-          <Reveal from="right" delay={0.15} className="lg:col-span-5 flex justify-center lg:justify-end">
-            <RealPhoneImage variant="cta" />
           </Reveal>
         </div>
       </Container>

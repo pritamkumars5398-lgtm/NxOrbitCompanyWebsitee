@@ -8,8 +8,27 @@ import { RealPhoneImage } from "@/app/shared/ui/RealPhoneImage";
 export function HeroVisual() {
   return (
     <div className="relative flex items-center justify-center">
-      {/* 3D Phone Mockups Visual with Radial Glow Circle */}
-      <RealPhoneImage variant="hero" />
+      {/* Ambient background radial glow */}
+      <div className="pointer-events-none absolute -right-6 top-1/2 -z-10 h-[34rem] w-[28rem] -translate-y-1/2 sm:h-[40rem] sm:w-[34rem]">
+        <div className="absolute inset-0 rounded-[40%_60%_70%_30%/50%_60%_40%_50%] bg-gradient-to-tr from-[#003840] via-[#00808C] to-[#00A896] opacity-60 blur-3xl" />
+      </div>
+
+      <motion.div
+        initial={{ opacity: 0, scale: 0.96, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: EASE.outExpo }}
+        className="relative overflow-hidden rounded-[2rem] border-2 border-white/10 bg-slate-950/20 p-2 shadow-[0_30px_70px_rgba(0,0,0,0.5)] backdrop-blur-md max-w-full lg:max-w-lg"
+      >
+        <div className="relative overflow-hidden rounded-[1.6rem]">
+          <img
+            src="/assets/consultancy-hero.png"
+            alt="NXTorbit Consultancy"
+            className="w-full h-auto object-cover max-h-[460px] aspect-[4/3] rounded-[1.5rem]"
+          />
+          {/* Subtle gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none" />
+        </div>
+      </motion.div>
 
       {/* Floating proof chips */}
       <FloatCard
@@ -26,8 +45,8 @@ export function HeroVisual() {
         delay={0.8}
         drift={10}
         icon={<Sparkles aria-hidden className="size-4 text-teal-500" strokeWidth={2} />}
-        title="Apps Delivered"
-        detail="250+ High Performance"
+        title="Consulting Experts"
+        detail="250+ Global Engineers"
       />
     </div>
   );
