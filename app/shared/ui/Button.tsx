@@ -6,7 +6,7 @@ import { ArrowRight, LoaderCircle } from "lucide-react";
 import { cn } from "@/app/core/lib/cn";
 import { Magnetic } from "@/app/shared/motion/Magnetic";
 
-type Variant = "primary" | "accent" | "outline" | "ghost" | "light" | "outline-light";
+type Variant = "primary" | "accent" | "outline" | "ghost" | "light" | "outline-light" | "orange";
 type Size = "sm" | "md" | "lg";
 
 const VARIANTS: Record<Variant, string> = {
@@ -21,6 +21,8 @@ const VARIANTS: Record<Variant, string> = {
     "bg-white text-brand-800 shadow-sm hover:bg-brand-50 hover:shadow-[0_10px_30px_-10px_rgb(255_255_255/0.4)]",
   "outline-light":
     "border border-white/25 text-white hover:border-brand-200/70 hover:bg-white/5",
+  orange:
+    "bg-orange-500 text-white shadow-sm hover:bg-orange-400 hover:shadow-[0_10px_30px_-10px_rgb(249_115_22/0.55)]",
 };
 
 const SIZES: Record<Size, string> = {

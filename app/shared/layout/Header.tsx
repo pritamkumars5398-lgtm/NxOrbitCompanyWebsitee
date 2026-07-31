@@ -85,7 +85,7 @@ export function Header() {
         <div className="mx-auto flex h-18 w-full max-w-7xl items-center justify-between gap-6 px-6 sm:px-8 lg:px-10">
           <Link href="/" className="group relative z-10 flex shrink-0 items-center" aria-label="NXTorbit — home">
             <Logo
-              height={38}
+              height={53}
               priority
               className="transition-transform duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
             />
@@ -128,7 +128,7 @@ export function Header() {
           </nav>
 
           <div className="hidden items-center gap-5 md:flex">
-            <Button href="/contact" size="sm" variant="primary" withArrow magnetic>
+            <Button href="/contact" size="sm" variant="orange" withArrow magnetic>
               Book a Consultation
             </Button>
           </div>

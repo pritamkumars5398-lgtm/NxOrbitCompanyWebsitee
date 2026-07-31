@@ -24,24 +24,43 @@ export function Logo({
   const width = Math.round(CROP.width * scale);
 
   return (
-    <span
-      className={cn("relative block shrink-0 overflow-hidden", className)}
-      style={{ width, height }}
-    >
-      <Image
-        src="/nxtorbit-logo.png"
-        alt="NXTorbit"
-        width={SOURCE.width}
-        height={SOURCE.height}
-        priority={priority}
-        className="absolute max-w-none"
-        style={{
-          width: SOURCE.width * scale,
-          height: SOURCE.height * scale,
-          left: -CROP.x * scale,
-          top: -CROP.y * scale,
-        }}
-      />
-    </span>
+    <>
+      <svg width="0" height="0" style={{ position: "absolute", width: 0, height: 0 }} aria-hidden="true">
+        <defs>
+          <filter id="remove-white" colorInterpolationFilters="sRGB">
+            <feColorMatrix
+              type="matrix"
+              values="
+                1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                -2 -2 -2 5 -0.1
+              "
+            />
+          </filter>
+        </defs>
+      </svg>
+
+      <span
+        className={cn("relative block shrink-0 overflow-hidden", className)}
+        style={{ width, height }}
+      >
+        <Image
+          src="/nxtorbit-logo.png"
+          alt="NXTorbit"
+          width={SOURCE.width}
+          height={SOURCE.height}
+          priority={priority}
+          className="absolute max-w-none"
+          style={{
+            width: SOURCE.width * scale,
+            height: SOURCE.height * scale,
+            left: -CROP.x * scale,
+            top: -CROP.y * scale,
+            filter: "url(#remove-white)",
+          }}
+        />
+      </span>
+    </>
   );
 }
