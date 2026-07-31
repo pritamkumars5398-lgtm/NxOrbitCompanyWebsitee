@@ -13,13 +13,9 @@ import { TextLink } from "@/app/shared/ui/Button";
 /**
  * Capability grid.
  *
- * Deliberately asymmetric: the lead capability occupies a two-row cell on the
- * left and the rest tile beside it. An even 3×2 grid of identical cards is the
- * default every template reaches for — this reads as an edited page instead.
+ * A balanced grid with identical card styling for all items.
  */
 export function Capabilities() {
-  const [lead, ...rest] = CAPABILITIES;
-
   return (
     <Section tone="white" spacing="lg" id="services">
       <DotField className="opacity-50" />
@@ -33,85 +29,49 @@ export function Capabilities() {
           className="mb-14"
         />
 
-        <Stagger stagger={0.09} className="grid gap-4 lg:grid-cols-3 lg:grid-rows-2">
-          {/* Lead card — spans both rows */}
-          <StaggerItem className="lg:row-span-2" from="up" scale={0.97}>
-            <Link
-              href={lead.href}
-              className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl bg-brand-900 p-8 transition-shadow duration-500 hover:shadow-xl"
-            >
-              <div
-                aria-hidden
-                className="absolute -top-24 -right-16 size-64 rounded-full bg-brand-400/20 blur-3xl transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-125"
-              />
-              <div
-                aria-hidden
-                className="backdrop-grid-dark pointer-events-none absolute inset-0 opacity-40"
-              />
-
-              <div className="relative flex flex-col gap-5">
-                <span className="inline-flex size-12 items-center justify-center rounded-xl bg-white/10 text-brand-200 transition-colors duration-300 group-hover:bg-white/16">
-                  <NavIcon name={lead.icon} className="size-5.5" />
-                </span>
-                <h3 className="text-display-sm text-white">{lead.title}</h3>
-                <p className="max-w-sm text-sm leading-relaxed text-ink-300">{lead.description}</p>
-              </div>
-
-              <div className="relative mt-10 flex flex-col gap-6">
-                <ul className="flex flex-wrap gap-2">
-                  {lead.points.map((point) => (
-                    <li
-                      key={point}
-                      className="rounded-full border border-white/12 px-3 py-1.5 text-xs font-medium text-ink-300"
-                    >
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-                <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-200">
-                  Explore mobile engineering
-                  <ArrowUpRight
-                    aria-hidden
-                    className="size-4 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  />
-                </span>
-              </div>
-            </Link>
-          </StaggerItem>
-
-          {rest.map((item, index) => (
+        <Stagger stagger={0.09} className="grid gap-6 sm:grid-cols-2">
+          {CAPABILITIES.map((item) => (
             <StaggerItem
               key={item.href}
               from="up"
               scale={0.97}
-              className={cn(index === 0 && "lg:col-span-2")}
             >
               <Link
                 href={item.href}
-                className="spotlight hover-lift group relative flex h-full flex-col gap-4 overflow-hidden rounded-2xl border border-hairline bg-surface p-7"
+                className="group relative flex h-full flex-col gap-5 overflow-hidden rounded-2xl border border-hairline/80 bg-white/60 p-8 backdrop-blur-md shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-teal-300 hover:shadow-lg hover:shadow-teal-500/10"
               >
-                <div className="flex items-start justify-between gap-5">
-                  <span className="inline-flex size-11 items-center justify-center rounded-xl bg-brand-50 text-brand-500 transition-colors duration-300 group-hover:bg-brand-100">
-                    <NavIcon name={item.icon} className="size-5" />
+                {/* Decorative background glow on hover */}
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute -right-20 -top-20 -z-10 size-40 rounded-full bg-[radial-gradient(circle,rgba(20,184,166,0.12)_0%,transparent_70%)] opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
+                />
+
+                <div className="flex items-start justify-between">
+                  <span className="inline-flex size-12 items-center justify-center rounded-xl bg-linear-to-br from-brand-500 to-teal-400 text-white shadow-md shadow-brand-500/20 transition-transform duration-300 group-hover:scale-110">
+                    <NavIcon name={item.icon} className="size-5.5" />
                   </span>
-                  <ArrowUpRight
-                    aria-hidden
-                    className="size-4 text-ink-300 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-brand-500"
-                  />
+                  <div className="flex size-8 items-center justify-center rounded-full bg-slate-50 text-ink-400 transition-all duration-300 group-hover:bg-teal-50 group-hover:text-teal-600">
+                    <ArrowUpRight
+                      aria-hidden
+                      className="size-4 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    />
+                  </div>
                 </div>
 
-                <div className="flex flex-col gap-2">
-                  <h3 className="text-base font-semibold text-ink-900">{item.title}</h3>
-                  <p className="max-w-md text-sm leading-relaxed text-ink-600">
+                <div className="flex flex-col gap-2.5">
+                  <h3 className="text-lg font-bold text-ink-900 transition-colors duration-200 group-hover:text-brand-600">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-ink-600">
                     {item.description}
                   </p>
                 </div>
 
-                <ul className="mt-auto flex flex-wrap gap-1.5 pt-2">
+                <ul className="mt-auto flex flex-wrap gap-2 pt-4">
                   {item.points.map((point) => (
                     <li
                       key={point}
-                      className="rounded-full bg-ink-100 px-2.5 py-1 text-[0.6875rem] font-medium text-ink-600"
+                      className="rounded-lg border border-hairline bg-slate-50/50 px-2.5 py-1 text-[0.725rem] font-semibold text-ink-500 transition-colors duration-300 group-hover:border-teal-100 group-hover:bg-teal-50/30 group-hover:text-teal-600"
                     >
                       {point}
                     </li>
