@@ -2,7 +2,6 @@ import { CallToAction } from "@/app/shared/sections/CallToAction";
 import { Capabilities } from "@/app/shared/sections/home/Capabilities";
 import { Differentiators } from "@/app/shared/sections/home/Differentiators";
 import { EnterpriseProficiency } from "@/app/shared/sections/home/EnterpriseProficiency";
-import { TheChallenge } from "@/app/shared/sections/home/TheChallenge";
 import { DevelopmentJourney } from "@/app/shared/sections/home/DevelopmentJourney";
 import { WhyChooseUs } from "@/app/shared/sections/home/WhyChooseUs";
 import { Faq } from "@/app/shared/sections/home/Faq";
@@ -26,7 +25,6 @@ export default function HomePage() {
       <Hero />
       <LogoRail />
       <EnterpriseProficiency />
-      <TheChallenge />
       <Capabilities />
       <Process />
       <DevelopmentJourney />

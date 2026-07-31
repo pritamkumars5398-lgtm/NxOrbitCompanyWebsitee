@@ -99,8 +99,30 @@ export const NAV_GROUPS: NavGroup[] = [
       cta: "Book an audit",
     },
   },
-  { label: "Technology", layout: "list", links: TECHNOLOGY_LINKS },
-  { label: "Industries", layout: "list", links: INDUSTRY_LINKS },
+  {
+    label: "Technology",
+    layout: "mega",
+    links: TECHNOLOGY_LINKS,
+    feature: {
+      title: "Explore our tech capabilities",
+      description:
+        "From React Native to cloud-native backends, we build on reliable and modern engineering standards.",
+      href: "/contact",
+      cta: "Talk to an engineer",
+    },
+  },
+  {
+    label: "Industries",
+    layout: "mega",
+    links: INDUSTRY_LINKS,
+    feature: {
+      title: "Tailored industry solutions",
+      description:
+        "HIPAA-compliant healthcare, secure fintech, and high-conversion e-commerce systems.",
+      href: "/portfolio",
+      cta: "Explore case studies",
+    },
+  },
   {
     label: "Company",
     layout: "mega",

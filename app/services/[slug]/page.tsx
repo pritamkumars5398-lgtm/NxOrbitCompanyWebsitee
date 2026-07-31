@@ -15,6 +15,7 @@ import { Marquee } from "@/app/shared/ui/Marquee";
 import { Stats } from "@/app/shared/ui/Stats";
 import { SubNav } from "@/app/shared/ui/SubNav";
 import { ServiceHeroImage } from "@/app/shared/ui/ServiceHeroImage";
+import { TheChallenge } from "@/app/shared/sections/home/TheChallenge";
 
 
 
@@ -118,6 +119,8 @@ export default async function ServicePage({
           </Reveal>
         </Container>
       </section>
+
+      {slug === "mobile" && <TheChallenge />}
 
       {/* ── Capabilities: numbered hairline rows, not cards ── */}
       <Section tone="muted" spacing="lg">

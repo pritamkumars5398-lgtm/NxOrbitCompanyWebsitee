@@ -69,99 +69,93 @@ export function Header() {
 
   return (
     <>
-    <header
-      /* Always frosted rather than transparent-until-scrolled. The supplied
-         logo PNG has a solid white background, so a transparent header shows
-         a white block (and a dark hamburger) over the navy heroes on
-         /technology and /case-studies. Scroll now only deepens the shadow. */
-      className={cn(
-        "fixed inset-x-0 top-0 z-50 border-b bg-white/85 backdrop-blur-xl transition-[box-shadow,border-color] duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]",
-        scrolled || openGroup
-          ? "border-hairline shadow-[0_1px_24px_-8px_rgb(6_19_31/0.12)]"
-          : "border-transparent",
-      )}
-      onMouseLeave={scheduleClose}
-    >
-      <div className="mx-auto flex h-18 w-full max-w-7xl items-center justify-between gap-6 px-6 sm:px-8 lg:px-10">
-        <Link href="/" className="group relative z-10 flex shrink-0 items-center" aria-label="NXTorbit — home">
-          <Logo
-            height={38}
-            priority
-            className="transition-transform duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
-          />
-        </Link>
+      <header
+        /* Always frosted rather than transparent-until-scrolled. The supplied
+           logo PNG has a solid white background, so a transparent header shows
+           a white block (and a dark hamburger) over the navy heroes on
+           /technology and /case-studies. Scroll now only deepens the shadow. */
+        className={cn(
+          "fixed inset-x-0 top-0 z-50 border-b bg-white/85 backdrop-blur-xl transition-[box-shadow,border-color] duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]",
+          scrolled || openGroup
+            ? "border-hairline shadow-[0_1px_24px_-8px_rgb(6_19_31/0.12)]"
+            : "border-transparent",
+        )}
+        onMouseLeave={scheduleClose}
+      >
+        <div className="mx-auto flex h-18 w-full max-w-7xl items-center justify-between gap-6 px-6 sm:px-8 lg:px-10">
+          <Link href="/" className="group relative z-10 flex shrink-0 items-center" aria-label="NXTorbit — home">
+            <Logo
+              height={38}
+              priority
+              className="transition-transform duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
+            />
+          </Link>
 
-        <nav aria-label="Primary" className="hidden items-center gap-0.5 lg:flex">
-          {NAV_GROUPS.map((group) => (
-            <div
-              key={group.label}
-              className="relative"
-              onMouseEnter={() => {
-                cancelClose();
-                setOpenGroup(group.label);
-              }}
-            >
-              <button
-                type="button"
-                aria-expanded={openGroup === group.label}
-                aria-haspopup="true"
-                onClick={() => setOpenGroup((current) => (current === group.label ? null : group.label))}
-                className={cn(
-                  "flex items-center gap-1.5 rounded-lg px-3.5 py-2 text-sm font-semibold transition-colors duration-200",
-                  openGroup === group.label
-                    ? "text-brand-500"
-                    : "text-ink-700 hover:text-brand-500",
-                )}
+          <nav aria-label="Primary" className="hidden items-center gap-0.5 lg:flex">
+            {NAV_GROUPS.map((group) => (
+              <div
+                key={group.label}
+                className="relative"
+                onMouseEnter={() => {
+                  cancelClose();
+                  setOpenGroup(group.label);
+                }}
+                onMouseLeave={scheduleClose}
               >
-                {group.label}
-                <ChevronDown
-                  aria-hidden
+                <button
+                  type="button"
+                  aria-expanded={openGroup === group.label}
+                  aria-haspopup="true"
+                  onClick={() => setOpenGroup((current) => (current === group.label ? null : group.label))}
                   className={cn(
-                    "size-3.5 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]",
-                    openGroup === group.label && "rotate-180",
+                    "flex items-center gap-1.5 rounded-lg px-3.5 py-2 text-sm font-semibold transition-colors duration-200",
+                    openGroup === group.label
+                      ? "text-brand-500"
+                      : "text-ink-700 hover:text-brand-500",
                   )}
-                />
-              </button>
-            </div>
-          ))}
-        </nav>
+                >
+                  {group.label}
+                  <ChevronDown
+                    aria-hidden
+                    className={cn(
+                      "size-3.5 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]",
+                      openGroup === group.label && "rotate-180",
+                    )}
+                  />
+                </button>
+              </div>
+            ))}
+          </nav>
 
-        <div className="hidden items-center gap-5 md:flex">
-          <a
-            href={CONTACT_DETAILS.phoneHref}
-            className="group flex items-center gap-2 text-sm font-semibold text-ink-600 transition-colors hover:text-brand-500"
+          <div className="hidden items-center gap-5 md:flex">
+            <Button href="/contact" size="sm" variant="primary" withArrow magnetic>
+              Book a Consultation
+            </Button>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => setMobileOpen(true)}
+            aria-label="Open menu"
+            className="-mr-2 inline-flex size-10 items-center justify-center rounded-xl text-ink-700 transition-colors hover:bg-ink-100 lg:hidden"
           >
-            <Phone aria-hidden className="size-3.5" strokeWidth={2} />
-            {CONTACT_DETAILS.phone}
-          </a>
-          <Button href="/contact" size="sm" variant="primary" withArrow magnetic>
-            Book a Consultation
-          </Button>
+            <Menu className="size-5" />
+          </button>
         </div>
 
-        <button
-          type="button"
-          onClick={() => setMobileOpen(true)}
-          aria-label="Open menu"
-          className="-mr-2 inline-flex size-10 items-center justify-center rounded-xl text-ink-700 transition-colors hover:bg-ink-100 lg:hidden"
-        >
-          <Menu className="size-5" />
-        </button>
-      </div>
+        <MegaPanel
+          group={NAV_GROUPS.find((group) => group.label === openGroup)}
+          onEnter={cancelClose}
+          onLeave={scheduleClose}
+          onNavigate={() => setOpenGroup(null)}
+        />
+      </header>
 
-      <MegaPanel
-        group={NAV_GROUPS.find((group) => group.label === openGroup)}
-        onEnter={cancelClose}
-        onLeave={scheduleClose}
-        onNavigate={() => setOpenGroup(null)}
-      />
-    </header>
-
-    {/* Deliberately a sibling of <header>, not a child. The header's
+      {/* Deliberately a sibling of <header>, not a child. The header's
         `backdrop-blur` establishes a containing block for fixed-position
         descendants, which would collapse this drawer's `inset-0` to the
         header's own 72px box instead of the viewport. */}
-    <MobileDrawer open={mobileOpen} onClose={() => setMobileOpen(false)} />
+      <MobileDrawer open={mobileOpen} onClose={() => setMobileOpen(false)} />
     </>
   );
 }
@@ -184,29 +178,26 @@ function MegaPanel({
       {group && (
         <motion.div
           key={group.label}
-          initial={{ opacity: 0, y: -8 }}
+          initial={{ opacity: 0, y: 4 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -8 }}
-          transition={{ duration: 0.28, ease: EASE.outExpo }}
+          exit={{ opacity: 0, y: 4 }}
+          transition={{ duration: 0.2, ease: EASE.outExpo }}
           onMouseEnter={onEnter}
           onMouseLeave={onLeave}
-          className="absolute inset-x-0 top-full hidden border-b border-hairline bg-white/95 backdrop-blur-xl lg:block"
+          className="absolute left-1/2 -translate-x-1/2 top-full mt-1.5 hidden w-[900px] rounded-2xl border border-hairline bg-white/95 p-4.5 backdrop-blur-xl shadow-xl shadow-[0_1px_24px_-8px_rgb(6_19_31/0.12)] lg:block"
         >
-          <div className="mx-auto w-full max-w-7xl px-6 py-8 sm:px-8 lg:px-10">
+          <div className="w-full">
             <div
               className={cn(
-                "grid gap-10",
-                group.feature ? "lg:grid-cols-[1.65fr_1fr]" : "lg:grid-cols-1",
+                "grid gap-6",
+                group.feature ? "grid-cols-[1.8fr_1.2fr]" : "grid-cols-1",
               )}
             >
               <motion.ul
                 initial="hidden"
                 animate="visible"
                 variants={{ visible: { transition: { staggerChildren: 0.035 } } }}
-                className={cn(
-                  "grid gap-1",
-                  group.layout === "mega" ? "sm:grid-cols-2" : "sm:grid-cols-3",
-                )}
+                className="grid grid-cols-2 gap-1"
               >
                 {group.links.map((link) => (
                   <motion.li
@@ -219,11 +210,11 @@ function MegaPanel({
                     <Link
                       href={link.href}
                       onClick={onNavigate}
-                      className="group flex items-start gap-3.5 rounded-xl p-3 transition-colors duration-200 hover:bg-brand-50/70"
+                      className="group flex items-center gap-2.5 rounded-lg p-2 transition-colors duration-200 hover:bg-brand-50/70"
                     >
                       {link.icon && (
-                        <span className="mt-0.5 inline-flex size-9 shrink-0 items-center justify-center rounded-lg bg-ink-100 text-brand-500 transition-colors duration-200 group-hover:bg-white">
-                          <NavIcon name={link.icon} className="size-4.5" />
+                        <span className="mt-0.5 inline-flex size-8 shrink-0 items-center justify-center rounded-lg bg-ink-100 text-brand-500 transition-colors duration-200 group-hover:bg-white">
+                          <NavIcon name={link.icon} className="size-4" />
                         </span>
                       )}
                       <span className="flex flex-col gap-0.5">
@@ -250,16 +241,16 @@ function MegaPanel({
                   initial={{ opacity: 0, x: 12 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.4, ease: EASE.outExpo, delay: 0.06 }}
-                  className="relative overflow-hidden rounded-2xl bg-brand-900 p-7"
+                  className="relative overflow-hidden rounded-xl bg-brand-900 p-5"
                 >
                   <div
                     aria-hidden
                     className="absolute -top-16 -right-10 size-48 rounded-full bg-brand-400/25 blur-3xl"
                   />
-                  <div className="relative flex h-full flex-col justify-between gap-6">
-                    <div className="flex flex-col gap-2.5">
-                      <h3 className="text-lg font-semibold text-white">{group.feature.title}</h3>
-                      <p className="text-sm leading-relaxed text-ink-300">
+                  <div className="relative flex h-full flex-col justify-between gap-4">
+                    <div className="flex flex-col gap-1.5">
+                      <h3 className="text-sm font-semibold text-white">{group.feature.title}</h3>
+                      <p className="text-xs leading-relaxed text-ink-300">
                         {group.feature.description}
                       </p>
                     </div>
@@ -269,7 +260,7 @@ function MegaPanel({
                       size="sm"
                       variant="accent"
                       withArrow
-                      className="self-start"
+                      className="self-start text-xs py-1.5 px-3"
                     >
                       {group.feature.cta}
                     </Button>
