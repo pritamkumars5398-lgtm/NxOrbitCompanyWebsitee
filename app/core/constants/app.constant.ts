@@ -58,18 +58,6 @@ export const WORK_ITEMS = [
     highlightSub: "Automated trade-in calculations",
   },
   {
-    id: "truefan",
-    name: "TrueFan",
-    tagline: "Premium Fandom and Video Messages.",
-    desc: "Bridging the gap between audiences and figures via secure personalized media pipelines. Built to scale for millions of active requests during campaigns.",
-    accent: "from-purple-500 to-nyt-green",
-    themeColor: "text-nyt-green",
-    bgColor: "bg-purple-50/10",
-    borderColor: "border-nyt-green/30",
-    highlight: "4.4 Million active interactions",
-    highlightSub: "Encrypted direct media distribution",
-  },
-  {
     id: "joshcam",
     name: "JoshCam",
     tagline: "High-Performance Mobile Video Editing.",

@@ -9,7 +9,6 @@ import { Hero } from "@/app/shared/sections/home/Hero";
 import { TechStack } from "@/app/shared/sections/home/TechStack";
 import { LogoRail } from "@/app/shared/sections/home/LogoRail";
 import { Process } from "@/app/shared/sections/home/Process";
-import { SelectedWork } from "@/app/shared/sections/home/SelectedWork";
 import { Testimonials } from "@/app/shared/sections/home/Testimonials";
 
 /**
@@ -33,7 +32,6 @@ export default function HomePage() {
       <Testimonials />
       
       <DevelopmentJourney />
-      <SelectedWork />
       <Faq />
       <CallToAction
         eyebrow="READY TO START?"

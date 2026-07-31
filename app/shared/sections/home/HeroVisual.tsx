@@ -8,12 +8,7 @@ import { RealPhoneImage } from "@/app/shared/ui/RealPhoneImage";
 export function HeroVisual() {
   return (
     <div className="relative flex items-center justify-center p-4">
-      {/* ── Dotted Grid Accents ── */}
-      <div className="absolute -left-6 -top-12 -z-10 grid grid-cols-5 gap-2.5 opacity-30">
-        {Array.from({ length: 25 }).map((_, i) => (
-          <span key={i} className="size-1.5 rounded-full bg-brand-800" />
-        ))}
-      </div>
+
 
       {/* ── Background Curved Wave Shape ── */}
       <div 

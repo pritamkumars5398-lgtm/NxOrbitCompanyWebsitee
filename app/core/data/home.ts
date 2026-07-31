@@ -7,7 +7,7 @@ export const HERO = {
   gradientFrom: 4,
   lead: "We design and build mobile, web, AI, and cloud systems for teams who need them to hold up under real load — and keep holding up three years later.",
   primaryCta: { label: "Book a Consultation", href: "/contact" },
-  secondaryCta: { label: "See our work", href: "/case-studies" },
+  secondaryCta: { label: "Learn More", href: "#why-choose-us" },
   stats: [
     { value: "1400+", label: "Products shipped" },
     { value: "35+", label: "Countries served" },

@@ -92,8 +92,8 @@ export default async function TechnologyPage({
                 <Button href="/contact" size="lg" variant="accent" withArrow magnetic>
                   {data.ctaText}
                 </Button>
-                <Button href="/case-studies" size="lg" variant="outline-light">
-                  See it in production
+                <Button href="/contact" size="lg" variant="outline-light">
+                  Talk to an Expert
                 </Button>
               </Reveal>
             </div>
@@ -205,7 +205,7 @@ export default async function TechnologyPage({
         title={`Need ${data.title.replace(" Development", "")} engineers who have done this before?`}
         description="Tell us what you're building. We'll come back with an architecture, a timeline, and a number."
         primary={{ label: data.ctaText, href: "/contact" }}
-        secondary={{ label: "Browse case studies", href: "/case-studies" }}
+        secondary={{ label: "Call Us", href: "tel:+919763804442" }}
       />
     </>
   );

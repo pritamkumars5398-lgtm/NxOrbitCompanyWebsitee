@@ -37,16 +37,6 @@ const META: Record<
       { value: "3x", label: "Enquiry conversion" },
     ],
   },
-  truefan: {
-    industry: "Entertainment",
-    platform: "iOS & Android",
-    resultLabel: "Active interactions",
-    metrics: [
-      { value: "4.4M", label: "Active interactions" },
-      { value: "99.9%", label: "Delivery success" },
-      { value: "12", label: "Languages supported" },
-    ],
-  },
   joshcam: {
     industry: "Creator tools",
     platform: "iOS & Android",

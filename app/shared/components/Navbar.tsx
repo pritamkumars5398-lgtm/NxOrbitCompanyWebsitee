@@ -44,17 +44,10 @@ const NAV_ITEMS: NavItem[] = [
     ],
   },
   {
-    label: "Portfolio",
-    items: [
-      { label: "Case Studies",           href: "/case-studies" },
-      { label: "Client Success Stories", href: "/#testimonials" },
-      { label: "View All Work",          href: "/portfolio" },
-    ],
-  },
-  {
     label: "Company",
     items: [
       { label: "About NXTorbit", href: "/#why-us" },
+      { label: "Client Success",  href: "/#testimonials" },
       { label: "Career",          href: "/career" },
       { label: "Contact Us",      href: "/contact" },
       { label: "Our Offices",     href: "/contact#offices" },

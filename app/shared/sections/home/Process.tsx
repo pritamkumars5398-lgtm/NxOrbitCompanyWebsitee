@@ -27,7 +27,7 @@ export function Process() {
   const fill = useSpring(scrollYProgress, { stiffness: 120, damping: 28, restDelta: 0.001 });
 
   return (
-    <Section tone="muted" spacing="lg">
+    <Section tone="muted" spacing="none" className="pt-2 pb-16 sm:pt-4 sm:pb-20 lg:pt-6 lg:pb-24">
       <Container>
         <div className="grid gap-14 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-20">
           {/* Sticky rail */}

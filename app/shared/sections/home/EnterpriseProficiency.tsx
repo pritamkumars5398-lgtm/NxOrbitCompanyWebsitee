@@ -101,7 +101,7 @@ export function EnterpriseProficiency() {
   };
 
   return (
-    <Section tone="ink" spacing="lg" id="enterprise-proficiency" className="overflow-hidden py-12 sm:py-16">
+    <Section tone="white" spacing="none" id="enterprise-proficiency" className="overflow-hidden pt-2 pb-2 sm:pt-4 sm:pb-4 lg:pt-6 lg:pb-6">
       <Container>
         <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#070D1B] p-8 sm:p-12 lg:p-16 shadow-2xl">
           {/* Subtle background glow effect */}

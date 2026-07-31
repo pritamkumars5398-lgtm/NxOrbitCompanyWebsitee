@@ -21,12 +21,7 @@ import { HeroVisual } from "./HeroVisual";
 export function Hero() {
   return (
     <section className="relative isolate overflow-hidden bg-slate-50/40 pt-20 pb-16 sm:pt-24 lg:pt-28 lg:pb-20">
-      {/* ── Left Side Dotted Grid Accent ── */}
-      <div className="absolute left-8 top-28 -z-10 grid grid-cols-5 gap-2.5 opacity-20">
-        {Array.from({ length: 25 }).map((_, i) => (
-          <span key={i} className="size-1.5 rounded-full bg-slate-900" />
-        ))}
-      </div>
+
 
       <Container>
         <div className="grid items-center gap-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-20">

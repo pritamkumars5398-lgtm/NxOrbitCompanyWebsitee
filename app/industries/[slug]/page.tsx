@@ -84,8 +84,8 @@ export default async function IndustryPage({
               <Button href="/contact" size="lg" variant="primary" withArrow magnetic>
                 {data.ctaText}
               </Button>
-              <Button href="/case-studies" size="lg" variant="outline">
-                Read a case study
+              <Button href="/contact" size="lg" variant="outline">
+                Talk to an Expert
               </Button>
             </Reveal>
           </div>
