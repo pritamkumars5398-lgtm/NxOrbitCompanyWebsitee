@@ -40,10 +40,9 @@ export function CallToAction({
           className="relative overflow-hidden rounded-[2.5rem] border-2 border-white/12 bg-slate-950 bg-cover bg-center py-10 px-6 sm:px-12 lg:py-14 shadow-2xl"
           style={{ backgroundImage: `url('/assets/cta-strategy.png')` }}
         >
-          {/* Translucent overlay that lets the 3D graphics show through properly */}
           <div 
             aria-hidden 
-            className="absolute inset-0 bg-gradient-to-br from-[#021820]/80 via-[#011118]/65 to-[#002b35]/80 backdrop-blur-xs"
+            className="absolute inset-0 bg-gradient-to-br from-[#021820]/65 via-[#011118]/45 to-[#002b35]/65"
           />
 
           {/* Dotted Grid Accents in Corners */}

@@ -21,40 +21,39 @@ import { whyChooseUsWomanSvgData } from "@/app/shared/assets/whyChooseUsWomanDat
 
 interface FeatureCard {
   title: string;
+  desc: string;
   icon: React.ElementType;
 }
 
 const FEATURES: FeatureCard[] = [
   {
-    title: "Enterprise Security",
-    icon: ShieldCheck,
+    title: "Business-Driven Engineering",
+    desc: "Every engagement begins with understanding your business processes, operational workflows, and longterm objectives before defining the technology.",
+    icon: Sparkles,
   },
   {
-    title: "High Performance",
-    icon: Zap,
-  },
-  {
-    title: "Scalable Architecture",
+    title: "Enterprise Architecture",
+    desc: "Scalable application architecture designed for performance, maintainability, future expansion, and seamless system integration.",
     icon: Layers,
   },
   {
-    title: "Cloud Ready",
-    icon: Cloud,
-  },
-  {
-    title: "Offline Capability",
-    icon: Database,
-  },
-  {
-    title: "Seamless Integrations",
+    title: "Connected Business Systems",
+    desc: "ERP, CRM, finance, warehouse, HR, and third-party applications working together through secure integration.",
     icon: Link2,
   },
   {
-    title: "Agile Delivery",
+    title: "Structured Project Delivery",
+    desc: "Business analysis, solution design, documentation, development, testing, deployment, and support managed through a structured delivery framework.",
     icon: RefreshCw,
   },
   {
-    title: "Long-term Support",
+    title: "Quality Without Compromise",
+    desc: "Architecture reviews, code reviews, quality assurance, deployment validation, and documentation are embedded throughout every project.",
+    icon: ShieldCheck,
+  },
+  {
+    title: "Long-Term Technology Partnership",
+    desc: "Continuous enhancements, optimization, monitoring, and support that evolve with your business long after implementation.",
     icon: Headphones,
   },
 ];
@@ -74,19 +73,19 @@ export function WhyChooseUs() {
 
       <Container className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Left Column: Heading & 8 Feature Cards Grid */}
+          {/* Left Column: Heading & 6 Feature Cards Grid */}
           <div className="lg:col-span-7 flex flex-col items-start gap-8">
             <Reveal className="flex flex-col items-start gap-3">
               <span className="text-xs font-bold tracking-widest text-[#008c83] uppercase">
-                WHY BUSINESSES CHOOSE NXT ORBIT
+                BUILT FOR ENTERPRISE DELIVERY
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.2]">
-                Built for performance.<br />Designed for impact.
+                How we engineer solutions that businesses can depend on.
               </h2>
             </Reveal>
 
-            {/* 8 Features Grid (4 Cols on desktop, 2 on mobile) */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full mt-2">
+            {/* 6 Features Grid (2 Cols on desktop, 1 on mobile) */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full mt-2">
               {FEATURES.map((feat, idx) => {
                 const Icon = feat.icon;
 
@@ -94,14 +93,17 @@ export function WhyChooseUs() {
                   <Reveal
                     key={feat.title}
                     delay={idx * 0.05}
-                    className="flex flex-col items-center justify-center p-5 rounded-2xl bg-white border border-slate-200/80 shadow-sm text-center transition-all duration-300 hover:border-[#00d2c4] hover:shadow-md hover:-translate-y-1 group"
+                    className="flex flex-col items-start p-5 rounded-2xl bg-white border border-slate-200/80 shadow-sm transition-all duration-300 hover:border-[#00d2c4] hover:shadow-md hover:-translate-y-1 group"
                   >
-                    <div className="flex size-11 items-center justify-center rounded-xl bg-teal-50 text-[#008c83] mb-3 group-hover:bg-[#00d2c4] group-hover:text-[#01141b] transition-colors">
-                      <Icon className="size-5" />
+                    <div className="flex size-10 items-center justify-center rounded-xl bg-teal-50 text-[#008c83] mb-3 group-hover:bg-[#00d2c4] group-hover:text-[#01141b] transition-colors">
+                      <Icon className="size-4.5" />
                     </div>
-                    <span className="text-xs font-bold text-slate-800 leading-snug">
+                    <h3 className="text-sm font-bold text-slate-900 mb-1 leading-snug">
                       {feat.title}
-                    </span>
+                    </h3>
+                    <p className="text-xs text-slate-500 leading-relaxed font-normal">
+                      {feat.desc}
+                    </p>
                   </Reveal>
                 );
               })}
