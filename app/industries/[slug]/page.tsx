@@ -50,7 +50,7 @@ export default async function IndustryPage({
       <SubNav links={INDUSTRY_LINKS} label="Industries" />
 
       {/* ── Hero: centred, tinted, evidence-led ── */}
-      <section className="relative isolate overflow-hidden bg-brand-50/60 pt-20 pb-20 lg:pt-24 lg:pb-24">
+      <section className="relative isolate overflow-hidden bg-brand-50/60 pt-12 pb-20 sm:pt-16 sm:pb-20 lg:pt-20 lg:pb-24">
         <DotField className="opacity-70" />
         <Grain />
         <div

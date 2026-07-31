@@ -61,9 +61,9 @@ export function Footer() {
             <Link
               href="/"
               aria-label="NXTorbit — home"
-              className="w-fit rounded-xl bg-white px-4 py-3"
+              className="w-fit p-0 bg-transparent"
             >
-              <Logo height={34} />
+              <Logo height={40} className="brightness-0 invert" />
             </Link>
 
             <p className="max-w-sm text-sm leading-relaxed text-ink-400">

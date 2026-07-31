@@ -57,7 +57,7 @@ export default async function TechnologyPage({
       <SubNav links={TECHNOLOGY_LINKS} label="Technology" />
 
       {/* ── Hero: dark ── */}
-      <section className="relative isolate overflow-hidden bg-brand-950 pt-20 pb-24 lg:pt-28 lg:pb-32">
+      <section className="relative isolate overflow-hidden bg-brand-950 pt-12 pb-24 sm:pt-16 sm:pb-24 lg:pt-20 lg:pb-32">
         <Aurora tone="dark" />
         <GridField tone="dark" />
         <Grain />

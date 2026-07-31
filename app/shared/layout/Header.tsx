@@ -225,7 +225,7 @@ function MegaPanel({
                             className="size-3.5 -translate-x-1 opacity-0 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-0 group-hover:opacity-100"
                           />
                         </span>
-                        {link.description && (
+                        {link.description && group.label !== "Services" && (
                           <span className="text-xs leading-relaxed text-ink-500">
                             {link.description}
                           </span>

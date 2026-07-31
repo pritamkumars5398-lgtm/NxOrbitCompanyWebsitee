@@ -1,8 +1,6 @@
 import { CallToAction } from "@/app/shared/sections/CallToAction";
 import { Capabilities } from "@/app/shared/sections/home/Capabilities";
-import { Differentiators } from "@/app/shared/sections/home/Differentiators";
 import { EnterpriseProficiency } from "@/app/shared/sections/home/EnterpriseProficiency";
-import { DevelopmentJourney } from "@/app/shared/sections/home/DevelopmentJourney";
 import { WhyChooseUs } from "@/app/shared/sections/home/WhyChooseUs";
 import { Faq } from "@/app/shared/sections/home/Faq";
 import { Hero } from "@/app/shared/sections/home/Hero";
@@ -28,10 +26,8 @@ export default function HomePage() {
       <Process />
       <Capabilities />
       <TechStack />
-      <Differentiators />
       <Testimonials />
       
-      <DevelopmentJourney />
       <Faq />
       <CallToAction
         eyebrow="READY TO START?"

@@ -60,7 +60,7 @@ export default async function ServicePage({
       <SubNav links={SERVICE_LINKS} label="Services" />
 
       {/* ── Hero ── */}
-      <section className="relative isolate overflow-hidden pt-20 pb-20 lg:pt-28 lg:pb-28">
+      <section className="relative isolate overflow-hidden pt-12 pb-20 sm:pt-16 sm:pb-20 lg:pt-20 lg:pb-28">
         <GradientMesh />
         <Grain />
 
@@ -195,13 +195,13 @@ export default async function ServicePage({
 
         <div className="flex flex-col gap-3">
           <Marquee duration={44} gap="0.75rem">
-            {data.techStack.slice(0, half).map((tech) => (
-              <TechPill key={tech}>{tech}</TechPill>
+            {[...data.techStack.slice(0, half), ...data.techStack.slice(0, half), ...data.techStack.slice(0, half), ...data.techStack.slice(0, half)].map((tech, idx) => (
+              <TechPill key={`${tech}-${idx}`}>{tech}</TechPill>
             ))}
           </Marquee>
           <Marquee duration={52} gap="0.75rem" reverse>
-            {data.techStack.slice(half).map((tech) => (
-              <TechPill key={tech}>{tech}</TechPill>
+            {[...data.techStack.slice(half), ...data.techStack.slice(half), ...data.techStack.slice(half), ...data.techStack.slice(half)].map((tech, idx) => (
+              <TechPill key={`${tech}-${idx}`}>{tech}</TechPill>
             ))}
           </Marquee>
         </div>

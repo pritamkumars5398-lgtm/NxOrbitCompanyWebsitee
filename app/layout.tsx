@@ -7,6 +7,7 @@ import { Footer } from "@/app/shared/layout/Footer";
 import { Header } from "@/app/shared/layout/Header";
 import { ScrollProgress } from "@/app/shared/layout/ScrollProgress";
 import { SmoothScroll } from "@/app/shared/layout/SmoothScroll";
+import { FloatingActions } from "@/app/shared/components/FloatingActions";
 
 // Using system fonts fallback to avoid Google Fonts connection error during offline builds
 const inter = {
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             {children}
           </main>
           <Footer />
+          <FloatingActions />
         </SmoothScroll>
       </body>
     </html>
