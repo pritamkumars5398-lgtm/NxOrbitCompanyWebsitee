@@ -80,6 +80,8 @@ export const INDUSTRY_LINKS: NavLink[] = [
 ];
 
 export const COMPANY_LINKS: NavLink[] = [
+  { label: "Case Studies", href: "/case-studies", description: "Outcomes, not screenshots." },
+  { label: "Our Work", href: "/portfolio", description: "Selected products we have shipped." },
   { label: "Careers", href: "/career", description: "Open roles and how we hire." },
   { label: "Contact", href: "/contact", description: "Talk to an engineer, not a form." },
 ];
@@ -117,8 +119,8 @@ export const NAV_GROUPS: NavGroup[] = [
       title: "Tailored industry solutions",
       description:
         "HIPAA-compliant healthcare, secure fintech, and high-conversion e-commerce systems.",
-      href: "/contact",
-      cta: "Contact our team",
+      href: "/portfolio",
+      cta: "Explore case studies",
     },
   },
   {
@@ -126,11 +128,11 @@ export const NAV_GROUPS: NavGroup[] = [
     layout: "mega",
     links: COMPANY_LINKS,
     feature: {
-      title: "Connect with NXTorbit",
+      title: "1,400+ products shipped",
       description:
-        "Book a consultation or learn about open career opportunities with our engineering team.",
-      href: "/contact",
-      cta: "Talk to us",
+        "Fourteen years of engineering for startups and enterprises across 35 countries.",
+      href: "/case-studies",
+      cta: "See the work",
     },
   },
 ];
