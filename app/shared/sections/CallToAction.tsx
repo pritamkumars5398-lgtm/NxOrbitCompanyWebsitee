@@ -108,16 +108,12 @@ export function CallToAction({
 
             {/* Right Column: 3D CTA Illustration */}
             <Reveal from="right" delay={0.15} className="lg:col-span-5 flex justify-center lg:justify-end">
-              <div className="relative overflow-hidden rounded-[2rem] border-2 border-white/10 bg-slate-950/20 p-2 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-md max-w-full sm:max-w-md">
-                <div className="relative overflow-hidden rounded-[1.6rem]">
-                  <img
-                    src="/assets/cta-strategy.png"
-                    alt="Strategy Consultation"
-                    className="w-full h-auto object-cover aspect-[4/3] rounded-[1.5rem]"
-                  />
-                  {/* Subtle gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/30 via-transparent to-transparent pointer-events-none" />
-                </div>
+              <div className="relative max-w-full sm:max-w-md [mask-image:radial-gradient(circle_at_center,white_65%,transparent_100%)]">
+                <img
+                  src="/assets/cta-strategy.png"
+                  alt="Strategy Consultation"
+                  className="w-full h-auto object-contain drop-shadow-[0_0_30px_rgba(0,210,196,0.15)] select-none pointer-events-none"
+                />
               </div>
             </Reveal>
           </div>
