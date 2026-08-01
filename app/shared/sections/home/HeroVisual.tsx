@@ -1,15 +1,28 @@
 "use client";
 
-import { motion } from "motion/react";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
 import { CircleCheck, Sparkles } from "lucide-react";
 import { EASE } from "@/app/core/motion/tokens";
-import { RealPhoneImage } from "@/app/shared/ui/RealPhoneImage";
+
+const SLIDER_IMAGES = [
+  "/assets/hero_slider_1.webp",
+  "/assets/hero_slider_2.webp",
+  "/assets/hero_slider_3.webp",
+];
 
 export function HeroVisual() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % SLIDER_IMAGES.length);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div className="relative flex items-center justify-center p-4">
-
-
       {/* ── Background Curved Wave Shape ── */}
       <div 
         aria-hidden
@@ -21,20 +34,42 @@ export function HeroVisual() {
         className="pointer-events-none absolute -right-12 -top-16 -z-10 h-[30rem] w-[30rem] rounded-full bg-teal-400/20 blur-2xl" 
       />
 
-      {/* ── Main Hero Image with Curved Shield Mask & White Border ── */}
+      {/* ── Main Hero Image with Curved Shield Mask & White Border (Larger & Shifted Upwards) ── */}
       <motion.div
         initial={{ opacity: 0, scale: 0.94, y: 30 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.85, ease: EASE.outExpo }}
-        className="relative z-10 overflow-hidden rounded-tl-[10rem] rounded-br-[10rem] rounded-tr-[3rem] rounded-bl-[3rem] border-[12px] border-white bg-slate-100 shadow-[0_25px_60px_rgba(0,0,0,0.18)] max-w-full lg:max-w-md aspect-[4/3]"
+        className="relative z-10 overflow-hidden rounded-tl-[10rem] rounded-br-[10rem] rounded-tr-[3rem] rounded-bl-[3rem] border-[12px] border-white bg-slate-100 shadow-[0_25px_60px_rgba(0,0,0,0.18)] w-[520px] max-w-full lg:max-w-xl aspect-[4/3] lg:-translate-y-8 lg:-mt-4"
       >
-        <img
-          src="/assets/consulting-team.png"
-          alt="NXTorbit Consultancy Team"
-          className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-        />
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={currentIndex}
+            src={SLIDER_IMAGES[currentIndex]}
+            alt={`NXTorbit Consultancy Slide ${currentIndex + 1}`}
+            initial={{ opacity: 0, scale: 1.02 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.98 }}
+            transition={{ duration: 0.6, ease: EASE.outExpo }}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </AnimatePresence>
+
         {/* Soft lighting overlay */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-brand-900/10 via-transparent to-white/10 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-brand-900/10 via-transparent to-white/10 pointer-events-none z-10" />
+
+        {/* Dot navigation indicators */}
+        <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2 z-20 bg-slate-950/45 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
+          {SLIDER_IMAGES.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrentIndex(idx)}
+              className={`size-2 rounded-full transition-all duration-300 cursor-pointer ${
+                idx === currentIndex ? "bg-teal-400 w-4.5" : "bg-white/60 hover:bg-white"
+              }`}
+              aria-label={`Go to slide ${idx + 1}`}
+            />
+          ))}
+        </div>
       </motion.div>
 
       {/* Floating proof chips */}
