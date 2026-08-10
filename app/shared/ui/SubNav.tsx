@@ -19,10 +19,10 @@ export function SubNav({ links, label }: { links: NavLink[]; label: string }) {
   return (
     <nav
       aria-label={label}
-      className="sticky top-18 z-40 border-b border-hairline bg-white/85 backdrop-blur-xl"
+      className="sticky top-18 z-40 border-b border-hairline bg-white/85 backdrop-blur-xl mt-18"
     >
       <Container>
-        <ul className="scrollbar-none flex gap-1 overflow-x-auto py-2">
+        <ul className="-ml-3.5 scrollbar-none flex gap-1 overflow-x-auto py-2">
           {links.map((link) => {
             const active = pathname === link.href;
             return (

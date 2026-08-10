@@ -57,7 +57,7 @@ export default async function TechnologyPage({
       <SubNav links={TECHNOLOGY_LINKS} label="Technology" />
 
       {/* ── Hero: dark ── */}
-      <section className="relative isolate overflow-hidden bg-brand-950 pt-12 pb-24 sm:pt-16 sm:pb-24 lg:pt-20 lg:pb-32">
+      <section className="relative isolate overflow-hidden bg-brand-950 pt-8 pb-12 sm:pt-10 sm:pb-12 lg:pt-10 lg:pb-14">
         <Aurora tone="dark" />
         <GridField tone="dark" />
         <Grain />
@@ -98,7 +98,9 @@ export default async function TechnologyPage({
               </Reveal>
             </div>
 
-            <TerminalCard title={`${data.slug}/deploy.sh`} lines={terminalLines} />
+            <div className="lg:-mt-12">
+              <TerminalCard title={`${data.slug}/deploy.sh`} lines={terminalLines} />
+            </div>
           </div>
 
           <Reveal from="up" delay={0.1} className="mt-16 border-t border-white/10 pt-10">

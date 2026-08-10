@@ -60,7 +60,7 @@ export default async function ServicePage({
       <SubNav links={SERVICE_LINKS} label="Services" />
 
       {/* ── Hero ── */}
-      <section className="relative isolate overflow-hidden pt-12 pb-20 sm:pt-16 sm:pb-20 lg:pt-20 lg:pb-28">
+      <section className="relative isolate overflow-hidden pt-8 pb-12 sm:pt-10 sm:pb-12 lg:pt-10 lg:pb-14">
         <GradientMesh />
         <Grain />
 
@@ -98,7 +98,7 @@ export default async function ServicePage({
             </div>
 
             {/* Service Hero JPG Image Visual */}
-            <Parallax distance={26} className="relative flex justify-center">
+            <Parallax distance={26} className="relative flex justify-center lg:-mt-12">
               <Reveal from="up" scale={0.96} className="relative w-full max-w-[540px]">
                 {/* Ambient Cyan Radial Backdrop Glow */}
                 <div
