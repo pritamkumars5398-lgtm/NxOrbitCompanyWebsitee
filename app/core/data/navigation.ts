@@ -94,7 +94,7 @@ export const NAV_GROUPS: NavGroup[] = [
     feature: {
       title: "Start with a technical audit",
       description:
-        "A two-week review of your architecture, delivery pipeline, and roadmap risk — with a costed plan at the end.",
+        "A review of your architecture, delivery pipeline, and roadmap risk — with a costed plan at the end.",
       href: "/contact",
       cta: "Book an audit",
     },
