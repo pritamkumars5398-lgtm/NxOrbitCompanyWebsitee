@@ -128,7 +128,7 @@ export function Header() {
           </nav>
 
           <div className="hidden items-center gap-5 md:flex">
-            <Button href="/contact" size="sm" variant="orange" withArrow magnetic>
+            <Button href="/contact" size="md" variant="orange" withArrow magnetic>
               Book a Consultation
             </Button>
           </div>

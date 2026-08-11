@@ -34,7 +34,7 @@ export function SubNav({ links, label }: { links: NavLink[]; label: string }) {
                     "relative inline-flex shrink-0 rounded-lg px-3.5 py-2 text-[0.8125rem] font-semibold whitespace-nowrap transition-colors duration-200",
                     active
                       ? "text-brand-600"
-                      : "text-ink-500 hover:bg-ink-50 hover:text-brand-500",
+                      : "text-ink-500 hover:bg-brand-50/70 hover:text-brand-600",
                   )}
                 >
                   {link.label}

@@ -54,7 +54,7 @@ export function Footer() {
         className="pointer-events-none absolute -top-40 left-1/2 h-80 w-[60rem] -translate-x-1/2 rounded-full bg-brand-400/10 blur-[120px]"
       />
 
-      <Container className="relative py-16 lg:py-20">
+      <Container className="relative py-10 lg:py-12">
         <div className="grid gap-12 lg:grid-cols-[1.3fr_2.4fr]">
           {/* Brand + contact */}
           <div className="flex flex-col gap-7">
@@ -63,7 +63,7 @@ export function Footer() {
               aria-label="NXTorbit — home"
               className="w-fit p-0 bg-transparent"
             >
-              <Logo height={40} className="brightness-0 invert" />
+              <Logo height={40} light />
             </Link>
 
             <p className="max-w-sm text-sm leading-relaxed text-ink-400">
@@ -117,7 +117,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-6 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-10 flex flex-col gap-6 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs text-ink-500">
             © {new Date().getFullYear()} NXTorbit Technology Pvt. Ltd. All rights reserved.
           </p>

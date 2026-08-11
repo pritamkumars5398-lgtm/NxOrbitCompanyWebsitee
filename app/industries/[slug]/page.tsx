@@ -59,7 +59,7 @@ export default async function IndustryPage({
         />
 
         <Container className="relative">
-          <div className="flex flex-col items-center gap-6 text-center">
+          <div className="flex flex-col items-center text-center">
             <Breadcrumb
               items={[
                 { label: "Home", href: "/" },
@@ -68,19 +68,19 @@ export default async function IndustryPage({
               ]}
             />
 
-            <Reveal from="up">
+            <Reveal from="up" className="mt-4">
               <Eyebrow>{data.category}</Eyebrow>
             </Reveal>
 
-            <Reveal from="up" delay={0.06}>
+            <Reveal from="up" delay={0.06} className="mt-2">
               <h1 className="max-w-4xl text-display-lg sm:text-display-xl">{data.tagline}</h1>
             </Reveal>
 
-            <Reveal from="up" delay={0.14}>
+            <Reveal from="up" delay={0.14} className="mt-4">
               <p className="max-w-2xl text-lead text-ink-600">{data.description}</p>
             </Reveal>
 
-            <Reveal from="up" delay={0.22} className="mt-2 flex flex-wrap justify-center gap-3">
+            <Reveal from="up" delay={0.22} className="mt-6 flex flex-wrap justify-center gap-3">
               <Button href="/contact" size="lg" variant="primary" withArrow magnetic>
                 {data.ctaText}
               </Button>

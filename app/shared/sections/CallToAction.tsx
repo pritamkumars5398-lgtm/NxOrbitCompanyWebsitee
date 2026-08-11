@@ -24,7 +24,7 @@ export function CallToAction({
   secondary = { label: "Call +91 9763804442", href: "tel:+919763804442" },
 }: CallToActionProps) {
   return (
-    <section className="relative isolate overflow-hidden bg-transparent pt-2 pb-16 sm:pt-4 sm:pb-20 lg:pt-6 lg:pb-24 text-white">
+    <section className="relative isolate overflow-hidden bg-transparent pt-2 pb-10 sm:pt-3 sm:pb-12 lg:pt-4 lg:pb-16 text-white">
       {/* Ambient background glows */}
       <div
         aria-hidden
@@ -37,7 +37,7 @@ export function CallToAction({
 
       <Container className="relative z-10">
         <div 
-          className="relative overflow-hidden rounded-[2.5rem] border-2 border-white/12 bg-[#070D1B] py-12 px-6 sm:px-12 lg:py-16 lg:px-16 shadow-2xl"
+          className="relative overflow-hidden rounded-[2.5rem] border-2 border-white/12 bg-[#070D1B] py-8 px-6 sm:px-10 lg:py-10 lg:px-12 shadow-2xl"
         >
           {/* Subtle background glow effect */}
           <div
@@ -56,7 +56,7 @@ export function CallToAction({
             ))}
           </div>
 
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-6 items-center">
             {/* Left Column: Heading & CTA Buttons */}
             <Reveal className="lg:col-span-7 flex flex-col items-start text-left gap-6">
               {eyebrow && (
@@ -66,7 +66,7 @@ export function CallToAction({
                 </div>
               )}
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-[1.2] tracking-tight max-w-2xl">
+              <h2 className="text-display-md sm:text-display-lg lg:text-display-xl text-white max-w-2xl">
                 {title.includes("Exceptional Together") ? (
                   <>
                     Let's Build Something{" "}
@@ -91,7 +91,8 @@ export function CallToAction({
                 <Button
                   href={primary.href}
                   size="lg"
-                  className="w-full sm:w-auto sm:min-w-[220px] justify-center text-center rounded-full bg-[#0a2432] hover:bg-[#061924] text-white font-bold px-7 py-3.5 shadow-lg shadow-black/40 border border-teal-500/30 transition-all"
+                  variant="accent"
+                  className="w-full sm:w-auto sm:min-w-[220px] justify-center"
                 >
                   {primary.label}
                 </Button>
@@ -99,7 +100,8 @@ export function CallToAction({
                 <Button
                   href={secondary.href}
                   size="lg"
-                  className="w-full sm:w-auto sm:min-w-[220px] justify-center text-center rounded-full bg-transparent hover:bg-teal-500/10 text-white font-semibold px-7 py-3.5 border-2 border-[#00d2c4] transition-all"
+                  variant="outline-light"
+                  className="w-full sm:w-auto sm:min-w-[220px] justify-center"
                 >
                   {secondary.label}
                 </Button>

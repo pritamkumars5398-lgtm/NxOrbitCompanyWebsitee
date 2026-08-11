@@ -14,11 +14,13 @@ export function Logo({
   height = 44,
   priority = false,
   className,
+  light = false,
 }: {
   /** Rendered height of the wordmark in pixels. */
   height?: number;
   priority?: boolean;
   className?: string;
+  light?: boolean;
 }) {
   const scale = height / CROP.height;
   const width = Math.round(CROP.width * scale);
@@ -35,6 +37,28 @@ export function Logo({
                 0 1 0 0 0
                 0 0 1 0 0
                 -2 -2 -2 5 -0.1
+              "
+            />
+          </filter>
+          <filter id="remove-white-light" colorInterpolationFilters="sRGB">
+            <feColorMatrix
+              type="matrix"
+              values="
+                1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                -2 -2 -2 5 -0.1
+              "
+              result="sans-white"
+            />
+            <feColorMatrix
+              in="sans-white"
+              type="matrix"
+              values="
+                0 -1.2  0   0  1.0
+                0  0.3  0   0  0.7
+                0  0    0.3 0  0.7
+                0  0    0   1  0
               "
             />
           </filter>
@@ -57,7 +81,7 @@ export function Logo({
             height: SOURCE.height * scale,
             left: -CROP.x * scale,
             top: -CROP.y * scale,
-            filter: "url(#remove-white)",
+            filter: light ? "url(#remove-white-light)" : "url(#remove-white)",
           }}
         />
       </span>

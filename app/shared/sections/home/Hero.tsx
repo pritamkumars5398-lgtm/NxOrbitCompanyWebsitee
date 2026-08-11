@@ -39,7 +39,7 @@ export function Hero() {
               as="h1"
               text={HERO.headline}
               gradientFrom={HERO.gradientFrom}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-[1.15] tracking-tight"
+              className="text-display-xl sm:text-display-2xl text-slate-900"
             />
 
             <motion.p
@@ -60,14 +60,17 @@ export function Hero() {
               <Button 
                 href={HERO.primaryCta.href} 
                 size="lg" 
-                className="rounded-full bg-brand-950 text-white hover:bg-brand-900 px-8 py-4 font-bold shadow-lg transition-all"
+                variant="primary"
+                withArrow
+                magnetic
               >
                 {HERO.primaryCta.label}
               </Button>
               <Button 
                 href={HERO.secondaryCta.href} 
                 size="lg"
-                className="rounded-full bg-teal-500 text-white hover:bg-teal-600 px-8 py-4 font-bold shadow-lg transition-all"
+                variant="accent"
+                magnetic
               >
                 {HERO.secondaryCta.label}
               </Button>

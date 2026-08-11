@@ -66,7 +66,7 @@ export default async function ServicePage({
 
         <Container className="relative">
           <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:gap-20">
-            <div className="flex flex-col items-start gap-6">
+            <div className="flex flex-col items-start">
               <Breadcrumb
                 items={[
                   { label: "Home", href: "/" },
@@ -75,19 +75,19 @@ export default async function ServicePage({
                 ]}
               />
 
-              <Reveal from="up">
+              <Reveal from="up" className="mt-4">
                 <Eyebrow>{data.category}</Eyebrow>
               </Reveal>
 
-              <Reveal from="up" delay={0.06}>
+              <Reveal from="up" delay={0.06} className="mt-2">
                 <h1 className="max-w-2xl text-display-lg sm:text-display-xl">{data.tagline}</h1>
               </Reveal>
 
-              <Reveal from="up" delay={0.14}>
+              <Reveal from="up" delay={0.14} className="mt-4">
                 <p className="max-w-xl text-lead text-ink-600">{data.description}</p>
               </Reveal>
 
-              <Reveal from="up" delay={0.22} className="flex flex-wrap gap-3">
+              <Reveal from="up" delay={0.22} className="mt-6 flex flex-wrap gap-3">
                 <Button href="/contact" size="lg" variant="primary" withArrow magnetic>
                   {data.ctaText}
                 </Button>
