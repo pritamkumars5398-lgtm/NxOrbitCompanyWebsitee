@@ -11,6 +11,7 @@ import {
   Link2,
   PenTool,
   Server,
+  Ship,
   ShoppingBag,
   Smartphone,
   Sparkles,
@@ -43,6 +44,7 @@ const ICONS: Record<string, LucideIcon> = {
   "shopping-bag": ShoppingBag,
   truck: Truck,
   clapperboard: Clapperboard,
+  ship: Ship,
 };
 
 export function NavIcon({ name, className }: { name?: string; className?: string }) {

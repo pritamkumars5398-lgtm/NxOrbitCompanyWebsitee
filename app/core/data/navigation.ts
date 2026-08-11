@@ -77,6 +77,7 @@ export const INDUSTRY_LINKS: NavLink[] = [
   { label: "E-Commerce", href: "/industries/ecommerce", icon: "shopping-bag" },
   { label: "Logistics", href: "/industries/logistics", icon: "truck" },
   { label: "Entertainment", href: "/industries/entertainment", icon: "clapperboard" },
+  { label: "NXT Orbit Freight", href: "/products/nxt-orbit-freight", icon: "ship" },
 ];
 
 export const COMPANY_LINKS: NavLink[] = [
@@ -116,11 +117,11 @@ export const NAV_GROUPS: NavGroup[] = [
     layout: "mega",
     links: INDUSTRY_LINKS,
     feature: {
-      title: "Tailored industry solutions",
+      title: "NXT Orbit Freight",
       description:
-        "HIPAA-compliant healthcare, secure fintech, and high-conversion e-commerce systems.",
-      href: "/portfolio",
-      cta: "Explore case studies",
+        "AI-native Operating System for next-gen logistics, custom clearance, and supply chain automation.",
+      href: "/products/nxt-orbit-freight",
+      cta: "Explore Product",
     },
   },
   {
