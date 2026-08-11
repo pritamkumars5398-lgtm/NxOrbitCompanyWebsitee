@@ -50,7 +50,7 @@ export default async function IndustryPage({
       <SubNav links={INDUSTRY_LINKS} label="Industries" />
 
       {/* ── Hero: centred, tinted, evidence-led ── */}
-      <section className="relative isolate overflow-hidden bg-brand-50/60 pt-12 pb-20 sm:pt-16 sm:pb-20 lg:pt-20 lg:pb-24">
+      <section className="relative isolate overflow-hidden bg-brand-50/60 pt-8 pb-12 sm:pt-10 sm:pb-12 lg:pt-10 lg:pb-14">
         <DotField className="opacity-70" />
         <Grain />
         <div
@@ -183,13 +183,7 @@ export default async function IndustryPage({
         </Container>
       </Section>
 
-      <CallToAction
-        eyebrow="Ready when you are"
-        title={`Let's build for ${data.title.toLowerCase()}.`}
-        description="Bring us the regulatory constraints, the legacy system, and the deadline. We'll come back with a plan that accounts for all three."
-        primary={{ label: data.ctaText, href: "/contact" }}
-        secondary={{ label: "Explore our services", href: "/services/mobile" }}
-      />
+      <CallToAction />
     </>
   );
 }

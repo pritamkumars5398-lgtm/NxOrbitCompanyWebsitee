@@ -39,7 +39,7 @@ export function Hero() {
               as="h1"
               text={HERO.headline}
               gradientFrom={HERO.gradientFrom}
-              className="text-display-xl sm:text-display-2xl text-slate-900"
+              className="text-display-lg sm:text-display-xl text-slate-900"
             />
 
             <motion.p

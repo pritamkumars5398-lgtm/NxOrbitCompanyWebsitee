@@ -125,7 +125,12 @@ export function Button({
 
     const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
       spawnRipple(event);
-      onClick?.(event);
+      if (href === "/contact" && typeof window !== "undefined" && window.location.pathname !== "/contact") {
+        event.preventDefault();
+        window.dispatchEvent(new CustomEvent("open-consultation-modal"));
+      } else {
+        onClick?.(event);
+      }
     };
 
     if (external) {

@@ -66,7 +66,7 @@ export function CallToAction({
                 </div>
               )}
 
-              <h2 className="text-display-md sm:text-display-lg lg:text-display-xl text-white max-w-2xl">
+              <h2 className="text-display-sm sm:text-display-md lg:text-display-lg text-white max-w-2xl">
                 {title.includes("Exceptional Together") ? (
                   <>
                     Let's Build Something{" "}
@@ -112,7 +112,7 @@ export function CallToAction({
             <Reveal from="right" delay={0.15} className="lg:col-span-5 flex justify-center lg:justify-end">
               <div className="relative max-w-full sm:max-w-md [mask-image:radial-gradient(circle_at_center,white_65%,transparent_100%)]">
                 <img
-                  src="/assets/cta-strategy.png"
+                  src="/assets/cta-broad-services.png"
                   alt="Strategy Consultation"
                   className="w-full h-auto object-contain drop-shadow-[0_0_30px_rgba(0,210,196,0.15)] select-none pointer-events-none"
                 />

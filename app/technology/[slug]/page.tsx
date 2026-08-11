@@ -202,13 +202,7 @@ export default async function TechnologyPage({
         </Container>
       </Section>
 
-      <CallToAction
-        eyebrow="Next step"
-        title={`Need ${data.title.replace(" Development", "")} engineers who have done this before?`}
-        description="Tell us what you're building. We'll come back with an architecture, a timeline, and a number."
-        primary={{ label: data.ctaText, href: "/contact" }}
-        secondary={{ label: "Call Us", href: "tel:+919763804442" }}
-      />
+      <CallToAction />
     </>
   );
 }

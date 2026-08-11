@@ -26,12 +26,12 @@ export function HeroVisual() {
       {/* ── Background Curved Wave Shape ── */}
       <div 
         aria-hidden
-        className="pointer-events-none absolute -right-20 -top-24 -z-10 h-[34rem] w-[34rem] rounded-full bg-gradient-to-br from-brand-800 via-brand-600 to-teal-500 opacity-95 shadow-2xl transition-all duration-700" 
+        className="pointer-events-none absolute -right-10 -top-10 sm:-right-16 sm:-top-20 lg:-right-20 lg:-top-24 -z-10 h-[20rem] w-[20rem] sm:h-[26rem] sm:w-[26rem] lg:h-[34rem] lg:w-[34rem] rounded-full bg-gradient-to-br from-brand-800 via-brand-600 to-teal-500 opacity-95 shadow-2xl transition-all duration-700" 
         style={{ borderRadius: "40% 60% 30% 70% / 60% 40% 60% 40%" }}
       />
       <div 
         aria-hidden
-        className="pointer-events-none absolute -right-12 -top-16 -z-10 h-[30rem] w-[30rem] rounded-full bg-teal-400/20 blur-2xl" 
+        className="pointer-events-none absolute -right-6 -top-8 sm:-right-10 sm:-top-12 lg:-right-12 lg:-top-16 -z-10 h-[18rem] w-[18rem] sm:h-[24rem] sm:w-[24rem] lg:h-[30rem] lg:w-[30rem] rounded-full bg-teal-400/20 blur-2xl" 
       />
 
       {/* ── Main Hero Image with Curved Shield Mask & White Border (Larger & Shifted Upwards) ── */}
@@ -39,7 +39,7 @@ export function HeroVisual() {
         initial={{ opacity: 0, scale: 0.94, y: 30 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.85, ease: EASE.outExpo }}
-        className="relative z-10 overflow-hidden rounded-tl-[10rem] rounded-br-[10rem] rounded-tr-[3rem] rounded-bl-[3rem] border-[12px] border-white bg-slate-100 shadow-[0_25px_60px_rgba(0,0,0,0.18)] w-[520px] max-w-full lg:max-w-xl aspect-[4/3] lg:-translate-y-8 lg:-mt-4"
+        className="relative z-10 overflow-hidden rounded-tl-[10rem] rounded-br-[10rem] rounded-tr-[3rem] rounded-bl-[3rem] border-[12px] border-white bg-slate-100 shadow-[0_25px_60px_rgba(0,0,0,0.18)] w-[290px] sm:w-[380px] lg:w-[520px] max-w-full aspect-[4/3] lg:-translate-y-8 lg:-mt-4"
       >
         <AnimatePresence mode="wait">
           <motion.img
@@ -74,7 +74,7 @@ export function HeroVisual() {
 
       {/* Floating proof chips */}
       <FloatCard
-        className="absolute -top-6 right-0 z-20"
+        className="absolute -top-6 right-0 z-20 hidden sm:flex"
         delay={0.65}
         drift={-6}
         icon={<CircleCheck aria-hidden className="size-4 text-teal-500" strokeWidth={2} />}
@@ -83,7 +83,7 @@ export function HeroVisual() {
       />
 
       <FloatCard
-        className="absolute -bottom-6 left-0 z-20"
+        className="absolute -bottom-6 left-0 z-20 hidden sm:flex"
         delay={0.85}
         drift={8}
         icon={<Sparkles aria-hidden className="size-4 text-teal-500" strokeWidth={2} />}

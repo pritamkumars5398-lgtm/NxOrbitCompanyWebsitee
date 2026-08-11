@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
+import { cn } from "@/app/core/lib/cn";
 
 import { SERVICES_DATA } from "@/app/core/data/services";
 import { SERVICE_LINKS } from "@/app/core/data/navigation";
@@ -44,6 +45,24 @@ export async function generateMetadata({
  * the industry template (tinted, evidence-led) so moving between them feels
  * like arriving somewhere new.
  */
+const GLOW_COLORS: Record<string, string> = {
+  mobile: "bg-[radial-gradient(circle,rgba(0,210,196,0.35)_0%,rgba(0,168,150,0.15)_50%,transparent_75%)]",
+  web: "bg-[radial-gradient(circle,rgba(37,99,235,0.35)_0%,rgba(29,78,216,0.15)_50%,transparent_75%)]",
+  ai: "bg-[radial-gradient(circle,rgba(168,85,247,0.35)_0%,rgba(147,51,234,0.15)_50%,transparent_75%)]",
+  design: "bg-[radial-gradient(circle,rgba(244,63,94,0.35)_0%,rgba(225,29,72,0.15)_50%,transparent_75%)]",
+  blockchain: "bg-[radial-gradient(circle,rgba(245,158,11,0.35)_0%,rgba(217,119,6,0.15)_50%,transparent_75%)]",
+  devops: "bg-[radial-gradient(circle,rgba(34,197,94,0.35)_0%,rgba(22,163,74,0.15)_50%,transparent_75%)]",
+};
+
+const BADGE_TEXTS: Record<string, string> = {
+  mobile: "1400+ Apps Shipped",
+  web: "99.9% Uptime SLA",
+  ai: "LLM & RAG Pipelines",
+  design: "Human-Centric UX",
+  blockchain: "Smart Contract Audits",
+  devops: "Automated CI/CD",
+};
+
 export default async function ServicePage({
   params,
 }: {
@@ -54,6 +73,8 @@ export default async function ServicePage({
   if (!data) notFound();
 
   const half = Math.ceil(data.techStack.length / 2);
+  const glowClass = GLOW_COLORS[slug] || GLOW_COLORS.mobile;
+  const badgeText = BADGE_TEXTS[slug] || "Global Standard";
 
   return (
     <>
@@ -100,14 +121,17 @@ export default async function ServicePage({
             {/* Service Hero JPG Image Visual */}
             <Parallax distance={26} className="relative flex justify-center lg:-mt-12">
               <Reveal from="up" scale={0.96} className="relative w-full max-w-[540px]">
-                {/* Ambient Cyan Radial Backdrop Glow */}
+                {/* Ambient Radial Backdrop Glow */}
                 <div
                   aria-hidden
-                  className="pointer-events-none absolute left-1/2 top-1/2 -z-10 size-[32rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(0,210,196,0.3)_0%,rgba(0,168,150,0.1)_50%,transparent_75%)] blur-[60px]"
+                  className={cn(
+                    "pointer-events-none absolute left-1/2 top-1/2 -z-10 size-[32rem] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[60px]",
+                    glowClass
+                  )}
                 />
 
                 {/* Service Hero Image Card Frame */}
-                <ServiceHeroImage src={data.heroImage} alt={data.title} />
+                <ServiceHeroImage src={data.heroImage} alt={data.title} badgeText={badgeText} />
 
               </Reveal>
             </Parallax>
@@ -164,20 +188,33 @@ export default async function ServicePage({
 
           <Stagger stagger={0.1} className="relative grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {/* Connector rule behind the step markers */}
-            <span
-              aria-hidden
-              className="absolute top-6 right-8 left-8 hidden h-px bg-[linear-gradient(to_right,transparent,var(--color-brand-200),transparent)] lg:block"
-            />
+            {data.process.map((step, index) => {
+              const isLast = index === data.process.length - 1;
+              const isRowEndLg = (index + 1) % 4 === 0;
+              const isRowEndMd = (index + 1) % 2 === 0;
 
-            {data.process.map((step) => (
-              <StaggerItem key={step.step} from="up" className="relative flex flex-col gap-4">
-                <span className="inline-flex size-12 items-center justify-center rounded-full border border-hairline bg-white font-mono text-sm font-semibold text-brand-500 shadow-sm">
-                  {step.step}
-                </span>
-                <h3 className="text-base font-semibold text-ink-900">{step.title}</h3>
-                <p className="text-sm leading-relaxed text-ink-600">{step.description}</p>
-              </StaggerItem>
-            ))}
+              return (
+                <StaggerItem key={step.step} from="up" className="relative flex flex-col gap-4">
+                  <div className="relative inline-flex">
+                    <span className="relative z-10 inline-flex size-12 items-center justify-center rounded-full border border-hairline bg-white font-mono text-sm font-semibold text-brand-500 shadow-sm">
+                      {step.step}
+                    </span>
+                    {!isLast && (
+                      <span 
+                        aria-hidden 
+                        className={cn(
+                          "absolute top-6 left-12 right-[-2rem] h-px bg-brand-200/60 -z-10 hidden md:block",
+                          isRowEndMd && "md:hidden lg:block",
+                          isRowEndLg && "lg:hidden"
+                        )} 
+                      />
+                    )}
+                  </div>
+                  <h3 className="text-base font-semibold text-ink-900">{step.title}</h3>
+                  <p className="text-sm leading-relaxed text-ink-600">{step.description}</p>
+                </StaggerItem>
+              );
+            })}
           </Stagger>
         </Container>
       </Section>
@@ -207,13 +244,7 @@ export default async function ServicePage({
         </div>
       </Section>
 
-      <CallToAction
-        eyebrow="Ready to start?"
-        title={`Let's talk about your ${data.title.toLowerCase()} project.`}
-        description={`A 30-minute call with an engineer who has shipped this before — not a salesperson. No commitment.`}
-        primary={{ label: data.ctaText, href: "/contact" }}
-        secondary={{ label: "Call +91 9763804442", href: "tel:+919763804442" }}
-      />
+      <CallToAction />
     </>
   );
 }
