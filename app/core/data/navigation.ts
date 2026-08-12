@@ -78,6 +78,9 @@ export const INDUSTRY_LINKS: NavLink[] = [
   { label: "Logistics", href: "/industries/logistics", icon: "truck" },
   { label: "Entertainment", href: "/industries/entertainment", icon: "clapperboard" },
   { label: "NXT Orbit Freight", href: "/products/nxt-orbit-freight", icon: "ship" },
+  { label: "NXT WMS", href: "/products/nxt-wms", icon: "layers" },
+  { label: "Courier Express", href: "/products/courier-express", icon: "truck" },
+  { label: "NXT Sales & Finance", href: "/products/nxt-sales-finance", icon: "landmark" },
 ];
 
 export const COMPANY_LINKS: NavLink[] = [
