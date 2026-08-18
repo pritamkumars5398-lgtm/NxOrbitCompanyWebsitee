@@ -233,21 +233,21 @@ export default function NextOrbitWmsPage() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-lg hover:shadow-teal-500/10 cursor-pointer">
               <span className="text-display-md text-teal-600 font-black">100%</span>
               <h3 className="text-base font-bold text-slate-900 mt-2">Flow Traceability</h3>
               <p className="text-sm text-slate-600 mt-1 leading-relaxed">
                 Complete visibility from supplier origin to end-customer delivery with real-time velocity metrics.
               </p>
             </div>
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-lg hover:shadow-teal-500/10 cursor-pointer">
               <span className="text-display-md text-brand-600 font-black">+25%</span>
               <h3 className="text-base font-bold text-slate-900 mt-2">Capacity Monetization</h3>
               <p className="text-sm text-slate-600 mt-1 leading-relaxed">
                 AI-driven peak/downtime analysis revealing exact idle capacity available to onboard new customers.
               </p>
             </div>
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-lg hover:shadow-teal-500/10 cursor-pointer">
               <span className="text-display-md text-slate-900 font-black">Full</span>
               <h3 className="text-base font-bold text-slate-900 mt-2">System Telemetry</h3>
               <p className="text-sm text-slate-600 mt-1 leading-relaxed">
@@ -432,7 +432,7 @@ export default function NextOrbitWmsPage() {
             {INTEGRATIONS.map((item, idx) => (
               <div 
                 key={idx} 
-                className="rounded-2xl border border-slate-300 bg-white p-5 text-center flex flex-col justify-center items-center transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer"
+                className="rounded-2xl border border-slate-300 bg-white p-5 text-center flex flex-col justify-center items-center transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-md hover:shadow-teal-500/10 cursor-pointer"
               >
                 <div className="size-11 rounded-xl bg-slate-50 flex items-center justify-center mb-3">
                   <Code className="size-5 text-slate-400" />
@@ -459,7 +459,7 @@ export default function NextOrbitWmsPage() {
               <p className="text-sm text-slate-600 leading-relaxed mb-6">
                 NXTorbit operates under strict international quality guidelines. Our products undergo rigorous functional testing, stress auditing, and regular third-party security audits to ensure compliance with enterprise parameters globally.
               </p>
-              <div className="inline-flex items-center gap-3 px-4 py-3 rounded-2xl border border-slate-300 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-slate-600 cursor-pointer">
+              <div className="inline-flex items-center gap-3 px-4 py-3 rounded-2xl border border-slate-300 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-teal-400 hover:shadow-md hover:shadow-teal-500/10 cursor-pointer">
                 <ShieldCheck className="size-8 text-teal-500 shrink-0" />
                 <div>
                   <span className="text-xs font-bold text-slate-800 block">ISO 9001:2015</span>
@@ -476,13 +476,13 @@ export default function NextOrbitWmsPage() {
               </h2>
               
               <div className="space-y-4">
-                <div className="rounded-xl border border-slate-300 bg-white p-4 transition-all duration-300 hover:border-slate-500">
+                <div className="rounded-xl border border-slate-300 bg-white p-4 transition-all duration-300 hover:border-teal-400 hover:shadow-sm">
                   <h4 className="text-xs font-bold text-slate-900">How long does integration take?</h4>
                   <p className="text-[11px] text-slate-600 mt-1 leading-relaxed">
                     Pre-built integrations for SAP, Oracle, and Zoho take less than 2 weeks. Custom ERPs can be bound via our secure REST webhooks within 4 weeks.
                   </p>
                 </div>
-                <div className="rounded-xl border border-slate-300 bg-white p-4 transition-all duration-300 hover:border-slate-500">
+                <div className="rounded-xl border border-slate-300 bg-white p-4 transition-all duration-300 hover:border-teal-400 hover:shadow-sm">
                   <h4 className="text-xs font-bold text-slate-900">Is data storage isolated per tenant?</h4>
                   <p className="text-[11px] text-slate-600 mt-1 leading-relaxed">
                     Yes, we use strict logical separation (multi-tenant branch isolation) to ensure zero data leakage between different regional branches or shipping operations.

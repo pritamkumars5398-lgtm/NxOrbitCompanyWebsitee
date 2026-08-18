@@ -47,7 +47,7 @@ export function Capabilities() {
                 />
 
                 <div className="flex items-start justify-between">
-                  <span className="inline-flex size-11 items-center justify-center rounded-xl bg-linear-to-br from-brand-500 to-teal-400 text-white shadow-md shadow-brand-500/20 transition-transform duration-300 group-hover:scale-110">
+                  <span className="inline-flex size-11 items-center justify-center rounded-xl bg-linear-to-br from-brand-500 to-teal-400 text-white transition-transform duration-300 group-hover:scale-110">
                     <NavIcon name={item.icon} className="size-5" />
                   </span>
                   <div className="flex size-7 items-center justify-center rounded-full bg-slate-50 text-ink-400 transition-all duration-300 group-hover:bg-teal-50 group-hover:text-teal-600">

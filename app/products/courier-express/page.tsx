@@ -270,21 +270,21 @@ export default function CourierExpressPage() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-lg hover:shadow-teal-500/10 cursor-pointer">
               <span className="text-display-md text-teal-600 font-black">-45%</span>
               <h3 className="text-base font-bold text-slate-900 mt-2">Return-To-Origin (RTO)</h3>
               <p className="text-sm text-slate-600 mt-1 leading-relaxed">
                 Pre-dispatch AI address validation and automated WhatsApp buyer confirmation.
               </p>
             </div>
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-lg hover:shadow-teal-500/10 cursor-pointer">
               <span className="text-display-md text-brand-600 font-black">18%</span>
               <h3 className="text-base font-bold text-slate-900 mt-2">Lower Logistics Cost</h3>
               <p className="text-sm text-slate-600 mt-1 leading-relaxed">
                 Dynamic real-time carrier allocation engine picking the best rate and SLA balance.
               </p>
             </div>
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-lg hover:shadow-teal-500/10 cursor-pointer">
               <span className="text-display-md text-slate-900 font-black">98.4%</span>
               <h3 className="text-base font-bold text-slate-900 mt-2">On-Time Delivery</h3>
               <p className="text-sm text-slate-600 mt-1 leading-relaxed">
@@ -355,7 +355,7 @@ export default function CourierExpressPage() {
                     "flex items-center gap-2 px-4 py-3 rounded-xl border text-xs font-semibold transition-all duration-300 cursor-pointer",
                     activeTab === tab.id
                       ? "bg-brand-950 border-brand-950 text-white"
-                      : "border-slate-300 text-slate-600 hover:border-slate-600 hover:bg-slate-50"
+                      : "border-slate-300 text-slate-600 hover:border-teal-400 hover:bg-slate-50"
                   )}
                 >
                   <Icon className="size-4" />
@@ -473,7 +473,7 @@ export default function CourierExpressPage() {
                           "w-full text-left px-3 py-2 rounded-lg border text-xs font-mono transition-colors duration-200 cursor-pointer disabled:opacity-50",
                           idx === chatIndex 
                             ? "bg-teal-500/10 border-teal-500/60 text-teal-400" 
-                            : "border-slate-800 text-slate-400 hover:border-slate-700 hover:text-slate-300 bg-slate-900/50"
+                            : "border-slate-800 text-slate-400 hover:border-teal-400 hover:text-slate-300 bg-slate-900/50"
                         )}
                       >
                         {prompt.question}
@@ -501,7 +501,7 @@ export default function CourierExpressPage() {
 
           <div className="grid gap-8 md:grid-cols-3">
             {/* Storefronts */}
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-md hover:shadow-teal-500/10 cursor-pointer">
               <span className="flex size-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600 mb-4">
                 <Globe className="size-5" />
               </span>
@@ -519,7 +519,7 @@ export default function CourierExpressPage() {
             </div>
 
             {/* Carrier Networks */}
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-md hover:shadow-teal-500/10 cursor-pointer">
               <span className="flex size-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600 mb-4">
                 <Truck className="size-5" />
               </span>
@@ -537,7 +537,7 @@ export default function CourierExpressPage() {
             </div>
 
             {/* Developer Flexibility */}
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-md hover:shadow-teal-500/10 cursor-pointer">
               <span className="flex size-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600 mb-4">
                 <Code className="size-5" />
               </span>

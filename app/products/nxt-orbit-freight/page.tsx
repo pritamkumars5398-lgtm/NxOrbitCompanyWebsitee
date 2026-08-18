@@ -257,21 +257,21 @@ export default function NextOrbitFreightPage() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-lg hover:shadow-teal-500/10 cursor-pointer">
               <span className="text-display-md text-teal-600 font-black">-40%</span>
               <h3 className="text-base font-bold text-slate-900 mt-2">Operational Overhead</h3>
               <p className="text-sm text-slate-600 mt-1 leading-relaxed">
                 Cut manual processing costs by automating repetitive data entry, email drafting, and customs filings.
               </p>
             </div>
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-lg hover:shadow-teal-500/10 cursor-pointer">
               <span className="text-display-md text-brand-600 font-black">2x Faster</span>
               <h3 className="text-base font-bold text-slate-900 mt-2">Quote Conversion</h3>
               <p className="text-sm text-slate-600 mt-1 leading-relaxed">
                 Move from inquiry to booked shipment in minutes with AI-assisted pricing and carrier allocation pipelines.
               </p>
             </div>
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-lg hover:shadow-teal-500/10 cursor-pointer">
               <span className="text-display-md text-slate-900 font-black">60%</span>
               <h3 className="text-base font-bold text-slate-900 mt-2">Cycle Time Reduction</h3>
               <p className="text-sm text-slate-600 mt-1 leading-relaxed">

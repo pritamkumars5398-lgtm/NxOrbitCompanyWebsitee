@@ -309,21 +309,21 @@ export default function NextOrbitSalesFinancePage() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-lg hover:shadow-teal-500/10 cursor-pointer">
               <span className="text-display-md text-teal-600 font-black">0</span>
               <h3 className="text-base font-bold text-slate-900 mt-2">Unbilled Shipments</h3>
               <p className="text-sm text-slate-600 mt-1 leading-relaxed">
                 Automated invoice generation triggered directly from operational bookings.
               </p>
             </div>
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-lg hover:shadow-teal-500/10 cursor-pointer">
               <span className="text-display-md text-brand-600 font-black">2x Faster</span>
               <h3 className="text-base font-bold text-slate-900 mt-2">Quote-to-Invoice Cycles</h3>
               <p className="text-sm text-slate-600 mt-1 leading-relaxed">
                 Seamless flow from sales enquiry → quotation → booking → common invoice.
               </p>
             </div>
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-lg hover:shadow-teal-500/10 cursor-pointer">
               <span className="text-display-md text-slate-900 font-black">100%</span>
               <h3 className="text-base font-bold text-slate-900 mt-2">Margin Transparency</h3>
               <p className="text-sm text-slate-600 mt-1 leading-relaxed">
@@ -612,7 +612,7 @@ export default function NextOrbitSalesFinancePage() {
             </div>
 
             {/* Banking & Payment Gateways */}
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-md hover:shadow-teal-500/10 cursor-pointer">
               <span className="flex size-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600 mb-4">
                 <Landmark className="size-5" />
               </span>
@@ -623,7 +623,7 @@ export default function NextOrbitSalesFinancePage() {
             </div>
 
             {/* Audit-Ready Compliance */}
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-md hover:shadow-teal-500/10 cursor-pointer">
               <span className="flex size-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600 mb-4">
                 <ShieldCheck className="size-5" />
               </span>
