@@ -61,7 +61,7 @@ const ROLE_TABS = [
     points: [
       { title: "Single & Common Invoicing", desc: "Generate compliant tax invoices combining freight charges, local clearing, and customs duties." },
       { title: "GL Account Management", desc: "Automate ledger entries for receivables, payables, agent payouts, and carrier disbursements." },
-      { title: "Journal Entries", desc: "Double-entry bookkeeping automation adhering to regional accounting and auditing standards." },
+      { title: "Journal Entries & Credit Limits", desc: "Double-entry bookkeeping automation and real-time credit limit enforcement for accounts." },
       { title: "Real-Time Margin Tracking", desc: "Real-time cost audits for every container to isolate profit leaks and identify cost savings." }
     ]
   },
@@ -100,7 +100,7 @@ const SECURITY_POINTS = [
   {
     icon: Lock,
     title: "AES-256 Bit Encryption",
-    desc: "Enterprise-grade security protocols protecting all sensitive operational and financial records — both in-transit across networks and at-rest."
+    desc: "Enterprise-grade security protocols protecting all sensitive operational and financial records—both in-transit across networks and at-rest in the cloud."
   },
   {
     icon: Shield,
@@ -164,7 +164,7 @@ export default function NextOrbitFreightPage() {
         <div className="absolute inset-0 bg-brand-950/5 pointer-events-none" />
 
         <Container className="relative">
-          <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-20">
+          <div className="grid items-start gap-14 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-20">
             <div className="flex flex-col items-start">
               <Breadcrumb
                 items={[
@@ -204,13 +204,10 @@ export default function NextOrbitFreightPage() {
             </div>
 
             {/* Hero Visualization Mockup */}
-            <div className="relative flex justify-center lg:-mt-6">
+            <div className="relative flex justify-center">
               <Reveal from="up" scale={0.97} className="relative w-full max-w-[540px]">
-                {/* Glow backdrop */}
-                <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 size-[32rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(0,187,169,0.22)_0%,rgba(10,46,77,0.08)_50%,transparent_75%)] blur-[50px]" />
-                
                 {/* Modern visual card simulating freight workflows */}
-                <div className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-5 shadow-2xl transition-transform duration-500 hover:scale-[1.01]">
+                <div className="relative overflow-hidden rounded-3xl border border-slate-300 bg-white p-5 transition-transform duration-500 hover:scale-[1.01]">
                   <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
                     <div className="flex items-center gap-2">
                       <span className="flex size-3.5 rounded-full bg-emerald-500 animate-pulse" />
@@ -221,7 +218,7 @@ export default function NextOrbitFreightPage() {
                   
                   {/* Fictional Dashboard Mockup */}
                   <div className="space-y-4">
-                    <div className="rounded-xl bg-slate-900 text-white p-4 font-mono text-xs shadow-inner">
+                    <div className="rounded-xl bg-slate-900 text-white p-4 font-mono text-xs">
                       <div className="text-teal-400">$ nxt-freight --diagnose --active</div>
                       <div className="text-slate-400 mt-2">Checking operations, custom clearings & bills...</div>
                       <div className="text-emerald-400 mt-1">✓ CRM databases synchronized</div>
@@ -260,21 +257,21 @@ export default function NextOrbitFreightPage() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
-            <div className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
               <span className="text-display-md text-teal-600 font-black">-40%</span>
               <h3 className="text-base font-bold text-slate-900 mt-2">Operational Overhead</h3>
               <p className="text-sm text-slate-600 mt-1 leading-relaxed">
                 Cut manual processing costs by automating repetitive data entry, email drafting, and customs filings.
               </p>
             </div>
-            <div className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
               <span className="text-display-md text-brand-600 font-black">2x Faster</span>
               <h3 className="text-base font-bold text-slate-900 mt-2">Quote Conversion</h3>
               <p className="text-sm text-slate-600 mt-1 leading-relaxed">
                 Move from inquiry to booked shipment in minutes with AI-assisted pricing and carrier allocation pipelines.
               </p>
             </div>
-            <div className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
               <span className="text-display-md text-slate-900 font-black">60%</span>
               <h3 className="text-base font-bold text-slate-900 mt-2">Cycle Time Reduction</h3>
               <p className="text-sm text-slate-600 mt-1 leading-relaxed">
@@ -318,7 +315,7 @@ export default function NextOrbitFreightPage() {
                 <Navigation className="size-5.5" />
               </span>
               <div className="flex flex-col">
-                <h3 className="text-base font-bold text-slate-900">Predictive Agility (Route & Cost)</h3>
+                <h3 className="text-base font-bold text-slate-900">Pillar 2: Predictive Agility (Route & Cost Optimization)</h3>
                 <p className="text-sm text-slate-600 mt-2 leading-relaxed">
                   Move from reactive problem-solving to proactive decision-making. Predict port congestion, route bottlenecks, and carrier risks before you book.
                 </p>
@@ -331,7 +328,7 @@ export default function NextOrbitFreightPage() {
                 <MessageSquarePlus className="size-5.5" />
               </span>
               <div className="flex flex-col">
-                <h3 className="text-base font-bold text-slate-900">Autonomous Collaboration</h3>
+                <h3 className="text-base font-bold text-slate-900">Pillar 3: Autonomous Collaboration (Context-First Communication)</h3>
                 <p className="text-sm text-slate-600 mt-2 leading-relaxed">
                   Keep communication tied directly to shipments. Built-in ChatApp, media sharing, and automated triggers keep teams and partners aligned without messy email chains.
                 </p>
@@ -353,31 +350,37 @@ export default function NextOrbitFreightPage() {
               </h2>
               
               <div className="space-y-6">
-                <div className="flex gap-4">
-                  <span className="flex size-9 items-center justify-center rounded-xl bg-brand-600 text-white font-mono text-sm font-bold">1</span>
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-900">Autonomous Workflow Orchestration</h4>
-                    <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                <div className="flex items-start gap-4">
+                  <span className="flex shrink-0 size-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-teal-500 text-white font-mono text-sm font-extrabold">
+                    1
+                  </span>
+                  <div className="flex-1 pt-0.5">
+                    <h4 className="text-base font-bold text-slate-900">Autonomous Workflow Orchestration</h4>
+                    <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
                       Self-healing workflows that detect missing documents or vessel delays and auto-draft inquiry emails to carriers.
                     </p>
                   </div>
                 </div>
 
-                <div className="flex gap-4">
-                  <span className="flex size-9 items-center justify-center rounded-xl bg-brand-600 text-white font-mono text-sm font-bold">2</span>
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-900">Conversational Operations</h4>
-                    <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                <div className="flex items-start gap-4">
+                  <span className="flex shrink-0 size-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-teal-500 text-white font-mono text-sm font-extrabold">
+                    2
+                  </span>
+                  <div className="flex-1 pt-0.5">
+                    <h4 className="text-base font-bold text-slate-900">Conversational Operations</h4>
+                    <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
                       Type natural queries like "What are my top 3 delayed shipments by value?" or "Compare Q2 margins for Air vs. Sea Export" for instant answers.
                     </p>
                   </div>
                 </div>
 
-                <div className="flex gap-4">
-                  <span className="flex size-9 items-center justify-center rounded-xl bg-brand-600 text-white font-mono text-sm font-bold">3</span>
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-900">Strategic Business Insights</h4>
-                    <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                <div className="flex items-start gap-4">
+                  <span className="flex shrink-0 size-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-teal-500 text-white font-mono text-sm font-extrabold">
+                    3
+                  </span>
+                  <div className="flex-1 pt-0.5">
+                    <h4 className="text-base font-bold text-slate-900">Strategic Business Insights</h4>
+                    <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
                       Daily AI Command Briefs surfacing "Silent Profit Leaks" and trend analysis across trade lanes.
                     </p>
                   </div>
@@ -387,10 +390,7 @@ export default function NextOrbitFreightPage() {
 
             {/* Right side interactive AI Chatbot Mockup */}
             <div className="relative">
-              {/* Outer Glow */}
-              <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-teal-500 to-brand-500 opacity-20 blur-xl" />
-              
-              <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl flex flex-col h-[480px]">
+              <div className="relative overflow-hidden rounded-3xl border border-slate-300 bg-white flex flex-col h-[480px]">
                 {/* Header */}
                 <div className="bg-slate-950 text-white px-5 py-4 flex items-center justify-between">
                   <div className="flex items-center gap-2">
@@ -459,8 +459,8 @@ export default function NextOrbitFreightPage() {
                   className={cn(
                     "flex items-center gap-2 px-5 py-3 rounded-xl border text-sm font-semibold transition-all duration-300 cursor-pointer",
                     activeTab === tab.id
-                      ? "bg-brand-950 border-brand-950 text-white shadow-md shadow-brand-950/10"
-                      : "border-slate-200 text-slate-600 hover:border-slate-300 hover:bg-slate-50"
+                      ? "bg-brand-950 border-brand-950 text-white"
+                      : "border-slate-300 text-slate-600 hover:border-slate-600 hover:bg-slate-50"
                   )}
                 >
                   <Icon className="size-4" />
@@ -471,7 +471,7 @@ export default function NextOrbitFreightPage() {
           </div>
 
           {/* Active Tab Panel */}
-          <div className="rounded-3xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm">
+          <div className="rounded-3xl border border-slate-300 bg-white p-6 md:p-8">
             <div className="grid gap-6 md:grid-cols-2">
               {ROLE_TABS.find((t) => t.id === activeTab)?.points.map((point, index) => (
                 <div key={index} className="flex gap-3 items-start">
@@ -506,7 +506,7 @@ export default function NextOrbitFreightPage() {
             {INTEGRATIONS.map((item, idx) => (
               <div 
                 key={idx} 
-                className="rounded-2xl border border-slate-200 bg-white p-5 text-center flex flex-col justify-center items-center shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-300"
+                className="rounded-2xl border border-slate-300 bg-white p-5 text-center flex flex-col justify-center items-center transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer"
               >
                 <div className="size-11 rounded-xl bg-slate-50 flex items-center justify-center mb-3">
                   <Code className="size-5 text-slate-400" />
@@ -538,7 +538,7 @@ export default function NextOrbitFreightPage() {
             {SECURITY_POINTS.map((point, index) => {
               const Icon = point.icon;
               return (
-                <div key={index} className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm flex flex-col">
+                <div key={index} className="rounded-2xl border border-slate-300 bg-white p-6 flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
                   <span className="flex size-10 items-center justify-center rounded-xl bg-slate-50 text-slate-600 mb-4 self-start">
                     <Icon className="size-5" />
                   </span>
@@ -565,7 +565,7 @@ export default function NextOrbitFreightPage() {
               <p className="text-sm text-slate-600 leading-relaxed mb-6">
                 NXTorbit operates under strict international quality guidelines. Our products undergo rigorous functional testing, stress auditing, and regular third-party security audits to ensure compliance with enterprise parameters globally.
               </p>
-              <div className="inline-flex items-center gap-3 px-4 py-3 rounded-2xl border border-slate-200 bg-white shadow-sm">
+              <div className="inline-flex items-center gap-3 px-4 py-3 rounded-2xl border border-slate-300 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-slate-600 cursor-pointer">
                 <ShieldCheck className="size-8 text-teal-500 shrink-0" />
                 <div>
                   <span className="text-xs font-bold text-slate-800 block">ISO 9001:2015</span>

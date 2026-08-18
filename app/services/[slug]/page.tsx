@@ -86,7 +86,7 @@ export default async function ServicePage({
         <Grain />
 
         <Container className="relative">
-          <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:gap-20">
+          <div className="grid items-start gap-14 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:gap-20">
             <div className="flex flex-col items-start">
               <Breadcrumb
                 items={[
@@ -119,7 +119,7 @@ export default async function ServicePage({
             </div>
 
             {/* Service Hero JPG Image Visual */}
-            <Parallax distance={26} className="relative flex justify-center lg:-mt-12">
+            <Parallax distance={26} className="relative flex justify-center">
               <Reveal from="up" scale={0.96} className="relative w-full max-w-[540px]">
                 {/* Ambient Radial Backdrop Glow */}
                 <div
@@ -199,16 +199,10 @@ export default async function ServicePage({
                     <span className="relative z-10 inline-flex size-12 items-center justify-center rounded-full border border-hairline bg-white font-mono text-sm font-semibold text-brand-500 shadow-sm">
                       {step.step}
                     </span>
-                    {!isLast && (
-                      <span 
-                        aria-hidden 
-                        className={cn(
-                          "absolute top-6 left-12 right-[-2rem] h-px bg-brand-200/60 -z-10 hidden md:block",
-                          isRowEndMd && "md:hidden lg:block",
-                          isRowEndLg && "lg:hidden"
-                        )} 
-                      />
-                    )}
+                    <span 
+                      aria-hidden 
+                      className="absolute top-6 left-12 right-[-2rem] h-px bg-brand-300/80 -z-10 hidden md:block" 
+                    />
                   </div>
                   <h3 className="text-base font-semibold text-ink-900">{step.title}</h3>
                   <p className="text-sm leading-relaxed text-ink-600">{step.description}</p>

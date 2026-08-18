@@ -4,6 +4,7 @@ import {
   COMPANY_LINKS,
   CONTACT_DETAILS,
   INDUSTRY_LINKS,
+  PRODUCT_LINKS,
   SERVICE_LINKS,
   TECHNOLOGY_LINKS,
 } from "@/app/core/data/navigation";
@@ -16,6 +17,7 @@ const COLUMNS = [
   { title: "Technology", links: TECHNOLOGY_LINKS },
   { title: "Industries", links: INDUSTRY_LINKS },
   { title: "Company", links: COMPANY_LINKS },
+  { title: "Products", links: PRODUCT_LINKS },
 ];
 
 /* Lucide dropped brand marks in v1, so the two social glyphs are inlined. */
@@ -54,16 +56,16 @@ export function Footer() {
         className="pointer-events-none absolute -top-40 left-1/2 h-80 w-[60rem] -translate-x-1/2 rounded-full bg-brand-400/10 blur-[120px]"
       />
 
-      <Container className="relative py-10 lg:py-12">
-        <div className="grid gap-12 lg:grid-cols-[1.3fr_2.4fr]">
+      <Container className="relative py-6 lg:py-8">
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_2.6fr]">
           {/* Brand + contact */}
-          <div className="flex flex-col gap-7">
+          <div className="flex flex-col gap-6">
             <Link
               href="/"
               aria-label="NXTorbit — home"
               className="w-fit p-0 bg-transparent"
             >
-              <Logo height={40} light />
+              <Logo height={40} />
             </Link>
 
             <p className="max-w-sm text-sm leading-relaxed text-ink-400">
@@ -92,7 +94,7 @@ export function Footer() {
           </div>
 
           {/* Link columns */}
-          <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-4">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 md:grid-cols-5">
             {COLUMNS.map((column) => (
               <nav key={column.title} aria-label={column.title} className="flex flex-col gap-4">
                 <h2 className="text-eyebrow uppercase text-brand-200">{column.title}</h2>
@@ -117,7 +119,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col gap-6 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-6 flex flex-col gap-4 border-t border-white/10 pt-4 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs text-ink-500">
             © {new Date().getFullYear()} NXTorbit Technology Pvt. Ltd. All rights reserved.
           </p>

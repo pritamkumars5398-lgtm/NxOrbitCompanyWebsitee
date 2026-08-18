@@ -11,18 +11,18 @@ type Size = "sm" | "md" | "lg";
 
 const VARIANTS: Record<Variant, string> = {
   primary:
-    "bg-brand-800 text-white shadow-sm hover:bg-brand-700 hover:shadow-[0_10px_30px_-10px_rgb(10_46_77/0.55)]",
+    "bg-brand-800 text-white hover:bg-brand-700",
   accent:
-    "bg-brand-300 text-brand-950 shadow-sm hover:bg-brand-200 hover:shadow-[0_10px_30px_-10px_rgb(0_187_169/0.7)]",
+    "bg-brand-300 text-brand-950 hover:bg-brand-200",
   outline:
-    "border border-hairline-strong bg-white text-brand-800 hover:border-brand-300 hover:text-brand-500 hover:shadow-sm",
+    "border border-hairline-strong bg-white text-brand-800 hover:border-brand-300 hover:text-brand-500",
   ghost: "text-brand-500 hover:bg-brand-50 hover:text-brand-600",
   light:
-    "bg-white text-brand-800 shadow-sm hover:bg-brand-50 hover:shadow-[0_10px_30px_-10px_rgb(255_255_255/0.4)]",
+    "bg-white text-brand-800 hover:bg-brand-50",
   "outline-light":
     "border border-white/25 text-white hover:border-brand-200/70 hover:bg-white/5",
   orange:
-    "bg-orange-500 text-white shadow-sm hover:bg-orange-400 hover:shadow-[0_10px_30px_-10px_rgb(249_115_22/0.55)]",
+    "bg-orange-500 text-white hover:bg-orange-400",
 };
 
 const SIZES: Record<Size, string> = {

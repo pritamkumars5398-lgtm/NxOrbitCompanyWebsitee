@@ -63,7 +63,7 @@ export default async function TechnologyPage({
         <Grain />
 
         <Container className="relative">
-          <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-20">
+          <div className="grid items-start gap-14 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-20">
             <div className="flex flex-col items-start">
               <Breadcrumb
                 tone="dark"
@@ -98,7 +98,7 @@ export default async function TechnologyPage({
               </Reveal>
             </div>
 
-            <div className="lg:-mt-12">
+            <div className="relative">
               <TerminalCard title={`${data.slug}/deploy.sh`} lines={terminalLines} />
             </div>
           </div>

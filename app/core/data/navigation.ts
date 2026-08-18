@@ -22,6 +22,29 @@ export type NavGroup = {
   links: NavLink[];
 };
 
+export const PRODUCT_LINKS: NavLink[] = [
+  {
+    label: "NXT Orbit Freight",
+    href: "/products/nxt-orbit-freight",
+    icon: "ship",
+  },
+  {
+    label: "NXT WMS",
+    href: "/products/nxt-wms",
+    icon: "layers",
+  },
+  {
+    label: "Courier Express",
+    href: "/products/courier-express",
+    icon: "truck",
+  },
+  {
+    label: "NXT Sales & Finance",
+    href: "/products/nxt-sales-finance",
+    icon: "landmark",
+  },
+];
+
 export const SERVICE_LINKS: NavLink[] = [
   {
     label: "Mobile App Development",
@@ -77,10 +100,6 @@ export const INDUSTRY_LINKS: NavLink[] = [
   { label: "E-Commerce", href: "/industries/ecommerce", icon: "shopping-bag" },
   { label: "Logistics", href: "/industries/logistics", icon: "truck" },
   { label: "Entertainment", href: "/industries/entertainment", icon: "clapperboard" },
-  { label: "NXT Orbit Freight", href: "/products/nxt-orbit-freight", icon: "ship" },
-  { label: "NXT WMS", href: "/products/nxt-wms", icon: "layers" },
-  { label: "Courier Express", href: "/products/courier-express", icon: "truck" },
-  { label: "NXT Sales & Finance", href: "/products/nxt-sales-finance", icon: "landmark" },
 ];
 
 export const COMPANY_LINKS: NavLink[] = [
@@ -120,11 +139,11 @@ export const NAV_GROUPS: NavGroup[] = [
     layout: "mega",
     links: INDUSTRY_LINKS,
     feature: {
-      title: "NXT Orbit Freight",
+      title: "Industry Specific Solutions",
       description:
-        "AI-native Operating System for next-gen logistics, custom clearance, and supply chain automation.",
-      href: "/products/nxt-orbit-freight",
-      cta: "Explore Product",
+        "Tailored software engineering across Healthcare, Fintech, Logistics, and E-Commerce.",
+      href: "/contact",
+      cta: "Learn more",
     },
   },
   {
@@ -137,6 +156,18 @@ export const NAV_GROUPS: NavGroup[] = [
         "Fourteen years of engineering for startups and enterprises across 35 countries.",
       href: "/case-studies",
       cta: "See the work",
+    },
+  },
+  {
+    label: "Products",
+    layout: "mega",
+    links: PRODUCT_LINKS,
+    feature: {
+      title: "NXT Enterprise Suite",
+      description:
+        "AI-native Operating Systems for Freight, Warehouse, Courier & Financial operations.",
+      href: "/products/nxt-orbit-freight",
+      cta: "Explore Suite",
     },
   },
 ];

@@ -141,7 +141,7 @@ export default function NextOrbitWmsPage() {
         <div className="absolute inset-0 bg-brand-950/5 pointer-events-none" />
 
         <Container className="relative">
-          <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-20">
+          <div className="grid items-start gap-14 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-20">
             <div className="flex flex-col items-start">
               <Breadcrumb
                 items={[
@@ -159,7 +159,7 @@ export default function NextOrbitWmsPage() {
                 <h1 className="max-w-2xl text-display-lg sm:text-display-xl text-ink-900 leading-[1.05]">
                   One Platform. <br />
                   <span className="bg-gradient-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">
-                    Total Warehouse Intelligence.
+                    Total Warehouse Intelligence & Capacity Yield.
                   </span>
                 </h1>
               </Reveal>
@@ -181,13 +181,10 @@ export default function NextOrbitWmsPage() {
             </div>
 
             {/* Hero Visualization Mockup */}
-            <div className="relative flex justify-center lg:-mt-6">
+            <div className="relative flex justify-center">
               <Reveal from="up" scale={0.97} className="relative w-full max-w-[540px]">
-                {/* Glow backdrop */}
-                <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 size-[32rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(0,187,169,0.22)_0%,rgba(10,46,77,0.08)_50%,transparent_75%)] blur-[50px]" />
-                
                 {/* 3D Spatial Twin Mockup */}
-                <div className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-5 shadow-2xl transition-transform duration-500 hover:scale-[1.01]">
+                <div className="relative overflow-hidden rounded-3xl border border-slate-300 bg-white p-5 transition-transform duration-500 hover:scale-[1.01]">
                   <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
                     <div className="flex items-center gap-2">
                       <span className="flex size-3.5 rounded-full bg-teal-500 animate-pulse" />
@@ -197,7 +194,7 @@ export default function NextOrbitWmsPage() {
                   </div>
                   
                   <div className="space-y-4">
-                    <div className="rounded-xl bg-slate-900 text-white p-4 font-mono text-xs shadow-inner">
+                    <div className="rounded-xl bg-slate-900 text-white p-4 font-mono text-xs">
                       <div className="text-teal-400">$ nxt-wms --spatial-scan --live</div>
                       <div className="text-slate-400 mt-2">Scanning rack configurations...</div>
                       <div className="text-emerald-400 mt-1">✓ 3D Spatial Grid synchronized</div>
@@ -236,21 +233,21 @@ export default function NextOrbitWmsPage() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
-            <div className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
               <span className="text-display-md text-teal-600 font-black">100%</span>
               <h3 className="text-base font-bold text-slate-900 mt-2">Flow Traceability</h3>
               <p className="text-sm text-slate-600 mt-1 leading-relaxed">
                 Complete visibility from supplier origin to end-customer delivery with real-time velocity metrics.
               </p>
             </div>
-            <div className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
               <span className="text-display-md text-brand-600 font-black">+25%</span>
               <h3 className="text-base font-bold text-slate-900 mt-2">Capacity Monetization</h3>
               <p className="text-sm text-slate-600 mt-1 leading-relaxed">
                 AI-driven peak/downtime analysis revealing exact idle capacity available to onboard new customers.
               </p>
             </div>
-            <div className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
               <span className="text-display-md text-slate-900 font-black">Full</span>
               <h3 className="text-base font-bold text-slate-900 mt-2">System Telemetry</h3>
               <p className="text-sm text-slate-600 mt-1 leading-relaxed">
@@ -285,8 +282,8 @@ export default function NextOrbitWmsPage() {
                   className={cn(
                     "flex items-center gap-2 px-4 py-3 rounded-xl border text-xs font-semibold transition-all duration-300 cursor-pointer",
                     activeTab === tab.id
-                      ? "bg-brand-950 border-brand-950 text-white shadow-md shadow-brand-950/10"
-                      : "border-slate-200 text-slate-600 hover:border-slate-300 hover:bg-slate-50"
+                      ? "bg-brand-950 border-brand-950 text-white"
+                      : "border-slate-300 text-slate-600 hover:border-slate-600 hover:bg-slate-50"
                   )}
                 >
                   <Icon className="size-4" />
@@ -297,7 +294,7 @@ export default function NextOrbitWmsPage() {
           </div>
 
           {/* Active Tab Panel */}
-          <div className="rounded-3xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm">
+          <div className="rounded-3xl border border-slate-300 bg-white p-6 md:p-8">
             <div className="mb-6 pb-4 border-b border-slate-100">
               <p className="text-sm text-slate-700 font-medium">
                 {WMS_ROLE_TABS.find((t) => t.id === activeTab)?.intro}
@@ -332,31 +329,37 @@ export default function NextOrbitWmsPage() {
               </h2>
               
               <div className="space-y-6">
-                <div className="flex gap-4">
-                  <span className="flex size-9 items-center justify-center rounded-xl bg-brand-600 text-white font-mono text-sm font-bold">1</span>
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-900">Conversational Operations Assistant</h4>
-                    <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                <div className="flex items-start gap-4">
+                  <span className="flex shrink-0 size-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-teal-500 text-white font-mono text-sm font-extrabold">
+                    1
+                  </span>
+                  <div className="flex-1 pt-0.5">
+                    <h4 className="text-base font-bold text-slate-900">Conversational Operations Assistant</h4>
+                    <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
                       Ask questions in plain language like "What is our average turnaround time for Supplier X?" or "Which warehouse has 20% free space next week?" for instant reports.
                     </p>
                   </div>
                 </div>
 
-                <div className="flex gap-4">
-                  <span className="flex size-9 items-center justify-center rounded-xl bg-brand-600 text-white font-mono text-sm font-bold">2</span>
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-900">Predictive Demand & Inventory Forecasting</h4>
-                    <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                <div className="flex items-start gap-4">
+                  <span className="flex shrink-0 size-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-teal-500 text-white font-mono text-sm font-extrabold">
+                    2
+                  </span>
+                  <div className="flex-1 pt-0.5">
+                    <h4 className="text-base font-bold text-slate-900">Predictive Demand & Inventory Forecasting</h4>
+                    <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
                       Machine-learning models project seasonal stock requirements to prevent stockouts and overstock costs before they manifest.
                     </p>
                   </div>
                 </div>
 
-                <div className="flex gap-4">
-                  <span className="flex size-9 items-center justify-center rounded-xl bg-brand-600 text-white font-mono text-sm font-bold">3</span>
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-900">Executive Trend Dashboards</h4>
-                    <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                <div className="flex items-start gap-4">
+                  <span className="flex shrink-0 size-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-teal-500 text-white font-mono text-sm font-extrabold">
+                    3
+                  </span>
+                  <div className="flex-1 pt-0.5">
+                    <h4 className="text-base font-bold text-slate-900">Executive Trend Dashboards</h4>
+                    <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
                       High-level visual summaries translating complex floor operational data into actionable business strategy for C-suite executives.
                     </p>
                   </div>
@@ -366,10 +369,7 @@ export default function NextOrbitWmsPage() {
 
             {/* Right side interactive AI Chatbot Mockup */}
             <div className="relative">
-              {/* Outer Glow */}
-              <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-teal-500 to-brand-500 opacity-20 blur-xl" />
-              
-              <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl flex flex-col h-[480px]">
+              <div className="relative overflow-hidden rounded-3xl border border-slate-300 bg-white flex flex-col h-[480px]">
                 {/* Header */}
                 <div className="bg-slate-950 text-white px-5 py-4 flex items-center justify-between">
                   <div className="flex items-center gap-2">
@@ -432,7 +432,7 @@ export default function NextOrbitWmsPage() {
             {INTEGRATIONS.map((item, idx) => (
               <div 
                 key={idx} 
-                className="rounded-2xl border border-slate-200 bg-white p-5 text-center flex flex-col justify-center items-center shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-300"
+                className="rounded-2xl border border-slate-300 bg-white p-5 text-center flex flex-col justify-center items-center transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer"
               >
                 <div className="size-11 rounded-xl bg-slate-50 flex items-center justify-center mb-3">
                   <Code className="size-5 text-slate-400" />
@@ -459,7 +459,7 @@ export default function NextOrbitWmsPage() {
               <p className="text-sm text-slate-600 leading-relaxed mb-6">
                 NXTorbit operates under strict international quality guidelines. Our products undergo rigorous functional testing, stress auditing, and regular third-party security audits to ensure compliance with enterprise parameters globally.
               </p>
-              <div className="inline-flex items-center gap-3 px-4 py-3 rounded-2xl border border-slate-200 bg-white shadow-sm">
+              <div className="inline-flex items-center gap-3 px-4 py-3 rounded-2xl border border-slate-300 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-slate-600 cursor-pointer">
                 <ShieldCheck className="size-8 text-teal-500 shrink-0" />
                 <div>
                   <span className="text-xs font-bold text-slate-800 block">ISO 9001:2015</span>
@@ -476,13 +476,13 @@ export default function NextOrbitWmsPage() {
               </h2>
               
               <div className="space-y-4">
-                <div className="rounded-xl border border-slate-200 bg-white p-4">
+                <div className="rounded-xl border border-slate-300 bg-white p-4 transition-all duration-300 hover:border-slate-500">
                   <h4 className="text-xs font-bold text-slate-900">How long does integration take?</h4>
                   <p className="text-[11px] text-slate-600 mt-1 leading-relaxed">
                     Pre-built integrations for SAP, Oracle, and Zoho take less than 2 weeks. Custom ERPs can be bound via our secure REST webhooks within 4 weeks.
                   </p>
                 </div>
-                <div className="rounded-xl border border-slate-200 bg-white p-4">
+                <div className="rounded-xl border border-slate-300 bg-white p-4 transition-all duration-300 hover:border-slate-500">
                   <h4 className="text-xs font-bold text-slate-900">Is data storage isolated per tenant?</h4>
                   <p className="text-[11px] text-slate-600 mt-1 leading-relaxed">
                     Yes, we use strict logical separation (multi-tenant branch isolation) to ensure zero data leakage between different regional branches or shipping operations.

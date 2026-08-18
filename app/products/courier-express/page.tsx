@@ -178,7 +178,7 @@ export default function CourierExpressPage() {
         <div className="absolute inset-0 bg-brand-950/5 pointer-events-none" />
 
         <Container className="relative">
-          <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-20">
+          <div className="grid items-start gap-14 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-20">
             <div className="flex flex-col items-start">
               <Breadcrumb
                 items={[
@@ -194,7 +194,7 @@ export default function CourierExpressPage() {
 
               <Reveal from="up" delay={0.06} className="mt-2">
                 <h1 className="max-w-2xl text-display-lg sm:text-display-xl text-ink-900 leading-[1.05]">
-                  Intelligent Shipping Engine <br />
+                  The Intelligent Shipping & Fulfillment Engine <br />
                   <span className="bg-gradient-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">
                     for Modern E-Commerce.
                   </span>
@@ -218,13 +218,10 @@ export default function CourierExpressPage() {
             </div>
 
             {/* Hero Visualization Mockup */}
-            <div className="relative flex justify-center lg:-mt-6">
+            <div className="relative flex justify-center">
               <Reveal from="up" scale={0.97} className="relative w-full max-w-[540px]">
-                {/* Glow backdrop */}
-                <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 size-[32rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(0,187,169,0.22)_0%,rgba(10,46,77,0.08)_50%,transparent_75%)] blur-[50px]" />
-                
                 {/* Modern visual card simulating multi-carrier dispatch and AI re-routing */}
-                <div className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-5 shadow-2xl transition-transform duration-500 hover:scale-[1.01]">
+                <div className="relative overflow-hidden rounded-3xl border border-slate-300 bg-white p-5 transition-transform duration-500 hover:scale-[1.01]">
                   <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
                     <div className="flex items-center gap-2">
                       <span className="flex size-3.5 rounded-full bg-teal-500 animate-pulse" />
@@ -234,7 +231,7 @@ export default function CourierExpressPage() {
                   </div>
                   
                   <div className="space-y-4">
-                    <div className="rounded-xl bg-slate-900 text-white p-4 font-mono text-xs shadow-inner">
+                    <div className="rounded-xl bg-slate-900 text-white p-4 font-mono text-xs">
                       <div className="text-teal-400">$ courier-express --analyze --shipment-id EX-9920</div>
                       <div className="text-slate-400 mt-2">Checking carrier SLAs for destination pin-code 400070...</div>
                       <div className="text-emerald-400 mt-1">✓ Verified address coordinates via AI</div>
@@ -273,21 +270,21 @@ export default function CourierExpressPage() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
-            <div className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
               <span className="text-display-md text-teal-600 font-black">-45%</span>
               <h3 className="text-base font-bold text-slate-900 mt-2">Return-To-Origin (RTO)</h3>
               <p className="text-sm text-slate-600 mt-1 leading-relaxed">
                 Pre-dispatch AI address validation and automated WhatsApp buyer confirmation.
               </p>
             </div>
-            <div className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
               <span className="text-display-md text-brand-600 font-black">18%</span>
               <h3 className="text-base font-bold text-slate-900 mt-2">Lower Logistics Cost</h3>
               <p className="text-sm text-slate-600 mt-1 leading-relaxed">
                 Dynamic real-time carrier allocation engine picking the best rate and SLA balance.
               </p>
             </div>
-            <div className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
               <span className="text-display-md text-slate-900 font-black">98.4%</span>
               <h3 className="text-base font-bold text-slate-900 mt-2">On-Time Delivery</h3>
               <p className="text-sm text-slate-600 mt-1 leading-relaxed">
@@ -310,9 +307,9 @@ export default function CourierExpressPage() {
             </p>
           </div>
 
-          <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
+          <div className="overflow-x-auto rounded-2xl border border-slate-300 bg-white">
             <table className="w-full border-collapse text-left text-sm">
-              <thead className="bg-slate-50 border-b border-slate-200">
+              <thead className="bg-slate-50 border-b border-slate-300">
                 <tr>
                   <th className="p-4 font-bold text-slate-900">Strategic Dimension</th>
                   <th className="p-4 font-bold text-slate-500">Legacy Shipping Aggregators (The Old Way)</th>
@@ -357,8 +354,8 @@ export default function CourierExpressPage() {
                   className={cn(
                     "flex items-center gap-2 px-4 py-3 rounded-xl border text-xs font-semibold transition-all duration-300 cursor-pointer",
                     activeTab === tab.id
-                      ? "bg-brand-950 border-brand-950 text-white shadow-md shadow-brand-950/10"
-                      : "border-slate-200 text-slate-600 hover:border-slate-300 hover:bg-slate-50"
+                      ? "bg-brand-950 border-brand-950 text-white"
+                      : "border-slate-300 text-slate-600 hover:border-slate-600 hover:bg-slate-50"
                   )}
                 >
                   <Icon className="size-4" />
@@ -369,7 +366,7 @@ export default function CourierExpressPage() {
           </div>
 
           {/* Active Tab Panel */}
-          <div className="rounded-3xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm">
+          <div className="rounded-3xl border border-slate-300 bg-white p-6 md:p-8">
             <div className="mb-6 pb-4 border-b border-slate-100">
               <p className="text-sm text-slate-700 font-medium">
                 {COURIER_ROLE_TABS.find((t) => t.id === activeTab)?.intro}
@@ -404,31 +401,37 @@ export default function CourierExpressPage() {
               </h2>
               
               <div className="space-y-6">
-                <div className="flex gap-4">
-                  <span className="flex size-9 items-center justify-center rounded-xl bg-brand-600 text-white font-mono text-sm font-bold">1</span>
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-900">Predictive ETA Engine</h4>
-                    <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                <div className="flex items-start gap-4">
+                  <span className="flex shrink-0 size-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-teal-500 text-white font-mono text-sm font-extrabold">
+                    1
+                  </span>
+                  <div className="flex-1 pt-0.5">
+                    <h4 className="text-base font-bold text-slate-900">Predictive ETA Engine</h4>
+                    <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
                       Calculates pin-code specific delivery timelines based on live carrier performance data, setting realistic customer expectations and reducing "Where Is My Order?" (WISMO) support calls by up to 60%.
                     </p>
                   </div>
                 </div>
 
-                <div className="flex gap-4">
-                  <span className="flex size-9 items-center justify-center rounded-xl bg-brand-600 text-white font-mono text-sm font-bold">2</span>
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-900">Conversational AI Logistics Assistant</h4>
-                    <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                <div className="flex items-start gap-4">
+                  <span className="flex shrink-0 size-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-teal-500 text-white font-mono text-sm font-extrabold">
+                    2
+                  </span>
+                  <div className="flex-1 pt-0.5">
+                    <h4 className="text-base font-bold text-slate-900">Conversational AI Logistics Assistant</h4>
+                    <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
                       Type natural queries into your dashboard like: "Which pin-codes had the highest RTO rate this week?" or "Compare shipping costs between Courier A and Courier B for South Region," and get instant visual analytics.
                     </p>
                   </div>
                 </div>
 
-                <div className="flex gap-4">
-                  <span className="flex size-9 items-center justify-center rounded-xl bg-brand-600 text-white font-mono text-sm font-bold">3</span>
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-900">Automated Claim Settlement</h4>
-                    <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                <div className="flex items-start gap-4">
+                  <span className="flex shrink-0 size-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-teal-500 text-white font-mono text-sm font-extrabold">
+                    3
+                  </span>
+                  <div className="flex-1 pt-0.5">
+                    <h4 className="text-base font-bold text-slate-900">Automated Claim Settlement</h4>
+                    <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
                       AI automatically detects lost, damaged, or delayed shipments exceeding SLA limits and drafts insurance/reimbursement claims instantly.
                     </p>
                   </div>
@@ -438,10 +441,7 @@ export default function CourierExpressPage() {
 
             {/* Right side interactive AI Chatbot Mockup */}
             <div className="relative">
-              {/* Outer Glow */}
-              <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-teal-500 to-brand-500 opacity-20 blur-xl" />
-              
-              <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl flex flex-col h-[480px]">
+              <div className="relative overflow-hidden rounded-3xl border border-slate-300 bg-white flex flex-col h-[480px]">
                 {/* Header */}
                 <div className="bg-slate-950 text-white px-5 py-4 flex items-center justify-between">
                   <div className="flex items-center gap-2">
@@ -501,7 +501,7 @@ export default function CourierExpressPage() {
 
           <div className="grid gap-8 md:grid-cols-3">
             {/* Storefronts */}
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
               <span className="flex size-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600 mb-4">
                 <Globe className="size-5" />
               </span>
@@ -519,7 +519,7 @@ export default function CourierExpressPage() {
             </div>
 
             {/* Carrier Networks */}
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
               <span className="flex size-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600 mb-4">
                 <Truck className="size-5" />
               </span>
@@ -537,7 +537,7 @@ export default function CourierExpressPage() {
             </div>
 
             {/* Developer Flexibility */}
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
               <span className="flex size-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600 mb-4">
                 <Code className="size-5" />
               </span>
@@ -567,7 +567,7 @@ export default function CourierExpressPage() {
             {SECURITY_POINTS.map((point, index) => {
               const Icon = point.icon;
               return (
-                <div key={index} className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm flex flex-col">
+                <div key={index} className="rounded-2xl border border-slate-300 bg-white p-6 flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
                   <span className="flex size-10 items-center justify-center rounded-xl bg-slate-50 text-slate-600 mb-4 self-start">
                     <Icon className="size-5" />
                   </span>
@@ -594,7 +594,7 @@ export default function CourierExpressPage() {
               <p className="text-sm text-slate-600 leading-relaxed mb-6">
                 NXTorbit operates under strict international quality guidelines. Our products undergo rigorous functional testing, stress auditing, and regular third-party security audits to ensure compliance with enterprise parameters globally.
               </p>
-              <div className="inline-flex items-center gap-3 px-4 py-3 rounded-2xl border border-slate-200 bg-white shadow-sm">
+              <div className="inline-flex items-center gap-3 px-4 py-3 rounded-2xl border border-slate-300 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-slate-600 cursor-pointer">
                 <ShieldCheck className="size-8 text-teal-500 shrink-0" />
                 <div>
                   <span className="text-xs font-bold text-slate-800 block">ISO 9001:2015</span>

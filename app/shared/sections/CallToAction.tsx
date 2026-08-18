@@ -37,7 +37,7 @@ export function CallToAction({
 
       <Container className="relative z-10">
         <div 
-          className="relative overflow-hidden rounded-[2.5rem] border-2 border-white/12 bg-[#070D1B] py-8 px-6 sm:px-10 lg:py-10 lg:px-12 shadow-2xl"
+          className="relative overflow-hidden rounded-[2.5rem] border-2 border-white/12 bg-[#070D1B] py-8 px-6 sm:px-10 lg:py-10 lg:px-12"
         >
           {/* Subtle background glow effect */}
           <div
@@ -108,13 +108,14 @@ export function CallToAction({
               </div>
             </Reveal>
 
-            {/* Right Column: 3D CTA Illustration */}
+            {/* Right Column: CTA Illustration */}
             <Reveal from="right" delay={0.15} className="lg:col-span-5 flex justify-center lg:justify-end">
-              <div className="relative max-w-full sm:max-w-md [mask-image:radial-gradient(circle_at_center,white_65%,transparent_100%)]">
+              <div className="relative max-w-full sm:max-w-md overflow-hidden rounded-2xl" suppressHydrationWarning>
                 <img
-                  src="/assets/cta-broad-services.png"
+                  src="/assets/cta1.jpg"
                   alt="Strategy Consultation"
-                  className="w-full h-auto object-contain drop-shadow-[0_0_30px_rgba(0,210,196,0.15)] select-none pointer-events-none"
+                  className="w-full h-auto object-cover select-none"
+                  suppressHydrationWarning
                 />
               </div>
             </Reveal>

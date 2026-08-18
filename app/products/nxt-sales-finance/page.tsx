@@ -36,7 +36,7 @@ const FINANCE_PILLARS = [
     points: [
       { title: "Pipeline to Enquiry Management", desc: "Assign clients to salespeople, track pipeline stages, log call entries, and record detailed customer inquiries in one central hub." },
       { title: "Instant Quotation Generation", desc: "Create precise, professional quotations directly from customer inquiries with built-in preview modes, custom margin rules, and one-click quote sending." },
-      { title: "Sales Intelligence & Reminders", desc: "Automated task reminders ensure no warm lead drops off, while sales dashboards provide complete visibility into representative activity." }
+      { title: "Sales Intelligence & Follow-up Reminders", desc: "Automated task reminders ensure no warm lead drops off, while sales dashboards provide complete visibility into representative activity and close rates." }
     ]
   },
   {
@@ -217,7 +217,7 @@ export default function NextOrbitSalesFinancePage() {
         <div className="absolute inset-0 bg-brand-950/5 pointer-events-none" />
 
         <Container className="relative">
-          <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-20">
+          <div className="grid items-start gap-14 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-20">
             <div className="flex flex-col items-start">
               <Breadcrumb
                 items={[
@@ -235,7 +235,7 @@ export default function NextOrbitSalesFinancePage() {
                 <h1 className="max-w-2xl text-display-lg sm:text-display-xl text-ink-900 leading-[1.05]">
                   From Lead to Ledger: <br />
                   <span className="bg-gradient-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">
-                    The Logistics Financial Engine.
+                    The Financial Engine Built for Global Logistics.
                   </span>
                 </h1>
               </Reveal>
@@ -257,13 +257,10 @@ export default function NextOrbitSalesFinancePage() {
             </div>
 
             {/* Hero Visual Concept Card */}
-            <div className="relative flex justify-center lg:-mt-6">
+            <div className="relative flex justify-center">
               <Reveal from="up" scale={0.97} className="relative w-full max-w-[540px]">
-                {/* Glow backdrop */}
-                <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 size-[32rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(0,187,169,0.22)_0%,rgba(10,46,77,0.08)_50%,transparent_75%)] blur-[50px]" />
-                
                 {/* Modern visual card simulating billing & funnel sync */}
-                <div className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-5 shadow-2xl transition-transform duration-500 hover:scale-[1.01]">
+                <div className="relative overflow-hidden rounded-3xl border border-slate-300 bg-white p-5 transition-transform duration-500 hover:scale-[1.01]">
                   <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
                     <div className="flex items-center gap-2">
                       <span className="flex size-3.5 rounded-full bg-teal-500 animate-pulse" />
@@ -273,7 +270,7 @@ export default function NextOrbitSalesFinancePage() {
                   </div>
                   
                   <div className="space-y-4">
-                    <div className="rounded-xl bg-slate-900 text-white p-4 font-mono text-xs shadow-inner">
+                    <div className="rounded-xl bg-slate-900 text-white p-4 font-mono text-xs">
                       <div className="text-teal-400">$ nxt-finance --audit-margins --active</div>
                       <div className="text-slate-400 mt-2">Auditing active shipments & general ledger...</div>
                       <div className="text-emerald-400 mt-1">✓ Automated invoice generated (INV-2026-084)</div>
@@ -312,21 +309,21 @@ export default function NextOrbitSalesFinancePage() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
-            <div className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
               <span className="text-display-md text-teal-600 font-black">0</span>
               <h3 className="text-base font-bold text-slate-900 mt-2">Unbilled Shipments</h3>
               <p className="text-sm text-slate-600 mt-1 leading-relaxed">
                 Automated invoice generation triggered directly from operational bookings.
               </p>
             </div>
-            <div className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
               <span className="text-display-md text-brand-600 font-black">2x Faster</span>
               <h3 className="text-base font-bold text-slate-900 mt-2">Quote-to-Invoice Cycles</h3>
               <p className="text-sm text-slate-600 mt-1 leading-relaxed">
                 Seamless flow from sales enquiry → quotation → booking → common invoice.
               </p>
             </div>
-            <div className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
               <span className="text-display-md text-slate-900 font-black">100%</span>
               <h3 className="text-base font-bold text-slate-900 mt-2">Margin Transparency</h3>
               <p className="text-sm text-slate-600 mt-1 leading-relaxed">
@@ -342,16 +339,16 @@ export default function NextOrbitSalesFinancePage() {
         <Container>
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-display-sm sm:text-display-md text-slate-900 font-extrabold tracking-tight">
-              Why Purpose-Built Logistics Accounting?
+              The Enterprise Advantage: Why Purpose-Built Logistics Accounting?
             </h2>
             <p className="text-sm text-slate-600 mt-2">
               Generic accounting tools like QuickBooks or off-the-shelf software were never built to handle job-costing, carrier debit notes, or multi-branch freight reconciliation. NXT bridges the gap between sales activity and financial accounting.
             </p>
           </div>
 
-          <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
+          <div className="overflow-x-auto rounded-2xl border border-slate-300 bg-white">
             <table className="w-full border-collapse text-left text-sm">
-              <thead className="bg-slate-50 border-b border-slate-200">
+              <thead className="bg-slate-50 border-b border-slate-300">
                 <tr>
                   <th className="p-4 font-bold text-slate-900">Financial Capability</th>
                   <th className="p-4 font-bold text-slate-500">Traditional Generic Accounting (The Bottleneck)</th>
@@ -378,7 +375,7 @@ export default function NextOrbitSalesFinancePage() {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <Eyebrow tone="brand">STRATEGIC TRANSFORMATION</Eyebrow>
             <h2 className="text-display-sm sm:text-display-md text-slate-900 font-extrabold tracking-tight mt-3">
-              Four Core Strategic Pillars
+              Four Pillars of Profit Protection & Pipeline Control
             </h2>
             <p className="text-sm text-slate-600 mt-2">
               Unifying CRM, accounting, and compliance under a single system of action.
@@ -396,8 +393,8 @@ export default function NextOrbitSalesFinancePage() {
                   className={cn(
                     "flex items-center gap-2 px-4 py-3 rounded-xl border text-xs font-semibold transition-all duration-300 cursor-pointer",
                     activePillarTab === tab.id
-                      ? "bg-brand-950 border-brand-950 text-white shadow-md shadow-brand-950/10"
-                      : "border-slate-200 text-slate-600 hover:border-slate-300 hover:bg-slate-50"
+                      ? "bg-brand-950 border-brand-950 text-white"
+                      : "border-slate-300 text-slate-600 hover:border-slate-600 hover:bg-slate-50"
                   )}
                 >
                   <Icon className="size-4" />
@@ -408,7 +405,7 @@ export default function NextOrbitSalesFinancePage() {
           </div>
 
           {/* Active Pillar Panel */}
-          <div className="rounded-3xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm">
+          <div className="rounded-3xl border border-slate-300 bg-white p-6 md:p-8">
             <div className="mb-6 pb-4 border-b border-slate-100">
               <p className="text-sm text-slate-700 font-medium">
                 {FINANCE_PILLARS.find((t) => t.id === activePillarTab)?.intro}
@@ -454,8 +451,8 @@ export default function NextOrbitSalesFinancePage() {
                   className={cn(
                     "flex items-center gap-2 px-4 py-3 rounded-xl border text-xs font-semibold transition-all duration-300 cursor-pointer",
                     activeDeepDiveTab === tab.id
-                      ? "bg-brand-950 border-brand-950 text-white shadow-md shadow-brand-950/10"
-                      : "border-slate-200 text-slate-600 hover:border-slate-300 hover:bg-slate-50"
+                      ? "bg-brand-950 border-brand-950 text-white"
+                      : "border-slate-300 text-slate-600 hover:border-slate-600 hover:bg-slate-50"
                   )}
                 >
                   <Icon className="size-4" />
@@ -466,7 +463,7 @@ export default function NextOrbitSalesFinancePage() {
           </div>
 
           {/* Active Deep Dive Panel */}
-          <div className="rounded-3xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm">
+          <div className="rounded-3xl border border-slate-300 bg-white p-6 md:p-8">
             <div className="grid gap-6 md:grid-cols-3">
               {DEEP_DIVE_TABS.find((t) => t.id === activeDeepDiveTab)?.points.map((point, index) => (
                 <div key={index} className="flex gap-3 items-start flex-col">
@@ -496,32 +493,38 @@ export default function NextOrbitSalesFinancePage() {
               </h2>
               
               <div className="space-y-6">
-                <div className="flex gap-4">
-                  <span className="flex size-9 items-center justify-center rounded-xl bg-brand-600 text-white font-mono text-sm font-bold">1</span>
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-900">Job-Level Margin Analytics</h4>
-                    <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                      Real-time variance tracking comparing quoted rates against final carrier invoices to flag \"Silent Profit Leaks\" before closing a job.
+                <div className="flex items-start gap-4">
+                  <span className="flex shrink-0 size-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-teal-500 text-white font-mono text-sm font-extrabold">
+                    1
+                  </span>
+                  <div className="flex-1 pt-0.5">
+                    <h4 className="text-base font-bold text-slate-900">Job-Level Margin Analytics</h4>
+                    <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                      Real-time variance tracking comparing quoted rates against final carrier invoices to flag "Silent Profit Leaks" before closing a job.
                     </p>
                   </div>
                 </div>
 
-                <div className="flex gap-4">
-                  <span className="flex size-9 items-center justify-center rounded-xl bg-brand-600 text-white font-mono text-sm font-bold">2</span>
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-900">AI-Powered Cash Flow & Aging Forecasts</h4>
-                    <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                <div className="flex items-start gap-4">
+                  <span className="flex shrink-0 size-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-teal-500 text-white font-mono text-sm font-extrabold">
+                    2
+                  </span>
+                  <div className="flex-1 pt-0.5">
+                    <h4 className="text-base font-bold text-slate-900">AI-Powered Cash Flow & Aging Forecasts</h4>
+                    <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
                       Machine learning algorithms predict payment dates based on historical client settlement speed, highlighting high-risk receivables early.
                     </p>
                   </div>
                 </div>
 
-                <div className="flex gap-4">
-                  <span className="flex size-9 items-center justify-center rounded-xl bg-brand-600 text-white font-mono text-sm font-bold">3</span>
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-900">Conversational Financial Assistant</h4>
-                    <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                      Query your financial engine in plain language (\"Show outstanding invoices over 60 days for Client X\" or \"Compare profitability between Air Import and Sea Export for Q2\") for instant visualization.
+                <div className="flex items-start gap-4">
+                  <span className="flex shrink-0 size-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-teal-500 text-white font-mono text-sm font-extrabold">
+                    3
+                  </span>
+                  <div className="flex-1 pt-0.5">
+                    <h4 className="text-base font-bold text-slate-900">Conversational Financial Assistant</h4>
+                    <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                      Query your financial engine in plain language ("Show outstanding invoices over 60 days for Client X" or "Compare profitability between Air Import and Sea Export for Q2") for instant visualization.
                     </p>
                   </div>
                 </div>
@@ -530,10 +533,7 @@ export default function NextOrbitSalesFinancePage() {
 
             {/* Right side interactive AI Chatbot Mockup */}
             <div className="relative">
-              {/* Outer Glow */}
-              <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-teal-500 to-brand-500 opacity-20 blur-xl" />
-              
-              <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl flex flex-col h-[480px]">
+              <div className="relative overflow-hidden rounded-3xl border border-slate-300 bg-white flex flex-col h-[480px]">
                 {/* Header */}
                 <div className="bg-slate-950 text-white px-5 py-4 flex items-center justify-between">
                   <div className="flex items-center gap-2">
@@ -594,7 +594,7 @@ export default function NextOrbitSalesFinancePage() {
 
           <div className="grid gap-8 md:grid-cols-3">
             {/* Universal Financial Connectors */}
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
               <span className="flex size-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600 mb-4">
                 <Database className="size-5" />
               </span>
@@ -612,7 +612,7 @@ export default function NextOrbitSalesFinancePage() {
             </div>
 
             {/* Banking & Payment Gateways */}
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
               <span className="flex size-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600 mb-4">
                 <Landmark className="size-5" />
               </span>
@@ -623,7 +623,7 @@ export default function NextOrbitSalesFinancePage() {
             </div>
 
             {/* Audit-Ready Compliance */}
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
               <span className="flex size-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600 mb-4">
                 <ShieldCheck className="size-5" />
               </span>
@@ -653,7 +653,7 @@ export default function NextOrbitSalesFinancePage() {
             {SECURITY_POINTS.map((point, index) => {
               const Icon = point.icon;
               return (
-                <div key={index} className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm flex flex-col">
+                <div key={index} className="rounded-2xl border border-slate-300 bg-white p-6 flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
                   <span className="flex size-10 items-center justify-center rounded-xl bg-slate-50 text-slate-600 mb-4 self-start">
                     <Icon className="size-5" />
                   </span>
@@ -680,7 +680,7 @@ export default function NextOrbitSalesFinancePage() {
               <p className="text-sm text-slate-600 leading-relaxed mb-6">
                 NXTorbit operates under strict international quality guidelines. Our products undergo rigorous functional testing, stress auditing, and regular third-party security audits to ensure compliance with enterprise parameters globally.
               </p>
-              <div className="inline-flex items-center gap-3 px-4 py-3 rounded-2xl border border-slate-200 bg-white shadow-sm">
+              <div className="inline-flex items-center gap-3 px-4 py-3 rounded-2xl border border-slate-300 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-slate-600 cursor-pointer">
                 <ShieldCheck className="size-8 text-teal-500 shrink-0" />
                 <div>
                   <span className="text-xs font-bold text-slate-800 block">ISO 9001:2015</span>
