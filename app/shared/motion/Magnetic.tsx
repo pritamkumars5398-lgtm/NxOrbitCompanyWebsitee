@@ -16,7 +16,7 @@ interface MagneticProps {
  * Wrap buttons and icon targets — never text blocks, where the drift would
  * hurt readability.
  */
-export function Magnetic({ children, className, strength = 0.3 }: MagneticProps) {
+export function Magnetic({ children, className, strength = 0.05 }: MagneticProps) {
   const ref = useRef<HTMLDivElement>(null);
   const reduced = useReducedMotion();
 

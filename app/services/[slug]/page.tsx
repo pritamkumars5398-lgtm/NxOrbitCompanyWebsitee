@@ -199,9 +199,9 @@ export default async function ServicePage({
                     <span className="relative z-10 inline-flex size-12 items-center justify-center rounded-full border border-hairline bg-white font-mono text-sm font-semibold text-brand-500 shadow-sm">
                       {step.step}
                     </span>
-                    <span 
-                      aria-hidden 
-                      className="absolute top-6 left-12 right-[-2rem] h-px bg-brand-300/80 -z-10 hidden md:block" 
+                    <span
+                      aria-hidden
+                      className="absolute top-6 left-12 right-[-2rem] h-px bg-brand-300/80 -z-10 hidden md:block"
                     />
                   </div>
                   <h3 className="text-base font-semibold text-ink-900">{step.title}</h3>

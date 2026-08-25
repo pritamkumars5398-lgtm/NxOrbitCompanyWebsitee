@@ -117,7 +117,7 @@ export function Button({
   );
 
   const wrap = (node: React.ReactNode) =>
-    magnetic ? <Magnetic strength={0.22}>{node}</Magnetic> : node;
+    magnetic ? <Magnetic strength={0.05}>{node}</Magnetic> : node;
 
   if (rest.href !== undefined) {
     const { href, onClick, ...anchorProps } = rest as ButtonAsLink;
