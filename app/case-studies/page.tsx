@@ -27,7 +27,7 @@ export default function CaseStudiesPage() {
   return (
     <>
       {/* ── Hero: dark ── */}
-      <section className="relative isolate overflow-hidden bg-brand-950 pt-28 pb-20 lg:pt-32 lg:pb-24">
+      <section className="relative isolate overflow-hidden bg-brand-950 pt-24 pb-16 lg:pt-28 lg:pb-20">
         <Aurora tone="dark" />
         <GridField tone="dark" />
         <Grain />

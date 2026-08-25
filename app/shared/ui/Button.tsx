@@ -11,24 +11,24 @@ type Size = "sm" | "md" | "lg";
 
 const VARIANTS: Record<Variant, string> = {
   primary:
-    "bg-brand-800 text-white hover:bg-brand-700",
+    "bg-brand-950 text-white hover:bg-brand-900 shadow-xs hover:shadow-md transition-all",
   accent:
-    "bg-brand-300 text-brand-950 hover:bg-brand-200",
+    "bg-brand-300 text-brand-950 hover:bg-brand-200 shadow-xs hover:shadow-md font-semibold transition-all",
   outline:
-    "border border-hairline-strong bg-white text-brand-800 hover:border-brand-300 hover:text-brand-500",
-  ghost: "text-brand-500 hover:bg-brand-50 hover:text-brand-600",
+    "border border-hairline-strong bg-white text-brand-950 hover:border-brand-300 hover:text-brand-600 hover:bg-brand-50/50 shadow-xs transition-all",
+  ghost: "text-brand-600 hover:bg-brand-50 hover:text-brand-700 transition-colors",
   light:
-    "bg-white text-brand-800 hover:bg-brand-50",
+    "bg-white text-brand-950 hover:bg-brand-50 shadow-xs hover:shadow-md transition-all",
   "outline-light":
-    "border border-white/25 text-white hover:border-brand-200/70 hover:bg-white/5",
+    "border border-white/30 text-white hover:border-white/60 hover:bg-white/10 backdrop-blur-xs transition-all",
   orange:
-    "bg-orange-500 text-white hover:bg-orange-400",
+    "bg-orange-500 text-white hover:bg-orange-600 shadow-xs hover:shadow-md font-semibold transition-all",
 };
 
 const SIZES: Record<Size, string> = {
-  sm: "h-9 gap-1.5 px-4 text-[0.8125rem] rounded-lg",
-  md: "h-11 gap-2 px-5 text-sm rounded-xl",
-  lg: "h-13 gap-2.5 px-7 text-[0.9375rem] rounded-xl",
+  sm: "h-9.5 gap-1.5 px-4 text-xs font-semibold rounded-full",
+  md: "h-11 gap-2 px-6 text-sm font-semibold rounded-full",
+  lg: "h-12 gap-2.5 px-7 text-sm sm:text-[0.9375rem] font-semibold rounded-full",
 };
 
 interface BaseProps {

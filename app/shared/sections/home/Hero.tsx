@@ -20,7 +20,7 @@ import { HeroVisual } from "./HeroVisual";
  */
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden bg-slate-50/40 pt-20 pb-16 sm:pt-24 lg:pt-28 lg:pb-20">
+    <section className="relative isolate overflow-hidden bg-slate-50/40 pt-24 pb-16 lg:pt-28 lg:pb-20">
 
 
       <Container>

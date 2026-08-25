@@ -21,8 +21,8 @@ export default function HomePage() {
     <>
       <Hero />
       <LogoRail />
-      <WhyChooseUs />
       <EnterpriseProficiency />
+      <WhyChooseUs />
       <Process />
       <Capabilities />
       <TechStack />

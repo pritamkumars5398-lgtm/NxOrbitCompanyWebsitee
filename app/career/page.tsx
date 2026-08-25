@@ -55,7 +55,7 @@ export default function CareerPage() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="relative isolate overflow-hidden pt-28 pb-16 lg:pt-32 lg:pb-20">
+      <section className="relative isolate overflow-hidden pt-24 pb-16 lg:pt-28 lg:pb-20">
         <GradientMesh />
         <Grain />
 

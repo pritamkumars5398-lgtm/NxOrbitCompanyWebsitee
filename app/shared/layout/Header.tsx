@@ -83,7 +83,7 @@ export function Header() {
         onMouseLeave={scheduleClose}
       >
         <div className="mx-auto flex h-18 w-full max-w-7xl items-center justify-between gap-6 px-6 sm:px-8 lg:px-10">
-          <Link href="/" className="group relative z-10 flex shrink-0 items-center" aria-label="NXTorbit — home">
+          <Link href="/" className="group relative z-10 flex shrink-0 items-center -ml-1" aria-label="NXTorbit — home">
             <Logo
               height={53}
               priority
@@ -217,7 +217,6 @@ function MegaPanel({
                           <NavIcon name={link.icon} className="size-4" />
                         </span>
                       )}
-                      <span className="flex flex-col gap-0.5">
                         <span className="flex items-center gap-1.5 text-sm font-semibold text-ink-900 transition-colors group-hover:text-brand-600">
                           {link.label}
                           <ArrowRight
@@ -225,12 +224,6 @@ function MegaPanel({
                             className="size-3.5 -translate-x-1 opacity-0 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-0 group-hover:opacity-100"
                           />
                         </span>
-                        {link.description && group.label !== "Services" && group.label !== "Company" && (
-                          <span className="text-xs leading-relaxed text-ink-500">
-                            {link.description}
-                          </span>
-                        )}
-                      </span>
                     </Link>
                   </motion.li>
                 ))}

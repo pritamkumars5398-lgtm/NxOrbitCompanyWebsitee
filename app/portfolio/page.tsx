@@ -31,7 +31,7 @@ const REACH = [
 export default function PortfolioPage() {
   return (
     <>
-      <section className="relative isolate overflow-hidden pt-28 pb-14 lg:pt-32 lg:pb-16">
+      <section className="relative isolate overflow-hidden pt-24 pb-16 lg:pt-28 lg:pb-20">
         <DotField className="opacity-60" />
         <Grain />
 

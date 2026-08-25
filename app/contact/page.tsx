@@ -37,7 +37,7 @@ const PROMISES = [
 export default function ContactPage() {
   return (
     <>
-      <Section tone="white" spacing="none" className="pt-28 pb-20 lg:pt-32 lg:pb-28">
+      <Section tone="white" spacing="none" className="pt-24 pb-16 lg:pt-28 lg:pb-20">
         <Container>
           <div className="mb-12 flex flex-col gap-5">
             <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Contact" }]} />

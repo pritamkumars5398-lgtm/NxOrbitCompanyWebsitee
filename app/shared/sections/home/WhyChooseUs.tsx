@@ -28,7 +28,7 @@ interface FeatureCard {
 const FEATURES: FeatureCard[] = [
   {
     title: "Business-Driven Engineering",
-    desc: "Every engagement begins with understanding your business processes, operational workflows, and longterm objectives before defining the technology.",
+    desc: "Every engagement begins with understanding your business processes, operational workflows, and long-term objectives before defining the technology.",
     icon: Sparkles,
   },
   {

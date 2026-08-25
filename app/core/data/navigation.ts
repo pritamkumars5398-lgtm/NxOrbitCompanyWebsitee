@@ -26,21 +26,25 @@ export const PRODUCT_LINKS: NavLink[] = [
   {
     label: "NXT Orbit Freight",
     href: "/products/nxt-orbit-freight",
+    description: "AI-native Freight Operating System.",
     icon: "ship",
   },
   {
     label: "NXT WMS",
     href: "/products/nxt-wms",
+    description: "Autonomous warehouse management system.",
     icon: "layers",
   },
   {
     label: "Courier Express",
     href: "/products/courier-express",
+    description: "Multicarrier shipping and RTO defense.",
     icon: "truck",
   },
   {
     label: "NXT Sales & Finance",
     href: "/products/nxt-sales-finance",
+    description: "CRM, billing, and accounting suite.",
     icon: "landmark",
   },
 ];
@@ -85,21 +89,21 @@ export const SERVICE_LINKS: NavLink[] = [
 ];
 
 export const TECHNOLOGY_LINKS: NavLink[] = [
-  { label: "React Native", href: "/technology/react-native", icon: "atom" },
-  { label: "Flutter", href: "/technology/flutter", icon: "layers" },
-  { label: "iOS (Swift)", href: "/technology/ios", icon: "apple" },
-  { label: "Android (Kotlin)", href: "/technology/android", icon: "bot" },
-  { label: "Node.js", href: "/technology/nodejs", icon: "hexagon" },
-  { label: "Next.js", href: "/technology/nextjs", icon: "triangle" },
+  { label: "React Native", href: "/technology/react-native", description: "Cross-platform mobile apps with native performance.", icon: "atom" },
+  { label: "Flutter", href: "/technology/flutter", description: "Multi-platform iOS, Android, and web apps from one codebase.", icon: "layers" },
+  { label: "iOS (Swift)", href: "/technology/ios", description: "High-performance native iOS applications.", icon: "apple" },
+  { label: "Android (Kotlin)", href: "/technology/android", description: "Modern native Android apps built for scale.", icon: "bot" },
+  { label: "Node.js", href: "/technology/nodejs", description: "Scalable backend services, REST APIs, and microservices.", icon: "hexagon" },
+  { label: "Next.js", href: "/technology/nextjs", description: "Full-stack React applications and SSR web platforms.", icon: "triangle" },
 ];
 
 export const INDUSTRY_LINKS: NavLink[] = [
-  { label: "Healthcare", href: "/industries/healthcare", icon: "heart-pulse" },
-  { label: "Fintech", href: "/industries/fintech", icon: "landmark" },
-  { label: "Education", href: "/industries/education", icon: "graduation-cap" },
-  { label: "E-Commerce", href: "/industries/ecommerce", icon: "shopping-bag" },
-  { label: "Logistics", href: "/industries/logistics", icon: "truck" },
-  { label: "Entertainment", href: "/industries/entertainment", icon: "clapperboard" },
+  { label: "Healthcare", href: "/industries/healthcare", description: "HIPAA-compliant medical and health tech systems.", icon: "heart-pulse" },
+  { label: "Fintech", href: "/industries/fintech", description: "PCI-DSS compliant banking, payments, and financial software.", icon: "landmark" },
+  { label: "Education", href: "/industries/education", description: "EdTech platforms, LMS, and interactive learning systems.", icon: "graduation-cap" },
+  { label: "E-Commerce", href: "/industries/ecommerce", description: "High-conversion storefronts, inventory, and checkout engines.", icon: "shopping-bag" },
+  { label: "Logistics", href: "/industries/logistics", description: "Fleet tracking, WMS, freight OS, and supply chain tech.", icon: "truck" },
+  { label: "Entertainment", href: "/industries/entertainment", description: "Media streaming, content platforms, and interactive apps.", icon: "clapperboard" },
 ];
 
 export const COMPANY_LINKS: NavLink[] = [

@@ -9,6 +9,7 @@ import {
 import { cn } from "@/app/core/lib/cn";
 import { Breadcrumb } from "@/app/shared/ui/Breadcrumb";
 import { Button } from "@/app/shared/ui/Button";
+import { Card } from "@/app/shared/ui/Card";
 import { Container, Eyebrow, Section } from "@/app/shared/ui/Layout";
 import { Reveal } from "@/app/shared/motion/Reveal";
 import { GradientMesh, Grain } from "@/app/shared/backdrop/Backdrops";
@@ -383,21 +384,23 @@ export default function NextOrbitSalesFinancePage() {
           </div>
 
           {/* Pillar Tabs */}
-          <div className="flex flex-wrap justify-center gap-2 mb-10">
+          <div className="flex flex-wrap justify-center gap-2.5 mb-10">
             {FINANCE_PILLARS.map((tab) => {
               const Icon = tab.icon;
+              const isActive = activePillarTab === tab.id;
               return (
                 <button
                   key={tab.id}
+                  type="button"
                   onClick={() => setActivePillarTab(tab.id)}
                   className={cn(
-                    "flex items-center gap-2 px-4 py-3 rounded-xl border text-xs font-semibold transition-all duration-300 cursor-pointer",
-                    activePillarTab === tab.id
-                      ? "bg-brand-950 border-brand-950 text-white"
-                      : "border-slate-300 text-slate-600 hover:border-slate-600 hover:bg-slate-50"
+                    "flex items-center gap-2 px-4 py-2.5 rounded-xl border text-xs font-semibold transition-all duration-300 cursor-pointer shadow-xs",
+                    isActive
+                      ? "bg-brand-950 border-brand-950 text-white shadow-md scale-[1.02]"
+                      : "bg-surface border-hairline text-ink-700 hover:border-brand-300 hover:text-brand-500 hover:bg-brand-50/50"
                   )}
                 >
-                  <Icon className="size-4" />
+                  <Icon className={cn("size-4 transition-colors", isActive ? "text-brand-300" : "text-ink-500")} />
                   {tab.label}
                 </button>
               );
@@ -405,26 +408,26 @@ export default function NextOrbitSalesFinancePage() {
           </div>
 
           {/* Active Pillar Panel */}
-          <div className="rounded-3xl border border-slate-300 bg-white p-6 md:p-8">
-            <div className="mb-6 pb-4 border-b border-slate-100">
-              <p className="text-sm text-slate-700 font-medium">
+          <Card tone="plain" padding="lg" className="border-hairline shadow-md">
+            <div className="mb-6 pb-4 border-b border-hairline">
+              <p className="text-sm text-ink-700 font-medium leading-relaxed">
                 {FINANCE_PILLARS.find((t) => t.id === activePillarTab)?.intro}
               </p>
             </div>
             <div className="grid gap-6 md:grid-cols-2 text-left">
               {FINANCE_PILLARS.find((t) => t.id === activePillarTab)?.points.map((point, index) => (
-                <div key={index} className="flex gap-3 items-start">
-                  <span className="flex shrink-0 size-6 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
+                <div key={index} className="flex gap-3.5 items-start">
+                  <span className="flex shrink-0 size-6 items-center justify-center rounded-full bg-brand-50 text-brand-600 font-bold mt-0.5">
                     <Check className="size-3.5" strokeWidth={3} />
                   </span>
                   <div>
-                    <h4 className="text-sm font-bold text-slate-900">{point.title}</h4>
-                    <p className="text-xs text-slate-600 mt-1 leading-relaxed">{point.desc}</p>
+                    <h4 className="text-sm font-bold text-ink-900">{point.title}</h4>
+                    <p className="text-xs text-ink-600 mt-1 leading-relaxed">{point.desc}</p>
                   </div>
                 </div>
               ))}
             </div>
-          </div>
+          </Card>
         </Container>
       </Section>
 
@@ -432,30 +435,32 @@ export default function NextOrbitSalesFinancePage() {
       <Section tone="white" spacing="lg" className="border-t border-hairline">
         <Container>
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-display-sm sm:text-display-md text-slate-900 font-extrabold tracking-tight">
+            <h2 className="text-display-sm sm:text-display-md text-ink-900 font-extrabold tracking-tight">
               System Deep-Dive: Interactive Capabilities
             </h2>
-            <p className="text-sm text-slate-600 mt-2">
+            <p className="text-sm text-ink-600 mt-2">
               Explore the functional components of the Sales and Financial Suite.
             </p>
           </div>
 
           {/* Deep Dive Tabs */}
-          <div className="flex flex-wrap justify-center gap-2 mb-10">
+          <div className="flex flex-wrap justify-center gap-2.5 mb-10">
             {DEEP_DIVE_TABS.map((tab) => {
               const Icon = tab.icon;
+              const isActive = activeDeepDiveTab === tab.id;
               return (
                 <button
                   key={tab.id}
+                  type="button"
                   onClick={() => setActiveDeepDiveTab(tab.id)}
                   className={cn(
-                    "flex items-center gap-2 px-4 py-3 rounded-xl border text-xs font-semibold transition-all duration-300 cursor-pointer",
-                    activeDeepDiveTab === tab.id
-                      ? "bg-brand-950 border-brand-950 text-white"
-                      : "border-slate-300 text-slate-600 hover:border-slate-600 hover:bg-slate-50"
+                    "flex items-center gap-2 px-4 py-2.5 rounded-xl border text-xs font-semibold transition-all duration-300 cursor-pointer shadow-xs",
+                    isActive
+                      ? "bg-brand-950 border-brand-950 text-white shadow-md scale-[1.02]"
+                      : "bg-surface border-hairline text-ink-700 hover:border-brand-300 hover:text-brand-500 hover:bg-brand-50/50"
                   )}
                 >
-                  <Icon className="size-4" />
+                  <Icon className={cn("size-4 transition-colors", isActive ? "text-brand-300" : "text-ink-500")} />
                   {tab.label}
                 </button>
               );
@@ -463,21 +468,21 @@ export default function NextOrbitSalesFinancePage() {
           </div>
 
           {/* Active Deep Dive Panel */}
-          <div className="rounded-3xl border border-slate-300 bg-white p-6 md:p-8">
+          <Card tone="plain" padding="lg" className="border-hairline shadow-md">
             <div className="grid gap-6 md:grid-cols-3">
               {DEEP_DIVE_TABS.find((t) => t.id === activeDeepDiveTab)?.points.map((point, index) => (
                 <div key={index} className="flex gap-3 items-start flex-col">
-                  <span className="flex shrink-0 size-8 items-center justify-center rounded-xl bg-slate-50 text-slate-600 mb-3">
+                  <span className="flex shrink-0 size-9 items-center justify-center rounded-xl bg-brand-50 text-brand-600 mb-2">
                     <Check className="size-4 text-brand-600" strokeWidth={3} />
                   </span>
                   <div>
-                    <h4 className="text-sm font-bold text-slate-900">{point.title}</h4>
-                    <p className="text-xs text-slate-600 mt-1 leading-relaxed">{point.desc}</p>
+                    <h4 className="text-sm font-bold text-ink-900">{point.title}</h4>
+                    <p className="text-xs text-ink-600 mt-1 leading-relaxed">{point.desc}</p>
                   </div>
                 </div>
               ))}
             </div>
-          </div>
+          </Card>
         </Container>
       </Section>
 

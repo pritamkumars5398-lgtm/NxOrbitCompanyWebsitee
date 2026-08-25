@@ -101,7 +101,7 @@ export function EnterpriseProficiency() {
   };
 
   return (
-    <Section tone="white" spacing="none" id="enterprise-proficiency" className="overflow-hidden pt-2 pb-4 sm:pt-4 sm:pb-6 lg:pt-6 lg:pb-8">
+    <Section tone="none" spacing="none" id="enterprise-proficiency" className="overflow-hidden pt-2 pb-4 sm:pt-4 sm:pb-6 lg:pt-6 lg:pb-8 bg-transparent">
       <Container>
         <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#070D1B] p-8 sm:p-12 lg:p-16 shadow-2xl">
           {/* Subtle background glow effect */}
@@ -196,7 +196,7 @@ export function EnterpriseProficiency() {
                     <StaggerItem
                       key={item.name}
                       from="up"
-                      className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 hover:border-white/20 transition-all duration-300"
+                      className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 transition-all duration-300 hover:border-brand-300/40 hover:bg-white/[0.07] hover:-translate-y-1 hover:shadow-lg"
                     >
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2 font-semibold text-white text-sm">
@@ -205,7 +205,7 @@ export function EnterpriseProficiency() {
                         </div>
                         <span className="text-xs text-ink-400 font-mono">{item.year}</span>
                       </div>
-                      <p className="mt-1.5 text-xs text-ink-400">{item.role}</p>
+                      <p className="mt-1.5 text-xs text-ink-300">{item.role}</p>
                       <div className="mt-4 flex items-center gap-1 text-amber-400">
                         {Array.from({ length: 5 }).map((_, i) => (
                           <Star key={i} className="size-3.5 fill-amber-400 text-amber-400" />
@@ -227,11 +227,11 @@ export function EnterpriseProficiency() {
                     <StaggerItem
                       key={cert.title}
                       from="up"
-                      className="flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-center hover:border-white/20 transition-all duration-300"
+                      className="flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-center transition-all duration-300 hover:border-brand-300/40 hover:bg-white/[0.07] hover:-translate-y-1 hover:shadow-md"
                     >
                       <span className={`size-2.5 rounded-full ${cert.dotColor} mb-2.5`} />
                       <span className="text-sm font-bold text-white">{cert.title}</span>
-                      <span className="mt-1 text-[11px] leading-tight text-ink-400">
+                      <span className="mt-1 text-[11px] leading-tight text-ink-300">
                         {cert.subtitle}
                       </span>
                     </StaggerItem>

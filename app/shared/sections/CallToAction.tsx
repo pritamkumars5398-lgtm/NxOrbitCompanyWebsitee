@@ -92,6 +92,8 @@ export function CallToAction({
                   href={primary.href}
                   size="lg"
                   variant="accent"
+                  withArrow
+                  magnetic
                   className="w-full sm:w-auto sm:min-w-[220px] justify-center"
                 >
                   {primary.label}
@@ -101,6 +103,7 @@ export function CallToAction({
                   href={secondary.href}
                   size="lg"
                   variant="outline-light"
+                  magnetic
                   className="w-full sm:w-auto sm:min-w-[220px] justify-center"
                 >
                   {secondary.label}
