@@ -68,7 +68,7 @@ export function TheChallenge() {
                     <div
                       className={`group relative flex w-full flex-col items-center justify-center rounded-2xl p-5 text-center transition-all duration-300 ${
                         step.highlighted
-                          ? "bg-teal-950/80 border-2 border-teal-400 text-teal-200 shadow-lg shadow-teal-500/20"
+                          ? "bg-teal-950/80 border-2 border-teal-400 text-teal-200"
                           : "bg-slate-900/60 border border-slate-800 text-slate-300 hover:border-slate-700"
                       }`}
                     >
