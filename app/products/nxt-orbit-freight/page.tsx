@@ -316,7 +316,7 @@ export default function NextOrbitFreightPage() {
                 <Navigation className="size-5.5" />
               </span>
               <div className="flex flex-col">
-                <h3 className="text-base font-bold text-slate-900">Pillar 2: Predictive Agility (Route & Cost Optimization)</h3>
+                <h3 className="text-base font-bold text-slate-900">Predictive Agility (Route & Cost Optimization)</h3>
                 <p className="text-sm text-slate-600 mt-2 leading-relaxed">
                   Move from reactive problem-solving to proactive decision-making. Predict port congestion, route bottlenecks, and carrier risks before you book.
                 </p>
@@ -329,7 +329,7 @@ export default function NextOrbitFreightPage() {
                 <MessageSquarePlus className="size-5.5" />
               </span>
               <div className="flex flex-col">
-                <h3 className="text-base font-bold text-slate-900">Pillar 3: Autonomous Collaboration (Context-First Communication)</h3>
+                <h3 className="text-base font-bold text-slate-900">Autonomous Collaboration (Context-First Communication)</h3>
                 <p className="text-sm text-slate-600 mt-2 leading-relaxed">
                   Keep communication tied directly to shipments. Built-in ChatApp, media sharing, and automated triggers keep teams and partners aligned without messy email chains.
                 </p>
