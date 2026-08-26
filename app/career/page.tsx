@@ -88,6 +88,7 @@ export default function CareerPage() {
                 href="mailto:info@itnextsolutions.com?subject=Speculative application"
                 size="lg"
                 variant="outline"
+                withArrow
               >
                 Send a speculative application
               </Button>

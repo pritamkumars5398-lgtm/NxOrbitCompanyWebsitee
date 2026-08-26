@@ -175,7 +175,7 @@ export default function NextOrbitWmsPage() {
                 <Button onClick={handleRequestDemo} size="lg" variant="primary" withArrow magnetic>
                   Request Enterprise Demo
                 </Button>
-                <Button onClick={handleScrollToAI} size="lg" variant="outline">
+                <Button onClick={handleScrollToAI} size="lg" variant="outline" withArrow>
                   Explore AI Yield Analytics
                 </Button>
               </Reveal>

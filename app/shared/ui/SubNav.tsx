@@ -19,10 +19,10 @@ export function SubNav({ links, label }: { links: NavLink[]; label: string }) {
   return (
     <nav
       aria-label={label}
-      className="sticky top-18 z-40 border-b border-hairline bg-white/85 backdrop-blur-xl mt-18"
+      className="sticky top-18 z-40 border-y border-hairline-strong bg-slate-100/90 backdrop-blur-xl mt-18 shadow-xs"
     >
       <Container>
-        <ul className="-ml-3.5 scrollbar-none flex gap-1 overflow-x-auto py-2">
+        <ul className="-ml-3.5 scrollbar-none flex gap-1 overflow-x-auto py-2.5">
           {links.map((link) => {
             const active = pathname === link.href;
             return (
@@ -31,19 +31,13 @@ export function SubNav({ links, label }: { links: NavLink[]; label: string }) {
                   href={link.href}
                   aria-current={active ? "page" : undefined}
                   className={cn(
-                    "relative inline-flex shrink-0 rounded-lg px-3.5 py-2 text-[0.8125rem] font-semibold whitespace-nowrap transition-colors duration-200",
+                    "relative inline-flex shrink-0 items-center rounded-lg px-3.5 py-1.5 text-xs font-semibold whitespace-nowrap transition-all duration-200",
                     active
-                      ? "text-brand-600"
-                      : "text-ink-500 hover:bg-brand-50/70 hover:text-brand-600",
+                      ? "bg-white text-brand-600 shadow-xs border border-hairline-strong font-bold"
+                      : "text-ink-600 hover:bg-white/70 hover:text-brand-600 border border-transparent",
                   )}
                 >
                   {link.label}
-                  {active && (
-                    <span
-                      aria-hidden
-                      className="absolute inset-x-3.5 -bottom-2 h-0.5 rounded-full bg-brand-400"
-                    />
-                  )}
                 </Link>
               </li>
             );

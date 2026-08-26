@@ -15,12 +15,12 @@ const VARIANTS: Record<Variant, string> = {
   accent:
     "bg-brand-300 text-brand-950 hover:bg-brand-200 shadow-xs hover:shadow-md font-semibold transition-all",
   outline:
-    "border border-hairline-strong bg-white text-brand-950 hover:border-brand-300 hover:text-brand-600 hover:bg-brand-50/50 shadow-xs transition-all",
+    "border border-slate-300 bg-white text-slate-900 hover:border-brand-500 hover:text-brand-600 hover:bg-brand-50/80 shadow-xs hover:shadow-md transition-all",
   ghost: "text-brand-600 hover:bg-brand-50 hover:text-brand-700 transition-colors",
   light:
     "bg-white text-brand-950 hover:bg-brand-50 shadow-xs hover:shadow-md transition-all",
   "outline-light":
-    "border border-white/30 text-white hover:border-white/60 hover:bg-white/10 backdrop-blur-xs transition-all",
+    "border border-white/45 text-white hover:border-white/80 hover:bg-white/15 backdrop-blur-xs shadow-xs hover:shadow-md transition-all",
   orange:
     "bg-orange-500 text-white hover:bg-orange-600 shadow-xs hover:shadow-md font-semibold transition-all",
 };

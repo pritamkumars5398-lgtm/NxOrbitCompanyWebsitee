@@ -112,7 +112,7 @@ export default async function ServicePage({
                 <Button href="/contact" size="lg" variant="primary" withArrow magnetic>
                   {data.ctaText}
                 </Button>
-                <Button href="/portfolio" size="lg" variant="outline">
+                <Button href="/portfolio" size="lg" variant="outline" withArrow>
                   View our work
                 </Button>
               </Reveal>

@@ -198,7 +198,7 @@ export default function NextOrbitFreightPage() {
                 <Button onClick={handleRequestDemo} size="lg" variant="primary" withArrow magnetic>
                   Request a Live Demo
                 </Button>
-                <Button onClick={handleScrollToAI} size="lg" variant="outline">
+                <Button onClick={handleScrollToAI} size="lg" variant="outline" withArrow>
                   See the AI in Action
                 </Button>
               </Reveal>

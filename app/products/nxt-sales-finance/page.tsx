@@ -251,7 +251,7 @@ export default function NextOrbitSalesFinancePage() {
                 <Button onClick={handleRequestDemo} size="lg" variant="primary" withArrow magnetic>
                   Request Financial Demo
                 </Button>
-                <Button onClick={handleScrollToAI} size="lg" variant="outline">
+                <Button onClick={handleScrollToAI} size="lg" variant="outline" withArrow>
                   See AI Margin Analytics
                 </Button>
               </Reveal>

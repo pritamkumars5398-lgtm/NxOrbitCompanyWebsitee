@@ -78,7 +78,7 @@ export function Header() {
           "fixed inset-x-0 top-0 z-50 border-b bg-white/85 backdrop-blur-xl transition-[box-shadow,border-color] duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]",
           scrolled || openGroup
             ? "border-hairline shadow-[0_1px_24px_-8px_rgb(6_19_31/0.12)]"
-            : "border-transparent",
+            : "border-hairline shadow-xs",
         )}
         onMouseLeave={scheduleClose}
       >

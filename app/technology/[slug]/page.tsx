@@ -92,7 +92,7 @@ export default async function TechnologyPage({
                 <Button href="/contact" size="lg" variant="accent" withArrow magnetic>
                   {data.ctaText}
                 </Button>
-                <Button href="/contact" size="lg" variant="outline-light">
+                <Button href="/contact" size="lg" variant="outline-light" withArrow>
                   Talk to an Expert
                 </Button>
               </Reveal>

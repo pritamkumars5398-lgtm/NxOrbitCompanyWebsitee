@@ -51,15 +51,15 @@ export function Logo({
               "
               result="sans-white"
             />
+            <feComponentTransfer in="sans-white" result="inverted">
+              <feFuncR type="linear" slope="-1" intercept="1" />
+              <feFuncG type="linear" slope="-1" intercept="1" />
+              <feFuncB type="linear" slope="-1" intercept="1" />
+            </feComponentTransfer>
             <feColorMatrix
-              in="sans-white"
-              type="matrix"
-              values="
-                0 -1.2  0   0  1.0
-                0  0.3  0   0  0.7
-                0  0    0.3 0  0.7
-                0  0    0   1  0
-              "
+              in="inverted"
+              type="hueRotate"
+              values="180"
             />
           </filter>
         </defs>

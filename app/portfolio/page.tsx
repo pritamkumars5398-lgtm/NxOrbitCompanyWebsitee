@@ -60,7 +60,7 @@ export default function PortfolioPage() {
               <Button href="/case-studies" size="lg" variant="primary" withArrow magnetic>
                 Read the full case studies
               </Button>
-              <Button href="/contact" size="lg" variant="outline">
+              <Button href="/contact" size="lg" variant="outline" withArrow>
                 Start a project
               </Button>
             </Reveal>

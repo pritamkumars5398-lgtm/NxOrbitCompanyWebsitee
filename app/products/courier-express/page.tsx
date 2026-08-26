@@ -212,7 +212,7 @@ export default function CourierExpressPage() {
                 <Button onClick={handleRequestDemo} size="lg" variant="primary" withArrow magnetic>
                   Start Shipping Free
                 </Button>
-                <Button onClick={handleScrollToAI} size="lg" variant="outline">
+                <Button onClick={handleScrollToAI} size="lg" variant="outline" withArrow>
                   Schedule AI Demo
                 </Button>
               </Reveal>

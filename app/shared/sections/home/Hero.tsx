@@ -70,6 +70,7 @@ export function Hero() {
                 href={HERO.secondaryCta.href} 
                 size="lg"
                 variant="accent"
+                withArrow
                 magnetic
               >
                 {HERO.secondaryCta.label}

@@ -57,7 +57,7 @@ export default function CaseStudiesPage() {
               <Button href="/contact" size="lg" variant="accent" withArrow magnetic>
                 Start your project
               </Button>
-              <Button href="/portfolio" size="lg" variant="outline-light">
+              <Button href="/portfolio" size="lg" variant="outline-light" withArrow>
                 Browse the gallery
               </Button>
             </Reveal>
