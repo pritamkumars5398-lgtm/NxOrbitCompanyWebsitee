@@ -18,6 +18,7 @@ import { SubNav } from "@/app/shared/ui/SubNav";
 import { ServiceHeroImage } from "@/app/shared/ui/ServiceHeroImage";
 import { TheChallenge } from "@/app/shared/sections/home/TheChallenge";
 import { TrustAndFaqSection } from "@/app/shared/sections/TrustAndFaqSection";
+import { ProcessArcLayout } from "@/app/shared/sections/ProcessArcLayout";
 
 
 
@@ -177,42 +178,13 @@ export default async function ServicePage({
         </Container>
       </Section>
 
-      {/* ── Process: connected horizontal steps ── */}
-      <Section tone="white" spacing="lg">
-        <Container>
-          <SectionHeading
-            eyebrow="How we work"
-            title="From first conversation to live product."
-            align="center"
-            className="mx-auto mb-16"
-          />
-
-          <Stagger stagger={0.1} className="relative grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {/* Connector rule behind the step markers */}
-            {data.process.map((step, index) => {
-              const isLast = index === data.process.length - 1;
-              const isRowEndLg = (index + 1) % 4 === 0;
-              const isRowEndMd = (index + 1) % 2 === 0;
-
-              return (
-                <StaggerItem key={step.step} from="up" className="relative flex flex-col gap-4">
-                  <div className="relative inline-flex">
-                    <span className="relative z-10 inline-flex size-12 items-center justify-center rounded-full border border-hairline bg-white font-mono text-sm font-semibold text-brand-500 shadow-sm">
-                      {step.step}
-                    </span>
-                    <span
-                      aria-hidden
-                      className="absolute top-6 left-12 right-[-2rem] h-px bg-brand-300/80 -z-10 hidden md:block"
-                    />
-                  </div>
-                  <h3 className="text-base font-semibold text-ink-900">{step.title}</h3>
-                  <p className="text-sm leading-relaxed text-ink-600">{step.description}</p>
-                </StaggerItem>
-              );
-            })}
-          </Stagger>
-        </Container>
-      </Section>
+      {/* ── Process: Arc Track Layout ── */}
+      <ProcessArcLayout
+        eyebrow="How we work"
+        title="From first conversation to live product."
+        subtitle="A proven, transparent delivery methodology for engineering products that scale."
+        steps={data.process}
+      />
 
       {/* ── Tech stack: opposing marquee rails ── */}
       <Section tone="sunken" spacing="md" className="overflow-hidden">

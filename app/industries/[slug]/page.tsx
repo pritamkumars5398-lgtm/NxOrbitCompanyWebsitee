@@ -14,6 +14,7 @@ import { Container, Eyebrow, Section, SectionHeading } from "@/app/shared/ui/Lay
 import { Stats } from "@/app/shared/ui/Stats";
 import { SubNav } from "@/app/shared/ui/SubNav";
 import { TrustAndFaqSection } from "@/app/shared/sections/TrustAndFaqSection";
+import { ProcessArcLayout } from "@/app/shared/sections/ProcessArcLayout";
 
 export async function generateStaticParams() {
   return Object.keys(INDUSTRIES_DATA).map((slug) => ({ slug }));
@@ -161,28 +162,13 @@ export default async function IndustryPage({
         </Container>
       </Section>
 
-      {/* ── Process: oversized index numbers ── */}
-      <Section tone="white" spacing="lg">
-        <Container>
-          <SectionHeading
-            eyebrow="Engagement"
-            title="How a project runs, start to finish."
-            className="mb-14"
-          />
-
-          <Stagger stagger={0.09} className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-            {data.process.map((step) => (
-              <StaggerItem key={step.step} from="up" className="flex flex-col gap-3">
-                <span className="text-5xl font-bold tracking-tight text-brand-100 tabular-nums">
-                  {step.step}
-                </span>
-                <h3 className="text-base font-semibold text-ink-900">{step.title}</h3>
-                <p className="text-sm leading-relaxed text-ink-600">{step.description}</p>
-              </StaggerItem>
-            ))}
-          </Stagger>
-        </Container>
-      </Section>
+      {/* ── Process: Arc Track Layout ── */}
+      <ProcessArcLayout
+        eyebrow="Engagement"
+        title="How a project runs, start to finish."
+        subtitle="End-to-end industry software delivery shaped around your sector requirements."
+        steps={data.process}
+      />
 
       <TrustAndFaqSection />
 

@@ -13,6 +13,7 @@ import { Stats } from "@/app/shared/ui/Stats";
 import { SubNav } from "@/app/shared/ui/SubNav";
 import { TerminalCard } from "@/app/technology/components/TerminalCard";
 import { TrustAndFaqSection } from "@/app/shared/sections/TrustAndFaqSection";
+import { ProcessArcLayout } from "@/app/shared/sections/ProcessArcLayout";
 
 export async function generateStaticParams() {
   return Object.keys(TECHNOLOGY_DATA).map((slug) => ({ slug }));
@@ -141,40 +142,13 @@ export default async function TechnologyPage({
         </Container>
       </Section>
 
-      {/* ── Process: sticky heading + stacked cards ── */}
-      <Section tone="muted" spacing="lg">
-        <Container>
-          <div className="grid gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-20">
-            <Reveal className="flex flex-col gap-5 lg:sticky lg:top-36 lg:self-start">
-              <Eyebrow>Delivery</Eyebrow>
-              <h2 className="text-display-md sm:text-display-lg">
-                What working with us looks like.
-              </h2>
-              <p className="text-lead text-ink-600">
-                The same process on every engagement, whatever the stack underneath.
-              </p>
-            </Reveal>
-
-            <Stagger stagger={0.08} className="flex flex-col gap-4">
-              {data.process.map((step) => (
-                <StaggerItem
-                  key={step.step}
-                  from="up"
-                  className="hover-lift flex gap-5 rounded-2xl border border-hairline bg-white p-6"
-                >
-                  <span className="font-mono text-sm font-semibold text-brand-400 tabular-nums">
-                    {step.step}
-                  </span>
-                  <div className="flex flex-col gap-2">
-                    <h3 className="text-base font-semibold text-ink-900">{step.title}</h3>
-                    <p className="text-sm leading-relaxed text-ink-600">{step.description}</p>
-                  </div>
-                </StaggerItem>
-              ))}
-            </Stagger>
-          </div>
-        </Container>
-      </Section>
+      {/* ── Process: Arc Track Layout ── */}
+      <ProcessArcLayout
+        eyebrow="Delivery"
+        title="What working with us looks like."
+        subtitle="The same proven process on every engagement, whatever the tech stack underneath."
+        steps={data.process}
+      />
 
       {/* ── Stack: bordered cell grid ── */}
       <Section tone="white" spacing="md">
