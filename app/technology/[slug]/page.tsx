@@ -12,6 +12,7 @@ import { Container, Divider, Eyebrow, Section, SectionHeading } from "@/app/shar
 import { Stats } from "@/app/shared/ui/Stats";
 import { SubNav } from "@/app/shared/ui/SubNav";
 import { TerminalCard } from "@/app/technology/components/TerminalCard";
+import { TrustAndFaqSection } from "@/app/shared/sections/TrustAndFaqSection";
 
 export async function generateStaticParams() {
   return Object.keys(TECHNOLOGY_DATA).map((slug) => ({ slug }));
@@ -201,6 +202,8 @@ export default async function TechnologyPage({
           </Stagger>
         </Container>
       </Section>
+
+      <TrustAndFaqSection />
 
       <CallToAction />
     </>

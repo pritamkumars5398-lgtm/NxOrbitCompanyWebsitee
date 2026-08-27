@@ -10,6 +10,7 @@ import { CallToAction } from "@/app/shared/sections/CallToAction";
 import { Breadcrumb } from "@/app/shared/ui/Breadcrumb";
 import { Button } from "@/app/shared/ui/Button";
 import { Container, Eyebrow, Section } from "@/app/shared/ui/Layout";
+import { TrustAndFaqSection } from "@/app/shared/sections/TrustAndFaqSection";
 
 export const metadata: Metadata = {
   title: "Case Studies | NXTorbit",
@@ -153,6 +154,8 @@ export default function CaseStudiesPage() {
           </Section>
         );
       })}
+
+      <TrustAndFaqSection />
 
       <CallToAction
         eyebrow="READY TO START?"

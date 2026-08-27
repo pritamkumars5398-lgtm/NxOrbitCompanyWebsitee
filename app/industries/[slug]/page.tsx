@@ -13,6 +13,7 @@ import { Card } from "@/app/shared/ui/Card";
 import { Container, Eyebrow, Section, SectionHeading } from "@/app/shared/ui/Layout";
 import { Stats } from "@/app/shared/ui/Stats";
 import { SubNav } from "@/app/shared/ui/SubNav";
+import { TrustAndFaqSection } from "@/app/shared/sections/TrustAndFaqSection";
 
 export async function generateStaticParams() {
   return Object.keys(INDUSTRIES_DATA).map((slug) => ({ slug }));
@@ -182,6 +183,8 @@ export default async function IndustryPage({
           </Stagger>
         </Container>
       </Section>
+
+      <TrustAndFaqSection />
 
       <CallToAction />
     </>

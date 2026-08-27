@@ -14,6 +14,7 @@ import { Container, Eyebrow, Section, SectionHeading } from "@/app/shared/ui/Lay
 import { Reveal, Stagger, StaggerItem } from "@/app/shared/motion/Reveal";
 import { GradientMesh, Grain } from "@/app/shared/backdrop/Backdrops";
 import { CallToAction } from "@/app/shared/sections/CallToAction";
+import { TrustAndFaqSection } from "@/app/shared/sections/TrustAndFaqSection";
 
 /* ── AI Chat Simulator Prompts & Responses ───────────────────────────────── */
 const CHAT_PROMPTS = [
@@ -556,52 +557,8 @@ export default function NextOrbitFreightPage() {
         </Container>
       </Section>
 
-      {/* ── 8 & 9. ISO Certificates & Global FAQ Section ── */}
-      <Section tone="sunken" spacing="lg" className="border-t border-hairline">
-        <Container>
-          <div className="grid gap-12 lg:grid-cols-2">
-            <div>
-              <Eyebrow tone="brand">TRUST CERTIFICATIONS</Eyebrow>
-              <h2 className="text-display-sm text-slate-900 font-extrabold tracking-tight mt-2 mb-4">
-                ISO 9001 Quality Guaranteed
-              </h2>
-              <p className="text-sm text-slate-600 leading-relaxed mb-6">
-                NXTorbit operates under strict international quality guidelines. Our products undergo rigorous functional testing, stress auditing, and regular third-party security audits to ensure compliance with enterprise parameters globally.
-              </p>
-              <div className="inline-flex items-center gap-3 px-4 py-3 rounded-2xl border border-slate-300 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-slate-600 cursor-pointer">
-                <ShieldCheck className="size-8 text-teal-500 shrink-0" />
-                <div>
-                  <span className="text-xs font-bold text-slate-800 block">ISO 9001:2015</span>
-                  <span className="text-[10px] text-slate-400">Quality Management System Certified</span>
-                </div>
-              </div>
-            </div>
-            
-            {/* Global FAQ Details */}
-            <div>
-              <Eyebrow tone="brand">QUESTIONS & ANSWERS</Eyebrow>
-              <h2 className="text-display-sm text-slate-900 font-extrabold tracking-tight mt-2 mb-6">
-                Frequently Asked Questions
-              </h2>
-              
-              <div className="space-y-4">
-                <div className="rounded-xl border border-slate-200 bg-white p-4">
-                  <h4 className="text-xs font-bold text-slate-900">How long does integration take?</h4>
-                  <p className="text-[11px] text-slate-600 mt-1 leading-relaxed">
-                    Pre-built integrations for SAP, Oracle, and Zoho take less than 2 weeks. Custom ERPs can be bound via our secure REST webhooks within 4 weeks.
-                  </p>
-                </div>
-                <div className="rounded-xl border border-slate-200 bg-white p-4">
-                  <h4 className="text-xs font-bold text-slate-900">Is data storage isolated per tenant?</h4>
-                  <p className="text-[11px] text-slate-600 mt-1 leading-relaxed">
-                    Yes, we use strict logical separation (multi-tenant branch isolation) to ensure zero data leakage between different regional branches or shipping operations.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </Section>
+      {/* ── 8 & 9. Trust Certifications & FAQ ── */}
+      <TrustAndFaqSection />
 
       {/* ── 10. Bottom CTA Section ── */}
       <CallToAction

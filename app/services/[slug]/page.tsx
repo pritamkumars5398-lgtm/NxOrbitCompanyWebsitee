@@ -17,6 +17,7 @@ import { Stats } from "@/app/shared/ui/Stats";
 import { SubNav } from "@/app/shared/ui/SubNav";
 import { ServiceHeroImage } from "@/app/shared/ui/ServiceHeroImage";
 import { TheChallenge } from "@/app/shared/sections/home/TheChallenge";
+import { TrustAndFaqSection } from "@/app/shared/sections/TrustAndFaqSection";
 
 
 
@@ -237,6 +238,8 @@ export default async function ServicePage({
           </Marquee>
         </div>
       </Section>
+
+      <TrustAndFaqSection />
 
       <CallToAction />
     </>

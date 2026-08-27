@@ -9,6 +9,7 @@ import { Button } from "@/app/shared/ui/Button";
 import { Container, Eyebrow, Section } from "@/app/shared/ui/Layout";
 import { Stats } from "@/app/shared/ui/Stats";
 import { ProjectGallery } from "./ProjectGallery";
+import { TrustAndFaqSection } from "@/app/shared/sections/TrustAndFaqSection";
 
 export const metadata: Metadata = {
   title: "Portfolio | NXTorbit",
@@ -77,6 +78,8 @@ export default function PortfolioPage() {
           <ProjectGallery />
         </Container>
       </Section>
+
+      <TrustAndFaqSection />
 
       <CallToAction
         eyebrow="READY TO START?"
