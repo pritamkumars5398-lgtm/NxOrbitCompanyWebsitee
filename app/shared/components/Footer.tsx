@@ -81,7 +81,7 @@ export default function Footer() {
                 <AppIcon name="mail" size={16} className="shrink-0 mt-0.5 text-nyt-lime" />
                 <div>
                   <p className="font-bold text-white text-sm mb-0.5">Email</p>
-                  <p>info@itnextsolutions.com</p>
+                  <p>info@nxt-orbit.com</p>
                 </div>
               </div>
               <div className="flex gap-2.5">

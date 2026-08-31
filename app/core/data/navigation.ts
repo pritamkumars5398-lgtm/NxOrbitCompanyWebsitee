@@ -179,8 +179,8 @@ export const NAV_GROUPS: NavGroup[] = [
 export const CONTACT_DETAILS = {
   phone: "+91 9763804442",
   phoneHref: "tel:+919763804442",
-  email: "info@itnextsolutions.com",
-  emailHref: "mailto:info@itnextsolutions.com",
+  email: "info@nxt-orbit.com",
+  emailHref: "mailto:info@nxt-orbit.com",
   address:
     "Office No. 903, Kamdhenu 23 West, TTC Industrial Area, MIDC, Pawne, Navi Mumbai 400705",
   hours: "Mon–Fri, 10:30 AM – 7:30 PM IST",

@@ -68,9 +68,13 @@ export function Footer() {
               <Logo height={40} light />
             </Link>
 
-            <p className="max-w-sm text-sm leading-relaxed text-ink-400">
-              NXTorbit is a product engineering company building mobile, web, AI, and cloud systems
-              for teams that need them to work at scale — and keep working.
+            <div className="flex flex-col gap-2">
+              <span className="text-sm font-bold text-white">NXT Orbit IT Solutions Pvt. Ltd.</span>
+              <span className="text-xs font-mono tracking-wider text-teal-400 font-bold uppercase">Keep It Simple.</span>
+            </div>
+
+            <p className="max-w-md text-xs leading-relaxed text-ink-400">
+              Enterprise Applications · Digital Platforms · Mobile Solutions · Cloud & DevOps · AI & Automation · Technology Partnerships
             </p>
 
             <dl className="flex flex-col gap-4 text-sm">
@@ -121,7 +125,7 @@ export function Footer() {
 
         <div className="mt-6 flex flex-col gap-4 border-t border-white/10 pt-4 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs text-ink-500">
-            © {new Date().getFullYear()} NXTorbit Technology Pvt. Ltd. All rights reserved.
+            © 2026 NXT Orbit IT Solutions Pvt. Ltd. All rights reserved.
           </p>
 
           <div className="flex items-center gap-6">

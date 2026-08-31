@@ -139,7 +139,7 @@ export function JobBoard() {
                           {job.summary}
                         </p>
                         <Button
-                          href={`mailto:info@itnextsolutions.com?subject=Application: ${encodeURIComponent(job.title)}`}
+                          href={`mailto:info@nxt-orbit.com?subject=Application: ${encodeURIComponent(job.title)}`}
                           variant="primary"
                           withArrow
                           className="shrink-0"

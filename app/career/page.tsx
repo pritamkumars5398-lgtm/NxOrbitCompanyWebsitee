@@ -85,7 +85,7 @@ export default function CareerPage() {
                 See open roles
               </Button>
               <Button
-                href="mailto:info@itnextsolutions.com?subject=Speculative application"
+                href="mailto:info@nxt-orbit.com?subject=Speculative application"
                 size="lg"
                 variant="outline"
                 withArrow
@@ -191,7 +191,7 @@ export default function CareerPage() {
         description="We keep speculative applications on file and genuinely go back to them when something opens up."
         primary={{
           label: "Email your CV",
-          href: "mailto:info@itnextsolutions.com?subject=Speculative application",
+          href: "mailto:info@nxt-orbit.com?subject=Speculative application",
         }}
         secondary={{ label: "See open roles", href: "#openings" }}
       />
