@@ -28,7 +28,7 @@ export function Faq() {
               Straight answers. If yours isn&apos;t here, an engineer will answer it on the call —
               not a salesperson.
             </p>
-            <Button href="/contact" variant="outline" withArrow className="mt-2 self-start">
+            <Button href="/contact" variant="primary" withArrow className="mt-2 self-start">
               Ask us directly
             </Button>
           </Reveal>

@@ -5,15 +5,21 @@ import { ArrowUpRight } from "lucide-react";
 import { CAPABILITIES } from "@/app/core/data/home";
 import { cn } from "@/app/core/lib/cn";
 import { DotField } from "@/app/shared/backdrop/Backdrops";
-import { Stagger, StaggerItem } from "@/app/shared/motion/Reveal";
+import { Reveal, Stagger, StaggerItem } from "@/app/shared/motion/Reveal";
 import { Container, Section, SectionHeading } from "@/app/shared/ui/Layout";
 import { NavIcon } from "@/app/shared/ui/NavIcon";
-import { TextLink } from "@/app/shared/ui/Button";
+import { Button, TextLink } from "@/app/shared/ui/Button";
+
+const CAPABILITY_IMAGES: Record<string, string> = {
+  "Mobile App Development": "/assets/service-hero-mobile.jpg",
+  "AI & ML Solutions": "/assets/service-hero-ai.jpg",
+  "Web App Development": "/assets/service-hero-web.jpg",
+  "DevOps & Cloud": "/assets/service-hero-devops.jpg",
+  "UI/UX Design": "/assets/service-hero-design.jpg",
+};
 
 /**
- * Capability grid.
- *
- * A balanced grid with identical card styling for all items.
+ * Capability grid redesigned as alternating visual rows with illustrative screenshots.
  */
 export function Capabilities() {
   return (
@@ -29,58 +35,86 @@ export function Capabilities() {
           className="mb-14"
         />
 
-        <Stagger stagger={0.09} className="grid gap-4 sm:grid-cols-2">
-          {CAPABILITIES.map((item) => (
-            <StaggerItem
-              key={item.href}
-              from="up"
-              scale={0.97}
-            >
-              <Link
-                href={item.href}
-                className="group relative flex h-full flex-col gap-3 overflow-hidden rounded-2xl border border-hairline/80 bg-white/60 p-5 backdrop-blur-md shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-teal-300 hover:shadow-lg hover:shadow-teal-500/10"
+        <div className="flex flex-col gap-12 lg:gap-20 mt-10">
+          {CAPABILITIES.map((item, index) => {
+            const isEven = index % 2 === 0;
+            const imgPath = CAPABILITY_IMAGES[item.title] || "/assets/service-hero-web.jpg";
+            return (
+              <div
+                key={item.href}
+                className="group/row grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center py-6 lg:py-12 border-b border-hairline last:border-b-0"
               >
-                {/* Decorative background glow on hover */}
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute -right-20 -top-20 -z-10 size-40 rounded-full bg-[radial-gradient(circle,rgba(20,184,166,0.12)_0%,transparent_70%)] opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
-                />
-
-                <div className="flex items-start justify-between">
-                  <span className="inline-flex size-11 items-center justify-center rounded-xl bg-linear-to-br from-brand-500 to-teal-400 text-white transition-transform duration-300 group-hover:scale-110">
-                    <NavIcon name={item.icon} className="size-5" />
-                  </span>
-                  <div className="flex size-7 items-center justify-center rounded-full bg-slate-50 text-ink-400 transition-all duration-300 group-hover:bg-teal-50 group-hover:text-teal-600">
-                    <ArrowUpRight
-                      aria-hidden
-                      className="size-3.5 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                    />
+                {/* Content Column */}
+                <Reveal
+                  from={isEven ? "left" : "right"}
+                  className={cn(
+                    "flex flex-col gap-5 lg:col-span-6",
+                    isEven ? "lg:order-first" : "lg:order-last"
+                  )}
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="inline-flex size-10 items-center justify-center rounded-xl bg-linear-to-br from-brand-500 to-teal-400 text-white">
+                      <NavIcon name={item.icon} className="size-5" />
+                    </span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-teal-600">
+                      {String(index + 1).padStart(2, "0")} / {item.title}
+                    </span>
                   </div>
-                </div>
 
-                <div className="flex flex-col gap-2">
-                  <h3 className="text-base font-bold text-ink-900 transition-colors duration-200 group-hover:text-brand-600">
+                  <h3 className="text-display-xs sm:text-display-sm lg:text-display-md text-ink-900 group-hover/row:text-brand-600 transition-colors duration-300">
                     {item.title}
                   </h3>
-                  <p className="text-xs leading-relaxed text-ink-600">
+
+                  <p className="text-base text-ink-600 leading-relaxed max-w-xl">
                     {item.description}
                   </p>
-                </div>
 
-                <ul className="mt-auto flex flex-wrap gap-1.5 pt-2">
-                  {item.points.map((point) => (
-                    <li
-                      key={point}
-                      className="rounded-md border border-hairline bg-slate-50/50 px-2 py-0.5 text-[0.7rem] font-semibold text-ink-500 transition-colors duration-300 group-hover:border-teal-100 group-hover:bg-teal-50/30 group-hover:text-teal-600"
-                    >
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-              </Link>
-            </StaggerItem>
-          ))}
-        </Stagger>
+                  <ul className="flex flex-wrap gap-2 pt-2">
+                    {item.points.map((point) => (
+                      <li
+                        key={point}
+                        className="rounded-full border border-hairline bg-slate-50 px-3.5 py-1 text-xs font-semibold text-ink-600 transition-colors duration-300 group-hover/row:border-teal-100 group-hover/row:bg-teal-50/30 group-hover/row:text-teal-600"
+                      >
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="pt-3">
+                    <Button href={item.href} variant="primary" withArrow className="self-start">
+                      Explore {item.title.split(" ")[0]}
+                    </Button>
+                  </div>
+                </Reveal>
+
+                {/* Image Column */}
+                <Reveal
+                  from={isEven ? "right" : "left"}
+                  className={cn(
+                    "relative lg:col-span-6 flex justify-center w-full",
+                    isEven ? "lg:order-last" : "lg:order-first"
+                  )}
+                >
+                  {/* Decorative background glow */}
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute -inset-4 -z-10 rounded-full bg-[radial-gradient(circle,rgba(20,184,166,0.08)_0%,transparent_70%)] opacity-0 blur-2xl transition-opacity duration-500 group-hover/row:opacity-100"
+                  />
+
+                  {/* Premium Image Frame */}
+                  <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 shadow-md shadow-slate-200/50 w-full max-w-[500px] aspect-[4/3] group-hover/row:shadow-xl group-hover/row:shadow-teal-500/5 transition-all duration-500">
+                    <img
+                      src={imgPath}
+                      alt={item.title}
+                      className="size-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/row:scale-105"
+                      suppressHydrationWarning
+                    />
+                  </div>
+                </Reveal>
+              </div>
+            );
+          })}
+        </div>
       </Container>
     </Section>
   );

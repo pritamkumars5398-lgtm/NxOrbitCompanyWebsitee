@@ -33,7 +33,7 @@ export const CAPABILITIES = [
   {
     title: "Mobile App Development",
     description:
-      "Native iOS and Android alongside React Native and Flutter — chosen on the merits of your product, not our preference.",
+      "We design and build high-performance mobile applications utilizing Swift and Kotlin for native excellence, or React Native and Flutter for cross-platform efficiency. From offline-first architecture to automated app store deployment and secure hardware integration, we build apps that stay fast and scale cleanly.",
     href: "/services/mobile",
     icon: "smartphone",
     points: ["Swift & Kotlin", "React Native", "Flutter", "App Store strategy"],
@@ -41,28 +41,32 @@ export const CAPABILITIES = [
   },
   {
     title: "AI & ML Solutions",
-    description: "Models, retrieval, and agents wired into products people already use.",
+    description:
+      "We implement custom LLM pipelines, Retrieval-Augmented Generation (RAG) systems, and intelligent agents tailored to your business data. Whether you need computer vision for automated inspection, forecasting models for planning, or natural language search, we turn raw data into production-ready automation.",
     href: "/services/ai",
     icon: "sparkles",
     points: ["LLM pipelines", "Computer vision", "Forecasting"],
   },
   {
     title: "Web App Development",
-    description: "Platforms, portals, and internal tooling built to stay fast as they grow.",
+    description:
+      "We build modular web platforms, custom SaaS portals, and internal dashboards using Next.js and robust, accessible design systems. Our development focuses on fast initial render speeds, real-time collaboration features, secure integrations, and maintaining clean structures that won't slow you down.",
     href: "/services/web",
     icon: "globe",
     points: ["Next.js", "Design systems", "Realtime"],
   },
   {
     title: "DevOps & Cloud",
-    description: "Pipelines, observability, and infrastructure that costs what it should.",
+    description:
+      "We architect high-availability cloud infrastructure on AWS and GCP using infrastructure-as-code and container orchestration. By setting up automated CI/CD pipelines, proactive security alerts, and advanced monitoring, we keep your systems online and running at peak performance while keeping bills optimized.",
     href: "/services/devops",
     icon: "server",
     points: ["AWS & GCP", "Kubernetes", "CI/CD"],
   },
   {
     title: "UI/UX Design",
-    description: "Research, interaction design, and systems your engineers can actually build.",
+    description:
+      "We conduct user research, outline interactive user journeys, and construct comprehensive Figma design systems. By bridging the gap between product strategy and frontend development, we design digital interfaces that are visually exceptional, accessible, and ready for your engineering team to build.",
     href: "/services/design",
     icon: "pen-tool",
     points: ["Discovery", "Prototyping", "Design systems"],

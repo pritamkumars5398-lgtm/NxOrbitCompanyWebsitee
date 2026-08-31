@@ -41,7 +41,7 @@ export function Process() {
                 Four phases, each with a defined output you can hold us to. No black-box quarters,
                 no status decks standing in for working software.
               </p>
-              <Button href="/contact" variant="outline" withArrow className="mt-2 self-start">
+              <Button href="/contact" variant="primary" withArrow className="mt-2 self-start">
                 Start with discovery
               </Button>
             </Reveal>

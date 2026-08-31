@@ -68,7 +68,7 @@ export function LogoRail() {
                 <img
                   src={client.image}
                   alt={client.alt}
-                  className="h-7 max-h-7 w-auto max-w-[120px] object-contain transition-all duration-300 filter grayscale contrast-125 group-hover:grayscale-0"
+                  className="h-7 max-h-7 w-auto max-w-[120px] object-contain transition-all duration-300"
                   loading="lazy"
                 />
               </div>

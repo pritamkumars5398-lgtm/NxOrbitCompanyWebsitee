@@ -185,7 +185,7 @@ export function TechStack() {
                 onClick={() => setActiveTab(cat.id)}
                 className={`flex items-center gap-2.5 px-5 py-3 rounded-full text-sm font-semibold transition-all duration-300 ${
                   isActive
-                    ? "bg-[#01242e] text-white shadow-lg shadow-[#01242e]/20 scale-105"
+                    ? "bg-[#01242e] text-white scale-105"
                     : "bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900"
                 }`}
               >

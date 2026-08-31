@@ -11,9 +11,56 @@ import { Button } from "@/app/shared/ui/Button";
 import { Container, Divider, Eyebrow, Section, SectionHeading } from "@/app/shared/ui/Layout";
 import { Stats } from "@/app/shared/ui/Stats";
 import { SubNav } from "@/app/shared/ui/SubNav";
-import { TerminalCard } from "@/app/technology/components/TerminalCard";
 import { TrustAndFaqSection } from "@/app/shared/sections/TrustAndFaqSection";
 import { ProcessArcLayout } from "@/app/shared/sections/ProcessArcLayout";
+
+const TECH_HERO_ASSETS: Record<
+  string,
+  { logo: string; glowClass: string; rgb: string; label: string; version: string }
+> = {
+  "react-native": {
+    logo: "https://icon.icepanel.io/Technology/svg/React.svg",
+    glowClass: "border-sky-500/20 bg-sky-950/20 shadow-sky-500/5",
+    rgb: "14, 165, 233",
+    label: "React Native Core Engine",
+    version: "v0.74.x",
+  },
+  flutter: {
+    logo: "https://icon.icepanel.io/Technology/svg/Flutter.svg",
+    glowClass: "border-cyan-500/20 bg-cyan-950/20 shadow-cyan-500/5",
+    rgb: "6, 182, 212",
+    label: "Flutter Rendering Engine",
+    version: "v3.22.x",
+  },
+  ios: {
+    logo: "https://icon.icepanel.io/Technology/svg/Swift.svg",
+    glowClass: "border-orange-500/20 bg-orange-950/20 shadow-orange-500/5",
+    rgb: "249, 115, 22",
+    label: "Swift Native SDK Compiler",
+    version: "v5.10",
+  },
+  android: {
+    logo: "https://icon.icepanel.io/Technology/svg/Kotlin.svg",
+    glowClass: "border-purple-500/20 bg-purple-950/20 shadow-purple-500/5",
+    rgb: "168, 85, 247",
+    label: "Kotlin JVM Runtime Environment",
+    version: "v2.0.x",
+  },
+  nodejs: {
+    logo: "https://icon.icepanel.io/Technology/svg/Node.js.svg",
+    glowClass: "border-emerald-500/20 bg-emerald-950/20 shadow-emerald-500/5",
+    rgb: "16, 185, 129",
+    label: "Node.js V8 Runtime Engine",
+    version: "v20.x LTS",
+  },
+  nextjs: {
+    logo: "https://icon.icepanel.io/Technology/svg/Next.js.svg",
+    glowClass: "border-white/10 bg-white/5 shadow-white/5",
+    rgb: "255, 255, 255",
+    label: "Next.js Production Server",
+    version: "v14.2.x",
+  },
+};
 
 export async function generateStaticParams() {
   return Object.keys(TECHNOLOGY_DATA).map((slug) => ({ slug }));
@@ -46,13 +93,8 @@ export default async function TechnologyPage({
   const data = TECHNOLOGY_DATA[slug];
   if (!data) notFound();
 
-  const terminalLines = [
-    `# ${data.title.toLowerCase()} — production setup`,
-    `nxt init ${data.slug} --template enterprise`,
-    "nxt add ci --provider github --checks lint,test,e2e",
-    "nxt deploy --env staging",
-    "# build passed in 2m 41s",
-  ];
+  const asset = TECH_HERO_ASSETS[data.slug] || TECH_HERO_ASSETS["react-native"];
+  const isNextJs = data.slug === "nextjs";
 
   return (
     <>
@@ -65,7 +107,7 @@ export default async function TechnologyPage({
         <Grain />
 
         <Container className="relative">
-          <div className="grid items-start gap-14 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-20">
+          <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-20">
             <div className="flex flex-col items-start">
               <Breadcrumb
                 tone="dark"
@@ -100,9 +142,46 @@ export default async function TechnologyPage({
               </Reveal>
             </div>
 
-            <div className="relative">
-              <TerminalCard title={`${data.slug}/deploy.sh`} lines={terminalLines} />
-            </div>
+            <Reveal from="right" className="relative flex justify-center w-full group/hero">
+              {/* Ambient Tech Glow */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -inset-10 -z-10 rounded-full blur-3xl opacity-60 transition-opacity duration-500 group-hover/hero:opacity-80"
+                style={{
+                  background: `radial-gradient(circle, rgba(${asset.rgb}, 0.22) 0%, transparent 70%)`,
+                }}
+              />
+
+              {/* Futuristic Glassmorphism Tech Card */}
+              <div
+                className={`relative flex flex-col items-center justify-center p-8 sm:p-10 rounded-[2.5rem] border backdrop-blur-md aspect-square w-full max-w-[380px] mx-auto shadow-2xl transition-all duration-500 group-hover/hero:-translate-y-1 ${asset.glowClass}`}
+              >
+                {/* Tech Logo */}
+                <div className="relative flex items-center justify-center p-6 bg-brand-950/40 rounded-3xl border border-white/5 shadow-inner">
+                  <img
+                    src={asset.logo}
+                    alt={data.title}
+                    className="size-24 sm:size-28 object-contain transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/hero:scale-110"
+                    style={isNextJs ? { filter: "invert(1) brightness(2)" } : undefined}
+                    suppressHydrationWarning
+                  />
+                </div>
+
+                {/* Subtitle Details */}
+                <div className="mt-6 flex flex-col items-center text-center">
+                  <span className="text-[10px] font-mono font-bold tracking-widest text-slate-400 uppercase">
+                    {asset.label}
+                  </span>
+                  <div className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-mono font-medium text-teal-400">
+                    <span
+                      className="size-1.5 rounded-full animate-pulse"
+                      style={{ backgroundColor: `rgb(${asset.rgb})` }}
+                    />
+                    {asset.version}
+                  </div>
+                </div>
+              </div>
+            </Reveal>
           </div>
 
           <Reveal from="up" delay={0.1} className="mt-16 border-t border-white/10 pt-10">

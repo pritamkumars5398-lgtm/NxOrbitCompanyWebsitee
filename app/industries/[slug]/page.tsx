@@ -112,7 +112,7 @@ export default async function IndustryPage({
                 Not a wish list — every item here is something we have built, shipped, and
                 supported for a client in this sector.
               </p>
-              <Button href="/contact" variant="outline" withArrow className="mt-2 self-start">
+              <Button href="/contact" variant="primary" withArrow className="mt-2 self-start">
                 Discuss your case
               </Button>
             </Reveal>

@@ -24,7 +24,7 @@ export function Hero() {
 
 
       <Container>
-        <div className="grid items-center gap-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-20">
+        <div className="grid items-center gap-16 sm:gap-20 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-20">
           {/* ── Type column ── */}
           <div className="flex flex-col items-start gap-7">
             <motion.div
