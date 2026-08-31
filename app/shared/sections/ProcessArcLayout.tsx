@@ -36,11 +36,14 @@ interface ProcessArcLayoutProps {
   subtitle?: string;
   steps: ProcessStepItem[];
   className?: string;
+  bgImage?: string;
+  bgOpacity?: number;
 }
 
 /**
  * Clean Process Layout aligned 100% with NXTorbit Brand Teal & Slate Color System.
- * Features curved arc dotted line on desktop (lg+) and clean vertical timeline on mobile/tablet (<lg).
+ * Features full-section background image support, curved arc dotted line on desktop (lg+),
+ * and clean vertical timeline on mobile/tablet (<lg).
  */
 export function ProcessArcLayout({
   eyebrow = "HOW WE WORK",

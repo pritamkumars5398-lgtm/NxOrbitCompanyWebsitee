@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { TESTIMONIALS } from "@/app/core/constants/app.constant";
@@ -19,6 +19,7 @@ import { Reveal } from "@/app/shared/motion/Reveal";
 export function Testimonials() {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(1);
+  const [isHovered, setIsHovered] = useState(false);
   const active = TESTIMONIALS[index];
 
   const go = (next: number) => {
@@ -26,17 +27,50 @@ export function Testimonials() {
     setIndex((next + TESTIMONIALS.length) % TESTIMONIALS.length);
   };
 
+  // Autoplay functionality: slides every 5 seconds, pauses when user hovers
+  useEffect(() => {
+    if (isHovered) return;
+    const interval = setInterval(() => {
+      setDirection(1);
+      setIndex((prevIndex) => (prevIndex + 1) % TESTIMONIALS.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [isHovered]);
+
   return (
-    <Section tone="white" spacing="lg" id="testimonials">
-      <Container>
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:gap-20">
-          <Reveal className="flex flex-col gap-5 lg:pt-4">
+    <Section tone="white" spacing="sm" id="testimonials" className="relative isolate overflow-hidden">
+      {/* Executive Client Team Background Image & High-Tech Layer */}
+      <div
+        aria-hidden
+        className="absolute inset-0 size-full z-0 bg-cover bg-center bg-no-repeat opacity-85 pointer-events-none"
+        style={{
+          backgroundImage: "url('/assets/consulting-team.png')",
+        }}
+      />
+      <div 
+        aria-hidden
+        className="absolute inset-0 size-full z-0 opacity-15 pointer-events-none"
+        style={{
+          backgroundImage: "radial-gradient(circle at 1.5px 1.5px, rgba(0, 187, 169, 0.4) 1.5px, transparent 0)",
+          backgroundSize: "28px 28px"
+        }}
+      />
+      {/* Directional Asymmetric Overlay: Crisp Left Text (92%), Clear Middle details (40%), Vivid Right (5%) */}
+      <div
+        aria-hidden
+        className="absolute inset-0 size-full z-0 bg-gradient-to-r from-white/92 via-white/40 to-white/5 pointer-events-none"
+      />
+
+      <Container className="relative z-10">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:gap-12">
+          <Reveal className="flex flex-col gap-4 lg:pt-2">
             <Eyebrow>Client words</Eyebrow>
-            <h2 className="text-display-md sm:text-display-lg">
+            <h2 className="text-display-sm sm:text-display-md">
               What it&apos;s like on the other side of the contract.
             </h2>
 
-            <div className="mt-4 flex items-center gap-3">
+            <div className="mt-2 flex items-center gap-3">
               <NavButton label="Previous testimonial" onClick={() => go(index - 1)}>
                 <ArrowLeft aria-hidden className="size-4" />
               </NavButton>
@@ -49,7 +83,7 @@ export function Testimonials() {
             </div>
           </Reveal>
 
-          <div className="relative min-h-[22rem]">
+          <div className="relative min-h-[16rem]">
             <AnimatePresence mode="wait" custom={direction}>
               <motion.figure
                 key={active.name}
@@ -58,23 +92,25 @@ export function Testimonials() {
                 animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                 exit={{ opacity: 0, x: direction * -40, filter: "blur(6px)" }}
                 transition={{ duration: 0.5, ease: EASE.outExpo }}
-                className="relative flex flex-col gap-8 rounded-3xl border border-hairline bg-surface-muted p-8 sm:p-12"
+                className="relative flex flex-col gap-5 rounded-3xl border border-hairline bg-surface-muted p-6 sm:p-8"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
               >
                 <span
                   aria-hidden
-                  className="font-serif text-7xl leading-none text-brand-200 select-none"
+                  className="font-serif text-6xl leading-none text-brand-200 select-none"
                 >
                   &ldquo;
                 </span>
 
-                <blockquote className="-mt-6 text-xl leading-relaxed font-medium text-ink-800 sm:text-2xl">
+                <blockquote className="-mt-4 text-lg leading-relaxed font-medium text-ink-800 sm:text-xl">
                   {active.quote}
                 </blockquote>
 
-                <figcaption className="mt-auto flex items-center gap-4 border-t border-hairline pt-6">
+                <figcaption className="mt-auto flex items-center gap-4 border-t border-hairline pt-4">
                   <span
                     aria-hidden
-                    className="inline-flex size-12 shrink-0 items-center justify-center rounded-full bg-brand-800 text-sm font-semibold text-white"
+                    className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-brand-800 text-xs font-semibold text-white"
                   >
                     {active.name
                       .split(" ")
