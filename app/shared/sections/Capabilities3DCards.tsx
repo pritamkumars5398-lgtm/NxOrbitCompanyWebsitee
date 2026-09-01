@@ -53,7 +53,7 @@ export function Capabilities3DCards({
   features,
 }: Capabilities3DCardsProps) {
   return (
-    <Section tone="muted" spacing="lg" className="relative overflow-hidden py-16 sm:py-24 bg-slate-50/70">
+    <Section tone="none" spacing="lg" className="relative overflow-hidden py-16 sm:py-24 bg-[#f1f5f9] border-t border-b border-slate-200/90 shadow-[inset_0_4px_12px_rgba(0,0,0,0.03)]">
       <Container>
         <SectionHeading
           eyebrow={eyebrow}
