@@ -51,6 +51,7 @@ export function ProcessArcLayout({
   subtitle = "A proven, transparent delivery methodology for engineering products that scale.",
   steps,
   className,
+  bgImage = "/assets/consulting-team.png",
 }: ProcessArcLayoutProps) {
   const total = steps.length;
 
@@ -93,7 +94,21 @@ export function ProcessArcLayout({
   const svgWidth = 310;
 
   return (
-    <Section tone="white" spacing="lg" className={`relative isolate overflow-hidden py-10 sm:py-16 lg:py-20 ${className || ""}`}>
+    <Section tone="none" spacing="lg" className={`relative isolate overflow-hidden py-10 sm:py-16 lg:py-20 bg-slate-100 ${className || ""}`}>
+      {/* Background Image Layer - Clearly Visible */}
+      {bgImage && (
+        <div className="absolute inset-0 -z-20 overflow-hidden pointer-events-none">
+          <img
+            src={bgImage}
+            alt="Process workflow team background"
+            className="size-full object-cover object-center opacity-65 scale-105"
+          />
+        </div>
+      )}
+
+      {/* Light Overlay Gradient for Text Clarity */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-white/85 via-white/75 to-slate-50/80 pointer-events-none" />
+
       <Container>
         <div className="grid gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-10 xl:gap-14 items-center">
 
@@ -148,7 +163,7 @@ export function ProcessArcLayout({
                 <div className="h-1 w-10 sm:w-12 rounded-full bg-brand-600 my-2 sm:my-3 lg:my-4" />
 
                 {subtitle && (
-                  <p className="text-[11px] sm:text-xs lg:text-sm text-slate-500 leading-relaxed font-normal">
+                  <p className="text-[11px] sm:text-xs lg:text-sm text-slate-800 leading-relaxed font-semibold">
                     {subtitle}
                   </p>
                 )}
@@ -226,7 +241,7 @@ export function ProcessArcLayout({
                       <h3 className="text-sm sm:text-base lg:text-lg font-extrabold text-slate-900 tracking-tight leading-snug group-hover:text-brand-600 transition-colors duration-200">
                         {stepItem.title}
                       </h3>
-                      <p className="text-[11px] sm:text-xs lg:text-sm leading-relaxed text-slate-500 mt-0.5 max-w-[260px] sm:max-w-md lg:max-w-[280px] xl:max-w-sm font-normal line-clamp-2">
+                      <p className="text-[11px] sm:text-xs lg:text-sm leading-relaxed text-slate-800 mt-0.5 max-w-[260px] sm:max-w-md lg:max-w-[280px] xl:max-w-sm font-medium line-clamp-2">
                         {stepItem.description}
                       </p>
                     </div>

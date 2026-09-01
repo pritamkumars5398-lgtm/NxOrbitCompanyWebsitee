@@ -19,6 +19,7 @@ import { ServiceHeroImage } from "@/app/shared/ui/ServiceHeroImage";
 import { TheChallenge } from "@/app/shared/sections/home/TheChallenge";
 import { TrustAndFaqSection } from "@/app/shared/sections/TrustAndFaqSection";
 import { ProcessArcLayout } from "@/app/shared/sections/ProcessArcLayout";
+import { Capabilities3DCards } from "@/app/shared/sections/Capabilities3DCards";
 
 
 
@@ -148,35 +149,13 @@ export default async function ServicePage({
 
       {slug === "mobile" && <TheChallenge />}
 
-      {/* ── Capabilities: numbered hairline rows, not cards ── */}
-      <Section tone="muted" spacing="lg">
-        <Container>
-          <SectionHeading
-            eyebrow="Capabilities"
-            title={`What we deliver in ${data.title.toLowerCase()}`}
-            description="Every engagement is shaped around your goals, not a template. This is the ground we cover."
-            className="mb-14"
-          />
-
-          <Stagger stagger={0.07} className="grid gap-x-16 md:grid-cols-2">
-            {data.features.map((feature, index) => (
-              <StaggerItem
-                key={feature.title}
-                from="up"
-                className="group flex gap-6 border-t border-hairline py-7"
-              >
-                <span className="font-mono text-xs text-ink-300 tabular-nums transition-colors duration-300 group-hover:text-brand-400">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <div className="flex flex-col gap-2">
-                  <h3 className="text-base font-semibold text-ink-900">{feature.title}</h3>
-                  <p className="text-sm leading-relaxed text-ink-600">{feature.description}</p>
-                </div>
-              </StaggerItem>
-            ))}
-          </Stagger>
-        </Container>
-      </Section>
+      {/* ── Capabilities: 3D Elevated Feature Cards Grid ── */}
+      <Capabilities3DCards
+        eyebrow="Capabilities"
+        title={`What we deliver in ${data.title.toLowerCase()}`}
+        description="Every engagement is shaped around your goals, not a template. This is the ground we cover."
+        features={data.features}
+      />
 
       {/* ── Process: Arc Track Layout ── */}
       <ProcessArcLayout
