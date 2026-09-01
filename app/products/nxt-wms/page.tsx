@@ -15,6 +15,7 @@ import { Reveal } from "@/app/shared/motion/Reveal";
 import { GradientMesh, Grain } from "@/app/shared/backdrop/Backdrops";
 import { CallToAction } from "@/app/shared/sections/CallToAction";
 import { TrustAndFaqSection } from "@/app/shared/sections/TrustAndFaqSection";
+import { ServiceHeroImage } from "@/app/shared/ui/ServiceHeroImage";
 
 /* ── WMS AI Chat Simulator Prompts & Responses ───────────────────────────── */
 const WMS_CHAT_PROMPTS = [
@@ -182,42 +183,19 @@ export default function NextOrbitWmsPage() {
               </Reveal>
             </div>
 
-            {/* Hero Visualization Mockup */}
+            {/* Hero Visualization Image */}
             <div className="relative flex justify-center">
               <Reveal from="up" scale={0.97} className="relative w-full max-w-[540px]">
-                {/* 3D Spatial Twin Mockup */}
-                <div className="relative overflow-hidden rounded-3xl border border-slate-300 bg-white p-5 transition-transform duration-500 hover:scale-[1.01]">
-                  <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
-                    <div className="flex items-center gap-2">
-                      <span className="flex size-3.5 rounded-full bg-teal-500 animate-pulse" />
-                      <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">3D Spatial Twin Engine</span>
-                    </div>
-                    <span className="text-[10px] font-semibold text-brand-600 bg-brand-50 px-2 py-0.5 rounded-md">Real-Time Yield</span>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    <div className="rounded-xl bg-slate-900 text-white p-4 font-mono text-xs">
-                      <div className="text-teal-400">$ nxt-wms --spatial-scan --live</div>
-                      <div className="text-slate-400 mt-2">Scanning rack configurations...</div>
-                      <div className="text-emerald-400 mt-1">✓ 3D Spatial Grid synchronized</div>
-                      <div className="text-emerald-400 mt-1">✓ Yield Optimization engine running</div>
-                      <div className="text-amber-400 mt-1">! Detected 24% underutilized volume in Zone B</div>
-                      <div className="text-teal-400 mt-2">$ nxt-wms --optimize-slotting</div>
-                      <div className="text-teal-300 mt-1">&gt; 3D slotting optimized. Storage density +18%.</div>
-                    </div>
-                    
-                    <div className="grid grid-cols-2 gap-3">
-                      <div className="rounded-xl border border-slate-100 p-3 bg-slate-50/50">
-                        <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Dock Occupancy</span>
-                        <div className="text-xl font-extrabold text-slate-900 mt-1">84% Capacity</div>
-                      </div>
-                      <div className="rounded-xl border border-slate-100 p-3 bg-slate-50/50">
-                        <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Space Yield</span>
-                        <div className="text-xl font-extrabold text-teal-600 mt-1">+25% Mon.</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <ServiceHeroImage
+                  src="/assets/hero_slider_2.webp"
+                  alt="Total Warehouse Intelligence & Capacity Yield - NXT WMS"
+                  categoryText="Capacity & Yield"
+                  badgeText="Total Warehouse Intelligence"
+                  statBadge={{
+                    label: "Capacity Yield",
+                    value: "84% Occupancy | +25% Yield"
+                  }}
+                />
               </Reveal>
             </div>
           </div>

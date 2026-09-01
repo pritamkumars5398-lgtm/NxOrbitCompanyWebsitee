@@ -20,14 +20,14 @@
   --color-brand-100: #96e7e1;
   --color-brand-50: #e6f7f5;
 
-  /* ── Neutrals — cool-tinted so they sit next to the navy without muddying */
-  --color-ink-900: #06131f;
-  --color-ink-800: #0f2233;
-  --color-ink-700: #24384a;
-  --color-ink-600: #3d5266;
-  --color-ink-500: #5b6f83;
-  --color-ink-400: #8497a8;
-  --color-ink-300: #b3c1cd;
+  /* ── Neutrals — cool-tinted, high-contrast dark tones for crisp readability */
+  --color-ink-900: #040d17;
+  --color-ink-800: #0a1926;
+  --color-ink-700: #142536;
+  --color-ink-600: #1e2e3e;
+  --color-ink-500: #2d3f52;
+  --color-ink-400: #465768;
+  --color-ink-300: #9cb1c2;
   --color-ink-200: #d8e1e8;
   --color-ink-100: #eaf0f4;
   --color-ink-50: #f5f8fa;

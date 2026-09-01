@@ -15,6 +15,7 @@ import { Reveal } from "@/app/shared/motion/Reveal";
 import { GradientMesh, Grain } from "@/app/shared/backdrop/Backdrops";
 import { CallToAction } from "@/app/shared/sections/CallToAction";
 import { TrustAndFaqSection } from "@/app/shared/sections/TrustAndFaqSection";
+import { ServiceHeroImage } from "@/app/shared/ui/ServiceHeroImage";
 
 /* ── AI Chat Simulator Prompts & Responses ───────────────────────────── */
 const COURIER_CHAT_PROMPTS = [
@@ -219,42 +220,19 @@ export default function CourierExpressPage() {
               </Reveal>
             </div>
 
-            {/* Hero Visualization Mockup */}
+            {/* Hero Visualization Image */}
             <div className="relative flex justify-center">
               <Reveal from="up" scale={0.97} className="relative w-full max-w-[540px]">
-                {/* Modern visual card simulating multi-carrier dispatch and AI re-routing */}
-                <div className="relative overflow-hidden rounded-3xl border border-slate-300 bg-white p-5 transition-transform duration-500 hover:scale-[1.01]">
-                  <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
-                    <div className="flex items-center gap-2">
-                      <span className="flex size-3.5 rounded-full bg-teal-500 animate-pulse" />
-                      <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Multi-Carrier Engine</span>
-                    </div>
-                    <span className="text-[10px] font-semibold text-brand-600 bg-brand-50 px-2 py-0.5 rounded-md">AI Auto-Routing</span>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    <div className="rounded-xl bg-slate-900 text-white p-4 font-mono text-xs">
-                      <div className="text-teal-400">$ courier-express --analyze --shipment-id EX-9920</div>
-                      <div className="text-slate-400 mt-2">Checking carrier SLAs for destination pin-code 400070...</div>
-                      <div className="text-emerald-400 mt-1">✓ Verified address coordinates via AI</div>
-                      <div className="text-emerald-400 mt-1">✓ Running COD fraud verification check</div>
-                      <div className="text-amber-400 mt-1">! High-Risk RTO detected. Triggering WhatsApp flow...</div>
-                      <div className="text-teal-400 mt-2">$ courier-express --optimize-route</div>
-                      <div className="text-teal-300 mt-1">&gt; Customer confirmed buyer intent. Re-routed to Courier A.</div>
-                    </div>
-                    
-                    <div className="grid grid-cols-2 gap-3">
-                      <div className="rounded-xl border border-slate-100 p-3 bg-slate-50/50">
-                        <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Carrier Partners</span>
-                        <div className="text-xl font-extrabold text-slate-900 mt-1">25+ Networks</div>
-                      </div>
-                      <div className="rounded-xl border border-slate-100 p-3 bg-slate-50/50">
-                        <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">RTO Defense</span>
-                        <div className="text-xl font-extrabold text-teal-600 mt-1">-45% RTO</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <ServiceHeroImage
+                  src="/assets/hero_slider_3.webp"
+                  alt="Intelligent Shipping & Fulfillment Engine for Modern E-Commerce - Courier Express"
+                  categoryText="E-Commerce Fulfillment"
+                  badgeText="Intelligent Shipping Engine"
+                  statBadge={{
+                    label: "Fulfillment SLA",
+                    value: "25+ Carriers | -45% RTO"
+                  }}
+                />
               </Reveal>
             </div>
           </div>

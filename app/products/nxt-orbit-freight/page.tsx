@@ -15,6 +15,7 @@ import { Reveal, Stagger, StaggerItem } from "@/app/shared/motion/Reveal";
 import { GradientMesh, Grain } from "@/app/shared/backdrop/Backdrops";
 import { CallToAction } from "@/app/shared/sections/CallToAction";
 import { TrustAndFaqSection } from "@/app/shared/sections/TrustAndFaqSection";
+import { ServiceHeroImage } from "@/app/shared/ui/ServiceHeroImage";
 
 /* ── AI Chat Simulator Prompts & Responses ───────────────────────────────── */
 const CHAT_PROMPTS = [
@@ -205,43 +206,19 @@ export default function NextOrbitFreightPage() {
               </Reveal>
             </div>
 
-            {/* Hero Visualization Mockup */}
+            {/* Hero Visualization Image */}
             <div className="relative flex justify-center">
               <Reveal from="up" scale={0.97} className="relative w-full max-w-[540px]">
-                {/* Modern visual card simulating freight workflows */}
-                <div className="relative overflow-hidden rounded-3xl border border-slate-300 bg-white p-5 transition-transform duration-500 hover:scale-[1.01]">
-                  <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
-                    <div className="flex items-center gap-2">
-                      <span className="flex size-3.5 rounded-full bg-emerald-500 animate-pulse" />
-                      <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Live System Terminal</span>
-                    </div>
-                    <span className="text-[10px] font-semibold text-brand-600 bg-brand-50 px-2 py-0.5 rounded-md">V1.4 Active</span>
-                  </div>
-                  
-                  {/* Fictional Dashboard Mockup */}
-                  <div className="space-y-4">
-                    <div className="rounded-xl bg-slate-900 text-white p-4 font-mono text-xs">
-                      <div className="text-teal-400">$ nxt-freight --diagnose --active</div>
-                      <div className="text-slate-400 mt-2">Checking operations, custom clearings & bills...</div>
-                      <div className="text-emerald-400 mt-1">✓ CRM databases synchronized</div>
-                      <div className="text-emerald-400 mt-1">✓ Automated custom clearance agent listening</div>
-                      <div className="text-amber-400 mt-1">! Missing VGM certificate at Terminal 3 (IGM-8820)</div>
-                      <div className="text-teal-400 mt-2">$ nxt-freight --auto-clear IGM-8820</div>
-                      <div className="text-teal-300 mt-1">&gt; Agent fetched VGM. Customs cleared autonomously.</div>
-                    </div>
-                    
-                    <div className="grid grid-cols-2 gap-3">
-                      <div className="rounded-xl border border-slate-100 p-3 bg-slate-50/50">
-                        <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Active Shipments</span>
-                        <div className="text-xl font-extrabold text-slate-900 mt-1">1,482 TEU</div>
-                      </div>
-                      <div className="rounded-xl border border-slate-100 p-3 bg-slate-50/50">
-                        <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Custom Clearance</span>
-                        <div className="text-xl font-extrabold text-teal-600 mt-1">99.8% Auto</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <ServiceHeroImage
+                  src="/assets/hero_slider_1.webp"
+                  alt="Stop Managing Logistics. Start Orchestrating Growth - NXT Orbit Freight OS"
+                  categoryText="Next-Gen Freight OS"
+                  badgeText="Logistics & Growth Orchestration"
+                  statBadge={{
+                    label: "Active Freight",
+                    value: "1,482 TEU | 99.8% Auto"
+                  }}
+                />
               </Reveal>
             </div>
           </div>

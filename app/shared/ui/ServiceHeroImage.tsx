@@ -4,9 +4,20 @@ interface ServiceHeroImageProps {
   src: string;
   alt: string;
   badgeText?: string;
+  categoryText?: string;
+  statBadge?: {
+    label: string;
+    value: string;
+  };
 }
 
-export function ServiceHeroImage({ src, alt, badgeText = "Global Standard" }: ServiceHeroImageProps) {
+export function ServiceHeroImage({ 
+  src, 
+  alt, 
+  badgeText = "Global Standard",
+  categoryText = "Global Standard",
+  statBadge 
+}: ServiceHeroImageProps) {
   return (
     <div className="relative group w-full">
       {/* Outer Ambient Glow */}
@@ -14,16 +25,27 @@ export function ServiceHeroImage({ src, alt, badgeText = "Global Standard" }: Se
       
       {/* Card Frame */}
       <div className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-3 shadow-2xl transition-transform duration-500 hover:scale-[1.01]">
-        <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-slate-100">
+        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-slate-100">
           <img
             src={src}
             alt={alt}
             className="h-full w-full object-cover object-center transition-transform duration-700 hover:scale-105"
             onError={(e) => {
-              // Clean fallback to default local asset if needed
-              e.currentTarget.src = "/assets/service-hero-mobile.jpg";
+              // Clean fallback to default real logistics asset if needed
+              e.currentTarget.src = "/assets/hero_slider_1.webp";
             }}
           />
+
+          {/* Optional Top Right Live Stat Badge */}
+          {statBadge && (
+            <div className="absolute top-3.5 right-3.5 rounded-xl bg-slate-900/85 backdrop-blur-md border border-white/20 px-3.5 py-2 text-white shadow-lg flex items-center gap-2.5">
+              <span className="flex size-2 rounded-full bg-teal-400 animate-pulse" />
+              <div className="flex flex-col">
+                <span className="text-[9px] font-bold text-slate-300 uppercase tracking-wider leading-none mb-0.5">{statBadge.label}</span>
+                <span className="text-xs font-extrabold text-teal-300 leading-none">{statBadge.value}</span>
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
@@ -35,7 +57,7 @@ export function ServiceHeroImage({ src, alt, badgeText = "Global Standard" }: Se
           </svg>
         </span>
         <div className="flex flex-col">
-          <span className="text-[9px] font-bold text-teal-600 uppercase tracking-widest leading-none mb-1">Global Standard</span>
+          <span className="text-[9px] font-bold text-teal-600 uppercase tracking-widest leading-none mb-1">{categoryText}</span>
           <span className="text-[11px] font-extrabold text-slate-800 leading-none">{badgeText}</span>
         </div>
       </div>

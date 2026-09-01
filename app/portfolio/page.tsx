@@ -33,7 +33,19 @@ export default function PortfolioPage() {
   return (
     <>
       <section className="relative isolate overflow-hidden pt-24 pb-16 lg:pt-28 lg:pb-20">
-        <DotField className="opacity-60" />
+        {/* Full-width hero background image container */}
+        <div className="absolute inset-0 w-full h-full select-none pointer-events-none">
+          <img
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop"
+            alt="NXTorbit Digital Products & Portfolio Showcase"
+            className="w-full h-full object-cover object-center lg:object-right opacity-85"
+            suppressHydrationWarning
+          />
+          {/* Single clean responsive gradient mask */}
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.97)_0%,rgba(255,255,255,0.88)_40%,transparent_90%)] lg:bg-[linear-gradient(90deg,rgba(255,255,255,0.98)_0%,rgba(255,255,255,0.92)_35%,rgba(255,255,255,0.45)_65%,transparent_95%)]" />
+        </div>
+
+        <DotField className="opacity-30" />
         <Grain />
 
         <Container className="relative">
@@ -45,13 +57,13 @@ export default function PortfolioPage() {
             </Reveal>
 
             <Reveal from="up" delay={0.06}>
-              <h1 className="max-w-3xl text-display-lg sm:text-display-xl">
+              <h1 className="max-w-3xl text-display-lg sm:text-display-xl text-slate-950 font-extrabold">
                 Every one of these is still running.
               </h1>
             </Reveal>
 
             <Reveal from="up" delay={0.12}>
-              <p className="max-w-xl text-lead text-ink-600">
+              <p className="max-w-xl text-lead text-slate-800 font-medium">
                 Products we designed and engineered, in production and in the hands of real users.
                 Filter by sector to find something close to your problem.
               </p>
@@ -67,7 +79,7 @@ export default function PortfolioPage() {
             </Reveal>
           </div>
 
-          <Reveal from="up" delay={0.1} className="mt-14 border-t border-hairline pt-10">
+          <Reveal from="up" delay={0.1} className="mt-12 rounded-2xl border border-hairline bg-white/95 p-6 sm:p-8 shadow-xs backdrop-blur-md">
             <Stats items={REACH} layout="rail" columns={4} />
           </Reveal>
         </Container>

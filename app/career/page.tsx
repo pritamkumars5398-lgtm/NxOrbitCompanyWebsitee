@@ -56,6 +56,18 @@ export default function CareerPage() {
     <>
       {/* ── Hero ── */}
       <section className="relative isolate overflow-hidden pt-24 pb-16 lg:pt-28 lg:pb-20">
+        {/* Full-width hero background image container */}
+        <div className="absolute inset-0 w-full h-full select-none pointer-events-none">
+          <img
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop"
+            alt="NXTorbit Engineering Team & Workplace Culture"
+            className="w-full h-full object-cover object-center lg:object-right opacity-85"
+            suppressHydrationWarning
+          />
+          {/* Single clean responsive gradient mask */}
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.92)_0%,rgba(255,255,255,0.7)_40%,transparent_80%)] lg:bg-[linear-gradient(90deg,rgba(255,255,255,0.95)_0%,rgba(255,255,255,0.8)_30%,rgba(255,255,255,0.25)_60%,transparent_85%)]" />
+        </div>
+
         <GradientMesh />
         <Grain />
 
@@ -95,7 +107,7 @@ export default function CareerPage() {
             </Reveal>
           </div>
 
-          <Reveal from="up" delay={0.1} className="mt-14 border-t border-hairline pt-10">
+          <Reveal from="up" delay={0.1} className="mt-12 rounded-2xl border border-hairline bg-white/95 p-6 sm:p-8 shadow-xs backdrop-blur-md">
             <Stats items={TEAM_STATS} layout="rail" columns={4} />
           </Reveal>
         </Container>

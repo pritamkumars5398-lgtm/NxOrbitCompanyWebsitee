@@ -15,6 +15,7 @@ import { Reveal } from "@/app/shared/motion/Reveal";
 import { GradientMesh, Grain } from "@/app/shared/backdrop/Backdrops";
 import { CallToAction } from "@/app/shared/sections/CallToAction";
 import { TrustAndFaqSection } from "@/app/shared/sections/TrustAndFaqSection";
+import { ServiceHeroImage } from "@/app/shared/ui/ServiceHeroImage";
 
 /* ── Financial AI Chat Simulator Prompts & Responses ───────────────────── */
 const FINANCE_CHAT_PROMPTS = [
@@ -258,42 +259,19 @@ export default function NextOrbitSalesFinancePage() {
               </Reveal>
             </div>
 
-            {/* Hero Visual Concept Card */}
+            {/* Hero Visual Concept Image */}
             <div className="relative flex justify-center">
               <Reveal from="up" scale={0.97} className="relative w-full max-w-[540px]">
-                {/* Modern visual card simulating billing & funnel sync */}
-                <div className="relative overflow-hidden rounded-3xl border border-slate-300 bg-white p-5 transition-transform duration-500 hover:scale-[1.01]">
-                  <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
-                    <div className="flex items-center gap-2">
-                      <span className="flex size-3.5 rounded-full bg-teal-500 animate-pulse" />
-                      <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Financial Engine Terminal</span>
-                    </div>
-                    <span className="text-[10px] font-semibold text-brand-600 bg-brand-50 px-2 py-0.5 rounded-md">Ledger Synced</span>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    <div className="rounded-xl bg-slate-900 text-white p-4 font-mono text-xs">
-                      <div className="text-teal-400">$ nxt-finance --audit-margins --active</div>
-                      <div className="text-slate-400 mt-2">Auditing active shipments & general ledger...</div>
-                      <div className="text-emerald-400 mt-1">✓ Automated invoice generated (INV-2026-084)</div>
-                      <div className="text-emerald-400 mt-1">✓ Single Ledger active across 6 branches</div>
-                      <div className="text-amber-400 mt-1">! Credit limit warning: Client Y (90% threshold)</div>
-                      <div className="text-teal-400 mt-2">$ nxt-finance --enforce-rules</div>
-                      <div className="text-teal-300 mt-1">&gt; Rule enforced. Job-level profitability secured.</div>
-                    </div>
-                    
-                    <div className="grid grid-cols-2 gap-3">
-                      <div className="rounded-xl border border-slate-100 p-3 bg-slate-50/50">
-                        <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Unbilled Shipments</span>
-                        <div className="text-xl font-extrabold text-teal-600 mt-1">0 Pending</div>
-                      </div>
-                      <div className="rounded-xl border border-slate-100 p-3 bg-slate-50/50">
-                        <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Margin Audit</span>
-                        <div className="text-xl font-extrabold text-slate-900 mt-1">100% Trans.</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <ServiceHeroImage
+                  src="/assets/cta1.jpg"
+                  alt="From Lead to Ledger: Financial Engine Built for Global Logistics - NXT Sales & Finance"
+                  categoryText="From Lead to Ledger"
+                  badgeText="Logistics Financial Engine"
+                  statBadge={{
+                    label: "Ledger Audit",
+                    value: "0 Unbilled | 100% Synced"
+                  }}
+                />
               </Reveal>
             </div>
           </div>

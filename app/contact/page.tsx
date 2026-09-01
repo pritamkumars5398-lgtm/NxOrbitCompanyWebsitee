@@ -37,8 +37,24 @@ const PROMISES = [
 export default function ContactPage() {
   return (
     <>
-      <Section tone="white" spacing="none" className="pt-24 pb-16 lg:pt-28 lg:pb-20">
-        <Container>
+      <section className="relative isolate overflow-hidden pt-24 pb-16 lg:pt-28 lg:pb-20">
+        {/* Full-width hero background image container */}
+        <div className="absolute inset-0 w-full h-full select-none pointer-events-none">
+          <img
+            src="https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?q=80&w=1600&auto=format&fit=crop"
+            alt="NXTorbit Engineering Consultation & Client Workspace"
+            className="w-full h-full object-cover object-right opacity-100"
+            suppressHydrationWarning
+          />
+          {/* Horizontal fade gradient: solid white behind text on the left, fading to transparent on the right */}
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,#ffffff_0%,#ffffff_20%,rgba(255,255,255,0.7)_35%,transparent_55%)]" />
+          {/* Vertical fade to blend smoothly */}
+          <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-transparent to-white/90" />
+        </div>
+
+        <Grain />
+
+        <Container className="relative">
           <div className="mb-12 flex flex-col gap-5">
             <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Contact" }]} />
             <Reveal from="up">
@@ -124,7 +140,7 @@ export default function ContactPage() {
             </Reveal>
           </div>
         </Container>
-      </Section>
+      </section>
 
       {/* ── Office ── */}
       <Section tone="muted" spacing="md" id="offices">

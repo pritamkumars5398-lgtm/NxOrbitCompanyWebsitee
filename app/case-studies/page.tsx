@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import { PROJECTS } from "@/app/core/data/projects";
 import { cn } from "@/app/core/lib/cn";
-import { Aurora, Grain, GridField } from "@/app/shared/backdrop/Backdrops";
+import { DotField, Grain, GridField } from "@/app/shared/backdrop/Backdrops";
 import { CountUp } from "@/app/shared/motion/CountUp";
 import { Parallax } from "@/app/shared/motion/Parallax";
 import { Reveal, Stagger, StaggerItem } from "@/app/shared/motion/Reveal";
@@ -27,38 +27,49 @@ export const metadata: Metadata = {
 export default function CaseStudiesPage() {
   return (
     <>
-      {/* ── Hero: dark ── */}
-      <section className="relative isolate overflow-hidden bg-brand-950 pt-24 pb-16 lg:pt-28 lg:pb-20">
-        <Aurora tone="dark" />
-        <GridField tone="dark" />
+      {/* ── Hero: light ── */}
+      <section className="relative isolate overflow-hidden pt-24 pb-16 lg:pt-28 lg:pb-20">
+        {/* Full-width hero background image container */}
+        <div className="absolute inset-0 w-full h-full select-none pointer-events-none">
+          <img
+            src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=1600&auto=format&fit=crop"
+            alt="NXTorbit Case Studies & UI/UX Product Architecture"
+            className="w-full h-full object-cover object-center lg:object-right opacity-85"
+            suppressHydrationWarning
+          />
+          {/* Single clean responsive gradient mask */}
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.92)_0%,rgba(255,255,255,0.7)_40%,transparent_80%)] lg:bg-[linear-gradient(90deg,rgba(255,255,255,0.95)_0%,rgba(255,255,255,0.8)_30%,rgba(255,255,255,0.25)_60%,transparent_85%)]" />
+        </div>
+
+        <DotField className="opacity-30" />
         <Grain />
 
         <Container className="relative">
           <div className="flex flex-col gap-6">
-            <Breadcrumb tone="dark" items={[{ label: "Home", href: "/" }, { label: "Case studies" }]} />
+            <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Case studies" }]} />
 
             <Reveal from="up">
-              <Eyebrow tone="light">Case studies</Eyebrow>
+              <Eyebrow>Case studies</Eyebrow>
             </Reveal>
 
             <Reveal from="up" delay={0.06}>
-              <h1 className="max-w-3xl text-display-lg text-white sm:text-display-xl">
+              <h1 className="max-w-3xl text-display-lg sm:text-display-xl">
                 The work, with the numbers attached.
               </h1>
             </Reveal>
 
             <Reveal from="up" delay={0.12}>
-              <p className="max-w-xl text-lead text-ink-300">
+              <p className="max-w-xl text-lead text-ink-600">
                 Seven products, what each one had to solve, and what changed after we shipped it.
                 No vanity metrics.
               </p>
             </Reveal>
 
             <Reveal from="up" delay={0.18} className="mt-2 flex flex-wrap gap-3">
-              <Button href="/contact" size="lg" variant="accent" withArrow magnetic>
+              <Button href="/contact" size="lg" variant="primary" withArrow magnetic>
                 Start your project
               </Button>
-              <Button href="/portfolio" size="lg" variant="outline-light" withArrow>
+              <Button href="/portfolio" size="lg" variant="outline" withArrow>
                 Browse the gallery
               </Button>
             </Reveal>
