@@ -173,6 +173,8 @@ function MegaPanel({
   onLeave: () => void;
   onNavigate: () => void;
 }) {
+  const isCompact = group ? group.links.length <= 4 : false;
+
   return (
     <AnimatePresence>
       {group && (
@@ -184,20 +186,27 @@ function MegaPanel({
           transition={{ duration: 0.2, ease: EASE.outExpo }}
           onMouseEnter={onEnter}
           onMouseLeave={onLeave}
-          className="absolute left-1/2 -translate-x-1/2 top-full mt-1.5 hidden w-[900px] rounded-2xl border border-hairline bg-white/95 p-4.5 backdrop-blur-xl shadow-xl shadow-[0_1px_24px_-8px_rgb(6_19_31/0.12)] lg:block"
+          className={cn(
+            "absolute left-1/2 -translate-x-1/2 top-full mt-1.5 hidden rounded-2xl border border-hairline bg-white p-5 shadow-2xl shadow-slate-900/15 lg:block transition-[width] duration-300 z-50",
+            isCompact ? "w-[640px]" : "w-[900px]"
+          )}
         >
           <div className="w-full">
             <div
               className={cn(
-                "grid gap-6",
-                group.feature ? "grid-cols-[1.8fr_1.2fr]" : "grid-cols-1",
+                "grid gap-5",
+                group.feature
+                  ? isCompact
+                    ? "grid-cols-[1.15fr_1fr]"
+                    : "grid-cols-[1.8fr_1.2fr]"
+                  : "grid-cols-1",
               )}
             >
               <motion.ul
                 initial="hidden"
                 animate="visible"
                 variants={{ visible: { transition: { staggerChildren: 0.035 } } }}
-                className="grid grid-cols-2 gap-1"
+                className="grid grid-cols-2 gap-1.5"
               >
                 {group.links.map((link) => (
                   <motion.li
@@ -213,17 +222,17 @@ function MegaPanel({
                       className="group flex items-center gap-2.5 rounded-lg p-2 transition-colors duration-200 hover:bg-brand-50/70"
                     >
                       {link.icon && (
-                        <span className="mt-0.5 inline-flex size-8 shrink-0 items-center justify-center rounded-lg bg-ink-100 text-brand-500 transition-colors duration-200 group-hover:bg-white">
+                        <span className="mt-0.5 inline-flex size-8 shrink-0 items-center justify-center rounded-lg bg-ink-100 text-brand-500 transition-colors duration-200 group-hover:bg-white shadow-2xs">
                           <NavIcon name={link.icon} className="size-4" />
                         </span>
                       )}
-                        <span className="flex items-center gap-1.5 text-sm font-semibold text-ink-900 transition-colors group-hover:text-brand-600">
-                          {link.label}
-                          <ArrowRight
-                            aria-hidden
-                            className="size-3.5 -translate-x-1 opacity-0 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-0 group-hover:opacity-100"
-                          />
-                        </span>
+                      <span className="flex items-center gap-1 text-sm font-semibold text-ink-900 transition-colors group-hover:text-brand-600">
+                        {link.label}
+                        <ArrowRight
+                          aria-hidden
+                          className="size-3 -translate-x-1 opacity-0 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-0 group-hover:opacity-100"
+                        />
+                      </span>
                     </Link>
                   </motion.li>
                 ))}
@@ -234,7 +243,7 @@ function MegaPanel({
                   initial={{ opacity: 0, x: 12 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.4, ease: EASE.outExpo, delay: 0.06 }}
-                  className="relative overflow-hidden rounded-xl bg-brand-900 p-5"
+                  className="relative overflow-hidden rounded-xl bg-brand-900 p-5 flex flex-col justify-between"
                 >
                   <div
                     aria-hidden

@@ -107,10 +107,10 @@ export const INDUSTRY_LINKS: NavLink[] = [
 ];
 
 export const COMPANY_LINKS: NavLink[] = [
-  { label: "Case Studies", href: "/case-studies", description: "Outcomes, not screenshots." },
-  { label: "Our Work", href: "/portfolio", description: "Selected products we have shipped." },
-  { label: "Careers", href: "/career", description: "Open roles and how we hire." },
-  { label: "Contact", href: "/contact", description: "Talk to an engineer, not a form." },
+  { label: "Case Studies", href: "/case-studies", description: "Outcomes, metrics & real client stories.", icon: "briefcase" },
+  { label: "Our Work", href: "/portfolio", description: "Selected enterprise products shipped.", icon: "layers" },
+  { label: "Careers", href: "/career", description: "Open engineering roles & culture.", icon: "users" },
+  { label: "Contact", href: "/contact", description: "Talk to an engineer, not a form.", icon: "mail" },
 ];
 
 export const NAV_GROUPS: NavGroup[] = [

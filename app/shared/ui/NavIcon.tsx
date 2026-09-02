@@ -1,7 +1,10 @@
 import {
   Atom,
   Bot,
+  Briefcase,
+  Building2,
   Clapperboard,
+  FileText,
   Globe,
   GraduationCap,
   HeartPulse,
@@ -9,7 +12,9 @@ import {
   Landmark,
   Layers,
   Link2,
+  Mail,
   PenTool,
+  Phone,
   Server,
   Ship,
   ShoppingBag,
@@ -17,6 +22,7 @@ import {
   Sparkles,
   Triangle,
   Truck,
+  Users,
   type LucideIcon,
 } from "lucide-react";
 
@@ -45,6 +51,12 @@ const ICONS: Record<string, LucideIcon> = {
   truck: Truck,
   clapperboard: Clapperboard,
   ship: Ship,
+  briefcase: Briefcase,
+  users: Users,
+  mail: Mail,
+  "file-text": FileText,
+  phone: Phone,
+  building: Building2,
 };
 
 export function NavIcon({ name, className }: { name?: string; className?: string }) {

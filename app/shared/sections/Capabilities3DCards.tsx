@@ -63,8 +63,9 @@ export function Capabilities3DCards({
           className="mb-14 max-w-3xl mx-auto"
         />
 
-        <Stagger stagger={0.08} className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+        <Stagger stagger={0.12} className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
           {features.map((feature, index) => {
+            const isEven = index % 2 === 0;
             const IconComponent = getFeatureIcon(feature.title, index);
             const gradient = BADGE_GRADIENTS[index % BADGE_GRADIENTS.length];
             const stepNumber = String(index + 1).padStart(2, "0");
@@ -72,7 +73,8 @@ export function Capabilities3DCards({
             return (
               <StaggerItem
                 key={feature.title}
-                from="up"
+                from={isEven ? "left" : "right"}
+                distance={60}
                 className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-8 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-md"
               >
                 {/* 3D Top Gradient Accent Bar */}
