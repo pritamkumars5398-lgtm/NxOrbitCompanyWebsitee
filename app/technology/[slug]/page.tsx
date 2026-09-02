@@ -13,6 +13,8 @@ import { Stats } from "@/app/shared/ui/Stats";
 import { SubNav } from "@/app/shared/ui/SubNav";
 import { TrustAndFaqSection } from "@/app/shared/sections/TrustAndFaqSection";
 import { ProcessArcLayout } from "@/app/shared/sections/ProcessArcLayout";
+import { TechVectorInfographic } from "@/app/shared/sections/TechVectorInfographic";
+import { TechStackEcosystem } from "@/app/shared/sections/TechStackEcosystem";
 
 const TECH_HERO_ASSETS: Record<
   string,
@@ -190,36 +192,13 @@ export default async function TechnologyPage({
         </Container>
       </section>
 
-      {/* ── Features: full-width ledger rows ── */}
-      <Section tone="white" spacing="lg">
-        <Container>
-          <SectionHeading
-            eyebrow="Engineering detail"
-            title={`How we build with ${data.title.replace(" Development", "")}.`}
-            description="The specifics that decide whether a codebase is still pleasant to work in two years from now."
-            className="mb-6"
-          />
-
-          <div className="flex flex-col">
-            {data.features.map((feature, index) => (
-              <Reveal
-                key={feature.title}
-                from="up"
-                className="group grid gap-4 border-t border-hairline py-9 md:grid-cols-[5rem_minmax(0,1fr)_minmax(0,1.15fr)] md:items-baseline md:gap-10"
-              >
-                <span className="font-mono text-sm text-ink-300 tabular-nums transition-colors duration-500 group-hover:text-brand-400">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h3 className="text-display-sm text-ink-900">{feature.title}</h3>
-                <p className="text-sm leading-relaxed text-ink-600 md:text-base">
-                  {feature.description}
-                </p>
-              </Reveal>
-            ))}
-            <Divider />
-          </div>
-        </Container>
-      </Section>
+      {/* ── Engineering detail: Serpentine Vector Infographic Timeline ── */}
+      <TechVectorInfographic
+        eyebrow="Engineering detail"
+        title={`How we build with ${data.title.replace(" Development", "")}.`}
+        description="The specifics that decide whether a codebase is still pleasant to work in two years from now."
+        features={data.features}
+      />
 
       {/* ── Process: Arc Track Layout ── */}
       <ProcessArcLayout
@@ -229,32 +208,13 @@ export default async function TechnologyPage({
         steps={data.process}
       />
 
-      {/* ── Stack: bordered cell grid ── */}
-      <Section tone="white" spacing="md">
-        <Container>
-          <Reveal className="mb-10 flex flex-col gap-4">
-            <Eyebrow>Ecosystem</Eyebrow>
-            <h2 className="max-w-xl text-display-sm sm:text-display-md">
-              Libraries and services we run in production.
-            </h2>
-          </Reveal>
-
-          <Stagger
-            stagger={0.03}
-            className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-hairline bg-hairline sm:grid-cols-3 lg:grid-cols-4"
-          >
-            {data.techStack.map((tech) => (
-              <StaggerItem
-                key={tech}
-                from="none"
-                className="flex items-center bg-white px-5 py-5 text-sm font-medium text-ink-700 transition-colors duration-300 hover:bg-brand-50 hover:text-brand-600"
-              >
-                {tech}
-              </StaggerItem>
-            ))}
-          </Stagger>
-        </Container>
-      </Section>
+      {/* ── Stack: TechStackEcosystem matching reference image design ── */}
+      <TechStackEcosystem
+        eyebrow="ECOSYSTEM"
+        title="Libraries and services we run in production."
+        description="Tested, scalable building blocks selected for performance and long-term stability."
+        techStack={data.techStack}
+      />
 
       <TrustAndFaqSection />
 
