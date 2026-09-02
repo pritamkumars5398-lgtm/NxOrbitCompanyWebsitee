@@ -20,6 +20,7 @@ import { Button } from "@/app/shared/ui/Button";
 import { Container, Eyebrow, Section, SectionHeading } from "@/app/shared/ui/Layout";
 import { Stats } from "@/app/shared/ui/Stats";
 import { JobBoard } from "./JobBoard";
+import { HiringProcessSection } from "@/app/shared/sections/HiringProcessSection";
 
 export const metadata: Metadata = {
   title: "Careers at NXTorbit",
@@ -163,39 +164,8 @@ export default function CareerPage() {
         </Container>
       </Section>
 
-      {/* ── Hiring process ── */}
-      <Section tone="white" spacing="lg">
-        <Container>
-          <div className="grid gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-20">
-            <Reveal className="flex flex-col gap-5 lg:sticky lg:top-32 lg:self-start">
-              <Eyebrow>Hiring process</Eyebrow>
-              <h2 className="text-display-md sm:text-display-lg">
-                Four conversations. Ten working days.
-              </h2>
-              <p className="text-lead text-ink-600">
-                No take-home that eats your weekend, no algorithm trivia, and a decision you
-                won&apos;t have to chase.
-              </p>
-            </Reveal>
-
-            <Stagger stagger={0.08} className="flex flex-col">
-              {HIRING_STEPS.map((step) => (
-                <StaggerItem
-                  key={step.step}
-                  from="up"
-                  className="flex gap-6 border-t border-hairline py-7"
-                >
-                  <span className="font-mono text-sm text-brand-400 tabular-nums">{step.step}</span>
-                  <div className="flex flex-col gap-2">
-                    <h3 className="text-base font-semibold text-ink-900">{step.title}</h3>
-                    <p className="text-sm leading-relaxed text-ink-600">{step.description}</p>
-                  </div>
-                </StaggerItem>
-              ))}
-            </Stagger>
-          </div>
-        </Container>
-      </Section>
+      {/* ── Hiring process infographic matching reference mockup ── */}
+      <HiringProcessSection steps={HIRING_STEPS} />
 
       <CallToAction
         eyebrow="Don't see your role?"

@@ -15,6 +15,7 @@ import { Stats } from "@/app/shared/ui/Stats";
 import { SubNav } from "@/app/shared/ui/SubNav";
 import { TrustAndFaqSection } from "@/app/shared/sections/TrustAndFaqSection";
 import { ProcessArcLayout } from "@/app/shared/sections/ProcessArcLayout";
+import { IndustryProblemsSolved } from "@/app/shared/sections/IndustryProblemsSolved";
 
 export async function generateStaticParams() {
   return Object.keys(INDUSTRIES_DATA).map((slug) => ({ slug }));
@@ -173,41 +174,13 @@ export default async function IndustryPage({
         </Container>
       </section>
 
-      {/* ── Use cases: two-column checklist ── */}
-      <Section tone="white" spacing="lg">
-        <Container>
-          <div className="grid gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-20">
-            <Reveal className="flex flex-col gap-5 lg:sticky lg:top-36 lg:self-start">
-              <Eyebrow>Where we help</Eyebrow>
-              <h2 className="text-display-md sm:text-display-lg">
-                Problems we have already solved in {data.title.toLowerCase()}.
-              </h2>
-              <p className="text-lead text-ink-600">
-                Not a wish list — every item here is something we have built, shipped, and
-                supported for a client in this sector.
-              </p>
-              <Button href="/contact" variant="primary" withArrow className="mt-2 self-start">
-                Discuss your case
-              </Button>
-            </Reveal>
-
-            <Stagger stagger={0.05} className="grid gap-x-8 gap-y-1 sm:grid-cols-2">
-              {data.useCases.map((useCase) => (
-                <StaggerItem
-                  key={useCase}
-                  from="up"
-                  className="group flex items-start gap-3 rounded-xl px-3 py-3.5 transition-colors duration-300 hover:bg-brand-50/60"
-                >
-                  <span className="mt-0.5 inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-600 transition-colors duration-300 group-hover:bg-brand-300 group-hover:text-white">
-                    <Check aria-hidden className="size-3" strokeWidth={3} />
-                  </span>
-                  <span className="text-sm leading-relaxed text-ink-700">{useCase}</span>
-                </StaggerItem>
-              ))}
-            </Stagger>
-          </div>
-        </Container>
-      </Section>
+      {/* ── Use cases: IndustryProblemsSolved section matching target mockup ── */}
+      <IndustryProblemsSolved
+        eyebrow="WHERE WE HELP"
+        title={`Problems we have already solved in ${data.title.toLowerCase()}.`}
+        industrySlug={data.slug}
+        useCases={data.useCases}
+      />
 
       {/* ── Capabilities: card grid on a sunken surface ── */}
       <Section tone="sunken" spacing="lg">
