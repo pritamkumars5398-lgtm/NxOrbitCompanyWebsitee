@@ -533,11 +533,11 @@ export default function NextOrbitWmsPage() {
                   </div>
                 </div>
 
-                {/* Bottom Value Rail (4 Pillars Proof Cards) */}
-                <div className="bg-white rounded-2xl border border-slate-200/80 p-5 sm:p-6 shadow-2xs grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-center">
-                  <div className="flex items-center gap-3.5">
-                    <div className="flex size-10 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 border border-teal-100">
-                      <TrendingUp className="size-5" />
+                {/* Bottom Value Rail (4 Pillars Proof Cards - 2 per row on Mobile) */}
+                <div className="bg-white rounded-2xl border border-slate-200/80 p-4 sm:p-6 shadow-2xs grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-start">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2.5 sm:gap-3.5">
+                    <div className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 border border-teal-100">
+                      <TrendingUp className="size-4 sm:size-5" />
                     </div>
                     <div>
                       <h5 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Increase Throughput</h5>
@@ -545,9 +545,9 @@ export default function NextOrbitWmsPage() {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-3.5">
-                    <div className="flex size-10 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 border border-teal-100">
-                      <DollarSign className="size-5" />
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2.5 sm:gap-3.5">
+                    <div className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 border border-teal-100">
+                      <DollarSign className="size-4 sm:size-5" />
                     </div>
                     <div>
                       <h5 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Reduce Costs</h5>
@@ -555,9 +555,9 @@ export default function NextOrbitWmsPage() {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-3.5">
-                    <div className="flex size-10 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 border border-teal-100">
-                      <Target className="size-5" />
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2.5 sm:gap-3.5">
+                    <div className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 border border-teal-100">
+                      <Target className="size-4 sm:size-5" />
                     </div>
                     <div>
                       <h5 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Improve Accuracy</h5>
@@ -565,9 +565,9 @@ export default function NextOrbitWmsPage() {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-3.5">
-                    <div className="flex size-10 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 border border-teal-100">
-                      <Users className="size-5" />
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2.5 sm:gap-3.5">
+                    <div className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 border border-teal-100">
+                      <Users className="size-4 sm:size-5" />
                     </div>
                     <div>
                       <h5 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Scale with Confidence</h5>

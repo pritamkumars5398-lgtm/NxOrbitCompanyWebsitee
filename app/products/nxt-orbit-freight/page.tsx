@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import {
   ArrowRight, Shield, ShieldCheck, Database, Navigation, MessageSquarePlus,
   Terminal, Sparkles, Code, Cpu, DatabaseZap, Users, FileText, CheckCircle2,
-  Lock, Globe, Cloud, Key, Check, Eye, Clock, TrendingUp
+  Lock, Globe, Cloud, Key, Check, Eye, Clock, TrendingUp, Puzzle, Plug
 } from "lucide-react";
 import { cn } from "@/app/core/lib/cn";
 import { Breadcrumb } from "@/app/shared/ui/Breadcrumb";
@@ -95,14 +95,70 @@ const ROLE_TABS = [
 
 /* ── Pre-built Integrations ──────────────────────────────────────────────── */
 const INTEGRATIONS = [
-  { name: "SAP Enterprise", type: "ERP Integration" },
-  { name: "Zoho Suite", type: "CRM Sync" },
-  { name: "Oracle Logistics", type: "Supply Chain" },
-  { name: "Custom ERPs", type: "REST Webhooks" },
-  { name: "Salesforce", type: "Client Data" },
-  { name: "Microsoft Dynamics", type: "Operations" },
-  { name: "ICEGATE Customs", type: "Regulatory Link" },
-  { name: "AWS Cloud", type: "Secure Storage" }
+  {
+    id: "sap",
+    name: "SAP Enterprise",
+    type: "ERP Integration",
+    desc: "Seamless integration with SAP modules and real-time data sync.",
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg",
+    bg: "bg-slate-50/80 border-slate-100",
+  },
+  {
+    id: "zoho",
+    name: "Zoho Suite",
+    type: "CRM Sync",
+    desc: "Connect and synchronize your CRM data effortlessly.",
+    logoUrl: "/assets/logo_zoho.svg",
+    bg: "bg-slate-50/80 border-slate-100",
+  },
+  {
+    id: "oracle",
+    name: "Oracle Logistics",
+    type: "Supply Chain",
+    desc: "Streamline logistics and supply chain operations.",
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg",
+    bg: "bg-slate-50/80 border-slate-100",
+  },
+  {
+    id: "custom",
+    name: "Custom ERPs",
+    type: "REST Webhooks",
+    desc: "Integrate with any custom ERP using secure REST webhooks.",
+    isCode: true,
+    bg: "bg-teal-50/60 border-teal-100/80 text-teal-600",
+  },
+  {
+    id: "salesforce",
+    name: "Salesforce",
+    type: "Client Data",
+    desc: "Bi-directional sync for accounts, leads and opportunities.",
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg",
+    bg: "bg-slate-50/80 border-slate-100",
+  },
+  {
+    id: "ms",
+    name: "Microsoft Dynamics",
+    type: "Operations",
+    desc: "Integrate operations and finance data with Microsoft Dynamics.",
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg",
+    bg: "bg-slate-50/80 border-slate-100",
+  },
+  {
+    id: "icegate",
+    name: "ICEGATE Customs",
+    type: "Regulatory Link",
+    desc: "Automate customs clearance and regulatory workflows.",
+    isIcegate: true,
+    bg: "bg-[#0b2447]/10 border-[#0b2447]/20 text-[#0b2447]",
+  },
+  {
+    id: "aws",
+    name: "AWS Cloud",
+    type: "Secure Storage",
+    desc: "Scalable cloud storage and infrastructure on AWS.",
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
+    bg: "bg-slate-50/80 border-slate-100",
+  },
 ];
 
 /* ── Security & Infrastructure ───────────────────────────────────────────── */
@@ -631,34 +687,146 @@ export default function NextOrbitFreightPage() {
         </Container>
       </Section>
 
-      {/* ── 6. Integration Layer Visual ── */}
-      <Section tone="sunken" spacing="lg" className="border-t border-hairline">
+      {/* ── 6. Integration Layer Visual (Redesigned to Match Exact Image 1 Mockup) ── */}
+      <Section tone="sunken" spacing="lg" className="relative overflow-hidden border-t border-slate-200/80 bg-[#f8fafc] py-20 sm:py-28">
         <Container>
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <Eyebrow tone="brand">ENTERPRISE INTEGRATIONS</Eyebrow>
-            <h2 className="text-display-sm sm:text-display-md text-slate-900 font-extrabold tracking-tight mt-3">
-              Connected to Your Existing Tech Stack
+          {/* Centered Section Header */}
+          <div className="text-center max-w-2xl mx-auto mb-16 flex flex-col items-center gap-3">
+            <div className="flex items-center gap-2">
+              <span className="h-0.5 w-6 bg-teal-500 rounded-full" />
+              <span className="text-xs font-mono font-bold uppercase tracking-widest text-teal-600">
+                ENTERPRISE INTEGRATIONS
+              </span>
+              <span className="h-0.5 w-6 bg-teal-500 rounded-full" />
+            </div>
+
+            <h2 className="text-display-md sm:text-display-lg text-slate-900 font-extrabold tracking-tight leading-tight">
+              Connected to Your{" "}
+              <span className="bg-gradient-to-r from-teal-600 via-teal-500 to-emerald-500 bg-clip-text text-transparent">
+                Tech Stack
+              </span>
             </h2>
-            <p className="text-sm text-slate-600 mt-2">
-              A clean logo grid showing pre-built API connectivity to SAP, Zoho, Oracle, and custom ERPs.
+
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl mx-auto">
+              Seamless integrations with leading platforms and custom systems to power your business operations.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {INTEGRATIONS.map((item, idx) => (
+          {/* 8 Cards Grid (4 columns x 2 rows - Real Official Logos & Corner Accents) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
+            {INTEGRATIONS.map((item) => (
               <div
-                key={idx}
-                className="rounded-2xl border border-slate-300 bg-white p-5 text-center flex flex-col justify-center items-center transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer"
+                key={item.id}
+                className="group relative bg-white rounded-2xl border border-slate-200/90 p-5 flex flex-col justify-between shadow-2xs transition-all duration-300 hover:-translate-y-1.5 hover:shadow-md hover:border-teal-300/80 cursor-pointer overflow-hidden min-h-[145px]"
               >
-                <div className="size-11 rounded-xl bg-slate-50 flex items-center justify-center mb-3">
-                  <Code className="size-5 text-slate-400" />
+                {/* Top-Left Teal Corner Accent Line */}
+                <div className="absolute top-0 left-0 w-7 h-7 pointer-events-none">
+                  <div className="w-full h-full border-t-2 border-l-2 border-teal-500 rounded-tl-2xl" />
                 </div>
-                <h4 className="text-sm font-bold text-slate-900">{item.name}</h4>
-                <span className="text-[10px] text-brand-600 bg-brand-50/50 px-2 py-0.5 rounded-md font-semibold mt-1">
-                  {item.type}
-                </span>
+
+                <div>
+                  {/* Card Header: Real Official Brand Logo Badge + Title + Type Pill */}
+                  <div className="flex items-center gap-3">
+                    <div className="w-16 h-11 rounded-xl bg-slate-50/90 border border-slate-200/80 p-2 flex items-center justify-center shrink-0 shadow-2xs">
+                      {item.isCode ? (
+                        <div className="size-7 rounded-lg bg-teal-50 text-teal-600 flex items-center justify-center">
+                          <Code className="size-4" />
+                        </div>
+                      ) : item.isIcegate ? (
+                        <span className="text-[10px] font-mono font-black tracking-tight text-[#0b2447]">ICEGATE</span>
+                      ) : (
+                        <img
+                          src={item.logoUrl}
+                          alt={item.name}
+                          className="h-6 w-auto max-w-full object-contain"
+                          suppressHydrationWarning
+                        />
+                      )}
+                    </div>
+
+                    <div className="flex flex-col gap-1 min-w-0">
+                      <h4 className="text-xs sm:text-sm font-extrabold text-slate-900 tracking-tight leading-tight truncate">
+                        {item.name}
+                      </h4>
+                      <span className="text-[10px] font-bold text-teal-700 bg-teal-50/90 border border-teal-100/90 px-2 py-0.5 rounded-full w-fit">
+                        {item.type}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Description Paragraph */}
+                  <p className="text-xs text-slate-500 leading-relaxed font-normal mt-3">
+                    {item.desc}
+                  </p>
+                </div>
               </div>
             ))}
+          </div>
+
+          {/* 4 Feature Proof Cards Rail (Matching Image 2 Mockup) */}
+          <div className="bg-white rounded-2xl border border-slate-200/80 p-4 sm:p-6 shadow-2xs grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-start mb-6">
+            <div className="flex items-start gap-3">
+              <div className="flex size-9 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 border border-teal-100">
+                <Clock className="size-4" />
+              </div>
+              <div>
+                <h5 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Faster Integration</h5>
+                <p className="text-[11px] text-slate-500 leading-normal mt-0.5">Pre-built connectors reduce integration time and effort.</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3">
+              <div className="flex size-9 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 border border-teal-100">
+                <ShieldCheck className="size-4" />
+              </div>
+              <div>
+                <h5 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Enterprise Security</h5>
+                <p className="text-[11px] text-slate-500 leading-normal mt-0.5">Secure, reliable and compliant integrations at scale.</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3">
+              <div className="flex size-9 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 border border-teal-100">
+                <TrendingUp className="size-4" />
+              </div>
+              <div>
+                <h5 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Better Efficiency</h5>
+                <p className="text-[11px] text-slate-500 leading-normal mt-0.5">Automate data flow and eliminate manual data handling.</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3">
+              <div className="flex size-9 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 border border-teal-100">
+                <Users className="size-4" />
+              </div>
+              <div>
+                <h5 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Scalable & Flexible</h5>
+                <p className="text-[11px] text-slate-500 leading-normal mt-0.5">Easily integrate with your evolving business ecosystem.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Dark Banner Rail (Matching Image 2 Mockup) */}
+          <div className="bg-[#04191d] rounded-2xl border border-teal-900/60 p-6 shadow-md flex flex-col md:flex-row items-center justify-between gap-6 text-white">
+            <div className="flex items-center gap-4">
+              <div className="size-12 rounded-2xl bg-teal-500/20 text-teal-300 border border-teal-400/30 flex items-center justify-center shrink-0">
+                <Sparkles className="size-6" />
+              </div>
+              <div>
+                <h4 className="text-base sm:text-lg font-extrabold text-white tracking-tight">
+                  One Platform. <span className="bg-gradient-to-r from-teal-300 to-emerald-300 bg-clip-text text-transparent">Infinite Possibilities.</span>
+                </h4>
+                <p className="text-xs text-slate-300 leading-relaxed mt-0.5 max-w-xl">
+                  NXT Orbit connects your systems, applications, and data—so you can focus on what matters most.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-3 shrink-0">
+              <Button href="/contact" variant="primary" size="sm" className="bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold border-0">
+                Explore Integrations <ArrowRight className="size-3.5 ml-1" />
+              </Button>
+            </div>
           </div>
         </Container>
       </Section>

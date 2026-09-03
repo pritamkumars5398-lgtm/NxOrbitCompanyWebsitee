@@ -128,7 +128,7 @@ export default function CaseStudiesPage() {
 
                   <Button
                     href="/contact"
-                    variant="outline"
+                    variant="primary"
                     withArrow
                     className="mt-2 self-start"
                   >

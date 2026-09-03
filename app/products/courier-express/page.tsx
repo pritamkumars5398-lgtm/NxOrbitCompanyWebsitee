@@ -4,7 +4,9 @@ import { useState, useEffect } from "react";
 import { 
   ArrowRight, Shield, ShieldCheck, Database, Navigation, MessageSquarePlus, 
   Terminal, Sparkles, Code, Cpu, DatabaseZap, Users, FileText, CheckCircle2,
-  Lock, Globe, Cloud, Key, Check, Layers, BarChart3, Workflow, Truck, AlertTriangle
+  Lock, Globe, Cloud, Key, Check, Layers, BarChart3, Workflow, Truck, AlertTriangle,
+  PlayCircle, Eye, Clock, Activity, Bell, Box, Gauge, TrendingUp, DollarSign, Target,
+  LayoutGrid, Package, Settings, ChevronDown
 } from "lucide-react";
 import { cn } from "@/app/core/lib/cn";
 import { Breadcrumb } from "@/app/shared/ui/Breadcrumb";
@@ -43,7 +45,16 @@ const COURIER_ROLE_TABS = [
     points: [
       { title: "Smart Route Allocation", desc: "Our AI evaluates thousands of variables per second—pin-code carrier reliability, weather disruptions, historical weight discrepancies, and real-time pricing—to route every order through the optimal carrier." },
       { title: "Unified COD Reconciliation", desc: "Real-time cash-on-delivery tracking, automated remittance cycles, and early payout options to keep your cash flow liquid." }
-    ]
+    ],
+    dashboardTitle: "Courier Allocation & Rate Matrix",
+    metrics: [
+      { label: "Active Courier Partners", val: "25+ Global", change: "100% SLA Synced" },
+      { label: "Smart Route Rate", val: "99.4%", change: "↑ 12% vs last week" },
+      { label: "Avg Shipping Cost", val: "₹54.20/kg", change: "↓ 18% vs benchmark" },
+      { label: "Unified COD Remittance", val: "Same Day", change: "Early Payout Active" }
+    ],
+    widget1Title: "Carrier SLA & Routing Map",
+    widget2Title: "Courier Freight Rate Trend"
   },
   {
     id: "pillar2",
@@ -54,7 +65,16 @@ const COURIER_ROLE_TABS = [
       { title: "AI Address Intelligence", desc: "Machine learning models fix incomplete addresses, correct typos, and flag non-existent street numbers automatically before shipping labels are generated." },
       { title: "Order Fraud Scoring", desc: "Assigns a risk score to every incoming Cash-on-Delivery (COD) order based on past buyer behavior across our entire merchant network." },
       { title: "Pre-Dispatch WhatsApp Verification", desc: "High-risk orders automatically trigger an interactive WhatsApp verification flow to confirm buyer intent before inventory leaves the warehouse." }
-    ]
+    ],
+    dashboardTitle: "AI RTO Defense & Fraud Score Console",
+    metrics: [
+      { label: "RTO Reduction", val: "-45.2%", change: "↓ 45% vs industry avg" },
+      { label: "Address Typos Corrected", val: "4,120/mo", change: "Auto AI Cleaned" },
+      { label: "High Risk COD Flagged", val: "182 Orders", change: "Fraud Shield Active" },
+      { label: "WhatsApp Confirmations", val: "96.4%", change: "Pre-Dispatch Verified" }
+    ],
+    widget1Title: "Pincode RTO Risk Heatmap",
+    widget2Title: "RTO Defense Success Rate"
   },
   {
     id: "pillar3",
@@ -65,7 +85,16 @@ const COURIER_ROLE_TABS = [
       { title: "Self-Healing NDR Workflows", desc: "When a delivery fails (e.g., 'Customer Unavailable' or 'Wrong Address'), our AI Agent immediately reaches out to the customer via WhatsApp and interactive voice response (IVR)." },
       { title: "Instant Rescheduling", desc: "Buyers can update their location, select a preferred delivery time slot, or switch COD to prepaid with one click inside WhatsApp." },
       { title: "Courier Accountability", desc: "Automatically logs carrier fake-attempt logs and escalates noncompliance directly to courier management teams." }
-    ]
+    ],
+    dashboardTitle: "Self-Healing NDR Workflows & IVR Agent",
+    metrics: [
+      { label: "NDR Reattempt Rate", val: "88.6%", change: "↑ 24% vs manual" },
+      { label: "Automated WhatsApp NDR", val: "1,840 Reached", change: "Sub-minute response" },
+      { label: "Instant Buyer Reschedules", val: "1,240 Orders", change: "Address/Slot Updated" },
+      { label: "Carrier Fake Attempt Log", val: "14 Escalated", change: "100% SLA Audited" }
+    ],
+    widget1Title: "NDR Exception Resolution Map",
+    widget2Title: "NDR Conversion Trend"
   },
   {
     id: "pillar4",
@@ -75,7 +104,16 @@ const COURIER_ROLE_TABS = [
     points: [
       { title: "Custom Tracking Pages", desc: "Replace generic courier tracking screens with a fully branded tracking portal featuring live map visualization, product recommendations, and promotional banners." },
       { title: "Proactive Status Notifications", desc: "Send automated, branded updates via WhatsApp, SMS, and Email at every milestone: Dispatched, Out for Delivery, Delayed, or Delivered." }
-    ]
+    ],
+    dashboardTitle: "Branded Tracking Portal & WhatsApp Updates",
+    metrics: [
+      { label: "Tracking Page Views", val: "42.8K/mo", change: "100% Merchant Branded" },
+      { label: "Post-Purchase Upsell", val: "+14.8%", change: "↑ 6% vs benchmark" },
+      { label: "WhatsApp Milestone Alerts", val: "99.8%", change: "Dispatched to Delivered" },
+      { label: "Customer Satisfaction", val: "4.9 / 5.0", change: "Top Rated CSAT" }
+    ],
+    widget1Title: "Post-Purchase Delivery Map",
+    widget2Title: "Buyer Tracking Engagement"
   }
 ];
 
@@ -310,64 +348,295 @@ export default function CourierExpressPage() {
         </Container>
       </Section>
 
-      {/* ── 4. The Four Core Value Pillars ── */}
-      <Section tone="white" spacing="lg" className="border-t border-hairline">
+      {/* ── 4. The Four Core Value Pillars (Redesigned to Match Exact Parity) ── */}
+      <Section tone="sunken" spacing="lg" className="relative overflow-hidden border-t border-slate-200/80 bg-[#f8fafc] py-20 sm:py-28">
         <Container>
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <Eyebrow tone="brand">STRATEGIC TRANSFORMATION</Eyebrow>
-            <h2 className="text-display-sm sm:text-display-md text-slate-900 font-extrabold tracking-tight mt-3">
-              Four Pillars of Autonomous E-Commerce Fulfillment
-            </h2>
-            <p className="text-sm text-slate-600 mt-2">
-              Explore Courier Express capabilities engineered for high-growth operations.
-            </p>
-          </div>
+          {(() => {
+            const currentTab = COURIER_ROLE_TABS.find((t) => t.id === activeTab) || COURIER_ROLE_TABS[0];
+            const pillarIndex = COURIER_ROLE_TABS.findIndex((t) => t.id === activeTab) + 1;
+            return (
+              <>
+                {/* Top Section Header: Left Info + Value Rail & Right Isometric 3D Ecommerce Image */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-12">
+                  {/* Left Header Info & 3 Value Badges */}
+                  <div className="lg:col-span-6 flex flex-col gap-4">
+                    <div className="flex items-center gap-2">
+                      <span className="h-0.5 w-6 bg-teal-500 rounded-full" />
+                      <span className="text-xs font-mono font-bold uppercase tracking-widest text-teal-600">
+                        STRATEGIC TRANSFORMATION
+                      </span>
+                    </div>
+                    <h2 className="text-display-md sm:text-display-lg font-extrabold text-slate-900 tracking-tight leading-tight">
+                      Four Pillars of Autonomous E-Commerce Fulfillment
+                    </h2>
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xl">
+                      Explore Courier Express capabilities engineered for high-growth operations.
+                    </p>
 
-          {/* Role / Pillar Tabs */}
-          <div className="flex flex-wrap justify-center gap-2.5 mb-10">
-            {COURIER_ROLE_TABS.map((tab) => {
-              const Icon = tab.icon;
-              const isActive = activeTab === tab.id;
-              return (
-                <button
-                  key={tab.id}
-                  type="button"
-                  onClick={() => setActiveTab(tab.id)}
-                  className={cn(
-                    "flex items-center gap-2 px-4 py-2.5 rounded-xl border text-xs font-semibold transition-all duration-300 cursor-pointer shadow-xs",
-                    isActive
-                      ? "bg-brand-950 border-brand-950 text-white shadow-md scale-[1.02]"
-                      : "bg-surface border-hairline text-ink-700 hover:border-brand-300 hover:text-brand-500 hover:bg-brand-50/50"
-                  )}
-                >
-                  <Icon className={cn("size-4 transition-colors", isActive ? "text-brand-300" : "text-ink-500")} />
-                  {tab.label}
-                </button>
-              );
-            })}
-          </div>
+                    {/* 3 Horizontal Value Proof Badges */}
+                    <div className="flex flex-wrap items-center gap-3 mt-2">
+                      <div className="flex items-center gap-3 bg-white border border-slate-200/80 rounded-2xl px-4 py-2.5 shadow-2xs">
+                        <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-teal-600">
+                          <Box className="size-4" />
+                        </div>
+                        <div>
+                          <h5 className="text-xs font-extrabold text-slate-900 leading-tight">High Visibility</h5>
+                          <p className="text-[11px] text-slate-500 leading-none mt-0.5">Across every node</p>
+                        </div>
+                      </div>
 
-          {/* Active Tab Panel */}
-          <Card tone="plain" padding="lg" className="border-hairline shadow-md">
-            <div className="mb-6 pb-4 border-b border-hairline">
-              <p className="text-sm text-ink-700 font-medium leading-relaxed">
-                {COURIER_ROLE_TABS.find((t) => t.id === activeTab)?.intro}
-              </p>
-            </div>
-            <div className="grid gap-6 md:grid-cols-2">
-              {COURIER_ROLE_TABS.find((t) => t.id === activeTab)?.points.map((point, index) => (
-                <div key={index} className="flex gap-3.5 items-start">
-                  <span className="flex shrink-0 size-6 items-center justify-center rounded-full bg-brand-50 text-brand-600 font-bold mt-0.5">
-                    <Check className="size-3.5" strokeWidth={3} />
-                  </span>
-                  <div>
-                    <h4 className="text-sm font-bold text-ink-900">{point.title}</h4>
-                    <p className="text-xs text-ink-600 mt-1 leading-relaxed">{point.desc}</p>
+                      <div className="flex items-center gap-3 bg-white border border-slate-200/80 rounded-2xl px-4 py-2.5 shadow-2xs">
+                        <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-teal-600">
+                          <Gauge className="size-4" />
+                        </div>
+                        <div>
+                          <h5 className="text-xs font-extrabold text-slate-900 leading-tight">Real-Time Control</h5>
+                          <p className="text-[11px] text-slate-500 leading-none mt-0.5">Faster decisions</p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-3 bg-white border border-slate-200/80 rounded-2xl px-4 py-2.5 shadow-2xs">
+                        <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-teal-600">
+                          <TrendingUp className="size-4" />
+                        </div>
+                        <div>
+                          <h5 className="text-xs font-extrabold text-slate-900 leading-tight">Operational Excellence</h5>
+                          <p className="text-[11px] text-slate-500 leading-none mt-0.5">Lower cost, higher output</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right 3D Isometric Ecommerce Fulfillment Illustration Container */}
+                  <div className="lg:col-span-6 relative flex items-center justify-center min-h-[320px] sm:min-h-[360px]">
+                    {/* Concentric Circular Radar Target Rings Background */}
+                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none opacity-35">
+                      <div className="size-[360px] rounded-full border border-teal-300/40 flex items-center justify-center">
+                        <div className="size-[260px] rounded-full border border-teal-300/40 flex items-center justify-center">
+                          <div className="size-[160px] rounded-full border border-teal-300/40" />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 3D Ecommerce Image - 100% Seamless Blend, Zero Box Border, No Hover */}
+                    <div className="relative z-10 size-full flex items-center justify-center pointer-events-none select-none">
+                      <img
+                        src="/assets/ecommerce_3d.jpg"
+                        alt="3D Autonomous E-Commerce Fulfillment"
+                        className="w-full h-auto max-h-[380px] object-contain mix-blend-multiply opacity-95"
+                        style={{
+                          maskImage: "radial-gradient(circle at center, black 45%, transparent 72%)",
+                          WebkitMaskImage: "radial-gradient(circle at center, black 45%, transparent 72%)"
+                        }}
+                        suppressHydrationWarning
+                      />
+                    </div>
                   </div>
                 </div>
-              ))}
-            </div>
-          </Card>
+
+                {/* 4 Pillars Tabbed Navigation Bar */}
+                <div className="flex flex-wrap justify-center gap-3 mb-10">
+                  {COURIER_ROLE_TABS.map((tab) => {
+                    const Icon = tab.icon;
+                    const isActive = activeTab === tab.id;
+                    return (
+                      <button
+                        key={tab.id}
+                        type="button"
+                        onClick={() => setActiveTab(tab.id)}
+                        className={cn(
+                          "flex items-center gap-2.5 px-5 py-3 rounded-2xl text-xs font-extrabold transition-all duration-300 cursor-pointer shadow-2xs border",
+                          isActive
+                            ? "bg-[#0a2328] border-[#0a2328] text-white shadow-md scale-[1.02]"
+                            : "bg-white border-slate-200/90 text-slate-700 hover:border-teal-400 hover:text-teal-700 hover:bg-teal-50/50"
+                        )}
+                      >
+                        <div className={cn("flex size-6 items-center justify-center rounded-lg transition-colors", isActive ? "bg-teal-500/20 text-teal-300" : "bg-slate-100 text-slate-500")}>
+                          <Icon className="size-3.5" />
+                        </div>
+                        {tab.label}
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Active Pillar Showcase Card & Dynamic Dashboard UI Mockup */}
+                <div className="space-y-6">
+                  {/* Main Showcase Container */}
+                  <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-md">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                      {/* Left Sub-Column: Feature Info & Points */}
+                      <div className="lg:col-span-5 flex flex-col justify-between gap-6">
+                        <div>
+                          {/* Eyebrow Badge Tag */}
+                          <div className="inline-flex items-center gap-2 bg-teal-50 text-teal-700 px-3 py-1 rounded-md text-[11px] font-mono font-bold uppercase border border-teal-200/60 mb-3">
+                            PILLAR {pillarIndex}
+                          </div>
+
+                          {/* Title */}
+                          <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                            {currentTab.label.replace(/^Pillar \d+: /, "")}
+                          </h3>
+
+                          {/* Subtitle / Intro */}
+                          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal mt-2">
+                            {currentTab.intro}
+                          </p>
+
+                          {/* Feature Points List Grid */}
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                            {currentTab.points.map((point, idx) => (
+                              <div key={idx} className="flex gap-3 items-start p-3.5 rounded-2xl bg-slate-50/80 border border-slate-100 hover:border-teal-200 hover:bg-teal-50/30 transition-all">
+                                <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-teal-100/80 text-teal-700 font-bold mt-0.5">
+                                  {idx === 0 ? <Eye className="size-4" /> : idx === 1 ? <Clock className="size-4" /> : idx === 2 ? <Activity className="size-4" /> : <Bell className="size-4" />}
+                                </div>
+                                <div>
+                                  <h4 className="text-xs font-bold text-slate-900 leading-tight">{point.title}</h4>
+                                  <p className="text-[11px] text-slate-600 leading-relaxed mt-1 font-normal">{point.desc}</p>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* CTA Buttons */}
+                        <div className="flex flex-wrap items-center gap-4 pt-2">
+                          <button type="button" className="flex items-center gap-2 bg-[#08282e] text-white rounded-full px-5 py-2.5 text-xs font-extrabold hover:bg-teal-900 transition-all cursor-pointer shadow-sm">
+                            Explore Pillar {pillarIndex} in Detail
+                            <ArrowRight className="size-3.5 text-teal-300" />
+                          </button>
+                          <button type="button" className="flex items-center gap-2 text-teal-700 hover:text-teal-900 text-xs font-bold transition-all cursor-pointer">
+                            See how it works
+                            <PlayCircle className="size-4 text-teal-600" />
+                          </button>
+                        </div>
+                      </div>
+
+                      {/* Right Sub-Column: Dynamic Courier Interactive Dashboard UI Mockup */}
+                      <div className="lg:col-span-7 bg-[#f8fafc] border border-slate-200/90 rounded-2xl p-4 sm:p-5 flex gap-4 shadow-2xs overflow-hidden">
+                        {/* Left Dark Teal Vertical App Menu Bar */}
+                        <div className="w-12 sm:w-14 bg-[#082025] rounded-xl p-3 flex flex-col items-center justify-between text-teal-400 shrink-0">
+                          <div className="flex flex-col gap-5 items-center">
+                            <div className="size-8 rounded-lg bg-teal-500/20 flex items-center justify-center text-teal-300">
+                              <LayoutGrid className="size-4" />
+                            </div>
+                            <Truck className="size-4 text-slate-400 hover:text-teal-300 transition-colors cursor-pointer" />
+                            <Package className="size-4 text-slate-400 hover:text-teal-300 transition-colors cursor-pointer" />
+                            <Activity className="size-4 text-slate-400 hover:text-teal-300 transition-colors cursor-pointer" />
+                            <Globe className="size-4 text-slate-400 hover:text-teal-300 transition-colors cursor-pointer" />
+                            <Bell className="size-4 text-slate-400 hover:text-teal-300 transition-colors cursor-pointer" />
+                          </div>
+                          <Settings className="size-4 text-slate-500 hover:text-slate-300 transition-colors cursor-pointer" />
+                        </div>
+
+                        {/* Right Main Dashboard Display Panel */}
+                        <div className="flex-1 flex flex-col gap-4 overflow-hidden">
+                          {/* Top Metric Header Card */}
+                          <div className="bg-white rounded-xl border border-slate-200/80 p-3.5 shadow-2xs">
+                            <h5 className="text-xs font-extrabold text-slate-900 mb-3">{currentTab.dashboardTitle}</h5>
+                            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                              {currentTab.metrics.map((metric, mIdx) => (
+                                <div key={mIdx} className="flex flex-col">
+                                  <span className="text-[10px] text-slate-500 font-semibold truncate">{metric.label}</span>
+                                  <span className="text-sm font-extrabold text-slate-900 mt-0.5">{metric.val}</span>
+                                  <span className="text-[10px] text-emerald-600 font-bold truncate">{metric.change}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* Bottom 2 Widgets Grid */}
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 flex-1">
+                            {/* Mini Map Widget */}
+                            <div className="bg-white rounded-xl border border-slate-200/80 p-3 flex flex-col justify-between shadow-2xs">
+                              <h6 className="text-[11px] font-extrabold text-slate-900">{currentTab.widget1Title}</h6>
+                              <div className="relative h-28 my-1 flex items-center justify-center overflow-hidden rounded-lg bg-teal-50/30">
+                                <svg viewBox="0 0 300 120" className="w-full h-full object-contain">
+                                  <path d="M 40 70 Q 120 20 200 60 Q 240 30 270 50" stroke="#0d9488" strokeWidth="1.5" strokeDasharray="3 3" strokeOpacity="0.8" fill="none" />
+                                  <circle cx="40" cy="70" r="4" fill="#0284c7" />
+                                  <circle cx="120" cy="40" r="4" fill="#0d9488" />
+                                  <circle cx="200" cy="60" r="4" fill="#16a34a" />
+                                  <circle cx="270" cy="50" r="4" fill="#ea580c" />
+                                </svg>
+                              </div>
+                              <div className="flex flex-wrap items-center justify-between text-[9px] text-slate-500 font-medium">
+                                <span className="flex items-center gap-1"><span className="size-1.5 rounded-full bg-sky-600" />Dispatch</span>
+                                <span className="flex items-center gap-1"><span className="size-1.5 rounded-full bg-teal-600" />In Transit</span>
+                                <span className="flex items-center gap-1"><span className="size-1.5 rounded-full bg-green-600" />Delivered</span>
+                                <span className="flex items-center gap-1"><span className="size-1.5 rounded-full bg-orange-600" />NDR Fixed</span>
+                              </div>
+                            </div>
+
+                            {/* Mini Graph Widget */}
+                            <div className="bg-white rounded-xl border border-slate-200/80 p-3 flex flex-col justify-between shadow-2xs">
+                              <div className="flex items-center justify-between">
+                                <h6 className="text-[11px] font-extrabold text-slate-900">{currentTab.widget2Title}</h6>
+                                <span className="text-[9px] text-slate-500 font-bold flex items-center gap-0.5 border px-1.5 py-0.5 rounded">Live <ChevronDown className="size-2.5" /></span>
+                              </div>
+                              <div className="relative h-28 my-1 flex items-center justify-center">
+                                <svg viewBox="0 0 300 120" className="w-full h-full object-contain">
+                                  <path d="M 20 90 L 60 70 L 100 80 L 140 60 L 180 68 L 220 45 L 260 55" fill="none" stroke="#0d9488" strokeWidth="2" />
+                                  <circle cx="220" cy="45" r="4" fill="#0d9488" />
+                                  <rect x="200" y="20" width="40" height="18" rx="4" fill="#09252a" />
+                                  <text x="220" y="32" fill="#38bdf8" fontSize="10" fontWeight="bold" textAnchor="middle">{pillarIndex * 140 + 420}</text>
+                                </svg>
+                              </div>
+                              <div className="flex items-center justify-between text-[9px] text-slate-400 font-mono">
+                                <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Bottom Value Rail (4 Pillars Proof Cards - 2 per row on Mobile) */}
+                  <div className="bg-white rounded-2xl border border-slate-200/80 p-4 sm:p-6 shadow-2xs grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-start">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2.5 sm:gap-3.5">
+                      <div className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 border border-teal-100">
+                        <TrendingUp className="size-4 sm:size-5" />
+                      </div>
+                      <div>
+                        <h5 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Increase Throughput</h5>
+                        <p className="text-[11px] text-slate-600 leading-normal mt-0.5">Accelerate movement and improve order fulfillment.</p>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2.5 sm:gap-3.5">
+                      <div className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 border border-teal-100">
+                        <DollarSign className="size-4 sm:size-5" />
+                      </div>
+                      <div>
+                        <h5 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Reduce Costs</h5>
+                        <p className="text-[11px] text-slate-600 leading-normal mt-0.5">Optimize resources and minimize operational waste.</p>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2.5 sm:gap-3.5">
+                      <div className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 border border-teal-100">
+                        <Target className="size-4 sm:size-5" />
+                      </div>
+                      <div>
+                        <h5 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Improve Accuracy</h5>
+                        <p className="text-[11px] text-slate-600 leading-normal mt-0.5">Real-time data ensures better decisions and fewer errors.</p>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2.5 sm:gap-3.5">
+                      <div className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 border border-teal-100">
+                        <Users className="size-4 sm:size-5" />
+                      </div>
+                      <div>
+                        <h5 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Scale with Confidence</h5>
+                        <p className="text-[11px] text-slate-600 leading-normal mt-0.5">Built to grow across locations, partners, and business models.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </>
+            );
+          })()}
         </Container>
       </Section>
 

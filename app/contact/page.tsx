@@ -184,6 +184,26 @@ export default function ContactPage() {
               </div>
             </StaggerItem>
           </Stagger>
+
+          {/* Interactive Embedded Google Map Container */}
+          <div className="mt-12 relative h-[360px] sm:h-[440px] rounded-3xl border border-slate-200/90 bg-white p-2 shadow-lg shadow-teal-950/5 overflow-hidden">
+            <iframe
+              title="NXTorbit Navi Mumbai Studio Map"
+              src="https://maps.google.com/maps?q=Kamdhenu%2023%20West%2C%20TTC%20Industrial%20Area%2C%20MIDC%2C%20Pawne%2C%20Navi%20Mumbai%20400705&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              className="w-full h-full rounded-2xl border-0"
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+            {/* Floating Map Location Tag */}
+            <div className="absolute top-5 left-5 bg-white/95 backdrop-blur-md border border-slate-200/80 px-3.5 py-2 rounded-2xl shadow-md flex items-center gap-2 text-xs font-bold text-slate-900 pointer-events-none">
+              <span className="relative flex size-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75" />
+                <span className="relative inline-flex rounded-full size-2.5 bg-teal-600" />
+              </span>
+              <span>Kamdhenu 23 West, Navi Mumbai</span>
+            </div>
+          </div>
         </Container>
       </Section>
     </>

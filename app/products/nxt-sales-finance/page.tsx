@@ -4,7 +4,9 @@ import { useState, useEffect } from "react";
 import { 
   ArrowRight, Shield, ShieldCheck, Database, Navigation, MessageSquarePlus, 
   Terminal, Sparkles, Code, Cpu, DatabaseZap, Users, FileText, CheckCircle2,
-  Lock, Globe, Cloud, Key, Check, Layers, BarChart3, Workflow, Landmark, Scale
+  Lock, Globe, Cloud, Key, Check, Layers, BarChart3, Workflow, Landmark, Scale,
+  PlayCircle, Eye, Clock, Activity, Bell, Box, Gauge, TrendingUp, DollarSign, Target,
+  LayoutGrid, Package, Settings, ChevronDown, Truck
 } from "lucide-react";
 import { cn } from "@/app/core/lib/cn";
 import { Breadcrumb } from "@/app/shared/ui/Breadcrumb";
@@ -40,7 +42,16 @@ const FINANCE_PILLARS = [
       { title: "Pipeline to Enquiry Management", desc: "Assign clients to salespeople, track pipeline stages, log call entries, and record detailed customer inquiries in one central hub." },
       { title: "Instant Quotation Generation", desc: "Create precise, professional quotations directly from customer inquiries with built-in preview modes, custom margin rules, and one-click quote sending." },
       { title: "Sales Intelligence & Follow-up Reminders", desc: "Automated task reminders ensure no warm lead drops off, while sales dashboards provide complete visibility into representative activity and close rates." }
-    ]
+    ],
+    dashboardTitle: "CRM Pipeline & Enquiry Matrix",
+    metrics: [
+      { label: "Active Inquiries", val: "148 Leads", change: "100% Representative Assigned" },
+      { label: "Quote Conversion", val: "68.4%", change: "↑ 14% vs last month" },
+      { label: "Avg Quote SLA", val: "12 Mins", change: "Instant Preview Mode" },
+      { label: "Follow-up Compliance", val: "99.1%", change: "Zero Drop-off Rate" }
+    ],
+    widget1Title: "Sales Pipeline Stage Map",
+    widget2Title: "Quotation Conversion Trend"
   },
   {
     id: "pillar2",
@@ -51,7 +62,16 @@ const FINANCE_PILLARS = [
       { title: "Flexible Invoicing & Common Invoices", desc: "Generate single-shipment invoices or consolidate multiple jobs into a single Common Invoice for high-volume enterprise clients." },
       { title: "Comprehensive GL & Journal Management", desc: "Full General Ledger (GL) account list management, journal entries, debit/credit notes, and automated receipt/payment logging." },
       { title: "Multi-Currency & Bank Master", desc: "Configure multiple bank accounts, trade partner financial terms, and automated exchange-rate adjustments across global branches." }
-    ]
+    ],
+    dashboardTitle: "Pure Accounting & Common Invoice Console",
+    metrics: [
+      { label: "Reconciled Invoices", val: "1,420 Jobs", change: "Zero Leakage" },
+      { label: "Common Invoices", val: "38 Enterprise", change: "Multi-Job Consolidated" },
+      { label: "GL Journal Accuracy", val: "100%", change: "Audit Approved" },
+      { label: "Multi-Currency Sync", val: "Live Rates", change: "Global FX Synced" }
+    ],
+    widget1Title: "Multi-Branch Ledger Heatmap",
+    widget2Title: "Monthly Invoicing Velocity"
   },
   {
     id: "pillar3",
@@ -62,7 +82,16 @@ const FINANCE_PILLARS = [
       { title: "Automated Credit Limit Enforcement", desc: "Submit, approve, and enforce customer credit requests. The system automatically alerts or blocks sales reps if a customer attempts to book past their approved credit limit." },
       { title: "Trade Partner & Employee Master", desc: "Centralize trade partner profiles, vendor payment terms, credit histories, and internal employee access rights in a single secure environment." },
       { title: "Multi-Branch & Company Settings", desc: "Scale globally with company master and branch master configurations—allowing admins to set specific document layouts, tax settings, and billing defaults per office." }
-    ]
+    ],
+    dashboardTitle: "Credit Risk & Trade Partner Governance",
+    metrics: [
+      { label: "Credit Limit Enforcement", val: "Automated", change: "Hard Cap Enforced" },
+      { label: "Blocked Over-Limit Bookings", val: "12 Attempts", change: "Risk Shield Active" },
+      { label: "Trade Partner Masters", val: "420 Profiles", change: "Centralized Audit" },
+      { label: "Multi-Branch Tax Defaults", val: "14 Offices", change: "Bank-Grade Compliance" }
+    ],
+    widget1Title: "Partner Credit Risk Map",
+    widget2Title: "Credit Overdue Protection"
   },
   {
     id: "pillar4",
@@ -73,7 +102,16 @@ const FINANCE_PILLARS = [
       { title: "Job-Level Margin Analytics", desc: "Real-time variance tracking comparing quoted rates against final carrier invoices to flag 'Silent Profit Leaks' before closing a job." },
       { title: "AI-Powered Cash Flow & Aging Forecasts", desc: "Machine learning algorithms predict payment dates based on historical client settlement speed, highlighting high-risk receivables early." },
       { title: "Conversational Financial Assistant", desc: "Query your financial engine in plain language ('Show outstanding invoices over 60 days for Client X' or 'Compare profitability between Air Import and Sea Export for Q2')." }
-    ]
+    ],
+    dashboardTitle: "Job Margin Analytics & Cash Flow AI",
+    metrics: [
+      { label: "Profit Leak Detection", val: "0.00%", change: "Carrier Invoices Audited" },
+      { label: "Predicted Cash Flow", val: "₹48.2L", change: "↑ 18% Accuracy Forecast" },
+      { label: "Receivables Aging", val: "24.2 Days", change: "↓ 12 Days vs industry" },
+      { label: "AI Conversational Query", val: "< 1 Sec", change: "Plain Language Assistant" }
+    ],
+    widget1Title: "Job Margin Variance Map",
+    widget2Title: "Cash Flow Forecast Trend"
   }
 ];
 
@@ -83,6 +121,27 @@ const DEEP_DIVE_TABS = [
     id: "sales-crm",
     label: "1. Sales & CRM Engine",
     icon: Users,
+    bannerTitle: "Power your entire sales cycle",
+    bannerDesc: "From lead capture to customer management, empower your team to build stronger relationships, pipeline visibility, and close more deals.",
+    bgImage: "/assets/cta1.jpg",
+    metrics: [
+      { label: "New Leads", val: "128", change: "▲ 12% vs last week" },
+      { label: "Active Opportunities", val: "42", change: "▲ 8% vs last week" },
+      { label: "Quotes Sent", val: "96", change: "▲ 18% vs last week" },
+      { label: "Conversion Rate", val: "24%", change: "▲ 5% vs last week" }
+    ],
+    funnel: [
+      { label: "128 Leads", pct: "100%" },
+      { label: "98 Qualified", pct: "76%" },
+      { label: "56 Proposal", pct: "44%" },
+      { label: "32 Negotiation", pct: "25%" },
+      { label: "18 Closed", pct: "14%" }
+    ],
+    activities: [
+      { title: "New inquiry received", sub: "ABC Logistics Pvt. Ltd.", time: "10:30 AM" },
+      { title: "Quotation approved", sub: "Freight to New York", time: "09:15 AM" },
+      { title: "Deal closed", sub: "Global Retail Corp.", time: "Yesterday" }
+    ],
     points: [
       { title: "Sales Representative Portal", desc: "Call entry logs, automated follow-up reminders, assigned customer lists, and personal sales performance dashboards." },
       { title: "Manager Oversight", desc: "Assign sales managers to allocate leads, monitor pipeline health, and track rep conversion benchmarks." },
@@ -93,6 +152,27 @@ const DEEP_DIVE_TABS = [
     id: "accounting-billing",
     label: "2. Pure Accounting & Billing",
     icon: DatabaseZap,
+    bannerTitle: "Master multi-branch freight accounting",
+    bannerDesc: "Eliminate manual data re-entry, automate common invoices, manage GL journals, and achieve 100% audit compliance.",
+    bgImage: "/assets/analytics_3d.jpg",
+    metrics: [
+      { label: "Reconciled Invoices", val: "1,420", change: "▲ 99.8% Accuracy" },
+      { label: "Common Invoices", val: "38", change: "Multi-Job Synced" },
+      { label: "GL Journal Sync", val: "100%", change: "Audit Approved" },
+      { label: "Unbilled Jobs", val: "0", change: "Zero Revenue Leak" }
+    ],
+    funnel: [
+      { label: "1,420 Invoices", pct: "100%" },
+      { label: "1,280 Verified", pct: "90%" },
+      { label: "980 Remitted", pct: "69%" },
+      { label: "420 Common Inv", pct: "30%" },
+      { label: "0 Unbilled", pct: "0%" }
+    ],
+    activities: [
+      { title: "Common Invoice generated", sub: "INV-2026-084 for Enterprise Client", time: "11:45 AM" },
+      { title: "GL Journal Entry logged", sub: "Air Import Freight Charge", time: "10:10 AM" },
+      { title: "Bank Remittance received", sub: "₹1,24,000 cleared", time: "08:30 AM" }
+    ],
     points: [
       { title: "Complete Ledger Controls", desc: "Manage GL Account Lists, Journal Entries, Bank Master Settings, and Company Branch Financial Defaults." },
       { title: "Invoicing Engine", desc: "Create custom job invoices, common consolidated invoices, payment receipts, and settlement vouchers." },
@@ -103,6 +183,27 @@ const DEEP_DIVE_TABS = [
     id: "governance-admin",
     label: "3. Governance & Admin",
     icon: ShieldCheck,
+    bannerTitle: "Bank-grade governance & risk controls",
+    bannerDesc: "Enforce strict credit limits, manage global trade partners, control branch settings, and set granular role-based security permissions.",
+    bgImage: "/assets/fintech_3d.jpg",
+    metrics: [
+      { label: "Credit Shield Active", val: "100%", change: "Hard Cap Enforced" },
+      { label: "Trade Partner Masters", val: "420", change: "Centralized Database" },
+      { label: "Role Permissions", val: "Strict", change: "Audit Trail Logged" },
+      { label: "Branch Offices", val: "14", change: "Global FX Synced" }
+    ],
+    funnel: [
+      { label: "420 Trade Partners", pct: "100%" },
+      { label: "380 Approved Credit", pct: "90%" },
+      { label: "280 Active Contracts", pct: "66%" },
+      { label: "12 Blocked Risk", pct: "3%" },
+      { label: "100% Compliant", pct: "100%" }
+    ],
+    activities: [
+      { title: "Credit limit approved", sub: "₹50,000,000 for Apex Global", time: "01:20 PM" },
+      { title: "Role permission modified", sub: "Finance Manager GL Access", time: "11:05 AM" },
+      { title: "Branch Settings updated", sub: "Mumbai Head Office Tax Default", time: "09:40 AM" }
+    ],
     points: [
       { title: "Credit Request Approvals", desc: "Workflows for customer credit line evaluation, approval matrices, and threshold limits." },
       { title: "Trade Partner Master", desc: "Global database of carriers, overseas agents, vendors, and direct customers with individualized tax/billing configurations." },
@@ -349,81 +450,315 @@ export default function NextOrbitSalesFinancePage() {
         </Container>
       </Section>
 
-      {/* ── 4. Strategic Pillars ── */}
-      <Section tone="white" spacing="lg" className="border-t border-hairline">
+      {/* ── 4. Strategic Pillars (Redesigned to Match Exact Parity) ── */}
+      <Section tone="sunken" spacing="lg" className="relative overflow-hidden border-t border-slate-200/80 bg-[#f8fafc] py-20 sm:py-28">
         <Container>
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <Eyebrow tone="brand">STRATEGIC TRANSFORMATION</Eyebrow>
-            <h2 className="text-display-sm sm:text-display-md text-slate-900 font-extrabold tracking-tight mt-3">
-              Four Pillars of Profit Protection & Pipeline Control
-            </h2>
-            <p className="text-sm text-slate-600 mt-2">
-              Unifying CRM, accounting, and compliance under a single system of action.
-            </p>
-          </div>
+          {(() => {
+            const currentTab = FINANCE_PILLARS.find((t) => t.id === activePillarTab) || FINANCE_PILLARS[0];
+            const pillarIndex = FINANCE_PILLARS.findIndex((t) => t.id === activePillarTab) + 1;
+            return (
+              <>
+                {/* Top Section Header: Left Info + Value Rail & Right Isometric 3D Fintech Image */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-12">
+                  {/* Left Header Info & 3 Value Badges */}
+                  <div className="lg:col-span-6 flex flex-col gap-4">
+                    <div className="flex items-center gap-2">
+                      <span className="h-0.5 w-6 bg-teal-500 rounded-full" />
+                      <span className="text-xs font-mono font-bold uppercase tracking-widest text-teal-600">
+                        STRATEGIC TRANSFORMATION
+                      </span>
+                    </div>
+                    <h2 className="text-display-md sm:text-display-lg font-extrabold text-slate-900 tracking-tight leading-tight">
+                      Four Pillars of Profit Protection & Pipeline Control
+                    </h2>
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xl">
+                      Unifying CRM, accounting, and compliance under a single system of action.
+                    </p>
 
-          {/* Pillar Tabs */}
-          <div className="flex flex-wrap justify-center gap-2.5 mb-10">
-            {FINANCE_PILLARS.map((tab) => {
-              const Icon = tab.icon;
-              const isActive = activePillarTab === tab.id;
-              return (
-                <button
-                  key={tab.id}
-                  type="button"
-                  onClick={() => setActivePillarTab(tab.id)}
-                  className={cn(
-                    "flex items-center gap-2 px-4 py-2.5 rounded-xl border text-xs font-semibold transition-all duration-300 cursor-pointer shadow-xs",
-                    isActive
-                      ? "bg-brand-950 border-brand-950 text-white shadow-md scale-[1.02]"
-                      : "bg-surface border-hairline text-ink-700 hover:border-brand-300 hover:text-brand-500 hover:bg-brand-50/50"
-                  )}
-                >
-                  <Icon className={cn("size-4 transition-colors", isActive ? "text-brand-300" : "text-ink-500")} />
-                  {tab.label}
-                </button>
-              );
-            })}
-          </div>
+                    {/* 3 Horizontal Value Proof Badges */}
+                    <div className="flex flex-wrap items-center gap-3 mt-2">
+                      <div className="flex items-center gap-3 bg-white border border-slate-200/80 rounded-2xl px-4 py-2.5 shadow-2xs">
+                        <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-teal-600">
+                          <Box className="size-4" />
+                        </div>
+                        <div>
+                          <h5 className="text-xs font-extrabold text-slate-900 leading-tight">High Visibility</h5>
+                          <p className="text-[11px] text-slate-500 leading-none mt-0.5">Across every node</p>
+                        </div>
+                      </div>
 
-          {/* Active Pillar Panel */}
-          <Card tone="plain" padding="lg" className="border-hairline shadow-md">
-            <div className="mb-6 pb-4 border-b border-hairline">
-              <p className="text-sm text-ink-700 font-medium leading-relaxed">
-                {FINANCE_PILLARS.find((t) => t.id === activePillarTab)?.intro}
-              </p>
-            </div>
-            <div className="grid gap-6 md:grid-cols-2 text-left">
-              {FINANCE_PILLARS.find((t) => t.id === activePillarTab)?.points.map((point, index) => (
-                <div key={index} className="flex gap-3.5 items-start">
-                  <span className="flex shrink-0 size-6 items-center justify-center rounded-full bg-brand-50 text-brand-600 font-bold mt-0.5">
-                    <Check className="size-3.5" strokeWidth={3} />
-                  </span>
-                  <div>
-                    <h4 className="text-sm font-bold text-ink-900">{point.title}</h4>
-                    <p className="text-xs text-ink-600 mt-1 leading-relaxed">{point.desc}</p>
+                      <div className="flex items-center gap-3 bg-white border border-slate-200/80 rounded-2xl px-4 py-2.5 shadow-2xs">
+                        <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-teal-600">
+                          <Gauge className="size-4" />
+                        </div>
+                        <div>
+                          <h5 className="text-xs font-extrabold text-slate-900 leading-tight">Real-Time Control</h5>
+                          <p className="text-[11px] text-slate-500 leading-none mt-0.5">Faster decisions</p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-3 bg-white border border-slate-200/80 rounded-2xl px-4 py-2.5 shadow-2xs">
+                        <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-teal-600">
+                          <TrendingUp className="size-4" />
+                        </div>
+                        <div>
+                          <h5 className="text-xs font-extrabold text-slate-900 leading-tight">Operational Excellence</h5>
+                          <p className="text-[11px] text-slate-500 leading-none mt-0.5">Lower cost, higher output</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right 3D Isometric Fintech Illustration Container */}
+                  <div className="lg:col-span-6 relative flex items-center justify-center min-h-[320px] sm:min-h-[360px]">
+                    {/* Concentric Circular Radar Target Rings Background */}
+                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none opacity-35">
+                      <div className="size-[360px] rounded-full border border-teal-300/40 flex items-center justify-center">
+                        <div className="size-[260px] rounded-full border border-teal-300/40 flex items-center justify-center">
+                          <div className="size-[160px] rounded-full border border-teal-300/40" />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 3D Fintech Image - 100% Seamless Blend, Zero Box Border, No Hover */}
+                    <div className="relative z-10 size-full flex items-center justify-center pointer-events-none select-none">
+                      <img
+                        src="/assets/fintech_3d.jpg"
+                        alt="3D Financial Engine & Logistics Accounting"
+                        className="w-full h-auto max-h-[380px] object-contain mix-blend-multiply opacity-95"
+                        style={{
+                          maskImage: "radial-gradient(circle at center, black 45%, transparent 72%)",
+                          WebkitMaskImage: "radial-gradient(circle at center, black 45%, transparent 72%)"
+                        }}
+                        suppressHydrationWarning
+                      />
+                    </div>
                   </div>
                 </div>
-              ))}
-            </div>
-          </Card>
+
+                {/* 4 Pillars Tabbed Navigation Bar */}
+                <div className="flex flex-wrap justify-center gap-3 mb-10">
+                  {FINANCE_PILLARS.map((tab) => {
+                    const Icon = tab.icon;
+                    const isActive = activePillarTab === tab.id;
+                    return (
+                      <button
+                        key={tab.id}
+                        type="button"
+                        onClick={() => setActivePillarTab(tab.id)}
+                        className={cn(
+                          "flex items-center gap-2.5 px-5 py-3 rounded-2xl text-xs font-extrabold transition-all duration-300 cursor-pointer shadow-2xs border",
+                          isActive
+                            ? "bg-[#0a2328] border-[#0a2328] text-white shadow-md scale-[1.02]"
+                            : "bg-white border-slate-200/90 text-slate-700 hover:border-teal-400 hover:text-teal-700 hover:bg-teal-50/50"
+                        )}
+                      >
+                        <div className={cn("flex size-6 items-center justify-center rounded-lg transition-colors", isActive ? "bg-teal-500/20 text-teal-300" : "bg-slate-100 text-slate-500")}>
+                          <Icon className="size-3.5" />
+                        </div>
+                        {tab.label}
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Active Pillar Showcase Card & Dynamic Dashboard UI Mockup */}
+                <div className="space-y-6">
+                  {/* Main Showcase Container */}
+                  <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-md">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                      {/* Left Sub-Column: Feature Info & Points */}
+                      <div className="lg:col-span-5 flex flex-col justify-between gap-6">
+                        <div>
+                          {/* Eyebrow Badge Tag */}
+                          <div className="inline-flex items-center gap-2 bg-teal-50 text-teal-700 px-3 py-1 rounded-md text-[11px] font-mono font-bold uppercase border border-teal-200/60 mb-3">
+                            PILLAR {pillarIndex}
+                          </div>
+
+                          {/* Title */}
+                          <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                            {currentTab.label.replace(/^Pillar \d+: /, "")}
+                          </h3>
+
+                          {/* Subtitle / Intro */}
+                          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal mt-2">
+                            {currentTab.intro}
+                          </p>
+
+                          {/* Feature Points List Grid */}
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                            {currentTab.points.map((point, idx) => (
+                              <div key={idx} className="flex gap-3 items-start p-3.5 rounded-2xl bg-slate-50/80 border border-slate-100 hover:border-teal-200 hover:bg-teal-50/30 transition-all">
+                                <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-teal-100/80 text-teal-700 font-bold mt-0.5">
+                                  {idx === 0 ? <Eye className="size-4" /> : idx === 1 ? <Clock className="size-4" /> : idx === 2 ? <Activity className="size-4" /> : <Bell className="size-4" />}
+                                </div>
+                                <div>
+                                  <h4 className="text-xs font-bold text-slate-900 leading-tight">{point.title}</h4>
+                                  <p className="text-[11px] text-slate-600 leading-relaxed mt-1 font-normal">{point.desc}</p>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* CTA Buttons */}
+                        <div className="flex flex-wrap items-center gap-4 pt-2">
+                          <button type="button" className="flex items-center gap-2 bg-[#08282e] text-white rounded-full px-5 py-2.5 text-xs font-extrabold hover:bg-teal-900 transition-all cursor-pointer shadow-sm">
+                            Explore Pillar {pillarIndex} in Detail
+                            <ArrowRight className="size-3.5 text-teal-300" />
+                          </button>
+                          <button type="button" className="flex items-center gap-2 text-teal-700 hover:text-teal-900 text-xs font-bold transition-all cursor-pointer">
+                            See how it works
+                            <PlayCircle className="size-4 text-teal-600" />
+                          </button>
+                        </div>
+                      </div>
+
+                      {/* Right Sub-Column: Dynamic Financial Interactive Dashboard UI Mockup */}
+                      <div className="lg:col-span-7 bg-[#f8fafc] border border-slate-200/90 rounded-2xl p-4 sm:p-5 flex gap-4 shadow-2xs overflow-hidden">
+                        {/* Left Dark Teal Vertical App Menu Bar */}
+                        <div className="w-12 sm:w-14 bg-[#082025] rounded-xl p-3 flex flex-col items-center justify-between text-teal-400 shrink-0">
+                          <div className="flex flex-col gap-5 items-center">
+                            <div className="size-8 rounded-lg bg-teal-500/20 flex items-center justify-center text-teal-300">
+                              <LayoutGrid className="size-4" />
+                            </div>
+                            <Landmark className="size-4 text-slate-400 hover:text-teal-300 transition-colors cursor-pointer" />
+                            <DollarSign className="size-4 text-slate-400 hover:text-teal-300 transition-colors cursor-pointer" />
+                            <Activity className="size-4 text-slate-400 hover:text-teal-300 transition-colors cursor-pointer" />
+                            <BarChart3 className="size-4 text-slate-400 hover:text-teal-300 transition-colors cursor-pointer" />
+                            <Bell className="size-4 text-slate-400 hover:text-teal-300 transition-colors cursor-pointer" />
+                          </div>
+                          <Settings className="size-4 text-slate-500 hover:text-slate-300 transition-colors cursor-pointer" />
+                        </div>
+
+                        {/* Right Main Dashboard Display Panel */}
+                        <div className="flex-1 flex flex-col gap-4 overflow-hidden">
+                          {/* Top Metric Header Card */}
+                          <div className="bg-white rounded-xl border border-slate-200/80 p-3.5 shadow-2xs">
+                            <h5 className="text-xs font-extrabold text-slate-900 mb-3">{currentTab.dashboardTitle}</h5>
+                            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                              {currentTab.metrics.map((metric, mIdx) => (
+                                <div key={mIdx} className="flex flex-col">
+                                  <span className="text-[10px] text-slate-500 font-semibold truncate">{metric.label}</span>
+                                  <span className="text-sm font-extrabold text-slate-900 mt-0.5">{metric.val}</span>
+                                  <span className="text-[10px] text-emerald-600 font-bold truncate">{metric.change}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* Bottom 2 Widgets Grid */}
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 flex-1">
+                            {/* Mini Map Widget */}
+                            <div className="bg-white rounded-xl border border-slate-200/80 p-3 flex flex-col justify-between shadow-2xs">
+                              <h6 className="text-[11px] font-extrabold text-slate-900">{currentTab.widget1Title}</h6>
+                              <div className="relative h-28 my-1 flex items-center justify-center overflow-hidden rounded-lg bg-teal-50/30">
+                                <svg viewBox="0 0 300 120" className="w-full h-full object-contain">
+                                  <path d="M 40 70 Q 120 20 200 60 Q 240 30 270 50" stroke="#0d9488" strokeWidth="1.5" strokeDasharray="3 3" strokeOpacity="0.8" fill="none" />
+                                  <circle cx="40" cy="70" r="4" fill="#0284c7" />
+                                  <circle cx="120" cy="40" r="4" fill="#0d9488" />
+                                  <circle cx="200" cy="60" r="4" fill="#16a34a" />
+                                  <circle cx="270" cy="50" r="4" fill="#ea580c" />
+                                </svg>
+                              </div>
+                              <div className="flex flex-wrap items-center justify-between text-[9px] text-slate-500 font-medium">
+                                <span className="flex items-center gap-1"><span className="size-1.5 rounded-full bg-sky-600" />Enquiry</span>
+                                <span className="flex items-center gap-1"><span className="size-1.5 rounded-full bg-teal-600" />Quotation</span>
+                                <span className="flex items-center gap-1"><span className="size-1.5 rounded-full bg-green-600" />Common Invoice</span>
+                                <span className="flex items-center gap-1"><span className="size-1.5 rounded-full bg-orange-600" />Audited</span>
+                              </div>
+                            </div>
+
+                            {/* Mini Graph Widget */}
+                            <div className="bg-white rounded-xl border border-slate-200/80 p-3 flex flex-col justify-between shadow-2xs">
+                              <div className="flex items-center justify-between">
+                                <h6 className="text-[11px] font-extrabold text-slate-900">{currentTab.widget2Title}</h6>
+                                <span className="text-[9px] text-slate-500 font-bold flex items-center gap-0.5 border px-1.5 py-0.5 rounded">Live <ChevronDown className="size-2.5" /></span>
+                              </div>
+                              <div className="relative h-28 my-1 flex items-center justify-center">
+                                <svg viewBox="0 0 300 120" className="w-full h-full object-contain">
+                                  <path d="M 20 90 L 60 70 L 100 80 L 140 60 L 180 68 L 220 45 L 260 55" fill="none" stroke="#0d9488" strokeWidth="2" />
+                                  <circle cx="220" cy="45" r="4" fill="#0d9488" />
+                                  <rect x="200" y="20" width="40" height="18" rx="4" fill="#09252a" />
+                                  <text x="220" y="32" fill="#38bdf8" fontSize="10" fontWeight="bold" textAnchor="middle">{pillarIndex * 180 + 540}</text>
+                                </svg>
+                              </div>
+                              <div className="flex items-center justify-between text-[9px] text-slate-400 font-mono">
+                                <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Bottom Value Rail (4 Pillars Proof Cards - 2 per row on Mobile) */}
+                  <div className="bg-white rounded-2xl border border-slate-200/80 p-4 sm:p-6 shadow-2xs grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-start">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2.5 sm:gap-3.5">
+                      <div className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 border border-teal-100">
+                        <TrendingUp className="size-4 sm:size-5" />
+                      </div>
+                      <div>
+                        <h5 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Increase Throughput</h5>
+                        <p className="text-[11px] text-slate-600 leading-normal mt-0.5">Accelerate movement and improve order fulfillment.</p>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2.5 sm:gap-3.5">
+                      <div className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 border border-teal-100">
+                        <DollarSign className="size-4 sm:size-5" />
+                      </div>
+                      <div>
+                        <h5 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Reduce Costs</h5>
+                        <p className="text-[11px] text-slate-600 leading-normal mt-0.5">Optimize resources and minimize operational waste.</p>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2.5 sm:gap-3.5">
+                      <div className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 border border-teal-100">
+                        <Target className="size-4 sm:size-5" />
+                      </div>
+                      <div>
+                        <h5 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Improve Accuracy</h5>
+                        <p className="text-[11px] text-slate-600 leading-normal mt-0.5">Real-time data ensures better decisions and fewer errors.</p>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2.5 sm:gap-3.5">
+                      <div className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 border border-teal-100">
+                        <Users className="size-4 sm:size-5" />
+                      </div>
+                      <div>
+                        <h5 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Scale with Confidence</h5>
+                        <p className="text-[11px] text-slate-600 leading-normal mt-0.5">Built to grow across locations, partners, and business models.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </>
+            );
+          })()}
         </Container>
       </Section>
 
-      {/* ── 5. System Deep-Dive: Interactive Capabilities ── */}
-      <Section tone="white" spacing="lg" className="border-t border-hairline">
+      {/* ── 5. System Deep-Dive: Interactive Capabilities (Redesigned to Match Exact Mockup) ── */}
+      <Section tone="white" spacing="lg" className="relative overflow-hidden border-t border-slate-200/80 bg-white py-20 sm:py-28">
         <Container>
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-display-sm sm:text-display-md text-ink-900 font-extrabold tracking-tight">
-              System Deep-Dive: Interactive Capabilities
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="text-xs font-mono font-bold uppercase tracking-widest text-teal-600">
+              SYSTEM DEEP-DIVE
+            </span>
+            <h2 className="text-display-md sm:text-display-lg text-slate-900 font-extrabold tracking-tight mt-2">
+              Interactive Capabilities
             </h2>
-            <p className="text-sm text-ink-600 mt-2">
-              Explore the functional components of the Sales and Financial Suite.
+            <p className="text-xs sm:text-sm text-slate-600 mt-2">
+              Explore the functional components of the Sales and Financial Suite
             </p>
           </div>
 
           {/* Deep Dive Tabs */}
-          <div className="flex flex-wrap justify-center gap-2.5 mb-10">
+          <div className="flex flex-wrap justify-center gap-3 mb-10">
             {DEEP_DIVE_TABS.map((tab) => {
               const Icon = tab.icon;
               const isActive = activeDeepDiveTab === tab.id;
@@ -433,35 +768,190 @@ export default function NextOrbitSalesFinancePage() {
                   type="button"
                   onClick={() => setActiveDeepDiveTab(tab.id)}
                   className={cn(
-                    "flex items-center gap-2 px-4 py-2.5 rounded-xl border text-xs font-semibold transition-all duration-300 cursor-pointer shadow-xs",
+                    "flex items-center gap-2.5 px-5 py-3 rounded-2xl text-xs font-extrabold transition-all duration-300 cursor-pointer shadow-2xs border",
                     isActive
-                      ? "bg-brand-950 border-brand-950 text-white shadow-md scale-[1.02]"
-                      : "bg-surface border-hairline text-ink-700 hover:border-brand-300 hover:text-brand-500 hover:bg-brand-50/50"
+                      ? "bg-[#0a2328] border-[#0a2328] text-white shadow-md scale-[1.02]"
+                      : "bg-slate-50 border-slate-200 text-slate-700 hover:border-teal-400 hover:text-teal-700 hover:bg-teal-50/50"
                   )}
                 >
-                  <Icon className={cn("size-4 transition-colors", isActive ? "text-brand-300" : "text-ink-500")} />
+                  <div className={cn("flex size-6 items-center justify-center rounded-lg transition-colors", isActive ? "bg-teal-500/20 text-teal-300" : "bg-white text-slate-500")}>
+                    <Icon className="size-3.5" />
+                  </div>
                   {tab.label}
                 </button>
               );
             })}
           </div>
 
-          {/* Active Deep Dive Panel */}
-          <Card tone="plain" padding="lg" className="border-hairline shadow-md">
-            <div className="grid gap-6 md:grid-cols-3">
-              {DEEP_DIVE_TABS.find((t) => t.id === activeDeepDiveTab)?.points.map((point, index) => (
-                <div key={index} className="flex gap-3 items-start flex-col">
-                  <span className="flex shrink-0 size-9 items-center justify-center rounded-xl bg-brand-50 text-brand-600 mb-2">
-                    <Check className="size-4 text-brand-600" strokeWidth={3} />
-                  </span>
-                  <div>
-                    <h4 className="text-sm font-bold text-ink-900">{point.title}</h4>
-                    <p className="text-xs text-ink-600 mt-1 leading-relaxed">{point.desc}</p>
+          {/* Active Deep Dive Panel Container */}
+          {(() => {
+            const currentTab = DEEP_DIVE_TABS.find((t) => t.id === activeDeepDiveTab) || DEEP_DIVE_TABS[0];
+            const tabIdx = DEEP_DIVE_TABS.findIndex((t) => t.id === activeDeepDiveTab) + 1;
+            return (
+              <div className="space-y-6">
+                {/* Main Showcase Card Grid */}
+                <div className="bg-[#f8fafc] rounded-3xl p-5 sm:p-6 border border-slate-200/80 shadow-md">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+                    
+                    {/* 1. Left Dark Hero Banner Card */}
+                    <div className="lg:col-span-3 bg-[#04191d] rounded-2xl p-6 text-white relative overflow-hidden flex flex-col justify-between min-h-[320px] sm:min-h-[360px] shadow-sm group">
+                      {/* High-res background image */}
+                      <img 
+                        src={currentTab.bgImage} 
+                        alt={currentTab.label} 
+                        className="absolute inset-0 w-full h-full object-cover object-center opacity-55 transition-transform duration-700 group-hover:scale-105" 
+                      />
+                      {/* Rich dark teal gradient overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#031518] via-[#031518]/75 to-[#042429]/50 z-10" />
+
+                      <div className="relative z-20 flex flex-col gap-3">
+                        <div className="inline-flex items-center gap-2 bg-teal-500/20 backdrop-blur-md border border-teal-400/30 px-2.5 py-1 rounded-md w-fit">
+                          <span className="size-1.5 rounded-full bg-teal-400 animate-pulse" />
+                          <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-teal-300">
+                            0{tabIdx} {currentTab.label.replace(/^\d+\.\s*/, "").toUpperCase()}
+                          </span>
+                        </div>
+                        <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight leading-snug mt-2 drop-shadow-sm">
+                          {currentTab.bannerTitle}
+                        </h3>
+                      </div>
+
+                      <div className="relative z-20 mt-4">
+                        <p className="text-xs text-slate-200 leading-relaxed font-normal opacity-90 drop-shadow-xs">
+                          {currentTab.bannerDesc}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* 2. Middle 3 Feature Points Column */}
+                    <div className="lg:col-span-4 flex flex-col justify-center gap-6 p-2">
+                      {currentTab.points.map((point, index) => (
+                        <div key={index} className="flex gap-4 items-start p-2 rounded-xl transition-all hover:bg-slate-50">
+                          <div className="flex size-11 shrink-0 items-center justify-center rounded-full bg-teal-50 text-teal-600 border border-teal-100/80 shadow-2xs mt-0.5">
+                            {index === 0 ? <Users className="size-5" /> : index === 1 ? <Eye className="size-5" /> : <DatabaseZap className="size-5" />}
+                          </div>
+                          <div>
+                            <h4 className="text-sm font-bold text-slate-900 leading-tight">{point.title}</h4>
+                            <p className="text-xs text-slate-500 leading-relaxed mt-1">{point.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* 3. Right Interactive App Dashboard UI Mockup */}
+                    <div className="lg:col-span-5 bg-white border border-slate-200/90 rounded-2xl p-4 flex flex-col gap-4 shadow-2xs overflow-hidden">
+                      {/* Top Header Bar */}
+                      <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs font-black text-slate-900 tracking-tight">NXT<span className="text-teal-600">orbit</span></span>
+                          <span className="text-[10px] text-slate-400 font-bold">|</span>
+                          <span className="text-[11px] font-extrabold text-slate-700">Dashboard</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <Eye className="size-3.5 text-slate-400" />
+                          <Bell className="size-3.5 text-slate-400" />
+                          <div className="flex items-center gap-1.5 pl-2 border-l border-slate-100">
+                            <div className="size-5 rounded-full bg-teal-600 text-white text-[9px] font-bold flex items-center justify-center">JD</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* 4 KPI Metrics Grid */}
+                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                        {currentTab.metrics.map((metric, mIdx) => (
+                          <div key={mIdx} className="bg-slate-50/80 rounded-xl p-2.5 border border-slate-100">
+                            <span className="text-[9px] text-slate-400 font-bold block truncate">{metric.label}</span>
+                            <span className="text-sm font-black text-slate-900 mt-0.5 block">{metric.val}</span>
+                            <span className="text-[9px] text-teal-600 font-bold block mt-0.5">{metric.change}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Bottom Split: Funnel Chart + Recent Activities */}
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 flex-1">
+                        {/* Left Funnel Widget */}
+                        <div className="bg-slate-50/60 rounded-xl p-3 border border-slate-100 flex flex-col justify-between">
+                          <span className="text-[10px] font-extrabold text-slate-900 block mb-2">Pipeline Overview</span>
+                          <div className="space-y-1.5 my-auto">
+                            {currentTab.funnel.map((fn, fIdx) => (
+                              <div key={fIdx} className="flex items-center gap-2">
+                                <div className="flex-1 bg-slate-200/80 h-3.5 rounded-md overflow-hidden relative">
+                                  <div 
+                                    className="bg-teal-500 h-full rounded-md transition-all duration-500" 
+                                    style={{ width: fn.pct }} 
+                                  />
+                                </div>
+                                <span className="text-[9px] font-bold text-slate-600 w-16 text-right truncate">{fn.label}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Right Recent Activities Widget */}
+                        <div className="bg-slate-50/60 rounded-xl p-3 border border-slate-100 flex flex-col justify-between">
+                          <span className="text-[10px] font-extrabold text-slate-900 block mb-2">Recent Activities</span>
+                          <div className="space-y-2 my-auto">
+                            {currentTab.activities.map((act, aIdx) => (
+                              <div key={aIdx} className="flex items-start justify-between text-[9px] border-b border-slate-100 pb-1.5 last:border-0 last:pb-0">
+                                <div>
+                                  <p className="font-bold text-slate-800 leading-tight">{act.title}</p>
+                                  <p className="text-slate-400 mt-0.5">{act.sub}</p>
+                                </div>
+                                <span className="text-[8px] text-slate-400 font-mono shrink-0">{act.time}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              ))}
-            </div>
-          </Card>
+
+                {/* Bottom Value Rail (4 Proof Cards - Dark Blue/Teal Theme) */}
+                <div className="bg-[#061e23] rounded-2xl border border-teal-900/60 p-4 sm:p-6 shadow-md grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-start text-white">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2.5 sm:gap-3.5">
+                    <div className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-2xl bg-teal-500/20 text-teal-300 border border-teal-400/30">
+                      <Target className="size-4 sm:size-5" />
+                    </div>
+                    <div>
+                      <h5 className="text-xs sm:text-sm font-extrabold text-white leading-tight">Improve Productivity</h5>
+                      <p className="text-[11px] text-slate-300 leading-normal mt-0.5">Automate routine tasks and save hours of manual work.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2.5 sm:gap-3.5">
+                    <div className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-2xl bg-teal-500/20 text-teal-300 border border-teal-400/30">
+                      <TrendingUp className="size-4 sm:size-5" />
+                    </div>
+                    <div>
+                      <h5 className="text-xs sm:text-sm font-extrabold text-white leading-tight">Real-Time Visibility</h5>
+                      <p className="text-[11px] text-slate-300 leading-normal mt-0.5">Get a 360° view of pipeline, performance and customer interactions.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2.5 sm:gap-3.5">
+                    <div className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-2xl bg-teal-500/20 text-teal-300 border border-teal-400/30">
+                      <CheckCircle2 className="size-4 sm:size-5" />
+                    </div>
+                    <div>
+                      <h5 className="text-xs sm:text-sm font-extrabold text-white leading-tight">Better Decision Making</h5>
+                      <p className="text-[11px] text-slate-300 leading-normal mt-0.5">Use real-time data and insights to make confident decisions.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2.5 sm:gap-3.5">
+                    <div className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-2xl bg-teal-500/20 text-teal-300 border border-teal-400/30">
+                      <Users className="size-4 sm:size-5" />
+                    </div>
+                    <div>
+                      <h5 className="text-xs sm:text-sm font-extrabold text-white leading-tight">Stronger Relationships</h5>
+                      <p className="text-[11px] text-slate-300 leading-normal mt-0.5">Engage better, respond faster and build lasting customer trust.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })()}
         </Container>
       </Section>
 
