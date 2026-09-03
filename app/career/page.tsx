@@ -81,8 +81,11 @@ export default function CareerPage() {
             </Reveal>
 
             <Reveal from="up" delay={0.06}>
-              <h1 className="max-w-3xl text-display-lg sm:text-display-xl">
-                Work on products millions of people actually open.
+              <h1 className="max-w-3xl text-display-lg sm:text-display-xl text-slate-900 leading-[1.05]">
+                Work on products <br />
+                <span className="bg-gradient-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">
+                  millions of people actually open.
+                </span>
               </h1>
             </Reveal>
 

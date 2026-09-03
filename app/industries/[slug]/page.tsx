@@ -99,6 +99,24 @@ const FEATURE_IMAGES: Record<string, string> = {
  * (stats, use cases) carries the page instead. Third distinct template after
  * the light-editorial service page and the dark-documentation technology page.
  */
+function formatTwoColorTitle(text: string) {
+  const words = text.split(" ");
+  if (words.length <= 2) {
+    return <span className="bg-gradient-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">{text}</span>;
+  }
+  const mid = Math.ceil(words.length / 2);
+  const firstHalf = words.slice(0, mid).join(" ");
+  const secondHalf = words.slice(mid).join(" ");
+  return (
+    <>
+      <span className="text-slate-900">{firstHalf}</span> <br />
+      <span className="bg-gradient-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">
+        {secondHalf}
+      </span>
+    </>
+  );
+}
+
 export default async function IndustryPage({
   params,
 }: {
@@ -148,8 +166,8 @@ export default async function IndustryPage({
             </Reveal>
 
             <Reveal from="up" delay={0.06} className="mt-2">
-              <h1 className="max-w-4xl text-display-lg sm:text-display-xl font-serif font-medium tracking-tight bg-gradient-to-r from-brand-950 via-brand-900 to-brand-800 bg-clip-text text-transparent">
-                {data.tagline}
+              <h1 className="max-w-4xl text-display-lg sm:text-display-xl font-extrabold tracking-tight text-slate-900 leading-[1.05]">
+                {formatTwoColorTitle(data.tagline)}
               </h1>
             </Reveal>
 

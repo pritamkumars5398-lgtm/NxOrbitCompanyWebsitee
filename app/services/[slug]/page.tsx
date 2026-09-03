@@ -66,6 +66,24 @@ const BADGE_TEXTS: Record<string, string> = {
   devops: "Automated CI/CD",
 };
 
+function formatTwoColorTitle(text: string) {
+  const words = text.split(" ");
+  if (words.length <= 2) {
+    return <span className="bg-gradient-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">{text}</span>;
+  }
+  const mid = Math.ceil(words.length / 2);
+  const firstHalf = words.slice(0, mid).join(" ");
+  const secondHalf = words.slice(mid).join(" ");
+  return (
+    <>
+      <span className="text-slate-900">{firstHalf}</span> <br />
+      <span className="bg-gradient-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">
+        {secondHalf}
+      </span>
+    </>
+  );
+}
+
 export default async function ServicePage({
   params,
 }: {
@@ -104,7 +122,9 @@ export default async function ServicePage({
               </Reveal>
 
               <Reveal from="up" delay={0.06} className="mt-2">
-                <h1 className="max-w-2xl text-display-lg sm:text-display-xl">{data.tagline}</h1>
+                <h1 className="max-w-2xl text-display-lg sm:text-display-xl text-slate-900 leading-[1.05]">
+                  {formatTwoColorTitle(data.tagline)}
+                </h1>
               </Reveal>
 
               <Reveal from="up" delay={0.14} className="mt-4">

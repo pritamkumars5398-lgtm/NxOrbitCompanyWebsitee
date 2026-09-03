@@ -53,8 +53,11 @@ export default function CaseStudiesPage() {
             </Reveal>
 
             <Reveal from="up" delay={0.06}>
-              <h1 className="max-w-3xl text-display-lg sm:text-display-xl">
-                The work, with the numbers attached.
+              <h1 className="max-w-3xl text-display-lg sm:text-display-xl text-slate-900 leading-[1.05]">
+                The work, <br />
+                <span className="bg-gradient-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">
+                  with the numbers attached.
+                </span>
               </h1>
             </Reveal>
 

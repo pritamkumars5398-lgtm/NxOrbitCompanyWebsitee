@@ -86,6 +86,24 @@ export async function generateMetadata({
  * terminal panel, then alternating full-width feature rows. Where the service
  * template is editorial and light, this one reads as documentation.
  */
+function formatTwoColorTitle(text: string) {
+  const words = text.split(" ");
+  if (words.length <= 2) {
+    return <span className="bg-gradient-to-r from-teal-400 to-cyan-300 bg-clip-text text-transparent">{text}</span>;
+  }
+  const mid = Math.ceil(words.length / 2);
+  const firstHalf = words.slice(0, mid).join(" ");
+  const secondHalf = words.slice(mid).join(" ");
+  return (
+    <>
+      <span className="text-white">{firstHalf}</span> <br />
+      <span className="bg-gradient-to-r from-teal-400 to-cyan-300 bg-clip-text text-transparent">
+        {secondHalf}
+      </span>
+    </>
+  );
+}
+
 export default async function TechnologyPage({
   params,
 }: {
@@ -125,8 +143,8 @@ export default async function TechnologyPage({
               </Reveal>
 
               <Reveal from="up" delay={0.06} className="mt-2">
-                <h1 className="max-w-2xl text-display-lg text-white sm:text-display-xl">
-                  {data.tagline}
+                <h1 className="max-w-2xl text-display-lg text-white sm:text-display-xl leading-[1.05]">
+                  {formatTwoColorTitle(data.tagline)}
                 </h1>
               </Reveal>
 

@@ -57,8 +57,11 @@ export default function PortfolioPage() {
             </Reveal>
 
             <Reveal from="up" delay={0.06}>
-              <h1 className="max-w-3xl text-display-lg sm:text-display-xl text-slate-950 font-extrabold">
-                Every one of these is still running.
+              <h1 className="max-w-3xl text-display-lg sm:text-display-xl text-slate-900 leading-[1.05]">
+                Every one of these <br />
+                <span className="bg-gradient-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">
+                  is still running in production.
+                </span>
               </h1>
             </Reveal>
 

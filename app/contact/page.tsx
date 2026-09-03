@@ -61,8 +61,11 @@ export default function ContactPage() {
               <Eyebrow>Get in touch</Eyebrow>
             </Reveal>
             <Reveal from="up" delay={0.06}>
-              <h1 className="max-w-3xl text-display-lg sm:text-display-xl">
-                Tell us what you&apos;re building.
+              <h1 className="max-w-3xl text-display-lg sm:text-display-xl text-slate-900 leading-[1.05]">
+                Tell us what <br />
+                <span className="bg-gradient-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">
+                  you&apos;re building.
+                </span>
               </h1>
             </Reveal>
             <Reveal from="up" delay={0.12}>
