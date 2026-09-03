@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { 
-  ArrowRight, Shield, ShieldCheck, Database, Navigation, MessageSquarePlus, 
+import {
+  ArrowRight, Shield, ShieldCheck, Database, Navigation, MessageSquarePlus,
   Terminal, Sparkles, Code, Cpu, DatabaseZap, Users, FileText, CheckCircle2,
-  Lock, Globe, Cloud, Key, Check
+  Lock, Globe, Cloud, Key, Check, Eye, Clock, TrendingUp
 } from "lucide-react";
 import { cn } from "@/app/core/lib/cn";
 import { Breadcrumb } from "@/app/shared/ui/Breadcrumb";
@@ -39,6 +39,9 @@ const ROLE_TABS = [
     id: "sales",
     label: "Sales & CRM",
     icon: Users,
+    heroTitle: "Build stronger client relationships and drive more sales.",
+    heroDesc: "Manage leads, track customer interactions and streamline the sales process from inquiry to booking.",
+    heroImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop",
     points: [
       { title: "Pipeline Tracking", desc: "Track every lead and customer interaction from initial email contact to booked shipment." },
       { title: "Call Entries & Logging", desc: "Automate call notes and contact history syncing directly into the freight ledger." },
@@ -50,6 +53,9 @@ const ROLE_TABS = [
     id: "operations",
     label: "Operations & CS",
     icon: FileText,
+    heroTitle: "Execute multi-modal cargo transit with zero friction.",
+    heroDesc: "Automate customs filings, track shipments in real-time, and empower customers with self-service tracking portals.",
+    heroImage: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=1200&auto=format&fit=crop",
     points: [
       { title: "Air/Sea Import & Export", desc: "End-to-end execution workflows for air waybills, bills of lading, and multi-modal transit." },
       { title: "Customs Filings (VGM/IGM/CGM)", desc: "Direct electronic filing endpoints for customs clearing without manual portal data-entry." },
@@ -61,6 +67,9 @@ const ROLE_TABS = [
     id: "finance",
     label: "Finance & Accounting",
     icon: DatabaseZap,
+    heroTitle: "Unify invoicing, ledgers, and profit margin control.",
+    heroDesc: "Automate double-entry bookkeeping, credit limit enforcement, and real-time margin audits for every shipment.",
+    heroImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
     points: [
       { title: "Single & Common Invoicing", desc: "Generate compliant tax invoices combining freight charges, local clearing, and customs duties." },
       { title: "GL Account Management", desc: "Automate ledger entries for receivables, payables, agent payouts, and carrier disbursements." },
@@ -72,6 +81,9 @@ const ROLE_TABS = [
     id: "admin",
     label: "Role-Based Admin",
     icon: ShieldCheck,
+    heroTitle: "Control multi-branch operations with granular governance.",
+    heroDesc: "Manage global agent partnerships, custom document security rules, and employee performance SLAs.",
+    heroImage: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200&auto=format&fit=crop",
     points: [
       { title: "Multi-Branch Assignment", desc: "Configure global operations across multiple ports, regional offices, and agent partnerships." },
       { title: "Custom Document Visibility", desc: "Define granular document access rules based on user role, branch location, or client tier." },
@@ -144,7 +156,7 @@ export default function NextOrbitFreightPage() {
     setDisplayedAnswer("");
     const fullText = CHAT_PROMPTS[chatIndex].answer;
     let currentLength = 0;
-    
+
     const interval = setInterval(() => {
       if (currentLength < fullText.length) {
         setDisplayedAnswer(fullText.slice(0, currentLength + 1));
@@ -327,7 +339,7 @@ export default function NextOrbitFreightPage() {
               <h2 className="text-display-sm sm:text-display-md text-slate-900 font-extrabold tracking-tight mt-3 mb-6">
                 Cognitive Logistics: AI That Thinks Ahead of You
               </h2>
-              
+
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <span className="flex shrink-0 size-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-teal-500 text-white font-mono text-sm font-extrabold">
@@ -399,8 +411,8 @@ export default function NextOrbitFreightPage() {
                         disabled={typing}
                         className={cn(
                           "w-full text-left px-3 py-2 rounded-lg border text-xs font-mono transition-colors duration-200 cursor-pointer disabled:opacity-50",
-                          idx === chatIndex 
-                            ? "bg-teal-500/10 border-teal-500/60 text-teal-400" 
+                          idx === chatIndex
+                            ? "bg-teal-500/10 border-teal-500/60 text-teal-400"
                             : "border-slate-800 text-slate-400 hover:border-slate-700 hover:text-slate-300 bg-slate-900/50"
                         )}
                       >
@@ -416,19 +428,57 @@ export default function NextOrbitFreightPage() {
       </Section>
 
       {/* ── 5. Product Deep Dive (Tabbed menu by role) ── */}
-      <Section tone="white" spacing="lg" className="border-t border-hairline">
+      <Section tone="sunken" spacing="lg" className="relative overflow-hidden border-t border-slate-200/80 bg-[#f8fafc] py-20 sm:py-28">
         <Container>
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-display-sm sm:text-display-md text-slate-900 font-extrabold tracking-tight">
-              Product Deep Dive: NXT Orbit Freight
-            </h2>
-            <p className="text-sm text-slate-600 mt-2">
-              Use an interactive "Tabbed" menu where visitors can click their job role to see their tailored view.
-            </p>
+          {/* Top Header: Title, Description & World Map Card */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-14">
+            {/* Left Header Info */}
+            <div className="lg:col-span-6 flex flex-col gap-3">
+              <div className="flex items-center gap-2">
+                <span className="h-0.5 w-6 bg-teal-500 rounded-full" />
+                <span className="text-xs font-mono font-bold uppercase tracking-widest text-teal-600">
+                  PRODUCT DEEP DIVE
+                </span>
+              </div>
+              <h2 className="text-display-md sm:text-display-lg font-extrabold text-slate-900 tracking-tight leading-tight">
+                NXT Orbit Freight
+              </h2>
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl">
+                An intelligent, scalable freight management solution that connects shipper, carrier and customer — delivering real-time visibility, operational efficiency and seamless logistics.
+              </p>
+            </div>
+
+            {/* Vertical Divider Line */}
+            <div className="hidden lg:block lg:col-span-1 flex justify-center">
+              <div className="h-28 w-px bg-slate-200/90 mx-auto" />
+            </div>
+
+            {/* Right Subtitle & World Map Card */}
+            <div className="lg:col-span-5 relative bg-white/70 backdrop-blur-md rounded-2xl border border-slate-200/80 p-5 sm:p-6 shadow-xs overflow-hidden">
+              {/* World Map Vector Watermark */}
+              <div className="absolute inset-0 select-none pointer-events-none opacity-[0.18] flex items-center justify-center">
+                <img
+                  src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=800&auto=format&fit=crop"
+                  alt="Global Freight Network Map"
+                  className="w-full h-full object-cover mix-blend-multiply"
+                  suppressHydrationWarning
+                />
+              </div>
+
+              <div className="relative z-10 flex flex-col gap-3">
+                <div className="inline-flex items-center gap-2 bg-teal-50 text-teal-700 px-3 py-1 rounded-full text-xs font-bold border border-teal-200/70 w-fit">
+                  <Sparkles className="size-3.5 text-teal-600" />
+                  Smarter Freight. Stronger Supply Chains.
+                </div>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                  From booking to delivery, NXT Orbit Freight simplifies logistics with technology, automation and real-time insights.
+                </p>
+              </div>
+            </div>
           </div>
 
-          {/* Role Tabs */}
-          <div className="flex flex-wrap justify-center gap-2.5 mb-10">
+          {/* Role Tabs Pill Bar */}
+          <div className="flex flex-wrap justify-center gap-3 mb-10">
             {ROLE_TABS.map((tab) => {
               const Icon = tab.icon;
               const isActive = activeTab === tab.id;
@@ -438,35 +488,146 @@ export default function NextOrbitFreightPage() {
                   type="button"
                   onClick={() => setActiveTab(tab.id)}
                   className={cn(
-                    "flex items-center gap-2 px-4 py-2.5 rounded-xl border text-xs font-semibold transition-all duration-300 cursor-pointer shadow-xs",
+                    "flex items-center gap-2.5 px-5 py-2.5 rounded-full text-xs font-bold transition-all duration-300 cursor-pointer shadow-2xs border",
                     isActive
-                      ? "bg-brand-950 border-brand-950 text-white shadow-md scale-[1.02]"
-                      : "bg-surface border-hairline text-ink-700 hover:border-brand-300 hover:text-brand-500 hover:bg-brand-50/50"
+                      ? "bg-[#0d2a30] border-[#0d2a30] text-white shadow-md scale-[1.02]"
+                      : "bg-white border-slate-200/90 text-slate-700 hover:border-teal-400 hover:text-teal-700 hover:bg-teal-50/50"
                   )}
                 >
-                  <Icon className={cn("size-4 transition-colors", isActive ? "text-brand-300" : "text-ink-500")} />
+                  <div className={cn("flex size-6 items-center justify-center rounded-full transition-colors", isActive ? "bg-teal-500/20 text-teal-300" : "bg-slate-100 text-slate-500")}>
+                    <Icon className="size-3.5" />
+                  </div>
                   {tab.label}
                 </button>
               );
             })}
           </div>
 
-          {/* Active Tab Panel */}
-          <Card tone="plain" padding="lg" className="border-hairline shadow-md">
-            <div className="grid gap-6 md:grid-cols-2">
-              {ROLE_TABS.find((t) => t.id === activeTab)?.points.map((point, index) => (
-                <div key={index} className="flex gap-3.5 items-start">
-                  <span className="flex shrink-0 size-6 items-center justify-center rounded-full bg-brand-50 text-brand-600 font-bold mt-0.5">
-                    <Check className="size-3.5" strokeWidth={3} />
-                  </span>
-                  <div>
-                    <h4 className="text-sm font-bold text-ink-900">{point.title}</h4>
-                    <p className="text-xs text-ink-600 mt-1 leading-relaxed">{point.desc}</p>
+          {/* Active Tab Panel Card Layout (Mockup Parity) */}
+          {(() => {
+            const currentTab = ROLE_TABS.find((t) => t.id === activeTab) || ROLE_TABS[0];
+            return (
+              <div className="space-y-6">
+                {/* 2-Column Showcase Container */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+                  {/* Left Hero Image Card */}
+                  <div className="lg:col-span-5 relative rounded-3xl overflow-hidden min-h-[380px] sm:min-h-[420px] flex flex-col justify-end p-6 sm:p-8 shadow-md border border-slate-200/80 group">
+                    <img
+                      src={currentTab.heroImage}
+                      alt={currentTab.heroTitle}
+                      className="absolute inset-0 size-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                      suppressHydrationWarning
+                    />
+                    {/* Dark Mask Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/60 to-transparent pointer-events-none" />
+
+                    <div className="relative z-10 flex flex-col items-start gap-2.5">
+                      <div className="flex items-center gap-2">
+                        <span className="h-0.5 w-4 bg-teal-400 rounded-full" />
+                        <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-teal-300">
+                          {currentTab.label}
+                        </span>
+                      </div>
+                      <h3 className="text-xl sm:text-2xl font-extrabold text-white leading-snug tracking-tight">
+                        {currentTab.heroTitle}
+                      </h3>
+                      <p className="text-xs sm:text-sm text-slate-200/90 leading-relaxed font-normal max-w-md mt-1">
+                        {currentTab.heroDesc}
+                      </p>
+                      <button type="button" className="mt-4 flex items-center gap-2 bg-white/15 backdrop-blur-md border border-white/25 text-white rounded-full px-4 py-2 text-xs font-bold hover:bg-white/30 transition-all cursor-pointer">
+                        <ArrowRight className="size-3.5 text-teal-300" />
+                        Learn more
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Right 2x2 Feature Cards Grid */}
+                  <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                    {currentTab.points.map((point, index) => (
+                      <div
+                        key={index}
+                        className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-5 sm:p-6 shadow-2xs transition-all duration-300 hover:-translate-y-1 hover:border-teal-300 hover:shadow-md"
+                      >
+                        <div>
+                          {/* Circle Icon Badge */}
+                          <div className="flex size-10 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 border border-teal-100/80 transition-colors duration-300 group-hover:bg-teal-600 group-hover:text-white mb-4">
+                            <CheckCircle2 className="size-5" />
+                          </div>
+
+                          {/* Title */}
+                          <h4 className="text-base font-extrabold text-slate-900 tracking-tight leading-snug group-hover:text-teal-700 transition-colors">
+                            {point.title}
+                          </h4>
+
+                          {/* Description */}
+                          <p className="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                            {point.desc}
+                          </p>
+                        </div>
+
+                        {/* Bottom Learn More Link */}
+                        <div className="mt-5 flex items-center gap-1.5 text-xs font-bold text-teal-600 transition-all duration-300 group-hover:translate-x-1">
+                          <span>Learn more</span>
+                          <ArrowRight className="size-3.5" />
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
-              ))}
-            </div>
-          </Card>
+
+                {/* Bottom Result Rail ("THE RESULT") */}
+                <div className="bg-[#f0f9f8]/90 border border-teal-200/80 rounded-2xl p-6 sm:p-8 shadow-2xs flex flex-col lg:flex-row items-stretch gap-6 lg:gap-8">
+                  {/* Left Result Header */}
+                  <div className="lg:w-1/3 flex flex-col justify-center gap-1.5">
+                    <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-teal-700">
+                      THE RESULT
+                    </span>
+                    <h4 className="text-base sm:text-lg font-extrabold text-slate-900 tracking-tight leading-snug">
+                      More efficiency. Greater visibility. Real business impact.
+                    </h4>
+                  </div>
+
+                  {/* Vertical Divider Line */}
+                  <div className="hidden lg:block w-px bg-teal-200/70" />
+
+                  {/* 4 Proof Stats Columns */}
+                  <div className="lg:w-2/3 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
+                    <div className="flex flex-col gap-1.5">
+                      <div className="flex size-8 items-center justify-center rounded-xl bg-teal-100/70 text-teal-700">
+                        <Clock className="size-4" />
+                      </div>
+                      <h5 className="text-xs sm:text-sm font-bold text-slate-900 mt-1">Faster Bookings</h5>
+                      <p className="text-[11px] text-slate-600 leading-normal">Reduce turnaround time with automation.</p>
+                    </div>
+
+                    <div className="flex flex-col gap-1.5">
+                      <div className="flex size-8 items-center justify-center rounded-xl bg-teal-100/70 text-teal-700">
+                        <Eye className="size-4" />
+                      </div>
+                      <h5 className="text-xs sm:text-sm font-bold text-slate-900 mt-1">Real-Time Visibility</h5>
+                      <p className="text-[11px] text-slate-600 leading-normal">Track shipments and inventory in real time.</p>
+                    </div>
+
+                    <div className="flex flex-col gap-1.5">
+                      <div className="flex size-8 items-center justify-center rounded-xl bg-teal-100/70 text-teal-700">
+                        <ShieldCheck className="size-4" />
+                      </div>
+                      <h5 className="text-xs sm:text-sm font-bold text-slate-900 mt-1">Lower Operational Costs</h5>
+                      <p className="text-[11px] text-slate-600 leading-normal">Optimize routes, reduce delays and save costs.</p>
+                    </div>
+
+                    <div className="flex flex-col gap-1.5">
+                      <div className="flex size-8 items-center justify-center rounded-xl bg-teal-100/70 text-teal-700">
+                        <TrendingUp className="size-4" />
+                      </div>
+                      <h5 className="text-xs sm:text-sm font-bold text-slate-900 mt-1">Scalable Growth</h5>
+                      <p className="text-[11px] text-slate-600 leading-normal">Built to grow with your business needs.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })()}
         </Container>
       </Section>
 
@@ -485,8 +646,8 @@ export default function NextOrbitFreightPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {INTEGRATIONS.map((item, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className="rounded-2xl border border-slate-300 bg-white p-5 text-center flex flex-col justify-center items-center transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer"
               >
                 <div className="size-11 rounded-xl bg-slate-50 flex items-center justify-center mb-3">
