@@ -55,7 +55,7 @@ export function TheChallenge() {
           </div>
 
           {/* Right Side: Impact Flow Cards */}
-          <div className="rounded-3xl border border-white/10 bg-white/[0.02] p-6 sm:p-8 backdrop-blur-sm">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 sm:p-8 backdrop-blur-sm">
             <h3 className="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-6 text-center">
               The Impact on your business
             </h3>

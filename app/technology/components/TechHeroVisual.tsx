@@ -136,7 +136,7 @@ export function TechHeroVisual({ slug, title, techStack }: TechHeroVisualProps) 
   };
 
   return (
-    <div className="glass-panel rounded-3xl p-6 md:p-8 bento-card-animated border border-white/80 shadow-xl relative overflow-hidden">
+    <div className="glass-panel rounded-2xl p-6 md:p-8 bento-card-animated border border-white/80 shadow-xl relative overflow-hidden">
       {/* Live Badge Header */}
       <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-4">
         <span className="text-xs font-black uppercase tracking-wider text-[#006B7D]">Technology Showcase</span>

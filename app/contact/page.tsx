@@ -79,7 +79,7 @@ export default function ContactPage() {
           <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)] lg:gap-8">
             {/* ── Dark contact rail ── */}
             <Reveal from="right" className="lg:sticky lg:top-28">
-              <div className="relative isolate overflow-hidden rounded-3xl bg-brand-950 p-8 sm:p-9">
+              <div className="relative isolate overflow-hidden rounded-2xl bg-brand-950 p-8 sm:p-9">
                 <GridField tone="dark" className="opacity-60" />
                 <Grain />
                 <div
@@ -159,7 +159,7 @@ export default function ContactPage() {
             </StaggerItem>
 
             <StaggerItem from="up">
-              <div className="flex flex-col gap-5 rounded-3xl border border-hairline bg-white p-8">
+              <div className="flex flex-col gap-5 rounded-2xl border border-hairline bg-white p-8">
                 <span className="inline-flex size-11 items-center justify-center rounded-xl bg-brand-50 text-brand-500">
                   <Building2 aria-hidden className="size-5" strokeWidth={1.6} />
                 </span>
@@ -186,7 +186,7 @@ export default function ContactPage() {
           </Stagger>
 
           {/* Interactive Embedded Google Map Container */}
-          <div className="mt-12 relative h-[360px] sm:h-[440px] rounded-3xl border border-slate-200/90 bg-white p-2 shadow-lg shadow-teal-950/5 overflow-hidden">
+          <div className="mt-12 relative h-[360px] sm:h-[440px] rounded-2xl border border-slate-200/90 bg-white p-2 shadow-lg shadow-teal-950/5 overflow-hidden">
             <iframe
               title="NXTorbit Navi Mumbai Studio Map"
               src="https://maps.google.com/maps?q=Kamdhenu%2023%20West%2C%20TTC%20Industrial%20Area%2C%20MIDC%2C%20Pawne%2C%20Navi%20Mumbai%20400705&t=&z=15&ie=UTF8&iwloc=&output=embed"

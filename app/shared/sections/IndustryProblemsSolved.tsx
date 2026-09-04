@@ -423,7 +423,7 @@ export function IndustryProblemsSolved({
                     key={useCaseName}
                     from="right"
                     distance={40}
-                    className="group relative flex items-center justify-between gap-4 overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-5 sm:p-6 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-md"
+                    className="group relative flex items-center justify-between gap-4 overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-5 sm:p-6 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/5"
                   >
                     {/* Left Column: Icon Badge, Title, Description, Arrow */}
                     <div className="flex-1 min-w-0 flex flex-col justify-between h-full pr-1">

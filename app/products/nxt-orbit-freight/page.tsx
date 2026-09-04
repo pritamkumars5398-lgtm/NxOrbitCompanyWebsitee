@@ -304,21 +304,21 @@ export default function NextOrbitFreightPage() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-lg hover:shadow-teal-500/10 cursor-pointer">
+            <div className="rounded-xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/10 cursor-pointer">
               <span className="text-display-md text-teal-600 font-black">-40%</span>
               <h3 className="text-base font-bold text-slate-900 mt-2">Operational Overhead</h3>
               <p className="text-sm text-slate-600 mt-1 leading-relaxed">
                 Cut manual processing costs by automating repetitive data entry, email drafting, and customs filings.
               </p>
             </div>
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-lg hover:shadow-teal-500/10 cursor-pointer">
+            <div className="rounded-xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/10 cursor-pointer">
               <span className="text-display-md text-brand-600 font-black">2x Faster</span>
               <h3 className="text-base font-bold text-slate-900 mt-2">Quote Conversion</h3>
               <p className="text-sm text-slate-600 mt-1 leading-relaxed">
                 Move from inquiry to booked shipment in minutes with AI-assisted pricing and carrier allocation pipelines.
               </p>
             </div>
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-lg hover:shadow-teal-500/10 cursor-pointer">
+            <div className="rounded-xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/10 cursor-pointer">
               <span className="text-display-md text-slate-900 font-black">60%</span>
               <h3 className="text-base font-bold text-slate-900 mt-2">Cycle Time Reduction</h3>
               <p className="text-sm text-slate-600 mt-1 leading-relaxed">
@@ -535,7 +535,7 @@ export default function NextOrbitFreightPage() {
 
             {/* Right side interactive AI Chatbot Mockup */}
             <div className="relative">
-              <div className="relative overflow-hidden rounded-3xl border border-slate-300 bg-white flex flex-col h-[480px]">
+              <div className="relative overflow-hidden rounded-2xl border border-slate-300 bg-white flex flex-col h-[480px]">
                 {/* Header */}
                 <div className="bg-slate-950 text-white px-5 py-4 flex items-center justify-between">
                   <div className="flex items-center gap-2">
@@ -665,7 +665,7 @@ export default function NextOrbitFreightPage() {
                 {/* 2-Column Showcase Container */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
                   {/* Left Hero Image Card */}
-                  <div className="lg:col-span-5 relative rounded-3xl overflow-hidden min-h-[380px] sm:min-h-[420px] flex flex-col justify-end p-6 sm:p-8 shadow-md border border-slate-200/80 group">
+                  <div className="lg:col-span-5 relative rounded-2xl overflow-hidden min-h-[380px] sm:min-h-[420px] flex flex-col justify-end p-6 sm:p-8 shadow-md border border-slate-200/80 group">
                     <img
                       src={currentTab.heroImage}
                       alt={currentTab.heroTitle}
@@ -701,11 +701,11 @@ export default function NextOrbitFreightPage() {
                       <div
                         key={index}
                         onClick={handleRequestDemo}
-                        className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-5 sm:p-6 shadow-2xs transition-all duration-300 hover:-translate-y-1 hover:border-teal-300 hover:shadow-md cursor-pointer"
+                        className="group relative flex flex-col justify-between rounded-xl border border-slate-200/80 bg-white p-5 sm:p-6 shadow-2xs transition-all duration-300 hover:-translate-y-1 hover:border-teal-300 hover:shadow-md cursor-pointer"
                       >
                         <div>
                           {/* Circle Icon Badge */}
-                          <div className="flex size-10 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 border border-teal-100/80 transition-colors duration-300 group-hover:bg-teal-600 group-hover:text-white mb-4">
+                          <div className="flex size-10 items-center justify-center rounded-xl bg-teal-50 text-teal-600 border border-teal-100/80 transition-colors duration-300 group-hover:bg-teal-600 group-hover:text-white mb-4">
                             <CheckCircle2 className="size-5" />
                           </div>
 
@@ -731,7 +731,7 @@ export default function NextOrbitFreightPage() {
                 </div>
 
                 {/* Bottom Result Rail ("THE RESULT") */}
-                <div className="bg-[#f0f9f8]/90 border border-teal-200/80 rounded-2xl p-6 sm:p-8 shadow-2xs flex flex-col lg:flex-row items-stretch gap-6 lg:gap-8">
+                <div className="bg-[#f0f9f8]/90 border border-teal-200/80 rounded-xl p-6 sm:p-8 shadow-2xs flex flex-col lg:flex-row items-stretch gap-6 lg:gap-8">
                   {/* Left Result Header */}
                   <div className="lg:w-1/3 flex flex-col justify-center gap-1.5">
                     <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-teal-700">
@@ -816,11 +816,11 @@ export default function NextOrbitFreightPage() {
             {INTEGRATIONS.map((item) => (
               <div
                 key={item.id}
-                className="group relative bg-white rounded-2xl border border-slate-200/90 p-5 flex flex-col justify-between shadow-2xs transition-all duration-300 hover:-translate-y-1.5 hover:shadow-md hover:border-teal-300/80 cursor-pointer overflow-hidden min-h-[145px]"
+                className="group relative bg-white rounded-xl border border-slate-200/90 p-5 flex flex-col justify-between shadow-2xs transition-all duration-300 hover:-translate-y-1.5 hover:shadow-md hover:border-teal-300/80 cursor-pointer overflow-hidden min-h-[145px]"
               >
                 {/* Top-Left Teal Corner Accent Line */}
                 <div className="absolute top-0 left-0 w-7 h-7 pointer-events-none">
-                  <div className="w-full h-full border-t-2 border-l-2 border-teal-500 rounded-tl-2xl" />
+                  <div className="w-full h-full border-t-2 border-l-2 border-teal-500 rounded-tl-xl" />
                 </div>
 
                 <div>
@@ -863,9 +863,9 @@ export default function NextOrbitFreightPage() {
           </div>
 
           {/* 4 Feature Proof Cards Rail (Matching Image 2 Mockup) */}
-          <div className="bg-white rounded-2xl border border-slate-200/80 p-4 sm:p-6 shadow-2xs grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-start mb-6">
+          <div className="bg-white rounded-xl border border-slate-200/80 p-4 sm:p-6 shadow-2xs grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-start mb-6">
             <div className="flex items-start gap-3">
-              <div className="flex size-9 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 border border-teal-100">
+              <div className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-teal-600 border border-teal-100">
                 <Clock className="size-4" />
               </div>
               <div>
@@ -875,7 +875,7 @@ export default function NextOrbitFreightPage() {
             </div>
 
             <div className="flex items-start gap-3">
-              <div className="flex size-9 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 border border-teal-100">
+              <div className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-teal-600 border border-teal-100">
                 <ShieldCheck className="size-4" />
               </div>
               <div>
@@ -885,7 +885,7 @@ export default function NextOrbitFreightPage() {
             </div>
 
             <div className="flex items-start gap-3">
-              <div className="flex size-9 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 border border-teal-100">
+              <div className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-teal-600 border border-teal-100">
                 <TrendingUp className="size-4" />
               </div>
               <div>
@@ -895,7 +895,7 @@ export default function NextOrbitFreightPage() {
             </div>
 
             <div className="flex items-start gap-3">
-              <div className="flex size-9 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 border border-teal-100">
+              <div className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-teal-600 border border-teal-100">
                 <Users className="size-4" />
               </div>
               <div>
@@ -906,7 +906,7 @@ export default function NextOrbitFreightPage() {
           </div>
 
           {/* Bottom Dark Banner Rail (Matching Image 2 Mockup) */}
-          <div className="bg-[#04191d] rounded-2xl border border-teal-900/60 p-6 shadow-md flex flex-col md:flex-row items-center justify-between gap-6 text-white">
+          <div className="bg-[#04191d] rounded-xl border border-teal-900/60 p-6 shadow-md flex flex-col md:flex-row items-center justify-between gap-6 text-white">
             <div className="flex items-center gap-4">
               <div className="size-12 rounded-2xl bg-teal-500/20 text-teal-300 border border-teal-400/30 flex items-center justify-center shrink-0">
                 <Sparkles className="size-6" />

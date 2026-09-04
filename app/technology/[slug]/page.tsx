@@ -174,10 +174,10 @@ export default async function TechnologyPage({
 
               {/* Futuristic Glassmorphism Tech Card */}
               <div
-                className={`relative flex flex-col items-center justify-center p-8 sm:p-10 rounded-[2.5rem] border backdrop-blur-md aspect-square w-full max-w-[380px] mx-auto shadow-2xl transition-all duration-500 group-hover/hero:-translate-y-1 ${asset.glowClass}`}
+                className={`relative flex flex-col items-center justify-center p-8 sm:p-10 rounded-2xl border backdrop-blur-md aspect-square w-full max-w-[380px] mx-auto shadow-2xl transition-all duration-500 group-hover/hero:-translate-y-1 ${asset.glowClass}`}
               >
                 {/* Tech Logo */}
-                <div className="relative flex items-center justify-center p-6 bg-brand-950/40 rounded-3xl border border-white/5 shadow-inner">
+                <div className="relative flex items-center justify-center p-6 bg-brand-950/40 rounded-2xl border border-white/5 shadow-inner">
                   <img
                     src={asset.logo}
                     alt={data.title}

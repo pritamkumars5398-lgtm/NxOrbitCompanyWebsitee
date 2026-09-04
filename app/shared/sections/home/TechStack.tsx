@@ -209,7 +209,7 @@ export function TechStack() {
             {activeCategory.technologies.map((tech) => (
               <div
                 key={tech.name}
-                className="group relative flex flex-col justify-between rounded-3xl border border-slate-200/80 bg-white p-7 shadow-sm transition-all duration-300 hover:border-[#00d2c4]/50 hover:shadow-xl hover:shadow-cyan-500/5 hover:-translate-y-1"
+                className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-7 shadow-sm transition-all duration-300 hover:border-[#00d2c4]/50 hover:shadow-xl hover:shadow-cyan-500/5 hover:-translate-y-1"
               >
                 <div>
                   <div className="flex items-center justify-between gap-3 mb-4">

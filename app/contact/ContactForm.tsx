@@ -63,7 +63,7 @@ export function ContactForm() {
         exit={{ opacity: 0, scale: 0.95 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         role="status"
-        className="relative overflow-hidden flex min-h-[32rem] flex-col items-center justify-center gap-6 rounded-3xl border border-teal-200/80 bg-white p-8 sm:p-12 text-center shadow-2xl shadow-teal-950/10"
+        className="relative overflow-hidden flex min-h-[32rem] flex-col items-center justify-center gap-6 rounded-2xl border border-teal-200/80 bg-white p-8 sm:p-12 text-center shadow-2xl shadow-teal-950/10"
       >
         {/* Top ambient color glow */}
         <div className="absolute top-0 inset-x-0 h-2 bg-gradient-to-r from-teal-500 via-emerald-400 to-teal-600" />
@@ -142,7 +142,7 @@ export function ContactForm() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: EASE.outExpo }}
       onSubmit={handleSubmit}
-      className="relative overflow-hidden flex flex-col gap-6 rounded-3xl border border-slate-200/90 bg-white/95 backdrop-blur-xl p-7 sm:p-10 shadow-2xl shadow-teal-950/5 transition-all duration-300"
+      className="relative overflow-hidden flex flex-col gap-6 rounded-2xl border border-slate-200/90 bg-white/95 backdrop-blur-xl p-7 sm:p-10 shadow-2xl shadow-teal-950/5 transition-all duration-300"
     >
       {/* Top Ambient Highlight Gradient Bar */}
       <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-teal-500 via-cyan-400 to-emerald-500" />

@@ -49,7 +49,7 @@ export function Card({
   const body = (
     <div
       className={cn(
-        "relative isolate overflow-hidden rounded-2xl",
+        "relative isolate overflow-hidden rounded-xl",
         TONES[tone],
         PADDING[padding],
         interactive && "hover-lift",
@@ -151,7 +151,7 @@ export function FeatureCard({
   if (!href) return <div className="group h-full">{content}</div>;
 
   return (
-    <Link href={href} className="group block h-full rounded-2xl">
+    <Link href={href} className="group block h-full rounded-xl">
       {content}
     </Link>
   );

@@ -20,7 +20,7 @@ export function Industries() {
     id: industry.id,
     label: industry.label,
     content: (
-      <div className="grid gap-10 rounded-3xl border border-hairline bg-surface p-8 sm:p-10 lg:grid-cols-[1.35fr_1fr] lg:gap-14">
+      <div className="grid gap-10 rounded-2xl border border-hairline bg-surface p-8 sm:p-10 lg:grid-cols-[1.35fr_1fr] lg:gap-14">
         <div className="flex flex-col gap-5">
           <h3 className="text-display-sm text-ink-900 sm:text-display-md">{industry.headline}</h3>
           <p className="max-w-xl text-lead text-ink-600">{industry.description}</p>

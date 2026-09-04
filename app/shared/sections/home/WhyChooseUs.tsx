@@ -183,7 +183,7 @@ export function WhyChooseUs() {
                 <img
                   src="/assets/why_choose_us_woman.avif"
                   alt="Young businesswoman smiling warmly"
-                  className="w-full h-auto object-cover rounded-3xl transition-transform duration-700 hover:scale-[1.02] shadow-xl"
+                  className="w-full h-auto object-cover rounded-2xl transition-transform duration-700 hover:scale-[1.02] shadow-xl"
                   onError={(e) => {
                     const target = e.currentTarget;
                     if (!target.dataset.triedJpg) {

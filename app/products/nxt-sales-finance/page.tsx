@@ -6,7 +6,7 @@ import {
   Terminal, Sparkles, Code, Cpu, DatabaseZap, Users, FileText, CheckCircle2,
   Lock, Globe, Cloud, Key, Check, Layers, BarChart3, Workflow, Landmark, Scale,
   Eye, Clock, Activity, Bell, Box, Gauge, TrendingUp, DollarSign, Target,
-  LayoutGrid, Package, Settings, ChevronDown, Truck
+  LayoutGrid, Package, Settings, ChevronDown, Truck, XCircle, Zap
 } from "lucide-react";
 import { cn } from "@/app/core/lib/cn";
 import { Breadcrumb } from "@/app/shared/ui/Breadcrumb";
@@ -416,36 +416,108 @@ export default function NextOrbitSalesFinancePage() {
       </Section>
 
       {/* ── 3. The Enterprise Advantage: Why Purpose-Built Logistics Accounting? ── */}
-      <Section tone="white" spacing="lg">
+      <Section tone="white" spacing="lg" className="relative overflow-hidden py-16 sm:py-24">
         <Container>
-          <div className="text-center max-w-3xl mx-auto mb-12">
+          <div className="text-center max-w-3xl mx-auto mb-14">
             <h2 className="text-display-sm sm:text-display-md text-slate-900 font-extrabold tracking-tight">
               The Enterprise Advantage: Why Purpose-Built Logistics Accounting?
             </h2>
-            <p className="text-sm text-slate-600 mt-2">
+            <p className="text-sm sm:text-base text-slate-600 mt-3 max-w-2xl mx-auto leading-relaxed">
               Generic accounting tools like QuickBooks or off-the-shelf software were never built to handle job-costing, carrier debit notes, or multi-branch freight reconciliation. NXT bridges the gap between sales activity and financial accounting.
             </p>
           </div>
 
-          <div className="overflow-x-auto rounded-2xl border border-slate-300 bg-white">
-            <table className="w-full border-collapse text-left text-sm">
-              <thead className="bg-slate-50 border-b border-slate-300">
-                <tr>
-                  <th className="p-4 font-bold text-slate-900">Financial Capability</th>
-                  <th className="p-4 font-bold text-slate-500">Traditional Generic Accounting (The Bottleneck)</th>
-                  <th className="p-4 font-bold text-teal-600">NXT Sales & Pure Accounting (The Enterprise Way)</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100">
-                {ADVANTAGE_ROWS.map((row, idx) => (
-                  <tr key={idx} className="hover:bg-slate-50/50 transition-colors">
-                    <td className="p-4 font-bold text-slate-950">{row.capability}</td>
-                    <td className="p-4 text-slate-500">{row.oldWay}</td>
-                    <td className="p-4 font-medium text-slate-800 bg-teal-50/10">{row.newWay}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          {/* 2-Column Split Architectural Comparison */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+            {/* Left Card: Traditional Generic Accounting */}
+            <div className="relative rounded-2xl border border-slate-200/90 bg-slate-50/70 p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg hover:shadow-slate-200/60">
+              <div>
+                {/* Column Header */}
+                <div className="flex items-center justify-between pb-6 mb-6 border-b border-slate-200/80">
+                  <div>
+                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-400">
+                      GENERIC SOFTWARE
+                    </span>
+                    <h3 className="text-lg font-extrabold text-slate-800 mt-0.5">
+                      Traditional Accounting Tools
+                    </h3>
+                  </div>
+                  <span className="inline-flex items-center gap-1.5 bg-slate-200/70 text-slate-600 px-3 py-1 rounded-full text-xs font-semibold border border-slate-300/50">
+                    <XCircle className="size-3.5 text-slate-500" /> Disconnected
+                  </span>
+                </div>
+
+                {/* Feature Comparison Items */}
+                <div className="space-y-4">
+                  {ADVANTAGE_ROWS.map((row, idx) => (
+                    <div
+                      key={idx}
+                      className="group/item bg-white rounded-xl p-4 border border-slate-200/80 shadow-2xs transition-all duration-300 hover:-translate-y-0.5 hover:border-rose-200 hover:shadow-sm"
+                    >
+                      <div className="flex items-center justify-between gap-2 mb-1.5">
+                        <span className="text-xs font-bold text-slate-900 flex items-center gap-2 group-hover/item:text-rose-950 transition-colors">
+                          <span className="size-1.5 rounded-full bg-slate-400 group-hover/item:bg-rose-500 transition-colors" />
+                          {row.capability}
+                        </span>
+                        <span className="text-[10px] font-mono text-rose-600 bg-rose-50 border border-rose-200/70 px-2 py-0.5 rounded-md font-semibold transition-colors group-hover/item:bg-rose-100 group-hover/item:border-rose-300">
+                          Manual Re-Entry
+                        </span>
+                      </div>
+                      <p className="text-xs text-slate-500 leading-relaxed pl-3.5 group-hover/item:text-slate-600 transition-colors">
+                        {row.oldWay}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Right Card: NXT Sales & Pure Accounting */}
+            <div className="relative overflow-hidden rounded-2xl border border-teal-500/30 bg-[#041720] p-6 sm:p-8 text-white flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-teal-400/50 group">
+              {/* Subtle Ambient Background Gradient */}
+              <div className="absolute top-0 right-0 -mt-12 -mr-12 size-64 rounded-full bg-teal-500/10 blur-3xl pointer-events-none" />
+              <div className="absolute bottom-0 left-0 -mb-12 -ml-12 size-64 rounded-full bg-brand-500/10 blur-3xl pointer-events-none" />
+
+              <div className="relative z-10">
+                {/* Column Header */}
+                <div className="flex items-center justify-between pb-6 mb-6 border-b border-white/10">
+                  <div>
+                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-teal-400">
+                      NEXT-GEN OS
+                    </span>
+                    <h3 className="text-lg font-extrabold text-white mt-0.5">
+                      NXT Autonomous Financial OS
+                    </h3>
+                  </div>
+                  <span className="inline-flex items-center gap-1.5 bg-teal-500/20 text-teal-300 border border-teal-500/40 px-3 py-1 rounded-full text-xs font-semibold">
+                    <span className="size-2 rounded-full bg-emerald-400 animate-pulse" /> Real-Time Sync
+                  </span>
+                </div>
+
+                {/* Feature Comparison Items */}
+                <div className="space-y-4">
+                  {ADVANTAGE_ROWS.map((row, idx) => (
+                    <div
+                      key={idx}
+                      className="group/item bg-white/[0.06] rounded-xl p-4 border border-white/10 backdrop-blur-xs transition-all duration-300 hover:-translate-y-0.5 hover:border-teal-400/50 hover:bg-white/[0.1]"
+                    >
+                      <div className="flex items-center justify-between gap-2 mb-1.5">
+                        <span className="text-xs font-bold text-white flex items-center gap-2 group-hover/item:text-teal-300 transition-colors">
+                          <CheckCircle2 className="size-3.5 text-teal-400 group-hover/item:scale-110 transition-transform" />
+                          {row.capability}
+                        </span>
+                        <span className="text-[10px] font-mono text-teal-300 bg-teal-950/80 border border-teal-500/30 px-2 py-0.5 rounded-md font-semibold transition-colors group-hover/item:bg-teal-900 group-hover/item:border-teal-400/60">
+                          Automated
+                        </span>
+                      </div>
+                      <p className="text-xs text-slate-300 leading-relaxed pl-5 group-hover/item:text-white transition-colors">
+                        {row.newWay}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </Container>
       </Section>
@@ -565,7 +637,7 @@ export default function NextOrbitSalesFinancePage() {
                 {/* Active Pillar Showcase Card & Dynamic Dashboard UI Mockup */}
                 <div className="space-y-6">
                   {/* Main Showcase Container */}
-                  <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-md">
+                  <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/80 shadow-md">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
                       {/* Left Sub-Column: Feature Info & Points */}
                       <div className="lg:col-span-5 flex flex-col justify-between gap-6">
@@ -778,7 +850,7 @@ export default function NextOrbitSalesFinancePage() {
             return (
               <div className="space-y-6">
                 {/* Main Showcase Card Grid */}
-                <div className="bg-[#f8fafc] rounded-3xl p-5 sm:p-6 border border-slate-200/80 shadow-md">
+                <div className="bg-[#f8fafc] rounded-2xl p-5 sm:p-6 border border-slate-200/80 shadow-md">
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
                     
                     {/* 1. Left Dark Hero Banner Card */}
@@ -995,7 +1067,7 @@ export default function NextOrbitSalesFinancePage() {
 
             {/* Right side interactive AI Chatbot Mockup */}
             <div className="relative">
-              <div className="relative overflow-hidden rounded-3xl border border-slate-300 bg-white flex flex-col h-[480px]">
+              <div className="relative overflow-hidden rounded-2xl border border-slate-300 bg-white flex flex-col h-[480px]">
                 {/* Header */}
                 <div className="bg-slate-950 text-white px-5 py-4 flex items-center justify-between">
                   <div className="flex items-center gap-2">
@@ -1056,7 +1128,7 @@ export default function NextOrbitSalesFinancePage() {
 
           <div className="grid gap-8 md:grid-cols-3">
             {/* Universal Financial Connectors */}
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/10 cursor-pointer">
               <span className="flex size-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600 mb-4">
                 <Database className="size-5" />
               </span>
@@ -1074,7 +1146,7 @@ export default function NextOrbitSalesFinancePage() {
             </div>
 
             {/* Banking & Payment Gateways */}
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-md hover:shadow-teal-500/10 cursor-pointer">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/10 cursor-pointer">
               <span className="flex size-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600 mb-4">
                 <Landmark className="size-5" />
               </span>
@@ -1085,7 +1157,7 @@ export default function NextOrbitSalesFinancePage() {
             </div>
 
             {/* Audit-Ready Compliance */}
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-md hover:shadow-teal-500/10 cursor-pointer">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/10 cursor-pointer">
               <span className="flex size-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600 mb-4">
                 <ShieldCheck className="size-5" />
               </span>

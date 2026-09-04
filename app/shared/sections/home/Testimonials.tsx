@@ -92,7 +92,7 @@ export function Testimonials() {
                 animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                 exit={{ opacity: 0, x: direction * -40, filter: "blur(6px)" }}
                 transition={{ duration: 0.5, ease: EASE.outExpo }}
-                className="relative flex flex-col gap-5 rounded-3xl border border-hairline bg-surface-muted p-6 sm:p-8"
+                className="relative flex flex-col gap-5 rounded-2xl border border-hairline bg-surface-muted p-6 sm:p-8"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
               >

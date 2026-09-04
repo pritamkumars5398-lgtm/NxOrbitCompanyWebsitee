@@ -405,7 +405,7 @@ export default function NextOrbitWmsPage() {
                 {/* Active Pillar Showcase Card & Dynamic WMS Dashboard UI Mockup */}
                 <div className="space-y-6">
                 {/* Main Showcase Container */}
-                <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-md">
+                <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/80 shadow-md">
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
                     {/* Left Sub-Column: Feature Info & Points */}
                     <div className="lg:col-span-5 flex flex-col justify-between gap-6">
@@ -622,7 +622,7 @@ export default function NextOrbitWmsPage() {
 
             {/* Right side interactive AI Chatbot Mockup */}
             <div className="relative">
-              <div className="relative overflow-hidden rounded-3xl border border-slate-300 bg-white flex flex-col h-[480px]">
+              <div className="relative overflow-hidden rounded-2xl border border-slate-300 bg-white flex flex-col h-[480px]">
                 {/* Header */}
                 <div className="bg-slate-950 text-white px-5 py-4 flex items-center justify-between">
                   <div className="flex items-center gap-2">

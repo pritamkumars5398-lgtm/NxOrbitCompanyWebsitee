@@ -139,7 +139,7 @@ export default function CaseStudiesPage() {
                 {/* Metric slab */}
                 <Parallax distance={22}>
                   <Reveal from={flipped ? "right" : "left"} scale={0.97}>
-                    <div className="relative isolate overflow-hidden rounded-3xl bg-brand-900 p-8 sm:p-10">
+                    <div className="relative isolate overflow-hidden rounded-2xl bg-brand-900 p-8 sm:p-10">
                       <GridField tone="dark" className="opacity-50" />
                       <div
                         aria-hidden
