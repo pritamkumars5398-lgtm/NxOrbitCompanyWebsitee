@@ -947,14 +947,36 @@ export default function NextOrbitFreightPage() {
             {SECURITY_POINTS.map((point, index) => {
               const Icon = point.icon;
               return (
-                <div key={index} className="rounded-2xl border border-slate-300 bg-white p-6 flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-600 cursor-pointer">
-                  <span className="flex size-10 items-center justify-center rounded-xl bg-slate-50 text-slate-600 mb-4 self-start">
-                    <Icon className="size-5" />
-                  </span>
-                  <h3 className="text-sm font-bold text-slate-900">{point.title}</h3>
-                  <p className="text-xs text-slate-600 mt-2 leading-relaxed">
-                    {point.desc}
-                  </p>
+                <div
+                  key={index}
+                  onClick={handleRequestDemo}
+                  className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-6 shadow-2xs transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-300 hover:shadow-lg hover:shadow-teal-500/5 cursor-pointer overflow-hidden"
+                >
+                  {/* Top Subtle Teal Gradient Accent Line */}
+                  <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-teal-500 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                  <div>
+                    {/* Icon Badge */}
+                    <div className="flex size-11 items-center justify-center rounded-xl bg-teal-50 text-teal-600 border border-teal-100/80 mb-4 transition-all duration-300 group-hover:bg-teal-600 group-hover:text-white group-hover:scale-105">
+                      <Icon className="size-5" />
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-base font-extrabold text-slate-900 tracking-tight leading-snug group-hover:text-teal-700 transition-colors">
+                      {point.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-xs text-slate-600 mt-2 leading-relaxed font-normal">
+                      {point.desc}
+                    </p>
+                  </div>
+
+                  {/* Bottom Learn More Indicator */}
+                  <div className="mt-5 flex items-center gap-1.5 text-xs font-bold text-teal-600 transition-all duration-300 group-hover:translate-x-1">
+                    <span>Explore governance</span>
+                    <ArrowRight className="size-3.5" />
+                  </div>
                 </div>
               );
             })}
