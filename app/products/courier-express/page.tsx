@@ -6,7 +6,7 @@ import {
   Terminal, Sparkles, Code, Cpu, DatabaseZap, Users, FileText, CheckCircle2,
   Lock, Globe, Cloud, Key, Check, Layers, BarChart3, Workflow, Truck, AlertTriangle,
   Eye, Clock, Activity, Bell, Box, Gauge, TrendingUp, DollarSign, Target,
-  LayoutGrid, Package, Settings, ChevronDown, XCircle, Zap
+  LayoutGrid, Package, Settings, ChevronDown, XCircle, Zap, Building2, Bot, X, MessageSquare
 } from "lucide-react";
 import { cn } from "@/app/core/lib/cn";
 import { Breadcrumb } from "@/app/shared/ui/Breadcrumb";
@@ -325,47 +325,55 @@ export default function CourierExpressPage() {
             </p>
           </div>
 
-          {/* 2-Column Split Architectural Comparison */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+          {/* 2-Column Split Architectural Comparison with Side-by-Side Visual Graphics */}
+          <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+            {/* Center Floating VS Badge for Desktop */}
+            <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 size-9 rounded-full bg-slate-950 border-2 border-teal-400 text-white font-extrabold text-xs items-center justify-center shadow-xl shadow-teal-500/30">
+              VS
+            </div>
+
             {/* Left Card: Legacy Shipping Aggregators (The Old Way) */}
             <div className="relative rounded-2xl border border-slate-200/90 bg-slate-50/70 p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg hover:shadow-slate-200/60">
               <div>
                 {/* Column Header */}
                 <div className="flex items-center justify-between pb-6 mb-6 border-b border-slate-200/80">
                   <div>
-                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-400">
-                      THE OLD WAY
-                    </span>
-                    <h3 className="text-lg font-extrabold text-slate-800 mt-0.5">
-                      Legacy Shipping Aggregators
+                    <h3 className="text-sm font-extrabold tracking-wider text-slate-800 uppercase">
+                      LEGACY SHIPPING AGGREGATORS
                     </h3>
                   </div>
-                  <span className="inline-flex items-center gap-1.5 bg-slate-200/70 text-slate-600 px-3 py-1 rounded-full text-xs font-semibold border border-slate-300/50">
-                    <XCircle className="size-3.5 text-slate-500" /> Manual & Static
+                  <span className="inline-flex items-center gap-1 bg-slate-200/70 text-slate-600 px-3 py-1 rounded-full text-[11px] font-mono font-bold uppercase tracking-wider">
+                    THE OLD WAY
                   </span>
                 </div>
 
                 {/* Feature Comparison Items */}
                 <div className="space-y-4">
-                  {SHIFT_ROWS.map((row, idx) => (
-                    <div
-                      key={idx}
-                      className="group/item bg-white rounded-xl p-4 border border-slate-200/80 shadow-2xs transition-all duration-300 hover:-translate-y-0.5 hover:border-rose-200 hover:shadow-sm"
-                    >
-                      <div className="flex items-center justify-between gap-2 mb-1.5">
-                        <span className="text-xs font-bold text-slate-900 flex items-center gap-2 group-hover/item:text-rose-950 transition-colors">
-                          <span className="size-1.5 rounded-full bg-slate-400 group-hover/item:bg-rose-500 transition-colors" />
-                          {row.dimension}
-                        </span>
-                        <span className="text-[10px] font-mono text-rose-600 bg-rose-50 border border-rose-200/70 px-2 py-0.5 rounded-md font-semibold transition-colors group-hover/item:bg-rose-100 group-hover/item:border-rose-300">
-                          High Friction
+                  {SHIFT_ROWS.map((row, idx) => {
+                    const LeftIcon = [Truck, Shield, MessageSquare, Building2][idx] || Truck;
+                    return (
+                      <div
+                        key={idx}
+                        className="group/item bg-white rounded-xl p-4 border border-slate-200/80 shadow-2xs transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-sm flex items-center justify-between gap-3"
+                      >
+                        {/* Left Icon + Text Content */}
+                        <div className="flex items-start gap-3 flex-1 min-w-0">
+                          <div className="size-9 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 shrink-0 mt-0.5 group-hover/item:bg-rose-50 group-hover/item:text-rose-600 transition-colors">
+                            <LeftIcon className="size-4 stroke-[1.75]" />
+                          </div>
+                          <div className="flex-1 min-w-0 pr-1">
+                            <h4 className="text-xs font-bold text-slate-900 leading-tight">{row.dimension}</h4>
+                            <p className="text-[11px] text-slate-500 leading-relaxed mt-0.5">{row.oldWay}</p>
+                          </div>
+                        </div>
+
+                        {/* Red X Badge Tag */}
+                        <span className="size-5 rounded-full bg-rose-100 text-rose-500 flex items-center justify-center shrink-0">
+                          <X className="size-3 stroke-[2.5]" />
                         </span>
                       </div>
-                      <p className="text-xs text-slate-500 leading-relaxed pl-3.5 group-hover/item:text-slate-600 transition-colors">
-                        {row.oldWay}
-                      </p>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             </div>
@@ -380,15 +388,12 @@ export default function CourierExpressPage() {
                 {/* Column Header */}
                 <div className="flex items-center justify-between pb-6 mb-6 border-b border-white/10">
                   <div>
-                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-teal-400">
-                      NEXT-GEN OS
-                    </span>
-                    <h3 className="text-lg font-extrabold text-white mt-0.5">
-                      Courier Express (AI-Native)
+                    <h3 className="text-sm font-extrabold tracking-wider text-white uppercase">
+                      COURIER EXPRESS
                     </h3>
                   </div>
-                  <span className="inline-flex items-center gap-1.5 bg-teal-500/20 text-teal-300 border border-teal-500/40 px-3 py-1 rounded-full text-xs font-semibold">
-                    <span className="size-2 rounded-full bg-emerald-400 animate-pulse" /> Autonomous
+                  <span className="inline-flex items-center gap-1.5 bg-teal-500/20 text-teal-300 border border-teal-500/40 px-3 py-1 rounded-full text-[11px] font-mono font-bold uppercase tracking-wider">
+                    THE AI-NATIVE WAY
                   </span>
                 </div>
 
@@ -397,20 +402,23 @@ export default function CourierExpressPage() {
                   {SHIFT_ROWS.map((row, idx) => (
                     <div
                       key={idx}
-                      className="group/item bg-white/[0.06] rounded-xl p-4 border border-white/10 backdrop-blur-xs transition-all duration-300 hover:-translate-y-0.5 hover:border-teal-400/50 hover:bg-white/[0.1]"
+                      className="group/item bg-white/[0.06] rounded-xl p-4 border border-white/10 backdrop-blur-xs transition-all duration-300 hover:-translate-y-0.5 hover:border-teal-400/50 hover:bg-white/[0.1] flex items-center justify-between gap-3"
                     >
-                      <div className="flex items-center justify-between gap-2 mb-1.5">
-                        <span className="text-xs font-bold text-white flex items-center gap-2 group-hover/item:text-teal-300 transition-colors">
-                          <CheckCircle2 className="size-3.5 text-teal-400 group-hover/item:scale-110 transition-transform" />
-                          {row.dimension}
-                        </span>
-                        <span className="text-[10px] font-mono text-teal-300 bg-teal-950/80 border border-teal-500/30 px-2 py-0.5 rounded-md font-semibold transition-colors group-hover/item:bg-teal-900 group-hover/item:border-teal-400/60">
-                          AI-Automated
-                        </span>
+                      {/* Left Checkmark Icon + Text Content */}
+                      <div className="flex items-start gap-3 flex-1 min-w-0">
+                        <div className="size-7 rounded-full bg-emerald-500/20 border border-emerald-400/50 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 group-hover/item:scale-110 transition-transform">
+                          <Check className="size-3.5 stroke-[2.5]" />
+                        </div>
+                        <div className="flex-1 min-w-0 pr-1">
+                          <h4 className="text-xs font-bold text-white leading-tight">{row.dimension}</h4>
+                          <p className="text-[11px] text-slate-300 leading-relaxed mt-0.5">{row.newWay}</p>
+                        </div>
                       </div>
-                      <p className="text-xs text-slate-300 leading-relaxed pl-5 group-hover/item:text-white transition-colors">
-                        {row.newWay}
-                      </p>
+
+                      {/* Green Check Badge Tag */}
+                      <span className="size-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                        <Check className="size-3 stroke-[2.5]" />
+                      </span>
                     </div>
                   ))}
                 </div>

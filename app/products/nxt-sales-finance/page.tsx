@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { 
   ArrowRight, Shield, ShieldCheck, Database, Navigation, MessageSquarePlus, 
   Terminal, Sparkles, Code, Cpu, DatabaseZap, Users, FileText, CheckCircle2,
-  Lock, Globe, Cloud, Key, Check, Layers, BarChart3, Workflow, Landmark, Scale,
+  Lock, Globe, Cloud, Key, Check, X, Layers, BarChart3, Workflow, Landmark, Scale,
   Eye, Clock, Activity, Bell, Box, Gauge, TrendingUp, DollarSign, Target,
   LayoutGrid, Package, Settings, ChevronDown, Truck, XCircle, Zap
 } from "lucide-react";
@@ -427,8 +427,13 @@ export default function NextOrbitSalesFinancePage() {
             </p>
           </div>
 
-          {/* 2-Column Split Architectural Comparison */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+          {/* 2-Column Split Architectural Comparison with Side-by-Side Visual Graphics */}
+          <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+            {/* Center Floating VS Badge for Desktop */}
+            <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 size-10 rounded-full bg-slate-950 border-2 border-teal-400 text-white font-extrabold text-xs items-center justify-center shadow-xl shadow-teal-500/30">
+              VS
+            </div>
+
             {/* Left Card: Traditional Generic Accounting */}
             <div className="relative rounded-2xl border border-slate-200/90 bg-slate-50/70 p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg hover:shadow-slate-200/60">
               <div>
@@ -447,25 +452,32 @@ export default function NextOrbitSalesFinancePage() {
                   </span>
                 </div>
 
-                {/* Feature Comparison Items */}
+                {/* Feature Comparison Items with Integrated Mini Visual Graphics */}
                 <div className="space-y-4">
                   {ADVANTAGE_ROWS.map((row, idx) => (
                     <div
                       key={idx}
-                      className="group/item bg-white rounded-xl p-4 border border-slate-200/80 shadow-2xs transition-all duration-300 hover:-translate-y-0.5 hover:border-rose-200 hover:shadow-sm"
+                      className="group/item bg-white rounded-xl p-4 border border-slate-200/80 shadow-2xs transition-all duration-300 hover:-translate-y-0.5 hover:border-rose-200 hover:shadow-sm flex items-center justify-between gap-4"
                     >
-                      <div className="flex items-center justify-between gap-2 mb-1.5">
-                        <span className="text-xs font-bold text-slate-900 flex items-center gap-2 group-hover/item:text-rose-950 transition-colors">
-                          <span className="size-1.5 rounded-full bg-slate-400 group-hover/item:bg-rose-500 transition-colors" />
-                          {row.capability}
-                        </span>
-                        <span className="text-[10px] font-mono text-rose-600 bg-rose-50 border border-rose-200/70 px-2 py-0.5 rounded-md font-semibold transition-colors group-hover/item:bg-rose-100 group-hover/item:border-rose-300">
-                          Manual Re-Entry
-                        </span>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center justify-between gap-2 mb-1.5">
+                          <span className="text-xs font-bold text-slate-900 flex items-center gap-2 group-hover/item:text-rose-950 transition-colors">
+                            <span className="size-1.5 rounded-full bg-slate-400 group-hover/item:bg-rose-500 transition-colors" />
+                            {row.capability}
+                          </span>
+                          <span className="text-[10px] font-mono text-rose-600 bg-rose-50 border border-rose-200/70 px-2 py-0.5 rounded-md font-semibold transition-colors group-hover/item:bg-rose-100 group-hover/item:border-rose-300">
+                            Manual Re-Entry
+                          </span>
+                        </div>
+                        <p className="text-xs text-slate-500 leading-relaxed pl-3.5 group-hover/item:text-slate-600 transition-colors">
+                          {row.oldWay}
+                        </p>
                       </div>
-                      <p className="text-xs text-slate-500 leading-relaxed pl-3.5 group-hover/item:text-slate-600 transition-colors">
-                        {row.oldWay}
-                      </p>
+
+                      {/* Red X Badge Tag */}
+                      <span className="size-5 rounded-full bg-rose-100 text-rose-500 flex items-center justify-center shrink-0">
+                        <X className="size-3 stroke-[2.5]" />
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -499,20 +511,27 @@ export default function NextOrbitSalesFinancePage() {
                   {ADVANTAGE_ROWS.map((row, idx) => (
                     <div
                       key={idx}
-                      className="group/item bg-white/[0.06] rounded-xl p-4 border border-white/10 backdrop-blur-xs transition-all duration-300 hover:-translate-y-0.5 hover:border-teal-400/50 hover:bg-white/[0.1]"
+                      className="group/item bg-white/[0.06] rounded-xl p-4 border border-white/10 backdrop-blur-xs transition-all duration-300 hover:-translate-y-0.5 hover:border-teal-400/50 hover:bg-white/[0.1] flex items-center justify-between gap-4"
                     >
-                      <div className="flex items-center justify-between gap-2 mb-1.5">
-                        <span className="text-xs font-bold text-white flex items-center gap-2 group-hover/item:text-teal-300 transition-colors">
-                          <CheckCircle2 className="size-3.5 text-teal-400 group-hover/item:scale-110 transition-transform" />
-                          {row.capability}
-                        </span>
-                        <span className="text-[10px] font-mono text-teal-300 bg-teal-950/80 border border-teal-500/30 px-2 py-0.5 rounded-md font-semibold transition-colors group-hover/item:bg-teal-900 group-hover/item:border-teal-400/60">
-                          Automated
-                        </span>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center justify-between gap-2 mb-1.5">
+                          <span className="text-xs font-bold text-white flex items-center gap-2 group-hover/item:text-teal-300 transition-colors">
+                            <CheckCircle2 className="size-3.5 text-teal-400 group-hover/item:scale-110 transition-transform" />
+                            {row.capability}
+                          </span>
+                          <span className="text-[10px] font-mono text-teal-300 bg-teal-950/80 border border-teal-500/30 px-2 py-0.5 rounded-md font-semibold transition-colors group-hover/item:bg-teal-900 group-hover/item:border-teal-400/60">
+                            Automated
+                          </span>
+                        </div>
+                        <p className="text-xs text-slate-300 leading-relaxed pl-5 group-hover/item:text-white transition-colors">
+                          {row.newWay}
+                        </p>
                       </div>
-                      <p className="text-xs text-slate-300 leading-relaxed pl-5 group-hover/item:text-white transition-colors">
-                        {row.newWay}
-                      </p>
+
+                      {/* Green Check Badge Tag */}
+                      <span className="size-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                        <Check className="size-3 stroke-[2.5]" />
+                      </span>
                     </div>
                   ))}
                 </div>
