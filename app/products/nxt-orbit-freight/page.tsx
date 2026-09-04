@@ -330,56 +330,154 @@ export default function NextOrbitFreightPage() {
       </Section>
 
       {/* ── 3. Strategic Transformation (Core Pillars) ── */}
-      <Section tone="white" spacing="lg">
-        <Container>
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <Eyebrow tone="brand">STRATEGIC TRANSFORMATION</Eyebrow>
-            <h2 className="text-display-sm sm:text-display-md text-slate-900 font-extrabold tracking-tight mt-3">
-              Turn Supply Chain Complexity into Competitive Advantage
+      <Section tone="white" spacing="md" className="relative isolate overflow-hidden bg-white py-12 lg:py-16">
+        {/* Abstract Flowing Cyan Wave Background Graphic (Matches Image 1) */}
+        <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
+          {/* Ambient Glows */}
+          <div className="absolute bottom-0 left-1/4 w-[650px] h-[300px] rounded-full bg-teal-300/15 blur-[90px]" />
+          <div className="absolute top-1/4 right-1/4 w-[550px] h-[250px] rounded-full bg-cyan-300/10 blur-[80px]" />
+
+          <svg
+            className="absolute inset-0 size-full"
+            viewBox="0 0 1440 440"
+            fill="none"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              {/* Wave Fill Gradients */}
+              <linearGradient id="waveGrad1" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#006B7D" stopOpacity="0.15" />
+                <stop offset="45%" stopColor="#00A896" stopOpacity="0.18" />
+                <stop offset="80%" stopColor="#4DD0E1" stopOpacity="0.08" />
+                <stop offset="100%" stopColor="#E0F7FA" stopOpacity="0.0" />
+              </linearGradient>
+
+              <linearGradient id="waveGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#4DD0E1" stopOpacity="0.2" />
+                <stop offset="50%" stopColor="#00A896" stopOpacity="0.22" />
+                <stop offset="100%" stopColor="#005B66" stopOpacity="0.08" />
+              </linearGradient>
+            </defs>
+
+            {/* Layer 1: Broad soft ambient fluid fill wave */}
+            <path
+              d="M -100 300 C 200 200, 480 360, 820 260 C 1120 180, 1380 280, 1540 220 L 1540 440 L -100 440 Z"
+              fill="url(#waveGrad1)"
+            />
+
+            {/* Layer 2: Secondary overlapping cyan ribbon wave */}
+            <path
+              d="M -100 240 C 180 340, 520 180, 880 300 C 1180 380, 1380 240, 1540 270 L 1540 440 L -100 440 Z"
+              fill="url(#waveGrad2)"
+              opacity="0.6"
+            />
+          </svg>
+        </div>
+
+        <Container className="relative z-10">
+          {/* Centered Section Header */}
+          <div className="text-center max-w-3xl mx-auto mb-10 flex flex-col items-center">
+            {/* Eyebrow with side lines */}
+            <div className="flex items-center justify-center gap-2.5 text-xs font-semibold tracking-widest text-[#00A896] uppercase mb-2.5">
+              <span className="w-6 h-[1.5px] bg-[#00A896]/60 rounded-full" />
+              <span>STRATEGIC TRANSFORMATION</span>
+              <span className="w-6 h-[1.5px] bg-[#00A896]/60 rounded-full" />
+            </div>
+
+            {/* Main Heading */}
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0b2447] tracking-tight leading-[1.18] text-center">
+              Turn Supply Chain Complexity <br className="hidden sm:block" />
+              <span className="text-[#00A896]">into Competitive Advantage</span>
             </h2>
-            <p className="text-sm text-slate-600 mt-2">
-              Use this section to tell the "Business Transformation" story instead of comparing features.
+
+            {/* Title Accent Bar */}
+            <div className="w-9 h-[2px] bg-[#00A896] rounded-full my-3" />
+
+            {/* Subtitle */}
+            <p className="text-xs sm:text-sm text-slate-500 max-w-xl leading-relaxed text-center font-normal">
+              We help logistics and supply chain businesses move from fragmented operations to intelligent, connected and future-ready networks.
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-3">
+          {/* 3 Core Pillars Columns */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto items-start">
             {/* Pillar 1 */}
-            <div className="flex gap-4">
-              <span className="flex shrink-0 size-11 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
-                <Database className="size-5.5" />
-              </span>
-              <div className="flex flex-col">
-                <h3 className="text-base font-bold text-slate-900">Data Capital (Unified Operations)</h3>
-                <p className="text-sm text-slate-600 mt-2 leading-relaxed">
-                  Eliminate swivel-chair work. Connect CRM, freight tracking, customs filings (VGM, IGM, CGM), and accounting under a single login.
-                </p>
+            <div className="flex flex-col items-center text-center group">
+              {/* Circular Icon with stem & dot */}
+              <div className="flex flex-col items-center">
+                <div className="flex size-16 items-center justify-center rounded-full border border-slate-200 bg-white shadow-2xs transition-all duration-300 group-hover:border-[#00A896] group-hover:shadow-md">
+                  <Database className="size-7 text-[#00A896]" />
+                </div>
+                <div className="w-[1.5px] h-3.5 bg-teal-200" />
+                <div className="size-1.5 rounded-full bg-[#00A896]" />
               </div>
+
+              {/* Title */}
+              <h3 className="text-sm sm:text-base font-bold text-[#0b2447] mt-3 leading-snug">
+                Data Capital <br />
+                <span className="font-semibold text-slate-800">(Unified Operations)</span>
+              </h3>
+
+              {/* Accent Divider Bar */}
+              <div className="w-7 h-[1.5px] bg-[#00A896] rounded-full my-2" />
+
+              {/* Description */}
+              <p className="text-xs text-slate-500 leading-relaxed max-w-xs font-normal">
+                Eliminate swivel-chair work. Connect CRM, freight tracking, customs filings (VGM, IGM, CGM), and accounting under a single login.
+              </p>
             </div>
 
             {/* Pillar 2 */}
-            <div className="flex gap-4">
-              <span className="flex shrink-0 size-11 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
-                <Navigation className="size-5.5" />
-              </span>
-              <div className="flex flex-col">
-                <h3 className="text-base font-bold text-slate-900">Predictive Agility (Route & Cost Optimization)</h3>
-                <p className="text-sm text-slate-600 mt-2 leading-relaxed">
-                  Move from reactive problem-solving to proactive decision-making. Predict port congestion, route bottlenecks, and carrier risks before you book.
-                </p>
+            <div className="flex flex-col items-center text-center group">
+              {/* Circular Icon with stem & dot */}
+              <div className="flex flex-col items-center">
+                <div className="flex size-16 items-center justify-center rounded-full border border-slate-200 bg-white shadow-2xs transition-all duration-300 group-hover:border-[#00A896] group-hover:shadow-md">
+                  <Navigation className="size-7 text-[#00A896]" />
+                </div>
+                <div className="w-[1.5px] h-3.5 bg-teal-200" />
+                <div className="size-1.5 rounded-full bg-[#00A896]" />
               </div>
+
+              {/* Title */}
+              <h3 className="text-sm sm:text-base font-bold text-[#0b2447] mt-3 leading-snug">
+                Predictive Agility <br />
+                <span className="font-semibold text-slate-800">(Route & Cost Optimization)</span>
+              </h3>
+
+              {/* Accent Divider Bar */}
+              <div className="w-7 h-[1.5px] bg-[#00A896] rounded-full my-2" />
+
+              {/* Description */}
+              <p className="text-xs text-slate-500 leading-relaxed max-w-xs font-normal">
+                Move from reactive problem-solving to proactive decision-making. Predict port congestion, route bottlenecks, and carrier risks before you book.
+              </p>
             </div>
 
             {/* Pillar 3 */}
-            <div className="flex gap-4">
-              <span className="flex shrink-0 size-11 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
-                <MessageSquarePlus className="size-5.5" />
-              </span>
-              <div className="flex flex-col">
-                <h3 className="text-base font-bold text-slate-900">Autonomous Collaboration (Context-First Communication)</h3>
-                <p className="text-sm text-slate-600 mt-2 leading-relaxed">
-                  Keep communication tied directly to shipments. Built-in ChatApp, media sharing, and automated triggers keep teams and partners aligned without messy email chains.
-                </p>
+            <div className="flex flex-col items-center text-center group">
+              {/* Circular Icon with stem & dot */}
+              <div className="flex flex-col items-center">
+                <div className="flex size-16 items-center justify-center rounded-full border border-slate-200 bg-white shadow-2xs transition-all duration-300 group-hover:border-[#00A896] group-hover:shadow-md">
+                  <MessageSquarePlus className="size-7 text-[#00A896]" />
+                </div>
+                <div className="w-[1.5px] h-3.5 bg-teal-200" />
+                <div className="size-1.5 rounded-full bg-[#00A896]" />
               </div>
+
+              {/* Title */}
+              <h3 className="text-sm sm:text-base font-bold text-[#0b2447] mt-3 leading-snug">
+                Autonomous Collaboration <br />
+                <span className="font-semibold text-slate-800">(Context-First Communication)</span>
+              </h3>
+
+              {/* Accent Divider Bar */}
+              <div className="w-7 h-[1.5px] bg-[#00A896] rounded-full my-2" />
+
+              {/* Description */}
+              <p className="text-xs text-slate-500 leading-relaxed max-w-xs font-normal">
+                Keep communication tied directly to shipments. Built-in ChatApp, media sharing, and automated triggers keep teams and partners aligned without messy email chains.
+              </p>
             </div>
           </div>
         </Container>
@@ -590,7 +688,7 @@ export default function NextOrbitFreightPage() {
                       <p className="text-xs sm:text-sm text-slate-200/90 leading-relaxed font-normal max-w-md mt-1">
                         {currentTab.heroDesc}
                       </p>
-                      <button type="button" className="mt-4 flex items-center gap-2 bg-white/15 backdrop-blur-md border border-white/25 text-white rounded-full px-4 py-2 text-xs font-bold hover:bg-white/30 transition-all cursor-pointer">
+                      <button type="button" onClick={handleRequestDemo} className="mt-4 flex items-center gap-2 bg-white/15 backdrop-blur-md border border-white/25 text-white rounded-full px-4 py-2 text-xs font-bold hover:bg-white/30 transition-all cursor-pointer">
                         <ArrowRight className="size-3.5 text-teal-300" />
                         Learn more
                       </button>
@@ -602,7 +700,8 @@ export default function NextOrbitFreightPage() {
                     {currentTab.points.map((point, index) => (
                       <div
                         key={index}
-                        className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-5 sm:p-6 shadow-2xs transition-all duration-300 hover:-translate-y-1 hover:border-teal-300 hover:shadow-md"
+                        onClick={handleRequestDemo}
+                        className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-5 sm:p-6 shadow-2xs transition-all duration-300 hover:-translate-y-1 hover:border-teal-300 hover:shadow-md cursor-pointer"
                       >
                         <div>
                           {/* Circle Icon Badge */}

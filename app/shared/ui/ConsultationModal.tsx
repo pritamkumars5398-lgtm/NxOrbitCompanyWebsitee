@@ -39,6 +39,37 @@ export function ConsultationModal() {
     };
   }, []);
 
+  // Auto-open logic: 3s on initial load, 30s after 1st close, stop after 2nd close
+  useEffect(() => {
+    const dismissCount = parseInt(sessionStorage.getItem("nxt_modal_dismiss_count") || "0", 10);
+
+    if (dismissCount >= 2) return;
+
+    let timerId: NodeJS.Timeout;
+
+    if (dismissCount === 0) {
+      // 1st Auto-Open: 3 seconds after page load
+      timerId = setTimeout(() => {
+        const currentCount = parseInt(sessionStorage.getItem("nxt_modal_dismiss_count") || "0", 10);
+        if (currentCount === 0) {
+          setIsOpen(true);
+        }
+      }, 3000);
+    } else if (dismissCount === 1) {
+      // 2nd Auto-Open: 30 seconds after 1st close
+      timerId = setTimeout(() => {
+        const currentCount = parseInt(sessionStorage.getItem("nxt_modal_dismiss_count") || "0", 10);
+        if (currentCount === 1) {
+          setIsOpen(true);
+        }
+      }, 30000);
+    }
+
+    return () => {
+      if (timerId) clearTimeout(timerId);
+    };
+  }, []);
+
   // Lock scroll when open
   useEffect(() => {
     if (isOpen) {
@@ -53,6 +84,21 @@ export function ConsultationModal() {
 
   const handleClose = () => {
     setIsOpen(false);
+
+    // Track dismiss count in sessionStorage
+    const currentCount = parseInt(sessionStorage.getItem("nxt_modal_dismiss_count") || "0", 10);
+    const newCount = currentCount + 1;
+    sessionStorage.setItem("nxt_modal_dismiss_count", newCount.toString());
+
+    // If 1st close, set 30-second timer to re-open once
+    if (newCount === 1) {
+      setTimeout(() => {
+        const checkCount = parseInt(sessionStorage.getItem("nxt_modal_dismiss_count") || "0", 10);
+        if (checkCount === 1) {
+          setIsOpen(true);
+        }
+      }, 30000);
+    }
   };
 
   const validate = () => {
@@ -117,7 +163,10 @@ export function ConsultationModal() {
       />
 
       {/* Slide-out Panel */}
-      <div className="relative z-10 w-full max-w-lg bg-white h-full shadow-2xl flex flex-col animate-slide-in-right overflow-hidden">
+      <div 
+        data-lenis-prevent="true"
+        className="relative z-10 w-full max-w-lg bg-white h-full max-h-screen shadow-2xl flex flex-col animate-slide-in-right overflow-hidden"
+      >
         {/* Decorative ambient glows inside drawer */}
         <div className="absolute top-20 right-0 -z-10 w-72 h-72 bg-brand-100/30 blur-[80px] rounded-full pointer-events-none" />
         <div className="absolute bottom-10 left-0 -z-10 w-72 h-72 bg-teal-100/20 blur-[80px] rounded-full pointer-events-none" />
@@ -142,7 +191,12 @@ export function ConsultationModal() {
         </div>
 
         {/* Form Body (Scrollable Content) */}
-        <div className="flex-1 p-6 overflow-y-auto">
+        <div 
+          data-lenis-prevent="true"
+          onWheel={(e) => e.stopPropagation()}
+          onTouchMove={(e) => e.stopPropagation()}
+          className="flex-1 p-6 overflow-y-auto min-h-0 overscroll-contain"
+        >
           {isSubmitted ? (
             <div className="flex flex-col items-center justify-center text-center h-full max-w-sm mx-auto py-12">
               <div className="relative mb-6">

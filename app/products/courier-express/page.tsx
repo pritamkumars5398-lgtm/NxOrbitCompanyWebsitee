@@ -5,7 +5,7 @@ import {
   ArrowRight, Shield, ShieldCheck, Database, Navigation, MessageSquarePlus, 
   Terminal, Sparkles, Code, Cpu, DatabaseZap, Users, FileText, CheckCircle2,
   Lock, Globe, Cloud, Key, Check, Layers, BarChart3, Workflow, Truck, AlertTriangle,
-  PlayCircle, Eye, Clock, Activity, Bell, Box, Gauge, TrendingUp, DollarSign, Target,
+  Eye, Clock, Activity, Bell, Box, Gauge, TrendingUp, DollarSign, Target,
   LayoutGrid, Package, Settings, ChevronDown
 } from "lucide-react";
 import { cn } from "@/app/core/lib/cn";
@@ -497,18 +497,6 @@ export default function CourierExpressPage() {
                               </div>
                             ))}
                           </div>
-                        </div>
-
-                        {/* CTA Buttons */}
-                        <div className="flex flex-wrap items-center gap-4 pt-2">
-                          <button type="button" className="flex items-center gap-2 bg-[#08282e] text-white rounded-full px-5 py-2.5 text-xs font-extrabold hover:bg-teal-900 transition-all cursor-pointer shadow-sm">
-                            Explore Pillar {pillarIndex} in Detail
-                            <ArrowRight className="size-3.5 text-teal-300" />
-                          </button>
-                          <button type="button" className="flex items-center gap-2 text-teal-700 hover:text-teal-900 text-xs font-bold transition-all cursor-pointer">
-                            See how it works
-                            <PlayCircle className="size-4 text-teal-600" />
-                          </button>
                         </div>
                       </div>
 
