@@ -24,11 +24,17 @@ import {
   Award,
   TrendingUp,
   Check,
+  Lightbulb,
+  RefreshCw,
+  Headphones,
+  Maximize2,
+  Handshake,
 } from "lucide-react";
 import { Container, Eyebrow, Section } from "@/app/shared/ui/Layout";
 import { Reveal, Stagger, StaggerItem } from "@/app/shared/motion/Reveal";
 import { Button } from "@/app/shared/ui/Button";
 import { CallToAction } from "@/app/shared/sections/CallToAction";
+import { cn } from "@/app/core/lib/cn";
 
 export const metadata: Metadata = {
   title: "About NXT Orbit | Enterprise Engineering, Built Around Your Business",
@@ -146,31 +152,37 @@ const WHY_PARTNERS_STAY = [
     title: "Deep Business Understanding That Evolves",
     description:
       "As we work together, we gain a deeper understanding of your business, enabling us to deliver enhancements that align with your evolving goals.",
+    icon: Lightbulb,
   },
   {
     title: "A Dedicated Team That Knows Your Systems",
     description:
       "The teams supporting your business understand your architecture, processes, and integrations, reducing onboarding time and ensuring continuity.",
+    icon: Users,
   },
   {
     title: "Continuous Improvement",
     description:
       "We help organizations optimize existing systems, introduce new capabilities, and modernize applications without disrupting operations.",
+    icon: RefreshCw,
   },
   {
     title: "Reliable Support Beyond Go-Live",
     description:
       "Structured maintenance, issue resolution, performance monitoring, and enhancement planning.",
+    icon: Headphones,
   },
   {
     title: "Solutions Designed to Scale",
     description:
       "Enterprise systems accommodate new users, business units, integrations, and operational requirements as your organization grows.",
+    icon: Maximize2,
   },
   {
     title: "Transparency and Trust",
     description:
       "Clear communication, milestone-based delivery, and collaborative planning build relationships based on accountability.",
+    icon: Handshake,
   },
 ];
 
@@ -198,16 +210,19 @@ const CORPORATE_INFO = [
     field: "Legal Entity",
     detail: "NXT Orbit IT Solutions Pvt. Ltd.",
     icon: Building,
+    image3d: "/assets/corp_building_3d.png",
   },
   {
     field: "Engagement Models",
     detail: "Managed Project Delivery · Dedicated Engineering Teams · Technology Consulting & Architecture Audits",
     icon: Briefcase,
+    image3d: "/assets/corp_briefcase_3d.png",
   },
   {
     field: "Based In",
     detail: "Navi Mumbai, India",
     icon: MapPin,
+    image3d: "/assets/corp_location_3d.png",
   },
 ];
 
@@ -294,65 +309,101 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* ── Section 2 — Our Story ── */}
-      <Section tone="white" spacing="lg" id="our-story" className="border-t border-hairline py-16 sm:py-24">
-        <Container>
-          <div className="grid gap-12 lg:grid-cols-12 lg:gap-16 items-start">
-            <div className="lg:col-span-6 flex flex-col gap-6">
+      {/* ── Section 2 — Our Story (Reference UI Design: Deep Tech Theme, Glowing Cyber Globe & Glass Cards) ── */}
+      <section
+        id="our-story"
+        className="relative isolate overflow-hidden bg-[#030b18] py-16 lg:py-24 text-white border-t border-cyan-900/30"
+      >
+        {/* Ambient background glows */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -top-32 -left-20 size-[36rem] rounded-full bg-cyan-500/15 blur-[140px]"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute bottom-0 right-0 size-[42rem] rounded-full bg-blue-600/20 blur-[150px]"
+        />
+
+        {/* High-Tech Laptop + Holographic Globe Visual matching Reference right side */}
+        <div className="pointer-events-none absolute top-0 right-0 bottom-0 w-full lg:w-7/12 overflow-hidden select-none -z-10 flex justify-end">
+          <img
+            src="/assets/our-story-tech.jpg"
+            alt="NXT Orbit Digital Innovation"
+            className="w-full h-full object-cover object-right opacity-90 lg:opacity-100"
+          />
+          {/* Edge gradient masks so text on left remains 100% readable while the globe & laptop visual on right is crisp and clear */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#030b18] via-[#030b18]/70 to-transparent lg:via-[#030b18]/45" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#030b18]/70 via-transparent to-[#030b18]/40" />
+        </div>
+
+        <Container className="relative z-10">
+          <div className="grid gap-10 lg:grid-cols-12 lg:gap-14 items-center">
+            {/* Left Column: Eyebrow, Heading, and 3 Context Paragraphs */}
+            <div className="lg:col-span-6 xl:col-span-7 flex flex-col gap-5">
               <Reveal from="up">
-                <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#008c83]">
+                <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#00d2c4] drop-shadow-[0_0_12px_rgba(0,210,196,0.5)]">
                   OUR STORY
                 </span>
-                <h2 className="mt-3 text-display-md sm:text-display-lg font-extrabold text-slate-900 leading-tight">
-                  Built on Business Understanding, Strengthened by Engineering.
+                <h2 className="mt-2.5 text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-[1.2]">
+                  Built on Business Understanding.{" "}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00d2c4] via-teal-300 to-cyan-400">
+                    Strengthened by Engineering.
+                  </span>
                 </h2>
               </Reveal>
 
-              <Reveal from="up" delay={0.08} className="flex flex-col gap-4 text-base text-slate-600 leading-relaxed font-normal">
+              <Reveal from="up" delay={0.08} className="flex flex-col gap-3.5 text-sm sm:text-[15px] text-slate-300 leading-relaxed font-normal">
                 <p>
                   Technology projects often struggle not because of technical limitations, but because business processes, operational challenges, and long-term objectives are not fully understood before development begins.
                 </p>
                 <p>
                   That understanding shaped NXT Orbit from the beginning. As organizations embraced digital transformation, we recognized that successful projects required more than technical expertise — they required a deep understanding of business operations, collaboration with stakeholders, and solutions designed around real-world workflows.
                 </p>
-                <p>
+                <p className="text-slate-400">
                   Today, our capabilities span enterprise applications, digital platforms, cloud technologies, intelligent automation, and technology consulting. While technology continues to evolve, our focus remains unchanged: delivering solutions that create measurable business value.
                 </p>
               </Reveal>
             </div>
 
-            <div className="lg:col-span-6 flex flex-col gap-6">
-              <Reveal from="right" delay={0.12} className="rounded-3xl border border-slate-200/90 bg-slate-50/70 p-8 sm:p-10 shadow-xs">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="flex size-10 items-center justify-center rounded-xl bg-teal-50 text-[#008c83]">
+            {/* Right Column: 2 Stacked Sleek Glowing Glass Cards matching Reference Image */}
+            <div className="lg:col-span-6 xl:col-span-5 flex flex-col gap-4">
+              {/* Card 1: Vision */}
+              <Reveal from="right" delay={0.12}>
+                <div className="group relative flex items-start gap-4 rounded-2xl border border-cyan-500/30 bg-[#07192f]/60 p-5 sm:p-6 backdrop-blur-sm transition-all duration-300 hover:border-cyan-400 hover:bg-[#07192f]/80 hover:-translate-y-0.5">
+                  <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-cyan-950/90 border border-cyan-400/40 text-[#00d2c4] shadow-[0_0_14px_rgba(0,210,196,0.25)] transition-transform duration-300 group-hover:scale-105 group-hover:border-cyan-300">
                     <Target className="size-5" />
-                  </span>
-                  <h3 className="font-mono text-xs font-bold uppercase tracking-wider text-slate-500">
-                    Vision
-                  </h3>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#00d2c4] mb-1">
+                      Our Vision
+                    </span>
+                    <p className="text-sm sm:text-base font-semibold text-white leading-snug">
+                      To be a trusted enterprise technology partner, eliminating operational complexity through digital engineering.
+                    </p>
+                  </div>
                 </div>
-                <p className="text-lg sm:text-xl font-bold text-slate-900 leading-snug">
-                  To be a trusted enterprise technology partner, eliminating operational complexity through digital engineering.
-                </p>
               </Reveal>
 
-              <Reveal from="right" delay={0.18} className="rounded-3xl border border-slate-200/90 bg-slate-50/70 p-8 sm:p-10 shadow-xs">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="flex size-10 items-center justify-center rounded-xl bg-teal-50 text-[#008c83]">
+              {/* Card 2: Mission */}
+              <Reveal from="right" delay={0.18}>
+                <div className="group relative flex items-start gap-4 rounded-2xl border border-cyan-500/30 bg-[#07192f]/60 p-5 sm:p-6 backdrop-blur-sm transition-all duration-300 hover:border-cyan-400 hover:bg-[#07192f]/80 hover:-translate-y-0.5">
+                  <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-cyan-950/90 border border-cyan-400/40 text-[#00d2c4] shadow-[0_0_14px_rgba(0,210,196,0.25)] transition-transform duration-300 group-hover:scale-105 group-hover:border-cyan-300">
                     <Compass className="size-5" />
-                  </span>
-                  <h3 className="font-mono text-xs font-bold uppercase tracking-wider text-slate-500">
-                    Mission
-                  </h3>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#00d2c4] mb-1">
+                      Our Mission
+                    </span>
+                    <p className="text-sm sm:text-base font-semibold text-white leading-snug">
+                      Leveraging modern software engineering and architecture to help organizations optimize operations, integrate ecosystems, and scale securely.
+                    </p>
+                  </div>
                 </div>
-                <p className="text-lg sm:text-xl font-bold text-slate-900 leading-snug">
-                  Leveraging modern software engineering and architecture to help organizations optimize operations, integrate ecosystems, and scale securely.
-                </p>
               </Reveal>
             </div>
           </div>
         </Container>
-      </Section>
+      </section>
 
       {/* ── Section 3 — The "Keep It Simple" Philosophy ── */}
       <Section tone="muted" spacing="lg" id="philosophy" className="py-16 sm:py-24">
@@ -516,43 +567,83 @@ export default function AboutPage() {
         </Container>
       </Section>
 
-      {/* ── Section 6 — Why Partners Stay ── */}
-      <Section tone="white" spacing="lg" id="why-partners-stay" className="py-16 sm:py-24 border-t border-hairline">
-        <Container>
-          <div className="max-w-3xl mb-14">
+      {/* ── Section 6 — Why Partners Stay (Reference UI Design: Deep Tech Handshake & Glowing Blue Cards) ── */}
+      <section
+        id="why-partners-stay"
+        className="relative isolate overflow-hidden bg-[#040d1a] py-12 lg:py-16 text-white"
+      >
+        {/* Ambient background glows */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -top-24 -left-24 size-[34rem] rounded-full bg-cyan-500/15 blur-[130px]"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute bottom-0 right-0 size-[38rem] rounded-full bg-blue-600/20 blur-[140px]"
+        />
+
+        {/* Handshake Graphic Placement matching Reference right side */}
+        <div className="pointer-events-none absolute top-0 right-0 bottom-0 w-full lg:w-7/12 overflow-hidden select-none -z-10 flex justify-end">
+          <img
+            src="/assets/technology-partnership.jpg"
+            alt="Technology Partnerships"
+            className="w-full h-full object-cover object-right opacity-80 lg:opacity-90"
+          />
+          {/* Edge gradient masks so text on left remains 100% readable while handshake on right shines */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#040d1a] via-[#040d1a]/80 to-transparent lg:via-[#040d1a]/60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#040d1a] via-transparent to-[#040d1a]/60" />
+        </div>
+
+        <Container className="relative z-10">
+          {/* Header Area */}
+          <div className="max-w-3xl mb-7 sm:mb-9">
             <Reveal from="up">
-              <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#008c83]">
-                PARTNERSHIP
+              <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#00d2c4] drop-shadow-[0_0_12px_rgba(0,210,196,0.5)]">
+                Our Partnerships
               </span>
-              <h2 className="mt-3 text-display-md sm:text-display-lg font-extrabold text-slate-900 tracking-tight leading-tight">
+              <h2 className="mt-2 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-snug">
                 Technology Partnerships Built for Sustained Evolution.
               </h2>
-              <p className="mt-4 text-base text-slate-600 leading-relaxed">
+              <p className="mt-2.5 text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
                 Successful technology projects don&apos;t end at deployment. As businesses evolve, systems need to adapt, integrate with new technologies, and support changing operational requirements.
               </p>
             </Reveal>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {WHY_PARTNERS_STAY.map((item) => (
-              <div
-                key={item.title}
-                className="flex flex-col rounded-3xl border border-slate-200/90 bg-white p-7 shadow-xs transition-all duration-300 hover:shadow-md hover:border-slate-300"
-              >
-                <div className="flex size-8 items-center justify-center rounded-lg bg-teal-50 text-[#008c83] mb-4">
-                  <CheckCircle2 className="size-4.5" />
+          {/* Cards Grid: Sleek Compact Glassmorphism Cards matching Reference Image */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4">
+            {WHY_PARTNERS_STAY.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={item.title}
+                  className="group relative flex flex-col justify-between rounded-xl border border-cyan-500/25 bg-[#07192f]/75 p-4.5 sm:p-5 backdrop-blur-md transition-all duration-300 hover:border-cyan-400 hover:bg-[#0a2342]/90 hover:-translate-y-0.5"
+                >
+                  <div>
+                    {/* Top Row with glowing icon badge */}
+                    <div className="flex items-center gap-3 mb-2.5">
+                      <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-cyan-950/80 border border-cyan-400/40 text-[#00d2c4] shadow-[0_0_12px_rgba(0,210,196,0.25)] transition-transform duration-300 group-hover:scale-105 group-hover:border-cyan-300">
+                        <Icon className="size-4.5" />
+                      </div>
+                      <h3 className="text-sm sm:text-base font-bold text-white leading-snug group-hover:text-cyan-200 transition-colors">
+                        {item.title}
+                      </h3>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal">
+                      {item.description}
+                    </p>
+                  </div>
+
+                  {/* Subtle bottom glowing accent line */}
+                  <div className="mt-3.5 h-0.5 w-8 rounded-full bg-gradient-to-r from-[#00d2c4] to-transparent opacity-60 group-hover:w-full group-hover:opacity-100 transition-all duration-500" />
                 </div>
-                <h3 className="text-base font-bold text-slate-900 mb-2 leading-snug">
-                  {item.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                  {item.description}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </Container>
-      </Section>
+      </section>
 
       {/* ── Section 7 — Leadership Team ── */}
       <Section tone="muted" spacing="lg" id="leadership" className="py-16 sm:py-24">
@@ -615,45 +706,61 @@ export default function AboutPage() {
         </Container>
       </Section>
 
-      {/* ── Section 8 — Corporate Information ── */}
-      <Section tone="white" spacing="lg" id="corporate-info" className="py-16 sm:py-24 border-t border-hairline">
-        <Container>
+      {/* ── Section 8 — Corporate Information (Seamless Blended Visual Layout) ── */}
+      <Section tone="white" spacing="lg" id="corporate-info" className="py-16 sm:py-20 border-t border-hairline relative isolate overflow-hidden bg-white">
+        {/* Subtle background ambient light */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute top-1/2 -right-40 size-[32rem] rounded-full bg-teal-400/10 blur-[130px]"
+        />
+
+        <Container className="relative z-10">
           <div className="max-w-3xl mb-10">
             <Reveal from="up">
               <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#008c83]">
                 COMPANY OVERVIEW
               </span>
-              <h2 className="mt-3 text-display-md sm:text-display-lg font-extrabold text-slate-900 tracking-tight leading-tight">
+              <h2 className="mt-2 text-display-md sm:text-display-lg font-extrabold text-slate-900 tracking-tight leading-tight">
                 Corporate Information
               </h2>
+              <p className="mt-2.5 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+                Official entity details, service engagement frameworks, and global delivery headquarters.
+              </p>
             </Reveal>
           </div>
 
-          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md max-w-4xl">
-            <div className="grid grid-cols-1 sm:grid-cols-12 bg-brand-950 text-white font-bold text-xs uppercase tracking-wider py-4 px-6 sm:px-8 border-b border-brand-900">
-              <div className="sm:col-span-4">Field</div>
-              <div className="sm:col-span-8 mt-1 sm:mt-0">Detail</div>
-            </div>
-
-            <div className="divide-y divide-slate-100">
-              {CORPORATE_INFO.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <div
-                    key={item.field}
-                    className="grid grid-cols-1 sm:grid-cols-12 py-5 px-6 sm:px-8 items-center"
-                  >
-                    <div className="sm:col-span-4 flex items-center gap-2.5 font-bold text-slate-900 text-sm sm:text-base">
-                      <Icon className="size-4 text-[#008c83]" />
-                      {item.field}
-                    </div>
-                    <div className="sm:col-span-8 text-sm sm:text-base text-slate-700 mt-1 sm:mt-0 font-medium leading-relaxed">
-                      {item.detail}
-                    </div>
+          {/* Open Architecture Showcase — Clean, Borderless & Card-Free */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 pt-4">
+            {CORPORATE_INFO.map((item, index) => {
+              return (
+                <div
+                  key={item.field}
+                  className={cn(
+                    "group flex flex-col items-start transition-transform duration-300 hover:-translate-y-1",
+                    index !== 0 && "md:border-l md:border-slate-200/80 md:pl-8 lg:pl-12"
+                  )}
+                >
+                  {/* Floating 3D Visual */}
+                  <div className="relative mb-5 flex size-20 sm:size-24 shrink-0 items-center justify-start transition-transform duration-500 group-hover:scale-110">
+                    <img
+                      src={item.image3d}
+                      alt={item.field}
+                      className="size-full object-contain drop-shadow-[0_12px_24px_rgba(0,140,131,0.15)]"
+                    />
                   </div>
-                );
-              })}
-            </div>
+
+                  {/* Field Name */}
+                  <span className="font-mono text-xs font-bold uppercase tracking-wider text-[#008c83] mb-2">
+                    {item.field}
+                  </span>
+
+                  {/* Detail text */}
+                  <p className="text-base sm:text-lg font-bold text-slate-900 leading-snug">
+                    {item.detail}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </Container>
       </Section>

@@ -156,6 +156,7 @@ export const INDUSTRY_SHOWCASE = [
       "ERP & warehouse bi-directional sync",
     ],
     stat: { value: "99.8%", label: "Inventory accuracy" },
+    image3d: "/assets/warehouse_wms_3d.jpg",
   },
   {
     id: "logistics",
@@ -170,6 +171,7 @@ export const INDUSTRY_SHOWCASE = [
       "Driver and operator workflow applications",
     ],
     stat: { value: "99.9%", label: "Platform uptime" },
+    image3d: "/assets/logistics_map_truck.jpg",
   },
   {
     id: "bfsi",
@@ -184,6 +186,7 @@ export const INDUSTRY_SHOWCASE = [
       "Real-time fraud and audit telemetry",
     ],
     stat: { value: "$120M+", label: "Processed through our builds" },
+    image3d: "/assets/fintech_3d.jpg",
   },
   {
     id: "retail",
@@ -198,6 +201,7 @@ export const INDUSTRY_SHOWCASE = [
       "Real-time order tracking & fulfillment",
     ],
     stat: { value: "100k+", label: "Daily orders handled" },
+    image3d: "/assets/ecommerce_3d.jpg",
   },
   {
     id: "healthcare",
@@ -212,6 +216,7 @@ export const INDUSTRY_SHOWCASE = [
       "Secure medical record encryption",
     ],
     stat: { value: "10M+", label: "Records securely managed" },
+    image3d: "/assets/healthcare_3d.jpg",
   },
   {
     id: "professional-services",
@@ -226,5 +231,6 @@ export const INDUSTRY_SHOWCASE = [
       "Milestone-driven automated invoicing",
     ],
     stat: { value: "40%", label: "Reduction in admin overhead" },
+    image3d: "/assets/prof_services_3d.jpg",
   },
 ];

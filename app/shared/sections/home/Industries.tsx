@@ -20,19 +20,27 @@ export function Industries() {
     id: industry.id,
     label: industry.label,
     content: (
-      <div className="grid gap-10 rounded-3xl border border-slate-200/90 bg-white p-8 sm:p-12 lg:grid-cols-[1.35fr_1fr] lg:gap-14 shadow-lg shadow-slate-900/5">
-        <div className="flex flex-col gap-6">
+      <div className="grid gap-8 rounded-xl border border-slate-200/80 bg-white p-6 sm:p-10 lg:grid-cols-[1.25fr_1fr] lg:gap-12 shadow-xl shadow-slate-900/5 items-center">
+        {/* Left: Sector Details */}
+        <div className="flex flex-col gap-5">
+          <div className="inline-flex items-center gap-2 rounded-full border border-teal-500/20 bg-teal-50/80 px-3.5 py-1 w-fit">
+            <span className="size-2 rounded-full bg-[#008c83] animate-pulse" />
+            <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#008c83]">
+              {industry.label} Sector
+            </span>
+          </div>
+
           <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-[1.2]">
             {industry.headline}
           </h3>
-          <p className="max-w-xl text-base text-slate-600 leading-relaxed font-normal">
+          <p className="max-w-xl text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
             {industry.description}
           </p>
 
-          <ul className="mt-2 flex flex-col gap-3.5">
+          <ul className="mt-1 flex flex-col gap-3">
             {industry.points.map((point) => (
-              <li key={point} className="flex items-start gap-3.5 text-sm sm:text-base text-slate-700 font-medium">
-                <span className="mt-0.5 inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-teal-50 text-[#008c83]">
+              <li key={point} className="flex items-start gap-3 text-sm sm:text-[15px] text-slate-700 font-medium">
+                <span className="mt-0.5 inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-teal-100/70 text-[#008c83]">
                   <Check aria-hidden className="size-3.5" strokeWidth={3} />
                 </span>
                 {point}
@@ -40,31 +48,43 @@ export function Industries() {
             ))}
           </ul>
 
-          <Link
-            href={industry.href}
-            className="group mt-3 inline-flex w-fit items-center gap-2 text-sm sm:text-base font-bold text-[#008c83] transition-colors hover:text-[#005f57]"
-          >
-            Explore {industry.label.toLowerCase()} work
-            <ArrowRight
-              aria-hidden
-              className="size-4 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1"
-            />
-          </Link>
+          <div className="pt-2">
+            <Link
+              href={industry.href}
+              className="group inline-flex items-center gap-2 rounded-lg bg-slate-900 px-5 py-3 text-sm font-bold text-white transition-all duration-300 hover:bg-[#008c83] hover:shadow-md hover:shadow-teal-900/20"
+            >
+              Explore {industry.label.toLowerCase()} work
+              <ArrowRight
+                aria-hidden
+                className="size-4 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1"
+              />
+            </Link>
+          </div>
         </div>
 
-        {/* Numeric anchor — one big figure per sector */}
-        <div className="relative flex flex-col justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-teal-50/90 via-slate-50 to-teal-100/40 p-8 sm:p-10 border border-teal-100 shadow-inner">
-          <div
-            aria-hidden
-            className="absolute -top-12 -right-8 size-48 rounded-full bg-[#00d2c4]/20 blur-3xl"
+        {/* Right: Clean 3D Industry Visual with Reduced Border Radius & Sleek Floating Stat */}
+        <div className="relative group overflow-hidden rounded-lg border border-slate-200/90 bg-gradient-to-br from-slate-50 to-slate-100/70 aspect-[4/3] sm:aspect-[16/11] flex items-center justify-center shadow-sm">
+          <img
+            src={(industry as any).image3d || "/assets/logistics_map_truck.jpg"}
+            alt={industry.headline}
+            className="size-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
           />
-          <div className="relative flex flex-col gap-2">
-            <span className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight tabular-nums text-slate-900">
-              <CountUp value={industry.stat.value} />
-            </span>
-            <span className="text-sm sm:text-base font-semibold text-slate-600">
-              {industry.stat.label}
-            </span>
+
+          {/* Floating Stat Overlay Badge - compact and positioned so the image remains fully clear */}
+          <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 rounded-md border border-slate-900/10 bg-slate-950/85 px-3.5 py-2 sm:px-4 sm:py-2.5 backdrop-blur-md shadow-lg transition-all duration-300 group-hover:border-[#00d2c4]/50 group-hover:bg-slate-950/95">
+            <div className="flex items-center gap-3">
+              <div>
+                <span className="block text-xl sm:text-2xl font-black tracking-tight tabular-nums text-white leading-tight">
+                  <CountUp value={industry.stat.value} />
+                </span>
+                <span className="text-[10px] sm:text-xs font-medium text-slate-300">
+                  {industry.stat.label}
+                </span>
+              </div>
+              <div className="size-7 sm:size-8 flex items-center justify-center rounded bg-[#008c83]/30 border border-[#00d2c4]/40 text-[#00d2c4]">
+                <ArrowRight className="size-3.5 sm:size-4 -rotate-45" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
