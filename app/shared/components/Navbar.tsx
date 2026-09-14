@@ -46,7 +46,7 @@ const NAV_ITEMS: NavItem[] = [
   {
     label: "Company",
     items: [
-      { label: "About NXTorbit", href: "/#why-us" },
+      { label: "About Us", href: "/about" },
       { label: "Client Success",  href: "/#testimonials" },
       { label: "Career",          href: "/career" },
       { label: "Contact Us",      href: "/contact" },

@@ -77,13 +77,12 @@ export function Hero() {
               </Button>
             </motion.div>
 
-            {/* Stat rail — hairline-separated rather than boxed, so it reads as
-                part of the type column rather than as a card. */}
+            {/* Stat rail — clean 3-column ribbon as specified by designer */}
             <motion.dl
               initial="hidden"
               animate="visible"
               variants={{ visible: { transition: { staggerChildren: 0.09, delayChildren: 0.7 } } }}
-              className="mt-4 grid w-full grid-cols-2 gap-x-6 gap-y-6 border-t border-hairline pt-8 sm:grid-cols-4"
+              className="mt-4 grid w-full grid-cols-1 gap-x-6 gap-y-6 border-t border-hairline pt-8 sm:grid-cols-3"
             >
               {HERO.stats.map((stat) => (
                 <motion.div

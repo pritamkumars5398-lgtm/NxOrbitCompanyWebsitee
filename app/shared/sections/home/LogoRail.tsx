@@ -51,14 +51,25 @@ const REAL_LOGOS = [
  */
 export function LogoRail() {
   return (
-    <section className="relative border-y border-hairline bg-surface-muted py-8 sm:py-10">
+    <section className="relative border-y border-hairline bg-surface-muted py-10 sm:py-12" id="trust">
       <Container>
-        <Reveal className="flex flex-col items-center gap-5">
-          <p className="text-eyebrow uppercase text-ink-500 font-bold tracking-widest text-center">
-            Trusted by Enterprise Logistics & Shipping Leaders
-          </p>
+        <Reveal className="flex flex-col items-center gap-6 text-center">
+          <div className="flex flex-col items-center gap-2 max-w-2xl">
+            <span className="font-mono text-xs font-semibold uppercase tracking-widest text-[#008c83]">
+              TRUST & RELIABILITY
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
+              Trusted by teams who can&apos;t afford downtime.
+            </h2>
+            {/* Real confirmed client outcome as requested in designer note */}
+            <div className="mt-2 inline-flex items-center gap-2 rounded-full border border-teal-200 bg-white px-4 py-1.5 shadow-xs">
+              <span className="font-bold text-slate-900 text-xs sm:text-sm">Alisped</span>
+              <span className="text-slate-300">•</span>
+              <span className="text-xs sm:text-sm text-teal-700 font-medium">Reduced warehouse processing time</span>
+            </div>
+          </div>
 
-          <Marquee duration={35} gap="2.5rem" className="w-full py-2">
+          <Marquee duration={35} gap="2.5rem" className="w-full pt-4 pb-2">
             {REAL_LOGOS.map((client) => (
               <div
                 key={client.name}

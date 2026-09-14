@@ -1,18 +1,17 @@
 /** Copy and content for the homepage. Kept out of JSX so sections stay layout-only. */
 
 export const HERO = {
-  eyebrow: "Product engineering studio",
-  headline: "Software that earns its place in the business.",
+  eyebrow: "WE KEEP IT SIMPLE",
+  headline: "Turning Complex Business Operations into Connected Enterprise Systems.",
   /** Word index from which the headline switches to the brand gradient. */
   gradientFrom: 4,
-  lead: "We design and build mobile, web, AI, and cloud systems for teams who need them to hold up under real load — and keep holding up three years later.",
+  lead: "NXT Orbit helps manufacturing and service businesses simplify complex operations through customized enterprise technology. From ERP and CRM to AI, cloud, and digital platforms, we build solutions that integrate seamlessly with your business, improve operational visibility, and support long-term growth.",
   primaryCta: { label: "Book a Consultation", href: "/contact" },
-  secondaryCta: { label: "Learn More", href: "#why-choose-us" },
+  secondaryCta: { label: "Explore Our Solutions", href: "#solutions" },
   stats: [
-    { value: "1400+", label: "Products shipped" },
-    { value: "35+", label: "Countries served" },
-    { value: "98%", label: "Client retention" },
-    { value: "14", label: "Years building" },
+    { value: "5", label: "Years Building Enterprise Systems" },
+    { value: "50+", label: "Enterprise Systems Delivered" },
+    { value: "30+", label: "Manufacturing & Service Businesses Served" },
   ],
 } as const;
 
@@ -78,29 +77,29 @@ export const PROCESS = [
     step: "01",
     title: "Discovery",
     description:
-      "Two weeks with your team, your data, and your users. We leave with a costed plan, not a proposal deck.",
+      "We map your processes, systems, and constraints directly with your team. You get a costed, milestone-based plan — not a proposal deck.",
     outputs: ["Technical audit", "Scope & estimate", "Risk register"],
   },
   {
     step: "02",
-    title: "Design",
+    title: "Architecture & Design",
     description:
-      "Flows, prototypes, and a design system — validated with real users before a line of production code exists.",
-    outputs: ["User research", "Clickable prototype", "Design system"],
+      "Workflows, data models, and integration points validated against your real systems before a line of production code exists.",
+    outputs: ["System architecture", "Integration design", "Prototype sign-off"],
   },
   {
     step: "03",
     title: "Build",
     description:
-      "Two-week sprints against a visible board. You see working software every fortnight, not a status report.",
-    outputs: ["Sprint demos", "CI/CD from day one", "Automated tests"],
+      "Development in fixed sprints against a visible board. You see working software on a fixed cadence, not a status report.",
+    outputs: ["Sprint demos", "CI/CD from day one", "Automated testing"],
   },
   {
     step: "04",
-    title: "Scale",
+    title: "Scale & Support",
     description:
-      "Launch, then the part most agencies skip: monitoring, performance work, and a roadmap that keeps earning.",
-    outputs: ["Observability", "Performance budget", "Ongoing roadmap"],
+      "Go-live is the start, not the finish — monitoring, performance tuning, and a support SLA that outlives the launch.",
+    outputs: ["Observability", "Performance tuning", "Ongoing roadmap"],
   },
 ];
 
@@ -145,59 +144,87 @@ export const DIFFERENTIATORS = [
 
 export const INDUSTRY_SHOWCASE = [
   {
-    id: "healthcare",
-    label: "Healthcare",
-    href: "/industries/healthcare",
-    headline: "Clinical-grade systems, consumer-grade interfaces",
+    id: "manufacturing",
+    label: "Manufacturing",
+    href: "/industries/manufacturing",
+    headline: "Engineered for Floor Operations, Supply Chains & Precision",
     description:
-      "Telemedicine, EHR integration, and remote monitoring built HIPAA-compliant from the first commit — because retrofitting compliance costs more than building it.",
+      "Every industry has unique workflows, compliance requirements, and operational priorities. Our solutions are designed around shop-floor and plant-level realities — not generic software.",
     points: [
-      "HL7 FHIR and EHR integrations",
-      "HIPAA-compliant video and messaging",
-      "Remote patient monitoring at scale",
+      "Shop floor execution & machine telemetry",
+      "Automated BOM & inventory reconciliation",
+      "ERP & warehouse bi-directional sync",
     ],
-    stat: { value: "10M+", label: "Patients served" },
+    stat: { value: "99.8%", label: "Inventory accuracy" },
   },
   {
-    id: "fintech",
-    label: "Fintech",
-    href: "/industries/fintech",
-    headline: "Money movement that reconciles every time",
+    id: "logistics",
+    label: "Logistics & Supply Chain",
+    href: "/industries/logistics",
+    headline: "Fleets, Routes, Warehouses, and the Last Mile",
     description:
-      "Payments, lending, and wealth platforms with PCI-DSS pipelines, audit trails, and the reconciliation logic regulators ask about.",
+      "Dispatch, fleet tracking, freight execution, and warehouse management systems built for operations teams who work in real-time.",
     points: [
-      "PCI-DSS certified payment flows",
-      "KYC / AML onboarding",
-      "Ledger and reconciliation engines",
+      "Live multi-modal shipment tracking",
+      "Automated GRN, picking, and dispatch manifests",
+      "Driver and operator workflow applications",
+    ],
+    stat: { value: "99.9%", label: "Platform uptime" },
+  },
+  {
+    id: "bfsi",
+    label: "BFSI",
+    href: "/industries/fintech",
+    headline: "Institutional Trust, Financial Logic & Regulatory Compliance",
+    description:
+      "Decoupled billing modules, transactional reporting, and lending engines built to comply with financial security directives and audit standards.",
+    points: [
+      "PCI-DSS compliant transactional pipelines",
+      "Automated reconciliation & general ledger sync",
+      "Real-time fraud and audit telemetry",
     ],
     stat: { value: "$120M+", label: "Processed through our builds" },
   },
   {
-    id: "ecommerce",
-    label: "E-Commerce",
+    id: "retail",
+    label: "Retail & Distribution",
     href: "/industries/ecommerce",
-    headline: "Storefronts that survive their own launch day",
+    headline: "Omnichannel Inventory, Order Routing & Point of Sale",
     description:
-      "Catalog, checkout, and fulfilment systems that hold their conversion rate when traffic multiplies overnight.",
+      "Connecting regional warehouses, distribution centers, and digital retail storefronts into a unified live inventory engine.",
     points: [
-      "Headless commerce architecture",
-      "Sub-second catalog and search",
-      "Inventory and logistics sync",
+      "Sub-second multi-location stock sync",
+      "Automated distributor replenishment",
+      "Real-time order tracking & fulfillment",
     ],
     stat: { value: "100k+", label: "Daily orders handled" },
   },
   {
-    id: "logistics",
-    label: "Logistics",
-    href: "/industries/logistics",
-    headline: "Fleets, routes, and the last mile",
+    id: "healthcare",
+    label: "Healthcare",
+    href: "/industries/healthcare",
+    headline: "Clinical-Grade Systems, Consumer-Grade Interfaces",
     description:
-      "Dispatch, tracking, and route optimisation platforms built for operations teams who work in the field, not at a desk.",
+      "Secure patient management, medical logistics, and EHR integrations built HIPAA-compliant from day one.",
     points: [
-      "Live fleet tracking",
-      "Route optimisation",
-      "Driver and warehouse apps",
+      "HIPAA-compliant data workflows",
+      "Patient appointment & portal systems",
+      "Secure medical record encryption",
     ],
-    stat: { value: "99.9%", label: "Platform uptime" },
+    stat: { value: "10M+", label: "Records securely managed" },
+  },
+  {
+    id: "professional-services",
+    label: "Professional Services",
+    href: "/services",
+    headline: "Client Portals, Resource Allocation & Project Automation",
+    description:
+      "Streamlined workflows that automate time logging, milestone billing, and client collaboration for service firms.",
+    points: [
+      "Custom client collaboration workspaces",
+      "Resource scheduling & utilization analytics",
+      "Milestone-driven automated invoicing",
+    ],
+    stat: { value: "40%", label: "Reduction in admin overhead" },
   },
 ];

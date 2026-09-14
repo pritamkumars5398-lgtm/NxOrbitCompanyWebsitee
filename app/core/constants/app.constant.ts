@@ -134,38 +134,33 @@ export const TESTIMONIALS = [
 export const FAQS = [
   {
     id: 0,
-    q: "Can NXTorbit add AI features like ChatGPT to my app?",
-    a: "Yes, NXTorbit is an established AI-native solutions provider. We construct tailored generative structures, model pipeline integrations, AI agent microservices, and contextual interfaces designed to fit seamlessly into your existing mobile and web products.",
-    bulletPoints: ["Generative AI Pipelines", "Model Integration Audits", "Custom Copilot Implementations"]
+    q: "How does NXT Orbit integrate with our existing ERP and CRM systems?",
+    a: "We design bi-directional API connectors and middleware that synchronize directly with SAP, Tally, Salesforce, or custom databases without requiring you to replace your operational backbone.",
+    bulletPoints: ["Bi-directional sync", "Zero data loss pipelines", "Preserves legacy investment"]
   },
   {
     id: 1,
-    q: "Can NXTorbit help upgrade my existing mobile app with AI features?",
-    a: "Yes, we specialize in legacy re-engineering. We analyze your active system database, introduce secure API pipelines, integrate pre-trained models, and build low-latency custom interfaces to optimize operational metrics."
+    q: "Can you help automate manual data entry between departments?",
+    a: "Yes. We eliminate spreadsheet dependencies by connecting inventory, billing, dispatch, and finance into cohesive workflows with automated validation rules."
   },
   {
     id: 2,
-    q: "Is NXTorbit reliable for enterprise-level mobile apps?",
-    a: "Absolutely. We build products leveraging enterprise-grade access constraints, modular code segments, and multi-tenant architectures. We complete extensive vulnerability scanning, load testing, and database clustering."
+    q: "How do you handle data privacy and enterprise security?",
+    a: "Security is engineered into our architecture from the start: role-based access control (RBAC), end-to-end encryption at rest and in transit, and complete audit logging."
   },
   {
     id: 3,
-    q: "Is NXTorbit a certified mobile app development company?",
-    a: "Yes, our development centers hold recognized security certifications, including verified compliance processes and automated data processing checks to satisfy global corporate standards."
+    q: "Does NXT Orbit hold specific certifications?",
+    a: "Our engineering processes adhere to ISO-aligned information security and industry compliance guidelines (e.g. DPDP, GDPR principles), ensuring your solutions pass corporate audits."
   },
   {
     id: 4,
-    q: "What is the cost of developing a custom AI app with NXTorbit?",
-    a: "Project cost depends on the scope of model training, database parameters, API integration nodes, and layout scaling requirements. We provide comprehensive line-item pricing sheets following initial consultations."
+    q: "Where does AI deliver practical value in our business operations?",
+    a: "Rather than generic chatbots, we deploy AI for concrete business outcomes: automated invoice/document processing, semantic knowledge retrieval for support, and predictive inventory demand."
   },
   {
     id: 5,
-    q: "Does NXTorbit provide long-term support and updates?",
-    a: "Yes, we support our partners with continuous uptime tracking, package updates, database optimization audits, and active infrastructure management under transparent service contracts."
-  },
-  {
-    id: 6,
-    q: "Can NXTorbit help build next-gen fintech and healthcare apps?",
-    a: "Yes, we specialize in high-regulated sectors. We enforce strict SOC2 Type II parameters, HIPAA-compliant encryption setups for healthcare products, and PCI-DSS verified pipelines for digital payment portals."
+    q: "Do you provide dedicated support SLAs after go-live?",
+    a: "Yes. Go-live is just the beginning. We provide ongoing maintenance, performance tuning, uptime monitoring, and SLA-backed engineering support."
   }
 ];

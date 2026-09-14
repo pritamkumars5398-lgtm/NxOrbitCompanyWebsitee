@@ -92,6 +92,18 @@ export function Header() {
           </Link>
 
           <nav aria-label="Primary" className="hidden items-center gap-0.5 lg:flex">
+            <Link
+              href="/about"
+              className={cn(
+                "rounded-lg px-3.5 py-2 text-sm font-semibold transition-colors duration-200",
+                pathname === "/about"
+                  ? "text-brand-500 font-bold"
+                  : "text-ink-700 hover:text-brand-500",
+              )}
+            >
+              About Us
+            </Link>
+
             {NAV_GROUPS.map((group) => (
               <div
                 key={group.label}
@@ -322,6 +334,16 @@ function MobileDrawer({ open, onClose }: { open: boolean; onClose: () => void })
             </div>
 
             <nav aria-label="Mobile" className="flex-1 overflow-y-auto overscroll-contain px-6 py-4">
+              <div className="border-b border-hairline">
+                <Link
+                  href="/about"
+                  onClick={onClose}
+                  className="flex w-full items-center justify-between py-4 text-left text-base font-semibold text-ink-900 hover:text-brand-500"
+                >
+                  About Us
+                </Link>
+              </div>
+
               {NAV_GROUPS.map((group) => {
                 const isOpen = expanded === group.label;
                 return (

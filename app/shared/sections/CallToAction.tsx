@@ -66,8 +66,18 @@ export function CallToAction({
                 </div>
               )}
 
-              <h2 className="text-display-sm sm:text-display-md lg:text-display-lg text-white max-w-2xl">
-                {title.includes("Exceptional Together") ? (
+              <h2 className="text-display-sm sm:text-display-md lg:text-display-lg text-white max-w-2xl font-bold leading-tight">
+                {title.includes("Business Problem") ? (
+                  <>
+                    Let's Start with the{" "}
+                    <span className="text-[#00d2c4]">Business Problem,</span> Not the Code.
+                  </>
+                ) : title.includes("moves your business forward") ? (
+                  <>
+                    Let's build technology that{" "}
+                    <span className="text-[#00d2c4]">moves your business forward.</span>
+                  </>
+                ) : title.includes("Exceptional Together") ? (
                   <>
                     Let's Build Something{" "}
                     <span className="text-[#00d2c4]">Exceptional Together</span>

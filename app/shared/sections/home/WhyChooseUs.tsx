@@ -20,6 +20,7 @@ import { whyChooseUsWomanSvgData } from "@/app/shared/assets/whyChooseUsWomanDat
 
 
 interface FeatureCard {
+  number: string;
   title: string;
   desc: string;
   icon: React.ElementType;
@@ -27,43 +28,49 @@ interface FeatureCard {
 
 const FEATURES: FeatureCard[] = [
   {
-    title: "Business-Driven Engineering",
-    desc: "Every engagement begins with understanding your business processes, operational workflows, and long-term objectives before defining the technology.",
+    number: "01",
+    title: "Business Discovery",
+    desc: "Every engagement begins with understanding your business processes, operational challenges, and goals to build solutions that solve the right problems.",
     icon: Sparkles,
   },
   {
-    title: "Enterprise Architecture",
-    desc: "Scalable application architecture designed for performance, maintainability, future expansion, and seamless system integration.",
-    icon: Layers,
-  },
-  {
-    title: "Connected Business Systems",
-    desc: "ERP, CRM, finance, warehouse, HR, and third-party applications working together through secure integration.",
-    icon: Link2,
-  },
-  {
-    title: "Structured Project Delivery",
-    desc: "Business analysis, solution design, documentation, development, testing, deployment, and support managed through a structured delivery framework.",
+    number: "02",
+    title: "Business Process Automation",
+    desc: "We streamline workflows, automate repetitive operations, and reduce manual dependencies to improve efficiency and productivity.",
     icon: RefreshCw,
   },
   {
-    title: "Quality Without Compromise",
-    desc: "Architecture reviews, code reviews, quality assurance, deployment validation, and documentation are embedded throughout every project.",
-    icon: ShieldCheck,
+    number: "03",
+    title: "Customized Enterprise Solutions",
+    desc: "From ERP and CRM to enterprise platforms and mobile applications, every solution is designed around your business — not generic software.",
+    icon: Layers,
   },
   {
-    title: "Long-Term Technology Partnership",
-    desc: "Continuous enhancements, optimization, monitoring, and support that evolve with your business long after implementation.",
-    icon: Headphones,
+    number: "04",
+    title: "Connected Business Ecosystem",
+    desc: "Integrate ERP, CRM, finance, warehouse, HR, cloud platforms, and third-party applications into one connected digital ecosystem with complete operational visibility.",
+    icon: Link2,
+  },
+  {
+    number: "05",
+    title: "AI Enablement",
+    desc: "Apply AI where it delivers measurable business value — from intelligent search and workflow automation to document processing, predictive insights, and decision support.",
+    icon: Zap,
+  },
+  {
+    number: "06",
+    title: "Industry-Focused Solutions",
+    desc: "Every industry operates differently. Our solutions are designed to address the unique workflows, compliance requirements, and operational challenges of manufacturing, logistics, healthcare, retail, finance, and service businesses.",
+    icon: ShieldCheck,
   },
 ];
 
 /**
- * Why Businesses Choose NXTorbit section featuring feature grid & girl holding smartphone portrait.
+ * Our Business Approach section featuring 6-card modular grid & visual portrait.
  */
 export function WhyChooseUs() {
   return (
-    <section className="relative isolate overflow-hidden bg-slate-50/70 py-12 lg:py-16">
+    <section className="relative isolate overflow-hidden bg-slate-50/70 py-12 lg:py-16" id="solutions">
 
       {/* Background Lighting Elements */}
       <div
@@ -77,10 +84,10 @@ export function WhyChooseUs() {
           <div className="lg:col-span-7 flex flex-col items-start gap-8">
             <Reveal className="flex flex-col items-start gap-3">
               <span className="text-xs font-bold tracking-widest text-[#008c83] uppercase">
-                BUILT FOR ENTERPRISE DELIVERY
+                OUR BUSINESS APPROACH
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.2]">
-                How we engineer solutions that businesses can depend on.
+                Understanding Business. Delivering Technology. Creating Value.
               </h2>
             </Reveal>
 
@@ -95,11 +102,16 @@ export function WhyChooseUs() {
                     delay={idx * 0.05}
                     className="flex flex-col items-start p-5 rounded-2xl bg-white border border-slate-200/80 shadow-sm transition-all duration-300 hover:border-[#00d2c4] hover:shadow-md hover:-translate-y-1 group"
                   >
-                    <div className="flex size-10 items-center justify-center rounded-xl bg-teal-50 text-[#008c83] mb-3 group-hover:bg-[#00d2c4] group-hover:text-[#01141b] transition-colors">
-                      <Icon className="size-4.5" />
+                    <div className="flex items-center justify-between w-full mb-3">
+                      <div className="flex size-10 items-center justify-center rounded-xl bg-teal-50 text-[#008c83] group-hover:bg-[#00d2c4] group-hover:text-[#01141b] transition-colors">
+                        <Icon className="size-4.5" />
+                      </div>
+                      <span className="font-mono text-xs font-bold text-teal-600 bg-teal-50 px-2 py-0.5 rounded-md">
+                        {feat.number}
+                      </span>
                     </div>
                     <h3 className="text-sm font-bold text-slate-900 mb-1 leading-snug">
-                      {feat.title}
+                      {feat.number} | {feat.title}
                     </h3>
                     <p className="text-xs text-slate-500 leading-relaxed font-normal">
                       {feat.desc}

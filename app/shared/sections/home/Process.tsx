@@ -33,13 +33,12 @@ export function Process() {
           {/* Sticky rail */}
           <div className="lg:sticky lg:top-32 lg:self-start">
             <Reveal className="flex flex-col gap-5">
-              <Eyebrow>How we work</Eyebrow>
+              <Eyebrow>DELIVERY PROCESS</Eyebrow>
               <h2 className="text-display-md sm:text-display-lg">
-                A process you can see through.
+                How We Work — A process you can see through.
               </h2>
               <p className="max-w-md text-lead text-ink-600">
-                Four phases, each with a defined output you can hold us to. No black-box quarters,
-                no status decks standing in for working software.
+                Four phases, each with a defined output you can hold us to — not a status deck standing in for working software.
               </p>
               <Button href="/contact" variant="primary" withArrow className="mt-2 self-start">
                 Start with discovery

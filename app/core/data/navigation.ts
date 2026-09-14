@@ -107,6 +107,7 @@ export const INDUSTRY_LINKS: NavLink[] = [
 ];
 
 export const COMPANY_LINKS: NavLink[] = [
+  { label: "About Us", href: "/about", description: "Our business-first approach & leadership.", icon: "compass" },
   { label: "Case Studies", href: "/case-studies", description: "Outcomes, metrics & real client stories.", icon: "briefcase" },
   { label: "Our Work", href: "/portfolio", description: "Selected enterprise products shipped.", icon: "layers" },
   { label: "Careers", href: "/career", description: "Open engineering roles & culture.", icon: "users" },

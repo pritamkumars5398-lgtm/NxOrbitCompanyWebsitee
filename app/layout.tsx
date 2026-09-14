@@ -23,9 +23,10 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "NXTorbit — Product Engineering for Mobile, Web, AI & Cloud",
+  title: "NXT Orbit | Enterprise Technology for Manufacturing & Service Businesses",
   description:
-    "NXTorbit designs and engineers mobile apps, web platforms, AI systems, and cloud infrastructure.",
+    "NXT Orbit builds custom ERP, CRM, and enterprise platforms for manufacturing and service businesses — integrated with your existing systems, not replacing them.",
+  metadataBase: new URL("https://nxt-orbit.com"),
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

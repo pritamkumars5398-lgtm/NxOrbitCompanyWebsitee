@@ -1,40 +1,66 @@
 import { CallToAction } from "@/app/shared/sections/CallToAction";
-import { Capabilities } from "@/app/shared/sections/home/Capabilities";
-import { EnterpriseProficiency } from "@/app/shared/sections/home/EnterpriseProficiency";
-import { WhyChooseUs } from "@/app/shared/sections/home/WhyChooseUs";
-import { Faq } from "@/app/shared/sections/home/Faq";
 import { Hero } from "@/app/shared/sections/home/Hero";
-import { TechStack } from "@/app/shared/sections/home/TechStack";
-import { LogoRail } from "@/app/shared/sections/home/LogoRail";
+import { TheChallenge } from "@/app/shared/sections/home/TheChallenge";
+import { WhyChooseUs } from "@/app/shared/sections/home/WhyChooseUs";
+import { Industries } from "@/app/shared/sections/home/Industries";
 import { Process } from "@/app/shared/sections/home/Process";
-import { Testimonials } from "@/app/shared/sections/home/Testimonials";
+import { SolutionsInAction } from "@/app/shared/sections/home/SolutionsInAction";
+import { LogoRail } from "@/app/shared/sections/home/LogoRail";
+import { InsightsStrip } from "@/app/shared/sections/home/InsightsStrip";
+import { Faq } from "@/app/shared/sections/home/Faq";
 
 /**
  * Homepage.
  *
- * Section order alternates surface tone (white → muted → dark) and layout
- * language (bento → timeline → tabs → matrix → editorial list) so the page
- * never repeats a rhythm the visitor has already scrolled past.
+ * Structured strictly according to the designer specifications and document sections:
+ * Section 1 — Hero & Trust Metrics
+ * Section 2 — Business Challenge
+ * Section 3 — Our Business Approach
+ * Section 4 — Industries
+ * Section 5 — Delivery Process
+ * Section 6 — Our Solutions in Action
+ * Section 7 — Trust
+ * Section 8 — Insights
+ * Section 9 — FAQ
+ * Section 10 — Final CTA
  */
 export default function HomePage() {
   return (
     <>
+      {/* Section 1 — Hero & Trust Metrics */}
       <Hero />
-      <LogoRail />
-      <EnterpriseProficiency />
+
+      {/* Section 2 — Business Challenge */}
+      <TheChallenge />
+
+      {/* Section 3 — Our Business Approach */}
       <WhyChooseUs />
+
+      {/* Section 4 — Industries */}
+      <Industries />
+
+      {/* Section 5 — Delivery Process */}
       <Process />
-      <Capabilities />
-      <TechStack />
-      <Testimonials />
-      
+
+      {/* Section 6 — Our Solutions in Action */}
+      <SolutionsInAction />
+
+      {/* Section 7 — Trust */}
+      <LogoRail />
+
+      {/* Section 8 — Insights */}
+      <InsightsStrip />
+
+      {/* Section 9 — FAQ */}
       <Faq />
+
+      {/* Section 10 — Final CTA */}
       <CallToAction
         eyebrow="READY TO START?"
-        title="Let's Build Something Exceptional Together"
-        description="Get a free 30-minute consultation with one of our mobile app development experts. No commitment required."
-        primary={{ label: "Schedule a Free Consultation", href: "/contact" }}
-        secondary={{ label: "Call +91 9763804442", href: "tel:+919763804442" }}
+        title="Let's build technology that moves your business forward."
+        description="Whether you're modernizing legacy systems, implementing enterprise applications, building digital platforms, or planning your next transformation initiative, we'll help you choose the right approach and deliver technology that supports your business for years to come."
+        primary={{ label: "Book a Consultation", href: "/contact" }}
+        secondary={{ label: "Talk to Our Team", href: "/contact" }}
       />
     </>
   );

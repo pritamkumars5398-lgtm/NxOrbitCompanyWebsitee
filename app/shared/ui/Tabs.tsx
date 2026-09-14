@@ -47,8 +47,10 @@ export function Tabs({
         aria-orientation="horizontal"
         onKeyDown={onKeyDown}
         className={cn(
-          "scrollbar-none flex gap-1 overflow-x-auto rounded-2xl p-1.5",
-          light ? "bg-white/6" : "bg-surface-muted border border-hairline",
+          "scrollbar-none flex gap-1.5 overflow-x-auto rounded-2xl p-1.5",
+          light
+            ? "bg-white/10 border border-white/15"
+            : "bg-slate-100/90 border border-slate-200/80",
         )}
       >
         {items.map((item, index) => {
@@ -64,14 +66,14 @@ export function Tabs({
               tabIndex={selected ? 0 : -1}
               onClick={() => setActive(index)}
               className={cn(
-                "relative shrink-0 rounded-xl px-4 py-2.5 text-sm font-semibold whitespace-nowrap transition-colors duration-200",
+                "relative z-10 shrink-0 rounded-xl px-4 sm:px-5 py-2.5 text-sm font-bold whitespace-nowrap transition-all duration-300",
                 selected
                   ? light
-                    ? "text-brand-950"
+                    ? "text-[#01141b]"
                     : "text-white"
                   : light
-                    ? "text-ink-300 hover:text-white"
-                    : "text-ink-500 hover:text-brand-600",
+                    ? "text-slate-300 hover:text-white"
+                    : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50",
               )}
             >
               {selected && (
@@ -79,9 +81,11 @@ export function Tabs({
                   layoutId={`${baseId}-indicator`}
                   className={cn(
                     "absolute inset-0 -z-10 rounded-xl",
-                    light ? "bg-brand-200" : "bg-brand-800",
+                    light
+                      ? "bg-gradient-to-r from-teal-300 to-teal-400"
+                      : "bg-[#01242e] border border-[#00d2c4]/20",
                   )}
-                  transition={{ type: "spring", stiffness: 380, damping: 34 }}
+                  transition={{ type: "spring", stiffness: 420, damping: 32 }}
                 />
               )}
               {item.label}
