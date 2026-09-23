@@ -69,15 +69,11 @@ export function TechVectorInfographic({
                 <div className="absolute top-0 left-0 right-0 h-1 bg-brand-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                 <div>
-                  {/* Card Header: Icon Badge & Pillar Tag */}
-                  <div className="flex items-center justify-between mb-6">
+                  {/* Card Header: Icon Badge */}
+                  <div className="flex items-center mb-6">
                     <div className="flex size-11 items-center justify-center rounded-xl bg-brand-50 text-brand-600 border border-brand-100/80 transition-colors duration-300 group-hover:bg-brand-600 group-hover:text-white">
                       <IconComponent className="size-5" strokeWidth={1.8} />
                     </div>
-
-                    <span className="font-mono text-xs font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-2.5 py-1 rounded-md border border-slate-200/60">
-                      PILLAR {stepNumber}
-                    </span>
                   </div>
 
                   {/* Title & Description */}

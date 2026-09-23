@@ -264,12 +264,6 @@ export default function CourierExpressPage() {
                 <ServiceHeroImage
                   src="/assets/hero_slider_3.webp"
                   alt="Intelligent Shipping & Fulfillment Engine for Modern E-Commerce - Courier Express"
-                  categoryText="E-Commerce Fulfillment"
-                  badgeText="Intelligent Shipping Engine"
-                  statBadge={{
-                    label: "Fulfillment SLA",
-                    value: "25+ Carriers | -45% RTO"
-                  }}
                 />
               </Reveal>
             </div>
@@ -548,10 +542,7 @@ export default function CourierExpressPage() {
                       {/* Left Sub-Column: Feature Info & Points */}
                       <div className="lg:col-span-5 flex flex-col justify-between gap-6">
                         <div>
-                          {/* Eyebrow Badge Tag */}
-                          <div className="inline-flex items-center gap-2 bg-teal-50 text-teal-700 px-3 py-1 rounded-md text-[11px] font-mono font-bold uppercase border border-teal-200/60 mb-3">
-                            PILLAR {pillarIndex}
-                          </div>
+
 
                           {/* Title */}
                           <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight leading-tight">

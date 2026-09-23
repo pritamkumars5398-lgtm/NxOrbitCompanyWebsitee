@@ -154,7 +154,7 @@ export default async function ServicePage({
                 />
 
                 {/* Service Hero Image Card Frame */}
-                <ServiceHeroImage src={data.heroImage} alt={data.title} badgeText={badgeText} />
+                <ServiceHeroImage src={data.heroImage} alt={data.title} />
 
               </Reveal>
             </Parallax>

@@ -6,7 +6,7 @@ import { INDUSTRY_SHOWCASE } from "@/app/core/data/home";
 import { Container, Section, SectionHeading } from "@/app/shared/ui/Layout";
 import { Tabs, type TabItem } from "@/app/shared/ui/Tabs";
 import { Reveal } from "@/app/shared/motion/Reveal";
-import { CountUp } from "@/app/shared/motion/CountUp";
+
 
 /**
  * Industry showcase.
@@ -69,22 +69,6 @@ export function Industries() {
             className="size-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
           />
 
-          {/* Floating Stat Overlay Badge - compact and positioned so the image remains fully clear */}
-          <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 rounded-md border border-slate-900/10 bg-slate-950/85 px-3.5 py-2 sm:px-4 sm:py-2.5 backdrop-blur-md shadow-lg transition-all duration-300 group-hover:border-[#00d2c4]/50 group-hover:bg-slate-950/95">
-            <div className="flex items-center gap-3">
-              <div>
-                <span className="block text-xl sm:text-2xl font-black tracking-tight tabular-nums text-white leading-tight">
-                  <CountUp value={industry.stat.value} />
-                </span>
-                <span className="text-[10px] sm:text-xs font-medium text-slate-300">
-                  {industry.stat.label}
-                </span>
-              </div>
-              <div className="size-7 sm:size-8 flex items-center justify-center rounded bg-[#008c83]/30 border border-[#00d2c4]/40 text-[#00d2c4]">
-                <ArrowRight className="size-3.5 sm:size-4 -rotate-45" />
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     ),

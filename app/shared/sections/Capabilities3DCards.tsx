@@ -82,7 +82,7 @@ export function Capabilities3DCards({
 
                 <div>
                   {/* Top Row: Icon Badge & Number Pill */}
-                  <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center mb-6">
                     {/* Icon Disc without shadow */}
                     <div
                       className={cn(
@@ -92,11 +92,6 @@ export function Capabilities3DCards({
                     >
                       <IconComponent className="size-7" strokeWidth={1.8} />
                     </div>
-
-                    {/* Number Pill */}
-                    <span className="font-mono text-xs font-extrabold tracking-wider text-teal-700 bg-teal-50/90 border border-teal-200/70 px-3.5 py-1.5 rounded-full shadow-2xs group-hover:bg-teal-500 group-hover:text-white group-hover:border-teal-500 transition-all duration-300">
-                      FEATURE {stepNumber}
-                    </span>
                   </div>
 
                   {/* Title & Description */}

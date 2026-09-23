@@ -241,12 +241,6 @@ export default function NextOrbitWmsPage() {
                 <ServiceHeroImage
                   src="/assets/hero_slider_2.webp"
                   alt="Total Warehouse Intelligence & Capacity Yield - NXT WMS"
-                  categoryText="Capacity & Yield"
-                  badgeText="Total Warehouse Intelligence"
-                  statBadge={{
-                    label: "Capacity Yield",
-                    value: "84% Occupancy | +25% Yield"
-                  }}
                 />
               </Reveal>
             </div>
@@ -410,10 +404,7 @@ export default function NextOrbitWmsPage() {
                     {/* Left Sub-Column: Feature Info & Points */}
                     <div className="lg:col-span-5 flex flex-col justify-between gap-6">
                       <div>
-                        {/* Eyebrow Badge Tag */}
-                        <div className="inline-flex items-center gap-2 bg-teal-50 text-teal-700 px-3 py-1 rounded-md text-[11px] font-mono font-bold uppercase border border-teal-200/60 mb-3">
-                          PILLAR {pillarIndex}
-                        </div>
+
 
                         {/* Title */}
                         <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight leading-tight">

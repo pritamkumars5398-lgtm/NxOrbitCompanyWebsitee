@@ -280,12 +280,6 @@ export default function NextOrbitFreightPage() {
                 <ServiceHeroImage
                   src="/assets/hero_slider_1.webp"
                   alt="Stop Managing Logistics. Start Orchestrating Growth - NXT Orbit Freight OS"
-                  categoryText="Next-Gen Freight OS"
-                  badgeText="Logistics & Growth Orchestration"
-                  statBadge={{
-                    label: "Active Freight",
-                    value: "1,482 TEU | 99.8% Auto"
-                  }}
                 />
               </Reveal>
             </div>

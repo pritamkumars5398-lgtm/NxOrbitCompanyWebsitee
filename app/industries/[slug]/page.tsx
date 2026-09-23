@@ -228,9 +228,7 @@ export default async function IndustryPage({
 
                   {/* Card Content with padded container */}
                   <div className="p-6 sm:p-7 flex flex-1 flex-col gap-3">
-                    <span className="font-mono text-xs text-brand-400 tabular-nums">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
+
                     <h3 className="text-base font-semibold text-ink-900 transition-colors duration-300 group-hover:text-brand-500">
                       {feature.title}
                     </h3>

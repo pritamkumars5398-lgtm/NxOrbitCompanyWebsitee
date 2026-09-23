@@ -552,9 +552,7 @@ export default function AboutPage() {
                     <div className="flex size-11 items-center justify-center rounded-xl bg-teal-50 text-[#008c83] mb-3">
                       <Icon className="size-5" />
                     </div>
-                    <span className="font-mono text-[10px] font-bold text-slate-400 mb-1">
-                      STEP 0{idx + 1}
-                    </span>
+
                     <span className="text-xs font-bold text-slate-900 leading-tight">
                       {item.step}
                     </span>
@@ -676,11 +674,10 @@ export default function AboutPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent pointer-events-none" />
                 </div>
                 <div className="flex flex-col gap-2 flex-1">
-                  <div className="flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-2">
                     <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#008c83] transition-colors">
                       {leader.name}
                     </h3>
-                    <span className="size-2 rounded-full bg-emerald-500" />
                   </div>
                   <span className="text-xs font-bold text-[#008c83] uppercase tracking-wide">
                     {leader.role}
