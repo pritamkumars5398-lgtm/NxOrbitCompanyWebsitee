@@ -94,13 +94,6 @@ export function Eyebrow({
         className,
       )}
     >
-      <span
-        aria-hidden
-        className={cn(
-          "h-px w-6",
-          tone === "light" ? "bg-brand-200/60" : "bg-current opacity-40",
-        )}
-      />
       {children}
     </span>
   );

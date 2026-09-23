@@ -297,7 +297,6 @@ export default function NextOrbitWmsPage() {
                   {/* Left Header Info & 3 Value Badges */}
                   <div className="lg:col-span-6 flex flex-col gap-4">
                     <div className="flex items-center gap-2">
-                      <span className="h-0.5 w-6 bg-teal-500 rounded-full" />
                       <span className="text-xs font-mono font-bold uppercase tracking-widest text-teal-600">
                         STRATEGIC TRANSFORMATION
                       </span>

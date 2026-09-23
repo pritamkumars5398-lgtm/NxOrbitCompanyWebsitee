@@ -583,7 +583,6 @@ export default function NextOrbitFreightPage() {
             {/* Left Header Info */}
             <div className="lg:col-span-6 flex flex-col gap-3">
               <div className="flex items-center gap-2">
-                <span className="h-0.5 w-6 bg-teal-500 rounded-full" />
                 <span className="text-xs font-mono font-bold uppercase tracking-widest text-teal-600">
                   PRODUCT DEEP DIVE
                 </span>
@@ -671,7 +670,6 @@ export default function NextOrbitFreightPage() {
 
                     <div className="relative z-10 flex flex-col items-start gap-2.5">
                       <div className="flex items-center gap-2">
-                        <span className="h-0.5 w-4 bg-teal-400 rounded-full" />
                         <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-teal-300">
                           {currentTab.label}
                         </span>
@@ -786,11 +784,9 @@ export default function NextOrbitFreightPage() {
           {/* Centered Section Header */}
           <div className="text-center max-w-2xl mx-auto mb-16 flex flex-col items-center gap-3">
             <div className="flex items-center gap-2">
-              <span className="h-0.5 w-6 bg-teal-500 rounded-full" />
               <span className="text-xs font-mono font-bold uppercase tracking-widest text-teal-600">
                 ENTERPRISE INTEGRATIONS
               </span>
-              <span className="h-0.5 w-6 bg-teal-500 rounded-full" />
             </div>
 
             <h2 className="text-display-md sm:text-display-lg text-slate-900 font-extrabold tracking-tight leading-tight">

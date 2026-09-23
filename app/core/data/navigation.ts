@@ -108,7 +108,6 @@ export const INDUSTRY_LINKS: NavLink[] = [
 
 export const COMPANY_LINKS: NavLink[] = [
   { label: "About Us", href: "/about", description: "Our business-first approach & leadership.", icon: "compass" },
-  { label: "Case Studies", href: "/case-studies", description: "Outcomes, metrics & real client stories.", icon: "briefcase" },
   { label: "Our Work", href: "/portfolio", description: "Selected enterprise products shipped.", icon: "layers" },
   { label: "Careers", href: "/career", description: "Open engineering roles & culture.", icon: "users" },
   { label: "Contact", href: "/contact", description: "Talk to an engineer, not a form.", icon: "mail" },
@@ -159,8 +158,8 @@ export const NAV_GROUPS: NavGroup[] = [
       title: "1,400+ products shipped",
       description:
         "Fourteen years of engineering for startups and enterprises across 35 countries.",
-      href: "/case-studies",
-      cta: "See the work",
+      href: "/portfolio",
+      cta: "See our work",
     },
   },
   {

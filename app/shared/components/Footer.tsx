@@ -52,7 +52,7 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-2 space-y-4">
-            <h4 className="text-xs font-black uppercase tracking-widest text-white border-b border-white/10 pb-3">Case Studies</h4>
+            <h4 className="text-xs font-black uppercase tracking-widest text-white border-b border-white/10 pb-3">Selected Work</h4>
             <ul className="space-y-2.5 text-sm text-slate-400">
               {[["Daylyy","/portfolio"],["TrueFan","/portfolio"],["Airtel Xstream","/portfolio"],["Alba Cars","/portfolio"],["JoshCam","/portfolio"],["Mother Dairy","/portfolio"]].map(([l,h]) => (
                 <li key={l}><a href={h} className="hover:text-nyt-green transition">{l}</a></li>

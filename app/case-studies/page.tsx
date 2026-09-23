@@ -104,7 +104,6 @@ export default function CaseStudiesPage() {
                     <span className="font-mono text-xs text-ink-300 tabular-nums">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <span className="h-px w-8 bg-hairline-strong" />
                     <span className="text-eyebrow uppercase text-brand-500">
                       {project.industry}
                     </span>
