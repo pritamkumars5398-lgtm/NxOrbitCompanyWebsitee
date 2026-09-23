@@ -254,7 +254,6 @@ export default function AboutPage() {
           <div className="max-w-3xl flex flex-col items-start gap-6">
             <Reveal from="up">
               <div className="inline-flex items-center gap-2 rounded-full border border-teal-500/20 bg-white/90 px-4 py-1.5 backdrop-blur-md shadow-sm">
-                <span className="size-2 rounded-full bg-[#008c83] animate-pulse" />
                 <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#008c83]">
                   THE WAY WE WORK
                 </span>

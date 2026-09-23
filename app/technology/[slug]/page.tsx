@@ -194,7 +194,7 @@ export default async function TechnologyPage({
                   </span>
                   <div className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-mono font-medium text-teal-400">
                     <span
-                      className="size-1.5 rounded-full animate-pulse"
+                      className="size-1.5 rounded-full"
                       style={{ backgroundColor: `rgb(${asset.rgb})` }}
                     />
                     {asset.version}

@@ -84,13 +84,10 @@ export function SolutionsInAction() {
               >
                 <div className="flex flex-col gap-5">
                   {/* Card Header */}
-                  <div className="flex items-center justify-between gap-4">
+                  <div className="flex items-center gap-4">
                     <div className="flex size-12 items-center justify-center rounded-2xl bg-teal-50 text-[#008c83] group-hover:bg-[#00d2c4] group-hover:text-[#01141b] transition-colors">
                       <Icon className="size-6" />
                     </div>
-                    <span className="font-mono text-xs font-bold text-slate-400">
-                      CASE 0{idx + 1}
-                    </span>
                   </div>
 
                   <h3 className="text-lg sm:text-xl font-bold text-slate-900 leading-snug group-hover:text-[#008c83] transition-colors">

@@ -24,7 +24,6 @@ export function Industries() {
         {/* Left: Sector Details */}
         <div className="flex flex-col gap-5">
           <div className="inline-flex items-center gap-2 rounded-full border border-teal-500/20 bg-teal-50/80 px-3.5 py-1 w-fit">
-            <span className="size-2 rounded-full bg-[#008c83] animate-pulse" />
             <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#008c83]">
               {industry.label} Sector
             </span>

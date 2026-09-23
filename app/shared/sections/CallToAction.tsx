@@ -49,22 +49,11 @@ export function CallToAction({
             className="pointer-events-none absolute -bottom-40 -right-40 size-96 rounded-full bg-brand-500/10 blur-[120px]"
           />
 
-          {/* Dotted Grid Accents in Corners */}
-          <div className="absolute left-8 top-8 grid grid-cols-5 gap-2.5 opacity-20">
-            {Array.from({ length: 15 }).map((_, i) => (
-              <span key={i} className="size-1 rounded-full bg-[#00d2c4]" />
-            ))}
-          </div>
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-6 items-center">
             {/* Left Column: Heading & CTA Buttons */}
             <Reveal className="lg:col-span-7 flex flex-col items-start text-left gap-6">
-              {eyebrow && (
-                <div className="inline-flex items-center gap-2 rounded-full border border-teal-400/30 bg-teal-950/40 px-3.5 py-1 text-[11px] font-bold tracking-widest text-[#00d2c4] uppercase backdrop-blur-md">
-                  <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
-                  {eyebrow}
-                </div>
-              )}
+
 
               <h2 className="text-display-sm sm:text-display-md lg:text-display-lg text-white max-w-2xl font-bold leading-tight">
                 {title.includes("Business Problem") ? (

@@ -502,8 +502,8 @@ export default function NextOrbitSalesFinancePage() {
                     </h3>
                   </div>
                   <span className="inline-flex items-center gap-1.5 bg-teal-500/20 text-teal-300 border border-teal-500/40 px-3 py-1 rounded-full text-xs font-semibold">
-                    <span className="size-2 rounded-full bg-emerald-400 animate-pulse" /> Real-Time Sync
-                  </span>
+                     Real-Time Sync
+                   </span>
                 </div>
 
                 {/* Feature Comparison Items */}
@@ -885,7 +885,7 @@ export default function NextOrbitSalesFinancePage() {
 
                       <div className="relative z-20 flex flex-col gap-3">
                         <div className="inline-flex items-center gap-2 bg-teal-500/20 backdrop-blur-md border border-teal-400/30 px-2.5 py-1 rounded-md w-fit">
-                          <span className="size-1.5 rounded-full bg-teal-400 animate-pulse" />
+                          <span className="size-1.5 rounded-full bg-teal-400" />
                           <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-teal-300">
                             0{tabIdx} {currentTab.label.replace(/^\d+\.\s*/, "").toUpperCase()}
                           </span>
@@ -1090,7 +1090,7 @@ export default function NextOrbitSalesFinancePage() {
                 {/* Header */}
                 <div className="bg-slate-950 text-white px-5 py-4 flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <span className="flex size-2 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className="flex size-2 rounded-full bg-emerald-500" />
                     <span className="text-xs font-bold font-mono tracking-wider">NXT Fin AI Copilot</span>
                   </div>
                   <Terminal className="size-4 text-teal-400" />
@@ -1101,7 +1101,7 @@ export default function NextOrbitSalesFinancePage() {
                   <div className="text-teal-400">&gt; Prompt: {FINANCE_CHAT_PROMPTS[chatIndex].question}</div>
                   <div className="border-t border-slate-800 pt-3 text-slate-300 leading-relaxed whitespace-pre-wrap">
                     {displayedAnswer}
-                    {typing && <span className="inline-block w-1.5 h-3.5 bg-teal-400 ml-1 animate-pulse" />}
+                    {typing && <span className="inline-block w-1.5 h-3.5 bg-teal-400 ml-1" />}
                   </div>
                 </div>
 

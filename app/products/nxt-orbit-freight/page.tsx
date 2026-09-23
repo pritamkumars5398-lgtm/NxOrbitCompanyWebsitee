@@ -539,7 +539,7 @@ export default function NextOrbitFreightPage() {
                 {/* Header */}
                 <div className="bg-slate-950 text-white px-5 py-4 flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <span className="flex size-2 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className="flex size-2 rounded-full bg-emerald-500" />
                     <span className="text-xs font-bold font-mono tracking-wider">NXTorbit AI Copilot</span>
                   </div>
                   <Terminal className="size-4 text-teal-400" />
@@ -550,7 +550,7 @@ export default function NextOrbitFreightPage() {
                   <div className="text-teal-400">&gt; Prompt: {CHAT_PROMPTS[chatIndex].question}</div>
                   <div className="border-t border-slate-800 pt-3 text-slate-300 leading-relaxed whitespace-pre-wrap">
                     {displayedAnswer}
-                    {typing && <span className="inline-block w-1.5 h-3.5 bg-teal-400 ml-1 animate-pulse" />}
+                    {typing && <span className="inline-block w-1.5 h-3.5 bg-teal-400 ml-1" />}
                   </div>
                 </div>
 

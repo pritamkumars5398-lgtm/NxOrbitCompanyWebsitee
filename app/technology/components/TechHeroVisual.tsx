@@ -141,7 +141,7 @@ export function TechHeroVisual({ slug, title, techStack }: TechHeroVisualProps) 
       <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-4">
         <span className="text-xs font-black uppercase tracking-wider text-[#006B7D]">Technology Showcase</span>
         <span className="text-xs font-bold text-[#82C458] bg-[#82C458]/10 px-3 py-1 rounded-full flex items-center gap-1.5">
-          <span className="w-2 h-2 rounded-full bg-[#82C458] animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-[#82C458]" />
           Active Stack
         </span>
       </div>

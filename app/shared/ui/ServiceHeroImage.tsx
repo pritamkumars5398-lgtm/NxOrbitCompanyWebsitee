@@ -39,7 +39,7 @@ export function ServiceHeroImage({
           {/* Optional Top Right Live Stat Badge */}
           {statBadge && (
             <div className="absolute top-3.5 right-3.5 rounded-xl bg-slate-900/85 backdrop-blur-md border border-white/20 px-3.5 py-2 text-white shadow-lg flex items-center gap-2.5">
-              <span className="flex size-2 rounded-full bg-teal-400 animate-pulse" />
+              <span className="flex size-2 rounded-full bg-teal-400" />
               <div className="flex flex-col">
                 <span className="text-[9px] font-bold text-slate-300 uppercase tracking-wider leading-none mb-0.5">{statBadge.label}</span>
                 <span className="text-xs font-extrabold text-teal-300 leading-none">{statBadge.value}</span>

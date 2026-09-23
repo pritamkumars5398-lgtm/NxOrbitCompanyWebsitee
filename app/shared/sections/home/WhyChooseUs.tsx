@@ -11,8 +11,6 @@ import {
   RefreshCw,
   Headphones,
   Sparkles,
-  Star,
-  CheckCircle2,
 } from "lucide-react";
 import { Container } from "@/app/shared/ui/Layout";
 import { Reveal } from "@/app/shared/motion/Reveal";
@@ -20,7 +18,6 @@ import { whyChooseUsWomanSvgData } from "@/app/shared/assets/whyChooseUsWomanDat
 
 
 interface FeatureCard {
-  number: string;
   title: string;
   desc: string;
   icon: React.ElementType;
@@ -28,37 +25,31 @@ interface FeatureCard {
 
 const FEATURES: FeatureCard[] = [
   {
-    number: "01",
     title: "Business Discovery",
     desc: "Every engagement begins with understanding your business processes, operational challenges, and goals to build solutions that solve the right problems.",
     icon: Sparkles,
   },
   {
-    number: "02",
     title: "Business Process Automation",
     desc: "We streamline workflows, automate repetitive operations, and reduce manual dependencies to improve efficiency and productivity.",
     icon: RefreshCw,
   },
   {
-    number: "03",
     title: "Customized Enterprise Solutions",
     desc: "From ERP and CRM to enterprise platforms and mobile applications, every solution is designed around your business — not generic software.",
     icon: Layers,
   },
   {
-    number: "04",
     title: "Connected Business Ecosystem",
     desc: "Integrate ERP, CRM, finance, warehouse, HR, cloud platforms, and third-party applications into one connected digital ecosystem with complete operational visibility.",
     icon: Link2,
   },
   {
-    number: "05",
     title: "AI Enablement",
     desc: "Apply AI where it delivers measurable business value — from intelligent search and workflow automation to document processing, predictive insights, and decision support.",
     icon: Zap,
   },
   {
-    number: "06",
     title: "Industry-Focused Solutions",
     desc: "Every industry operates differently. Our solutions are designed to address the unique workflows, compliance requirements, and operational challenges of manufacturing, logistics, healthcare, retail, finance, and service businesses.",
     icon: ShieldCheck,
@@ -106,12 +97,9 @@ export function WhyChooseUs() {
                       <div className="flex size-10 items-center justify-center rounded-xl bg-teal-50 text-[#008c83] group-hover:bg-[#00d2c4] group-hover:text-[#01141b] transition-colors">
                         <Icon className="size-4.5" />
                       </div>
-                      <span className="font-mono text-xs font-bold text-teal-600 bg-teal-50 px-2 py-0.5 rounded-md">
-                        {feat.number}
-                      </span>
                     </div>
                     <h3 className="text-sm font-bold text-slate-900 mb-1 leading-snug">
-                      {feat.number} | {feat.title}
+                      {feat.title}
                     </h3>
                     <p className="text-xs text-slate-500 leading-relaxed font-normal">
                       {feat.desc}
@@ -132,64 +120,6 @@ export function WhyChooseUs() {
 
             {/* Relative Wrapper for Image and Floating Badges */}
             <div className="relative flex items-center justify-end w-full max-w-[480px] pt-4">
-              {/* Floating Badge 1: Performance Optimized (Top Left) */}
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="absolute top-6 left-0 sm:-left-8 z-30"
-              >
-                <div className="flex items-center gap-3 rounded-2xl border border-teal-400/30 bg-white/95 px-4 py-3 shadow-xl backdrop-blur-md text-slate-900">
-                  <div className="flex size-8 items-center justify-center rounded-xl bg-teal-500/10 text-[#008c83]">
-                    <Zap className="size-4.5" />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-xs font-bold text-slate-900">Performance</span>
-                    <span className="text-[10px] font-semibold text-teal-600">Optimized</span>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Floating Badge 2: Secure By Design (Middle Left) */}
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-                className="absolute top-1/2 left-0 sm:-left-10 -translate-y-1/2 z-30"
-              >
-                <div className="flex items-center gap-3 rounded-2xl border border-emerald-500/30 bg-white/95 px-4 py-3 shadow-xl backdrop-blur-md text-slate-900">
-                  <div className="flex size-8 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-600">
-                    <CheckCircle2 className="size-4.5" />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-xs font-bold text-slate-900">Secure</span>
-                    <span className="text-[10px] font-semibold text-emerald-600">By Design</span>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Floating Badge 3: 4.8/5 Rating (Bottom Left) */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.7 }}
-                className="absolute bottom-6 left-2 sm:-left-6 z-30"
-              >
-                <div className="flex items-center gap-2.5 rounded-2xl border border-amber-400/30 bg-white/95 px-4 py-3 shadow-xl backdrop-blur-md">
-                  <div className="flex items-center text-amber-400">
-                    <Star className="size-3.5 fill-amber-400" />
-                    <Star className="size-3.5 fill-amber-400" />
-                    <Star className="size-3.5 fill-amber-400" />
-                    <Star className="size-3.5 fill-amber-400" />
-                    <Star className="size-3.5 fill-amber-400" />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-xs font-bold text-slate-900">4.8/5 Rating</span>
-                    <span className="text-[9px] text-slate-500">Client Rating</span>
-                  </div>
-                </div>
-              </motion.div>
-
               {/* Local Project Asset Image /assets/why_choose_us_woman.avif (or .jpg) */}
               <div className="relative z-10 w-[300px] sm:w-[360px] ml-auto">
                 <img

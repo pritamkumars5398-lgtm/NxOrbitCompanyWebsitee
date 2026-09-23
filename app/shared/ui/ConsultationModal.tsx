@@ -200,7 +200,7 @@ export function ConsultationModal() {
           {isSubmitted ? (
             <div className="flex flex-col items-center justify-center text-center h-full max-w-sm mx-auto py-12">
               <div className="relative mb-6">
-                <div className="absolute inset-0 rounded-full bg-teal-500/20 blur-xl animate-pulse" />
+                <div className="absolute inset-0 rounded-full bg-teal-500/20 blur-xl" />
                 <CheckCircle2 className="relative size-16 text-teal-500 animate-bounce" />
               </div>
               <h3 className="text-xl font-black text-slate-900 mb-2">Quote Request Sent!</h3>

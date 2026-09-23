@@ -290,7 +290,7 @@ export function RealPhoneImage({ variant = "cta", className = "" }: RealPhoneIma
                           </defs>
                           <path d="M 0 30 Q 25 6, 50 18 T 100 3 L 100 40 L 0 40 Z" fill="url(#glowChartGrad)" />
                           <path d="M 0 30 Q 25 6, 50 18 T 100 3" fill="none" stroke="#00d2c4" strokeWidth="2.5" strokeLinecap="round" />
-                          <circle cx="100" cy="3" r="3" fill="#00d2c4" className="animate-pulse" />
+                          <circle cx="100" cy="3" r="3" fill="#00d2c4" />
                         </svg>
                       </div>
                     </div>
