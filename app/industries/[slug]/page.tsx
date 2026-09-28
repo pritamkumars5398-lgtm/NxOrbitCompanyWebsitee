@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { Check } from "lucide-react";
+import { Check, ShieldCheck, MessageSquare } from "lucide-react";
 
 import { INDUSTRIES_DATA } from "@/app/core/data/industries";
 import { INDUSTRY_LINKS } from "@/app/core/data/navigation";
@@ -176,10 +176,21 @@ export default async function IndustryPage({
             </Reveal>
 
             <Reveal from="up" delay={0.22} className="mt-6 flex flex-wrap justify-center gap-3">
-              <Button href="/contact" size="lg" variant="primary" withArrow magnetic>
+              <Button 
+                href="/contact" 
+                size="lg" 
+                variant="primary" 
+                icon={<ShieldCheck className="size-4 text-brand-300" />}
+                magnetic
+              >
                 {data.ctaText}
               </Button>
-              <Button href="/contact" size="lg" variant="outline" withArrow>
+              <Button 
+                href="/contact" 
+                size="lg" 
+                variant="outline" 
+                icon={<MessageSquare className="size-4 text-brand-600" />}
+              >
                 Talk to an Expert
               </Button>
             </Reveal>

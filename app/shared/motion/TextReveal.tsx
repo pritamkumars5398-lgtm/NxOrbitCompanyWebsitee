@@ -47,14 +47,17 @@ export function TextReveal({
       }}
     >
       {words.map((word, i) => (
-        <span key={`${word}-${i}`} className="inline-block overflow-hidden align-bottom">
+        <span
+          key={`${word}-${i}`}
+          className="inline-block overflow-hidden align-bottom py-[0.18em] -my-[0.18em]"
+        >
           <motion.span
             className={cn(
-              "inline-block",
+              "inline-block pb-[0.08em] pt-[0.02em]",
               gradientFrom !== undefined && i >= gradientFrom && "text-gradient",
             )}
             variants={{
-              hidden: { y: "110%", opacity: 0 },
+              hidden: { y: "115%", opacity: 0 },
               visible: {
                 y: "0%",
                 opacity: 1,
@@ -96,11 +99,11 @@ export function LinesReveal({
       className={className}
     >
       {lines.map((line, i) => (
-        <span key={i} className="block overflow-hidden">
+        <span key={i} className="block overflow-hidden py-[0.15em] -my-[0.15em]">
           <motion.span
-            className="block"
+            className="block pb-[0.05em]"
             variants={{
-              hidden: { y: "100%", opacity: 0 },
+              hidden: { y: "110%", opacity: 0 },
               visible: {
                 y: "0%",
                 opacity: 1,

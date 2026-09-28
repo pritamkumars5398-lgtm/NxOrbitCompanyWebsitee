@@ -172,20 +172,20 @@ export function ConsultationModal() {
         <div className="absolute bottom-10 left-0 -z-10 w-72 h-72 bg-teal-100/20 blur-[80px] rounded-full pointer-events-none" />
 
         {/* Premium Header - Dark Navy Brand Gradient */}
-        <div className="relative overflow-hidden bg-gradient-to-r from-brand-950 to-brand-900 px-6 py-6 text-white flex flex-col justify-between shadow-lg shrink-0">
+        <div className="relative overflow-hidden bg-gradient-to-r from-brand-950 to-brand-900 px-5 py-4 text-white flex flex-col justify-between shadow-md shrink-0">
           <div aria-hidden className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,187,169,0.15),transparent_70%)] pointer-events-none" />
           
           <div className="flex items-center justify-between z-10">
             <div>
-              <h2 className="text-xl font-extrabold tracking-tight text-white">Request a Free Quote</h2>
+              <h2 className="text-lg font-extrabold tracking-tight text-white">Request a Free Quote</h2>
               <p className="text-[11px] text-brand-300 font-medium mt-0.5">Partner with global product engineering experts</p>
             </div>
             <button 
               type="button" 
               onClick={handleClose}
-              className="rounded-full p-2 bg-white/10 text-white hover:bg-white/20 hover:rotate-90 transition-all duration-300"
+              className="rounded-full p-1.5 bg-white/10 text-white hover:bg-white/20 hover:rotate-90 transition-all duration-300"
             >
-              <X className="size-4.5" />
+              <X className="size-4" />
             </button>
           </div>
         </div>
@@ -195,7 +195,7 @@ export function ConsultationModal() {
           data-lenis-prevent="true"
           onWheel={(e) => e.stopPropagation()}
           onTouchMove={(e) => e.stopPropagation()}
-          className="flex-1 p-6 overflow-y-auto min-h-0 overscroll-contain"
+          className="flex-1 px-5 py-4 overflow-y-auto min-h-0 overscroll-contain"
         >
           {isSubmitted ? (
             <div className="flex flex-col items-center justify-center text-center h-full max-w-sm mx-auto py-12">
@@ -212,14 +212,14 @@ export function ConsultationModal() {
               </Button>
             </div>
           ) : (
-            <form id="consultation-form" onSubmit={handleSubmit} className="space-y-5" noValidate>
+            <form id="consultation-form" onSubmit={handleSubmit} className="space-y-3.5" noValidate>
               {/* Name field */}
               <div className="relative">
-                <label htmlFor="modal-name" className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5">
+                <label htmlFor="modal-name" className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">
                   Your Name
                 </label>
                 <div className="relative flex items-center">
-                  <User className="absolute left-4 size-4.5 text-slate-400 pointer-events-none" />
+                  <User className="absolute left-3.5 size-4 text-slate-400 pointer-events-none" />
                   <input
                     type="text"
                     id="modal-name"
@@ -231,8 +231,8 @@ export function ConsultationModal() {
                       if (errors.name) setErrors(prev => ({ ...prev, name: "" }));
                     }}
                     className={cn(
-                      "w-full h-11 pl-11 pr-4 text-xs bg-slate-50/50 border rounded-xl focus:outline-none focus:bg-white focus:shadow-sm transition-all duration-200",
-                      errors.name ? "border-red-500 focus:border-red-500" : "border-slate-200 focus:border-brand-500"
+                      "w-full h-10 pl-10 pr-3.5 text-xs text-slate-900 placeholder:text-slate-400 bg-white border rounded-xl focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 focus:shadow-sm transition-all duration-200",
+                      errors.name ? "border-red-500 focus:border-red-500 focus:ring-red-500" : "border-slate-200 hover:border-slate-300"
                     )}
                   />
                 </div>
@@ -241,11 +241,11 @@ export function ConsultationModal() {
 
               {/* Email field */}
               <div className="relative">
-                <label htmlFor="modal-email" className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5">
+                <label htmlFor="modal-email" className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">
                   Your Email
                 </label>
                 <div className="relative flex items-center">
-                  <Mail className="absolute left-4 size-4.5 text-slate-400 pointer-events-none" />
+                  <Mail className="absolute left-3.5 size-4 text-slate-400 pointer-events-none" />
                   <input
                     type="email"
                     id="modal-email"
@@ -257,8 +257,8 @@ export function ConsultationModal() {
                       if (errors.email) setErrors(prev => ({ ...prev, email: "" }));
                     }}
                     className={cn(
-                      "w-full h-11 pl-11 pr-4 text-xs bg-slate-50/50 border rounded-xl focus:outline-none focus:bg-white focus:shadow-sm transition-all duration-200",
-                      errors.email ? "border-red-500 focus:border-red-500" : "border-slate-200 focus:border-brand-500"
+                      "w-full h-10 pl-10 pr-3.5 text-xs text-slate-900 placeholder:text-slate-400 bg-white border rounded-xl focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 focus:shadow-sm transition-all duration-200",
+                      errors.email ? "border-red-500 focus:border-red-500 focus:ring-red-500" : "border-slate-200 hover:border-slate-300"
                     )}
                   />
                 </div>
@@ -267,11 +267,11 @@ export function ConsultationModal() {
 
               {/* Phone field */}
               <div className="relative">
-                <label htmlFor="modal-phone" className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5">
+                <label htmlFor="modal-phone" className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">
                   Your Phone No
                 </label>
                 <div className="relative flex items-center">
-                  <Phone className="absolute left-4 size-4.5 text-slate-400 pointer-events-none" />
+                  <Phone className="absolute left-3.5 size-4 text-slate-400 pointer-events-none" />
                   <input
                     type="tel"
                     id="modal-phone"
@@ -283,8 +283,8 @@ export function ConsultationModal() {
                       if (errors.phone) setErrors(prev => ({ ...prev, phone: "" }));
                     }}
                     className={cn(
-                      "w-full h-11 pl-11 pr-4 text-xs bg-slate-50/50 border rounded-xl focus:outline-none focus:bg-white focus:shadow-sm transition-all duration-200",
-                      errors.phone ? "border-red-500 focus:border-red-500" : "border-slate-200 focus:border-brand-500"
+                      "w-full h-10 pl-10 pr-3.5 text-xs text-slate-900 placeholder:text-slate-400 bg-white border rounded-xl focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 focus:shadow-sm transition-all duration-200",
+                      errors.phone ? "border-red-500 focus:border-red-500 focus:ring-red-500" : "border-slate-200 hover:border-slate-300"
                     )}
                   />
                 </div>
@@ -293,11 +293,11 @@ export function ConsultationModal() {
 
               {/* Service field */}
               <div className="relative">
-                <label htmlFor="modal-service" className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5">
+                <label htmlFor="modal-service" className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">
                   Select Type of Services
                 </label>
                 <div className="relative flex items-center">
-                  <Settings className="absolute left-4 size-4.5 text-slate-400 pointer-events-none" />
+                  <Settings className="absolute left-3.5 size-4 text-slate-400 pointer-events-none" />
                   <select
                     id="modal-service"
                     required
@@ -307,23 +307,24 @@ export function ConsultationModal() {
                       if (errors.service) setErrors(prev => ({ ...prev, service: "" }));
                     }}
                     className={cn(
-                      "w-full h-11 pl-11 pr-10 text-xs bg-slate-50/50 border rounded-xl focus:outline-none focus:bg-white focus:shadow-sm transition-all duration-200 appearance-none cursor-pointer",
-                      errors.service ? "border-red-500 focus:border-red-500" : "border-slate-200 focus:border-brand-500"
+                      "w-full h-10 pl-10 pr-10 text-xs bg-white border rounded-xl focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 focus:shadow-sm transition-all duration-200 appearance-none cursor-pointer",
+                      !service ? "text-slate-400" : "text-slate-900",
+                      errors.service ? "border-red-500 focus:border-red-500 focus:ring-red-500" : "border-slate-200 hover:border-slate-300"
                     )}
                     style={{
                       backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
                       backgroundRepeat: 'no-repeat',
-                      backgroundPosition: 'right 1.25rem center',
+                      backgroundPosition: 'right 1rem center',
                       backgroundSize: '1em'
                     }}
                   >
-                    <option value="" disabled>Select a service</option>
-                    <option value="mobile">Mobile App Development</option>
-                    <option value="web">Web App Development</option>
-                    <option value="ai">AI & ML Solutions</option>
-                    <option value="design">UI/UX Design</option>
-                    <option value="blockchain">Blockchain Development</option>
-                    <option value="devops">DevOps & Cloud</option>
+                    <option value="" disabled className="text-slate-400">Select a service</option>
+                    <option value="mobile" className="text-slate-900">Mobile App Development</option>
+                    <option value="web" className="text-slate-900">Web App Development</option>
+                    <option value="ai" className="text-slate-900">AI & ML Solutions</option>
+                    <option value="design" className="text-slate-900">UI/UX Design</option>
+                    <option value="blockchain" className="text-slate-900">Blockchain Development</option>
+                    <option value="devops" className="text-slate-900">DevOps & Cloud</option>
                   </select>
                 </div>
                 {errors.service && <p className="text-[10px] text-red-500 mt-1 pl-1 font-semibold">{errors.service}</p>}
@@ -331,15 +332,15 @@ export function ConsultationModal() {
 
               {/* Message field */}
               <div className="relative">
-                <label htmlFor="modal-message" className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5">
+                <label htmlFor="modal-message" className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">
                   Message Your Enquiry Here
                 </label>
                 <div className="relative flex">
-                  <MessageSquare className="absolute left-4 top-3.5 size-4.5 text-slate-400 pointer-events-none" />
+                  <MessageSquare className="absolute left-3.5 top-3 size-4 text-slate-400 pointer-events-none" />
                   <textarea
                     id="modal-message"
                     required
-                    rows={4}
+                    rows={3}
                     placeholder="Tell us what you are building, requirements, or timeline..."
                     value={message}
                     onChange={(e) => {
@@ -347,8 +348,8 @@ export function ConsultationModal() {
                       if (errors.message) setErrors(prev => ({ ...prev, message: "" }));
                     }}
                     className={cn(
-                      "w-full pl-11 pr-4 py-3 text-xs bg-slate-50/50 border rounded-xl focus:outline-none focus:bg-white focus:shadow-sm transition-all duration-200 resize-none",
-                      errors.message ? "border-red-500 focus:border-red-500" : "border-slate-200 focus:border-brand-500"
+                      "w-full pl-10 pr-3.5 py-2.5 text-xs text-slate-900 placeholder:text-slate-400 bg-white border rounded-xl focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 focus:shadow-sm transition-all duration-200 resize-none",
+                      errors.message ? "border-red-500 focus:border-red-500 focus:ring-red-500" : "border-slate-200 hover:border-slate-300"
                     )}
                   />
                 </div>
@@ -360,14 +361,14 @@ export function ConsultationModal() {
 
         {/* Sticky Footer for Submit Button */}
         {!isSubmitted && (
-          <div className="border-t border-slate-100 bg-slate-50 p-4 shrink-0 flex">
+          <div className="border-t border-slate-100 bg-slate-50 px-5 py-3.5 shrink-0 flex">
             <Button 
               type="submit" 
               form="consultation-form"
               variant="accent" 
               size="md" 
               loading={loading}
-              className="w-full h-11 shadow-md shadow-teal-500/10 hover:shadow-teal-500/20"
+              className="w-full h-10 shadow-md shadow-teal-500/10 hover:shadow-teal-500/20"
               icon={<Send className="size-4" />}
             >
               Submit Inquiry

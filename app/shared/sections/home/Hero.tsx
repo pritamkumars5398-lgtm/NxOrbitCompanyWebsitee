@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import { Calendar, Compass } from "lucide-react";
 import { EASE } from "@/app/core/motion/tokens";
 import { HERO } from "@/app/core/data/home";
 import { Aurora, Grain } from "@/app/shared/backdrop/Backdrops";
@@ -39,7 +40,7 @@ export function Hero() {
               as="h1"
               text={HERO.headline}
               gradientFrom={HERO.gradientFrom}
-              className="text-display-lg sm:text-display-xl text-slate-900"
+              className="text-display-lg sm:text-display-xl text-slate-900 leading-[1.18] sm:leading-[1.12] pb-1"
             />
 
             <motion.p
@@ -61,7 +62,7 @@ export function Hero() {
                 href={HERO.primaryCta.href} 
                 size="lg" 
                 variant="primary"
-                withArrow
+                icon={<Calendar className="size-4 text-brand-300" />}
                 magnetic
               >
                 {HERO.primaryCta.label}
@@ -70,7 +71,7 @@ export function Hero() {
                 href={HERO.secondaryCta.href} 
                 size="lg"
                 variant="accent"
-                withArrow
+                icon={<Compass className="size-4 text-white" />}
                 magnetic
               >
                 {HERO.secondaryCta.label}

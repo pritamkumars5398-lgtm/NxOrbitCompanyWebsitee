@@ -13,7 +13,7 @@ const VARIANTS: Record<Variant, string> = {
   primary:
     "bg-brand-950 text-white hover:bg-brand-900 shadow-xs hover:shadow-md transition-all",
   accent:
-    "bg-brand-300 text-brand-950 hover:bg-brand-200 shadow-xs hover:shadow-md font-semibold transition-all",
+    "bg-brand-300 text-white hover:bg-brand-400 shadow-xs hover:shadow-md font-semibold transition-all",
   outline:
     "border border-slate-300 bg-white text-slate-900 hover:border-brand-500 hover:text-brand-600 hover:bg-brand-50/80 shadow-xs hover:shadow-md transition-all",
   ghost: "text-brand-600 hover:bg-brand-50 hover:text-brand-700 transition-colors",
@@ -39,6 +39,7 @@ interface BaseProps {
   /** Appends a right-pointing arrow that nudges forward on hover. */
   withArrow?: boolean;
   icon?: React.ReactNode;
+  iconPosition?: "leading" | "trailing";
   loading?: boolean;
   /** Drift toward the cursor on hover. Off for full-width and in-form buttons. */
   magnetic?: boolean;
@@ -69,6 +70,7 @@ export function Button({
   className,
   withArrow = false,
   icon,
+  iconPosition = "leading",
   loading = false,
   magnetic = false,
   ...rest
@@ -104,9 +106,12 @@ export function Button({
       {loading ? (
         <LoaderCircle aria-hidden className="size-4 animate-spin" />
       ) : (
-        icon && <span aria-hidden className="shrink-0">{icon}</span>
+        icon && iconPosition !== "trailing" && <span aria-hidden className="shrink-0">{icon}</span>
       )}
       <span className={cn(loading && "opacity-70")}>{children}</span>
+      {!loading && icon && iconPosition === "trailing" && (
+        <span aria-hidden className="shrink-0 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/btn:translate-x-1">{icon}</span>
+      )}
       {withArrow && !loading && (
         <ArrowRight
           aria-hidden

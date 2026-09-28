@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { Code2, MessageSquare } from "lucide-react";
 
 import { TECHNOLOGY_DATA } from "@/app/core/data/technology";
 import { TECHNOLOGY_LINKS } from "@/app/core/data/navigation";
@@ -153,10 +154,21 @@ export default async function TechnologyPage({
               </Reveal>
 
               <Reveal from="up" delay={0.22} className="mt-6 flex flex-wrap gap-3">
-                <Button href="/contact" size="lg" variant="accent" withArrow magnetic>
+                <Button 
+                  href="/contact" 
+                  size="lg" 
+                  variant="accent" 
+                  icon={<Code2 className="size-4 text-white" />}
+                  magnetic
+                >
                   {data.ctaText}
                 </Button>
-                <Button href="/contact" size="lg" variant="outline-light" withArrow>
+                <Button 
+                  href="/contact" 
+                  size="lg" 
+                  variant="outline-light" 
+                  icon={<MessageSquare className="size-4 text-brand-300" />}
+                >
                   Talk to an Expert
                 </Button>
               </Reveal>

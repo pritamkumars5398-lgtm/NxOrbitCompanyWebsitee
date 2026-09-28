@@ -3,7 +3,7 @@
 import { Button } from "@/app/shared/ui/Button";
 import { Container, Eyebrow } from "@/app/shared/ui/Layout";
 import { Reveal } from "@/app/shared/motion/Reveal";
-import { ArrowRight } from "lucide-react";
+import { Calendar, Phone } from "lucide-react";
 
 interface CallToActionProps {
   eyebrow?: string;
@@ -91,7 +91,7 @@ export function CallToAction({
                   href={primary.href}
                   size="lg"
                   variant="accent"
-                  withArrow
+                  icon={<Calendar className="size-4 text-white" />}
                   magnetic
                   className="w-full sm:w-auto sm:min-w-[220px] justify-center"
                 >
@@ -102,6 +102,7 @@ export function CallToAction({
                   href={secondary.href}
                   size="lg"
                   variant="outline-light"
+                  icon={<Phone className="size-4 text-brand-300" />}
                   magnetic
                   className="w-full sm:w-auto sm:min-w-[220px] justify-center"
                 >

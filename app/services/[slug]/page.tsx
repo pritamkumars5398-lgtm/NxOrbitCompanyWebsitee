@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Smartphone, Globe, Sparkles, Palette, Layers, Cloud, FolderGit2 } from "lucide-react";
 import { cn } from "@/app/core/lib/cn";
 
 import { SERVICES_DATA } from "@/app/core/data/services";
@@ -21,7 +21,14 @@ import { TrustAndFaqSection } from "@/app/shared/sections/TrustAndFaqSection";
 import { ProcessArcLayout } from "@/app/shared/sections/ProcessArcLayout";
 import { Capabilities3DCards } from "@/app/shared/sections/Capabilities3DCards";
 
-
+const SERVICE_ACTION_ICONS: Record<string, React.ReactNode> = {
+  mobile: <Smartphone className="size-4 text-brand-300" />,
+  web: <Globe className="size-4 text-brand-300" />,
+  ai: <Sparkles className="size-4 text-brand-300" />,
+  design: <Palette className="size-4 text-brand-300" />,
+  blockchain: <Layers className="size-4 text-brand-300" />,
+  devops: <Cloud className="size-4 text-brand-300" />,
+};
 
 export async function generateStaticParams() {
 
@@ -132,10 +139,21 @@ export default async function ServicePage({
               </Reveal>
 
               <Reveal from="up" delay={0.22} className="mt-6 flex flex-wrap gap-3">
-                <Button href="/contact" size="lg" variant="primary" withArrow magnetic>
+                <Button 
+                  href="/contact" 
+                  size="lg" 
+                  variant="primary" 
+                  icon={SERVICE_ACTION_ICONS[slug] || <Sparkles className="size-4 text-brand-300" />}
+                  magnetic
+                >
                   {data.ctaText}
                 </Button>
-                <Button href="/portfolio" size="lg" variant="outline" withArrow>
+                <Button 
+                  href="/portfolio" 
+                  size="lg" 
+                  variant="outline" 
+                  icon={<FolderGit2 className="size-4 text-brand-600" />}
+                >
                   View our work
                 </Button>
               </Reveal>

@@ -29,6 +29,7 @@ import {
   Headphones,
   Maximize2,
   Handshake,
+  Calendar,
 } from "lucide-react";
 import { Container, Eyebrow, Section } from "@/app/shared/ui/Layout";
 import { Reveal, Stagger, StaggerItem } from "@/app/shared/motion/Reveal";
@@ -278,10 +279,20 @@ export default function AboutPage() {
 
             <Reveal from="up" delay={0.18}>
               <div className="flex flex-wrap items-center gap-4 pt-2">
-                <Button href="/contact" size="lg" variant="primary" withArrow>
+                <Button 
+                  href="/contact" 
+                  size="lg" 
+                  variant="primary" 
+                  icon={<Calendar className="size-4 text-brand-300" />}
+                >
                   Book a Consultation
                 </Button>
-                <Button href="#our-story" size="lg" variant="accent">
+                <Button 
+                  href="#our-story" 
+                  size="lg" 
+                  variant="accent"
+                  icon={<Compass className="size-4 text-white" />}
+                >
                   Explore Our Story
                 </Button>
               </div>
