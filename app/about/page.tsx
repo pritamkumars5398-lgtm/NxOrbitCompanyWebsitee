@@ -319,7 +319,56 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* ── Section 2 — Our Story (Reference UI Design: Deep Tech Theme, Glowing Cyber Globe & Glass Cards) ── */}
+      {/* ── Section 2 — The "Keep It Simple" Philosophy ── */}
+      <Section tone="muted" spacing="lg" id="philosophy" className="py-16 sm:py-24">
+        <Container>
+          <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-14">
+            <Reveal from="up">
+              <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#008c83]">
+                OUR PHILOSOPHY
+              </span>
+              <h2 className="mt-3 text-display-md sm:text-display-lg font-extrabold text-slate-900 tracking-tight leading-tight">
+                Simplicity Is Not About Doing Less. It Is About Removing Complexity.
+              </h2>
+              <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+                &ldquo;Keep It Simple&rdquo; is more than our tagline — it is a principle that guides how we think, design, and deliver technology. Businesses already manage enough complexity through operations, regulations, processes, and growth. Technology should reduce that complexity, not add to it.
+              </p>
+            </Reveal>
+          </div>
+
+          {/* 5-row structured card table */}
+          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md">
+            <div className="grid grid-cols-1 md:grid-cols-12 bg-brand-950 text-white font-bold text-xs uppercase tracking-wider py-4 px-6 sm:px-8 border-b border-brand-900">
+              <div className="md:col-span-4">Principle</div>
+              <div className="md:col-span-8 mt-1 md:mt-0">What It Means</div>
+            </div>
+
+            <div className="divide-y divide-slate-100">
+              {PHILOSOPHY_PRINCIPLES.map((item) => (
+                <div
+                  key={item.principle}
+                  className="grid grid-cols-1 md:grid-cols-12 py-5 px-6 sm:px-8 transition-colors hover:bg-teal-50/30 items-center"
+                >
+                  <div className="md:col-span-4 font-bold text-slate-900 text-base">
+                    {item.principle}
+                  </div>
+                  <div className="md:col-span-8 text-sm sm:text-base text-slate-600 mt-1 md:mt-0 leading-relaxed">
+                    {item.whatItMeans}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-8 text-center">
+            <p className="text-sm font-semibold text-slate-500">
+              Simple does not mean basic. Simple means clear, efficient, maintainable, and purposeful. That is what Keep It Simple means at NXT Orbit.
+            </p>
+          </div>
+        </Container>
+      </Section>
+
+      {/* ── Section 3 — Our Story (Reference UI Design: Deep Tech Theme, Glowing Cyber Globe & Glass Cards) ── */}
       <section
         id="our-story"
         className="relative isolate overflow-hidden bg-[#030b18] py-16 lg:py-24 text-white border-t border-cyan-900/30"
@@ -369,7 +418,7 @@ export default function AboutPage() {
                 <p>
                   That understanding shaped NXT Orbit from the beginning. As organizations embraced digital transformation, we recognized that successful projects required more than technical expertise — they required a deep understanding of business operations, collaboration with stakeholders, and solutions designed around real-world workflows.
                 </p>
-                <p className="text-slate-400">
+                <p>
                   Today, our capabilities span enterprise applications, digital platforms, cloud technologies, intelligent automation, and technology consulting. While technology continues to evolve, our focus remains unchanged: delivering solutions that create measurable business value.
                 </p>
               </Reveal>
@@ -414,55 +463,6 @@ export default function AboutPage() {
           </div>
         </Container>
       </section>
-
-      {/* ── Section 3 — The "Keep It Simple" Philosophy ── */}
-      <Section tone="muted" spacing="lg" id="philosophy" className="py-16 sm:py-24">
-        <Container>
-          <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-14">
-            <Reveal from="up">
-              <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#008c83]">
-                OUR PHILOSOPHY
-              </span>
-              <h2 className="mt-3 text-display-md sm:text-display-lg font-extrabold text-slate-900 tracking-tight leading-tight">
-                Simplicity Is Not About Doing Less. It Is About Removing Complexity.
-              </h2>
-              <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
-                &ldquo;Keep It Simple&rdquo; is more than our tagline — it is a principle that guides how we think, design, and deliver technology. Businesses already manage enough complexity through operations, regulations, processes, and growth. Technology should reduce that complexity, not add to it.
-              </p>
-            </Reveal>
-          </div>
-
-          {/* 5-row structured card table */}
-          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md">
-            <div className="grid grid-cols-1 md:grid-cols-12 bg-brand-950 text-white font-bold text-xs uppercase tracking-wider py-4 px-6 sm:px-8 border-b border-brand-900">
-              <div className="md:col-span-4">Principle</div>
-              <div className="md:col-span-8 mt-1 md:mt-0">What It Means</div>
-            </div>
-
-            <div className="divide-y divide-slate-100">
-              {PHILOSOPHY_PRINCIPLES.map((item) => (
-                <div
-                  key={item.principle}
-                  className="grid grid-cols-1 md:grid-cols-12 py-5 px-6 sm:px-8 transition-colors hover:bg-teal-50/30 items-center"
-                >
-                  <div className="md:col-span-4 font-bold text-slate-900 text-base">
-                    {item.principle}
-                  </div>
-                  <div className="md:col-span-8 text-sm sm:text-base text-slate-600 mt-1 md:mt-0 leading-relaxed">
-                    {item.whatItMeans}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-8 text-center">
-            <p className="text-sm font-semibold text-slate-500">
-              Simple does not mean basic. Simple means clear, efficient, maintainable, and purposeful. That is what Keep It Simple means at NXT Orbit.
-            </p>
-          </div>
-        </Container>
-      </Section>
 
       {/* ── Section 4 — How We Build Enterprise Technology ── */}
       <Section tone="white" spacing="lg" id="how-we-build" className="py-16 sm:py-24 border-t border-hairline">
