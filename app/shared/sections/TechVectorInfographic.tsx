@@ -56,7 +56,6 @@ export function TechVectorInfographic({
           {features.map((feature, index) => {
             const isEven = index % 2 === 0;
             const IconComponent = getTechIcon(feature.title, index);
-            const stepNumber = String(index + 1).padStart(2, "0");
 
             return (
               <StaggerItem

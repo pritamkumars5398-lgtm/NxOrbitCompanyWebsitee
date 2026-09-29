@@ -12,7 +12,7 @@ import {
   Headphones,
   Sparkles,
 } from "lucide-react";
-import { Container } from "@/app/shared/ui/Layout";
+import { Container, Eyebrow } from "@/app/shared/ui/Layout";
 import { Reveal } from "@/app/shared/motion/Reveal";
 import { whyChooseUsWomanSvgData } from "@/app/shared/assets/whyChooseUsWomanData";
 
@@ -74,9 +74,7 @@ export function WhyChooseUs() {
           {/* Left Column: Heading & 6 Feature Cards Grid */}
           <div className="lg:col-span-7 flex flex-col items-start gap-8">
             <Reveal className="flex flex-col items-start gap-3">
-              <span className="text-xs font-bold tracking-widest text-[#008c83] uppercase">
-                OUR BUSINESS APPROACH
-              </span>
+              <Eyebrow tone="brand">OUR BUSINESS APPROACH</Eyebrow>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.2]">
                 Understanding Business. Delivering Technology. Creating Value.
               </h2>

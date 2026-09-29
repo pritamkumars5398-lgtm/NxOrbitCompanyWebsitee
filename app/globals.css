@@ -86,10 +86,10 @@
   --text-lead--line-height: 1.68;
   --text-lead--letter-spacing: -0.006em;
 
-  --text-eyebrow: 0.6875rem;
+  --text-eyebrow: 0.75rem;
   --text-eyebrow--line-height: 1;
-  --text-eyebrow--letter-spacing: 0.16em;
-  --text-eyebrow--font-weight: 600;
+  --text-eyebrow--letter-spacing: 0.1em;
+  --text-eyebrow--font-weight: 700;
 
   /* ── Radii — 16–24px band for cards, tighter for controls ───────────── */
   --radius-xs: 0.375rem;

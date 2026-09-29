@@ -68,7 +68,6 @@ export function Capabilities3DCards({
             const isEven = index % 2 === 0;
             const IconComponent = getFeatureIcon(feature.title, index);
             const gradient = BADGE_GRADIENTS[index % BADGE_GRADIENTS.length];
-            const stepNumber = String(index + 1).padStart(2, "0");
 
             return (
               <StaggerItem

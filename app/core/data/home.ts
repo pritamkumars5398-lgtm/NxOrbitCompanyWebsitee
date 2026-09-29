@@ -221,7 +221,7 @@ export const INDUSTRY_SHOWCASE = [
   {
     id: "professional-services",
     label: "Professional Services",
-    href: "/services",
+    href: "/industries/professional-services",
     headline: "Client Portals, Resource Allocation & Project Automation",
     description:
       "Streamlined workflows that automate time logging, milestone billing, and client collaboration for service firms.",

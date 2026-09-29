@@ -77,9 +77,17 @@ export function Testimonials() {
               <NavButton label="Next testimonial" onClick={() => go(index + 1)}>
                 <ArrowRight aria-hidden className="size-4" />
               </NavButton>
-              <span className="ml-2 font-mono text-xs text-ink-400 tabular-nums">
-                {String(index + 1).padStart(2, "0")} / {String(TESTIMONIALS.length).padStart(2, "0")}
-              </span>
+              <div className="ml-2 flex items-center gap-1.5" aria-hidden>
+                {TESTIMONIALS.map((_, i) => (
+                  <span
+                    key={i}
+                    className={cn(
+                      "h-1.5 rounded-full transition-all duration-300",
+                      i === index ? "w-6 bg-brand-500" : "w-1.5 bg-ink-200"
+                    )}
+                  />
+                ))}
+              </div>
             </div>
           </Reveal>
 

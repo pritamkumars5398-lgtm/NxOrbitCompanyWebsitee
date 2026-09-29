@@ -1,7 +1,7 @@
 "use client";
 
 import { AlertTriangle, Clock, EyeOff, Layers } from "lucide-react";
-import { Container, Section } from "@/app/shared/ui/Layout";
+import { Container, Eyebrow, Section } from "@/app/shared/ui/Layout";
 import { Reveal, Stagger, StaggerItem } from "@/app/shared/motion/Reveal";
 
 const SYMPTOMS = [
@@ -39,9 +39,7 @@ export function TheChallenge() {
           {/* Left Side: Headline & Narrative */}
           <div className="flex flex-col items-start gap-6">
             <Reveal from="up">
-              <span className="font-mono text-xs font-semibold uppercase tracking-widest text-teal-400">
-                BUSINESS CHALLENGE
-              </span>
+              <Eyebrow tone="light">BUSINESS CHALLENGE</Eyebrow>
             </Reveal>
 
             <Reveal from="up" delay={0.06}>

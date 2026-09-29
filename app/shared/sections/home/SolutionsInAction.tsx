@@ -1,7 +1,7 @@
 "use client";
 
 import { CheckCircle2, Activity, Cpu, Server, Warehouse } from "lucide-react";
-import { Container, Section } from "@/app/shared/ui/Layout";
+import { Container, Eyebrow, Section } from "@/app/shared/ui/Layout";
 import { Reveal, Stagger, StaggerItem } from "@/app/shared/motion/Reveal";
 import { Button } from "@/app/shared/ui/Button";
 
@@ -59,9 +59,7 @@ export function SolutionsInAction() {
       <Container>
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <Reveal className="flex flex-col items-start gap-3 max-w-2xl">
-            <span className="font-mono text-xs font-semibold uppercase tracking-widest text-[#008c83]">
-              OUR SOLUTIONS IN ACTION
-            </span>
+            <Eyebrow tone="brand">OUR SOLUTIONS IN ACTION</Eyebrow>
             <h2 className="text-display-sm sm:text-display-md lg:text-display-lg text-slate-900 font-bold leading-tight">
               Proven Capability in Mission-Critical Environments
             </h2>

@@ -101,9 +101,6 @@ export default function CaseStudiesPage() {
                 {/* Narrative */}
                 <Reveal from={flipped ? "left" : "right"} className="flex flex-col gap-6">
                   <div className="flex items-center gap-4">
-                    <span className="font-mono text-xs text-ink-300 tabular-nums">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
                     <span className="text-eyebrow uppercase text-brand-500">
                       {project.industry}
                     </span>

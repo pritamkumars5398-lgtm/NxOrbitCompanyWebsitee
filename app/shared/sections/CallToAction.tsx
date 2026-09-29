@@ -53,7 +53,7 @@ export function CallToAction({
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-6 items-center">
             {/* Left Column: Heading & CTA Buttons */}
             <Reveal className="lg:col-span-7 flex flex-col items-start text-left gap-6">
-
+              {eyebrow && <Eyebrow tone="light">{eyebrow}</Eyebrow>}
 
               <h2 className="text-display-sm sm:text-display-md lg:text-display-lg text-white max-w-2xl font-bold leading-tight">
                 {title.includes("Business Problem") ? (

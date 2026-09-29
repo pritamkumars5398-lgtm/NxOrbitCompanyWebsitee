@@ -50,10 +50,6 @@ export function SelectedWork() {
                     className="group block py-7 transition-colors duration-500"
                   >
                     <div className="flex items-baseline gap-5 sm:gap-8">
-                      <span className="font-mono text-xs text-ink-300 tabular-nums">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-
                       <div className="min-w-0 flex-1">
                         <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
                           <h3

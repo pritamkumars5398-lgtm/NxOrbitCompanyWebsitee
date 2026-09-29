@@ -23,10 +23,37 @@ export async function GET() {
       fs.mkdirSync(assetsDir, { recursive: true });
     }
 
-    // Save zoho logo SVG
-    fs.writeFileSync(path.join(assetsDir, "logo_zoho.svg"), ZOHO_SVG);
+    // Copy generated 3D insight images
+    const sourceImages = [
+      {
+        src: `C:\\Users\\UPL\\.gemini\\antigravity-ide\\brain\\6867f96b-0b51-4417-84ec-304bfb5c0960\\insight_erp_3d_1790576803863.jpg`,
+        dest: "insight_erp_3d.jpg",
+      },
+      {
+        src: `C:\\Users\\UPL\\.gemini\\antigravity-ide\\brain\\6867f96b-0b51-4417-84ec-304bfb5c0960\\insight_cloud_3d_1790576824054.jpg`,
+        dest: "insight_cloud_3d.jpg",
+      },
+      {
+        src: `C:\\Users\\UPL\\.gemini\\antigravity-ide\\brain\\6867f96b-0b51-4417-84ec-304bfb5c0960\\insight_ai_3d_1790576846441.jpg`,
+        dest: "insight_ai_3d.jpg",
+      },
+      {
+        src: `C:\\Users\\UPL\\.gemini\\antigravity-ide\\brain\\6867f96b-0b51-4417-84ec-304bfb5c0960\\insight_devops_3d_1790576916150.jpg`,
+        dest: "insight_devops_3d.jpg",
+      },
+      {
+        src: `C:\\Users\\UPL\\.gemini\\antigravity-ide\\brain\\6867f96b-0b51-4417-84ec-304bfb5c0960\\insight_workflow_3d_1790576939194.jpg`,
+        dest: "insight_workflow_3d.jpg",
+      },
+    ];
 
-    return NextResponse.json({ success: true, message: "Saved real SVG assets!" });
+    for (const item of sourceImages) {
+      if (fs.existsSync(item.src)) {
+        fs.copyFileSync(item.src, path.join(assetsDir, item.dest));
+      }
+    }
+
+    return NextResponse.json({ success: true, message: "Copied 3D insight assets!" });
   } catch (err: any) {
     return NextResponse.json({ success: false, error: err.message });
   }

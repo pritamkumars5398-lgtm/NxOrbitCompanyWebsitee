@@ -1,4 +1,6 @@
-import { Container } from "@/app/shared/ui/Layout";
+"use client";
+
+import { Container, Eyebrow } from "@/app/shared/ui/Layout";
 import { Marquee } from "@/app/shared/ui/Marquee";
 import { Reveal } from "@/app/shared/motion/Reveal";
 
@@ -51,21 +53,25 @@ const REAL_LOGOS = [
  */
 export function LogoRail() {
   return (
-    <section className="relative border-y border-hairline bg-surface-muted py-10 sm:py-12" id="trust">
-      <Container>
-        <Reveal className="flex flex-col items-center gap-6 text-center">
-          <div className="flex flex-col items-center gap-2 max-w-2xl">
-            <span className="font-mono text-xs font-semibold uppercase tracking-widest text-[#008c83]">
-              TRUST & RELIABILITY
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
+    <section className="relative border-y border-slate-200/90 bg-white py-14 sm:py-18 overflow-hidden shadow-xs" id="trust">
+      {/* Pristine ambient brand radial illumination */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,187,169,0.08)_0%,transparent_70%)]"
+      />
+
+      <Container className="relative z-10">
+        <div className="flex flex-col items-center gap-6 text-center">
+          <div className="flex flex-col items-center gap-2.5 max-w-2xl">
+            <Eyebrow tone="brand">TRUST & RELIABILITY</Eyebrow>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
               Trusted by teams who can&apos;t afford downtime.
             </h2>
             {/* Real confirmed client outcome as requested in designer note */}
-            <div className="mt-2 inline-flex items-center gap-2 rounded-full border border-teal-200 bg-white px-4 py-1.5 shadow-xs">
+            <div className="mt-2 inline-flex items-center gap-2.5 rounded-full border border-teal-200/80 bg-teal-50/50 px-4 py-1.5 shadow-xs">
               <span className="font-bold text-slate-900 text-xs sm:text-sm">Alisped</span>
-              <span className="text-slate-300">•</span>
-              <span className="text-xs sm:text-sm text-teal-700 font-medium">Reduced warehouse processing time</span>
+              <span className="text-teal-400">•</span>
+              <span className="text-xs sm:text-sm text-teal-700 font-semibold">Reduced warehouse processing time</span>
             </div>
           </div>
 
@@ -73,19 +79,19 @@ export function LogoRail() {
             {REAL_LOGOS.map((client) => (
               <div
                 key={client.name}
-                className="group flex h-13 w-40 items-center justify-center rounded-xl border border-hairline bg-white/80 px-4 py-2 opacity-85 shadow-xs transition-all duration-300 hover:opacity-100 hover:scale-[1.04] hover:bg-white hover:shadow-md hover:border-brand-300/40 cursor-pointer"
+                className="group flex h-14 w-44 items-center justify-center rounded-2xl border border-slate-200/90 bg-white px-5 py-2.5 opacity-90 shadow-xs transition-all duration-300 hover:opacity-100 hover:scale-[1.04] hover:bg-white hover:shadow-md hover:border-teal-400 cursor-pointer"
                 title={client.name}
               >
                 <img
                   src={client.image}
                   alt={client.alt}
-                  className="h-7 max-h-7 w-auto max-w-[120px] object-contain transition-all duration-300"
+                  className="h-8 max-h-8 w-auto max-w-[130px] object-contain transition-all duration-300"
                   loading="lazy"
                 />
               </div>
             ))}
           </Marquee>
-        </Reveal>
+        </div>
       </Container>
     </section>
   );

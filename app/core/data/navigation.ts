@@ -98,6 +98,8 @@ export const TECHNOLOGY_LINKS: NavLink[] = [
 ];
 
 export const INDUSTRY_LINKS: NavLink[] = [
+  { label: "Manufacturing", href: "/industries/manufacturing", description: "Smart MES, Industrial IoT, and plant floor telemetry.", icon: "factory" },
+  { label: "Professional Services", href: "/industries/professional-services", description: "Practice management, client portals, and billing automation.", icon: "briefcase" },
   { label: "Healthcare", href: "/industries/healthcare", description: "HIPAA-compliant medical and health tech systems.", icon: "heart-pulse" },
   { label: "Fintech", href: "/industries/fintech", description: "PCI-DSS compliant banking, payments, and financial software.", icon: "landmark" },
   { label: "Education", href: "/industries/education", description: "EdTech platforms, LMS, and interactive learning systems.", icon: "graduation-cap" },

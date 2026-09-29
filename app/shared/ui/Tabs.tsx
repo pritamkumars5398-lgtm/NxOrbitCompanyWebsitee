@@ -47,7 +47,7 @@ export function Tabs({
         aria-orientation="horizontal"
         onKeyDown={onKeyDown}
         className={cn(
-          "scrollbar-none flex gap-1.5 overflow-x-auto rounded-2xl p-1.5",
+          "scrollbar-none flex gap-1.5 overflow-x-auto rounded-full p-1.5",
           light
             ? "bg-white/10 border border-white/15"
             : "bg-slate-100/90 border border-slate-200/80",
@@ -66,7 +66,7 @@ export function Tabs({
               tabIndex={selected ? 0 : -1}
               onClick={() => setActive(index)}
               className={cn(
-                "relative z-10 shrink-0 rounded-xl px-4 sm:px-5 py-2.5 text-sm font-bold whitespace-nowrap transition-all duration-300",
+                "relative z-10 shrink-0 rounded-full px-4 sm:px-5 py-2 text-xs sm:text-sm font-bold whitespace-nowrap transition-all duration-300",
                 selected
                   ? light
                     ? "text-[#01141b]"
@@ -80,7 +80,7 @@ export function Tabs({
                 <motion.span
                   layoutId={`${baseId}-indicator`}
                   className={cn(
-                    "absolute inset-0 -z-10 rounded-xl",
+                    "absolute inset-0 -z-10 rounded-full",
                     light
                       ? "bg-gradient-to-r from-teal-300 to-teal-400"
                       : "bg-[#01242e] border border-[#00d2c4]/20",
@@ -94,7 +94,7 @@ export function Tabs({
         })}
       </div>
 
-      <div className="relative mt-8">
+      <div className="relative mt-5 sm:mt-6">
         <AnimatePresence mode="wait">
           <motion.div
             key={items[active].id}

@@ -87,10 +87,10 @@ export function Eyebrow({
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-2 text-eyebrow uppercase",
-        tone === "brand" && "text-brand-500",
-        tone === "light" && "text-brand-200",
-        tone === "muted" && "text-ink-400",
+        "inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest",
+        tone === "brand" && "text-[#008c83]",
+        tone === "light" && "text-teal-400",
+        tone === "muted" && "text-slate-500",
         className,
       )}
     >

@@ -11,7 +11,7 @@ import {
   Rocket,
   TrendingUp,
 } from "lucide-react";
-import { Container } from "@/app/shared/ui/Layout";
+import { Container, Eyebrow } from "@/app/shared/ui/Layout";
 import { Reveal } from "@/app/shared/motion/Reveal";
 
 interface JourneyStep {
@@ -83,9 +83,7 @@ export function DevelopmentJourney() {
       <Container className="relative z-10">
         {/* Section Heading */}
         <Reveal className="flex flex-col items-start gap-3 mb-14">
-          <span className="text-xs font-bold tracking-widest text-[#00d2c4] uppercase">
-            OUR DEVELOPMENT JOURNEY
-          </span>
+          <Eyebrow tone="light">OUR DEVELOPMENT JOURNEY</Eyebrow>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
             From idea to launch—every step planned with purpose.
           </h2>
@@ -113,11 +111,6 @@ export function DevelopmentJourney() {
                   {/* Glowing Circular Icon Node */}
                   <div className="relative flex size-14 items-center justify-center rounded-full bg-[#031b24] border-2 border-[#00d2c4]/40 text-[#00d2c4] shadow-lg shadow-[#00d2c4]/15 transition-all duration-300 group-hover:scale-110 group-hover:border-[#00d2c4] group-hover:bg-[#00d2c4] group-hover:text-[#01141b]">
                     <Icon className="size-6 transition-transform duration-300 group-hover:scale-110" />
-                    
-                    {/* Step Number Badge */}
-                    <span className="absolute -top-1 -right-1 flex size-5 items-center justify-center rounded-full bg-[#00d2c4] text-[9px] font-black text-[#01141b]">
-                      {idx + 1}
-                    </span>
                   </div>
 
                   {/* Step Title */}

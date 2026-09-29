@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { ChevronDown, Star } from "lucide-react";
-import { Container, Section } from "@/app/shared/ui/Layout";
+import { Container, Eyebrow, Section } from "@/app/shared/ui/Layout";
 import { Reveal, Stagger, StaggerItem } from "@/app/shared/motion/Reveal";
 
 interface AccordionItem {
@@ -118,9 +118,7 @@ export function EnterpriseProficiency() {
             {/* Left Column: Heading, Accordion, Stats */}
             <div className="flex flex-col">
               <Reveal from="up">
-                <span className="font-mono text-xs font-semibold uppercase tracking-widest text-teal-400">
-                  ENTERPRISE GRADE
-                </span>
+                <Eyebrow tone="light">ENTERPRISE GRADE</Eyebrow>
               </Reveal>
 
               <Reveal from="up" delay={0.06}>

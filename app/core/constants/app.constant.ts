@@ -134,33 +134,32 @@ export const TESTIMONIALS = [
 export const FAQS = [
   {
     id: 0,
-    q: "How does NXT Orbit integrate with our existing ERP and CRM systems?",
-    a: "We design bi-directional API connectors and middleware that synchronize directly with SAP, Tally, Salesforce, or custom databases without requiring you to replace your operational backbone.",
-    bulletPoints: ["Bi-directional sync", "Zero data loss pipelines", "Preserves legacy investment"]
+    q: "How long does a typical enterprise implementation take?",
+    a: "It depends on scope, but our sprint-based delivery means you're seeing working software within the first few weeks — not waiting until the end of a multi-month build to see anything. We'll give you a specific timeline after discovery, tied to your actual scope, not a template estimate."
   },
   {
     id: 1,
-    q: "Can you help automate manual data entry between departments?",
-    a: "Yes. We eliminate spreadsheet dependencies by connecting inventory, billing, dispatch, and finance into cohesive workflows with automated validation rules."
+    q: "We already run [SAP / Tally / a legacy ERP]. Do we have to replace it?",
+    a: "Usually not. Most of our engagements integrate with what you're already running rather than ripping it out — our SAP and Tally-integrated WMS work is a direct example. Replacement only makes sense when the existing system genuinely can't support where the business is headed."
   },
   {
     id: 2,
-    q: "How do you handle data privacy and enterprise security?",
-    a: "Security is engineered into our architecture from the start: role-based access control (RBAC), end-to-end encryption at rest and in transit, and complete audit logging."
+    q: "What happens after go-live — are we on our own?",
+    a: "No. Every engagement includes an SLA with defined response and resolution times, and the team that built your system stays engaged for enhancements as your needs change. Go-live is the start of the relationship, not the end of it."
   },
   {
     id: 3,
-    q: "Does NXT Orbit hold specific certifications?",
-    a: "Our engineering processes adhere to ISO-aligned information security and industry compliance guidelines (e.g. DPDP, GDPR principles), ensuring your solutions pass corporate audits."
+    q: "We're in a regulated industry (BFSI / healthcare). Can you handle our compliance requirements?",
+    a: "Yes — it's built into how we work, not bolted on afterward, including compliance frameworks like ISO 27001, SOC 2 Type II, HIPAA, and GDPR."
   },
   {
     id: 4,
-    q: "Where does AI deliver practical value in our business operations?",
-    a: "Rather than generic chatbots, we deploy AI for concrete business outcomes: automated invoice/document processing, semantic knowledge retrieval for support, and predictive inventory demand."
+    q: "Do you build custom, or do we get a templated product with our logo on it?",
+    a: "Custom, built around your actual workflows. We'll reuse proven architecture patterns where it saves you time and cost, but the system is designed for how your teams actually work, not squeezed into a generic template. If you want template you can also use our existing products and solutions."
   },
   {
     id: 5,
-    q: "Do you provide dedicated support SLAs after go-live?",
-    a: "Yes. Go-live is just the beginning. We provide ongoing maintenance, performance tuning, uptime monitoring, and SLA-backed engineering support."
+    q: "What if we're not sure exactly what we need yet?",
+    a: "That's what Business Discovery is for. Most clients start with a rough problem, not a finished specification our first phase is built to turn that into a scoped, costed plan before you commit to anything larger."
   }
 ];

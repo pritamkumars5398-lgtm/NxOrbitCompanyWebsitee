@@ -429,4 +429,136 @@ export const INDUSTRIES_DATA: Record<string, IndustryPage> = {
     metaDescription:
       "NXTorbit builds OTT streaming, creator platforms, and entertainment apps. 50M+ DAU served across 40+ entertainment products.",
   },
+  manufacturing: {
+    slug: "manufacturing",
+    category: "Industries",
+    title: "Manufacturing & Industrial IoT",
+    tagline: "Connected Shop Floors, Real-Time Telemetry & Smart Manufacturing",
+    description:
+      "We engineer mission-critical digital systems for modern industrial plants and discrete manufacturers. From machine IoT telemetry and MES (Manufacturing Execution Systems) to bi-directional ERP integration, our solutions eliminate production blindspots and automate floor-to-cloud workflows.",
+    heroStats: [
+      { value: "99.8%", label: "Inventory Accuracy" },
+      { value: "<50ms", label: "Edge Telemetry Latency" },
+      { value: "45+", label: "Plants Digitized" },
+      { value: "24/7", label: "Zero-Downtime Operations" },
+    ],
+    features: [
+      {
+        title: "Manufacturing Execution Systems (MES)",
+        description:
+          "Real-time work order tracking, machine status monitoring, and line supervisor interfaces with zero manual logging.",
+      },
+      {
+        title: "Industrial IoT & Machine Telemetry",
+        description:
+          "SCADA and PLC sensor integration capturing temperature, vibration, throughput, and predictive maintenance triggers.",
+      },
+      {
+        title: "BOM & Work-in-Progress (WIP) Tracking",
+        description:
+          "Automated multi-level Bill of Materials tracking, scrap rate analysis, and sub-assembly batch serialization.",
+      },
+      {
+        title: "Bi-Directional ERP Sync",
+        description:
+          "Real-time ledger, inventory, and procurement synchronization with SAP ECC, S/4HANA, Oracle, and Tally Prime.",
+      },
+      {
+        title: "Quality Control & Visual Defect AI",
+        description:
+          "Computer vision-powered defect inspection on assembly lines with automated defect tagging and quarantine routing.",
+      },
+      {
+        title: "Plant Floor Handheld Apps",
+        description:
+          "Ruggedized tablet and barcode scanner apps with local offline SQLite caching that operate during factory network drops.",
+      },
+    ],
+    process: [
+      { step: "01", title: "Plant Floor Discovery", description: "Audit machine protocols (Modbus, OPC-UA, MQTT), physical workflows, and network constraints." },
+      { step: "02", title: "Edge & Cloud Architecture", description: "Design hybrid edge gateways for millisecond latency alongside scalable cloud data stores." },
+      { step: "03", title: "ERP & PLC Integration", description: "Build bi-directional CDC connectors with SAP, Tally, and existing PLC control systems." },
+      { step: "04", title: "Operator UX Engineering", description: "Build high-contrast touch interfaces designed for industrial gloves and ruggedized scanners." },
+      { step: "05", title: "Pilot Run & Validation", description: "Deploy on a single production line for 14-day shadow execution and throughput auditing." },
+      { step: "06", title: "Plant-Wide Scale", description: "Full line cutover with circuit breakers, automated failover, and 24/7 engineering monitoring." },
+    ],
+    useCases: [
+      "Discrete Manufacturing",
+      "Automotive Parts Assembly",
+      "Pharmaceutical Batch Tracking",
+      "FMCG High-Speed Packaging",
+      "Electronics & Precision Tooling",
+      "Metal & Heavy Fabrication",
+    ],
+    ctaText: "Consult a Manufacturing Architect",
+    metaTitle: "Manufacturing & Industrial IoT Solutions | NXT Orbit",
+    metaDescription:
+      "Mission-critical MES, Industrial IoT telemetry, plant automation, and SAP-integrated manufacturing software engineered by NXT Orbit.",
+  },
+  "professional-services": {
+    slug: "professional-services",
+    category: "Industries",
+    title: "Professional Services & Enterprise Consulting",
+    tagline: "Client Portals, Resource Orchestration & Practice Automation",
+    description:
+      "We build unified digital operations platforms for legal practices, accounting firms, architecture studios, and management consultancies. Eliminate disjointed spreadsheets with automated billing, time utilization tracking, and white-labeled client collaboration hubs.",
+    heroStats: [
+      { value: "3.2x", label: "Faster Invoicing Cycles" },
+      { value: "98.5%", label: "Timesheet Compliance" },
+      { value: "$80M+", label: "Billable Time Managed" },
+      { value: "SOC 2", label: "Certified Data Security" },
+    ],
+    features: [
+      {
+        title: "Unified Practice Management",
+        description:
+          "Centralized matter management, project milestones, task assignments, and real-time deliverables tracking across all partners.",
+      },
+      {
+        title: "Automated Time & Expense Billing",
+        description:
+          "Automated milestone-based and hourly billing with automated expense capture, client rate cards, and multi-currency invoicing.",
+      },
+      {
+        title: "White-Labeled Client Portals",
+        description:
+          "Secure client collaboration hubs with document sharing, e-signatures, approval workflows, and live project status boards.",
+      },
+      {
+        title: "Resource Allocation & Utilization AI",
+        description:
+          "Intelligent staffing algorithms that match billable staff to project deadlines and budget constraints without burnout.",
+      },
+      {
+        title: "Document Vault & E-Discovery",
+        description:
+          "Role-based access control (RBAC), end-to-end encrypted document storage, metadata tagging, and full-text audit searches.",
+      },
+      {
+        title: "Financial & ERP Accounting Connectors",
+        description:
+          "Direct integration with QuickBooks, Xero, NetSuite, and custom bank feeds for automatic ledger reconciliation.",
+      },
+    ],
+    process: [
+      { step: "01", title: "Practice Workflow Scoping", description: "Map billable cycles, client engagement models, and compliance boundaries (NDA, GDPR, SOC 2)." },
+      { step: "02", title: "Information Architecture", description: "Design unified schemas linking clients, matters, billable staff, and invoice ledger items." },
+      { step: "03", title: "Portal & Core Platform Build", description: "Develop responsive web interfaces, white-labeled client portals, and secure document vaults." },
+      { step: "04", title: "Accounting & Tool Integrations", description: "Connect payment gateways, QuickBooks, NetSuite, Google Workspace, and Microsoft 365." },
+      { step: "05", title: "Security & Penetration Audit", description: "Execute vulnerability scans, role-based access audits, and client confidentiality testing." },
+      { step: "06", title: "Partner Rollout & Adoption", description: "Phased firm-wide onboarding with hands-on partner training and dedicated technical support." },
+    ],
+    useCases: [
+      "Law Firms & Legal Consultancies",
+      "Audit & Accounting Practices",
+      "Architecture & Civil Engineering",
+      "Management & Strategy Consulting",
+      "IT Advisory & Digital Agencies",
+      "Recruitment & Executive Search",
+    ],
+    ctaText: "Build Your Practice Platform",
+    metaTitle: "Professional Services Technology Solutions | NXT Orbit",
+    metaDescription:
+      "Custom practice management systems, client portals, automated billing, and resource planning software for professional services firms.",
+  },
 };

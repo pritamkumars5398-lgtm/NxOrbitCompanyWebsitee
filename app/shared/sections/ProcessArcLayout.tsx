@@ -31,6 +31,7 @@ const DEFAULT_ICONS: LucideIcon[] = [
 ];
 
 interface ProcessArcLayoutProps {
+  id?: string;
   eyebrow?: string;
   title?: string;
   subtitle?: string;
@@ -46,6 +47,7 @@ interface ProcessArcLayoutProps {
  * and clean vertical timeline on mobile/tablet (<lg).
  */
 export function ProcessArcLayout({
+  id,
   eyebrow = "HOW WE WORK",
   title = "From first conversation to live product.",
   subtitle = "A proven, transparent delivery methodology for engineering products that scale.",
@@ -94,7 +96,7 @@ export function ProcessArcLayout({
   const svgWidth = 310;
 
   return (
-    <Section tone="none" spacing="lg" className={`relative isolate overflow-hidden py-10 sm:py-16 lg:py-20 bg-slate-100 ${className || ""}`}>
+    <Section id={id} tone="none" spacing="lg" className={`relative isolate overflow-hidden py-10 sm:py-16 lg:py-20 bg-slate-100 ${className || ""}`}>
       {/* Background Image Layer - Clearly Visible */}
       {bgImage && (
         <div className="absolute inset-0 -z-20 overflow-hidden pointer-events-none">
@@ -211,7 +213,7 @@ export function ProcessArcLayout({
 
                 return (
                   <StaggerItem
-                    key={stepItem.step || index}
+                    key={stepItem.title || index}
                     from="right"
                     className="group relative flex items-center gap-3 sm:gap-4 transition-transform duration-300 hover:translate-x-1 ml-0 lg:ml-[var(--curve-offset)] lg:h-[108px]"
                     style={
@@ -220,20 +222,15 @@ export function ProcessArcLayout({
                       } as React.CSSProperties
                     }
                   >
-                    {/* 3D Elevated Circular Step Badge Centered Directly on Guide Line (01, 02, 03...) */}
-                    <div className="relative z-20 flex size-10 sm:size-11 lg:size-12 shrink-0 items-center justify-center rounded-full bg-white font-mono text-xs sm:text-sm lg:text-base font-extrabold text-brand-600 shadow-lg shadow-slate-900/15 border border-slate-200 ring-4 ring-slate-100 transition-all duration-300 group-hover:scale-110 group-hover:border-brand-500 group-hover:ring-brand-100">
-                      {stepItem.step}
+                    {/* 3D Elevated Circular Icon Badge Centered Directly on Guide Line */}
+                    <div className="relative z-20 flex size-10 sm:size-11 lg:size-12 shrink-0 items-center justify-center rounded-full bg-white text-brand-600 shadow-lg shadow-slate-900/15 border border-slate-200 ring-4 ring-slate-100 transition-all duration-300 group-hover:scale-110 group-hover:border-brand-500 group-hover:ring-brand-100 group-hover:bg-brand-600 group-hover:text-white">
+                      <IconComponent className="size-4 sm:size-5 lg:size-5.5" />
                     </div>
 
                     {/* Connector Arrow Line (──→) */}
                     <div className="flex items-center text-brand-600 shrink-0 font-bold -ml-1">
                       <span className="w-2 sm:w-3.5 h-0.5 bg-brand-500/40 hidden sm:inline-block" />
                       <ArrowRight className="size-3.5 sm:size-4 text-brand-600 transition-transform duration-300 group-hover:translate-x-1" />
-                    </div>
-
-                    {/* Step Icon Badge */}
-                    <div className="flex size-9 sm:size-10 lg:size-11 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600 border border-brand-100 shadow-2xs transition-colors duration-300 group-hover:bg-brand-600 group-hover:text-white">
-                      <IconComponent className="size-4 sm:size-5" />
                     </div>
 
                     {/* Step Title & Description Content */}

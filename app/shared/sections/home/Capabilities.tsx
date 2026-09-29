@@ -57,7 +57,7 @@ export function Capabilities() {
                       <NavIcon name={item.icon} className="size-5" />
                     </span>
                     <span className="text-xs font-bold uppercase tracking-wider text-teal-600">
-                      {String(index + 1).padStart(2, "0")} / {item.title}
+                      {item.title}
                     </span>
                   </div>
 
