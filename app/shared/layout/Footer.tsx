@@ -43,12 +43,12 @@ const SOCIALS = [
 ];
 
 /**
- * Footer. Deliberately the only large dark surface on most pages — it closes
- * the document and gives the white body above it a hard edge to sit on.
+ * Footer. High-contrast, crystal-clear typography with seamlessly blended logo
+ * and offset social icons ensuring Twitter/X is never obscured by floating action buttons.
  */
 export function Footer() {
   return (
-    <footer className="relative isolate overflow-hidden bg-brand-950 text-ink-300">
+    <footer className="relative isolate overflow-hidden bg-brand-950 text-slate-300">
       <GridField tone="dark" className="opacity-60" />
       <Grain />
       <div
@@ -56,41 +56,50 @@ export function Footer() {
         className="pointer-events-none absolute -top-40 left-1/2 h-80 w-[60rem] -translate-x-1/2 rounded-full bg-brand-400/10 blur-[120px]"
       />
 
-      <Container className="relative py-6 lg:py-8">
+      <Container className="relative py-10 lg:py-14">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_2.6fr]">
           {/* Brand + contact */}
           <div className="flex flex-col gap-6">
             <Link
               href="/"
               aria-label="NXTorbit — home"
-              className="w-fit p-0 bg-transparent"
+              className="w-fit p-0 bg-transparent inline-block"
             >
-              <Logo height={40} light />
+              <Logo height={42} light />
             </Link>
 
-            <div className="flex flex-col gap-2">
-              <span className="text-sm font-bold text-white">NXT Orbit IT Solutions Pvt. Ltd.</span>
-              <span className="text-xs font-mono tracking-wider text-teal-400 font-bold uppercase">Keep It Simple.</span>
+            <div className="flex flex-col gap-1.5">
+              <span className="text-base font-bold text-white tracking-wide">
+                NXT Orbit IT Solutions Pvt. Ltd.
+              </span>
+              <span className="text-xs font-mono tracking-widest text-teal-400 font-bold uppercase">
+                Keep It Simple.
+              </span>
             </div>
 
-            <p className="max-w-md text-xs leading-relaxed text-ink-400">
+            <p className="max-w-md text-xs sm:text-sm leading-relaxed text-slate-300 font-normal">
               Enterprise Applications · Digital Platforms · Mobile Solutions · Cloud & DevOps · AI & Automation · Technology Partnerships
             </p>
 
-            <dl className="flex flex-col gap-4 text-sm">
+            <dl className="flex flex-col gap-3.5 text-sm mt-1">
               <ContactRow Icon={MapPin} label="Navi Mumbai, India">
                 {CONTACT_DETAILS.address}
               </ContactRow>
-              <ContactRow Icon={Phone} label="Phone">
-                <a href={CONTACT_DETAILS.phoneHref} className="link-underline hover:text-white">
-                  {CONTACT_DETAILS.phone}
-                </a>
-              </ContactRow>
-              <ContactRow Icon={Mail} label="Email">
-                <a href={CONTACT_DETAILS.emailHref} className="link-underline hover:text-white">
-                  {CONTACT_DETAILS.email}
-                </a>
-              </ContactRow>
+
+              {/* Inline Phone and Email for optimal space efficiency */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <ContactRow Icon={Phone} label="Phone">
+                  <a href={CONTACT_DETAILS.phoneHref} className="hover:text-teal-300 transition-colors">
+                    {CONTACT_DETAILS.phone}
+                  </a>
+                </ContactRow>
+                <ContactRow Icon={Mail} label="Email">
+                  <a href={CONTACT_DETAILS.emailHref} className="hover:text-teal-300 transition-colors">
+                    {CONTACT_DETAILS.email}
+                  </a>
+                </ContactRow>
+              </div>
+
               <ContactRow Icon={Clock} label="Hours">
                 {CONTACT_DETAILS.hours}
               </ContactRow>
@@ -101,18 +110,20 @@ export function Footer() {
           <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 md:grid-cols-5">
             {COLUMNS.map((column) => (
               <nav key={column.title} aria-label={column.title} className="flex flex-col gap-4">
-                <h2 className="text-eyebrow uppercase text-brand-200">{column.title}</h2>
+                <h2 className="text-eyebrow uppercase text-teal-300 font-extrabold tracking-wider">
+                  {column.title}
+                </h2>
                 <ul className="flex flex-col gap-2.5">
                   {column.links.map((link) => (
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="group inline-flex items-start gap-1 text-sm text-ink-400 transition-colors duration-200 hover:text-white"
+                        className="group inline-flex items-start gap-1 text-xs sm:text-sm text-slate-300 transition-colors duration-200 hover:text-white"
                       >
-                        {link.label}
+                        <span>{link.label}</span>
                         <ArrowUpRight
                           aria-hidden
-                          className="mt-0.5 size-3 shrink-0 opacity-0 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:opacity-100"
+                          className="mt-0.5 size-3 shrink-0 opacity-0 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:opacity-100 text-teal-400"
                         />
                       </Link>
                     </li>
@@ -123,16 +134,17 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-6 flex flex-col gap-4 border-t border-white/10 pt-4 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-xs text-ink-500">
+        {/* Subfooter with extra right-padding to guarantee Twitter/X is never obscured by floating action buttons */}
+        <div className="mt-10 flex flex-col gap-4 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between sm:pr-24 lg:pr-28">
+          <p className="text-xs text-slate-400 font-medium">
             © 2026 NXT Orbit IT Solutions Pvt. Ltd. All rights reserved.
           </p>
 
           <div className="flex items-center gap-6">
-            <Link href="/contact" className="text-xs text-ink-500 transition-colors hover:text-white">
+            <Link href="/contact" className="text-xs text-slate-400 font-medium transition-colors hover:text-white">
               Privacy Policy
             </Link>
-            <Link href="/contact" className="text-xs text-ink-500 transition-colors hover:text-white">
+            <Link href="/contact" className="text-xs text-slate-400 font-medium transition-colors hover:text-white">
               Terms of Service
             </Link>
             <div className="flex items-center gap-2">
@@ -143,7 +155,7 @@ export function Footer() {
                   aria-label={label}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="inline-flex size-9 items-center justify-center rounded-lg border border-white/12 text-ink-400 transition-all duration-300 hover:border-brand-300/50 hover:text-brand-200"
+                  className="inline-flex size-9 items-center justify-center rounded-lg border border-white/20 text-slate-300 transition-all duration-300 hover:border-teal-400 hover:text-teal-300 hover:bg-white/5 shadow-xs"
                 >
                   <Mark />
                 </a>
@@ -167,10 +179,10 @@ function ContactRow({
 }) {
   return (
     <div className="flex gap-3">
-      <Icon aria-hidden className="mt-0.5 size-4 shrink-0 text-brand-300" strokeWidth={1.7} />
+      <Icon aria-hidden className="mt-0.5 size-4 shrink-0 text-teal-400" strokeWidth={1.8} />
       <div className="flex flex-col gap-0.5">
-        <dt className="text-xs font-semibold text-ink-200">{label}</dt>
-        <dd className="text-xs leading-relaxed text-ink-400">{children}</dd>
+        <dt className="text-xs font-semibold text-slate-200">{label}</dt>
+        <dd className="text-xs leading-relaxed text-slate-300">{children}</dd>
       </div>
     </div>
   );

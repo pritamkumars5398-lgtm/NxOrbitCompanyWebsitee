@@ -185,8 +185,6 @@ function MegaPanel({
   onLeave: () => void;
   onNavigate: () => void;
 }) {
-  const isCompact = group ? group.links.length <= 4 : false;
-
   return (
     <AnimatePresence>
       {group && (
@@ -195,23 +193,16 @@ function MegaPanel({
           initial={{ opacity: 0, y: 4 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 4 }}
-          transition={{ duration: 0.2, ease: EASE.outExpo }}
+          transition={{ duration: 0.18, ease: EASE.outExpo }}
           onMouseEnter={onEnter}
           onMouseLeave={onLeave}
-          className={cn(
-            "absolute left-1/2 -translate-x-1/2 top-full mt-1.5 hidden rounded-2xl border border-hairline bg-white p-5 shadow-2xl shadow-slate-900/15 lg:block transition-[width] duration-300 z-50",
-            isCompact ? "w-[640px]" : "w-[900px]"
-          )}
+          className="absolute left-1/2 -translate-x-1/2 top-full mt-1.5 hidden w-[860px] rounded-2xl border border-hairline bg-white p-5 shadow-2xl shadow-slate-900/15 lg:block z-50"
         >
           <div className="w-full">
             <div
               className={cn(
-                "grid gap-5",
-                group.feature
-                  ? isCompact
-                    ? "grid-cols-[1.15fr_1fr]"
-                    : "grid-cols-[1.8fr_1.2fr]"
-                  : "grid-cols-1",
+                "grid gap-6 items-stretch",
+                group.feature ? "grid-cols-[1.75fr_1.25fr]" : "grid-cols-1",
               )}
             >
               <motion.ul

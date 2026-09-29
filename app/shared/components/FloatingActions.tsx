@@ -12,10 +12,19 @@ const WhatsAppIcon = () => (
 
 export function FloatingActions() {
   const [isVisible, setIsVisible] = useState(false);
+  const [atBottom, setAtBottom] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsVisible(window.scrollY > 300);
+
+      // Detect when user scrolls near/at the very bottom of the page
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+      // When within 220px of bottom, elevate buttons so Twitter/X is never obscured
+      setAtBottom(documentHeight - (scrollTop + windowHeight) < 220);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -30,7 +39,11 @@ export function FloatingActions() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-4 items-center">
+    <div
+      className={`fixed right-6 z-40 flex flex-col gap-4 items-center transition-all duration-300 ${
+        atBottom ? "bottom-24 sm:bottom-28" : "bottom-6"
+      }`}
+    >
       {/* ── WhatsApp Floating Button ── */}
       <motion.a
         href="https://wa.me/919763804442"
