@@ -31,7 +31,7 @@ function parse(value: string) {
  */
 export function CountUp({ value, className, duration = 1600 }: CountUpProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.5 });
+  const inView = useInView(ref, { once: true, amount: "some", margin: "0px 0px 100px 0px" });
   const reduced = useReducedMotion();
   const parsed = useMemo(() => parse(value), [value]);
   const animatable = Boolean(parsed) && !reduced;

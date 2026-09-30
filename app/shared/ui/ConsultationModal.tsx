@@ -368,7 +368,7 @@ export function ConsultationModal() {
               variant="accent" 
               size="md" 
               loading={loading}
-              className="w-full h-10 shadow-md shadow-teal-500/10 hover:shadow-teal-500/20"
+              className="w-full h-9 sm:h-10 shadow-md shadow-teal-500/10 hover:shadow-teal-500/20"
               icon={<Send className="size-4" />}
             >
               Submit Inquiry

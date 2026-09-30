@@ -22,7 +22,7 @@ export function Container({
   width?: ContainerWidth;
 }) {
   return (
-    <div className={cn("mx-auto w-full px-6 sm:px-8 lg:px-10", WIDTHS[width], className)}>
+    <div className={cn("mx-auto w-full px-4 sm:px-8 lg:px-10", WIDTHS[width], className)}>
       {children}
     </div>
   );
@@ -87,7 +87,7 @@ export function Eyebrow({
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest",
+        "inline-flex items-center gap-1.5 sm:gap-2 text-[10.5px] sm:text-xs font-bold uppercase tracking-widest",
         tone === "brand" && "text-[#008c83]",
         tone === "light" && "text-teal-400",
         tone === "muted" && "text-slate-500",
@@ -126,13 +126,13 @@ export function SectionHeading({
   return (
     <div
       className={cn(
-        "flex flex-col gap-5",
+        "flex flex-col gap-3.5 sm:gap-5",
         align === "center" && "items-center text-center",
         action && "lg:flex-row lg:items-end lg:justify-between lg:gap-12",
         className,
       )}
     >
-      <div className={cn("flex flex-col gap-4", align === "center" ? "items-center max-w-2xl" : "max-w-2xl")}>
+      <div className={cn("flex flex-col gap-2.5 sm:gap-4", align === "center" ? "items-center max-w-2xl" : "max-w-2xl")}>
         {eyebrow && <Eyebrow tone={tone === "light" ? "light" : "brand"}>{eyebrow}</Eyebrow>}
         <h2
           className={cn(

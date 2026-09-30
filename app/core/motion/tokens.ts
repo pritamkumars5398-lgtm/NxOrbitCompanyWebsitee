@@ -18,9 +18,9 @@ export const DURATION = {
 export const springSoft: Transition = { type: "spring", stiffness: 220, damping: 30, mass: 0.9 };
 export const springSnappy: Transition = { type: "spring", stiffness: 420, damping: 34, mass: 0.6 };
 
-/** Viewport config shared by every scroll-triggered reveal: fire once, slightly
-    before the element is fully on screen. */
-export const VIEWPORT = { once: true, amount: 0.25, margin: "0px 0px -12% 0px" } as const;
+/** Viewport config shared by every scroll-triggered reveal: fire once,
+    trigger well before the element reaches the viewport on all devices. */
+export const VIEWPORT = { once: true, amount: "some", margin: "0px 0px 300px 0px" } as const;
 
 type RevealDirection = "up" | "down" | "left" | "right" | "none";
 

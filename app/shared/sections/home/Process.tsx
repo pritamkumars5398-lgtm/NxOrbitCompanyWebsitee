@@ -130,7 +130,7 @@ export function Process() {
                 How We Work<br className="hidden sm:inline" /> — A process you can see through.
               </h2>
 
-              <p className="max-w-md text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+              <p className="max-w-md text-xs sm:text-base text-slate-600 leading-relaxed font-normal">
                 Four phases, each with a defined output you can hold us to — not a status deck standing in for working software.
               </p>
 

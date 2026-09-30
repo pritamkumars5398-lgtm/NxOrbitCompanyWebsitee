@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { ArrowRight, Smartphone, Globe, Sparkles, Palette, Layers, Cloud, FolderGit2 } from "lucide-react";
+import { ArrowLeft, ArrowRight, Smartphone, Globe, Sparkles, Palette, Layers, Cloud, FolderGit2 } from "lucide-react";
 import { cn } from "@/app/core/lib/cn";
 
 import { SERVICES_DATA } from "@/app/core/data/services";
@@ -217,12 +217,12 @@ export default async function ServicePage({
         <div className="flex flex-col gap-3">
           <Marquee duration={44} gap="0.75rem">
             {[...data.techStack.slice(0, half), ...data.techStack.slice(0, half), ...data.techStack.slice(0, half), ...data.techStack.slice(0, half)].map((tech, idx) => (
-              <TechPill key={`${tech}-${idx}`}>{tech}</TechPill>
+              <TechPill key={`${tech}-${idx}`} direction="left">{tech}</TechPill>
             ))}
           </Marquee>
           <Marquee duration={52} gap="0.75rem" reverse>
             {[...data.techStack.slice(half), ...data.techStack.slice(half), ...data.techStack.slice(half), ...data.techStack.slice(half)].map((tech, idx) => (
-              <TechPill key={`${tech}-${idx}`}>{tech}</TechPill>
+              <TechPill key={`${tech}-${idx}`} direction="right">{tech}</TechPill>
             ))}
           </Marquee>
         </div>
@@ -235,10 +235,14 @@ export default async function ServicePage({
   );
 }
 
-function TechPill({ children }: { children: React.ReactNode }) {
+function TechPill({ children, direction = "left" }: { children: React.ReactNode; direction?: "left" | "right" }) {
   return (
     <span className="inline-flex shrink-0 items-center gap-2 rounded-full border border-hairline bg-white px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ink-700 shadow-xs transition-colors duration-300 hover:border-brand-300 hover:text-brand-600">
-      <ArrowRight aria-hidden className="size-3 text-brand-300" />
+      {direction === "left" ? (
+        <ArrowLeft aria-hidden className="size-3 text-brand-300" />
+      ) : (
+        <ArrowRight aria-hidden className="size-3 text-brand-300" />
+      )}
       {children}
     </span>
   );

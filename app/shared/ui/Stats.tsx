@@ -67,7 +67,7 @@ export function Stats({
           </dt>
           <dd
             className={cn(
-              "text-lg sm:text-2xl lg:text-display-md font-bold tabular-nums leading-none mb-1",
+              "text-base sm:text-2xl lg:text-display-md font-bold tabular-nums leading-none mb-1",
               light ? "text-white" : "text-brand-800",
             )}
           >

@@ -119,10 +119,10 @@ export function SolutionsInAction() {
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00d2c4]/15 text-[#00d2c4] text-xs font-bold tracking-wider uppercase border border-[#00d2c4]/25">
               OUR SOLUTIONS IN ACTION
             </span>
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-white font-bold leading-tight tracking-tight">
+            <h2 className="font-heading text-xl sm:text-3xl lg:text-5xl text-white font-bold leading-tight tracking-tight">
               Proven Capability in Mission-Critical Environments
             </h2>
-            <p className="text-slate-300 text-base sm:text-lg font-normal leading-relaxed">
+            <p className="text-slate-300 text-xs sm:text-base lg:text-lg font-normal leading-relaxed">
               Four specialized platforms. One integrated ecosystem.
             </p>
           </Reveal>
@@ -141,7 +141,11 @@ export function SolutionsInAction() {
 
         {/* Tabbed / Segmented Navigation Bar */}
         <div className="mb-6 sm:mb-8">
-          <div className="flex items-center gap-2 sm:gap-3 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-slate-700">
+          <div 
+            data-lenis-prevent="true"
+            className="flex items-center gap-2 sm:gap-3 overflow-x-auto overscroll-x-contain touch-pan-x pb-2 scrollbar-none"
+            style={{ WebkitOverflowScrolling: "touch" }}
+          >
             {SOLUTIONS_DATA.map((item, idx) => {
               const Icon = item.icon;
               const isActive = idx === activeIndex;
@@ -152,7 +156,7 @@ export function SolutionsInAction() {
                   onClick={() => setActiveIndex(idx)}
                   type="button"
                   className={cn(
-                    "flex items-center gap-2.5 sm:gap-3 px-4 sm:px-5 py-3 rounded-2xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap cursor-pointer select-none",
+                    "flex items-center gap-2 sm:gap-3 px-3 sm:px-5 py-2 sm:py-3 rounded-xl sm:rounded-2xl text-[11.5px] sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap cursor-pointer select-none",
                     isActive
                       ? "bg-white text-slate-900 shadow-md scale-[1.01]"
                       : "bg-white/10 hover:bg-white/15 text-slate-200 hover:text-white border border-white/10"

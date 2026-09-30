@@ -625,7 +625,11 @@ export default function NextOrbitFreightPage() {
           </div>
 
           {/* Role Tabs Pill Bar */}
-          <div className="flex flex-wrap justify-center gap-3 mb-10">
+          <div 
+            data-lenis-prevent="true"
+            className="flex items-center md:justify-center gap-2.5 overflow-x-auto overscroll-x-contain touch-pan-x scrollbar-none pb-2 mb-8 md:mb-10 px-1"
+            style={{ WebkitOverflowScrolling: "touch" }}
+          >
             {ROLE_TABS.map((tab) => {
               const Icon = tab.icon;
               const isActive = activeTab === tab.id;
@@ -635,7 +639,7 @@ export default function NextOrbitFreightPage() {
                   type="button"
                   onClick={() => setActiveTab(tab.id)}
                   className={cn(
-                    "flex items-center gap-2.5 px-5 py-2.5 rounded-full text-xs font-bold transition-all duration-300 cursor-pointer shadow-2xs border",
+                    "flex shrink-0 whitespace-nowrap items-center gap-2.5 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-bold transition-all duration-300 cursor-pointer shadow-2xs border",
                     isActive
                       ? "bg-[#0d2a30] border-[#0d2a30] text-white shadow-md scale-[1.02]"
                       : "bg-white border-slate-200/90 text-slate-700 hover:border-teal-400 hover:text-teal-700 hover:bg-teal-50/50"

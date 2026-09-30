@@ -174,7 +174,11 @@ export function TechStack() {
         </Reveal>
 
         {/* Category Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
+        <div 
+          data-lenis-prevent="true"
+          className="flex items-center md:justify-center gap-2 overflow-x-auto overscroll-x-contain touch-pan-x scrollbar-none pb-2 mb-8 md:mb-10 px-1"
+          style={{ WebkitOverflowScrolling: "touch" }}
+        >
           {TECH_CATEGORIES.map((cat) => {
             const Icon = cat.icon;
             const isActive = activeTab === cat.id;
@@ -183,13 +187,13 @@ export function TechStack() {
               <button
                 key={cat.id}
                 onClick={() => setActiveTab(cat.id)}
-                className={`flex items-center gap-2.5 px-5 py-3 rounded-full text-sm font-semibold transition-all duration-300 ${
+                className={`flex shrink-0 whitespace-nowrap items-center gap-2 sm:gap-2.5 px-3.5 sm:px-5 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${
                   isActive
-                    ? "bg-[#01242e] text-white scale-105"
+                    ? "bg-[#01242e] text-white scale-[1.02]"
                     : "bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900"
                 }`}
               >
-                <Icon className={`size-4 ${isActive ? "text-[#00d2c4]" : "text-slate-500"}`} />
+                <Icon className={`size-3.5 sm:size-4 ${isActive ? "text-[#00d2c4]" : "text-slate-500"}`} />
                 {cat.label}
               </button>
             );

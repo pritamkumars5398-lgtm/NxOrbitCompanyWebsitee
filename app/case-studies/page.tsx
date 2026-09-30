@@ -135,7 +135,7 @@ export default function CaseStudiesPage() {
                 {/* Metric slab */}
                 <Parallax distance={22}>
                   <Reveal from={flipped ? "right" : "left"} scale={0.97}>
-                    <div className="relative isolate overflow-hidden rounded-2xl bg-brand-900 p-8 sm:p-10">
+                    <div className="relative isolate overflow-hidden rounded-2xl bg-brand-900 p-5 sm:p-8 lg:p-10">
                       <GridField tone="dark" className="opacity-50" />
                       <div
                         aria-hidden
@@ -147,12 +147,12 @@ export default function CaseStudiesPage() {
                           <StaggerItem
                             key={metric.label}
                             from="up"
-                            className="flex items-baseline justify-between gap-6 py-5 first:pt-0 last:pb-0"
+                            className="flex items-baseline justify-between gap-4 sm:gap-6 py-3.5 sm:py-5 first:pt-0 last:pb-0"
                           >
-                            <span className="text-3xl font-bold tracking-tight text-white tabular-nums sm:text-4xl">
+                            <span className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white tabular-nums">
                               <CountUp value={metric.value} />
                             </span>
-                            <span className="text-right text-sm text-ink-400">{metric.label}</span>
+                            <span className="text-right text-xs sm:text-sm text-ink-400">{metric.label}</span>
                           </StaggerItem>
                         ))}
                       </Stagger>

@@ -16,9 +16,6 @@ import {
   Activity,
   UserCheck,
   Mail,
-  Building,
-  Briefcase,
-  MapPin,
   Sparkles,
   Star,
   Award,
@@ -30,6 +27,11 @@ import {
   Maximize2,
   Handshake,
   Calendar,
+  SlidersHorizontal,
+  Network,
+  FileSearch,
+  Settings,
+  Rocket,
 } from "lucide-react";
 import { Container, Eyebrow, Section } from "@/app/shared/ui/Layout";
 import { Reveal, Stagger, StaggerItem } from "@/app/shared/motion/Reveal";
@@ -48,22 +50,37 @@ const PHILOSOPHY_PRINCIPLES = [
   {
     principle: "Simplify Processes",
     whatItMeans: "Remove unnecessary steps and streamline the way work gets done.",
+    icon: SlidersHorizontal,
+    iconStyle:
+      "bg-sky-50 text-sky-600 border-sky-100 group-hover:bg-sky-600 group-hover:text-white group-hover:border-sky-600",
   },
   {
     principle: "Connect Systems",
     whatItMeans: "Bring information together instead of creating isolated applications.",
+    icon: Network,
+    iconStyle:
+      "bg-emerald-50 text-emerald-600 border-emerald-100 group-hover:bg-emerald-600 group-hover:text-white group-hover:border-emerald-600",
   },
   {
     principle: "Design for Users",
     whatItMeans: "Build technology people can adopt naturally, creating confidence — not confusion.",
+    icon: Users,
+    iconStyle:
+      "bg-violet-50 text-violet-600 border-violet-100 group-hover:bg-violet-600 group-hover:text-white group-hover:border-violet-600",
   },
   {
     principle: "Focus on Value",
     whatItMeans: "Prioritize business outcomes and avoid unnecessary features.",
+    icon: Target,
+    iconStyle:
+      "bg-amber-50 text-amber-600 border-amber-100 group-hover:bg-amber-600 group-hover:text-white group-hover:border-amber-600",
   },
   {
     principle: "Build for the Long Term",
     whatItMeans: "Create solutions that remain relevant and scale as businesses evolve.",
+    icon: ShieldCheck,
+    iconStyle:
+      "bg-teal-50 text-[#008c83] border-teal-100 group-hover:bg-[#008c83] group-hover:text-white group-hover:border-[#008c83]",
   },
 ];
 
@@ -140,12 +157,12 @@ const ENGINEERING_PRACTICES = [
 ];
 
 const CHECKPOINT_SEQUENCE = [
-  { step: "Architecture Review", icon: Search },
-  { step: "Peer Code Audit", icon: Code2 },
-  { step: "Automated QA & Regression", icon: Activity },
-  { step: "Security Scan", icon: ShieldCheck },
-  { step: "UAT Sign-off", icon: UserCheck },
-  { step: "Monitored Deployment", icon: FileCheck },
+  { stepNumber: "STEP 01", title: "Architecture Review", icon: FileSearch },
+  { stepNumber: "STEP 02", title: "Peer Code Audit", icon: Code2 },
+  { stepNumber: "STEP 03", title: "Automated QA & Regression", icon: Settings },
+  { stepNumber: "STEP 04", title: "Security Scan", icon: ShieldCheck },
+  { stepNumber: "STEP 05", title: "UAT Sign-off", icon: UserCheck },
+  { stepNumber: "STEP 06", title: "Monitored Deployment", icon: Rocket },
 ];
 
 const WHY_PARTNERS_STAY = [
@@ -204,28 +221,16 @@ const LEADERSHIP_TEAM = [
     email: "yogesh.phanase@nxt-orbit.com",
     avatar: "/assets/consulting-team.png",
   },
+  {
+    name: "Jaydeep Gajera",
+    role: "Leadership & Strategic Growth",
+    description:
+      "Focuses on enterprise client partnerships, digital strategy, and aligning software delivery with business goals.",
+    email: "jaydeep@nxt-orbit.com",
+    avatar: "/assets/consulting-team.png",
+  },
 ];
 
-const CORPORATE_INFO = [
-  {
-    field: "Legal Entity",
-    detail: "NXT Orbit IT Solutions Pvt. Ltd.",
-    icon: Building,
-    image3d: "/assets/corp_building_3d.png",
-  },
-  {
-    field: "Engagement Models",
-    detail: "Managed Project Delivery · Dedicated Engineering Teams · Technology Consulting & Architecture Audits",
-    icon: Briefcase,
-    image3d: "/assets/corp_briefcase_3d.png",
-  },
-  {
-    field: "Based In",
-    detail: "Navi Mumbai, India",
-    icon: MapPin,
-    image3d: "/assets/corp_location_3d.png",
-  },
-];
 
 export default function AboutPage() {
   return (
@@ -336,32 +341,44 @@ export default function AboutPage() {
             </Reveal>
           </div>
 
-          {/* 5-row structured card table */}
-          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md">
-            <div className="grid grid-cols-1 md:grid-cols-12 bg-brand-950 text-white font-bold text-xs uppercase tracking-wider py-4 px-6 sm:px-8 border-b border-brand-900">
-              <div className="md:col-span-4">Principle</div>
-              <div className="md:col-span-8 mt-1 md:mt-0">What It Means</div>
-            </div>
-
-            <div className="divide-y divide-slate-100">
-              {PHILOSOPHY_PRINCIPLES.map((item) => (
-                <div
+          {/* Cards Grid: Option 1 (3 in row 1, 2 in row 2, step numbering hidden) */}
+          <Stagger stagger={0.06} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
+            {PHILOSOPHY_PRINCIPLES.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <StaggerItem
                   key={item.principle}
-                  className="grid grid-cols-1 md:grid-cols-12 py-5 px-6 sm:px-8 transition-colors hover:bg-teal-50/30 items-center"
+                  from="up"
+                  className={cn(
+                    "group relative flex flex-col justify-between rounded-3xl border border-slate-200/90 bg-white p-7 transition-all duration-300 hover:border-[#00d2c4] hover:shadow-none hover:-translate-y-1",
+                    idx < 3 ? "lg:col-span-2" : "lg:col-span-3",
+                    idx === 4 ? "md:col-span-2 lg:col-span-3" : "md:col-span-1"
+                  )}
                 >
-                  <div className="md:col-span-4 font-bold text-slate-900 text-base">
-                    {item.principle}
-                  </div>
-                  <div className="md:col-span-8 text-sm sm:text-base text-slate-600 mt-1 md:mt-0 leading-relaxed">
-                    {item.whatItMeans}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+                  <div>
+                    <div
+                      className={cn(
+                        "flex size-12 items-center justify-center rounded-2xl border transition-all duration-300 mb-6",
+                        item.iconStyle
+                      )}
+                    >
+                      <Icon className="size-6" />
+                    </div>
 
-          <div className="mt-8 text-center">
-            <p className="text-sm font-semibold text-slate-500">
+                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2 leading-snug">
+                      {item.principle}
+                    </h3>
+                    <p className="text-sm text-slate-600 leading-relaxed font-normal">
+                      {item.whatItMeans}
+                    </p>
+                  </div>
+                </StaggerItem>
+              );
+            })}
+          </Stagger>
+
+          <div className="mt-12 text-center max-w-2xl mx-auto">
+            <p className="text-sm font-semibold text-slate-500 leading-relaxed">
               Simple does not mean basic. Simple means clear, efficient, maintainable, and purposeful. That is what Keep It Simple means at NXT Orbit.
             </p>
           </div>
@@ -475,6 +492,9 @@ export default function AboutPage() {
               <h2 className="mt-3 text-display-md sm:text-display-lg font-extrabold text-slate-900 tracking-tight leading-tight">
                 Business-Led, Engineering-Driven, Partnership-Focused.
               </h2>
+              <p className="mt-4 text-base text-slate-600 leading-relaxed">
+                Every successful technology initiative begins with understanding the business it is intended to support. Our approach combines business insight, engineering discipline, and structured execution.
+              </p>
             </Reveal>
           </div>
 
@@ -550,23 +570,83 @@ export default function AboutPage() {
             ))}
           </div>
 
-          {/* Bottom visual checkpoint sequence strip (Option 2 visual) */}
-          <div className="rounded-3xl border border-teal-200 bg-white p-6 sm:p-8 shadow-sm">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-[#008c83] mb-6 text-center sm:text-left">
-              Quality Checkpoint Sequence
-            </h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          {/* Bottom visual checkpoint sequence strip matching reference design */}
+          <div className="rounded-3xl border border-teal-200/90 bg-gradient-to-br from-white via-white to-teal-50/25 p-5 sm:p-7 lg:p-8 shadow-[0_4px_24px_rgba(0,140,131,0.06)]">
+            {/* Header: Shield Icon | QUALITY CHECKPOINT SEQUENCE */}
+            <div className="flex items-center gap-3 mb-8 sm:mb-10">
+              <div className="flex size-8 items-center justify-center rounded-lg bg-teal-50 text-[#008c83] border border-teal-200/70 shadow-xs">
+                <ShieldCheck className="size-4 text-[#008c83]" />
+              </div>
+              <div className="h-4 w-px bg-slate-300" />
+              <h3 className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-slate-800">
+                Quality Checkpoint Sequence
+              </h3>
+            </div>
+
+            {/* Desktop Sequence (Screens >= 1024px) */}
+            <div className="relative hidden lg:grid lg:grid-cols-6 gap-2">
               {CHECKPOINT_SEQUENCE.map((item, idx) => {
                 const Icon = item.icon;
+                const isLast = idx === CHECKPOINT_SEQUENCE.length - 1;
                 return (
-                  <div key={item.step} className="flex flex-col items-center text-center p-3">
-                    <div className="flex size-11 items-center justify-center rounded-xl bg-teal-50 text-[#008c83] mb-3">
-                      <Icon className="size-5" />
+                  <div key={item.stepNumber} className="relative flex flex-col items-center text-center group">
+                    {/* Connecting line and center dot to the next step */}
+                    {!isLast && (
+                      <div className="absolute top-[28px] xl:top-[32px] left-1/2 w-full h-[2px] bg-teal-200/90 -z-0 pointer-events-none flex items-center justify-center">
+                        <div className="size-2 rounded-full bg-[#00d2c4] ring-2 ring-white shadow-xs" />
+                      </div>
+                    )}
+
+                    {/* Icon Badge */}
+                    <div className="relative z-10 flex size-14 xl:size-16 items-center justify-center rounded-full border-2 border-teal-200/90 bg-gradient-to-b from-teal-50 to-white transition-all duration-300 group-hover:scale-105 group-hover:border-[#00d2c4]">
+                      <Icon className="size-6 text-[#008c83]" />
                     </div>
 
-                    <span className="text-xs font-bold text-slate-900 leading-tight">
-                      {item.step}
+                    {/* Step Pill */}
+                    <span className="mt-3.5 inline-flex items-center rounded-full bg-teal-50 border border-teal-200/70 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#008c83]">
+                      {item.stepNumber}
                     </span>
+
+                    {/* Step Title */}
+                    <h4 className="mt-2 text-xs xl:text-sm font-bold text-slate-900 leading-snug px-1 max-w-[130px]">
+                      {item.title}
+                    </h4>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Mobile & Tablet Sequence (Screens < 1024px, optimized for 320px - 768px) */}
+            <div className="flex flex-col lg:hidden">
+              {CHECKPOINT_SEQUENCE.map((item, idx) => {
+                const Icon = item.icon;
+                const isLast = idx === CHECKPOINT_SEQUENCE.length - 1;
+                return (
+                  <div
+                    key={item.stepNumber}
+                    className="relative flex items-center gap-3.5 sm:gap-4 pb-6 last:pb-0 group"
+                  >
+                    {/* Vertical connecting line & center dot to next step */}
+                    {!isLast && (
+                      <div className="absolute left-[23px] sm:left-[27px] top-[48px] sm:top-[56px] bottom-0 w-[2px] bg-teal-200/90 -z-0 pointer-events-none flex items-center justify-center">
+                        <div className="size-2 rounded-full bg-[#00d2c4] ring-2 ring-white shadow-xs" />
+                      </div>
+                    )}
+
+                    {/* Icon Badge */}
+                    <div className="relative z-10 flex size-12 sm:size-14 shrink-0 items-center justify-center rounded-full border-2 border-teal-200/90 bg-gradient-to-b from-teal-50 to-white transition-all duration-300 group-hover:scale-105 group-hover:border-[#00d2c4]">
+                      <Icon className="size-5 sm:size-6 text-[#008c83]" />
+                    </div>
+
+                    {/* Step Pill & Title */}
+                    <div className="flex flex-col min-w-0">
+                      <span className="inline-flex self-start items-center rounded-full bg-teal-50 border border-teal-200/70 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#008c83] mb-1">
+                        {item.stepNumber}
+                      </span>
+                      <h4 className="text-xs sm:text-sm font-bold text-slate-900 leading-snug">
+                        {item.title}
+                      </h4>
+                    </div>
                   </div>
                 );
               })}
@@ -653,59 +733,145 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* ── Section 7 — Leadership Team ── */}
-      <Section tone="muted" spacing="lg" id="leadership" className="py-16 sm:py-24">
+      {/* ── Section 7 — Leadership Team (Exact Reference Parity) ── */}
+      <Section tone="none" spacing="lg" id="leadership" className="relative isolate overflow-hidden py-16 sm:py-24 bg-[#f8fcfb] border-t border-b border-slate-200/70">
+        {/* Visible Organic Background Curved Wave Structures (Reference Parity) */}
+        {/* Top-Right Sweeping Organic Wave */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute top-0 right-0 w-[42%] max-w-[550px] h-[75%] -z-10 overflow-hidden"
+        >
+          <svg
+            viewBox="0 0 500 600"
+            fill="none"
+            className="w-full h-full text-[#e0f6f3]"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M160,0 C60,160 20,280 90,400 C160,520 80,570 300,600 L500,600 L500,0 Z"
+              fill="currentColor"
+            />
+            <path
+              d="M280,0 C190,140 160,260 220,380 C280,500 220,560 380,600 L500,600 L500,0 Z"
+              fill="#cbf0ea"
+              opacity="0.5"
+            />
+          </svg>
+        </div>
+
+        {/* Bottom-Left Sweeping Organic Wave */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute bottom-0 left-0 w-[36%] max-w-[460px] h-[65%] -z-10 overflow-hidden"
+        >
+          <svg
+            viewBox="0 0 450 500"
+            fill="none"
+            className="w-full h-full text-[#e4f7f4]"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0,500 L0,180 C110,130 190,230 230,330 C270,430 200,480 360,500 Z"
+              fill="currentColor"
+            />
+            <path
+              d="M0,500 L0,270 C80,220 140,290 170,370 C200,450 160,480 280,500 Z"
+              fill="#cbf0ea"
+              opacity="0.45"
+            />
+          </svg>
+        </div>
+
         <Container>
-          <div className="max-w-3xl mb-14">
+          {/* Section Header */}
+          <div className="max-w-3xl mb-12 sm:mb-14">
             <Reveal from="up">
-              <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#008c83]">
-                LEADERSHIP TEAM
-              </span>
-              <h2 className="mt-3 text-display-md sm:text-display-lg font-extrabold text-slate-900 tracking-tight leading-tight">
+              {/* Eyebrow: Dash + Our Team */}
+              <div className="flex items-center gap-2.5 mb-3">
+                <span className="w-7 h-0.5 bg-[#008c83] rounded-full inline-block" />
+                <span className="text-xs sm:text-sm font-semibold text-[#008c83] tracking-wide">
+                  Our Team
+                </span>
+              </div>
+
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
                 The People Driving NXT Orbit Forward.
               </h2>
-              <p className="mt-4 text-base text-slate-600 leading-relaxed">
+              <p className="mt-3.5 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
                 Behind every engagement is a team of leaders committed to building technology that creates lasting business value.
               </p>
             </Reveal>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
-            {LEADERSHIP_TEAM.map((leader) => (
+          {/* 3-Column Leadership Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+            {LEADERSHIP_TEAM.map((leader, index) => (
               <div
-                key={leader.name}
-                className="group flex flex-col sm:flex-row gap-6 items-start rounded-3xl border border-slate-200/90 bg-white p-7 sm:p-8 shadow-sm transition-all duration-300 hover:border-[#00d2c4] hover:shadow-xl hover:-translate-y-1"
+                key={`${leader.name}-${index}`}
+                className="group relative flex flex-col justify-between rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-7 shadow-sm transition-all duration-300 hover:border-teal-400 hover:shadow-xl hover:-translate-y-1.5"
               >
-                <div className="relative flex size-24 shrink-0 overflow-hidden rounded-2xl bg-gradient-to-br from-teal-50 to-slate-100 border border-slate-200 shadow-inner">
-                  <img
-                    src={leader.avatar}
-                    alt={leader.name}
-                    className="size-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent pointer-events-none" />
-                </div>
-                <div className="flex flex-col gap-2 flex-1">
-                  <div className="flex items-center gap-2">
-                    <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#008c83] transition-colors">
-                      {leader.name}
-                    </h3>
+                <div>
+                  {/* Top Row: Avatar with Organic Decorative Backdrop + Name & Role */}
+                  <div className="flex items-center gap-4 sm:gap-5 pr-5">
+                    {/* Avatar with Custom Decorative Backdrop Shape */}
+                    <div className="relative shrink-0 flex items-center justify-center size-20 sm:size-22">
+                      {/* Card 1: Organic Turquoise/Teal Fluid Splash */}
+                      {index === 0 && (
+                        <div className="absolute -inset-2 -z-10 rounded-[1.75rem] bg-[#00d2c4]/25 rotate-[-8deg] scale-105 transition-transform duration-500 group-hover:rotate-[-14deg] group-hover:scale-110" />
+                      )}
+
+                      {/* Card 2: Mint Rounded Squircle */}
+                      {index === 1 && (
+                        <div className="absolute -inset-1.5 -z-10 rounded-2xl bg-teal-200/40 rotate-[6deg] transition-transform duration-500 group-hover:rotate-[12deg] group-hover:scale-105" />
+                      )}
+
+                      {/* Card 3: Concentric Circular Arc Outline */}
+                      {index === 2 && (
+                        <>
+                          <div className="absolute -inset-2.5 -z-10 rounded-full border-2 border-teal-400/70 border-dashed animate-[spin_24s_linear_infinite]" />
+                          <div className="absolute -inset-1 -z-10 rounded-full bg-teal-100/30" />
+                        </>
+                      )}
+
+                      {/* Photo Image */}
+                      <div className="size-full overflow-hidden rounded-2xl border border-white/90 shadow-md bg-slate-100">
+                        <img
+                          src={leader.avatar}
+                          alt={leader.name}
+                          className="size-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Name & Role */}
+                    <div className="flex flex-col min-w-0">
+                      <h3 className="text-lg sm:text-xl font-bold text-slate-900 tracking-tight leading-snug group-hover:text-[#008c83] transition-colors">
+                        {leader.name}
+                      </h3>
+                      <span className="text-[10px] sm:text-[11px] font-bold text-[#008c83] uppercase tracking-wider mt-1 leading-snug">
+                        {leader.role}
+                      </span>
+                    </div>
                   </div>
-                  <span className="text-xs font-bold text-[#008c83] uppercase tracking-wide">
-                    {leader.role}
-                  </span>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal mt-1">
+
+                  {/* Description Paragraph */}
+                  <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-normal mt-4 sm:mt-5">
                     {leader.description}
                   </p>
-                  <div className="pt-2 mt-auto border-t border-slate-100 flex items-center justify-between">
-                    <a
-                      href={`mailto:${leader.email}`}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-teal-700 hover:text-teal-900 transition-colors"
-                    >
-                      <Mail className="size-3.5" />
-                      {leader.email}
-                    </a>
-                    <span className="text-[11px] font-semibold text-slate-400">Executive</span>
-                  </div>
+                </div>
+
+                {/* Footer Row: Email Link + Executive Pill Badge */}
+                <div className="pt-4 mt-6 border-t border-slate-100 flex items-center justify-between gap-2">
+                  <a
+                    href={`mailto:${leader.email}`}
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-teal-800 hover:text-teal-950 transition-colors truncate"
+                  >
+                    <Mail className="size-3.5 shrink-0 text-teal-600 stroke-[2]" />
+                    <span className="truncate">{leader.email}</span>
+                  </a>
+                  <span className="shrink-0 rounded-full bg-teal-50/80 border border-teal-200/60 px-3 py-0.5 text-[11px] font-bold text-teal-800 shadow-2xs">
+                    Executive
+                  </span>
                 </div>
               </div>
             ))}
@@ -713,64 +879,7 @@ export default function AboutPage() {
         </Container>
       </Section>
 
-      {/* ── Section 8 — Corporate Information (Seamless Blended Visual Layout) ── */}
-      <Section tone="white" spacing="lg" id="corporate-info" className="py-16 sm:py-20 border-t border-hairline relative isolate overflow-hidden bg-white">
-        {/* Subtle background ambient light */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute top-1/2 -right-40 size-[32rem] rounded-full bg-teal-400/10 blur-[130px]"
-        />
 
-        <Container className="relative z-10">
-          <div className="max-w-3xl mb-10">
-            <Reveal from="up">
-              <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#008c83]">
-                COMPANY OVERVIEW
-              </span>
-              <h2 className="mt-2 text-display-md sm:text-display-lg font-extrabold text-slate-900 tracking-tight leading-tight">
-                Corporate Information
-              </h2>
-              <p className="mt-2.5 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-                Official entity details, service engagement frameworks, and global delivery headquarters.
-              </p>
-            </Reveal>
-          </div>
-
-          {/* Open Architecture Showcase — Clean, Borderless & Card-Free */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 pt-4">
-            {CORPORATE_INFO.map((item, index) => {
-              return (
-                <div
-                  key={item.field}
-                  className={cn(
-                    "group flex flex-col items-start transition-transform duration-300 hover:-translate-y-1",
-                    index !== 0 && "md:border-l md:border-slate-200/80 md:pl-8 lg:pl-12"
-                  )}
-                >
-                  {/* Floating 3D Visual */}
-                  <div className="relative mb-5 flex size-20 sm:size-24 shrink-0 items-center justify-start transition-transform duration-500 group-hover:scale-110">
-                    <img
-                      src={item.image3d}
-                      alt={item.field}
-                      className="size-full object-contain drop-shadow-[0_12px_24px_rgba(0,140,131,0.15)]"
-                    />
-                  </div>
-
-                  {/* Field Name */}
-                  <span className="font-mono text-xs font-bold uppercase tracking-wider text-[#008c83] mb-2">
-                    {item.field}
-                  </span>
-
-                  {/* Detail text */}
-                  <p className="text-base sm:text-lg font-bold text-slate-900 leading-snug">
-                    {item.detail}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </Container>
-      </Section>
 
       {/* ── Section 9 — Final CTA ── */}
       <CallToAction

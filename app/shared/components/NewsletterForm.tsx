@@ -30,8 +30,8 @@ export function NewsletterForm() {
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Enter your email address"
         required
-        className="flex-1 px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-ink-400
-          focus:outline-none focus:ring-2 focus:ring-brand-300/50 focus:border-brand-300 text-sm transition-all"
+        className="flex-1 px-4 py-2.5 sm:py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-ink-400
+          focus:outline-none focus:ring-2 focus:ring-brand-300/50 focus:border-brand-300 text-xs sm:text-sm transition-all"
       />
       <Button variant="accent" size="md" type="submit" icon={<Send className="size-3.5 text-white" />}>
         Subscribe

@@ -38,7 +38,7 @@ export function HeroVisual() {
         initial={{ opacity: 0, scale: 0.94, y: 30 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.85, ease: EASE.outExpo }}
-        className="relative z-10 overflow-hidden rounded-tl-[5rem] rounded-br-[5rem] rounded-tr-[2rem] rounded-bl-[2rem] sm:rounded-tl-[8rem] sm:rounded-br-[8rem] sm:rounded-tr-[2.5rem] sm:rounded-bl-[2.5rem] lg:rounded-tl-[10rem] lg:rounded-br-[10rem] lg:rounded-tr-[3rem] lg:rounded-bl-[3rem] border-[8px] sm:border-[12px] border-white bg-slate-100 shadow-[0_25px_60px_rgba(0,0,0,0.18)] w-[290px] sm:w-[380px] lg:w-[520px] max-w-full aspect-[4/3] lg:-translate-y-8 lg:-mt-4"
+        className="relative z-10 overflow-hidden rounded-tl-[5rem] rounded-br-[5rem] rounded-tr-[2rem] rounded-bl-[2rem] sm:rounded-tl-[8rem] sm:rounded-br-[8rem] sm:rounded-tr-[2.5rem] sm:rounded-bl-[2.5rem] lg:rounded-tl-[10rem] lg:rounded-br-[10rem] lg:rounded-tr-[3rem] lg:rounded-bl-[3rem] border-[6px] sm:border-[12px] border-white bg-slate-100 shadow-[0_25px_60px_rgba(0,0,0,0.18)] w-[270px] sm:w-[380px] lg:w-[520px] max-w-full aspect-[4/3] lg:-translate-y-8 lg:-mt-4"
       >
         <AnimatePresence mode="wait">
           <motion.img

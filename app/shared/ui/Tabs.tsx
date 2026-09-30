@@ -45,13 +45,15 @@ export function Tabs({
       <div
         role="tablist"
         aria-orientation="horizontal"
+        data-lenis-prevent="true"
         onKeyDown={onKeyDown}
         className={cn(
-          "scrollbar-none flex gap-1.5 overflow-x-auto rounded-full p-1.5",
+          "scrollbar-none flex gap-1.5 overflow-x-auto overscroll-x-contain touch-pan-x rounded-full p-1.5 scroll-smooth",
           light
             ? "bg-white/10 border border-white/15"
             : "bg-slate-100/90 border border-slate-200/80",
         )}
+        style={{ WebkitOverflowScrolling: "touch" }}
       >
         {items.map((item, index) => {
           const selected = index === active;

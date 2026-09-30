@@ -27,7 +27,7 @@ export function Hero() {
       <Container>
         <div className="grid items-center gap-16 sm:gap-20 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-20">
           {/* ── Type column ── */}
-          <div className="flex flex-col items-start gap-7">
+          <div className="flex flex-col items-start gap-4 sm:gap-7">
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
@@ -56,7 +56,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: EASE.outExpo, delay: 0.58 }}
-              className="flex flex-wrap items-center gap-4"
+              className="flex flex-wrap items-center gap-2.5 sm:gap-4"
             >
               <Button 
                 href={HERO.primaryCta.href} 

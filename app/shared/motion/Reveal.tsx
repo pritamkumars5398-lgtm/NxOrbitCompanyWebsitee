@@ -101,7 +101,12 @@ export function StaggerItem({
   const Component = motion[as] as typeof motion.div;
 
   return (
-    <Component variants={revealVariants(from, { blur, scale, distance })} {...props}>
+    <Component
+      variants={revealVariants(from, { blur, scale, distance })}
+      whileInView="visible"
+      viewport={VIEWPORT}
+      {...props}
+    >
       {children}
     </Component>
   );

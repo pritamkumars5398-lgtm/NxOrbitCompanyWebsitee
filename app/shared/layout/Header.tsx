@@ -196,7 +196,8 @@ function MegaPanel({
           transition={{ duration: 0.18, ease: EASE.outExpo }}
           onMouseEnter={onEnter}
           onMouseLeave={onLeave}
-          className="absolute left-1/2 -translate-x-1/2 top-full mt-1.5 hidden w-[860px] rounded-2xl border border-hairline bg-white p-5 shadow-2xl shadow-slate-900/15 lg:block z-50"
+          className="absolute left-1/2 -translate-x-1/2 top-full mt-1.5 hidden w-[860px] max-h-[calc(100vh-5rem)] overflow-y-auto overscroll-contain rounded-2xl border border-hairline bg-white p-5 shadow-2xl shadow-slate-900/15 lg:block z-50"
+          data-lenis-prevent="true"
         >
           <div className="w-full">
             <div
@@ -310,26 +311,31 @@ function MobileDrawer({ open, onClose }: { open: boolean; onClose: () => void })
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.42, ease: EASE.outExpo }}
-            className="absolute inset-y-0 right-0 flex w-full max-w-sm flex-col bg-white shadow-xl"
+            data-lenis-prevent="true"
+            className="absolute inset-y-0 right-0 flex w-full max-w-sm flex-col bg-white shadow-xl h-full max-h-dvh overflow-hidden"
           >
-            <div className="flex h-18 shrink-0 items-center justify-between border-b border-hairline px-6">
+            <div className="flex h-13 sm:h-16 shrink-0 items-center justify-between border-b border-hairline px-4 sm:px-6">
               <span className="text-eyebrow uppercase text-ink-400">Menu</span>
               <button
                 type="button"
                 onClick={onClose}
                 aria-label="Close menu"
-                className="-mr-2 inline-flex size-10 items-center justify-center rounded-xl text-ink-700 transition-colors hover:bg-ink-100"
+                className="-mr-2 inline-flex size-9 sm:size-10 items-center justify-center rounded-xl text-ink-700 transition-colors hover:bg-ink-100"
               >
-                <X className="size-5" />
+                <X className="size-4.5 sm:size-5" />
               </button>
             </div>
 
-            <nav aria-label="Mobile" className="flex-1 overflow-y-auto overscroll-contain px-6 py-4">
+            <nav 
+              aria-label="Mobile" 
+              data-lenis-prevent="true"
+              className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 sm:px-6 py-2 sm:py-3.5"
+            >
               <div className="border-b border-hairline">
                 <Link
                   href="/about"
                   onClick={onClose}
-                  className="flex w-full items-center justify-between py-4 text-left text-base font-semibold text-ink-900 hover:text-brand-500"
+                  className="flex w-full items-center justify-between py-2.5 sm:py-3 text-left text-xs sm:text-sm font-semibold text-ink-900 hover:text-brand-500"
                 >
                   About Us
                 </Link>
@@ -343,13 +349,13 @@ function MobileDrawer({ open, onClose }: { open: boolean; onClose: () => void })
                       type="button"
                       aria-expanded={isOpen}
                       onClick={() => setExpanded(isOpen ? null : group.label)}
-                      className="flex w-full items-center justify-between py-4 text-left text-base font-semibold text-ink-900"
+                      className="flex w-full items-center justify-between py-2.5 sm:py-3 text-left text-xs sm:text-sm font-semibold text-ink-900"
                     >
                       {group.label}
                       <ChevronDown
                         aria-hidden
                         className={cn(
-                          "size-4 text-ink-400 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]",
+                          "size-3.5 sm:size-4 text-ink-400 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]",
                           isOpen && "rotate-180 text-brand-500",
                         )}
                       />
@@ -369,14 +375,14 @@ function MobileDrawer({ open, onClose }: { open: boolean; onClose: () => void })
                               <Link
                                 href={link.href}
                                 onClick={onClose}
-                                className="flex items-center gap-3 border-l border-hairline py-3 pl-4 text-sm font-medium text-ink-600 transition-colors hover:border-brand-300 hover:text-brand-500"
+                                className="flex items-center gap-2 border-l border-hairline py-2 pl-3 text-[12px] sm:text-xs font-medium text-ink-600 transition-colors hover:border-brand-300 hover:text-brand-500"
                               >
-                                <NavIcon name={link.icon} className="size-4 shrink-0 text-brand-400" />
+                                <NavIcon name={link.icon} className="size-3.5 shrink-0 text-brand-400" />
                                 {link.label}
                               </Link>
                             </li>
                           ))}
-                          <li className="pb-3" />
+                          <li className="pb-1.5" />
                         </motion.ul>
                       )}
                     </AnimatePresence>
@@ -385,15 +391,15 @@ function MobileDrawer({ open, onClose }: { open: boolean; onClose: () => void })
               })}
             </nav>
 
-            <div className="shrink-0 space-y-3 border-t border-hairline px-6 py-5">
+            <div className="shrink-0 space-y-2.5 border-t border-hairline px-4 sm:px-6 py-3 sm:py-4 bg-white">
               <a
                 href={CONTACT_DETAILS.phoneHref}
-                className="flex items-center gap-2 text-sm font-semibold text-ink-600"
+                className="flex items-center gap-2 text-xs font-semibold text-ink-600"
               >
                 <Phone aria-hidden className="size-3.5" />
                 {CONTACT_DETAILS.phone}
               </a>
-              <Button href="/contact" variant="primary" withArrow className="w-full" onClick={onClose}>
+              <Button href="/contact" variant="primary" withArrow size="sm" className="w-full text-xs py-2" onClick={onClose}>
                 Book a Consultation
               </Button>
             </div>

@@ -338,7 +338,7 @@ export function ContactForm() {
           whileTap={{ scale: 0.98 }}
           type="submit"
           disabled={status === "sending"}
-          className="group relative overflow-hidden flex items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-[#062025] to-[#0a353c] px-8 py-3.5 text-xs font-extrabold text-white hover:from-teal-900 hover:to-slate-900 transition-all cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
+          className="group relative overflow-hidden flex items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-[#062025] to-[#0a353c] px-6 sm:px-8 py-2.5 sm:py-3.5 text-xs font-extrabold text-white hover:from-teal-900 hover:to-slate-900 transition-all cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
         >
           {status === "sending" ? (
             <>

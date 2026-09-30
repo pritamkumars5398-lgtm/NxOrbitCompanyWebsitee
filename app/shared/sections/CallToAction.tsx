@@ -37,7 +37,7 @@ export function CallToAction({
 
       <Container className="relative z-10">
         <div 
-          className="relative overflow-hidden rounded-[2.5rem] border-2 border-white/12 bg-[#070D1B] py-8 px-6 sm:px-10 lg:py-10 lg:px-12"
+          className="relative overflow-hidden rounded-3xl sm:rounded-[2.5rem] border-2 border-white/12 bg-[#070D1B] py-6 px-4.5 sm:py-8 sm:px-10 lg:py-10 lg:px-12"
         >
           {/* Subtle background glow effect */}
           <div
@@ -52,10 +52,10 @@ export function CallToAction({
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-6 items-center">
             {/* Left Column: Heading & CTA Buttons */}
-            <Reveal className="lg:col-span-7 flex flex-col items-start text-left gap-6">
+            <Reveal className="lg:col-span-7 flex flex-col items-start text-left gap-4 sm:gap-6">
               {eyebrow && <Eyebrow tone="light">{eyebrow}</Eyebrow>}
 
-              <h2 className="text-display-sm sm:text-display-md lg:text-display-lg text-white max-w-2xl font-bold leading-tight">
+              <h2 className="text-lg sm:text-display-md lg:text-display-lg text-white max-w-2xl font-bold leading-tight">
                 {title.includes("Business Problem") ? (
                   <>
                     Let's Start with the{" "}
@@ -81,19 +81,19 @@ export function CallToAction({
                 )}
               </h2>
 
-              <p className="max-w-xl text-base sm:text-lg text-slate-200/90 leading-relaxed font-normal">
+              <p className="max-w-xl text-[11.5px] sm:text-sm lg:text-base text-slate-200/90 leading-relaxed font-normal">
                 {description}
               </p>
 
               {/* Equal Sized Buttons Container */}
-              <div className="mt-4 flex flex-wrap items-center gap-4 w-full sm:w-auto">
+              <div className="mt-1 sm:mt-3 lg:mt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3 lg:gap-4 w-full sm:w-auto">
                 <Button
                   href={primary.href}
                   size="lg"
                   variant="accent"
-                  icon={<Calendar className="size-4 text-white" />}
+                  icon={<Calendar className="size-3.5 sm:size-4 lg:size-4.5 text-white" />}
                   magnetic
-                  className="w-full sm:w-auto sm:min-w-[220px] justify-center"
+                  className="w-full sm:w-auto sm:min-w-[190px] lg:min-w-[220px] justify-center"
                 >
                   {primary.label}
                 </Button>
@@ -102,9 +102,9 @@ export function CallToAction({
                   href={secondary.href}
                   size="lg"
                   variant="outline-light"
-                  icon={<Phone className="size-4 text-brand-300" />}
+                  icon={<Phone className="size-3.5 sm:size-4 lg:size-4.5 text-brand-300" />}
                   magnetic
-                  className="w-full sm:w-auto sm:min-w-[220px] justify-center"
+                  className="w-full sm:w-auto sm:min-w-[190px] lg:min-w-[220px] justify-center"
                 >
                   {secondary.label}
                 </Button>

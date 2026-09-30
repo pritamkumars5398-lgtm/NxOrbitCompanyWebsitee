@@ -48,15 +48,15 @@ export function Capabilities() {
                 <Reveal
                   from={isEven ? "left" : "right"}
                   className={cn(
-                    "flex flex-col gap-5 lg:col-span-6",
+                    "flex flex-col gap-3.5 sm:gap-5 lg:col-span-6",
                     isEven ? "lg:order-first" : "lg:order-last"
                   )}
                 >
-                  <div className="flex items-center gap-3">
-                    <span className="inline-flex size-10 items-center justify-center rounded-xl bg-linear-to-br from-brand-500 to-teal-400 text-white">
-                      <NavIcon name={item.icon} className="size-5" />
+                  <div className="flex items-center gap-2.5 sm:gap-3">
+                    <span className="inline-flex size-9 sm:size-10 items-center justify-center rounded-xl bg-linear-to-br from-brand-500 to-teal-400 text-white">
+                      <NavIcon name={item.icon} className="size-4 sm:size-5" />
                     </span>
-                    <span className="text-xs font-bold uppercase tracking-wider text-teal-600">
+                    <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-teal-600">
                       {item.title}
                     </span>
                   </div>
@@ -65,7 +65,7 @@ export function Capabilities() {
                     {item.title}
                   </h3>
 
-                  <p className="text-base text-ink-600 leading-relaxed max-w-xl">
+                  <p className="text-xs sm:text-sm lg:text-base text-ink-600 leading-relaxed max-w-xl">
                     {item.description}
                   </p>
 
