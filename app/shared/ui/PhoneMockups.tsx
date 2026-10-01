@@ -28,7 +28,7 @@ export function PhoneMockups({ variant = "hero", className = "" }: PhoneMockupsP
       {/* ── Background Organic Teal Backdrop Structure ── */}
       <div className="pointer-events-none absolute -right-6 top-1/2 -z-10 h-[32rem] w-[26rem] -translate-y-1/2 sm:h-[38rem] sm:w-[32rem] lg:h-[42rem] lg:w-[36rem]">
         {/* Deep Teal Fluid Organic Shape */}
-        <div className="absolute inset-0 rounded-[40%_60%_70%_30%/50%_60%_40%_50%] bg-gradient-to-tr from-[#003840] via-[#00808C] to-[#00A896] shadow-[0_20px_80px_rgba(0,168,150,0.3)] backdrop-blur-3xl transition-all duration-700 hover:scale-[1.01]" />
+        <div className="absolute inset-0 rounded-[40%_60%_70%_30%/50%_60%_40%_50%] bg-linear-to-tr from-[#003840] via-[#00808C] to-[#00A896] shadow-[0_20px_80px_rgba(0,168,150,0.3)] backdrop-blur-3xl transition-all duration-700 hover:scale-[1.01]" />
 
         {/* Glowing Orb Filter */}
         <div className="absolute left-1/4 top-1/4 h-72 w-72 rounded-full bg-cyan-300/30 blur-[70px]" />
@@ -78,7 +78,7 @@ export function PhoneMockups({ variant = "hero", className = "" }: PhoneMockupsP
                 </div>
 
                 {/* Balance Card */}
-                <div className="mt-3.5 rounded-2xl bg-gradient-to-br from-slate-900 via-slate-850 to-slate-900 p-3.5 text-white shadow-md">
+                <div className="mt-3.5 rounded-2xl bg-linear-to-br from-slate-900 via-slate-850 to-slate-900 p-3.5 text-white shadow-md">
                   <div className="flex items-center justify-between">
                     <span className="text-[9px] font-semibold text-teal-400 tracking-wider">TOTAL REVENUE</span>
                     <span className="inline-flex items-center gap-0.5 rounded-full bg-emerald-500/20 px-1.5 py-0.5 text-[9px] font-bold text-emerald-400">
@@ -193,7 +193,7 @@ export function PhoneMockups({ variant = "hero", className = "" }: PhoneMockupsP
 
                 {/* Product Detail Card */}
                 <div className="mt-3 rounded-2xl bg-white p-3 shadow-md border border-slate-100">
-                  <div className="relative flex h-28 w-full items-center justify-center rounded-xl bg-gradient-to-b from-slate-100 to-slate-200/70 p-2">
+                  <div className="relative flex h-28 w-full items-center justify-center rounded-xl bg-linear-to-b from-slate-100 to-slate-200/70 p-2">
                     {/* SVG Vector Headphones */}
                     <div className="flex flex-col items-center justify-center">
                       <Headphones className="size-16 text-slate-800 drop-shadow-md" strokeWidth={1.5} />
@@ -257,7 +257,7 @@ function CtaPhoneMockups({ className = "" }: { className?: string }) {
       {/* Background Organic Teal Crescent Structure */}
       <div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[28rem] w-[28rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-tr from-[#00A896]/30 via-teal-500/20 to-transparent blur-[80px]"
+        className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[28rem] w-[28rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-linear-to-tr from-[#00A896]/30 via-teal-500/20 to-transparent blur-[80px]"
       />
 
       {/* Dual Dark Mode Smartphones */}

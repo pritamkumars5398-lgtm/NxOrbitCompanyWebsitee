@@ -43,7 +43,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const data = SERVICES_DATA[slug];
   if (!data) return { title: "Not Found" };
-  return { title: data.metaTitle, description: data.metaDescription };
+  return { title: data.title, description: data.metaDescription };
 }
 
 /**
@@ -56,12 +56,12 @@ export async function generateMetadata({
  * like arriving somewhere new.
  */
 const GLOW_COLORS: Record<string, string> = {
-  mobile: "bg-[radial-gradient(circle,rgba(0,210,196,0.35)_0%,rgba(0,168,150,0.15)_50%,transparent_75%)]",
-  web: "bg-[radial-gradient(circle,rgba(37,99,235,0.35)_0%,rgba(29,78,216,0.15)_50%,transparent_75%)]",
-  ai: "bg-[radial-gradient(circle,rgba(168,85,247,0.35)_0%,rgba(147,51,234,0.15)_50%,transparent_75%)]",
-  design: "bg-[radial-gradient(circle,rgba(244,63,94,0.35)_0%,rgba(225,29,72,0.15)_50%,transparent_75%)]",
-  blockchain: "bg-[radial-gradient(circle,rgba(245,158,11,0.35)_0%,rgba(217,119,6,0.15)_50%,transparent_75%)]",
-  devops: "bg-[radial-gradient(circle,rgba(34,197,94,0.35)_0%,rgba(22,163,74,0.15)_50%,transparent_75%)]",
+  mobile: "bg-[radial-gradient(circle,rgba(0,187,169,0.22)_0%,rgba(0,107,125,0.1)_50%,transparent_75%)]",
+  web: "bg-[radial-gradient(circle,rgba(0,107,125,0.22)_0%,rgba(10,46,77,0.1)_50%,transparent_75%)]",
+  ai: "bg-[radial-gradient(circle,rgba(60,207,199,0.22)_0%,rgba(0,187,169,0.1)_50%,transparent_75%)]",
+  design: "bg-[radial-gradient(circle,rgba(0,187,169,0.2)_0%,rgba(0,107,125,0.1)_50%,transparent_75%)]",
+  blockchain: "bg-[radial-gradient(circle,rgba(0,107,125,0.2)_0%,rgba(10,46,77,0.1)_50%,transparent_75%)]",
+  devops: "bg-[radial-gradient(circle,rgba(60,207,199,0.2)_0%,rgba(0,187,169,0.1)_50%,transparent_75%)]",
 };
 
 const BADGE_TEXTS: Record<string, string> = {
@@ -76,7 +76,7 @@ const BADGE_TEXTS: Record<string, string> = {
 function formatTwoColorTitle(text: string) {
   const words = text.split(" ");
   if (words.length <= 2) {
-    return <span className="bg-gradient-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">{text}</span>;
+    return <span className="bg-linear-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">{text}</span>;
   }
   const mid = Math.ceil(words.length / 2);
   const firstHalf = words.slice(0, mid).join(" ");
@@ -84,7 +84,7 @@ function formatTwoColorTitle(text: string) {
   return (
     <>
       <span className="text-slate-900">{firstHalf}</span> <br />
-      <span className="bg-gradient-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">
+      <span className="bg-linear-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">
         {secondHalf}
       </span>
     </>
@@ -109,12 +109,12 @@ export default async function ServicePage({
       <SubNav links={SERVICE_LINKS} label="Services" />
 
       {/* ── Hero ── */}
-      <section className="relative isolate overflow-hidden pt-8 pb-12 sm:pt-10 sm:pb-12 lg:pt-10 lg:pb-14">
+      <section className="relative isolate overflow-hidden pt-5 pb-6 sm:pt-6 sm:pb-8 lg:pt-6 lg:pb-8">
         <GradientMesh />
         <Grain />
 
         <Container className="relative">
-          <div className="grid items-start gap-14 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:gap-20">
+          <div className="grid items-center gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-10">
             <div className="flex flex-col items-start">
               <Breadcrumb
                 items={[
@@ -124,24 +124,24 @@ export default async function ServicePage({
                 ]}
               />
 
-              <Reveal from="up" className="mt-4">
+              <Reveal from="up" className="mt-2.5 sm:mt-3">
                 <Eyebrow>{data.category}</Eyebrow>
               </Reveal>
 
-              <Reveal from="up" delay={0.06} className="mt-2">
-                <h1 className="max-w-2xl text-display-lg sm:text-display-xl text-slate-900 leading-[1.05]">
+              <Reveal from="up" delay={0.06} className="mt-1.5">
+                <h1 className="max-w-2xl text-2xl sm:text-3xl lg:text-[40px] font-extrabold text-slate-900 leading-tight">
                   {formatTwoColorTitle(data.tagline)}
                 </h1>
               </Reveal>
 
-              <Reveal from="up" delay={0.14} className="mt-4">
-                <p className="max-w-xl text-lead text-ink-600">{data.description}</p>
+              <Reveal from="up" delay={0.14} className="mt-2 sm:mt-3">
+                <p className="max-w-xl text-xs sm:text-sm text-ink-600 leading-relaxed">{data.description}</p>
               </Reveal>
 
-              <Reveal from="up" delay={0.22} className="mt-6 flex flex-wrap gap-3">
+              <Reveal from="up" delay={0.22} className="mt-4 flex flex-wrap gap-2.5">
                 <Button 
                   href="/contact" 
-                  size="lg" 
+                  size="md" 
                   variant="primary" 
                   icon={SERVICE_ACTION_ICONS[slug] || <Sparkles className="size-4 text-brand-300" />}
                   magnetic
@@ -150,7 +150,7 @@ export default async function ServicePage({
                 </Button>
                 <Button 
                   href="/portfolio" 
-                  size="lg" 
+                  size="md" 
                   variant="outline" 
                   icon={<FolderGit2 className="size-4 text-brand-600" />}
                 >
@@ -160,13 +160,13 @@ export default async function ServicePage({
             </div>
 
             {/* Service Hero JPG Image Visual */}
-            <Parallax distance={26} className="relative flex justify-center">
-              <Reveal from="up" scale={0.96} className="relative w-full max-w-[540px]">
+            <Parallax distance={20} className="relative flex justify-center">
+              <Reveal from="up" scale={0.96} className="relative w-full max-w-[360px] sm:max-w-[420px]">
                 {/* Ambient Radial Backdrop Glow */}
                 <div
                   aria-hidden
                   className={cn(
-                    "pointer-events-none absolute left-1/2 top-1/2 -z-10 size-[32rem] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[60px]",
+                    "pointer-events-none absolute left-1/2 top-1/2 -z-10 size-[24rem] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[50px]",
                     glowClass
                   )}
                 />
@@ -179,13 +179,14 @@ export default async function ServicePage({
 
           </div>
 
-          <Reveal from="up" delay={0.1} className="mt-16 border-t border-hairline pt-10">
+          <Reveal from="up" delay={0.1} className="mt-6 sm:mt-8 border-t border-hairline pt-4 sm:pt-5">
             <Stats items={[...data.heroStats]} layout="rail" columns={4} />
           </Reveal>
         </Container>
       </section>
 
-      {slug === "mobile" && <TheChallenge />}
+      {/* ── Business Challenge Interstitial ── */}
+      <TheChallenge />
 
       {/* ── Capabilities: 3D Elevated Feature Cards Grid ── */}
       <Capabilities3DCards

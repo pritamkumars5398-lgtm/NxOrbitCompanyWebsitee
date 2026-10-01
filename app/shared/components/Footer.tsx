@@ -24,6 +24,20 @@ export default function Footer() {
               <a href="#" aria-label="Twitter" className="text-slate-400 hover:text-nyt-green transition"><AppIcon name="twitter" size={18} /></a>
               <a href="#" aria-label="Instagram" className="text-slate-400 hover:text-nyt-green transition"><AppIcon name="instagram" size={18} /></a>
             </div>
+
+            {/* Sister Company */}
+            <div className="pt-4 border-t border-white/10 flex flex-col items-start gap-2">
+              <span className="text-[11px] font-mono tracking-widest text-teal-300 font-bold uppercase">
+                Sister Company
+              </span>
+              <div className="group inline-flex items-center rounded-none bg-white px-4 py-2.5 shadow-sm transition-all duration-300 hover:shadow-md hover:scale-[1.02]">
+                <img
+                  src="/assets/IT_Next_Solutions_Logo.png"
+                  alt="ITNext Solutions — Sister Company"
+                  className="h-11 w-auto object-contain"
+                />
+              </div>
+            </div>
           </div>
 
           <div className="lg:col-span-2 space-y-4">

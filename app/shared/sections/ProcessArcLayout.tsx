@@ -96,7 +96,7 @@ export function ProcessArcLayout({
   const svgWidth = 310;
 
   return (
-    <Section id={id} tone="none" spacing="lg" className={`relative isolate overflow-hidden py-10 sm:py-16 lg:py-20 bg-slate-100 ${className || ""}`}>
+    <Section id={id} tone="none" spacing="lg" className={`relative isolate overflow-hidden py-8 sm:py-12 lg:py-14 bg-slate-100 ${className || ""}`}>
       {/* Background Image Layer - Clearly Visible */}
       {bgImage && (
         <div className="absolute inset-0 -z-20 overflow-hidden pointer-events-none">
@@ -109,7 +109,7 @@ export function ProcessArcLayout({
       )}
 
       {/* Light Overlay Gradient for Text Clarity */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-white/85 via-white/75 to-slate-50/80 pointer-events-none" />
+      <div className="absolute inset-0 -z-10 bg-linear-to-r from-white/85 via-white/75 to-slate-50/80 pointer-events-none" />
 
       <Container>
         <div className="grid gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-10 xl:gap-14 items-center">

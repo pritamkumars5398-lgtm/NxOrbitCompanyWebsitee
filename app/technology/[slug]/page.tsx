@@ -77,7 +77,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const data = TECHNOLOGY_DATA[slug];
   if (!data) return { title: "Not Found" };
-  return { title: data.metaTitle, description: data.metaDescription };
+  return { title: data.title, description: data.metaDescription };
 }
 
 /**
@@ -90,7 +90,7 @@ export async function generateMetadata({
 function formatTwoColorTitle(text: string) {
   const words = text.split(" ");
   if (words.length <= 2) {
-    return <span className="bg-gradient-to-r from-teal-400 to-cyan-300 bg-clip-text text-transparent">{text}</span>;
+    return <span className="bg-linear-to-r from-teal-400 to-cyan-300 bg-clip-text text-transparent">{text}</span>;
   }
   const mid = Math.ceil(words.length / 2);
   const firstHalf = words.slice(0, mid).join(" ");
@@ -98,7 +98,7 @@ function formatTwoColorTitle(text: string) {
   return (
     <>
       <span className="text-white">{firstHalf}</span> <br />
-      <span className="bg-gradient-to-r from-teal-400 to-cyan-300 bg-clip-text text-transparent">
+      <span className="bg-linear-to-r from-teal-400 to-cyan-300 bg-clip-text text-transparent">
         {secondHalf}
       </span>
     </>
@@ -122,13 +122,13 @@ export default async function TechnologyPage({
       <SubNav links={TECHNOLOGY_LINKS} label="Technology" />
 
       {/* ── Hero: dark ── */}
-      <section className="relative isolate overflow-hidden bg-brand-950 pt-8 pb-12 sm:pt-10 sm:pb-12 lg:pt-10 lg:pb-14">
+      <section className="relative isolate overflow-hidden bg-brand-950 pt-5 pb-6 sm:pt-6 sm:pb-8 lg:pt-6 lg:pb-8">
         <Aurora tone="dark" />
         <GridField tone="dark" />
         <Grain />
 
         <Container className="relative">
-          <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-20">
+          <div className="grid items-center gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-10">
             <div className="flex flex-col items-start">
               <Breadcrumb
                 tone="dark"
@@ -139,24 +139,24 @@ export default async function TechnologyPage({
                 ]}
               />
 
-              <Reveal from="up" className="mt-4">
+              <Reveal from="up" className="mt-2.5 sm:mt-3">
                 <Eyebrow tone="light">{data.category}</Eyebrow>
               </Reveal>
 
-              <Reveal from="up" delay={0.06} className="mt-2">
-                <h1 className="max-w-2xl text-display-lg text-white sm:text-display-xl leading-[1.05]">
+              <Reveal from="up" delay={0.06} className="mt-1.5">
+                <h1 className="max-w-2xl text-2xl sm:text-3xl lg:text-[40px] font-extrabold text-white leading-tight">
                   {formatTwoColorTitle(data.tagline)}
                 </h1>
               </Reveal>
 
-              <Reveal from="up" delay={0.14} className="mt-4">
-                <p className="max-w-xl text-lead text-ink-300">{data.description}</p>
+              <Reveal from="up" delay={0.14} className="mt-2 sm:mt-3">
+                <p className="max-w-xl text-xs sm:text-sm text-ink-300 leading-relaxed">{data.description}</p>
               </Reveal>
 
-              <Reveal from="up" delay={0.22} className="mt-6 flex flex-wrap gap-3">
+              <Reveal from="up" delay={0.22} className="mt-4 flex flex-wrap gap-2.5">
                 <Button 
                   href="/contact" 
-                  size="lg" 
+                  size="md" 
                   variant="accent" 
                   icon={<Code2 className="size-4 text-white" />}
                   magnetic
@@ -165,7 +165,7 @@ export default async function TechnologyPage({
                 </Button>
                 <Button 
                   href="/contact" 
-                  size="lg" 
+                  size="md" 
                   variant="outline-light" 
                   icon={<MessageSquare className="size-4 text-brand-300" />}
                 >
@@ -178,7 +178,7 @@ export default async function TechnologyPage({
               {/* Ambient Tech Glow */}
               <div
                 aria-hidden
-                className="pointer-events-none absolute -inset-10 -z-10 rounded-full blur-3xl opacity-60 transition-opacity duration-500 group-hover/hero:opacity-80"
+                className="pointer-events-none absolute -inset-6 -z-10 rounded-full blur-2xl opacity-60 transition-opacity duration-500 group-hover/hero:opacity-80"
                 style={{
                   background: `radial-gradient(circle, rgba(${asset.rgb}, 0.22) 0%, transparent 70%)`,
                 }}
@@ -186,25 +186,25 @@ export default async function TechnologyPage({
 
               {/* Futuristic Glassmorphism Tech Card */}
               <div
-                className={`relative flex flex-col items-center justify-center p-8 sm:p-10 rounded-2xl border backdrop-blur-md aspect-square w-full max-w-[380px] mx-auto shadow-2xl transition-all duration-500 group-hover/hero:-translate-y-1 ${asset.glowClass}`}
+                className={`relative flex flex-col items-center justify-center p-5 sm:p-6 rounded-2xl border backdrop-blur-md aspect-square w-full max-w-[240px] sm:max-w-[260px] mx-auto shadow-xl transition-all duration-500 group-hover/hero:-translate-y-1 ${asset.glowClass}`}
               >
                 {/* Tech Logo */}
-                <div className="relative flex items-center justify-center p-6 bg-brand-950/40 rounded-2xl border border-white/5 shadow-inner">
+                <div className="relative flex items-center justify-center p-4 bg-brand-950/40 rounded-xl border border-white/5 shadow-inner">
                   <img
                     src={asset.logo}
                     alt={data.title}
-                    className="size-24 sm:size-28 object-contain transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/hero:scale-110"
+                    className="size-16 sm:size-20 object-contain transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/hero:scale-110"
                     style={isNextJs ? { filter: "invert(1) brightness(2)" } : undefined}
                     suppressHydrationWarning
                   />
                 </div>
 
                 {/* Subtitle Details */}
-                <div className="mt-6 flex flex-col items-center text-center">
+                <div className="mt-3 flex flex-col items-center text-center">
                   <span className="text-[10px] font-mono font-bold tracking-widest text-slate-400 uppercase">
                     {asset.label}
                   </span>
-                  <div className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-mono font-medium text-teal-400">
+                  <div className="mt-1.5 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-[10px] font-mono font-medium text-teal-400">
                     <span
                       className="size-1.5 rounded-full"
                       style={{ backgroundColor: `rgb(${asset.rgb})` }}
@@ -216,7 +216,7 @@ export default async function TechnologyPage({
             </Reveal>
           </div>
 
-          <Reveal from="up" delay={0.1} className="mt-16 border-t border-white/10 pt-10">
+          <Reveal from="up" delay={0.1} className="mt-6 sm:mt-8 border-t border-white/10 pt-4 sm:pt-5">
             <Stats items={[...data.heroStats]} tone="light" layout="rail" columns={4} />
           </Reveal>
         </Container>

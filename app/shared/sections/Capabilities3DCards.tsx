@@ -23,12 +23,12 @@ interface Capabilities3DCardsProps {
 }
 
 const BADGE_GRADIENTS = [
-  "from-teal-500 via-emerald-500 to-teal-600",
-  "from-blue-600 via-indigo-500 to-blue-700",
-  "from-sky-500 via-cyan-500 to-blue-600",
-  "from-indigo-500 via-purple-500 to-indigo-600",
+  "from-teal-600 via-teal-700 to-brand-900",
+  "from-brand-800 via-brand-900 to-slate-900",
+  "from-cyan-600 via-teal-600 to-brand-800",
+  "from-teal-500 via-teal-600 to-teal-700",
   "from-slate-700 via-slate-800 to-slate-900",
-  "from-emerald-500 via-teal-600 to-emerald-700",
+  "from-brand-700 via-teal-700 to-brand-900",
 ];
 
 const getFeatureIcon = (title: string, index: number) => {
@@ -53,17 +53,17 @@ export function Capabilities3DCards({
   features,
 }: Capabilities3DCardsProps) {
   return (
-    <Section tone="none" spacing="lg" className="relative overflow-hidden py-16 sm:py-24 bg-[#f1f5f9] border-t border-b border-slate-200/90 shadow-[inset_0_4px_12px_rgba(0,0,0,0.03)]">
+    <Section tone="none" spacing="lg" className="relative overflow-hidden py-8 sm:py-12 lg:py-14 bg-[#f1f5f9] border-t border-b border-slate-200/90 shadow-[inset_0_4px_12px_rgba(0,0,0,0.03)]">
       <Container>
         <SectionHeading
           eyebrow={eyebrow}
           title={title}
           description={description}
           align="center"
-          className="mb-14 max-w-3xl mx-auto"
+          className="mb-6 sm:mb-8 max-w-3xl mx-auto"
         />
 
-        <Stagger stagger={0.12} className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+        <Stagger stagger={0.08} className="grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-2">
           {features.map((feature, index) => {
             const isEven = index % 2 === 0;
             const IconComponent = getFeatureIcon(feature.title, index);
@@ -73,45 +73,45 @@ export function Capabilities3DCards({
               <StaggerItem
                 key={feature.title}
                 from="up"
-                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-6 sm:p-8 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/5"
+                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-5 sm:p-6 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-teal-400 hover:shadow-lg hover:shadow-teal-500/5"
               >
-                {/* 3D Top Gradient Accent Bar */}
-                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-teal-500 via-brand-500 to-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Top Accent Bar */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-teal-500 via-brand-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                 <div>
                   {/* Top Row: Icon Badge & Number Pill */}
-                  <div className="flex items-center mb-6">
+                  <div className="flex items-center mb-3.5">
                     {/* Icon Disc without shadow */}
                     <div
                       className={cn(
-                        "size-14 rounded-2xl bg-gradient-to-br text-white shadow-none flex items-center justify-center border border-white/20 transition-transform duration-300 group-hover:scale-105",
+                        "size-11 sm:size-12 rounded-xl bg-linear-to-br text-white shadow-none flex items-center justify-center border border-white/20 transition-transform duration-300 group-hover:scale-105",
                         gradient
                       )}
                     >
-                      <IconComponent className="size-7" strokeWidth={1.8} />
+                      <IconComponent className="size-5 sm:size-6" strokeWidth={1.8} />
                     </div>
                   </div>
 
                   {/* Title & Description */}
-                  <h3 className="text-xl font-bold text-slate-900 group-hover:text-teal-700 transition-colors tracking-tight">
+                  <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-teal-700 transition-colors tracking-tight">
                     {feature.title}
                   </h3>
 
-                  <p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-700 font-normal">
+                  <p className="mt-2 text-xs sm:text-sm leading-relaxed text-slate-700 font-normal">
                     {feature.description}
                   </p>
                 </div>
 
                 {/* Footer Standard Tag & Action */}
-                <div className="mt-8 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-600">
-                  <span className="flex items-center gap-2 text-slate-600 font-medium">
-                    <CheckCircle2 className="size-4 text-teal-500" />
+                <div className="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-600">
+                  <span className="flex items-center gap-1.5 text-slate-600 font-medium">
+                    <CheckCircle2 className="size-3.5 text-teal-500" />
                     Enterprise Standard
                   </span>
 
                   <Link
                     href={`/contact?service=${encodeURIComponent(feature.title)}`}
-                    className="flex items-center gap-1.5 text-teal-600 font-bold opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1 hover:text-teal-700"
+                    className="flex items-center gap-1 text-teal-600 font-bold opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1 hover:text-teal-700"
                   >
                     Explore Capability <ArrowRight className="size-4" />
                   </Link>

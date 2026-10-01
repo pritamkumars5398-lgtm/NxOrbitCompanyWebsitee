@@ -4,6 +4,7 @@ import { Button } from "@/app/shared/ui/Button";
 import { Container, Eyebrow } from "@/app/shared/ui/Layout";
 import { Reveal } from "@/app/shared/motion/Reveal";
 import { Calendar, Phone } from "lucide-react";
+import { cn } from "@/app/core/lib/cn";
 
 interface CallToActionProps {
   eyebrow?: string;
@@ -11,6 +12,7 @@ interface CallToActionProps {
   description?: string;
   primary?: { label: string; href: string };
   secondary?: { label: string; href: string };
+  className?: string;
 }
 
 /**
@@ -18,13 +20,14 @@ interface CallToActionProps {
  */
 export function CallToAction({
   eyebrow = "READY TO START?",
-  title = "Let's Build Something Exceptional Together",
-  description = "Get a free 30-minute consultation with one of our mobile app development experts. No commitment required.",
-  primary = { label: "Schedule a Free Consultation", href: "/contact" },
-  secondary = { label: "Call +91 9763804442", href: "tel:+919763804442" },
+  title = "Let's build technology that moves your business forward.",
+  description = "A 30-minute consultation with an enterprise solutions architect — not a salesperson. No commitment required.",
+  primary = { label: "Book a Consultation", href: "/contact" },
+  secondary = { label: "Talk to Our Team", href: "/contact" },
+  className,
 }: CallToActionProps) {
   return (
-    <section className="relative isolate overflow-hidden bg-transparent pt-2 pb-10 sm:pt-3 sm:pb-12 lg:pt-4 lg:pb-16 text-white">
+    <section className={cn("relative isolate overflow-hidden bg-transparent py-12 sm:py-14 lg:py-16 text-white", className)}>
       {/* Ambient background glows */}
       <div
         aria-hidden

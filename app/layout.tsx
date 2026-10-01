@@ -9,6 +9,7 @@ import { ScrollProgress } from "@/app/shared/layout/ScrollProgress";
 import { SmoothScroll } from "@/app/shared/layout/SmoothScroll";
 import { FloatingActions } from "@/app/shared/components/FloatingActions";
 import { ConsultationModal } from "@/app/shared/ui/ConsultationModal";
+import { CookieConsent } from "@/app/shared/components/CookieConsent";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,7 +24,10 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "NXT Orbit | Enterprise Technology for Manufacturing & Service Businesses",
+  title: {
+    default: "NXT Orbit | Enterprise Technology Solutions",
+    template: "NXT Orbit | %s",
+  },
   description:
     "NXT Orbit builds custom ERP, CRM, and enterprise platforms for manufacturing and service businesses — integrated with your existing systems, not replacing them.",
   metadataBase: new URL("https://nxt-orbit.com"),
@@ -47,6 +51,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <Footer />
           <FloatingActions />
           <ConsultationModal />
+          <CookieConsent />
         </SmoothScroll>
       </body>
     </html>

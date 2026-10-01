@@ -18,6 +18,9 @@ import { GradientMesh, Grain } from "@/app/shared/backdrop/Backdrops";
 import { CallToAction } from "@/app/shared/sections/CallToAction";
 import { TrustAndFaqSection } from "@/app/shared/sections/TrustAndFaqSection";
 import { ServiceHeroImage } from "@/app/shared/ui/ServiceHeroImage";
+import { ProductRoiMetrics } from "@/app/products/components/ProductRoiMetrics";
+import { ProductStandardsIntegrations } from "@/app/products/components/ProductStandardsIntegrations";
+import { ProductResultBanner } from "@/app/products/components/ProductResultBanner";
 
 /* ── Financial AI Chat Simulator Prompts & Responses ───────────────────── */
 const FINANCE_CHAT_PROMPTS = [
@@ -31,11 +34,12 @@ const FINANCE_CHAT_PROMPTS = [
   }
 ];
 
-/* ── 4 Core Strategic Pillars ────────────────────────────────────────────── */
+/* ── Core Strategic Capabilities ─────────────────────────────────────────── */
 const FINANCE_PILLARS = [
   {
     id: "pillar1",
-    label: "Pillar 1: Sales Engine & Pipeline",
+    label: "Sales Engine & Pipeline",
+    fullTitle: "Sales Engine & CRM Pipeline Governance",
     icon: Workflow,
     intro: "Empower sales managers and representatives with a CRM built specifically for freight movement, not generic SaaS deals.",
     points: [
@@ -55,7 +59,8 @@ const FINANCE_PILLARS = [
   },
   {
     id: "pillar2",
-    label: "Pillar 2: Pure Logistics Accounting",
+    label: "Logistics Accounting",
+    fullTitle: "Pure Logistics Accounting & Consolidated Invoicing",
     icon: Layers,
     intro: "A pure accounting engine engineered to process complex, multi-modal freight billing without revenue leakage.",
     points: [
@@ -75,7 +80,8 @@ const FINANCE_PILLARS = [
   },
   {
     id: "pillar3",
-    label: "Pillar 3: Partner & Credit Risk Governance",
+    label: "Credit Risk & Governance",
+    fullTitle: "Trade Partner & Credit Risk Governance",
     icon: Scale,
     intro: "Protect your business cash flow from bad debt and delayed collections with automated compliance checks.",
     points: [
@@ -95,7 +101,8 @@ const FINANCE_PILLARS = [
   },
   {
     id: "pillar4",
-    label: "Pillar 4: AI Financial Intelligence",
+    label: "AI Financial Intelligence",
+    fullTitle: "AI Financial Intelligence & Real-Time Margin Control",
     icon: BarChart3,
     intro: "Turn financial data from a static accounting record into a proactive profit-generating asset.",
     points: [
@@ -119,7 +126,7 @@ const FINANCE_PILLARS = [
 const DEEP_DIVE_TABS = [
   {
     id: "sales-crm",
-    label: "1. Sales & CRM Engine",
+    label: "Sales & CRM Engine",
     icon: Users,
     bannerTitle: "Power your entire sales cycle",
     bannerDesc: "From lead capture to customer management, empower your team to build stronger relationships, pipeline visibility, and close more deals.",
@@ -144,13 +151,14 @@ const DEEP_DIVE_TABS = [
     ],
     points: [
       { title: "Sales Representative Portal", desc: "Call entry logs, automated follow-up reminders, assigned customer lists, and personal sales performance dashboards." },
-      { title: "Manager Oversight", desc: "Assign sales managers to allocate leads, monitor pipeline health, and track rep conversion benchmarks." },
-      { title: "Enquiry & Quotation Lifecycle", desc: "Record raw inquiries, generate multi-option quotes with preview modes, and convert approved quotes directly into active bookings with zero data re-entry." }
+      { title: "Manager Oversight & Pipelines", desc: "Assign sales managers to allocate leads, monitor pipeline health, and track rep conversion benchmarks." },
+      { title: "Enquiry & Quotation Lifecycle", desc: "Record raw inquiries, generate multi-option quotes with preview modes, and convert approved quotes directly into active bookings." },
+      { title: "Customer Interaction Matrix", desc: "Maintain full communications logs, customer credit terms, and historical booking frequencies in one central place." }
     ]
   },
   {
     id: "accounting-billing",
-    label: "2. Pure Accounting & Billing",
+    label: "Pure Accounting & Billing",
     icon: DatabaseZap,
     bannerTitle: "Master multi-branch freight accounting",
     bannerDesc: "Eliminate manual data re-entry, automate common invoices, manage GL journals, and achieve 100% audit compliance.",
@@ -175,13 +183,14 @@ const DEEP_DIVE_TABS = [
     ],
     points: [
       { title: "Complete Ledger Controls", desc: "Manage GL Account Lists, Journal Entries, Bank Master Settings, and Company Branch Financial Defaults." },
-      { title: "Invoicing Engine", desc: "Create custom job invoices, common consolidated invoices, payment receipts, and settlement vouchers." },
-      { title: "Financial Reporting Suite", desc: "Real-time balance sheets, trial balances, profit & loss reports, customer aging analysis, and branch-wise profit reports downloadable in PDF/Excel format." }
+      { title: "Invoicing Engine & Common Invoices", desc: "Create custom job invoices, common consolidated invoices, payment receipts, and settlement vouchers." },
+      { title: "Financial Reporting Suite", desc: "Real-time balance sheets, trial balances, profit & loss reports, and branch-wise profit reports downloadable in PDF/Excel." },
+      { title: "Job-Level Margin Audits", desc: "Compare quoted rates against carrier invoices in real time to catch silent profit leaks before closing." }
     ]
   },
   {
     id: "governance-admin",
-    label: "3. Governance & Admin",
+    label: "Governance & Admin",
     icon: ShieldCheck,
     bannerTitle: "Bank-grade governance & risk controls",
     bannerDesc: "Enforce strict credit limits, manage global trade partners, control branch settings, and set granular role-based security permissions.",
@@ -205,9 +214,10 @@ const DEEP_DIVE_TABS = [
       { title: "Branch Settings updated", sub: "Mumbai Head Office Tax Default", time: "09:40 AM" }
     ],
     points: [
-      { title: "Credit Request Approvals", desc: "Workflows for customer credit line evaluation, approval matrices, and threshold limits." },
+      { title: "Credit Request Approvals", desc: "Workflows for customer credit line evaluation, approval matrices, and automated hard cap locks." },
       { title: "Trade Partner Master", desc: "Global database of carriers, overseas agents, vendors, and direct customers with individualized tax/billing configurations." },
-      { title: "Role-Based Security", desc: "Granular access permissions controlling who can view margins, approve discounts, edit GL entries, or export financial reports." }
+      { title: "Role-Based Security", desc: "Granular access permissions controlling who can view margins, approve discounts, edit GL entries, or export financial reports." },
+      { title: "Multi-Branch Tax & Entity Master", desc: "Configure country-specific GST/VAT taxes, localized invoice headers, and multi-office accounting rules." }
     ]
   }
 ];
@@ -282,9 +292,13 @@ export default function NextOrbitSalesFinancePage() {
   const [displayedAnswer, setDisplayedAnswer] = useState("");
   const [typing, setTyping] = useState(false);
 
-  // Trigger modal drawer
+  // Open consultation modal with product preselected
   const handleRequestDemo = () => {
-    window.dispatchEvent(new CustomEvent("open-consultation-modal"));
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(
+        new CustomEvent("open-consultation-modal", { detail: { service: "nxt-sales-finance" } })
+      );
+    }
   };
 
   // Scroll to AI Margin Analytics section
@@ -338,7 +352,7 @@ export default function NextOrbitSalesFinancePage() {
               <Reveal from="up" delay={0.06} className="mt-2">
                 <h1 className="max-w-2xl text-display-lg sm:text-display-xl text-ink-900 leading-[1.05]">
                   From Lead to Ledger: <br />
-                  <span className="bg-gradient-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">
+                  <span className="bg-linear-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">
                     The Financial Engine Built for Global Logistics.
                   </span>
                 </h1>
@@ -351,8 +365,8 @@ export default function NextOrbitSalesFinancePage() {
               </Reveal>
 
               <Reveal from="up" delay={0.22} className="mt-6 flex flex-wrap gap-3">
-                <Button onClick={handleRequestDemo} size="lg" variant="primary" withArrow magnetic>
-                  Request Financial Demo
+                <Button href="/contact" size="lg" variant="primary" withArrow magnetic>
+                  Schedule a Financial Demo
                 </Button>
                 <Button onClick={handleScrollToAI} size="lg" variant="outline" withArrow>
                   See AI Margin Analytics
@@ -373,41 +387,43 @@ export default function NextOrbitSalesFinancePage() {
         </Container>
       </section>
 
-      {/* ── 2. Executive Impact Metrics ── */}
-      <Section tone="sunken" spacing="md" className="border-y border-hairline relative">
-        <Container>
-          <div className="text-center mb-10">
-            <h2 className="text-display-sm text-slate-900 font-extrabold tracking-tight">
-              Financial Accuracy at Enterprise Scale
-            </h2>
-            <p className="text-sm text-ink-600 mt-2">Anchor value in numbers before diving into technology details.</p>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-3">
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-lg hover:shadow-teal-500/10 cursor-pointer">
-              <span className="text-display-md text-teal-600 font-black">0</span>
-              <h3 className="text-base font-bold text-slate-900 mt-2">Unbilled Shipments</h3>
-              <p className="text-sm text-slate-600 mt-1 leading-relaxed">
-                Automated invoice generation triggered directly from operational bookings.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-lg hover:shadow-teal-500/10 cursor-pointer">
-              <span className="text-display-md text-brand-600 font-black">2x Faster</span>
-              <h3 className="text-base font-bold text-slate-900 mt-2">Quote-to-Invoice Cycles</h3>
-              <p className="text-sm text-slate-600 mt-1 leading-relaxed">
-                Seamless flow from sales enquiry → quotation → booking → common invoice.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-lg hover:shadow-teal-500/10 cursor-pointer">
-              <span className="text-display-md text-slate-900 font-black">100%</span>
-              <h3 className="text-base font-bold text-slate-900 mt-2">Margin Transparency</h3>
-              <p className="text-sm text-slate-600 mt-1 leading-relaxed">
-                Job-level profitability tracking with real-time credit risk enforcement before booking confirmation.
-              </p>
-            </div>
-          </div>
-        </Container>
-      </Section>
+      {/* ── 2. Executive Impact Metrics (Redesigned) ── */}
+      <ProductRoiMetrics
+        title="Financial Accuracy at Enterprise Scale"
+        subtitle="Anchor value in verified operational numbers before diving into technology details."
+        metrics={[
+          {
+            value: "0",
+            badge: "Revenue Leakage",
+            title: "Unbilled Shipments",
+            description: "Automated invoice generation triggered directly from operational bookings.",
+            progressLabel: "Invoice Capture Rate",
+            progressPercent: 100,
+            benchmark: "100% Invoiced",
+            icon: ShieldCheck,
+          },
+          {
+            value: "2x Faster",
+            badge: "Cashflow Velocity",
+            title: "Quote-to-Invoice Cycles",
+            description: "Seamless flow from sales enquiry → quotation → booking → common invoice.",
+            progressLabel: "Billing Lead Time",
+            progressPercent: 88,
+            benchmark: "< 24hr DSO Velocity",
+            icon: Zap,
+          },
+          {
+            value: "100%",
+            badge: "Audit Precision",
+            title: "Margin Transparency",
+            description: "Job-level profitability tracking with real-time credit risk enforcement before booking confirmation.",
+            progressLabel: "Margin Visibility & Control",
+            progressPercent: 100,
+            benchmark: "Real-time Job P&L",
+            icon: BarChart3,
+          },
+        ]}
+      />
 
       {/* ── 3. The Enterprise Advantage: Why Purpose-Built Logistics Accounting? ── */}
       <Section tone="white" spacing="lg" className="relative overflow-hidden py-16 sm:py-24">
@@ -546,21 +562,17 @@ export default function NextOrbitSalesFinancePage() {
                 {/* Top Section Header: Left Info + Value Rail & Right Isometric 3D Fintech Image */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-12">
                   {/* Left Header Info & 3 Value Badges */}
-                  <div className="lg:col-span-6 flex flex-col gap-4">
-                    <div className="flex items-center gap-2">
-                      <span className="text-xs font-mono font-bold uppercase tracking-widest text-teal-600">
-                        STRATEGIC TRANSFORMATION
-                      </span>
-                    </div>
-                    <h2 className="text-display-md sm:text-display-lg font-extrabold text-slate-900 tracking-tight leading-tight">
-                      Four Pillars of Profit Protection & Pipeline Control
+                  <div className="lg:col-span-6 flex flex-col items-start">
+                    <Eyebrow tone="brand">STRATEGIC TRANSFORMATION</Eyebrow>
+                    <h2 className="text-display-sm sm:text-display-md font-extrabold text-slate-900 tracking-tight leading-tight mt-3">
+                      Core Systems for Profit Protection & Pipeline Control
                     </h2>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xl">
+                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl font-normal mt-3">
                       Unifying CRM, accounting, and compliance under a single system of action.
                     </p>
 
                     {/* 3 Horizontal Value Proof Badges */}
-                    <div className="flex flex-wrap items-center gap-3 mt-2">
+                    <div className="flex flex-wrap items-center gap-3 mt-5">
                       <div className="flex items-center gap-3 bg-white border border-slate-200/80 rounded-2xl px-4 py-2.5 shadow-2xs">
                         <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-teal-600">
                           <Box className="size-4" />
@@ -620,8 +632,12 @@ export default function NextOrbitSalesFinancePage() {
                   </div>
                 </div>
 
-                {/* 4 Pillars Tabbed Navigation Bar */}
-                <div className="flex flex-wrap justify-center gap-3 mb-10">
+                {/* Capabilities Tabbed Navigation Bar */}
+                <div 
+                  data-lenis-prevent="true"
+                  className="flex items-center md:justify-center gap-2 overflow-x-auto overscroll-x-contain touch-pan-x scrollbar-none pb-2 mb-8 md:mb-10 px-1"
+                  style={{ WebkitOverflowScrolling: "touch" }}
+                >
                   {FINANCE_PILLARS.map((tab) => {
                     const Icon = tab.icon;
                     const isActive = activePillarTab === tab.id;
@@ -631,14 +647,14 @@ export default function NextOrbitSalesFinancePage() {
                         type="button"
                         onClick={() => setActivePillarTab(tab.id)}
                         className={cn(
-                          "flex items-center gap-2.5 px-5 py-3 rounded-2xl text-xs font-extrabold transition-all duration-300 cursor-pointer shadow-2xs border",
+                          "flex shrink-0 whitespace-nowrap items-center gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full text-xs font-bold transition-all duration-300 cursor-pointer shadow-2xs border",
                           isActive
                             ? "bg-[#0a2328] border-[#0a2328] text-white shadow-md scale-[1.02]"
                             : "bg-white border-slate-200/90 text-slate-700 hover:border-teal-400 hover:text-teal-700 hover:bg-teal-50/50"
                         )}
                       >
-                        <div className={cn("flex size-6 items-center justify-center rounded-lg transition-colors", isActive ? "bg-teal-500/20 text-teal-300" : "bg-slate-100 text-slate-500")}>
-                          <Icon className="size-3.5" />
+                        <div className={cn("flex size-5 items-center justify-center rounded-full transition-colors shrink-0", isActive ? "bg-teal-500/20 text-teal-300" : "bg-slate-100 text-slate-500")}>
+                          <Icon className="size-3" />
                         </div>
                         {tab.label}
                       </button>
@@ -646,7 +662,7 @@ export default function NextOrbitSalesFinancePage() {
                   })}
                 </div>
 
-                {/* Active Pillar Showcase Card & Dynamic Dashboard UI Mockup */}
+                {/* Active Capability Showcase Card & Dynamic Dashboard UI Mockup */}
                 <div className="space-y-6">
                   {/* Main Showcase Container */}
                   <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/80 shadow-md">
@@ -654,11 +670,9 @@ export default function NextOrbitSalesFinancePage() {
                       {/* Left Sub-Column: Feature Info & Points */}
                       <div className="lg:col-span-5 flex flex-col justify-between gap-6">
                         <div>
-
-
                           {/* Title */}
                           <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                            {currentTab.label.replace(/^Pillar \d+: /, "")}
+                            {currentTab.fullTitle}
                           </h3>
 
                           {/* Subtitle / Intro */}
@@ -862,166 +876,87 @@ export default function NextOrbitSalesFinancePage() {
             const tabIdx = DEEP_DIVE_TABS.findIndex((t) => t.id === activeDeepDiveTab) + 1;
             return (
               <div className="space-y-6">
-                {/* Main Showcase Card Grid */}
-                <div className="bg-[#f8fafc] rounded-2xl p-5 sm:p-6 border border-slate-200/80 shadow-md">
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-                    
-                    {/* 1. Left Dark Hero Banner Card */}
-                    <div className="lg:col-span-3 bg-[#04191d] rounded-2xl p-6 text-white relative overflow-hidden flex flex-col justify-between min-h-[320px] sm:min-h-[360px] shadow-sm group">
-                      {/* High-res background image */}
-                      <img 
-                        src={currentTab.bgImage} 
-                        alt={currentTab.label} 
-                        className="absolute inset-0 w-full h-full object-cover object-center opacity-55 transition-transform duration-700 group-hover:scale-105" 
-                      />
-                      {/* Rich dark teal gradient overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#031518] via-[#031518]/75 to-[#042429]/50 z-10" />
+                {/* 2-Column Showcase Container (Matching Freight Reference) */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-5 items-stretch">
+                  {/* Left Hero Image Card */}
+                  <div className="lg:col-span-5 relative rounded-2xl overflow-hidden min-h-[290px] sm:min-h-[320px] lg:min-h-[340px] flex flex-col justify-end p-5 sm:p-6 shadow-md border border-slate-200/80 group">
+                    <img
+                      src={currentTab.bgImage}
+                      alt={currentTab.bannerTitle}
+                      className="absolute inset-0 size-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                      suppressHydrationWarning
+                    />
+                    {/* Dark Mask Gradient Overlay */}
+                    <div className="absolute inset-0 bg-linear-to-t from-slate-950/95 via-slate-950/60 to-transparent pointer-events-none" />
 
-                      <div className="relative z-20 flex flex-col gap-3">
-                        <div className="inline-flex items-center gap-2 bg-teal-500/20 backdrop-blur-md border border-teal-400/30 px-2.5 py-1 rounded-md w-fit">
-                          <span className="size-1.5 rounded-full bg-teal-400" />
-                          <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-teal-300">
-                            0{tabIdx} {currentTab.label.replace(/^\d+\.\s*/, "").toUpperCase()}
-                          </span>
-                        </div>
-                        <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight leading-snug mt-2 drop-shadow-sm">
-                          {currentTab.bannerTitle}
-                        </h3>
+                    <div className="relative z-10 flex flex-col items-start gap-2">
+                      <div className="flex items-center gap-2">
+                        <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-teal-300">
+                          0{tabIdx} {currentTab.label.replace(/^\d+\.\s*/, "").toUpperCase()}
+                        </span>
                       </div>
+                      <h3 className="text-base sm:text-lg lg:text-xl font-extrabold text-white leading-snug tracking-tight">
+                        {currentTab.bannerTitle}
+                      </h3>
+                      <p className="text-xs text-slate-200/90 leading-relaxed font-normal max-w-md line-clamp-3 mt-0.5">
+                        {currentTab.bannerDesc}
+                      </p>
+                    </div>
+                  </div>
 
-                      <div className="relative z-20 mt-4">
-                        <p className="text-xs text-slate-200 leading-relaxed font-normal opacity-90 drop-shadow-xs">
-                          {currentTab.bannerDesc}
+                  {/* Right 2x2 Feature Cards Grid */}
+                  <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5">
+                    {currentTab.points.map((point, index) => (
+                      <div
+                        key={index}
+                        className="group relative flex flex-col justify-start rounded-xl border border-slate-200/80 bg-white p-4 sm:p-5 shadow-2xs transition-all duration-300 hover:-translate-y-1 hover:border-teal-300 hover:shadow-md"
+                      >
+                        {/* Circle Icon Badge */}
+                        <div className="flex size-9 items-center justify-center rounded-xl bg-teal-50 text-teal-600 border border-teal-100/80 transition-colors duration-300 group-hover:bg-teal-600 group-hover:text-white mb-3 shadow-2xs">
+                          <CheckCircle2 className="size-4.5" />
+                        </div>
+
+                        {/* Title */}
+                        <h4 className="text-xs sm:text-sm font-extrabold text-slate-900 tracking-tight leading-snug group-hover:text-teal-700 transition-colors">
+                          {point.title}
+                        </h4>
+
+                        {/* Description */}
+                        <p className="mt-1.5 text-xs text-slate-600 leading-relaxed font-normal">
+                          {point.desc}
                         </p>
                       </div>
-                    </div>
-
-                    {/* 2. Middle 3 Feature Points Column */}
-                    <div className="lg:col-span-4 flex flex-col justify-center gap-6 p-2">
-                      {currentTab.points.map((point, index) => (
-                        <div key={index} className="flex gap-4 items-start p-2 rounded-xl transition-all hover:bg-slate-50">
-                          <div className="flex size-11 shrink-0 items-center justify-center rounded-full bg-teal-50 text-teal-600 border border-teal-100/80 shadow-2xs mt-0.5">
-                            {index === 0 ? <Users className="size-5" /> : index === 1 ? <Eye className="size-5" /> : <DatabaseZap className="size-5" />}
-                          </div>
-                          <div>
-                            <h4 className="text-sm font-bold text-slate-900 leading-tight">{point.title}</h4>
-                            <p className="text-xs text-slate-500 leading-relaxed mt-1">{point.desc}</p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* 3. Right Interactive App Dashboard UI Mockup */}
-                    <div className="lg:col-span-5 bg-white border border-slate-200/90 rounded-2xl p-4 flex flex-col gap-4 shadow-2xs overflow-hidden">
-                      {/* Top Header Bar */}
-                      <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-                        <div className="flex items-center gap-2">
-                          <span className="text-xs font-black text-slate-900 tracking-tight">NXT<span className="text-teal-600">orbit</span></span>
-                          <span className="text-[10px] text-slate-400 font-bold">|</span>
-                          <span className="text-[11px] font-extrabold text-slate-700">Dashboard</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <Eye className="size-3.5 text-slate-400" />
-                          <Bell className="size-3.5 text-slate-400" />
-                          <div className="flex items-center gap-1.5 pl-2 border-l border-slate-100">
-                            <div className="size-5 rounded-full bg-teal-600 text-white text-[9px] font-bold flex items-center justify-center">JD</div>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* 4 KPI Metrics Grid */}
-                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                        {currentTab.metrics.map((metric, mIdx) => (
-                          <div key={mIdx} className="bg-slate-50/80 rounded-xl p-2.5 border border-slate-100">
-                            <span className="text-[9px] text-slate-400 font-bold block truncate">{metric.label}</span>
-                            <span className="text-sm font-black text-slate-900 mt-0.5 block">{metric.val}</span>
-                            <span className="text-[9px] text-teal-600 font-bold block mt-0.5">{metric.change}</span>
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* Bottom Split: Funnel Chart + Recent Activities */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 flex-1">
-                        {/* Left Funnel Widget */}
-                        <div className="bg-slate-50/60 rounded-xl p-3 border border-slate-100 flex flex-col justify-between">
-                          <span className="text-[10px] font-extrabold text-slate-900 block mb-2">Pipeline Overview</span>
-                          <div className="space-y-1.5 my-auto">
-                            {currentTab.funnel.map((fn, fIdx) => (
-                              <div key={fIdx} className="flex items-center gap-2">
-                                <div className="flex-1 bg-slate-200/80 h-3.5 rounded-md overflow-hidden relative">
-                                  <div 
-                                    className="bg-teal-500 h-full rounded-md transition-all duration-500" 
-                                    style={{ width: fn.pct }} 
-                                  />
-                                </div>
-                                <span className="text-[9px] font-bold text-slate-600 w-16 text-right truncate">{fn.label}</span>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-
-                        {/* Right Recent Activities Widget */}
-                        <div className="bg-slate-50/60 rounded-xl p-3 border border-slate-100 flex flex-col justify-between">
-                          <span className="text-[10px] font-extrabold text-slate-900 block mb-2">Recent Activities</span>
-                          <div className="space-y-2 my-auto">
-                            {currentTab.activities.map((act, aIdx) => (
-                              <div key={aIdx} className="flex items-start justify-between text-[9px] border-b border-slate-100 pb-1.5 last:border-0 last:pb-0">
-                                <div>
-                                  <p className="font-bold text-slate-800 leading-tight">{act.title}</p>
-                                  <p className="text-slate-400 mt-0.5">{act.sub}</p>
-                                </div>
-                                <span className="text-[8px] text-slate-400 font-mono shrink-0">{act.time}</span>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
 
-                {/* Bottom Value Rail (4 Proof Cards - Dark Blue/Teal Theme) */}
-                <div className="bg-[#061e23] rounded-2xl border border-teal-900/60 p-4 sm:p-6 shadow-md grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-start text-white">
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2.5 sm:gap-3.5">
-                    <div className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-2xl bg-teal-500/20 text-teal-300 border border-teal-400/30">
-                      <Target className="size-4 sm:size-5" />
-                    </div>
-                    <div>
-                      <h5 className="text-xs sm:text-sm font-extrabold text-white leading-tight">Improve Productivity</h5>
-                      <p className="text-[11px] text-slate-300 leading-normal mt-0.5">Automate routine tasks and save hours of manual work.</p>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2.5 sm:gap-3.5">
-                    <div className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-2xl bg-teal-500/20 text-teal-300 border border-teal-400/30">
-                      <TrendingUp className="size-4 sm:size-5" />
-                    </div>
-                    <div>
-                      <h5 className="text-xs sm:text-sm font-extrabold text-white leading-tight">Real-Time Visibility</h5>
-                      <p className="text-[11px] text-slate-300 leading-normal mt-0.5">Get a 360° view of pipeline, performance and customer interactions.</p>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2.5 sm:gap-3.5">
-                    <div className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-2xl bg-teal-500/20 text-teal-300 border border-teal-400/30">
-                      <CheckCircle2 className="size-4 sm:size-5" />
-                    </div>
-                    <div>
-                      <h5 className="text-xs sm:text-sm font-extrabold text-white leading-tight">Better Decision Making</h5>
-                      <p className="text-[11px] text-slate-300 leading-normal mt-0.5">Use real-time data and insights to make confident decisions.</p>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2.5 sm:gap-3.5">
-                    <div className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-2xl bg-teal-500/20 text-teal-300 border border-teal-400/30">
-                      <Users className="size-4 sm:size-5" />
-                    </div>
-                    <div>
-                      <h5 className="text-xs sm:text-sm font-extrabold text-white leading-tight">Stronger Relationships</h5>
-                      <p className="text-[11px] text-slate-300 leading-normal mt-0.5">Engage better, respond faster and build lasting customer trust.</p>
-                    </div>
-                  </div>
-                </div>
+                {/* Bottom Result Rail ("THE RESULT" Banner) */}
+                <ProductResultBanner
+                  eyebrow="THE RESULT"
+                  headline="Zero revenue leakage. Real-time profitability. Bank-grade control."
+                  stats={[
+                    {
+                      icon: Clock,
+                      title: "60% Faster Billing",
+                      description: "Accelerate invoice-to-cash turnaround with one-click Common Invoicing.",
+                    },
+                    {
+                      icon: Eye,
+                      title: "100% Margin Control",
+                      description: "Live job costing flags silent profit leaks before bookings close.",
+                    },
+                    {
+                      icon: ShieldCheck,
+                      title: "Credit Risk Shield",
+                      description: "Hard credit limit caps prevent bad debt and unpaid balances.",
+                    },
+                    {
+                      icon: TrendingUp,
+                      title: "Scalable Growth",
+                      description: "Unified multi-branch accounting across all global regional hubs.",
+                    },
+                  ]}
+                />
               </div>
             );
           })()}
@@ -1041,7 +976,7 @@ export default function NextOrbitSalesFinancePage() {
               
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <span className="flex shrink-0 size-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-teal-500 text-white font-mono text-sm font-extrabold">
+                  <span className="flex shrink-0 size-10 items-center justify-center rounded-xl bg-linear-to-br from-brand-600 to-teal-500 text-white font-mono text-sm font-extrabold">
                     1
                   </span>
                   <div className="flex-1 pt-0.5">
@@ -1053,7 +988,7 @@ export default function NextOrbitSalesFinancePage() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <span className="flex shrink-0 size-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-teal-500 text-white font-mono text-sm font-extrabold">
+                  <span className="flex shrink-0 size-10 items-center justify-center rounded-xl bg-linear-to-br from-brand-600 to-teal-500 text-white font-mono text-sm font-extrabold">
                     2
                   </span>
                   <div className="flex-1 pt-0.5">
@@ -1065,7 +1000,7 @@ export default function NextOrbitSalesFinancePage() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <span className="flex shrink-0 size-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-teal-500 text-white font-mono text-sm font-extrabold">
+                  <span className="flex shrink-0 size-10 items-center justify-center rounded-xl bg-linear-to-br from-brand-600 to-teal-500 text-white font-mono text-sm font-extrabold">
                     3
                   </span>
                   <div className="flex-1 pt-0.5">
@@ -1127,61 +1062,39 @@ export default function NextOrbitSalesFinancePage() {
       </Section>
 
       {/* ── 7. Tailored Enterprise Integrations & Compliance ── */}
-      <Section tone="white" spacing="lg" className="border-t border-hairline">
-        <Container>
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-display-sm sm:text-display-md text-slate-900 font-extrabold tracking-tight">
-              Built for Industry Standards.
-            </h2>
-            <p className="text-sm text-brand-600 font-semibold mt-2">Tailored to Your Enterprise.</p>
-            <p className="text-sm text-slate-600 mt-2 leading-relaxed">
-              The NXT Sales & Accounting module operates seamlessly as a standalone financial powerhouse or as a fully integrated layer within your existing ERP ecosystem.
-            </p>
-          </div>
-
-          <div className="grid gap-8 md:grid-cols-3">
-            {/* Universal Financial Connectors */}
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/10 cursor-pointer">
-              <span className="flex size-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600 mb-4">
-                <Database className="size-5" />
-              </span>
-              <h3 className="text-sm font-bold text-slate-900 mb-3">Universal Connectors</h3>
-              <p className="text-xs text-slate-600 mb-4 leading-relaxed">
-                Bi-directional open APIs for seamless data sync with SAP, Oracle NetSuite, Tally, Zoho Books, and Microsoft Dynamics.
-              </p>
-              <div className="flex flex-wrap gap-1.5">
-                {INTEGRATIONS.map((integ, idx) => (
-                  <span key={idx} className="text-[10px] text-slate-600 bg-slate-100 px-2 py-0.5 rounded-md font-medium">
-                    {integ.name}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Banking & Payment Gateways */}
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/10 cursor-pointer">
-              <span className="flex size-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600 mb-4">
-                <Landmark className="size-5" />
-              </span>
-              <h3 className="text-sm font-bold text-slate-900 mb-3">Banking & Payment Gateways</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Direct integration with corporate banking APIs for automated payment reconciliation and electronic fund transfers.
-              </p>
-            </div>
-
-            {/* Audit-Ready Compliance */}
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/10 cursor-pointer">
-              <span className="flex size-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600 mb-4">
-                <ShieldCheck className="size-5" />
-              </span>
-              <h3 className="text-sm font-bold text-slate-900 mb-3">Audit-Ready Compliance</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Bank-grade cloud security (AES-256 encryption), role-based access control (RBAC), and immutable transaction audit trails for global tax and regulatory compliance.
-              </p>
-            </div>
-          </div>
-        </Container>
-      </Section>
+      <ProductStandardsIntegrations
+        id="enterprise-integrations"
+        eyebrow="ENTERPRISE INTEGRATIONS"
+        title="Built for Industry Standards."
+        highlightTitle="Tailored to Your Enterprise."
+        description="The NXT Sales & Accounting module operates seamlessly as a standalone financial powerhouse or as a fully integrated layer within your existing ERP ecosystem."
+        pills={INTEGRATIONS.map((integ) => integ.name)}
+        features={[
+          {
+            icon: Database,
+            iconBg: "bg-teal-50 text-teal-600 border border-teal-200/80",
+            title: "Universal Connectors",
+            description:
+              "Bi-directional open APIs for seamless data sync with SAP, Oracle NetSuite, Tally, Zoho Books, and Microsoft Dynamics.",
+          },
+          {
+            icon: Landmark,
+            iconBg: "bg-amber-50 text-amber-600 border border-amber-200/80",
+            title: "Banking & Payment Gateways",
+            description:
+              "Direct integration with corporate banking APIs for automated payment reconciliation and electronic fund transfers.",
+          },
+          {
+            icon: ShieldCheck,
+            iconBg: "bg-indigo-50 text-indigo-600 border border-indigo-200/80",
+            title: "Audit-Ready Compliance",
+            description:
+              "Bank-grade cloud security (AES-256 encryption), role-based access control (RBAC), and immutable transaction audit trails for global tax and regulatory compliance.",
+          },
+        ]}
+        visualImage="/assets/laptop_integration_visual.png"
+        visualAlt="NXT Sales & Finance Enterprise Integrations"
+      />
 
       {/* ── 8. Enterprise Security & Infrastructure (Referred from WMS/Freight) ── */}
       <Section tone="sunken" spacing="lg" className="border-t border-hairline">
@@ -1206,7 +1119,7 @@ export default function NextOrbitSalesFinancePage() {
                   className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-6 shadow-2xs transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-300 hover:shadow-lg hover:shadow-teal-500/5 cursor-pointer overflow-hidden"
                 >
                   {/* Top Subtle Teal Gradient Accent Line */}
-                  <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-teal-500 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute top-0 left-0 right-0 h-0.5 bg-linear-to-r from-teal-500 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                   <div>
                     {/* Icon Badge */}
@@ -1223,12 +1136,6 @@ export default function NextOrbitSalesFinancePage() {
                     <p className="text-xs text-slate-600 mt-2 leading-relaxed font-normal">
                       {point.desc}
                     </p>
-                  </div>
-
-                  {/* Bottom Learn More Indicator */}
-                  <div className="mt-5 flex items-center gap-1.5 text-xs font-bold text-teal-600 transition-all duration-300 group-hover:translate-x-1">
-                    <span>Explore governance</span>
-                    <ArrowRight className="size-3.5" />
                   </div>
                 </div>
               );

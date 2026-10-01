@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 export async function GET() {
   try {
     const brainDir = "C:\\Users\\UPL\\.gemini\\antigravity-ide\\brain\\6c9286e3-d3c6-4a06-9620-41d07453a5ca";
-    const assetsDir = path.join(process.cwd(), "public", "assets");
+    const assetsDir = path.join(/*turbopackIgnore: true*/ process.cwd(), "public", "assets");
 
     const filesToCopy = [
       {
@@ -23,6 +23,10 @@ export async function GET() {
       {
         src: path.join(brainDir, "finance_real_banner_1790671542102.jpg"),
         dest: path.join(assetsDir, "finance_real_banner.jpg"),
+      },
+      {
+        src: "C:\\Users\\UPL\\.gemini\\antigravity-ide\\brain\\a558b152-3171-4e35-b263-c48a0228f6f5\\laptop_integration_visual_1790773563559.jpg",
+        dest: path.join(assetsDir, "laptop_integration_visual.jpg"),
       },
     ];
 

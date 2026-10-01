@@ -22,14 +22,15 @@ export function ConsultationModal() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const handleOpen = () => {
+    const handleOpen = (e?: Event) => {
+      const customEvent = e as CustomEvent<{ service?: string }>;
       setIsOpen(true);
       setIsSubmitted(false);
       setErrors({});
       setName("");
       setEmail("");
       setPhone("");
-      setService("");
+      setService(customEvent?.detail?.service || "");
       setMessage("");
     };
 
@@ -172,7 +173,7 @@ export function ConsultationModal() {
         <div className="absolute bottom-10 left-0 -z-10 w-72 h-72 bg-teal-100/20 blur-[80px] rounded-full pointer-events-none" />
 
         {/* Premium Header - Dark Navy Brand Gradient */}
-        <div className="relative overflow-hidden bg-gradient-to-r from-brand-950 to-brand-900 px-5 py-4 text-white flex flex-col justify-between shadow-md shrink-0">
+        <div className="relative overflow-hidden bg-linear-to-r from-brand-950 to-brand-900 px-5 py-4 text-white flex flex-col justify-between shadow-md shrink-0">
           <div aria-hidden className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,187,169,0.15),transparent_70%)] pointer-events-none" />
           
           <div className="flex items-center justify-between z-10">
@@ -318,13 +319,21 @@ export function ConsultationModal() {
                       backgroundSize: '1em'
                     }}
                   >
-                    <option value="" disabled className="text-slate-400">Select a service</option>
-                    <option value="mobile" className="text-slate-900">Mobile App Development</option>
-                    <option value="web" className="text-slate-900">Web App Development</option>
-                    <option value="ai" className="text-slate-900">AI & ML Solutions</option>
-                    <option value="design" className="text-slate-900">UI/UX Design</option>
-                    <option value="blockchain" className="text-slate-900">Blockchain Development</option>
-                    <option value="devops" className="text-slate-900">DevOps & Cloud</option>
+                    <option value="" disabled className="text-slate-400">Select an enquiry type</option>
+                    <optgroup label="SaaS Platforms & Products" className="text-slate-900 font-semibold">
+                      <option value="courier-express" className="text-slate-900">Courier Express</option>
+                      <option value="nxt-wms" className="text-slate-900">NXT WMS (Warehouse OS)</option>
+                      <option value="nxt-orbit-freight" className="text-slate-900">NXT Orbit Freight OS</option>
+                      <option value="nxt-sales-finance" className="text-slate-900">NXT Sales & Finance</option>
+                    </optgroup>
+                    <optgroup label="Engineering & Cloud Services" className="text-slate-900 font-semibold">
+                      <option value="mobile" className="text-slate-900">Mobile App Development</option>
+                      <option value="web" className="text-slate-900">Web App Development</option>
+                      <option value="ai" className="text-slate-900">AI & ML Solutions</option>
+                      <option value="design" className="text-slate-900">UI/UX Design</option>
+                      <option value="blockchain" className="text-slate-900">Blockchain Development</option>
+                      <option value="devops" className="text-slate-900">DevOps & Cloud</option>
+                    </optgroup>
                   </select>
                 </div>
                 {errors.service && <p className="text-[10px] text-red-500 mt-1 pl-1 font-semibold">{errors.service}</p>}

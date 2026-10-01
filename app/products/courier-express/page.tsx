@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { 
-  ArrowRight, Shield, ShieldCheck, Database, Navigation, MessageSquarePlus, 
+  Shield, ShieldCheck, Database, Navigation, MessageSquarePlus, 
   Terminal, Sparkles, Code, Cpu, DatabaseZap, Users, FileText, CheckCircle2,
   Lock, Globe, Cloud, Key, Check, Layers, BarChart3, Workflow, Truck, AlertTriangle,
   Eye, Clock, Activity, Bell, Box, Gauge, TrendingUp, DollarSign, Target,
@@ -18,6 +18,9 @@ import { GradientMesh, Grain } from "@/app/shared/backdrop/Backdrops";
 import { CallToAction } from "@/app/shared/sections/CallToAction";
 import { TrustAndFaqSection } from "@/app/shared/sections/TrustAndFaqSection";
 import { ServiceHeroImage } from "@/app/shared/ui/ServiceHeroImage";
+import { ProductRoiMetrics } from "@/app/products/components/ProductRoiMetrics";
+import { ProductStandardsIntegrations } from "@/app/products/components/ProductStandardsIntegrations";
+import { ProductResultBanner } from "@/app/products/components/ProductResultBanner";
 
 /* ── AI Chat Simulator Prompts & Responses ───────────────────────────── */
 const COURIER_CHAT_PROMPTS = [
@@ -35,16 +38,20 @@ const COURIER_CHAT_PROMPTS = [
   }
 ];
 
-/* ── 4 Pillars of Autonomous E-Commerce Fulfillment ─────────────────────── */
+/* ── Core Capabilities of Autonomous E-Commerce Fulfillment ─────────────── */
 const COURIER_ROLE_TABS = [
   {
     id: "pillar1",
-    label: "Pillar 1: Courier Orchestration & Rates",
+    label: "Courier Orchestration & Rates",
+    fullTitle: "Courier Orchestration & Multi-Carrier Rate Engine",
     icon: Workflow,
+    heroImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop",
     intro: "Stop relying on single-carrier contracts or rigid manual allocation. Courier Express instantly connects you to 25+ global and national courier partners through one unified billing system.",
     points: [
-      { title: "Smart Route Allocation", desc: "Our AI evaluates thousands of variables per second—pin-code carrier reliability, weather disruptions, historical weight discrepancies, and real-time pricing—to route every order through the optimal carrier." },
-      { title: "Unified COD Reconciliation", desc: "Real-time cash-on-delivery tracking, automated remittance cycles, and early payout options to keep your cash flow liquid." }
+      { title: "Smart Route Allocation", desc: "Our AI evaluates carrier reliability, weather disruptions, weight discrepancies, and real-time pricing to route every order through the optimal carrier." },
+      { title: "Unified COD Reconciliation", desc: "Real-time cash-on-delivery tracking, automated remittance cycles, and early payout options to keep your cash flow liquid." },
+      { title: "Multi-Carrier Rate Engine", desc: "Instant API queries across 25+ logistics partners guarantee the lowest cost per gram for every destination pin-code." },
+      { title: "Automated Batch Manifesting", desc: "Batch generate thousands of carrier-compliant shipping labels, barcodes, and manifest handover slips in one single click." }
     ],
     dashboardTitle: "Courier Allocation & Rate Matrix",
     metrics: [
@@ -58,13 +65,16 @@ const COURIER_ROLE_TABS = [
   },
   {
     id: "pillar2",
-    label: "Pillar 2: AI RTO Defense Engine",
+    label: "AI RTO Defense Engine",
+    fullTitle: "AI RTO Defense & Fraud Score Engine",
     icon: ShieldCheck,
+    heroImage: "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?q=80&w=1200&auto=format&fit=crop",
     intro: "RTO (Return to Origin) kills e-commerce margins. Courier Express eliminates bad shipments at the source.",
     points: [
       { title: "AI Address Intelligence", desc: "Machine learning models fix incomplete addresses, correct typos, and flag non-existent street numbers automatically before shipping labels are generated." },
       { title: "Order Fraud Scoring", desc: "Assigns a risk score to every incoming Cash-on-Delivery (COD) order based on past buyer behavior across our entire merchant network." },
-      { title: "Pre-Dispatch WhatsApp Verification", desc: "High-risk orders automatically trigger an interactive WhatsApp verification flow to confirm buyer intent before inventory leaves the warehouse." }
+      { title: "Pre-Dispatch WhatsApp Verification", desc: "High-risk orders automatically trigger an interactive WhatsApp verification flow to confirm buyer intent before inventory leaves the warehouse." },
+      { title: "Pincode Risk Radar", desc: "Automatically blocks high-RTO pincodes or requires prepaid checkout for repeat fraudulent order zones." }
     ],
     dashboardTitle: "AI RTO Defense & Fraud Score Console",
     metrics: [
@@ -78,13 +88,16 @@ const COURIER_ROLE_TABS = [
   },
   {
     id: "pillar3",
-    label: "Pillar 3: Autonomous NDR Management",
+    label: "Autonomous NDR Management",
+    fullTitle: "Autonomous Self-Healing NDR Workflows",
     icon: AlertTriangle,
+    heroImage: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=1200&auto=format&fit=crop",
     intro: "Turn shipping exceptions into successful deliveries without lifting a finger.",
     points: [
-      { title: "Self-Healing NDR Workflows", desc: "When a delivery fails (e.g., 'Customer Unavailable' or 'Wrong Address'), our AI Agent immediately reaches out to the customer via WhatsApp and interactive voice response (IVR)." },
+      { title: "Self-Healing NDR Workflows", desc: "When a delivery fails (e.g., 'Customer Unavailable' or 'Wrong Address'), our AI Agent immediately reaches out to the customer via WhatsApp and interactive IVR." },
       { title: "Instant Rescheduling", desc: "Buyers can update their location, select a preferred delivery time slot, or switch COD to prepaid with one click inside WhatsApp." },
-      { title: "Courier Accountability", desc: "Automatically logs carrier fake-attempt logs and escalates noncompliance directly to courier management teams." }
+      { title: "Courier Accountability & Audit", desc: "Automatically logs carrier fake-attempt logs with geotagged proof and escalates non-compliance directly to courier management." },
+      { title: "Automated Re-attempt Triggers", desc: "Directly instructs field delivery agents on the verified re-attempt time slot without manual customer support intervention." }
     ],
     dashboardTitle: "Self-Healing NDR Workflows & IVR Agent",
     metrics: [
@@ -98,12 +111,16 @@ const COURIER_ROLE_TABS = [
   },
   {
     id: "pillar4",
-    label: "Pillar 4: Post-Purchase Experience",
+    label: "Post-Purchase Experience",
+    fullTitle: "Post-Purchase Experience & Branded Tracking Portal",
     icon: Globe,
+    heroImage: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?q=80&w=1200&auto=format&fit=crop",
     intro: "Turn order tracking into your highest-converting marketing channel.",
     points: [
       { title: "Custom Tracking Pages", desc: "Replace generic courier tracking screens with a fully branded tracking portal featuring live map visualization, product recommendations, and promotional banners." },
-      { title: "Proactive Status Notifications", desc: "Send automated, branded updates via WhatsApp, SMS, and Email at every milestone: Dispatched, Out for Delivery, Delayed, or Delivered." }
+      { title: "Proactive Status Notifications", desc: "Send automated, branded updates via WhatsApp, SMS, and Email at every milestone: Dispatched, Out for Delivery, Delayed, or Delivered." },
+      { title: "Post-Purchase Marketing & Upsell", desc: "Display recommended products, cross-sell banners, and discount coupon triggers directly on the live tracking page." },
+      { title: "Instant CSAT & Review Collection", desc: "Capture immediate buyer ratings, delivery feedback, and unboxing satisfaction scores upon parcel delivery." }
     ],
     dashboardTitle: "Branded Tracking Portal & WhatsApp Updates",
     metrics: [
@@ -180,9 +197,13 @@ export default function CourierExpressPage() {
   const [displayedAnswer, setDisplayedAnswer] = useState("");
   const [typing, setTyping] = useState(false);
 
-  // Trigger modal drawer
+  // Open consultation modal with product preselected
   const handleRequestDemo = () => {
-    window.dispatchEvent(new CustomEvent("open-consultation-modal"));
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(
+        new CustomEvent("open-consultation-modal", { detail: { service: "courier-express" } })
+      );
+    }
   };
 
   // Scroll to AI Showcase section
@@ -236,8 +257,8 @@ export default function CourierExpressPage() {
               <Reveal from="up" delay={0.06} className="mt-2">
                 <h1 className="max-w-2xl text-display-lg sm:text-display-xl text-ink-900 leading-[1.05]">
                   The Intelligent Shipping & Fulfillment Engine <br />
-                  <span className="bg-gradient-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">
-                    for Modern E-Commerce.
+                  <span className="bg-linear-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">
+                    for Modern <span className="inline-block whitespace-nowrap">E-Commerce.</span>
                   </span>
                 </h1>
               </Reveal>
@@ -249,8 +270,8 @@ export default function CourierExpressPage() {
               </Reveal>
 
               <Reveal from="up" delay={0.22} className="mt-6 flex flex-wrap gap-3">
-                <Button onClick={handleRequestDemo} size="lg" variant="primary" withArrow magnetic>
-                  Start Shipping Free
+                <Button href="/contact" size="lg" variant="primary" withArrow magnetic>
+                  Request a Live Demo
                 </Button>
                 <Button onClick={handleScrollToAI} size="lg" variant="outline" withArrow>
                   Schedule AI Demo
@@ -271,50 +292,54 @@ export default function CourierExpressPage() {
         </Container>
       </section>
 
-      {/* ── 2. Business Impact Metric Cards ── */}
-      <Section tone="sunken" spacing="md" className="border-y border-hairline relative">
-        <Container>
-          <div className="text-center mb-10">
-            <h2 className="text-display-sm text-slate-900 font-extrabold tracking-tight">
-              Proven Impact on Shipping Margins
-            </h2>
-            <p className="text-sm text-ink-600 mt-2">Anchoring ROI immediately beneath the hero fold.</p>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-3">
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-lg hover:shadow-teal-500/10 cursor-pointer">
-              <span className="text-display-md text-teal-600 font-black">-45%</span>
-              <h3 className="text-base font-bold text-slate-900 mt-2">Return-To-Origin (RTO)</h3>
-              <p className="text-sm text-slate-600 mt-1 leading-relaxed">
-                Pre-dispatch AI address validation and automated WhatsApp buyer confirmation.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-lg hover:shadow-teal-500/10 cursor-pointer">
-              <span className="text-display-md text-brand-600 font-black">18%</span>
-              <h3 className="text-base font-bold text-slate-900 mt-2">Lower Logistics Cost</h3>
-              <p className="text-sm text-slate-600 mt-1 leading-relaxed">
-                Dynamic real-time carrier allocation engine picking the best rate and SLA balance.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-lg hover:shadow-teal-500/10 cursor-pointer">
-              <span className="text-display-md text-slate-900 font-black">98.4%</span>
-              <h3 className="text-base font-bold text-slate-900 mt-2">On-Time Delivery</h3>
-              <p className="text-sm text-slate-600 mt-1 leading-relaxed">
-                Predictive route intelligence that re-routes shipments before carrier bottlenecks occur.
-              </p>
-            </div>
-          </div>
-        </Container>
-      </Section>
+      {/* ── 2. Business Impact Metric Cards (Redesigned) ── */}
+      <ProductRoiMetrics
+        eyebrow="PROVEN BUSINESS IMPACT"
+        title="Proven Impact on Shipping Margins"
+        subtitle="Anchor value in verified operational numbers before diving into technology details."
+        metrics={[
+          {
+            value: "-45%",
+            badge: "RTO Shield",
+            title: "Return-To-Origin (RTO)",
+            description: "Pre-dispatch AI address validation and automated WhatsApp buyer confirmation.",
+            progressLabel: "Delivery Attempt Success",
+            progressPercent: 95,
+            benchmark: "95.2% First-Attempt",
+            icon: ShieldCheck,
+          },
+          {
+            value: "18%",
+            badge: "Freight Savings",
+            title: "Lower Logistics Cost",
+            description: "Dynamic real-time carrier allocation engine picking the best rate and SLA balance.",
+            progressLabel: "Rate Arbitrage Capture",
+            progressPercent: 82,
+            benchmark: "18% Saved per AWB",
+            icon: DollarSign,
+          },
+          {
+            value: "98.4%",
+            badge: "SLA Guarantee",
+            title: "On-Time Delivery",
+            description: "Predictive route intelligence that re-routes shipments before carrier bottlenecks occur.",
+            progressLabel: "Autonomous Re-routing Rate",
+            progressPercent: 98,
+            benchmark: "98.4% On-Time SLA",
+            icon: Truck,
+          },
+        ]}
+      />
 
       {/* ── 3. The Shift: Legacy Aggregation vs. Autonomous Shipping ── */}
       <Section tone="white" spacing="lg" className="relative overflow-hidden py-16 sm:py-24">
         <Container>
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <h2 className="text-display-sm sm:text-display-md text-slate-900 font-extrabold tracking-tight">
+          <div className="text-center max-w-3xl mx-auto mb-14 flex flex-col items-center">
+            <Eyebrow tone="brand">THE LOGISTICS SHIFT</Eyebrow>
+            <h2 className="text-display-sm sm:text-display-md text-slate-900 font-extrabold tracking-tight mt-3">
               Legacy Aggregation vs. Autonomous Shipping
             </h2>
-            <p className="text-sm sm:text-base text-slate-600 mt-3 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base text-slate-600 mt-3 max-w-2xl mx-auto leading-relaxed font-normal">
               Standard aggregators only route packages based on simple cost rules. Courier Express combines predictive AI, instant WhatsApp verification, and automated SLA shielding.
             </p>
           </div>
@@ -433,21 +458,17 @@ export default function CourierExpressPage() {
                 {/* Top Section Header: Left Info + Value Rail & Right Isometric 3D Ecommerce Image */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-12">
                   {/* Left Header Info & 3 Value Badges */}
-                  <div className="lg:col-span-6 flex flex-col gap-4">
-                    <div className="flex items-center gap-2">
-                      <span className="text-xs font-mono font-bold uppercase tracking-widest text-teal-600">
-                        STRATEGIC TRANSFORMATION
-                      </span>
-                    </div>
-                    <h2 className="text-display-md sm:text-display-lg font-extrabold text-slate-900 tracking-tight leading-tight">
-                      Four Pillars of Autonomous E-Commerce Fulfillment
+                  <div className="lg:col-span-6 flex flex-col items-start">
+                    <Eyebrow tone="brand">STRATEGIC TRANSFORMATION</Eyebrow>
+                    <h2 className="text-display-sm sm:text-display-md font-extrabold text-slate-900 tracking-tight leading-tight mt-3">
+                      Core Capabilities of Autonomous <span className="inline-block whitespace-nowrap">E-Commerce</span> Fulfillment
                     </h2>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xl">
-                      Explore Courier Express capabilities engineered for high-growth operations.
+                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl font-normal mt-3">
+                      Explore Courier Express capabilities engineered for high-growth operations and autonomous fulfillment resilience.
                     </p>
 
                     {/* 3 Horizontal Value Proof Badges */}
-                    <div className="flex flex-wrap items-center gap-3 mt-2">
+                    <div className="flex flex-wrap items-center gap-3 mt-5">
                       <div className="flex items-center gap-3 bg-white border border-slate-200/80 rounded-2xl px-4 py-2.5 shadow-2xs">
                         <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-teal-600">
                           <Box className="size-4" />
@@ -507,10 +528,10 @@ export default function CourierExpressPage() {
                   </div>
                 </div>
 
-                {/* 4 Pillars Tabbed Navigation Bar */}
+                {/* Capabilities Tabbed Navigation Bar */}
                 <div 
                   data-lenis-prevent="true"
-                  className="flex items-center md:justify-center gap-2.5 overflow-x-auto overscroll-x-contain touch-pan-x scrollbar-none pb-2 mb-8 md:mb-10 px-1"
+                  className="flex items-center md:justify-center gap-2 overflow-x-auto overscroll-x-contain touch-pan-x scrollbar-none pb-2 mb-8 md:mb-10 px-1"
                   style={{ WebkitOverflowScrolling: "touch" }}
                 >
                   {COURIER_ROLE_TABS.map((tab) => {
@@ -522,14 +543,14 @@ export default function CourierExpressPage() {
                         type="button"
                         onClick={() => setActiveTab(tab.id)}
                         className={cn(
-                          "flex shrink-0 whitespace-nowrap items-center gap-2.5 px-4 sm:px-5 py-2 sm:py-3 rounded-2xl text-xs font-extrabold transition-all duration-300 cursor-pointer shadow-2xs border",
+                          "flex shrink-0 whitespace-nowrap items-center gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full text-xs font-bold transition-all duration-300 cursor-pointer shadow-2xs border",
                           isActive
                             ? "bg-[#0a2328] border-[#0a2328] text-white shadow-md scale-[1.02]"
                             : "bg-white border-slate-200/90 text-slate-700 hover:border-teal-400 hover:text-teal-700 hover:bg-teal-50/50"
                         )}
                       >
-                        <div className={cn("flex size-6 items-center justify-center rounded-lg transition-colors", isActive ? "bg-teal-500/20 text-teal-300" : "bg-slate-100 text-slate-500")}>
-                          <Icon className="size-3.5" />
+                        <div className={cn("flex size-5 items-center justify-center rounded-full transition-colors shrink-0", isActive ? "bg-teal-500/20 text-teal-300" : "bg-slate-100 text-slate-500")}>
+                          <Icon className="size-3" />
                         </div>
                         {tab.label}
                       </button>
@@ -537,164 +558,84 @@ export default function CourierExpressPage() {
                   })}
                 </div>
 
-                {/* Active Pillar Showcase Card & Dynamic Dashboard UI Mockup */}
+                {/* Active Capability Showcase Card & Dynamic Dashboard UI Mockup */}
                 <div className="space-y-6">
-                  {/* Main Showcase Container */}
-                  <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/80 shadow-md">
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-                      {/* Left Sub-Column: Feature Info & Points */}
-                      <div className="lg:col-span-5 flex flex-col justify-between gap-6">
-                        <div>
+                  {/* 2-Column Showcase Container (Matching Freight Reference) */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-5 items-stretch">
+                  {/* Left Hero Image Card */}
+                  <div className="lg:col-span-5 relative rounded-2xl overflow-hidden min-h-[290px] sm:min-h-[320px] lg:min-h-[340px] flex flex-col justify-end p-5 sm:p-6 shadow-md border border-slate-200/80 group">
+                    <img
+                      src={currentTab.heroImage || "https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=1200&auto=format&fit=crop"}
+                      alt={currentTab.fullTitle}
+                      className="absolute inset-0 size-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                      suppressHydrationWarning
+                    />
+                    {/* Dark Mask Gradient Overlay */}
+                    <div className="absolute inset-0 bg-linear-to-t from-slate-950/95 via-slate-950/60 to-transparent pointer-events-none" />
 
-
-                          {/* Title */}
-                          <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                            {currentTab.label.replace(/^Pillar \d+: /, "")}
-                          </h3>
-
-                          {/* Subtitle / Intro */}
-                          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal mt-2">
-                            {currentTab.intro}
-                          </p>
-
-                          {/* Feature Points List Grid */}
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
-                            {currentTab.points.map((point, idx) => (
-                              <div key={idx} className="flex gap-3 items-start p-3.5 rounded-2xl bg-slate-50/80 border border-slate-100 hover:border-teal-200 hover:bg-teal-50/30 transition-all">
-                                <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-teal-100/80 text-teal-700 font-bold mt-0.5">
-                                  {idx === 0 ? <Eye className="size-4" /> : idx === 1 ? <Clock className="size-4" /> : idx === 2 ? <Activity className="size-4" /> : <Bell className="size-4" />}
-                                </div>
-                                <div>
-                                  <h4 className="text-xs font-bold text-slate-900 leading-tight">{point.title}</h4>
-                                  <p className="text-[11px] text-slate-600 leading-relaxed mt-1 font-normal">{point.desc}</p>
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Right Sub-Column: Dynamic Courier Interactive Dashboard UI Mockup */}
-                      <div className="lg:col-span-7 bg-[#f8fafc] border border-slate-200/90 rounded-2xl p-4 sm:p-5 flex gap-4 shadow-2xs overflow-hidden">
-                        {/* Left Dark Teal Vertical App Menu Bar */}
-                        <div className="w-12 sm:w-14 bg-[#082025] rounded-xl p-3 flex flex-col items-center justify-between text-teal-400 shrink-0">
-                          <div className="flex flex-col gap-5 items-center">
-                            <div className="size-8 rounded-lg bg-teal-500/20 flex items-center justify-center text-teal-300">
-                              <LayoutGrid className="size-4" />
-                            </div>
-                            <Truck className="size-4 text-slate-400 hover:text-teal-300 transition-colors cursor-pointer" />
-                            <Package className="size-4 text-slate-400 hover:text-teal-300 transition-colors cursor-pointer" />
-                            <Activity className="size-4 text-slate-400 hover:text-teal-300 transition-colors cursor-pointer" />
-                            <Globe className="size-4 text-slate-400 hover:text-teal-300 transition-colors cursor-pointer" />
-                            <Bell className="size-4 text-slate-400 hover:text-teal-300 transition-colors cursor-pointer" />
-                          </div>
-                          <Settings className="size-4 text-slate-500 hover:text-slate-300 transition-colors cursor-pointer" />
-                        </div>
-
-                        {/* Right Main Dashboard Display Panel */}
-                        <div className="flex-1 flex flex-col gap-4 overflow-hidden">
-                          {/* Top Metric Header Card */}
-                          <div className="bg-white rounded-xl border border-slate-200/80 p-3.5 shadow-2xs">
-                            <h5 className="text-xs font-extrabold text-slate-900 mb-3">{currentTab.dashboardTitle}</h5>
-                            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                              {currentTab.metrics.map((metric, mIdx) => (
-                                <div key={mIdx} className="flex flex-col">
-                                  <span className="text-[10px] text-slate-500 font-semibold truncate">{metric.label}</span>
-                                  <span className="text-sm font-extrabold text-slate-900 mt-0.5">{metric.val}</span>
-                                  <span className="text-[10px] text-emerald-600 font-bold truncate">{metric.change}</span>
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-
-                          {/* Bottom 2 Widgets Grid */}
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 flex-1">
-                            {/* Mini Map Widget */}
-                            <div className="bg-white rounded-xl border border-slate-200/80 p-3 flex flex-col justify-between shadow-2xs">
-                              <h6 className="text-[11px] font-extrabold text-slate-900">{currentTab.widget1Title}</h6>
-                              <div className="relative h-28 my-1 flex items-center justify-center overflow-hidden rounded-lg bg-teal-50/30">
-                                <svg viewBox="0 0 300 120" className="w-full h-full object-contain">
-                                  <path d="M 40 70 Q 120 20 200 60 Q 240 30 270 50" stroke="#0d9488" strokeWidth="1.5" strokeDasharray="3 3" strokeOpacity="0.8" fill="none" />
-                                  <circle cx="40" cy="70" r="4" fill="#0284c7" />
-                                  <circle cx="120" cy="40" r="4" fill="#0d9488" />
-                                  <circle cx="200" cy="60" r="4" fill="#16a34a" />
-                                  <circle cx="270" cy="50" r="4" fill="#ea580c" />
-                                </svg>
-                              </div>
-                              <div className="flex flex-wrap items-center justify-between text-[9px] text-slate-500 font-medium">
-                                <span className="flex items-center gap-1"><span className="size-1.5 rounded-full bg-sky-600" />Dispatch</span>
-                                <span className="flex items-center gap-1"><span className="size-1.5 rounded-full bg-teal-600" />In Transit</span>
-                                <span className="flex items-center gap-1"><span className="size-1.5 rounded-full bg-green-600" />Delivered</span>
-                                <span className="flex items-center gap-1"><span className="size-1.5 rounded-full bg-orange-600" />NDR Fixed</span>
-                              </div>
-                            </div>
-
-                            {/* Mini Graph Widget */}
-                            <div className="bg-white rounded-xl border border-slate-200/80 p-3 flex flex-col justify-between shadow-2xs">
-                              <div className="flex items-center justify-between">
-                                <h6 className="text-[11px] font-extrabold text-slate-900">{currentTab.widget2Title}</h6>
-                                <span className="text-[9px] text-slate-500 font-bold flex items-center gap-0.5 border px-1.5 py-0.5 rounded">Live <ChevronDown className="size-2.5" /></span>
-                              </div>
-                              <div className="relative h-28 my-1 flex items-center justify-center">
-                                <svg viewBox="0 0 300 120" className="w-full h-full object-contain">
-                                  <path d="M 20 90 L 60 70 L 100 80 L 140 60 L 180 68 L 220 45 L 260 55" fill="none" stroke="#0d9488" strokeWidth="2" />
-                                  <circle cx="220" cy="45" r="4" fill="#0d9488" />
-                                  <rect x="200" y="20" width="40" height="18" rx="4" fill="#09252a" />
-                                  <text x="220" y="32" fill="#38bdf8" fontSize="10" fontWeight="bold" textAnchor="middle">{pillarIndex * 140 + 420}</text>
-                                </svg>
-                              </div>
-                              <div className="flex items-center justify-between text-[9px] text-slate-400 font-mono">
-                                <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                    <div className="relative z-10 flex flex-col items-start gap-1.5">
+                      <h3 className="text-base sm:text-lg lg:text-xl font-extrabold text-white leading-snug tracking-tight">
+                        {currentTab.fullTitle}
+                      </h3>
+                      <p className="text-xs text-slate-200/90 leading-relaxed font-normal max-w-md line-clamp-3 mt-0.5">
+                        {currentTab.intro}
+                      </p>
                     </div>
                   </div>
 
-                  {/* Bottom Value Rail (4 Pillars Proof Cards - 2 per row on Mobile) */}
-                  <div className="bg-white rounded-2xl border border-slate-200/80 p-4 sm:p-6 shadow-2xs grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-start">
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2.5 sm:gap-3.5">
-                      <div className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 border border-teal-100">
-                        <TrendingUp className="size-4 sm:size-5" />
-                      </div>
-                      <div>
-                        <h5 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Increase Throughput</h5>
-                        <p className="text-[11px] text-slate-600 leading-normal mt-0.5">Accelerate movement and improve order fulfillment.</p>
-                      </div>
-                    </div>
+                  {/* Right 2x2 Feature Cards Grid */}
+                  <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5">
+                    {currentTab.points.map((point, index) => (
+                      <div
+                        key={index}
+                        className="group relative flex flex-col justify-start rounded-xl border border-slate-200/80 bg-white p-4 sm:p-5 shadow-2xs transition-all duration-300 hover:-translate-y-1 hover:border-teal-300 hover:shadow-md"
+                      >
+                        {/* Circle Icon Badge */}
+                        <div className="flex size-9 items-center justify-center rounded-xl bg-teal-50 text-teal-600 border border-teal-100/80 transition-colors duration-300 group-hover:bg-teal-600 group-hover:text-white mb-3 shadow-2xs">
+                          <CheckCircle2 className="size-4.5" />
+                        </div>
 
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2.5 sm:gap-3.5">
-                      <div className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 border border-teal-100">
-                        <DollarSign className="size-4 sm:size-5" />
-                      </div>
-                      <div>
-                        <h5 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Reduce Costs</h5>
-                        <p className="text-[11px] text-slate-600 leading-normal mt-0.5">Optimize resources and minimize operational waste.</p>
-                      </div>
-                    </div>
+                        {/* Title */}
+                        <h4 className="text-xs sm:text-sm font-extrabold text-slate-900 tracking-tight leading-snug group-hover:text-teal-700 transition-colors">
+                          {point.title}
+                        </h4>
 
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2.5 sm:gap-3.5">
-                      <div className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 border border-teal-100">
-                        <Target className="size-4 sm:size-5" />
+                        {/* Description */}
+                        <p className="mt-1.5 text-xs text-slate-600 leading-relaxed font-normal">
+                          {point.desc}
+                        </p>
                       </div>
-                      <div>
-                        <h5 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Improve Accuracy</h5>
-                        <p className="text-[11px] text-slate-600 leading-normal mt-0.5">Real-time data ensures better decisions and fewer errors.</p>
-                      </div>
-                    </div>
-
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2.5 sm:gap-3.5">
-                      <div className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 border border-teal-100">
-                        <Users className="size-4 sm:size-5" />
-                      </div>
-                      <div>
-                        <h5 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Scale with Confidence</h5>
-                        <p className="text-[11px] text-slate-600 leading-normal mt-0.5">Built to grow across locations, partners, and business models.</p>
-                      </div>
-                    </div>
+                    ))}
                   </div>
+                </div>
+
+                {/* Bottom Result Rail ("THE RESULT" Banner) */}
+                <ProductResultBanner
+                  eyebrow="THE RESULT"
+                  headline="45% lower RTO. 99.4% SLA adherence. Sub-second dispatch."
+                  stats={[
+                    {
+                      icon: Clock,
+                      title: "Same-Day Dispatch",
+                      description: "Automated routing and batch label generation accelerate fulfillment speed.",
+                    },
+                    {
+                      icon: Eye,
+                      title: "Real-Time Tracking",
+                      description: "Live WhatsApp milestone alerts keep buyers updated every step of the way.",
+                    },
+                    {
+                      icon: ShieldCheck,
+                      title: "45% RTO Reduction",
+                      description: "AI address correction and pre-dispatch COD verification stop bad orders.",
+                    },
+                    {
+                      icon: TrendingUp,
+                      title: "Multi-Carrier Scale",
+                      description: "Orchestrate 25+ national and hyper-local couriers on one platform.",
+                    },
+                  ]}
+                />
                 </div>
               </>
             );
@@ -709,13 +650,16 @@ export default function CourierExpressPage() {
             {/* Left side details */}
             <div className="flex flex-col justify-center">
               <Eyebrow tone="brand">PREDICTIVE SHIPPING AI</Eyebrow>
-              <h2 className="text-display-sm sm:text-display-md text-slate-900 font-extrabold tracking-tight mt-3 mb-6">
+              <h2 className="text-display-sm sm:text-display-md text-slate-900 font-extrabold tracking-tight mt-3">
                 Cognitive Shipping: AI That Solves Bottlenecks Before They Happen
               </h2>
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal mt-3 mb-6 max-w-xl">
+                Real-time telemetry and autonomous exception routing that catch delivery failures, predict transit delays, and shield your bottom line before packages depart.
+              </p>
               
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <span className="flex shrink-0 size-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-teal-500 text-white font-mono text-sm font-extrabold">
+                  <span className="flex shrink-0 size-10 items-center justify-center rounded-xl bg-linear-to-br from-brand-600 to-teal-500 text-white font-mono text-sm font-extrabold">
                     1
                   </span>
                   <div className="flex-1 pt-0.5">
@@ -727,7 +671,7 @@ export default function CourierExpressPage() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <span className="flex shrink-0 size-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-teal-500 text-white font-mono text-sm font-extrabold">
+                  <span className="flex shrink-0 size-10 items-center justify-center rounded-xl bg-linear-to-br from-brand-600 to-teal-500 text-white font-mono text-sm font-extrabold">
                     2
                   </span>
                   <div className="flex-1 pt-0.5">
@@ -739,7 +683,7 @@ export default function CourierExpressPage() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <span className="flex shrink-0 size-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-teal-500 text-white font-mono text-sm font-extrabold">
+                  <span className="flex shrink-0 size-10 items-center justify-center rounded-xl bg-linear-to-br from-brand-600 to-teal-500 text-white font-mono text-sm font-extrabold">
                     3
                   </span>
                   <div className="flex-1 pt-0.5">
@@ -801,78 +745,59 @@ export default function CourierExpressPage() {
       </Section>
 
       {/* ── 6. Integrations & Developer-First Ecosystem ── */}
-      <Section tone="white" spacing="lg" className="border-t border-hairline">
-        <Container>
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-display-sm sm:text-display-md text-slate-900 font-extrabold tracking-tight">
-              Connect Your Entire E-Commerce Stack in 2 Minutes
-            </h2>
-            <p className="text-sm text-slate-600 mt-2 leading-relaxed">
-              Native, one-click plug-and-play integrations for every major e-commerce store, marketplace, and ERP system.
-            </p>
-          </div>
-
-          <div className="grid gap-8 md:grid-cols-3">
-            {/* Storefronts */}
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-md hover:shadow-teal-500/10 cursor-pointer">
-              <span className="flex size-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600 mb-4">
-                <Globe className="size-5" />
-              </span>
-              <h3 className="text-sm font-bold text-slate-900 mb-3">Storefront Connections</h3>
-              <p className="text-xs text-slate-600 mb-4 leading-relaxed">
-                Connect instantly to top e-commerce platforms and marketplaces.
-              </p>
-              <div className="flex flex-wrap gap-1.5">
-                {STOREFRONTS.map((sf, idx) => (
-                  <span key={idx} className="text-[10px] text-slate-600 bg-slate-100 px-2 py-0.5 rounded-md font-medium">
-                    {sf}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Carrier Networks */}
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-md hover:shadow-teal-500/10 cursor-pointer">
-              <span className="flex size-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600 mb-4">
-                <Truck className="size-5" />
-              </span>
-              <h3 className="text-sm font-bold text-slate-900 mb-3">Carrier Network</h3>
-              <p className="text-xs text-slate-600 mb-4 leading-relaxed">
-                Pre-routed integrations with global and local logistics providers.
-              </p>
-              <div className="flex flex-wrap gap-1.5">
-                {CARRIERS.map((cr, idx) => (
-                  <span key={idx} className="text-[10px] text-slate-600 bg-slate-100 px-2 py-0.5 rounded-md font-medium">
-                    {cr}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Developer Flexibility */}
-            <div className="rounded-2xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-md hover:shadow-teal-500/10 cursor-pointer">
-              <span className="flex size-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600 mb-4">
-                <Code className="size-5" />
-              </span>
-              <h3 className="text-sm font-bold text-slate-900 mb-3">Developer Flexibility</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                RESTful APIs, webhooks for live status updates, and custom shipping rules builder for high-volume enterprise brands.
-              </p>
-            </div>
-          </div>
-        </Container>
-      </Section>
+      <ProductStandardsIntegrations
+        id="enterprise-integrations"
+        eyebrow="ECOSYSTEM & CONNECTIVITY"
+        title="Built for Industry Standards."
+        highlightTitle="Plug-and-Play E-Commerce Stack."
+        description="Native, one-click plug-and-play integrations for every major e-commerce store, marketplace, regional carrier, and enterprise ERP system."
+        pills={[
+          "Shopify Plus",
+          "WooCommerce",
+          "Magento",
+          "Amazon Seller",
+          "FedEx",
+          "DHL Express",
+          "Delhivery",
+          "BlueDart",
+        ]}
+        features={[
+          {
+            icon: Globe,
+            iconBg: "bg-teal-50 text-teal-600 border border-teal-200/80",
+            title: "Instant Storefront Connectors",
+            description:
+              "One-click native integrations automatically ingest orders from Shopify, WooCommerce, Magento, and marketplace channels.",
+          },
+          {
+            icon: Truck,
+            iconBg: "bg-amber-50 text-amber-600 border border-amber-200/80",
+            title: "Carrier Rate Orchestration",
+            description:
+              "Pre-routed APIs with leading express couriers for automatic rate comparison, label generation, and dispatch handover.",
+          },
+          {
+            icon: Code,
+            iconBg: "bg-indigo-50 text-indigo-600 border border-indigo-200/80",
+            title: "Developer & Enterprise APIs",
+            description:
+              "RESTful APIs, webhooks for live status telemetry, and automated NDR workflows for high-volume enterprise brands.",
+          },
+        ]}
+        visualImage="/assets/laptop_integration_visual.png"
+        visualAlt="Courier Express E-Commerce Ecosystem and Dashboards"
+      />
 
       {/* ── 7. Enterprise Security & Infrastructure (Referred from WMS/Freight) ── */}
       <Section tone="sunken" spacing="lg" className="border-t border-hairline">
         <Container>
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-16 flex flex-col items-center">
             <Eyebrow tone="brand">DATA GOVERNANCE & COMPLIANCE</Eyebrow>
             <h2 className="text-display-sm sm:text-display-md text-slate-900 font-extrabold tracking-tight mt-3">
               Enterprise-Grade Infrastructure & ISO 9001 Quality
             </h2>
-            <p className="text-sm text-slate-600 mt-2">
-              Established protocols to protect all operational and shipping logs.
+            <p className="text-sm sm:text-base text-slate-600 mt-3 leading-relaxed font-normal">
+              Established protocols to protect all operational, buyer, and shipping telemetry logs.
             </p>
           </div>
 
@@ -886,7 +811,7 @@ export default function CourierExpressPage() {
                   className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-6 shadow-2xs transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-300 hover:shadow-lg hover:shadow-teal-500/5 cursor-pointer overflow-hidden"
                 >
                   {/* Top Subtle Teal Gradient Accent Line */}
-                  <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-teal-500 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute top-0 left-0 right-0 h-0.5 bg-linear-to-r from-teal-500 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                   <div>
                     {/* Icon Badge */}
@@ -903,12 +828,6 @@ export default function CourierExpressPage() {
                     <p className="text-xs text-slate-600 mt-2 leading-relaxed font-normal">
                       {point.desc}
                     </p>
-                  </div>
-
-                  {/* Bottom Learn More Indicator */}
-                  <div className="mt-5 flex items-center gap-1.5 text-xs font-bold text-teal-600 transition-all duration-300 group-hover:translate-x-1">
-                    <span>Explore governance</span>
-                    <ArrowRight className="size-3.5" />
                   </div>
                 </div>
               );

@@ -9,7 +9,7 @@ import { Breadcrumb } from "@/app/shared/ui/Breadcrumb";
 import { cn } from "@/app/core/lib/cn";
 
 export const metadata: Metadata = {
-  title: "Executive Insights & Engineering Perspectives | NXT Orbit",
+  title: "Executive Insights & Perspectives",
   description: "Proven strategies, architectural patterns, and actionable analysis for enterprise technology and operations leaders.",
 };
 
@@ -94,7 +94,7 @@ export default function InsightsIndexPage() {
                           alt={item.title}
                           className="size-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-80" />
+                        <div className="absolute inset-0 bg-linear-to-t from-slate-950/80 via-transparent to-transparent opacity-80" />
                         <div className="absolute bottom-3 left-3 flex items-center gap-2 px-3 py-1 rounded-lg bg-black/50 backdrop-blur-md border border-white/20 text-white text-xs font-mono uppercase tracking-wider">
                           <Icon className="size-3.5 text-teal-400" />
                           <span>{item.readTime}</span>

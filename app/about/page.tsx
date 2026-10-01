@@ -40,7 +40,7 @@ import { CallToAction } from "@/app/shared/sections/CallToAction";
 import { cn } from "@/app/core/lib/cn";
 
 export const metadata: Metadata = {
-  title: "About NXT Orbit | Enterprise Engineering, Built Around Your Business",
+  title: "About Us — Enterprise Engineering, Built Around Your Business",
   description:
     "NXT Orbit designs, modernizes, and maintains scalable enterprise software — guided by our Keep It Simple philosophy and a business-first approach.",
   metadataBase: new URL("https://nxt-orbit.com"),
@@ -249,11 +249,11 @@ export default function AboutPage() {
         {/* Multi-layered overlay for high contrast and readability */}
         <div 
           aria-hidden
-          className="absolute inset-0 -z-10 bg-gradient-to-r from-white via-white/95 to-white/40 lg:via-white/90 lg:to-transparent" 
+          className="absolute inset-0 -z-10 bg-linear-to-r from-white via-white/95 to-white/40 lg:via-white/90 lg:to-transparent" 
         />
         <div 
           aria-hidden
-          className="absolute inset-0 -z-10 bg-gradient-to-t from-white via-transparent to-white/60" 
+          className="absolute inset-0 -z-10 bg-linear-to-t from-white via-transparent to-white/60" 
         />
 
         <Container className="relative z-10 w-full">
@@ -269,7 +269,7 @@ export default function AboutPage() {
             <Reveal from="up" delay={0.06}>
               <h1 className="text-display-md sm:text-display-lg lg:text-display-xl font-black text-slate-900 tracking-tight leading-[1.12]">
                 Building Enterprise Technology with{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#008c83] via-teal-600 to-cyan-600">
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-[#008c83] via-teal-600 to-cyan-600">
                   Business Understanding
                 </span>{" "}
                 at the Center.
@@ -408,8 +408,8 @@ export default function AboutPage() {
             className="w-full h-full object-cover object-right opacity-90 lg:opacity-100"
           />
           {/* Edge gradient masks so text on left remains 100% readable while the globe & laptop visual on right is crisp and clear */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#030b18] via-[#030b18]/70 to-transparent lg:via-[#030b18]/45" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#030b18]/70 via-transparent to-[#030b18]/40" />
+          <div className="absolute inset-0 bg-linear-to-r from-[#030b18] via-[#030b18]/70 to-transparent lg:via-[#030b18]/45" />
+          <div className="absolute inset-0 bg-linear-to-t from-[#030b18]/70 via-transparent to-[#030b18]/40" />
         </div>
 
         <Container className="relative z-10">
@@ -422,7 +422,7 @@ export default function AboutPage() {
                 </span>
                 <h2 className="mt-2.5 text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-[1.2]">
                   Built on Business Understanding.{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00d2c4] via-teal-300 to-cyan-400">
+                  <span className="text-transparent bg-clip-text bg-linear-to-r from-[#00d2c4] via-teal-300 to-cyan-400">
                     Strengthened by Engineering.
                   </span>
                 </h2>
@@ -571,7 +571,7 @@ export default function AboutPage() {
           </div>
 
           {/* Bottom visual checkpoint sequence strip matching reference design */}
-          <div className="rounded-3xl border border-teal-200/90 bg-gradient-to-br from-white via-white to-teal-50/25 p-5 sm:p-7 lg:p-8 shadow-[0_4px_24px_rgba(0,140,131,0.06)]">
+          <div className="rounded-3xl border border-teal-200/90 bg-linear-to-br from-white via-white to-teal-50/25 p-5 sm:p-7 lg:p-8 shadow-[0_4px_24px_rgba(0,140,131,0.06)]">
             {/* Header: Shield Icon | QUALITY CHECKPOINT SEQUENCE */}
             <div className="flex items-center gap-3 mb-8 sm:mb-10">
               <div className="flex size-8 items-center justify-center rounded-lg bg-teal-50 text-[#008c83] border border-teal-200/70 shadow-xs">
@@ -598,7 +598,7 @@ export default function AboutPage() {
                     )}
 
                     {/* Icon Badge */}
-                    <div className="relative z-10 flex size-14 xl:size-16 items-center justify-center rounded-full border-2 border-teal-200/90 bg-gradient-to-b from-teal-50 to-white transition-all duration-300 group-hover:scale-105 group-hover:border-[#00d2c4]">
+                    <div className="relative z-10 flex size-14 xl:size-16 items-center justify-center rounded-full border-2 border-teal-200/90 bg-linear-to-b from-teal-50 to-white transition-all duration-300 group-hover:scale-105 group-hover:border-[#00d2c4]">
                       <Icon className="size-6 text-[#008c83]" />
                     </div>
 
@@ -634,7 +634,7 @@ export default function AboutPage() {
                     )}
 
                     {/* Icon Badge */}
-                    <div className="relative z-10 flex size-12 sm:size-14 shrink-0 items-center justify-center rounded-full border-2 border-teal-200/90 bg-gradient-to-b from-teal-50 to-white transition-all duration-300 group-hover:scale-105 group-hover:border-[#00d2c4]">
+                    <div className="relative z-10 flex size-12 sm:size-14 shrink-0 items-center justify-center rounded-full border-2 border-teal-200/90 bg-linear-to-b from-teal-50 to-white transition-all duration-300 group-hover:scale-105 group-hover:border-[#00d2c4]">
                       <Icon className="size-5 sm:size-6 text-[#008c83]" />
                     </div>
 
@@ -678,8 +678,8 @@ export default function AboutPage() {
             className="w-full h-full object-cover object-right opacity-80 lg:opacity-90"
           />
           {/* Edge gradient masks so text on left remains 100% readable while handshake on right shines */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#040d1a] via-[#040d1a]/80 to-transparent lg:via-[#040d1a]/60" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#040d1a] via-transparent to-[#040d1a]/60" />
+          <div className="absolute inset-0 bg-linear-to-r from-[#040d1a] via-[#040d1a]/80 to-transparent lg:via-[#040d1a]/60" />
+          <div className="absolute inset-0 bg-linear-to-t from-[#040d1a] via-transparent to-[#040d1a]/60" />
         </div>
 
         <Container className="relative z-10">
@@ -725,7 +725,7 @@ export default function AboutPage() {
                   </div>
 
                   {/* Subtle bottom glowing accent line */}
-                  <div className="mt-3.5 h-0.5 w-8 rounded-full bg-gradient-to-r from-[#00d2c4] to-transparent opacity-60 group-hover:w-full group-hover:opacity-100 transition-all duration-500" />
+                  <div className="mt-3.5 h-0.5 w-8 rounded-full bg-linear-to-r from-[#00d2c4] to-transparent opacity-60 group-hover:w-full group-hover:opacity-100 transition-all duration-500" />
                 </div>
               );
             })}
@@ -786,12 +786,9 @@ export default function AboutPage() {
           {/* Section Header */}
           <div className="max-w-3xl mb-12 sm:mb-14">
             <Reveal from="up">
-              {/* Eyebrow: Dash + Our Team */}
-              <div className="flex items-center gap-2.5 mb-3">
-                <span className="w-7 h-0.5 bg-[#008c83] rounded-full inline-block" />
-                <span className="text-xs sm:text-sm font-semibold text-[#008c83] tracking-wide">
-                  Our Team
-                </span>
+              {/* Eyebrow: Our Team */}
+              <div className="mb-3">
+                <Eyebrow tone="brand">OUR TEAM</Eyebrow>
               </div>
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">

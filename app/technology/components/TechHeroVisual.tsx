@@ -13,7 +13,7 @@ export function TechHeroVisual({ slug, title, techStack }: TechHeroVisualProps) 
       case "flutter":
         return (
           <div className="relative flex items-center justify-center p-8">
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#01B5F6]/10 to-[#02569B]/15 rounded-3xl blur-xl" />
+            <div className="absolute inset-0 bg-linear-to-tr from-[#01B5F6]/10 to-[#02569B]/15 rounded-3xl blur-xl" />
             <div className="relative z-10 flex flex-col items-center">
               {/* Flutter Official SVG Logo */}
               <svg className="w-32 h-32 md:w-40 md:h-40 drop-shadow-2xl animate-float-slow" viewBox="0 0 100 100" fill="none">
@@ -32,7 +32,7 @@ export function TechHeroVisual({ slug, title, techStack }: TechHeroVisualProps) 
       case "react-native":
         return (
           <div className="relative flex items-center justify-center p-8">
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#61DAFB]/10 to-[#00BBA9]/15 rounded-3xl blur-xl" />
+            <div className="absolute inset-0 bg-linear-to-tr from-[#61DAFB]/10 to-[#00BBA9]/15 rounded-3xl blur-xl" />
             <div className="relative z-10 flex flex-col items-center">
               {/* React Native Spinning Orbit Atom Logo */}
               <svg className="w-32 h-32 md:w-40 md:h-40 drop-shadow-2xl animate-spin-slow" viewBox="0 0 100 100" fill="none">
@@ -51,7 +51,7 @@ export function TechHeroVisual({ slug, title, techStack }: TechHeroVisualProps) 
       case "ios":
         return (
           <div className="relative flex items-center justify-center p-8">
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#F05138]/10 to-[#FF8000]/15 rounded-3xl blur-xl" />
+            <div className="absolute inset-0 bg-linear-to-tr from-[#F05138]/10 to-[#FF8000]/15 rounded-3xl blur-xl" />
             <div className="relative z-10 flex flex-col items-center">
               {/* Swift Bird Official SVG Logo */}
               <svg className="w-32 h-32 md:w-40 md:h-40 drop-shadow-2xl animate-float-slow" viewBox="0 0 128 128" fill="none">
@@ -74,7 +74,7 @@ export function TechHeroVisual({ slug, title, techStack }: TechHeroVisualProps) 
       case "android":
         return (
           <div className="relative flex items-center justify-center p-8">
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#3DDC84]/10 to-[#00BBA9]/15 rounded-3xl blur-xl" />
+            <div className="absolute inset-0 bg-linear-to-tr from-[#3DDC84]/10 to-[#00BBA9]/15 rounded-3xl blur-xl" />
             <div className="relative z-10 flex flex-col items-center">
               {/* Android Bugdroid Official SVG Logo */}
               <svg className="w-32 h-32 md:w-40 md:h-40 drop-shadow-2xl animate-float-slow" viewBox="0 0 100 100">
@@ -100,7 +100,7 @@ export function TechHeroVisual({ slug, title, techStack }: TechHeroVisualProps) 
       case "nodejs":
         return (
           <div className="relative flex items-center justify-center p-8">
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#339933]/10 to-[#00BBA9]/15 rounded-3xl blur-xl" />
+            <div className="absolute inset-0 bg-linear-to-tr from-[#339933]/10 to-[#00BBA9]/15 rounded-3xl blur-xl" />
             <div className="relative z-10 flex flex-col items-center">
               {/* Node.js Hexagon Official SVG Logo */}
               <svg className="w-32 h-32 md:w-40 md:h-40 drop-shadow-2xl animate-float-slow" viewBox="0 0 100 100" fill="none">
@@ -120,7 +120,7 @@ export function TechHeroVisual({ slug, title, techStack }: TechHeroVisualProps) 
       default:
         return (
           <div className="relative flex items-center justify-center p-8">
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#0A2E4D]/10 to-[#00BBA9]/15 rounded-3xl blur-xl" />
+            <div className="absolute inset-0 bg-linear-to-tr from-[#0A2E4D]/10 to-[#00BBA9]/15 rounded-3xl blur-xl" />
             <div className="relative z-10 flex flex-col items-center">
               {/* Next.js Emblem Logo */}
               <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-[#0A2E4D] flex items-center justify-center text-white text-5xl font-black shadow-2xl border-4 border-[#00BBA9] animate-float-slow">
@@ -136,12 +136,12 @@ export function TechHeroVisual({ slug, title, techStack }: TechHeroVisualProps) 
   };
 
   return (
-    <div className="glass-panel rounded-2xl p-6 md:p-8 bento-card-animated border border-white/80 shadow-xl relative overflow-hidden">
+    <div className="rounded-2xl p-6 md:p-8 bg-white border border-slate-200/90 shadow-lg relative overflow-hidden">
       {/* Live Badge Header */}
       <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-4">
         <span className="text-xs font-black uppercase tracking-wider text-[#006B7D]">Technology Showcase</span>
-        <span className="text-xs font-bold text-[#82C458] bg-[#82C458]/10 px-3 py-1 rounded-full flex items-center gap-1.5">
-          <span className="w-2 h-2 rounded-full bg-[#82C458]" />
+        <span className="text-xs font-bold text-teal-700 bg-teal-50 px-3 py-1 rounded-full flex items-center gap-1.5 border border-teal-200/60">
+          <span className="w-2 h-2 rounded-full bg-teal-500" />
           Active Stack
         </span>
       </div>

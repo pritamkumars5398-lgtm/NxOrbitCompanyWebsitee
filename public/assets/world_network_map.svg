@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" width="100%" height="100%">
+  <defs>
+    <!-- Soft Glow Filter -->
+    <filter id="nodeGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Subtle Edge Fade Mask -->
+    <linearGradient id="mapFadeMask" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.05"/>
+      <stop offset="35%" stop-color="#fff" stop-opacity="0.45"/>
+      <stop offset="70%" stop-color="#fff" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <!-- Arc Gradient -->
+    <linearGradient id="arcTeal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14b8a6" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#2dd4bf" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.6"/>
+    </linearGradient>
+  </defs>
+
+  <g mask="url(#mapMask)" opacity="0.95">
+    <mask id="mapMask">
+      <rect x="0" y="0" width="1200" height="650" fill="url(#mapFadeMask)" />
+    </mask>
+
+    <!-- ── Detailed World Continents in Mint Silhouette ── -->
+    <g fill="#cbf0ea" stroke="#b2e5dc" stroke-width="1.2" stroke-linejoin="round">
+      <!-- North America -->
+      <path d="M 120 70 C 145 65, 175 60, 220 75 C 240 82, 275 95, 290 120 C 310 115, 335 125, 330 145 C 315 150, 310 170, 295 185 C 285 205, 260 220, 250 240 C 235 255, 220 280, 210 300 C 205 315, 195 325, 190 315 C 185 295, 170 280, 160 260 C 145 245, 130 220, 125 195 C 110 180, 95 160, 90 140 C 80 125, 95 100, 105 85 Z" />
+      <!-- Greenland & Arctic Islands -->
+      <path d="M 330 35 C 355 30, 385 40, 395 65 C 385 85, 360 95, 340 90 C 325 80, 320 55, 330 35 Z" />
+      <path d="M 230 40 C 250 35, 270 45, 265 60 C 250 65, 235 55, 230 40 Z" />
+      <!-- Central America & Caribbean -->
+      <path d="M 205 315 C 215 325, 230 345, 245 365 C 250 375, 265 385, 275 390 C 270 395, 255 385, 245 375 C 230 355, 215 340, 205 315 Z" />
+      <circle cx="280" cy="340" r="4" />
+      <circle cx="300" cy="350" r="3" />
+      <circle cx="315" cy="360" r="3.5" />
+
+      <!-- South America -->
+      <path d="M 270 390 C 295 385, 330 395, 355 415 C 380 435, 410 465, 400 500 C 390 535, 360 575, 345 615 C 335 635, 320 650, 315 635 C 310 595, 300 560, 290 520 C 280 480, 265 450, 260 425 C 255 405, 260 395, 270 390 Z" />
+
+      <!-- Europe -->
+      <path d="M 515 90 C 530 85, 550 75, 570 85 C 585 95, 605 95, 615 110 C 600 125, 595 145, 580 160 C 565 175, 540 185, 520 180 C 505 165, 500 145, 495 130 C 500 110, 505 95, 515 90 Z" />
+      <!-- Scandinavia & UK -->
+      <path d="M 545 45 C 560 35, 575 40, 580 65 C 570 80, 555 75, 545 65 Z" />
+      <path d="M 480 100 C 490 95, 500 105, 495 125 C 485 135, 475 125, 475 115 Z" />
+      <path d="M 465 110 C 475 105, 475 120, 470 130 C 460 130, 460 115, 465 110 Z" />
+
+      <!-- Africa -->
+      <path d="M 495 185 C 530 180, 575 190, 610 205 C 640 220, 665 250, 675 285 C 665 320, 660 360, 650 400 C 635 440, 610 480, 590 515 C 570 540, 550 550, 540 530 C 530 490, 515 450, 505 405 C 490 360, 460 330, 455 285 C 450 240, 470 200, 495 185 Z" />
+      <path d="M 680 430 C 690 415, 700 425, 695 460 C 685 480, 675 465, 680 430 Z" />
+
+      <!-- Asia & Middle East -->
+      <path d="M 615 110 C 650 100, 700 90, 755 95 C 810 100, 870 80, 930 90 C 980 100, 1040 115, 1060 145 C 1050 175, 1025 200, 995 220 C 975 235, 950 245, 935 270 C 905 275, 875 260, 855 245 C 830 240, 805 255, 785 275 C 765 295, 745 320, 725 320 C 705 305, 695 280, 690 250 C 675 230, 655 210, 635 195 C 625 170, 615 135, 615 110 Z" />
+      <!-- India -->
+      <path d="M 725 260 C 750 265, 775 290, 785 325 C 775 355, 755 385, 740 400 C 730 385, 720 350, 715 320 C 710 290, 715 270, 725 260 Z" />
+      <!-- Japan -->
+      <path d="M 1030 160 C 1045 155, 1055 170, 1045 200 C 1035 220, 1020 215, 1020 190 Z" />
+      <!-- Southeast Asia & Archipelago -->
+      <path d="M 830 300 C 850 305, 860 330, 855 355 C 840 370, 825 350, 830 300 Z" />
+      <path d="M 865 370 C 895 365, 925 375, 920 395 C 890 400, 865 390, 865 370 Z" />
+      <path d="M 940 360 C 965 355, 980 375, 965 395 C 945 400, 935 380, 940 360 Z" />
+
+      <!-- Australia & New Zealand -->
+      <path d="M 920 440 C 965 425, 1020 435, 1055 465 C 1070 495, 1065 535, 1040 565 C 1000 585, 955 580, 925 560 C 900 535, 895 495, 905 465 C 910 450, 915 445, 920 440 Z" />
+      <path d="M 1090 530 C 1105 520, 1115 535, 1110 565 C 1100 585, 1085 575, 1085 550 Z" />
+    </g>
+
+    <!-- ── Connected Telemetry Arcs (Routing Paths) ── -->
+    <g fill="none" stroke="url(#arcTeal)" stroke-width="1.8" stroke-linecap="round">
+      <!-- Trans-Atlantic: NYC to London -->
+      <path d="M 285 185 Q 380 90, 485 115" stroke-dasharray="6 4" />
+      <!-- Trans-Pacific: SF to Tokyo -->
+      <path d="M 140 180 Q 580 -40, 1030 180" stroke-dasharray="7 5" opacity="0.4" />
+      <!-- Europe to Middle East & India -->
+      <path d="M 485 115 Q 600 130, 740 320" stroke-dasharray="6 4" />
+      <!-- Middle East to East Asia -->
+      <path d="M 640 220 Q 820 180, 995 220" stroke-dasharray="5 4" />
+      <!-- India to SE Asia & Australia -->
+      <path d="M 740 320 Q 840 380, 955 465" stroke-dasharray="6 4" />
+      <!-- North America to South America -->
+      <path d="M 285 185 Q 260 290, 355 465" stroke-dasharray="5 4" />
+      <!-- Europe to Africa -->
+      <path d="M 485 115 Q 530 320, 560 520" stroke-dasharray="6 4" />
+      <!-- East Asia to Australia -->
+      <path d="M 995 220 Q 1040 340, 1040 500" stroke-dasharray="5 4" />
+      <!-- Cross continent internal trunk -->
+      <path d="M 140 180 Q 210 160, 285 185" stroke-dasharray="4 3" />
+      <path d="M 550 140 Q 640 160, 740 320" stroke-dasharray="5 4" />
+    </g>
+
+    <!-- ── Glowing Telemetry Nodes (Major Global Ports & Hubs) ── -->
+    <g filter="url(#nodeGlow)">
+      <!-- New York / East Coast -->
+      <circle cx="285" cy="185" r="5" fill="#00A896" />
+      <circle cx="285" cy="185" r="9" fill="#2dd4bf" opacity="0.35" />
+
+      <!-- San Francisco / West Coast -->
+      <circle cx="140" cy="180" r="4.5" fill="#00A896" />
+      <circle cx="140" cy="180" r="8" fill="#2dd4bf" opacity="0.35" />
+
+      <!-- London / Western Europe -->
+      <circle cx="485" cy="115" r="5.5" fill="#00A896" />
+      <circle cx="485" cy="115" r="10" fill="#2dd4bf" opacity="0.4" />
+
+      <!-- Frankfurt / Central Europe -->
+      <circle cx="535" cy="135" r="4.5" fill="#00A896" />
+      <circle cx="535" cy="135" r="8" fill="#2dd4bf" opacity="0.35" />
+
+      <!-- Dubai / Middle East Hub -->
+      <circle cx="640" cy="220" r="5" fill="#00A896" />
+      <circle cx="640" cy="220" r="9" fill="#2dd4bf" opacity="0.35" />
+
+      <!-- Mumbai / JNPT India -->
+      <circle cx="740" cy="320" r="5.5" fill="#00A896" />
+      <circle cx="740" cy="320" r="10" fill="#2dd4bf" opacity="0.4" />
+
+      <!-- Singapore -->
+      <circle cx="855" cy="355" r="5" fill="#00A896" />
+      <circle cx="855" cy="355" r="9" fill="#2dd4bf" opacity="0.35" />
+
+      <!-- Shanghai / Tokyo -->
+      <circle cx="995" cy="220" r="5.5" fill="#00A896" />
+      <circle cx="995" cy="220" r="10" fill="#2dd4bf" opacity="0.4" />
+
+      <!-- Sydney Australia -->
+      <circle cx="1040" cy="500" r="5" fill="#00A896" />
+      <circle cx="1040" cy="500" r="9" fill="#2dd4bf" opacity="0.35" />
+
+      <!-- Santos / São Paulo Brazil -->
+      <circle cx="355" cy="465" r="4.5" fill="#00A896" />
+      <circle cx="355" cy="465" r="8" fill="#2dd4bf" opacity="0.35" />
+
+      <!-- Cape Town South Africa -->
+      <circle cx="560" cy="520" r="4.5" fill="#00A896" />
+      <circle cx="560" cy="520" r="8" fill="#2dd4bf" opacity="0.35" />
+    </g>
+  </g>
+</svg>

@@ -13,7 +13,7 @@ import { Container, Eyebrow, Section } from "@/app/shared/ui/Layout";
 import { TrustAndFaqSection } from "@/app/shared/sections/TrustAndFaqSection";
 
 export const metadata: Metadata = {
-  title: "Case Studies | NXTorbit",
+  title: "Case Studies",
   description: "How NXTorbit built and scaled products across social, fintech, media, and logistics.",
 };
 
@@ -55,7 +55,7 @@ export default function CaseStudiesPage() {
             <Reveal from="up" delay={0.06}>
               <h1 className="max-w-3xl text-display-lg sm:text-display-xl text-slate-900 leading-[1.05]">
                 The work, <br />
-                <span className="bg-gradient-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">
+                <span className="bg-linear-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">
                   with the numbers attached.
                 </span>
               </h1>
@@ -107,17 +107,17 @@ export default function CaseStudiesPage() {
                   </div>
 
                   <div className="flex flex-col gap-3">
-                    <h2 className="text-display-md sm:text-display-lg">{project.name}</h2>
-                    <p className="text-lead font-medium text-brand-600">{project.tagline}</p>
+                    <h2 className="text-display-md sm:text-display-lg text-slate-900 font-bold">{project.name}</h2>
+                    <p className="text-lead font-semibold text-[#006B7D]">{project.tagline}</p>
                   </div>
 
-                  <p className="max-w-xl text-base leading-relaxed text-ink-600">{project.desc}</p>
+                  <p className="max-w-xl text-base leading-relaxed text-slate-600">{project.desc}</p>
 
                   <div className="flex flex-wrap gap-2">
-                    <span className="rounded-full border border-hairline-strong px-3 py-1.5 text-xs font-medium text-ink-600">
+                    <span className="rounded-full border border-slate-200 bg-white px-3.5 py-1.5 text-xs font-semibold text-slate-700 shadow-2xs">
                       {project.platform}
                     </span>
-                    <span className="rounded-full border border-hairline-strong px-3 py-1.5 text-xs font-medium text-ink-600">
+                    <span className="rounded-full border border-teal-200/80 bg-teal-50 px-3.5 py-1.5 text-xs font-semibold text-[#008c83] shadow-2xs">
                       {project.resultLabel}
                     </span>
                   </div>
@@ -135,11 +135,11 @@ export default function CaseStudiesPage() {
                 {/* Metric slab */}
                 <Parallax distance={22}>
                   <Reveal from={flipped ? "right" : "left"} scale={0.97}>
-                    <div className="relative isolate overflow-hidden rounded-2xl bg-brand-900 p-5 sm:p-8 lg:p-10">
-                      <GridField tone="dark" className="opacity-50" />
+                    <div className="relative isolate overflow-hidden rounded-2xl bg-brand-950 p-6 sm:p-8 lg:p-10 border border-white/10 shadow-2xl shadow-brand-950/20">
+                      <GridField tone="dark" className="opacity-40" />
                       <div
                         aria-hidden
-                        className="pointer-events-none absolute -top-16 -right-12 size-56 rounded-full bg-brand-400/20 blur-3xl"
+                        className="pointer-events-none absolute -top-16 -right-12 size-56 rounded-full bg-teal-500/15 blur-3xl"
                       />
 
                       <Stagger stagger={0.1} className="relative flex flex-col divide-y divide-white/10">
@@ -147,12 +147,14 @@ export default function CaseStudiesPage() {
                           <StaggerItem
                             key={metric.label}
                             from="up"
-                            className="flex items-baseline justify-between gap-4 sm:gap-6 py-3.5 sm:py-5 first:pt-0 last:pb-0"
+                            className="flex items-baseline justify-between gap-4 sm:gap-6 py-4 sm:py-5 first:pt-0 last:pb-0"
                           >
-                            <span className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white tabular-nums">
+                            <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white tabular-nums">
                               <CountUp value={metric.value} />
                             </span>
-                            <span className="text-right text-xs sm:text-sm text-ink-400">{metric.label}</span>
+                            <span className="text-right text-xs sm:text-sm font-medium text-slate-300">
+                              {metric.label}
+                            </span>
                           </StaggerItem>
                         ))}
                       </Stagger>
@@ -169,10 +171,10 @@ export default function CaseStudiesPage() {
 
       <CallToAction
         eyebrow="READY TO START?"
-        title="Let's talk about your mobile app development project."
-        description="A 30-minute call with an engineer who has shipped this before — not a salesperson. No commitment."
-        primary={{ label: "Start Your Mobile Project", href: "/contact" }}
-        secondary={{ label: "Call +91 9763804442", href: "tel:+919763804442" }}
+        title="Let's build technology that moves your business forward."
+        description="A 30-minute consultation with an enterprise solutions architect — not a salesperson. No commitment."
+        primary={{ label: "Book a Consultation", href: "/contact" }}
+        secondary={{ label: "Talk to Our Team", href: "/contact" }}
       />
     </>
   );

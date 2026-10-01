@@ -50,7 +50,7 @@ export async function generateMetadata({
   const data = INSIGHTS_DATA[slug];
   if (!data) return { title: "Insight Not Found | NXT Orbit" };
   return {
-    title: `${data.title} | NXT Orbit Executive Insights`,
+    title: data.title,
     description: data.metaDescription,
   };
 }
@@ -95,7 +95,7 @@ export default async function InsightDetailPage({
       </div>
 
       {/* ── Editorial Hero ── */}
-      <header className="relative pt-12 pb-16 lg:pt-16 lg:pb-20 border-b border-slate-200/70 overflow-hidden bg-gradient-to-b from-slate-50/80 via-white to-white">
+      <header className="relative pt-12 pb-16 lg:pt-16 lg:pb-20 border-b border-slate-200/70 overflow-hidden bg-linear-to-b from-slate-50/80 via-white to-white">
         {/* Ambient background glows */}
         <div
           aria-hidden
@@ -166,7 +166,7 @@ export default async function InsightDetailPage({
                   />
                   <div
                     aria-hidden
-                    className="absolute inset-0 bg-gradient-to-t from-[#06131F] via-transparent to-transparent opacity-80"
+                    className="absolute inset-0 bg-linear-to-t from-[#06131F] via-transparent to-transparent opacity-80"
                   />
                   {/* Floating category badge */}
                   <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between p-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 text-white">

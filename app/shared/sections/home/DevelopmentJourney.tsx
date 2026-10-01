@@ -68,7 +68,7 @@ const JOURNEY_STEPS: JourneyStep[] = [
  */
 export function DevelopmentJourney() {
   return (
-    <section className="relative isolate overflow-hidden bg-gradient-to-r from-[#01141b] via-[#01252e] to-[#003844] py-10 lg:py-14 text-white">
+    <section className="relative isolate overflow-hidden bg-linear-to-r from-[#01141b] via-[#01252e] to-[#003844] py-10 lg:py-14 text-white">
 
       {/* Background Radial Spotlights */}
       <div
@@ -94,7 +94,7 @@ export function DevelopmentJourney() {
           {/* Connector Line */}
           <div
             aria-hidden
-            className="hidden lg:block absolute top-[28px] left-[40px] right-[40px] h-[2px] bg-gradient-to-r from-[#00d2c4]/20 via-[#00d2c4]/50 to-[#00d2c4]/20 -z-0"
+            className="hidden lg:block absolute top-[28px] left-[40px] right-[40px] h-[2px] bg-linear-to-r from-[#00d2c4]/20 via-[#00d2c4]/50 to-[#00d2c4]/20 -z-0"
           />
 
           {/* Grid of Steps */}

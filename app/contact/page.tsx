@@ -9,7 +9,7 @@ import { Container, Eyebrow, Section } from "@/app/shared/ui/Layout";
 import { ContactForm } from "./ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact NXTorbit",
+  title: "Contact Us",
   description: "Talk to an engineer about your project. We reply within one working day.",
 };
 
@@ -49,7 +49,7 @@ export default function ContactPage() {
           {/* Horizontal fade gradient: solid white behind text on the left, fading to transparent on the right */}
           <div className="absolute inset-0 bg-[linear-gradient(90deg,#ffffff_0%,#ffffff_20%,rgba(255,255,255,0.7)_35%,transparent_55%)]" />
           {/* Vertical fade to blend smoothly */}
-          <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-transparent to-white/90" />
+          <div className="absolute inset-0 bg-linear-to-b from-white/60 via-transparent to-white/90" />
         </div>
 
         <Grain />
@@ -63,7 +63,7 @@ export default function ContactPage() {
             <Reveal from="up" delay={0.06}>
               <h1 className="max-w-3xl text-display-lg sm:text-display-xl text-slate-900 leading-[1.05]">
                 Tell us what <br />
-                <span className="bg-gradient-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">
+                <span className="bg-linear-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">
                   you&apos;re building.
                 </span>
               </h1>
@@ -76,10 +76,10 @@ export default function ContactPage() {
             </Reveal>
           </div>
 
-          <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)] lg:gap-8">
+          <div className="grid items-stretch gap-6 lg:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)] lg:gap-8">
             {/* ── Dark contact rail ── */}
-            <Reveal from="right" className="lg:sticky lg:top-28">
-              <div className="relative isolate overflow-hidden rounded-2xl bg-brand-950 p-8 sm:p-9">
+            <Reveal from="right" className="h-full flex flex-col">
+              <div className="relative isolate overflow-hidden rounded-2xl bg-brand-950 p-6 sm:p-7 lg:p-8 h-full flex flex-col justify-between">
                 <GridField tone="dark" className="opacity-60" />
                 <Grain />
                 <div
@@ -87,46 +87,48 @@ export default function ContactPage() {
                   className="pointer-events-none absolute -top-20 -right-16 size-56 rounded-full bg-brand-400/20 blur-3xl"
                 />
 
-                <div className="relative flex flex-col gap-8">
-                  <div className="flex flex-col gap-2">
-                    <Eyebrow tone="light">Direct line</Eyebrow>
-                    <p className="text-lg leading-relaxed font-medium text-white">
-                      Prefer to skip the form? Call or email and you&apos;ll reach the same people.
-                    </p>
+                <div className="relative flex flex-col justify-between h-full gap-6">
+                  <div>
+                    <div className="flex flex-col gap-1.5">
+                      <Eyebrow tone="light">Direct line</Eyebrow>
+                      <p className="text-base sm:text-lg leading-snug font-medium text-white">
+                        Prefer to skip the form? Call or email and you&apos;ll reach the same people.
+                      </p>
+                    </div>
+
+                    <dl className="flex flex-col gap-4 border-t border-white/10 pt-5 mt-5">
+                      {CHANNELS.map(({ Icon, label, value, href }) => (
+                        <div key={label} className="flex gap-3">
+                          <Icon
+                            aria-hidden
+                            className="mt-0.5 size-4 shrink-0 text-brand-300"
+                            strokeWidth={1.7}
+                          />
+                          <div className="flex flex-col gap-0.5">
+                            <dt className="text-xs font-semibold text-ink-400">{label}</dt>
+                            <dd className="text-sm text-ink-200">
+                              {href ? (
+                                <a href={href} className="link-underline hover:text-white">
+                                  {value}
+                                </a>
+                              ) : (
+                                value
+                              )}
+                            </dd>
+                          </div>
+                        </div>
+                      ))}
+                    </dl>
                   </div>
 
-                  <dl className="flex flex-col gap-5 border-t border-white/10 pt-7">
-                    {CHANNELS.map(({ Icon, label, value, href }) => (
-                      <div key={label} className="flex gap-3.5">
-                        <Icon
-                          aria-hidden
-                          className="mt-0.5 size-4 shrink-0 text-brand-300"
-                          strokeWidth={1.7}
-                        />
-                        <div className="flex flex-col gap-0.5">
-                          <dt className="text-xs font-semibold text-ink-400">{label}</dt>
-                          <dd className="text-sm text-ink-200">
-                            {href ? (
-                              <a href={href} className="link-underline hover:text-white">
-                                {value}
-                              </a>
-                            ) : (
-                              value
-                            )}
-                          </dd>
-                        </div>
-                      </div>
-                    ))}
-                  </dl>
-
-                  <div className="flex flex-col gap-3 border-t border-white/10 pt-7">
+                  <div className="flex flex-col gap-2.5 border-t border-white/10 pt-5">
                     <span className="text-eyebrow uppercase text-brand-200">What to expect</span>
-                    <ul className="flex flex-col gap-2.5">
+                    <ul className="flex flex-col gap-2">
                       {PROMISES.map((promise) => (
-                        <li key={promise} className="flex gap-2.5 text-sm text-ink-300">
+                        <li key={promise} className="flex gap-2 text-xs sm:text-sm text-ink-300">
                           <span
                             aria-hidden
-                            className="mt-2 size-1 shrink-0 rounded-full bg-brand-300"
+                            className="mt-1.5 size-1 shrink-0 rounded-full bg-brand-300"
                           />
                           {promise}
                         </li>
@@ -138,7 +140,7 @@ export default function ContactPage() {
             </Reveal>
 
             {/* ── Form ── */}
-            <Reveal from="left" delay={0.08}>
+            <Reveal from="left" delay={0.08} className="h-full flex flex-col">
               <ContactForm />
             </Reveal>
           </div>

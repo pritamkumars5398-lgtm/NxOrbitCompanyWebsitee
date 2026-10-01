@@ -21,7 +21,7 @@ export function Faq() {
 
   return (
     <section
-      className="relative isolate overflow-hidden border-t border-slate-200/90 bg-gradient-to-b from-[#F8FAFC] via-white to-[#F1F5F9] py-20 sm:py-24"
+      className="relative isolate overflow-hidden border-t border-slate-200/90 bg-linear-to-b from-[#F8FAFC] via-white to-[#F1F5F9] py-20 sm:py-24"
       id="faq"
     >
       {/* Ambient background soft glow */}

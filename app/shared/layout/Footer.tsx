@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, Clock, Mail, MapPin, Phone } from "lucide-react";
 import {
   COMPANY_LINKS,
@@ -104,6 +105,24 @@ export function Footer() {
                 {CONTACT_DETAILS.hours}
               </ContactRow>
             </dl>
+
+            {/* Sister Company */}
+            <div className="pt-5 border-t border-white/10 flex flex-col items-start gap-2.5">
+              <span className="text-[11px] font-mono tracking-widest text-teal-300 font-bold uppercase">
+                Sister Company
+              </span>
+              <div className="group relative inline-flex items-center rounded-none bg-white px-4 py-2.5 sm:px-5 sm:py-3 shadow-md border border-white/20 transition-all duration-300 hover:shadow-lg hover:scale-[1.02]">
+                <Image
+                  src="/assets/IT_Next_Solutions_Logo.png"
+                  alt="ITNext Solutions — Sister Company"
+                  width={240}
+                  height={100}
+                  quality={100}
+                  priority
+                  className="h-11 sm:h-12 w-auto object-contain"
+                />
+              </div>
+            </div>
           </div>
 
           {/* Link columns */}

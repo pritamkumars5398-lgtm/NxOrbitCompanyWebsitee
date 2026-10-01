@@ -58,7 +58,7 @@ export function Industries() {
         </div>
 
         {/* Right: Clean 3D Industry Visual with Sleek Floating Stat */}
-        <div className="relative group overflow-hidden rounded-xl border border-slate-200/90 bg-gradient-to-br from-slate-50 to-slate-100/70 aspect-[16/11] max-h-[300px] lg:max-h-[320px] flex items-center justify-center shadow-sm">
+        <div className="relative group overflow-hidden rounded-xl border border-slate-200/90 bg-linear-to-br from-slate-50 to-slate-100/70 aspect-[16/11] max-h-[300px] lg:max-h-[320px] flex items-center justify-center shadow-sm">
           <img
             src={(industry as any).image3d || "/assets/logistics_map_truck.jpg"}
             alt={industry.headline}

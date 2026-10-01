@@ -105,14 +105,14 @@ export function SubNav({ links, label }: { links: NavLink[]; label: string }) {
         <div className="relative flex items-center w-full min-w-0">
           {/* Left Scroll Arrow */}
           {canScrollLeft && (
-            <div className="absolute left-0 z-30 flex items-center h-full pr-4 bg-gradient-to-r from-slate-50 via-slate-50/95 to-transparent pointer-events-none">
+            <div className="absolute left-0 z-30 flex items-center h-full pr-4 bg-linear-to-r from-slate-50 via-slate-50/95 to-transparent pointer-events-none">
               <button
                 type="button"
                 onClick={() => scrollBy(-200)}
                 aria-label="Scroll left"
-                className="pointer-events-auto flex size-7 sm:size-8 items-center justify-center rounded-full bg-white shadow-md border border-slate-200 text-slate-700 hover:text-teal-600 hover:border-teal-400 transition-all duration-200 active:scale-95 cursor-pointer"
+                className="pointer-events-auto flex size-6 sm:size-7 items-center justify-center rounded-full bg-white shadow-md border border-slate-200 text-slate-700 hover:text-teal-600 hover:border-teal-400 transition-all duration-200 active:scale-95 cursor-pointer"
               >
-                <ChevronLeft className="size-4" />
+                <ChevronLeft className="size-3.5" />
               </button>
             </div>
           )}
@@ -126,7 +126,7 @@ export function SubNav({ links, label }: { links: NavLink[]; label: string }) {
             onMouseUp={stopDragging}
             onMouseLeave={stopDragging}
             className={cn(
-              "tabs-scrollbar min-w-0 w-full flex items-center gap-2 overflow-x-auto overscroll-x-contain touch-pan-x py-2.5 sm:py-3 scroll-smooth select-none",
+              "tabs-scrollbar min-w-0 w-full flex items-center gap-1.5 sm:gap-2 overflow-x-auto overscroll-x-contain touch-pan-x py-1.5 sm:py-2 scroll-smooth select-none",
               isDragging ? "cursor-grabbing" : "cursor-grab",
             )}
             style={{ WebkitOverflowScrolling: "touch" }}
@@ -144,9 +144,9 @@ export function SubNav({ links, label }: { links: NavLink[]; label: string }) {
                     aria-current={active ? "page" : undefined}
                     draggable={false}
                     className={cn(
-                      "relative inline-flex shrink-0 items-center rounded-full px-4 sm:px-4.5 py-1.5 sm:py-2 text-xs sm:text-[13px] font-semibold whitespace-nowrap transition-all duration-200 select-none",
+                      "relative inline-flex shrink-0 items-center rounded-full px-3.5 sm:px-4 py-1 sm:py-1.5 text-xs font-semibold whitespace-nowrap transition-all duration-200 select-none",
                       active
-                        ? "bg-white text-teal-700 shadow-sm border-2 border-teal-500 font-bold"
+                        ? "bg-white text-teal-700 shadow-xs border-2 border-teal-500 font-bold"
                         : "bg-white/80 text-slate-700 hover:bg-white hover:text-teal-700 border border-slate-200/90 shadow-2xs",
                     )}
                   >
@@ -159,14 +159,14 @@ export function SubNav({ links, label }: { links: NavLink[]; label: string }) {
 
           {/* Right Scroll Arrow */}
           {canScrollRight && (
-            <div className="absolute right-0 z-30 flex items-center h-full pl-4 bg-gradient-to-l from-slate-50 via-slate-50/90 to-transparent pointer-events-none">
+            <div className="absolute right-0 z-30 flex items-center h-full pl-4 bg-linear-to-l from-slate-50 via-slate-50/90 to-transparent pointer-events-none">
               <button
                 type="button"
                 onClick={() => scrollBy(200)}
                 aria-label="Scroll right"
-                className="pointer-events-auto flex size-7 sm:size-8 items-center justify-center rounded-full bg-white shadow-md border border-slate-200 text-slate-700 hover:text-teal-600 hover:border-teal-400 transition-all duration-200 active:scale-95 cursor-pointer"
+                className="pointer-events-auto flex size-6 sm:size-7 items-center justify-center rounded-full bg-white shadow-md border border-slate-200 text-slate-700 hover:text-teal-600 hover:border-teal-400 transition-all duration-200 active:scale-95 cursor-pointer"
               >
-                <ChevronRight className="size-4" />
+                <ChevronRight className="size-3.5" />
               </button>
             </div>
           )}

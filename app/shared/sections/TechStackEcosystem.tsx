@@ -80,25 +80,25 @@ export function TechStackEcosystem({
   });
 
   return (
-    <Section tone="none" spacing="lg" className="relative overflow-hidden py-14 sm:py-20 lg:py-24 bg-[#f8fafc] border-t border-b border-slate-200/80">
+    <Section tone="none" spacing="lg" className="relative overflow-hidden py-8 sm:py-12 lg:py-14 bg-[#f8fafc] border-t border-b border-slate-200/80">
       <Container>
         {/* Header Row: Title */}
-        <div className="mb-8 sm:mb-10">
-          <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#008c83] bg-teal-50 px-3.5 py-1 rounded-full border border-teal-200/80 mb-3 inline-block shadow-xs">
+        <div className="mb-5 sm:mb-6">
+          <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#008c83] bg-teal-50 px-3.5 py-1 rounded-full border border-teal-200/80 mb-2 inline-block shadow-xs">
             {eyebrow}
           </span>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight">
             {title}
           </h2>
           {description && (
-            <p className="text-sm sm:text-base text-slate-600 font-normal mt-2 max-w-2xl leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-600 font-normal mt-1.5 max-w-2xl leading-relaxed">
               {description}
             </p>
           )}
         </div>
 
         {/* ── Dark Slate Center Contrast Box with 3D White Cards Grid (Reference Image Parity) ── */}
-        <div className="relative rounded-[2rem] bg-[#07121B] p-6 sm:p-8 md:p-10 shadow-2xl shadow-slate-950/20 border border-slate-800/80 overflow-hidden">
+        <div className="relative rounded-2xl bg-[#07121B] p-4 sm:p-6 md:p-7 shadow-xl shadow-slate-950/20 border border-slate-800/80 overflow-hidden">
           {/* Ambient high-tech background glows */}
           <div
             aria-hidden
@@ -109,7 +109,7 @@ export function TechStackEcosystem({
             className="pointer-events-none absolute -bottom-32 -right-32 size-80 rounded-full bg-cyan-500/10 blur-[100px]"
           />
 
-          <Stagger stagger={0.06} className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+          <Stagger stagger={0.05} className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             {items.map((item) => {
               const IconComponent = item.icon;
 
@@ -117,20 +117,20 @@ export function TechStackEcosystem({
                 <StaggerItem
                   key={item.name}
                   from="up"
-                  distance={20}
-                  className="group relative flex items-center gap-4 rounded-2xl bg-white p-4.5 sm:p-5 shadow-md shadow-slate-950/20 border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-teal-400"
+                  distance={15}
+                  className="group relative flex items-center gap-3.5 rounded-xl bg-white p-3.5 sm:p-4 shadow-sm shadow-slate-950/20 border border-slate-100 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:border-teal-400"
                 >
                   {/* Left Circular Icon Badge */}
-                  <div className="flex size-12 sm:size-13 shrink-0 items-center justify-center rounded-full bg-slate-50 text-slate-800 border border-slate-200/80 shadow-xs transition-colors duration-300 group-hover:bg-teal-50 group-hover:text-[#008c83] group-hover:border-teal-200">
-                    <IconComponent className="size-6 stroke-[1.8]" />
+                  <div className="flex size-10 sm:size-11 shrink-0 items-center justify-center rounded-full bg-slate-50 text-slate-800 border border-slate-200/80 shadow-xs transition-colors duration-300 group-hover:bg-teal-50 group-hover:text-[#008c83] group-hover:border-teal-200">
+                    <IconComponent className="size-5 stroke-[1.8]" />
                   </div>
 
                   {/* Right Title & Category Badge */}
                   <div className="flex flex-col min-w-0 pr-1">
-                    <h3 className="text-base sm:text-lg font-bold text-slate-900 tracking-tight leading-tight group-hover:text-[#006B7D] transition-colors">
+                    <h3 className="text-sm sm:text-base font-bold text-slate-900 tracking-tight leading-tight group-hover:text-[#006B7D] transition-colors">
                       {item.name}
                     </h3>
-                    <span className="text-xs font-semibold text-slate-400 mt-1">
+                    <span className="text-[11px] font-semibold text-slate-400 mt-0.5">
                       {item.category}
                     </span>
                   </div>

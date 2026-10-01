@@ -25,7 +25,7 @@ export function HeroVisual() {
       {/* ── Background Curved Wave Shape ── */}
       <div 
         aria-hidden
-        className="pointer-events-none absolute -right-10 top-0 sm:-right-16 sm:top-2 lg:-right-20 lg:-top-24 -z-10 h-[20rem] w-[20rem] sm:h-[26rem] sm:w-[26rem] lg:h-[34rem] lg:w-[34rem] rounded-full bg-gradient-to-br from-brand-800 via-brand-600 to-teal-500 opacity-95 shadow-2xl transition-all duration-700" 
+        className="pointer-events-none absolute -right-10 top-0 sm:-right-16 sm:top-2 lg:-right-20 lg:-top-24 -z-10 h-[20rem] w-[20rem] sm:h-[26rem] sm:w-[26rem] lg:h-[34rem] lg:w-[34rem] rounded-full bg-linear-to-br from-brand-800 via-brand-600 to-teal-500 opacity-95 shadow-2xl transition-all duration-700" 
         style={{ borderRadius: "40% 60% 30% 70% / 60% 40% 60% 40%" }}
       />
       <div 
@@ -54,7 +54,7 @@ export function HeroVisual() {
         </AnimatePresence>
 
         {/* Soft lighting overlay */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-brand-900/10 via-transparent to-white/10 pointer-events-none z-10" />
+        <div className="absolute inset-0 bg-linear-to-tr from-brand-900/10 via-transparent to-white/10 pointer-events-none z-10" />
 
         {/* Dot navigation indicators */}
         <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2 z-20 bg-slate-950/45 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">

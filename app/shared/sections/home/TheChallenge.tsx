@@ -33,7 +33,7 @@ const SYMPTOMS = [
 
 export function TheChallenge() {
   return (
-    <Section tone="ink" spacing="lg" id="business-challenge" className="overflow-hidden bg-[#07121B] py-16 sm:py-20 text-white">
+    <Section tone="ink" spacing="lg" id="business-challenge" className="overflow-hidden bg-[#07121B] py-8 sm:py-12 lg:py-14 text-white">
       <Container>
         <div className="grid gap-12 lg:grid-cols-[1.1fr_1.1fr] lg:gap-16 items-start">
           {/* Left Side: Headline & Narrative */}

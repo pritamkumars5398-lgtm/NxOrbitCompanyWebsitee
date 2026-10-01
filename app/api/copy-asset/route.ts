@@ -18,7 +18,7 @@ const ZOHO_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 140" 
 
 export async function GET() {
   try {
-    const assetsDir = path.join(process.cwd(), "public", "assets");
+    const assetsDir = path.join(/*turbopackIgnore: true*/ process.cwd(), "public", "assets");
     if (!fs.existsSync(assetsDir)) {
       fs.mkdirSync(assetsDir, { recursive: true });
     }

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import {
   ArrowRight, Shield, ShieldCheck, Database, Navigation, MessageSquarePlus,
   Terminal, Sparkles, Code, Cpu, DatabaseZap, Users, FileText, CheckCircle2,
-  Lock, Globe, Cloud, Key, Check, Eye, Clock, TrendingUp, Puzzle, Plug
+  Lock, Globe, Cloud, Key, Check, Eye, Clock, TrendingUp, TrendingDown, Gauge, Zap, Puzzle, Plug
 } from "lucide-react";
 import { cn } from "@/app/core/lib/cn";
 import { Breadcrumb } from "@/app/shared/ui/Breadcrumb";
@@ -16,6 +16,9 @@ import { GradientMesh, Grain } from "@/app/shared/backdrop/Backdrops";
 import { CallToAction } from "@/app/shared/sections/CallToAction";
 import { TrustAndFaqSection } from "@/app/shared/sections/TrustAndFaqSection";
 import { ServiceHeroImage } from "@/app/shared/ui/ServiceHeroImage";
+import { ProductRoiMetrics, type RoiMetricItem } from "@/app/products/components/ProductRoiMetrics";
+import { ProductStandardsIntegrations } from "@/app/products/components/ProductStandardsIntegrations";
+import { ProductResultBanner } from "@/app/products/components/ProductResultBanner";
 
 /* ── AI Chat Simulator Prompts & Responses ───────────────────────────────── */
 const CHAT_PROMPTS = [
@@ -196,14 +199,23 @@ export default function NextOrbitFreightPage() {
   const [displayedAnswer, setDisplayedAnswer] = useState("");
   const [typing, setTyping] = useState(false);
 
-  // Trigger modal drawer
+  // Open consultation modal with product preselected
   const handleRequestDemo = () => {
-    window.dispatchEvent(new CustomEvent("open-consultation-modal"));
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(
+        new CustomEvent("open-consultation-modal", { detail: { service: "nxt-orbit-freight" } })
+      );
+    }
   };
 
   // Scroll to Cognitive Showcase section
   const handleScrollToAI = () => {
     document.getElementById("ai-showcase")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  // Scroll to Enterprise Integrations section
+  const handleScrollToIntegrations = () => {
+    document.getElementById("enterprise-integrations")?.scrollIntoView({ behavior: "smooth" });
   };
 
   // Typing effect simulation for chatbot mockup
@@ -252,7 +264,7 @@ export default function NextOrbitFreightPage() {
               <Reveal from="up" delay={0.06} className="mt-2">
                 <h1 className="max-w-2xl text-display-lg sm:text-display-xl text-ink-900 leading-[1.05]">
                   Stop Managing Logistics. <br />
-                  <span className="bg-gradient-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">
+                  <span className="bg-linear-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">
                     Start Orchestrating Growth.
                   </span>
                 </h1>
@@ -265,10 +277,26 @@ export default function NextOrbitFreightPage() {
               </Reveal>
 
               <Reveal from="up" delay={0.22} className="mt-6 flex flex-wrap gap-3">
-                <Button onClick={handleRequestDemo} size="lg" variant="primary" withArrow magnetic>
+                <Button
+                  href="/contact"
+                  size="lg"
+                  variant="primary"
+                  icon={<Sparkles className="size-4 text-teal-300" />}
+                  withArrow
+                  magnetic
+                  className="min-w-[210px] justify-center"
+                >
                   Request a Live Demo
                 </Button>
-                <Button onClick={handleScrollToAI} size="lg" variant="outline" withArrow>
+                <Button
+                  onClick={handleScrollToAI}
+                  size="lg"
+                  variant="outline"
+                  icon={<Terminal className="size-4 text-teal-600" />}
+                  withArrow
+                  magnetic
+                  className="min-w-[210px] justify-center"
+                >
                   See the AI in Action
                 </Button>
               </Reveal>
@@ -287,41 +315,78 @@ export default function NextOrbitFreightPage() {
         </Container>
       </section>
 
-      {/* ── 2. Business Impact (ROI Metrics) ── */}
-      <Section tone="sunken" spacing="md" className="border-y border-hairline relative">
-        <Container>
-          <div className="text-center mb-10">
-            <h2 className="text-display-sm text-slate-900 font-extrabold tracking-tight">
-              Engineered for Measurable ROI
-            </h2>
-            <p className="text-sm text-ink-600 mt-2">Anchor value in numbers before diving into technology details.</p>
-          </div>
+      {/* ── 2. Business Impact (ROI Metrics Redesigned) ── */}
+      <ProductRoiMetrics
+        title="Engineered for Measurable ROI"
+        subtitle="Anchor value in verified operational numbers before diving into technology details."
+        metrics={[
+          {
+            value: "-40%",
+            badge: "Cost Reduction",
+            title: "Operational Overhead",
+            description: "Cut manual processing costs by automating repetitive data entry, email drafting, and customs filings.",
+            progressLabel: "Workflow Automation Index",
+            progressPercent: 94,
+            benchmark: "94% Touchless",
+            icon: TrendingDown,
+          },
+          {
+            value: "2x Faster",
+            badge: "Pipeline Velocity",
+            title: "Quote Conversion",
+            description: "Move from inquiry to booked shipment in minutes with AI-assisted pricing and carrier allocation pipelines.",
+            progressLabel: "Quote Turnaround Time",
+            progressPercent: 88,
+            benchmark: "Sub-12 Min SLA",
+            icon: Zap,
+          },
+          {
+            value: "60%",
+            badge: "Execution Speed",
+            title: "Cycle Time Reduction",
+            description: "Reduce 'Booking-to-Execution' delays using self-healing automated workflows and predictive port risk systems.",
+            progressLabel: "Delay Mitigation Rate",
+            progressPercent: 78,
+            benchmark: "60% Faster Delivery",
+            icon: Gauge,
+          },
+        ]}
+      />
 
-          <div className="grid gap-6 md:grid-cols-3">
-            <div className="rounded-xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/10 cursor-pointer">
-              <span className="text-display-md text-teal-600 font-black">-40%</span>
-              <h3 className="text-base font-bold text-slate-900 mt-2">Operational Overhead</h3>
-              <p className="text-sm text-slate-600 mt-1 leading-relaxed">
-                Cut manual processing costs by automating repetitive data entry, email drafting, and customs filings.
-              </p>
+      {/* ── 2.5 Infinite Possibilities Platform Banner ── */}
+      <section className="relative isolate overflow-hidden bg-slate-50/70 py-6 sm:py-8 border-b border-hairline">
+        <Container>
+          <div className="bg-[#04191d] rounded-2xl border border-teal-900/60 p-5 sm:p-7 shadow-lg flex flex-col md:flex-row items-center justify-between gap-5 sm:gap-6 text-white">
+            <div className="flex items-center gap-4">
+              <div className="size-11 sm:size-12 rounded-2xl bg-teal-500/20 text-teal-300 border border-teal-400/30 flex items-center justify-center shrink-0">
+                <Sparkles className="size-5 sm:size-6 text-teal-300" />
+              </div>
+              <div>
+                <h4 className="text-base sm:text-lg font-extrabold text-white tracking-tight">
+                  One Platform. <span className="bg-linear-to-r from-teal-300 to-emerald-300 bg-clip-text text-transparent">Infinite Possibilities.</span>
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mt-0.5 max-w-xl">
+                  NXT Orbit connects your systems, applications, and data—so you can focus on what matters most.
+                </p>
+              </div>
             </div>
-            <div className="rounded-xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/10 cursor-pointer">
-              <span className="text-display-md text-brand-600 font-black">2x Faster</span>
-              <h3 className="text-base font-bold text-slate-900 mt-2">Quote Conversion</h3>
-              <p className="text-sm text-slate-600 mt-1 leading-relaxed">
-                Move from inquiry to booked shipment in minutes with AI-assisted pricing and carrier allocation pipelines.
-              </p>
-            </div>
-            <div className="rounded-xl border border-slate-300 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/10 cursor-pointer">
-              <span className="text-display-md text-slate-900 font-black">60%</span>
-              <h3 className="text-base font-bold text-slate-900 mt-2">Cycle Time Reduction</h3>
-              <p className="text-sm text-slate-600 mt-1 leading-relaxed">
-                Reduce "Booking-to-Execution" delays using self-healing automated workflows and predictive port risk systems.
-              </p>
+
+            <div className="flex items-center gap-3 shrink-0 w-full sm:w-auto justify-end">
+              <Button
+                onClick={handleScrollToIntegrations}
+                variant="primary"
+                size="md"
+                icon={<Plug className="size-4 text-teal-300" />}
+                withArrow
+                magnetic
+                className="bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold border-0 min-w-[210px] justify-center"
+              >
+                Explore Integrations
+              </Button>
             </div>
           </div>
         </Container>
-      </Section>
+      </section>
 
       {/* ── 3. Strategic Transformation (Core Pillars) ── */}
       <Section tone="white" spacing="md" className="relative isolate overflow-hidden bg-white py-12 lg:py-16">
@@ -372,12 +437,7 @@ export default function NextOrbitFreightPage() {
         <Container className="relative z-10">
           {/* Centered Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-10 flex flex-col items-center">
-            {/* Eyebrow with side lines */}
-            <div className="flex items-center justify-center gap-2.5 text-xs font-semibold tracking-widest text-[#00A896] uppercase mb-2.5">
-              <span className="w-6 h-[1.5px] bg-[#00A896]/60 rounded-full" />
-              <span>STRATEGIC TRANSFORMATION</span>
-              <span className="w-6 h-[1.5px] bg-[#00A896]/60 rounded-full" />
-            </div>
+            <Eyebrow tone="brand">STRATEGIC TRANSFORMATION</Eyebrow>
 
             {/* Main Heading */}
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0b2447] tracking-tight leading-[1.18] text-center">
@@ -490,7 +550,7 @@ export default function NextOrbitFreightPage() {
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <span className="flex shrink-0 size-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-teal-500 text-white font-mono text-sm font-extrabold">
+                  <span className="flex shrink-0 size-10 items-center justify-center rounded-xl bg-linear-to-br from-brand-600 to-teal-500 text-white font-mono text-sm font-extrabold">
                     1
                   </span>
                   <div className="flex-1 pt-0.5">
@@ -502,7 +562,7 @@ export default function NextOrbitFreightPage() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <span className="flex shrink-0 size-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-teal-500 text-white font-mono text-sm font-extrabold">
+                  <span className="flex shrink-0 size-10 items-center justify-center rounded-xl bg-linear-to-br from-brand-600 to-teal-500 text-white font-mono text-sm font-extrabold">
                     2
                   </span>
                   <div className="flex-1 pt-0.5">
@@ -514,7 +574,7 @@ export default function NextOrbitFreightPage() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <span className="flex shrink-0 size-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-teal-500 text-white font-mono text-sm font-extrabold">
+                  <span className="flex shrink-0 size-10 items-center justify-center rounded-xl bg-linear-to-br from-brand-600 to-teal-500 text-white font-mono text-sm font-extrabold">
                     3
                   </span>
                   <div className="flex-1 pt-0.5">
@@ -576,32 +636,32 @@ export default function NextOrbitFreightPage() {
       </Section>
 
       {/* ── 5. Product Deep Dive (Tabbed menu by role) ── */}
-      <Section tone="sunken" spacing="lg" className="relative overflow-hidden border-t border-slate-200/80 bg-[#f8fafc] py-20 sm:py-28">
+      <Section tone="sunken" spacing="none" className="relative overflow-hidden border-t border-slate-200/80 bg-[#f8fafc] py-8 sm:py-10 lg:py-12">
         <Container>
           {/* Top Header: Title, Description & World Map Card */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-14">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center mb-6 sm:mb-8">
             {/* Left Header Info */}
-            <div className="lg:col-span-6 flex flex-col gap-3">
+            <div className="lg:col-span-6 flex flex-col gap-2">
               <div className="flex items-center gap-2">
-                <span className="text-xs font-mono font-bold uppercase tracking-widest text-teal-600">
+                <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-teal-600">
                   PRODUCT DEEP DIVE
                 </span>
               </div>
-              <h2 className="text-display-md sm:text-display-lg font-extrabold text-slate-900 tracking-tight leading-tight">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
                 NXT Orbit Freight
               </h2>
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl">
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xl">
                 An intelligent, scalable freight management solution that connects shipper, carrier and customer — delivering real-time visibility, operational efficiency and seamless logistics.
               </p>
             </div>
 
             {/* Vertical Divider Line */}
             <div className="hidden lg:block lg:col-span-1 flex justify-center">
-              <div className="h-28 w-px bg-slate-200/90 mx-auto" />
+              <div className="h-16 w-px bg-slate-200/90 mx-auto" />
             </div>
 
             {/* Right Subtitle & World Map Card */}
-            <div className="lg:col-span-5 relative bg-white/70 backdrop-blur-md rounded-2xl border border-slate-200/80 p-5 sm:p-6 shadow-xs overflow-hidden">
+            <div className="lg:col-span-5 relative bg-white/70 backdrop-blur-md rounded-xl border border-slate-200/80 p-3.5 sm:p-4 shadow-2xs overflow-hidden">
               {/* World Map Vector Watermark */}
               <div className="absolute inset-0 select-none pointer-events-none opacity-[0.18] flex items-center justify-center">
                 <img
@@ -612,12 +672,12 @@ export default function NextOrbitFreightPage() {
                 />
               </div>
 
-              <div className="relative z-10 flex flex-col gap-3">
-                <div className="inline-flex items-center gap-2 bg-teal-50 text-teal-700 px-3 py-1 rounded-full text-xs font-bold border border-teal-200/70 w-fit">
-                  <Sparkles className="size-3.5 text-teal-600" />
+              <div className="relative z-10 flex flex-col gap-2">
+                <div className="inline-flex items-center gap-1.5 bg-teal-50 text-teal-700 px-2.5 py-0.5 rounded-full text-[11px] font-bold border border-teal-200/70 w-fit">
+                  <Sparkles className="size-3 text-teal-600" />
                   Smarter Freight. Stronger Supply Chains.
                 </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                <p className="text-xs text-slate-600 leading-relaxed font-normal">
                   From booking to delivery, NXT Orbit Freight simplifies logistics with technology, automation and real-time insights.
                 </p>
               </div>
@@ -627,7 +687,7 @@ export default function NextOrbitFreightPage() {
           {/* Role Tabs Pill Bar */}
           <div 
             data-lenis-prevent="true"
-            className="flex items-center md:justify-center gap-2.5 overflow-x-auto overscroll-x-contain touch-pan-x scrollbar-none pb-2 mb-8 md:mb-10 px-1"
+            className="flex items-center md:justify-center gap-2 overflow-x-auto overscroll-x-contain touch-pan-x scrollbar-none pb-1.5 mb-4 sm:mb-5 px-1"
             style={{ WebkitOverflowScrolling: "touch" }}
           >
             {ROLE_TABS.map((tab) => {
@@ -639,14 +699,14 @@ export default function NextOrbitFreightPage() {
                   type="button"
                   onClick={() => setActiveTab(tab.id)}
                   className={cn(
-                    "flex shrink-0 whitespace-nowrap items-center gap-2.5 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-bold transition-all duration-300 cursor-pointer shadow-2xs border",
+                    "flex shrink-0 whitespace-nowrap items-center gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs font-bold transition-all duration-300 cursor-pointer shadow-2xs border",
                     isActive
                       ? "bg-[#0d2a30] border-[#0d2a30] text-white shadow-md scale-[1.02]"
                       : "bg-white border-slate-200/90 text-slate-700 hover:border-teal-400 hover:text-teal-700 hover:bg-teal-50/50"
                   )}
                 >
-                  <div className={cn("flex size-6 items-center justify-center rounded-full transition-colors", isActive ? "bg-teal-500/20 text-teal-300" : "bg-slate-100 text-slate-500")}>
-                    <Icon className="size-3.5" />
+                  <div className={cn("flex size-5 items-center justify-center rounded-full transition-colors", isActive ? "bg-teal-500/20 text-teal-300" : "bg-slate-100 text-slate-500")}>
+                    <Icon className="size-3" />
                   </div>
                   {tab.label}
                 </button>
@@ -658,11 +718,11 @@ export default function NextOrbitFreightPage() {
           {(() => {
             const currentTab = ROLE_TABS.find((t) => t.id === activeTab) || ROLE_TABS[0];
             return (
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {/* 2-Column Showcase Container */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-5 items-stretch">
                   {/* Left Hero Image Card */}
-                  <div className="lg:col-span-5 relative rounded-2xl overflow-hidden min-h-[380px] sm:min-h-[420px] flex flex-col justify-end p-6 sm:p-8 shadow-md border border-slate-200/80 group">
+                  <div className="lg:col-span-5 relative rounded-2xl overflow-hidden min-h-[290px] sm:min-h-[320px] lg:min-h-[340px] flex flex-col justify-end p-5 sm:p-6 shadow-md border border-slate-200/80 group">
                     <img
                       src={currentTab.heroImage}
                       alt={currentTab.heroTitle}
@@ -670,259 +730,98 @@ export default function NextOrbitFreightPage() {
                       suppressHydrationWarning
                     />
                     {/* Dark Mask Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/60 to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-linear-to-t from-slate-950/95 via-slate-950/60 to-transparent pointer-events-none" />
 
-                    <div className="relative z-10 flex flex-col items-start gap-2.5">
+                    <div className="relative z-10 flex flex-col items-start gap-2">
                       <div className="flex items-center gap-2">
-                        <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-teal-300">
+                        <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-teal-300">
                           {currentTab.label}
                         </span>
                       </div>
-                      <h3 className="text-xl sm:text-2xl font-extrabold text-white leading-snug tracking-tight">
+                      <h3 className="text-base sm:text-lg lg:text-xl font-extrabold text-white leading-snug tracking-tight">
                         {currentTab.heroTitle}
                       </h3>
-                      <p className="text-xs sm:text-sm text-slate-200/90 leading-relaxed font-normal max-w-md mt-1">
+                      <p className="text-xs text-slate-200/90 leading-relaxed font-normal max-w-md line-clamp-3 mt-0.5">
                         {currentTab.heroDesc}
                       </p>
-                      <button type="button" onClick={handleRequestDemo} className="mt-4 flex items-center gap-2 bg-white/15 backdrop-blur-md border border-white/25 text-white rounded-full px-4 py-2 text-xs font-bold hover:bg-white/30 transition-all cursor-pointer">
-                        <ArrowRight className="size-3.5 text-teal-300" />
-                        Learn more
-                      </button>
                     </div>
                   </div>
 
                   {/* Right 2x2 Feature Cards Grid */}
-                  <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                  <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5">
                     {currentTab.points.map((point, index) => (
                       <div
                         key={index}
-                        onClick={handleRequestDemo}
-                        className="group relative flex flex-col justify-between rounded-xl border border-slate-200/80 bg-white p-5 sm:p-6 shadow-2xs transition-all duration-300 hover:-translate-y-1 hover:border-teal-300 hover:shadow-md cursor-pointer"
+                        className="group relative flex flex-col justify-start rounded-xl border border-slate-200/80 bg-white p-4 sm:p-5 shadow-2xs transition-all duration-300 hover:-translate-y-1 hover:border-teal-300 hover:shadow-md"
                       >
-                        <div>
-                          {/* Circle Icon Badge */}
-                          <div className="flex size-10 items-center justify-center rounded-xl bg-teal-50 text-teal-600 border border-teal-100/80 transition-colors duration-300 group-hover:bg-teal-600 group-hover:text-white mb-4">
-                            <CheckCircle2 className="size-5" />
-                          </div>
-
-                          {/* Title */}
-                          <h4 className="text-base font-extrabold text-slate-900 tracking-tight leading-snug group-hover:text-teal-700 transition-colors">
-                            {point.title}
-                          </h4>
-
-                          {/* Description */}
-                          <p className="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                            {point.desc}
-                          </p>
+                        {/* Circle Icon Badge */}
+                        <div className="flex size-9 items-center justify-center rounded-xl bg-teal-50 text-teal-600 border border-teal-100/80 transition-colors duration-300 group-hover:bg-teal-600 group-hover:text-white mb-3 shadow-2xs">
+                          <CheckCircle2 className="size-4.5" />
                         </div>
 
-                        {/* Bottom Learn More Link */}
-                        <div className="mt-5 flex items-center gap-1.5 text-xs font-bold text-teal-600 transition-all duration-300 group-hover:translate-x-1">
-                          <span>Learn more</span>
-                          <ArrowRight className="size-3.5" />
-                        </div>
+                        {/* Title */}
+                        <h4 className="text-xs sm:text-sm font-extrabold text-slate-900 tracking-tight leading-snug group-hover:text-teal-700 transition-colors">
+                          {point.title}
+                        </h4>
+
+                        {/* Description */}
+                        <p className="mt-1.5 text-xs text-slate-600 leading-relaxed font-normal">
+                          {point.desc}
+                        </p>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                {/* Bottom Result Rail ("THE RESULT") */}
-                <div className="bg-[#f0f9f8]/90 border border-teal-200/80 rounded-xl p-6 sm:p-8 shadow-2xs flex flex-col lg:flex-row items-stretch gap-6 lg:gap-8">
-                  {/* Left Result Header */}
-                  <div className="lg:w-1/3 flex flex-col justify-center gap-1.5">
-                    <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-teal-700">
-                      THE RESULT
-                    </span>
-                    <h4 className="text-base sm:text-lg font-extrabold text-slate-900 tracking-tight leading-snug">
-                      More efficiency. Greater visibility. Real business impact.
-                    </h4>
-                  </div>
-
-                  {/* Vertical Divider Line */}
-                  <div className="hidden lg:block w-px bg-teal-200/70" />
-
-                  {/* 4 Proof Stats Columns */}
-                  <div className="lg:w-2/3 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
-                    <div className="flex flex-col gap-1.5">
-                      <div className="flex size-8 items-center justify-center rounded-xl bg-teal-100/70 text-teal-700">
-                        <Clock className="size-4" />
-                      </div>
-                      <h5 className="text-xs sm:text-sm font-bold text-slate-900 mt-1">Faster Bookings</h5>
-                      <p className="text-[11px] text-slate-600 leading-normal">Reduce turnaround time with automation.</p>
-                    </div>
-
-                    <div className="flex flex-col gap-1.5">
-                      <div className="flex size-8 items-center justify-center rounded-xl bg-teal-100/70 text-teal-700">
-                        <Eye className="size-4" />
-                      </div>
-                      <h5 className="text-xs sm:text-sm font-bold text-slate-900 mt-1">Real-Time Visibility</h5>
-                      <p className="text-[11px] text-slate-600 leading-normal">Track shipments and inventory in real time.</p>
-                    </div>
-
-                    <div className="flex flex-col gap-1.5">
-                      <div className="flex size-8 items-center justify-center rounded-xl bg-teal-100/70 text-teal-700">
-                        <ShieldCheck className="size-4" />
-                      </div>
-                      <h5 className="text-xs sm:text-sm font-bold text-slate-900 mt-1">Lower Operational Costs</h5>
-                      <p className="text-[11px] text-slate-600 leading-normal">Optimize routes, reduce delays and save costs.</p>
-                    </div>
-
-                    <div className="flex flex-col gap-1.5">
-                      <div className="flex size-8 items-center justify-center rounded-xl bg-teal-100/70 text-teal-700">
-                        <TrendingUp className="size-4" />
-                      </div>
-                      <h5 className="text-xs sm:text-sm font-bold text-slate-900 mt-1">Scalable Growth</h5>
-                      <p className="text-[11px] text-slate-600 leading-normal">Built to grow with your business needs.</p>
-                    </div>
-                  </div>
-                </div>
+                {/* Bottom Result Rail ("THE RESULT" Banner) */}
+                <ProductResultBanner />
               </div>
             );
           })()}
         </Container>
       </Section>
 
-      {/* ── 6. Integration Layer Visual (Redesigned to Match Exact Image 1 Mockup) ── */}
-      <Section tone="sunken" spacing="lg" className="relative overflow-hidden border-t border-slate-200/80 bg-[#f8fafc] py-20 sm:py-28">
-        <Container>
-          {/* Centered Section Header */}
-          <div className="text-center max-w-2xl mx-auto mb-16 flex flex-col items-center gap-3">
-            <div className="flex items-center gap-2">
-              <span className="text-xs font-mono font-bold uppercase tracking-widest text-teal-600">
-                ENTERPRISE INTEGRATIONS
-              </span>
-            </div>
-
-            <h2 className="text-display-md sm:text-display-lg text-slate-900 font-extrabold tracking-tight leading-tight">
-              Connected to Your{" "}
-              <span className="bg-gradient-to-r from-teal-600 via-teal-500 to-emerald-500 bg-clip-text text-transparent">
-                Tech Stack
-              </span>
-            </h2>
-
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl mx-auto">
-              Seamless integrations with leading platforms and custom systems to power your business operations.
-            </p>
-          </div>
-
-          {/* 8 Cards Grid (4 columns x 2 rows - Real Official Logos & Corner Accents) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
-            {INTEGRATIONS.map((item) => (
-              <div
-                key={item.id}
-                className="group relative bg-white rounded-xl border border-slate-200/90 p-5 flex flex-col justify-between shadow-2xs transition-all duration-300 hover:-translate-y-1.5 hover:shadow-md hover:border-teal-300/80 cursor-pointer overflow-hidden min-h-[145px]"
-              >
-                {/* Top-Left Teal Corner Accent Line */}
-                <div className="absolute top-0 left-0 w-7 h-7 pointer-events-none">
-                  <div className="w-full h-full border-t-2 border-l-2 border-teal-500 rounded-tl-xl" />
-                </div>
-
-                <div>
-                  {/* Card Header: Real Official Brand Logo Badge + Title + Type Pill */}
-                  <div className="flex items-center gap-3">
-                    <div className="w-16 h-11 rounded-xl bg-slate-50/90 border border-slate-200/80 p-2 flex items-center justify-center shrink-0 shadow-2xs">
-                      {item.isCode ? (
-                        <div className="size-7 rounded-lg bg-teal-50 text-teal-600 flex items-center justify-center">
-                          <Code className="size-4" />
-                        </div>
-                      ) : item.isIcegate ? (
-                        <span className="text-[10px] font-mono font-black tracking-tight text-[#0b2447]">ICEGATE</span>
-                      ) : (
-                        <img
-                          src={item.logoUrl}
-                          alt={item.name}
-                          className="h-6 w-auto max-w-full object-contain"
-                          suppressHydrationWarning
-                        />
-                      )}
-                    </div>
-
-                    <div className="flex flex-col gap-1 min-w-0">
-                      <h4 className="text-xs sm:text-sm font-extrabold text-slate-900 tracking-tight leading-tight truncate">
-                        {item.name}
-                      </h4>
-                      <span className="text-[10px] font-bold text-teal-700 bg-teal-50/90 border border-teal-100/90 px-2 py-0.5 rounded-full w-fit">
-                        {item.type}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Description Paragraph */}
-                  <p className="text-xs text-slate-500 leading-relaxed font-normal mt-3">
-                    {item.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* 4 Feature Proof Cards Rail (Matching Image 2 Mockup) */}
-          <div className="bg-white rounded-xl border border-slate-200/80 p-4 sm:p-6 shadow-2xs grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-start mb-6">
-            <div className="flex items-start gap-3">
-              <div className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-teal-600 border border-teal-100">
-                <Clock className="size-4" />
-              </div>
-              <div>
-                <h5 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Faster Integration</h5>
-                <p className="text-[11px] text-slate-500 leading-normal mt-0.5">Pre-built connectors reduce integration time and effort.</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-3">
-              <div className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-teal-600 border border-teal-100">
-                <ShieldCheck className="size-4" />
-              </div>
-              <div>
-                <h5 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Enterprise Security</h5>
-                <p className="text-[11px] text-slate-500 leading-normal mt-0.5">Secure, reliable and compliant integrations at scale.</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-3">
-              <div className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-teal-600 border border-teal-100">
-                <TrendingUp className="size-4" />
-              </div>
-              <div>
-                <h5 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Better Efficiency</h5>
-                <p className="text-[11px] text-slate-500 leading-normal mt-0.5">Automate data flow and eliminate manual data handling.</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-3">
-              <div className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-teal-600 border border-teal-100">
-                <Users className="size-4" />
-              </div>
-              <div>
-                <h5 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Scalable & Flexible</h5>
-                <p className="text-[11px] text-slate-500 leading-normal mt-0.5">Easily integrate with your evolving business ecosystem.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom Dark Banner Rail (Matching Image 2 Mockup) */}
-          <div className="bg-[#04191d] rounded-xl border border-teal-900/60 p-6 shadow-md flex flex-col md:flex-row items-center justify-between gap-6 text-white">
-            <div className="flex items-center gap-4">
-              <div className="size-12 rounded-2xl bg-teal-500/20 text-teal-300 border border-teal-400/30 flex items-center justify-center shrink-0">
-                <Sparkles className="size-6" />
-              </div>
-              <div>
-                <h4 className="text-base sm:text-lg font-extrabold text-white tracking-tight">
-                  One Platform. <span className="bg-gradient-to-r from-teal-300 to-emerald-300 bg-clip-text text-transparent">Infinite Possibilities.</span>
-                </h4>
-                <p className="text-xs text-slate-300 leading-relaxed mt-0.5 max-w-xl">
-                  NXT Orbit connects your systems, applications, and data—so you can focus on what matters most.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-3 shrink-0">
-              <Button href="/contact" variant="primary" size="sm" className="bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold border-0">
-                Explore Integrations <ArrowRight className="size-3.5 ml-1" />
-              </Button>
-            </div>
-          </div>
-        </Container>
-      </Section>
+      {/* ── 6. Integration Layer Visual (ENTERPRISE INTEGRATIONS) ── */}
+      <ProductStandardsIntegrations
+        id="enterprise-integrations"
+        eyebrow="ENTERPRISE INTEGRATIONS"
+        title="Built for Industry Standards."
+        highlightTitle="Connected to Your Tech Stack."
+        description="NXT Orbit Freight bridges sea, air, rail, and customs platforms into a unified single pane of glass, synchronizing seamlessly with your existing enterprise systems."
+        pills={[
+          "SAP S/4HANA",
+          "Oracle NetSuite",
+          "ICEGATE Customs",
+          "Tally Prime",
+          "Major Shipping Lines",
+          "Airway EDI",
+        ]}
+        features={[
+          {
+            icon: Database,
+            iconBg: "bg-teal-50 text-teal-600 border border-teal-200/80",
+            title: "ERP & Customs Webhooks",
+            description:
+              "Real-time bidirectional synchronization with SAP, Oracle, and national customs EDI portals like ICEGATE.",
+          },
+          {
+            icon: Navigation,
+            iconBg: "bg-amber-50 text-amber-600 border border-amber-200/80",
+            title: "Multi-Modal Visibility APIs",
+            description:
+              "Live telemetry and event feeds connecting 100+ ocean carriers, airlines, rail logistics, and GPS tracking nodes.",
+          },
+          {
+            icon: ShieldCheck,
+            iconBg: "bg-indigo-50 text-indigo-600 border border-indigo-200/80",
+            title: "Carrier & Trade Compliance",
+            description:
+              "Automated Bill of Lading verification, digital IGM/EGM filing, and audit-proof compliance workflows.",
+          },
+        ]}
+        visualImage="/assets/laptop_integration_visual.png"
+        visualAlt="NXT Orbit Freight Enterprise Integrations"
+      />
 
       {/* ── 7. Enterprise Security & Infrastructure ── */}
       <Section tone="white" spacing="lg" className="border-t border-hairline">
@@ -947,7 +846,7 @@ export default function NextOrbitFreightPage() {
                   className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-6 shadow-2xs transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-300 hover:shadow-lg hover:shadow-teal-500/5 cursor-pointer overflow-hidden"
                 >
                   {/* Top Subtle Teal Gradient Accent Line */}
-                  <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-teal-500 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute top-0 left-0 right-0 h-0.5 bg-linear-to-r from-teal-500 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                   <div>
                     {/* Icon Badge */}
@@ -964,12 +863,6 @@ export default function NextOrbitFreightPage() {
                     <p className="text-xs text-slate-600 mt-2 leading-relaxed font-normal">
                       {point.desc}
                     </p>
-                  </div>
-
-                  {/* Bottom Learn More Indicator */}
-                  <div className="mt-5 flex items-center gap-1.5 text-xs font-bold text-teal-600 transition-all duration-300 group-hover:translate-x-1">
-                    <span>Explore governance</span>
-                    <ArrowRight className="size-3.5" />
                   </div>
                 </div>
               );

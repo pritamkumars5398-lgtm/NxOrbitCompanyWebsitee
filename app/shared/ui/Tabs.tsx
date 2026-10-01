@@ -84,7 +84,7 @@ export function Tabs({
                   className={cn(
                     "absolute inset-0 -z-10 rounded-full",
                     light
-                      ? "bg-gradient-to-r from-teal-300 to-teal-400"
+                      ? "bg-linear-to-r from-teal-300 to-teal-400"
                       : "bg-[#01242e] border border-[#00d2c4]/20",
                   )}
                   transition={{ type: "spring", stiffness: 420, damping: 32 }}

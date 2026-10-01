@@ -12,7 +12,7 @@ import { ProjectGallery } from "./ProjectGallery";
 import { TrustAndFaqSection } from "@/app/shared/sections/TrustAndFaqSection";
 
 export const metadata: Metadata = {
-  title: "Portfolio | NXTorbit",
+  title: "Selected Work & Case Studies",
   description: "Products NXTorbit has designed, engineered, and shipped.",
 };
 
@@ -59,7 +59,7 @@ export default function PortfolioPage() {
             <Reveal from="up" delay={0.06}>
               <h1 className="max-w-3xl text-display-lg sm:text-display-xl text-slate-900 leading-[1.05]">
                 Every one of these <br />
-                <span className="bg-gradient-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">
+                <span className="bg-linear-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">
                   is still running in production.
                 </span>
               </h1>
@@ -98,10 +98,10 @@ export default function PortfolioPage() {
 
       <CallToAction
         eyebrow="READY TO START?"
-        title="Let's talk about your mobile app development project."
-        description="A 30-minute call with an engineer who has shipped this before — not a salesperson. No commitment."
-        primary={{ label: "Start Your Mobile Project", href: "/contact" }}
-        secondary={{ label: "Call +91 9763804442", href: "tel:+919763804442" }}
+        title="Let's build technology that moves your business forward."
+        description="A 30-minute consultation with an enterprise solutions architect — not a salesperson. No commitment."
+        primary={{ label: "Book a Consultation", href: "/contact" }}
+        secondary={{ label: "Talk to Our Team", href: "/contact" }}
       />
     </>
   );

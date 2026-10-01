@@ -29,7 +29,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const data = INDUSTRIES_DATA[slug];
   if (!data) return { title: "Not Found" };
-  return { title: data.metaTitle, description: data.metaDescription };
+  return { title: data.title, description: data.metaDescription };
 }
 
 const INDUSTRY_HERO_BG_IMAGES: Record<string, string> = {
@@ -120,7 +120,7 @@ const FEATURE_IMAGES: Record<string, string> = {
 function formatTwoColorTitle(text: string) {
   const words = text.split(" ");
   if (words.length <= 2) {
-    return <span className="bg-gradient-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">{text}</span>;
+    return <span className="bg-linear-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">{text}</span>;
   }
   const mid = Math.ceil(words.length / 2);
   const firstHalf = words.slice(0, mid).join(" ");
@@ -128,7 +128,7 @@ function formatTwoColorTitle(text: string) {
   return (
     <>
       <span className="text-slate-900">{firstHalf}</span> <br />
-      <span className="bg-gradient-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">
+      <span className="bg-linear-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">
         {secondHalf}
       </span>
     </>
@@ -149,7 +149,7 @@ export default async function IndustryPage({
       <SubNav links={INDUSTRY_LINKS} label="Industries" />
 
       {/* ── Hero: centred, tinted, evidence-led ── */}
-      <section className="relative isolate overflow-hidden bg-brand-50/60 pt-8 pb-12 sm:pt-10 sm:pb-12 lg:pt-10 lg:pb-14">
+      <section className="relative isolate overflow-hidden bg-brand-50/60 pt-5 pb-6 sm:pt-6 sm:pb-8 lg:pt-6 lg:pb-8">
         {/* Professional industry-specific background image watermark */}
         <div className="absolute inset-0 w-full h-full select-none pointer-events-none">
           <img
@@ -159,7 +159,7 @@ export default async function IndustryPage({
             suppressHydrationWarning
           />
           {/* Subtle gradient overlay to blend borders naturally */}
-          <div className="absolute inset-0 bg-gradient-to-b from-brand-50/10 via-transparent to-brand-50/30" />
+          <div className="absolute inset-0 bg-linear-to-b from-brand-50/10 via-transparent to-brand-50/30" />
         </div>
 
         <DotField className="opacity-40" />
@@ -179,24 +179,24 @@ export default async function IndustryPage({
               ]}
             />
 
-            <Reveal from="up" className="mt-4">
+            <Reveal from="up" className="mt-2.5 sm:mt-3">
               <Eyebrow>{data.category}</Eyebrow>
             </Reveal>
 
-            <Reveal from="up" delay={0.06} className="mt-2">
-              <h1 className="max-w-4xl text-display-lg sm:text-display-xl font-extrabold tracking-tight text-slate-900 leading-[1.05]">
+            <Reveal from="up" delay={0.06} className="mt-1.5">
+              <h1 className="max-w-4xl text-2xl sm:text-3xl lg:text-[40px] font-extrabold tracking-tight text-slate-900 leading-tight">
                 {formatTwoColorTitle(data.tagline)}
               </h1>
             </Reveal>
 
-            <Reveal from="up" delay={0.14} className="mt-4">
-              <p className="max-w-2xl text-lead text-ink-600">{data.description}</p>
+            <Reveal from="up" delay={0.14} className="mt-2 sm:mt-3">
+              <p className="max-w-2xl text-xs sm:text-sm text-ink-600 leading-relaxed">{data.description}</p>
             </Reveal>
 
-            <Reveal from="up" delay={0.22} className="mt-6 flex flex-wrap justify-center gap-3">
+            <Reveal from="up" delay={0.22} className="mt-4 flex flex-wrap justify-center gap-2.5">
               <Button 
                 href="/contact" 
-                size="lg" 
+                size="md" 
                 variant="primary" 
                 icon={<ShieldCheck className="size-4 text-brand-300" />}
                 magnetic
@@ -205,7 +205,7 @@ export default async function IndustryPage({
               </Button>
               <Button 
                 href="/contact" 
-                size="lg" 
+                size="md" 
                 variant="outline" 
                 icon={<MessageSquare className="size-4 text-brand-600" />}
               >
@@ -215,7 +215,7 @@ export default async function IndustryPage({
           </div>
 
           {/* Boxed stat cells — the tinted hero needs the contrast of solid cards. */}
-          <Reveal from="up" delay={0.1} className="mt-16">
+          <Reveal from="up" delay={0.1} className="mt-6 sm:mt-8">
             <Stats items={[...data.heroStats]} layout="grid" columns={4} />
           </Reveal>
         </Container>
@@ -252,7 +252,7 @@ export default async function IndustryPage({
                       className="size-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                       suppressHydrationWarning
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-linear-to-t from-slate-950/20 via-transparent to-transparent pointer-events-none" />
                   </div>
 
                   {/* Card Content with padded container */}

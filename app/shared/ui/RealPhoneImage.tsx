@@ -30,7 +30,7 @@ export function RealPhoneImage({ variant = "cta", className = "" }: RealPhoneIma
       <div className={`relative flex items-center justify-center ${className}`}>
         {/* Deep Fluid Organic Teal Shape Backdrop for Hero */}
         <div className="pointer-events-none absolute -right-6 top-1/2 -z-10 h-[34rem] w-[28rem] -translate-y-1/2 sm:h-[40rem] sm:w-[34rem]">
-          <div className="absolute inset-0 rounded-[40%_60%_70%_30%/50%_60%_40%_50%] bg-gradient-to-tr from-[#003840] via-[#00808C] to-[#00A896] opacity-95 shadow-[0_25px_90px_rgba(0,168,150,0.4)] backdrop-blur-3xl transition-all duration-700 hover:scale-[1.01]" />
+          <div className="absolute inset-0 rounded-[40%_60%_70%_30%/50%_60%_40%_50%] bg-linear-to-tr from-[#003840] via-[#00808C] to-[#00A896] opacity-95 shadow-[0_25px_90px_rgba(0,168,150,0.4)] backdrop-blur-3xl transition-all duration-700 hover:scale-[1.01]" />
           <div className="absolute left-1/4 top-1/4 h-80 w-80 rounded-full bg-cyan-300/30 blur-[75px]" />
           <div className="absolute -inset-4 rounded-[45%_55%_65%_35%/55%_50%_50%_45%] border border-teal-300/30" />
           <div className="absolute -inset-10 rounded-[50%_50%_60%_40%/45%_55%_45%_55%] border border-teal-400/20" />
@@ -67,7 +67,7 @@ export function RealPhoneImage({ variant = "cta", className = "" }: RealPhoneIma
                     <Zap className="size-3.5 text-teal-600" />
                   </div>
 
-                  <div className="mt-3.5 rounded-2xl bg-gradient-to-br from-slate-900 via-slate-850 to-slate-900 p-3.5 text-white shadow-md">
+                  <div className="mt-3.5 rounded-2xl bg-linear-to-br from-slate-900 via-slate-850 to-slate-900 p-3.5 text-white shadow-md">
                     <div className="flex items-center justify-between">
                       <span className="text-[9px] font-semibold text-teal-400 tracking-wider">MONTHLY REVENUE</span>
                       <span className="inline-flex items-center gap-0.5 rounded-full bg-emerald-500/20 px-1.5 py-0.5 text-[9px] font-bold text-emerald-400">
@@ -208,7 +208,7 @@ export function RealPhoneImage({ variant = "cta", className = "" }: RealPhoneIma
       {/* ── Background Organic Fluid Shape & Tech Orbit Structure for CTA ── */}
       <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[32rem] w-[32rem] -translate-x-1/2 -translate-y-1/2 sm:h-[38rem] sm:w-[38rem]">
         {/* Organic Fluid Teal Backdrop Blob (Matching Reference Image 2) */}
-        <div className="absolute inset-0 rounded-[40%_60%_70%_30%/50%_60%_40%_50%] bg-gradient-to-tr from-[#002d38] via-[#006e78] to-[#00a896] opacity-65 blur-3xl" />
+        <div className="absolute inset-0 rounded-[40%_60%_70%_30%/50%_60%_40%_50%] bg-linear-to-tr from-[#002d38] via-[#006e78] to-[#00a896] opacity-65 blur-3xl" />
 
         {/* Luminous Central Cyan Radial Light Orb */}
         <div className="absolute left-1/2 top-1/2 size-[20rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(0,210,196,0.45)_0%,rgba(0,168,150,0.15)_50%,transparent_75%)] blur-[60px]" />
@@ -233,13 +233,13 @@ export function RealPhoneImage({ variant = "cta", className = "" }: RealPhoneIma
             className="relative w-[52%] max-w-[260px] shrink-0 sm:max-w-[285px]"
           >
             {/* Metallic Titanium Outer Phone Body */}
-            <div className="relative rounded-[48px] bg-gradient-to-b from-[#484c56] via-[#22252c] to-[#121419] p-[3px] shadow-[0_0_0_1px_rgba(0,0,0,0.9),0_35px_80px_-15px_rgba(0,0,0,0.95),0_15px_30px_-15px_rgba(0,210,196,0.3)]">
+            <div className="relative rounded-[48px] bg-linear-to-b from-[#484c56] via-[#22252c] to-[#121419] p-[3px] shadow-[0_0_0_1px_rgba(0,0,0,0.9),0_35px_80px_-15px_rgba(0,0,0,0.95),0_15px_30px_-15px_rgba(0,210,196,0.3)]">
               {/* Outer Metallic Bevel Highlight */}
               <div className="rounded-[45px] border border-white/20 bg-[#000000] p-[7px]">
                 {/* OLED Glass Screen Container */}
                 <div className="relative overflow-hidden rounded-[38px] bg-[#07131b] text-white shadow-inner">
                   {/* Glass Sheen / Reflection Overlay */}
-                  <div className="pointer-events-none absolute inset-0 z-40 bg-gradient-to-tr from-transparent via-white/[0.08] to-transparent" />
+                  <div className="pointer-events-none absolute inset-0 z-40 bg-linear-to-tr from-transparent via-white/[0.08] to-transparent" />
 
                   {/* Dynamic Island Notch */}
                   <div className="sticky top-0 z-30 flex h-7 items-center justify-between bg-[#07131b]/90 px-5 pt-2 backdrop-blur-md">
@@ -258,7 +258,7 @@ export function RealPhoneImage({ variant = "cta", className = "" }: RealPhoneIma
                   <div className="p-3.5 pt-2">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <div className="flex size-7 items-center justify-center rounded-xl bg-gradient-to-br from-[#00d2c4] to-[#008c83] font-black text-[#01141b] text-[10px] shadow-sm">
+                        <div className="flex size-7 items-center justify-center rounded-xl bg-linear-to-br from-[#00d2c4] to-[#008c83] font-black text-[#01141b] text-[10px] shadow-sm">
                           NX
                         </div>
                         <div className="flex flex-col">
@@ -271,7 +271,7 @@ export function RealPhoneImage({ variant = "cta", className = "" }: RealPhoneIma
                       </div>
                     </div>
 
-                    <div className="mt-3 rounded-2xl border border-[#00d2c4]/30 bg-gradient-to-br from-[#0d2733] via-[#081a24] to-[#051119] p-3 shadow-lg">
+                    <div className="mt-3 rounded-2xl border border-[#00d2c4]/30 bg-linear-to-br from-[#0d2733] via-[#081a24] to-[#051119] p-3 shadow-lg">
                       <div className="flex items-center justify-between">
                         <span className="text-[8px] font-bold tracking-wider text-slate-300">MONTHLY REVENUE</span>
                         <span className="inline-flex items-center gap-0.5 rounded-full bg-emerald-500/20 px-1.5 py-0.5 text-[8px] font-bold text-emerald-400">
@@ -332,10 +332,10 @@ export function RealPhoneImage({ variant = "cta", className = "" }: RealPhoneIma
             }}
             className="relative -ml-6 w-[54%] max-w-[270px] shrink-0 sm:max-w-[295px]"
           >
-            <div className="relative rounded-[48px] bg-gradient-to-b from-[#484c56] via-[#22252c] to-[#121419] p-[3px] shadow-[0_0_0_1px_rgba(0,0,0,0.9),0_40px_90px_-15px_rgba(0,0,0,0.95),0_15px_35px_-15px_rgba(0,210,196,0.35)]">
+            <div className="relative rounded-[48px] bg-linear-to-b from-[#484c56] via-[#22252c] to-[#121419] p-[3px] shadow-[0_0_0_1px_rgba(0,0,0,0.9),0_40px_90px_-15px_rgba(0,0,0,0.95),0_15px_35px_-15px_rgba(0,210,196,0.35)]">
               <div className="rounded-[45px] border border-white/20 bg-[#000000] p-[7px]">
                 <div className="relative overflow-hidden rounded-[38px] bg-[#051118] text-white shadow-inner">
-                  <div className="pointer-events-none absolute inset-0 z-40 bg-gradient-to-tr from-transparent via-white/[0.08] to-transparent" />
+                  <div className="pointer-events-none absolute inset-0 z-40 bg-linear-to-tr from-transparent via-white/[0.08] to-transparent" />
 
                   <div className="sticky top-0 z-30 flex h-7 items-center justify-between bg-[#051118]/90 px-5 pt-2 backdrop-blur-md">
                     <span className="text-[10px] font-semibold text-slate-300">9:41</span>
@@ -355,7 +355,7 @@ export function RealPhoneImage({ variant = "cta", className = "" }: RealPhoneIma
                       <ShieldCheck className="size-4 text-[#00d2c4]" />
                     </div>
 
-                    <div className="mt-3 rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-[#09232e] to-[#041219] p-3 shadow-md">
+                    <div className="mt-3 rounded-2xl border border-cyan-500/30 bg-linear-to-br from-[#09232e] to-[#041219] p-3 shadow-md">
                       <div className="flex items-center justify-between">
                         <span className="text-[8px] font-bold uppercase tracking-wider text-[#00d2c4]">UPTIME SLA</span>
                         <Sparkles className="size-3 text-[#00d2c4]" />

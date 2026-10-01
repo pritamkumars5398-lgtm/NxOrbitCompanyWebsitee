@@ -148,7 +148,7 @@ export function InsightsStrip() {
                     {/* Visual gradient overlay */}
                     <div
                       aria-hidden
-                      className={cn("absolute inset-0 bg-gradient-to-t", topic.gradientOverlay)}
+                      className={cn("absolute inset-0 bg-linear-to-t", topic.gradientOverlay)}
                     />
                     {/* Bottom-left icon overlay badge */}
                     <div className="absolute bottom-2.5 left-2.5 size-7 rounded-lg bg-black/50 backdrop-blur-md border border-white/20 flex items-center justify-center text-white/90 shadow-sm">

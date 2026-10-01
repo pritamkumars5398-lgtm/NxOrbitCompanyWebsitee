@@ -154,7 +154,7 @@ export function Process() {
             <motion.span
               aria-hidden
               style={{ scaleY: fill }}
-              className="absolute top-6 bottom-8 left-[1.875rem] sm:left-[2.125rem] w-0.5 origin-top bg-gradient-to-b from-[#008c83] via-[#00bba9] to-[#00d2c4]"
+              className="absolute top-6 bottom-8 left-[1.875rem] sm:left-[2.125rem] w-0.5 origin-top bg-linear-to-b from-[#008c83] via-[#00bba9] to-[#00d2c4]"
             />
 
             {PROCESS.map((phase, idx) => (

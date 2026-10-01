@@ -59,7 +59,7 @@ export function Testimonials() {
       {/* Directional Asymmetric Overlay: Crisp Left Text (92%), Clear Middle details (40%), Vivid Right (5%) */}
       <div
         aria-hidden
-        className="absolute inset-0 size-full z-0 bg-gradient-to-r from-white/92 via-white/40 to-white/5 pointer-events-none"
+        className="absolute inset-0 size-full z-0 bg-linear-to-r from-white/92 via-white/40 to-white/5 pointer-events-none"
       />
 
       <Container className="relative z-10">
