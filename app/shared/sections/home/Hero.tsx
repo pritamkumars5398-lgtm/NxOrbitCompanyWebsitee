@@ -83,7 +83,7 @@ export function Hero() {
               initial="hidden"
               animate="visible"
               variants={{ visible: { transition: { staggerChildren: 0.09, delayChildren: 0.7 } } }}
-              className="mt-4 grid w-full grid-cols-1 gap-x-6 gap-y-6 border-t border-hairline pt-8 sm:grid-cols-3"
+              className="mt-4 grid w-full grid-cols-3 gap-x-3 sm:gap-x-6 border-t border-hairline pt-6 sm:pt-8"
             >
               {HERO.stats.map((stat) => (
                 <motion.div
@@ -98,10 +98,10 @@ export function Hero() {
                   }}
                   // Reversed so the value reads first while the DOM keeps the
                   // required <dt> before <dd> order.
-                  className="flex flex-col-reverse gap-1"
+                  className="flex flex-col-reverse justify-end gap-1"
                 >
-                  <dt className="text-xs font-medium text-ink-500">{stat.label}</dt>
-                  <dd className="text-2xl font-bold tabular-nums text-brand-800">
+                  <dt className="text-2xs sm:text-xs font-medium leading-snug text-ink-500">{stat.label}</dt>
+                  <dd className="text-xl sm:text-2xl font-bold tabular-nums text-brand-800">
                     <CountUp value={stat.value} />
                   </dd>
                 </motion.div>

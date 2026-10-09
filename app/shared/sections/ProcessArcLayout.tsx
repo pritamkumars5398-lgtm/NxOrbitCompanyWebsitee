@@ -3,8 +3,9 @@
 import {
   ArrowRight, FileText, Target, Cpu, Code, Layers, Activity,
   CheckCircle2, Workflow, Sparkles, Zap, ShieldCheck, Lightbulb, LucideIcon,
-  MessageSquare, UserCheck, Eye, Award
+  MessageSquare, UserCheck, Eye, Award, Check
 } from "lucide-react";
+import { cn } from "@/app/core/lib/cn";
 import { Container, Section } from "@/app/shared/ui/Layout";
 import { Reveal, Stagger, StaggerItem } from "@/app/shared/motion/Reveal";
 
@@ -13,6 +14,8 @@ export interface ProcessStepItem {
   title: string;
   description: string;
   icon?: LucideIcon;
+  /** Optional deliverables shown as a checklist under the description. */
+  outputs?: string[];
 }
 
 const DEFAULT_ICONS: LucideIcon[] = [
@@ -39,6 +42,12 @@ interface ProcessArcLayoutProps {
   className?: string;
   bgImage?: string;
   bgOpacity?: number;
+  /** Optional CTA rendered under the circular hub. */
+  action?: React.ReactNode;
+  /** Desktop height of each step row on the arc (px). Taller rows fit outputs. */
+  rowHeight?: number;
+  /** Extra classes for the circular hub (e.g. a larger max width for long copy). */
+  hubClassName?: string;
 }
 
 /**
@@ -54,14 +63,15 @@ export function ProcessArcLayout({
   steps,
   className,
   bgImage = "/assets/consulting-team.png",
+  action,
+  rowHeight = 108,
+  hubClassName,
 }: ProcessArcLayoutProps) {
   const total = steps.length;
 
-  // Row height & padding for desktop arc track (lg+)
-  const rowHeight = 108;
-  const paddingTop = 35;
-  const bottomPadding = 45;
-  const totalHeight = paddingTop + (total - 1) * rowHeight + bottomPadding;
+  // Desktop arc track (lg+): rows start under the 4px top padding (pt-1).
+  const trackTop = 4;
+  const totalHeight = trackTop + total * rowHeight + 8;
 
   // Large gentle circular arc parameters (R=520px) for desktop curve
   const R = 520;
@@ -72,7 +82,8 @@ export function ProcessArcLayout({
   const stepPositions = steps.map((_, i) => {
     const fraction = total > 1 ? (i - (total - 1) / 2) / ((total - 1) / 2) : 0;
     const angle = fraction * maxAngle;
-    const y = paddingTop + i * rowHeight + 25;
+    // Vertical centre of row i, where the badge sits (rows use items-center).
+    const y = trackTop + i * rowHeight + rowHeight / 2;
     const x = Xc + R * Math.cos(angle);
     return { x, y, angle };
   });
@@ -115,8 +126,8 @@ export function ProcessArcLayout({
         <div className="grid gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-10 xl:gap-14 items-center">
 
           {/* ── Left Column: Circular Branding Hub (NXTorbit Brand Colors) ── */}
-          <Reveal from="left" className="relative flex justify-center w-full">
-            <div className="relative flex flex-col items-center justify-center rounded-full bg-white p-6 sm:p-8 md:p-10 text-center border border-slate-200/90 aspect-square w-full max-w-[290px] sm:max-w-[350px] lg:max-w-[390px] xl:max-w-[430px] mx-auto shrink-0">
+          <Reveal from="left" className="relative flex flex-col items-center gap-6 w-full">
+            <div className={cn("relative flex flex-col items-center justify-center rounded-full bg-white p-6 sm:p-8 md:p-10 text-center border border-slate-200/90 aspect-square w-full max-w-[290px] sm:max-w-[350px] lg:max-w-[390px] xl:max-w-[430px] mx-auto shrink-0", hubClassName)}>
 
               {/* Outer NXTorbit Brand Arc */}
               <svg
@@ -171,6 +182,7 @@ export function ProcessArcLayout({
                 )}
               </div>
             </div>
+            {action &&<div className="flex justify-center">{action}</div>}
           </Reveal>
 
           {/* ── Right Column: Arc Track & Step Nodes ── */}
@@ -215,10 +227,11 @@ export function ProcessArcLayout({
                   <StaggerItem
                     key={stepItem.title || index}
                     from="right"
-                    className="group relative flex items-center gap-3 sm:gap-4 transition-transform duration-300 hover:translate-x-1 ml-0 lg:ml-[var(--curve-offset)] lg:h-[108px]"
+                    className="group relative flex items-center gap-3 sm:gap-4 transition-transform duration-300 hover:translate-x-1 ml-0 lg:ml-[var(--curve-offset)] lg:h-[var(--row-h)]"
                     style={
                       {
                         "--curve-offset": `${curveOffsetPx}px`,
+                        "--row-h": `${rowHeight}px`,
                       } as React.CSSProperties
                     }
                   >
@@ -238,9 +251,26 @@ export function ProcessArcLayout({
                       <h3 className="text-sm sm:text-base font-bold text-slate-900 tracking-tight leading-snug group-hover:text-brand-600 transition-colors duration-200">
                         {stepItem.title}
                       </h3>
-                      <p className="text-sm leading-relaxed text-slate-800 mt-0.5 max-w-[260px] sm:max-w-md lg:max-w-[280px] xl:max-w-sm font-medium line-clamp-2">
+                      <p
+                        className={cn(
+                          "text-sm leading-relaxed text-slate-800 mt-0.5 font-medium",
+                          stepItem.outputs
+                            ? "max-w-md"
+                            : "max-w-[260px] sm:max-w-md lg:max-w-[280px] xl:max-w-sm line-clamp-2",
+                        )}
+                      >
                         {stepItem.description}
                       </p>
+                      {stepItem.outputs && (
+                        <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
+                          {stepItem.outputs.map((output) => (
+                            <li key={output} className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700">
+                              <Check className="size-3.5 shrink-0 text-brand-600" strokeWidth={2.6} />
+                              {output}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
                   </StaggerItem>
                 );

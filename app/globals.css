@@ -141,29 +141,29 @@ html {
 /* Mobile & Tablet (< 1024px) typography & font scaling */
 @media (max-width: 1023px) {
   :root {
-    --text-display-2xl: clamp(1.35rem, 1.1rem + 2vw, 2.25rem);
-    --text-display-xl: clamp(1.2rem, 1rem + 1.6vw, 1.95rem);
-    --text-display-lg: clamp(1.1rem, 0.95rem + 1.2vw, 1.75rem);
-    --text-display-md: clamp(1rem, 0.9rem + 0.9vw, 1.55rem);
-    --text-display-sm: clamp(0.925rem, 0.85rem + 0.6vw, 1.35rem);
-    --text-lead: clamp(0.8125rem, 0.75rem + 0.25vw, 0.95rem);
+    --text-display-2xl: clamp(1.75rem, 1.3rem + 2.4vw, 2.5rem);
+    --text-display-xl: clamp(1.6rem, 1.2rem + 2vw, 2.25rem);
+    --text-display-lg: clamp(1.4rem, 1.1rem + 1.6vw, 1.95rem);
+    --text-display-md: clamp(1.25rem, 1rem + 1.2vw, 1.7rem);
+    --text-display-sm: clamp(1.05rem, 0.95rem + 0.6vw, 1.4rem);
+    --text-lead: clamp(0.95rem, 0.9rem + 0.25vw, 1.05rem);
     --text-eyebrow: clamp(0.625rem, 0.58rem + 0.15vw, 0.7rem);
   }
 
   html {
-    font-size: 14.5px;
+    font-size: 15px;
   }
 }
 
 @media (max-width: 640px) {
   html {
-    font-size: 13.5px;
+    font-size: 14.5px;
   }
 }
 
 @media (max-width: 380px) {
   html {
-    font-size: 12.5px;
+    font-size: 14px;
   }
 }
 

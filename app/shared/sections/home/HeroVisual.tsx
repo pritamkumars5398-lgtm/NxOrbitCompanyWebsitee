@@ -21,16 +21,16 @@ export function HeroVisual() {
   }, []);
 
   return (
-    <div className="relative flex items-center justify-center p-4 w-fit mx-auto">
+    <div className="relative mx-auto flex w-full max-w-[300px] items-center justify-center p-4 sm:max-w-[412px] lg:max-w-[552px]">
       {/* ── Background Curved Wave Shape ── */}
       <div 
         aria-hidden
-        className="pointer-events-none absolute -right-10 top-0 sm:-right-16 sm:top-2 lg:-right-20 lg:-top-24 -z-10 h-[20rem] w-[20rem] sm:h-[26rem] sm:w-[26rem] lg:h-[34rem] lg:w-[34rem] rounded-full bg-linear-to-br from-brand-800 via-brand-600 to-teal-500 opacity-95 shadow-2xl transition-all duration-700" 
+        className="pointer-events-none absolute -right-[8%] top-0 lg:-top-[14%] -z-10 aspect-square w-[105%] rounded-full bg-linear-to-br from-brand-800 via-brand-600 to-teal-500 opacity-95 shadow-2xl transition-all duration-700" 
         style={{ borderRadius: "40% 60% 30% 70% / 60% 40% 60% 40%" }}
       />
       <div 
         aria-hidden
-        className="pointer-events-none absolute -right-6 top-0 sm:-right-10 sm:top-2 lg:-right-12 lg:-top-16 -z-10 h-[18rem] w-[18rem] sm:h-[24rem] sm:w-[24rem] lg:h-[30rem] lg:w-[30rem] rounded-full bg-teal-400/20 blur-2xl" 
+        className="pointer-events-none absolute -right-[5%] top-0 lg:-top-[10%] -z-10 aspect-square w-[95%] rounded-full bg-teal-400/20 blur-2xl" 
       />
 
       {/* ── Main Hero Image with Curved Shield Mask & White Border (Larger & Shifted Upwards) ── */}
@@ -38,7 +38,7 @@ export function HeroVisual() {
         initial={{ opacity: 0, scale: 0.94, y: 30 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.85, ease: EASE.outExpo }}
-        className="relative z-10 overflow-hidden rounded-tl-[5rem] rounded-br-[5rem] rounded-tr-[2rem] rounded-bl-[2rem] sm:rounded-tl-[8rem] sm:rounded-br-[8rem] sm:rounded-tr-[2.5rem] sm:rounded-bl-[2.5rem] lg:rounded-tl-[10rem] lg:rounded-br-[10rem] lg:rounded-tr-[3rem] lg:rounded-bl-[3rem] border-[6px] sm:border-[12px] border-white bg-slate-100 shadow-[0_25px_60px_rgba(0,0,0,0.18)] w-[270px] sm:w-[380px] lg:w-[520px] max-w-full aspect-[4/3] lg:-translate-y-8 lg:-mt-4"
+        className="relative z-10 overflow-hidden rounded-tl-[5rem] rounded-br-[5rem] rounded-tr-[2rem] rounded-bl-[2rem] sm:rounded-tl-[8rem] sm:rounded-br-[8rem] sm:rounded-tr-[2.5rem] sm:rounded-bl-[2.5rem] lg:rounded-tl-[10rem] lg:rounded-br-[10rem] lg:rounded-tr-[3rem] lg:rounded-bl-[3rem] border-[6px] sm:border-[12px] border-white bg-slate-100 shadow-[0_25px_60px_rgba(0,0,0,0.18)] w-full aspect-[4/3] lg:-translate-y-8 lg:-mt-4"
       >
         <AnimatePresence mode="wait">
           <motion.img

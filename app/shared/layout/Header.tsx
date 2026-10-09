@@ -91,7 +91,7 @@ export function Header() {
             />
           </Link>
 
-          <nav aria-label="Primary" className="hidden items-center gap-0.5 lg:flex">
+          <nav aria-label="Primary" className="hidden items-center gap-0.5 xl:flex">
             <Link
               href="/about"
               className={cn(
@@ -149,7 +149,7 @@ export function Header() {
             type="button"
             onClick={() => setMobileOpen(true)}
             aria-label="Open menu"
-            className="-mr-2 inline-flex size-10 items-center justify-center rounded-xl text-ink-700 transition-colors hover:bg-ink-100 lg:hidden"
+            className="-mr-2 inline-flex size-10 items-center justify-center rounded-xl text-ink-700 transition-colors hover:bg-ink-100 xl:hidden"
           >
             <Menu className="size-5" />
           </button>
@@ -196,7 +196,7 @@ function MegaPanel({
           transition={{ duration: 0.18, ease: EASE.outExpo }}
           onMouseEnter={onEnter}
           onMouseLeave={onLeave}
-          className="absolute left-1/2 -translate-x-1/2 top-full mt-1.5 hidden w-[860px] max-h-[calc(100vh-5rem)] overflow-y-auto overscroll-contain rounded-2xl border border-hairline bg-white p-5 shadow-2xl shadow-slate-900/15 lg:block z-50"
+          className="absolute left-1/2 -translate-x-1/2 top-full mt-1.5 hidden w-[860px] max-h-[calc(100vh-5rem)] overflow-y-auto overscroll-contain rounded-2xl border border-hairline bg-white p-5 shadow-2xl shadow-slate-900/15 xl:block z-50"
           data-lenis-prevent="true"
         >
           <div className="w-full">
@@ -294,7 +294,7 @@ function MobileDrawer({ open, onClose }: { open: boolean; onClose: () => void })
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.25 }}
-          className="fixed inset-0 z-50 lg:hidden"
+          className="fixed inset-0 z-50 xl:hidden"
           role="dialog"
           aria-modal="true"
           aria-label="Site menu"
