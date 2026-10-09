@@ -122,14 +122,14 @@ export function EnterpriseProficiency() {
               </Reveal>
 
               <Reveal from="up" delay={0.06}>
-                <h2 className="mt-3 text-display-md sm:text-display-lg font-bold text-white leading-tight">
+                <h2 className="mt-3 text-display-md sm:text-display-lg font-extrabold text-white">
                   Enterprise Proficiency with{" "}
                   <span className="text-teal-400">Absolute Precision</span>
                 </h2>
               </Reveal>
 
               <Reveal from="up" delay={0.12}>
-                <p className="mt-4 text-base leading-relaxed text-ink-300 max-w-xl">
+                <p className="mt-4 text-lead leading-relaxed text-ink-300 max-w-xl">
                   We design and ship software that meets the toughest enterprise standards — from SOC 2 audits to GDPR compliance — giving your stakeholders full confidence from day one.
                 </p>
               </Reveal>
@@ -186,7 +186,7 @@ export function EnterpriseProficiency() {
             <div className="flex flex-col gap-10">
               {/* Industry Recognition */}
               <div>
-                <h3 className="text-xs font-semibold tracking-widest text-ink-400 uppercase mb-4">
+                <h3 className="text-sm sm:text-base font-bold tracking-widest text-ink-400 uppercase mb-4">
                   INDUSTRY RECOGNITION
                 </h3>
                 <Stagger stagger={0.08} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -203,7 +203,7 @@ export function EnterpriseProficiency() {
                         </div>
                         <span className="text-xs text-ink-400 font-mono">{item.year}</span>
                       </div>
-                      <p className="mt-1.5 text-xs text-ink-300">{item.role}</p>
+                      <p className="mt-1.5 text-sm text-ink-300">{item.role}</p>
                       <div className="mt-4 flex items-center gap-1 text-amber-400">
                         {Array.from({ length: 5 }).map((_, i) => (
                           <Star key={i} className="size-3.5 fill-amber-400 text-amber-400" />
@@ -217,7 +217,7 @@ export function EnterpriseProficiency() {
 
               {/* Certifications & Compliance */}
               <div>
-                <h3 className="text-xs font-semibold tracking-widest text-ink-400 uppercase mb-4">
+                <h3 className="text-sm sm:text-base font-bold tracking-widest text-ink-400 uppercase mb-4">
                   CERTIFICATIONS & COMPLIANCE
                 </h3>
                 <Stagger stagger={0.06} className="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -229,7 +229,7 @@ export function EnterpriseProficiency() {
                     >
                       <span className={`size-2.5 rounded-full ${cert.dotColor} mb-2.5`} />
                       <span className="text-sm font-bold text-white">{cert.title}</span>
-                      <span className="mt-1 text-[11px] leading-tight text-ink-300">
+                      <span className="mt-1 text-2xs leading-tight text-ink-300">
                         {cert.subtitle}
                       </span>
                     </StaggerItem>

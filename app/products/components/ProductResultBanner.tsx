@@ -63,7 +63,7 @@ export function ProductResultBanner({
         {/* Left Headline Area */}
         <div className="lg:w-[32%] flex flex-col justify-center gap-2 shrink-0">
           <div className="flex items-center gap-1.5 w-fit">
-            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-extrabold uppercase tracking-widest bg-teal-600 text-white">
+            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-2xs font-mono font-extrabold uppercase tracking-widest bg-teal-600 text-white">
               <Sparkles className="size-2.5 text-teal-200" />
               {eyebrow}
             </span>
@@ -89,7 +89,7 @@ export function ProductResultBanner({
                 <h5 className="text-xs sm:text-sm font-extrabold text-slate-900 tracking-tight leading-tight mt-0.5">
                   {stat.title}
                 </h5>
-                <p className="text-[11px] sm:text-xs text-slate-600 leading-normal font-normal">
+                <p className="text-sm text-slate-600 leading-normal font-normal">
                   {stat.description}
                 </p>
               </div>

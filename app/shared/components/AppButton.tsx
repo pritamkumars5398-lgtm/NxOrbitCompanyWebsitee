@@ -34,9 +34,9 @@ export const AppButton: React.FC<AppButtonProps> = ({
   // Size styling classes
   let sizeClasses = "";
   if (size === "small") {
-    sizeClasses = "px-3 md:px-3.5 lg:px-4 py-1.5 md:py-1.5 lg:py-2 text-[10.5px] md:text-[11px] lg:text-xs font-semibold rounded-full";
+    sizeClasses = "px-3 md:px-3.5 lg:px-4 py-1.5 md:py-1.5 lg:py-2 text-2xs md:text-2xs lg:text-xs font-semibold rounded-full";
   } else if (size === "medium") {
-    sizeClasses = "px-3.5 md:px-4.5 lg:px-5 py-2 md:py-2 lg:py-2.5 text-[11.5px] md:text-xs lg:text-sm font-semibold rounded-full";
+    sizeClasses = "px-3.5 md:px-4.5 lg:px-5 py-2 md:py-2 lg:py-2.5 text-2xs md:text-xs lg:text-sm font-semibold rounded-full";
   } else if (size === "large") {
     sizeClasses = "px-4 md:px-5 lg:px-6 py-2.5 md:py-2.5 lg:py-3 text-xs md:text-sm lg:text-base font-semibold rounded-full";
   }

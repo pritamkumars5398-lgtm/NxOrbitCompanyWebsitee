@@ -58,7 +58,7 @@ export function CallToAction({
             <Reveal className="lg:col-span-7 flex flex-col items-start text-left gap-4 sm:gap-6">
               {eyebrow && <Eyebrow tone="light">{eyebrow}</Eyebrow>}
 
-              <h2 className="text-lg sm:text-display-md lg:text-display-lg text-white max-w-2xl font-bold leading-tight">
+              <h2 className="text-display-md sm:text-display-lg text-white max-w-2xl font-extrabold">
                 {title.includes("Business Problem") ? (
                   <>
                     Let's Start with the{" "}
@@ -84,7 +84,7 @@ export function CallToAction({
                 )}
               </h2>
 
-              <p className="max-w-xl text-[11.5px] sm:text-sm lg:text-base text-slate-200/90 leading-relaxed font-normal">
+              <p className="max-w-xl text-sm sm:text-base text-slate-200/90 leading-relaxed font-normal">
                 {description}
               </p>
 

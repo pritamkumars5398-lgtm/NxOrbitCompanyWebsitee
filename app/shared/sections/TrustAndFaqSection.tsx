@@ -69,11 +69,11 @@ export function TrustAndFaqSection({ faqs = DEFAULT_FAQS, className }: TrustAndF
             <div className="relative z-10 flex flex-col items-start">
               <Eyebrow tone="brand">TRUST CERTIFICATIONS</Eyebrow>
 
-              <h2 className="text-display-sm sm:text-display-md text-slate-900 font-extrabold tracking-tight mt-3">
+              <h2 className="text-display-md sm:text-display-lg text-slate-900 font-extrabold mt-3">
                 ISO 9001 Quality Guaranteed
               </h2>
 
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal mt-3 mb-6">
+              <p className="text-lead text-slate-600 leading-relaxed font-normal mt-3 mb-6">
                 NXTorbit operates under strict international quality guidelines. Our products undergo rigorous functional testing, stress auditing, and regular third-party security audits to ensure compliance with enterprise parameters globally.
               </p>
 
@@ -86,7 +86,7 @@ export function TrustAndFaqSection({ faqs = DEFAULT_FAQS, className }: TrustAndF
                   <div className="flex flex-col min-w-0">
                     <div className="flex items-center gap-2 flex-wrap">
                       <span className="text-sm font-extrabold text-slate-900 tracking-wide">ISO 9001:2015</span>
-                      <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-bold text-emerald-700 border border-emerald-200">
+                      <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-2xs font-bold text-emerald-700 border border-emerald-200">
                         <Award className="size-3" /> Certified
                       </span>
                     </div>
@@ -125,11 +125,11 @@ export function TrustAndFaqSection({ faqs = DEFAULT_FAQS, className }: TrustAndF
           <div className="lg:col-span-7 flex flex-col">
             <Eyebrow tone="brand">QUESTIONS & ANSWERS</Eyebrow>
 
-            <h2 className="text-display-sm sm:text-display-md text-slate-900 font-extrabold tracking-tight mt-3">
+            <h2 className="text-display-md sm:text-display-lg text-slate-900 font-extrabold mt-3">
               Frequently Asked Questions
             </h2>
 
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal mt-3 mb-6">
+            <p className="text-lead text-slate-600 leading-relaxed font-normal mt-3 mb-6">
               Everything you need to know about deployment timelines, system integration, and SLA guarantees.
             </p>
 
@@ -177,7 +177,7 @@ export function TrustAndFaqSection({ faqs = DEFAULT_FAQS, className }: TrustAndF
                     {isOpen && (
                       <div className="px-4 pb-4.5 pt-0 sm:px-4.5 sm:pb-4.5">
                         <div className="border-t border-slate-100 pt-3 ml-7">
-                          <p className="text-xs sm:text-[0.8125rem] text-slate-600 leading-relaxed font-normal">
+                          <p className="text-sm text-slate-600 leading-relaxed font-normal">
                             {faq.answer}
                           </p>
                         </div>

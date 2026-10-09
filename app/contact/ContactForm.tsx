@@ -120,10 +120,10 @@ export function ContactForm() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200/80 text-emerald-700 text-xs font-mono font-bold uppercase tracking-wider">
             <Sparkles className="size-3.5 text-emerald-600" /> Message Delivered
           </div>
-          <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
+          <h3 className="text-display-sm font-bold text-slate-900 tracking-tight">
             Thank you! We&apos;ve received your request.
           </h3>
-          <p className="max-w-md text-xs sm:text-sm text-slate-600 leading-relaxed mx-auto pt-1">
+          <p className="max-w-md text-sm text-slate-600 leading-relaxed mx-auto pt-1">
             An engineer will review your project details and reply within <strong className="text-slate-900 font-semibold">one working day</strong> (usually the same afternoon).
           </p>
         </motion.div>
@@ -181,7 +181,7 @@ export function ContactForm() {
         <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
           Tell us about the project
         </h2>
-        <p className="text-xs text-slate-500 leading-normal">
+        <p className="text-sm text-slate-500 leading-normal">
           The more context you give, the more useful our first reply will be.
         </p>
       </div>
@@ -192,7 +192,7 @@ export function ContactForm() {
         <div className="grid gap-3 sm:grid-cols-2">
           {/* Full Name */}
           <div className="flex flex-col gap-1">
-            <label className="text-[11px] font-bold uppercase tracking-wider text-slate-700 flex items-center justify-between">
+            <label className="text-2xs font-bold uppercase tracking-wider text-slate-700 flex items-center justify-between">
               <span>Full Name <span className="text-red-500 font-bold">*</span></span>
             </label>
             <div className="relative flex items-center">
@@ -212,7 +212,7 @@ export function ContactForm() {
 
           {/* Work Email */}
           <div className="flex flex-col gap-1">
-            <label className="text-[11px] font-bold uppercase tracking-wider text-slate-700 flex items-center justify-between">
+            <label className="text-2xs font-bold uppercase tracking-wider text-slate-700 flex items-center justify-between">
               <span>Work Email <span className="text-red-500 font-bold">*</span></span>
             </label>
             <div className="relative flex items-center">
@@ -235,7 +235,7 @@ export function ContactForm() {
         <div className="grid gap-3 sm:grid-cols-2">
           {/* Phone */}
           <div className="flex flex-col gap-1">
-            <label className="text-[11px] font-bold uppercase tracking-wider text-slate-700">
+            <label className="text-2xs font-bold uppercase tracking-wider text-slate-700">
               Phone Number
             </label>
             <div className="relative flex items-center">
@@ -254,7 +254,7 @@ export function ContactForm() {
 
           {/* Company */}
           <div className="flex flex-col gap-1">
-            <label className="text-[11px] font-bold uppercase tracking-wider text-slate-700">
+            <label className="text-2xs font-bold uppercase tracking-wider text-slate-700">
               Company Name
             </label>
             <div className="relative flex items-center">
@@ -276,7 +276,7 @@ export function ContactForm() {
         <div className="grid gap-3 sm:grid-cols-2">
           {/* Service Select */}
           <div className="flex flex-col gap-1">
-            <label className="text-[11px] font-bold uppercase tracking-wider text-slate-700">
+            <label className="text-2xs font-bold uppercase tracking-wider text-slate-700">
               Service <span className="text-red-500 font-bold">*</span>
             </label>
             <select
@@ -296,7 +296,7 @@ export function ContactForm() {
 
           {/* Budget Select */}
           <div className="flex flex-col gap-1">
-            <label className="text-[11px] font-bold uppercase tracking-wider text-slate-700">
+            <label className="text-2xs font-bold uppercase tracking-wider text-slate-700">
               Budget Range
             </label>
             <select
@@ -311,13 +311,13 @@ export function ContactForm() {
                 </option>
               ))}
             </select>
-            <span className="text-[10px] text-slate-400 font-medium ml-1">Helps us scope realistically.</span>
+            <span className="text-2xs text-slate-400 font-medium ml-1">Helps us scope realistically.</span>
           </div>
         </div>
 
         {/* Row 4: What are you building TextArea */}
         <div className="flex flex-col gap-1">
-          <label className="text-[11px] font-bold uppercase tracking-wider text-slate-700">
+          <label className="text-2xs font-bold uppercase tracking-wider text-slate-700">
             What are you building? <span className="text-red-500 font-bold">*</span>
           </label>
           <div className="relative">
@@ -336,7 +336,7 @@ export function ContactForm() {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 border-t border-slate-100 pt-3.5 mt-auto">
         {/* Interactive CAPTCHA Widget */}
         <div className="flex flex-col gap-1 w-full sm:max-w-[16rem]">
-          <label className="text-[11px] font-bold uppercase tracking-wider text-slate-700 flex items-center justify-between">
+          <label className="text-2xs font-bold uppercase tracking-wider text-slate-700 flex items-center justify-between">
             <span>Quick verification <span className="text-red-500 font-bold">*</span></span>
           </label>
           <div
@@ -372,7 +372,7 @@ export function ContactForm() {
                 <span className="text-xs font-semibold text-slate-800">
                   {isVerified ? "Verification Successful" : isVerifying ? "Verifying..." : "I'm not a robot"}
                 </span>
-                <span className="text-[10px] text-slate-400">
+                <span className="text-2xs text-slate-400">
                   {isVerified ? "Human confirmed" : "reCAPTCHA · Protected"}
                 </span>
               </div>
@@ -381,10 +381,10 @@ export function ContactForm() {
             {/* CAPTCHA badge icon */}
             <div className="flex flex-col items-end pl-2">
               <ShieldCheck className={cn("size-4 sm:size-4.5", isVerified ? "text-emerald-600" : "text-slate-400")} />
-              <span className="text-[9px] font-mono text-slate-400 mt-0.5">Privacy · Terms</span>
+              <span className="text-2xs font-mono text-slate-400 mt-0.5">Privacy · Terms</span>
             </div>
           </div>
-          {error && <span className="text-[10px] font-bold text-red-500 mt-0.5">{error}</span>}
+          {error && <span className="text-2xs font-bold text-red-500 mt-0.5">{error}</span>}
         </div>
 
         {/* Submit Button with Consistent Alignment and Icon Styling */}

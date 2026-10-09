@@ -262,7 +262,7 @@ export default function NextOrbitFreightPage() {
               </Reveal>
 
               <Reveal from="up" delay={0.06} className="mt-2">
-                <h1 className="max-w-2xl text-display-lg sm:text-display-xl text-ink-900 leading-[1.05]">
+                <h1 className="max-w-2xl text-display-lg sm:text-display-xl font-extrabold text-ink-900">
                   Stop Managing Logistics. <br />
                   <span className="bg-linear-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">
                     Start Orchestrating Growth.
@@ -365,7 +365,7 @@ export default function NextOrbitFreightPage() {
                 <h4 className="text-base sm:text-lg font-extrabold text-white tracking-tight">
                   One Platform. <span className="bg-linear-to-r from-teal-300 to-emerald-300 bg-clip-text text-transparent">Infinite Possibilities.</span>
                 </h4>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mt-0.5 max-w-xl">
+                <p className="text-sm text-slate-300 leading-relaxed mt-0.5 max-w-xl">
                   NXT Orbit connects your systems, applications, and data—so you can focus on what matters most.
                 </p>
               </div>
@@ -440,7 +440,7 @@ export default function NextOrbitFreightPage() {
             <Eyebrow tone="brand">STRATEGIC TRANSFORMATION</Eyebrow>
 
             {/* Main Heading */}
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0b2447] tracking-tight leading-[1.18] text-center">
+            <h2 className="text-display-md sm:text-display-lg font-extrabold text-[#0b2447] text-center">
               Turn Supply Chain Complexity <br className="hidden sm:block" />
               <span className="text-[#00A896]">into Competitive Advantage</span>
             </h2>
@@ -449,7 +449,7 @@ export default function NextOrbitFreightPage() {
             <div className="w-9 h-[2px] bg-[#00A896] rounded-full my-3" />
 
             {/* Subtitle */}
-            <p className="text-xs sm:text-sm text-slate-500 max-w-xl leading-relaxed text-center font-normal">
+            <p className="text-sm text-slate-500 max-w-xl leading-relaxed text-center font-normal">
               We help logistics and supply chain businesses move from fragmented operations to intelligent, connected and future-ready networks.
             </p>
           </div>
@@ -477,7 +477,7 @@ export default function NextOrbitFreightPage() {
               <div className="w-7 h-[1.5px] bg-[#00A896] rounded-full my-2" />
 
               {/* Description */}
-              <p className="text-xs text-slate-500 leading-relaxed max-w-xs font-normal">
+              <p className="text-sm text-slate-500 leading-relaxed max-w-xs font-normal">
                 Eliminate swivel-chair work. Connect CRM, freight tracking, customs filings (VGM, IGM, CGM), and accounting under a single login.
               </p>
             </div>
@@ -503,7 +503,7 @@ export default function NextOrbitFreightPage() {
               <div className="w-7 h-[1.5px] bg-[#00A896] rounded-full my-2" />
 
               {/* Description */}
-              <p className="text-xs text-slate-500 leading-relaxed max-w-xs font-normal">
+              <p className="text-sm text-slate-500 leading-relaxed max-w-xs font-normal">
                 Move from reactive problem-solving to proactive decision-making. Predict port congestion, route bottlenecks, and carrier risks before you book.
               </p>
             </div>
@@ -529,7 +529,7 @@ export default function NextOrbitFreightPage() {
               <div className="w-7 h-[1.5px] bg-[#00A896] rounded-full my-2" />
 
               {/* Description */}
-              <p className="text-xs text-slate-500 leading-relaxed max-w-xs font-normal">
+              <p className="text-sm text-slate-500 leading-relaxed max-w-xs font-normal">
                 Keep communication tied directly to shipments. Built-in ChatApp, media sharing, and automated triggers keep teams and partners aligned without messy email chains.
               </p>
             </div>
@@ -544,7 +544,7 @@ export default function NextOrbitFreightPage() {
             {/* Left side details */}
             <div className="flex flex-col justify-center">
               <Eyebrow tone="brand">COGNITIVE SHOWCASE</Eyebrow>
-              <h2 className="text-display-sm sm:text-display-md text-slate-900 font-extrabold tracking-tight mt-3 mb-6">
+              <h2 className="text-display-md sm:text-display-lg text-slate-900 font-extrabold mt-3 mb-6">
                 Cognitive Logistics: AI That Thinks Ahead of You
               </h2>
 
@@ -555,7 +555,7 @@ export default function NextOrbitFreightPage() {
                   </span>
                   <div className="flex-1 pt-0.5">
                     <h4 className="text-base font-bold text-slate-900">Autonomous Workflow Orchestration</h4>
-                    <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                    <p className="text-sm text-slate-600 mt-1.5 leading-relaxed">
                       Self-healing workflows that detect missing documents or vessel delays and auto-draft inquiry emails to carriers.
                     </p>
                   </div>
@@ -567,7 +567,7 @@ export default function NextOrbitFreightPage() {
                   </span>
                   <div className="flex-1 pt-0.5">
                     <h4 className="text-base font-bold text-slate-900">Conversational Operations</h4>
-                    <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                    <p className="text-sm text-slate-600 mt-1.5 leading-relaxed">
                       Type natural queries like "What are my top 3 delayed shipments by value?" or "Compare Q2 margins for Air vs. Sea Export" for instant answers.
                     </p>
                   </div>
@@ -579,7 +579,7 @@ export default function NextOrbitFreightPage() {
                   </span>
                   <div className="flex-1 pt-0.5">
                     <h4 className="text-base font-bold text-slate-900">Strategic Business Insights</h4>
-                    <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                    <p className="text-sm text-slate-600 mt-1.5 leading-relaxed">
                       Daily AI Command Briefs surfacing "Silent Profit Leaks" and trend analysis across trade lanes.
                     </p>
                   </div>
@@ -610,7 +610,7 @@ export default function NextOrbitFreightPage() {
 
                 {/* Prompt clickers */}
                 <div className="bg-slate-950 border-t border-slate-800 p-4">
-                  <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider block mb-2 font-mono">Suggested Prompts:</span>
+                  <span className="text-2xs text-slate-500 font-bold uppercase tracking-wider block mb-2 font-mono">Suggested Prompts:</span>
                   <div className="flex flex-col gap-2">
                     {CHAT_PROMPTS.map((prompt, idx) => (
                       <button
@@ -643,14 +643,14 @@ export default function NextOrbitFreightPage() {
             {/* Left Header Info */}
             <div className="lg:col-span-6 flex flex-col gap-2">
               <div className="flex items-center gap-2">
-                <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-teal-600">
+                <span className="text-2xs font-mono font-bold uppercase tracking-widest text-teal-600">
                   PRODUCT DEEP DIVE
                 </span>
               </div>
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
+              <h2 className="text-display-md sm:text-display-lg font-extrabold text-slate-900">
                 NXT Orbit Freight
               </h2>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xl">
+              <p className="text-lead text-slate-600 leading-relaxed max-w-xl">
                 An intelligent, scalable freight management solution that connects shipper, carrier and customer — delivering real-time visibility, operational efficiency and seamless logistics.
               </p>
             </div>
@@ -673,11 +673,11 @@ export default function NextOrbitFreightPage() {
               </div>
 
               <div className="relative z-10 flex flex-col gap-2">
-                <div className="inline-flex items-center gap-1.5 bg-teal-50 text-teal-700 px-2.5 py-0.5 rounded-full text-[11px] font-bold border border-teal-200/70 w-fit">
+                <div className="inline-flex items-center gap-1.5 bg-teal-50 text-teal-700 px-2.5 py-0.5 rounded-full text-2xs font-bold border border-teal-200/70 w-fit">
                   <Sparkles className="size-3 text-teal-600" />
                   Smarter Freight. Stronger Supply Chains.
                 </div>
-                <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                <p className="text-sm text-slate-600 leading-relaxed font-normal">
                   From booking to delivery, NXT Orbit Freight simplifies logistics with technology, automation and real-time insights.
                 </p>
               </div>
@@ -734,14 +734,14 @@ export default function NextOrbitFreightPage() {
 
                     <div className="relative z-10 flex flex-col items-start gap-2">
                       <div className="flex items-center gap-2">
-                        <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-teal-300">
+                        <span className="text-2xs font-mono font-bold uppercase tracking-widest text-teal-300">
                           {currentTab.label}
                         </span>
                       </div>
-                      <h3 className="text-base sm:text-lg lg:text-xl font-extrabold text-white leading-snug tracking-tight">
+                      <h3 className="text-base sm:text-lg font-bold text-white leading-snug tracking-tight">
                         {currentTab.heroTitle}
                       </h3>
-                      <p className="text-xs text-slate-200/90 leading-relaxed font-normal max-w-md line-clamp-3 mt-0.5">
+                      <p className="text-sm text-slate-200/90 leading-relaxed font-normal max-w-md line-clamp-3 mt-0.5">
                         {currentTab.heroDesc}
                       </p>
                     </div>
@@ -765,7 +765,7 @@ export default function NextOrbitFreightPage() {
                         </h4>
 
                         {/* Description */}
-                        <p className="mt-1.5 text-xs text-slate-600 leading-relaxed font-normal">
+                        <p className="mt-1.5 text-sm text-slate-600 leading-relaxed font-normal">
                           {point.desc}
                         </p>
                       </div>
@@ -828,10 +828,10 @@ export default function NextOrbitFreightPage() {
         <Container>
           <div className="text-center max-w-2xl mx-auto mb-16">
             <Eyebrow tone="brand">DATA GOVERNANCE & COMPLIANCE</Eyebrow>
-            <h2 className="text-display-sm sm:text-display-md text-slate-900 font-extrabold tracking-tight mt-3">
+            <h2 className="text-display-md sm:text-display-lg text-slate-900 font-extrabold mt-3">
               Enterprise-Grade Infrastructure & ISO 9001 Quality
             </h2>
-            <p className="text-sm text-slate-600 mt-2">
+            <p className="text-lead text-slate-600 mt-2">
               Crucial section to establish trust with enterprise clients.
             </p>
           </div>
@@ -855,12 +855,12 @@ export default function NextOrbitFreightPage() {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-base font-extrabold text-slate-900 tracking-tight leading-snug group-hover:text-teal-700 transition-colors">
+                    <h3 className="text-base sm:text-lg font-bold text-slate-900 tracking-tight leading-snug group-hover:text-teal-700 transition-colors">
                       {point.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-xs text-slate-600 mt-2 leading-relaxed font-normal">
+                    <p className="text-sm text-slate-600 mt-2 leading-relaxed font-normal">
                       {point.desc}
                     </p>
                   </div>

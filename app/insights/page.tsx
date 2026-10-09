@@ -60,7 +60,7 @@ export default function InsightsIndexPage() {
             </Reveal>
 
             <Reveal from="up" delay={0.06}>
-              <h1 className="text-display-md sm:text-display-lg lg:text-display-xl font-extrabold text-white tracking-tight leading-[1.12]">
+              <h1 className="text-display-lg sm:text-display-xl font-extrabold text-white">
                 Insights for Business & Technology Leaders
               </h1>
             </Reveal>
@@ -103,13 +103,13 @@ export default function InsightsIndexPage() {
 
                       {/* Content */}
                       <div className="p-6">
-                        <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#008c83] block mb-2">
+                        <span className="text-2xs font-mono font-bold uppercase tracking-wider text-[#008c83] block mb-2">
                           {item.category}
                         </span>
                         <h2 className="text-xl font-bold text-slate-900 leading-snug group-hover:text-[#008c83] transition-colors mb-2.5">
                           {item.title}
                         </h2>
-                        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed line-clamp-3">
+                        <p className="text-sm text-slate-600 leading-relaxed line-clamp-3">
                           {item.executiveSummary}
                         </p>
                       </div>

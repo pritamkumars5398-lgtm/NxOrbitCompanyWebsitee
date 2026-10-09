@@ -154,18 +154,18 @@ export function ProcessArcLayout({
 
               {/* Hub Title Contents */}
               <div className="relative z-10 flex flex-col items-center max-w-[220px] sm:max-w-xs">
-                <span className="text-eyebrow text-brand-600 font-bold uppercase tracking-wider mb-1.5 sm:mb-2 text-[10px] sm:text-xs">
+                <span className="text-eyebrow text-brand-600 font-bold uppercase tracking-wider mb-1.5 sm:mb-2 text-2xs sm:text-xs">
                   {eyebrow}
                 </span>
 
-                <h2 className="text-display-xs sm:text-display-sm lg:text-display-md text-slate-900 font-extrabold tracking-tight leading-tight">
+                <h2 className="text-display-md sm:text-display-lg text-slate-900 font-extrabold">
                   {title}
                 </h2>
 
                 <div className="h-1 w-10 sm:w-12 rounded-full bg-brand-600 my-2 sm:my-3 lg:my-4" />
 
                 {subtitle && (
-                  <p className="text-[11px] sm:text-xs lg:text-sm text-slate-800 leading-relaxed font-semibold">
+                  <p className="text-lead text-slate-800 leading-relaxed font-semibold">
                     {subtitle}
                   </p>
                 )}
@@ -235,10 +235,10 @@ export function ProcessArcLayout({
 
                     {/* Step Title & Description Content */}
                     <div className="flex flex-col min-w-0 pl-1">
-                      <h3 className="text-sm sm:text-base lg:text-lg font-extrabold text-slate-900 tracking-tight leading-snug group-hover:text-brand-600 transition-colors duration-200">
+                      <h3 className="text-sm sm:text-base font-bold text-slate-900 tracking-tight leading-snug group-hover:text-brand-600 transition-colors duration-200">
                         {stepItem.title}
                       </h3>
-                      <p className="text-[11px] sm:text-xs lg:text-sm leading-relaxed text-slate-800 mt-0.5 max-w-[260px] sm:max-w-md lg:max-w-[280px] xl:max-w-sm font-medium line-clamp-2">
+                      <p className="text-sm leading-relaxed text-slate-800 mt-0.5 max-w-[260px] sm:max-w-md lg:max-w-[280px] xl:max-w-sm font-medium line-clamp-2">
                         {stepItem.description}
                       </p>
                     </div>

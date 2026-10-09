@@ -125,7 +125,7 @@ export function FeatureCard({
       </div>
 
       <div className="flex flex-1 flex-col gap-2">
-        <h3 className={cn("text-base font-semibold", dark && "text-white")}>{title}</h3>
+        <h3 className={cn("text-base sm:text-lg font-bold", dark && "text-white")}>{title}</h3>
         <p className={cn("text-sm leading-relaxed", dark ? "text-ink-400" : "text-ink-600")}>
           {description}
         </p>

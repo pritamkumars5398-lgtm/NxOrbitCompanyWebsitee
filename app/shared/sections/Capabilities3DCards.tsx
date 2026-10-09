@@ -97,7 +97,7 @@ export function Capabilities3DCards({
                     {feature.title}
                   </h3>
 
-                  <p className="mt-2 text-xs sm:text-sm leading-relaxed text-slate-700 font-normal">
+                  <p className="mt-2 text-sm leading-relaxed text-slate-700 font-normal">
                     {feature.description}
                   </p>
                 </div>

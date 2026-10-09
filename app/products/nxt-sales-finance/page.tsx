@@ -350,7 +350,7 @@ export default function NextOrbitSalesFinancePage() {
               </Reveal>
 
               <Reveal from="up" delay={0.06} className="mt-2">
-                <h1 className="max-w-2xl text-display-lg sm:text-display-xl text-ink-900 leading-[1.05]">
+                <h1 className="max-w-2xl text-display-lg sm:text-display-xl font-extrabold text-ink-900">
                   From Lead to Ledger: <br />
                   <span className="bg-linear-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">
                     The Financial Engine Built for Global Logistics.
@@ -429,10 +429,10 @@ export default function NextOrbitSalesFinancePage() {
       <Section tone="white" spacing="lg" className="relative overflow-hidden py-16 sm:py-24">
         <Container>
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <h2 className="text-display-sm sm:text-display-md text-slate-900 font-extrabold tracking-tight">
+            <h2 className="text-display-md sm:text-display-lg text-slate-900 font-extrabold">
               The Enterprise Advantage: Why Purpose-Built Logistics Accounting?
             </h2>
-            <p className="text-sm sm:text-base text-slate-600 mt-3 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lead text-slate-600 mt-3 max-w-2xl mx-auto leading-relaxed">
               Generic accounting tools like QuickBooks or off-the-shelf software were never built to handle job-costing, carrier debit notes, or multi-branch freight reconciliation. NXT bridges the gap between sales activity and financial accounting.
             </p>
           </div>
@@ -450,10 +450,10 @@ export default function NextOrbitSalesFinancePage() {
                 {/* Column Header */}
                 <div className="flex items-center justify-between pb-6 mb-6 border-b border-slate-200/80">
                   <div>
-                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-400">
+                    <span className="text-2xs font-mono font-bold uppercase tracking-wider text-slate-400">
                       GENERIC SOFTWARE
                     </span>
-                    <h3 className="text-lg font-extrabold text-slate-800 mt-0.5">
+                    <h3 className="text-base sm:text-lg font-bold text-slate-800 mt-0.5">
                       Traditional Accounting Tools
                     </h3>
                   </div>
@@ -475,11 +475,11 @@ export default function NextOrbitSalesFinancePage() {
                             <span className="size-1.5 rounded-full bg-slate-400 group-hover/item:bg-rose-500 transition-colors" />
                             {row.capability}
                           </span>
-                          <span className="text-[10px] font-mono text-rose-600 bg-rose-50 border border-rose-200/70 px-2 py-0.5 rounded-md font-semibold transition-colors group-hover/item:bg-rose-100 group-hover/item:border-rose-300">
+                          <span className="text-2xs font-mono text-rose-600 bg-rose-50 border border-rose-200/70 px-2 py-0.5 rounded-md font-semibold transition-colors group-hover/item:bg-rose-100 group-hover/item:border-rose-300">
                             Manual Re-Entry
                           </span>
                         </div>
-                        <p className="text-xs text-slate-500 leading-relaxed pl-3.5 group-hover/item:text-slate-600 transition-colors">
+                        <p className="text-sm text-slate-500 leading-relaxed pl-3.5 group-hover/item:text-slate-600 transition-colors">
                           {row.oldWay}
                         </p>
                       </div>
@@ -504,10 +504,10 @@ export default function NextOrbitSalesFinancePage() {
                 {/* Column Header */}
                 <div className="flex items-center justify-between pb-6 mb-6 border-b border-white/10">
                   <div>
-                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-teal-400">
+                    <span className="text-2xs font-mono font-bold uppercase tracking-wider text-teal-400">
                       NEXT-GEN OS
                     </span>
-                    <h3 className="text-lg font-extrabold text-white mt-0.5">
+                    <h3 className="text-base sm:text-lg font-bold text-white mt-0.5">
                       NXT Autonomous Financial OS
                     </h3>
                   </div>
@@ -529,11 +529,11 @@ export default function NextOrbitSalesFinancePage() {
                             <CheckCircle2 className="size-3.5 text-teal-400 group-hover/item:scale-110 transition-transform" />
                             {row.capability}
                           </span>
-                          <span className="text-[10px] font-mono text-teal-300 bg-teal-950/80 border border-teal-500/30 px-2 py-0.5 rounded-md font-semibold transition-colors group-hover/item:bg-teal-900 group-hover/item:border-teal-400/60">
+                          <span className="text-2xs font-mono text-teal-300 bg-teal-950/80 border border-teal-500/30 px-2 py-0.5 rounded-md font-semibold transition-colors group-hover/item:bg-teal-900 group-hover/item:border-teal-400/60">
                             Automated
                           </span>
                         </div>
-                        <p className="text-xs text-slate-300 leading-relaxed pl-5 group-hover/item:text-white transition-colors">
+                        <p className="text-sm text-slate-300 leading-relaxed pl-5 group-hover/item:text-white transition-colors">
                           {row.newWay}
                         </p>
                       </div>
@@ -564,10 +564,10 @@ export default function NextOrbitSalesFinancePage() {
                   {/* Left Header Info & 3 Value Badges */}
                   <div className="lg:col-span-6 flex flex-col items-start">
                     <Eyebrow tone="brand">STRATEGIC TRANSFORMATION</Eyebrow>
-                    <h2 className="text-display-sm sm:text-display-md font-extrabold text-slate-900 tracking-tight leading-tight mt-3">
+                    <h2 className="text-display-md sm:text-display-lg font-extrabold text-slate-900 mt-3">
                       Core Systems for Profit Protection & Pipeline Control
                     </h2>
-                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl font-normal mt-3">
+                    <p className="text-lead text-slate-600 leading-relaxed max-w-xl font-normal mt-3">
                       Unifying CRM, accounting, and compliance under a single system of action.
                     </p>
 
@@ -579,7 +579,7 @@ export default function NextOrbitSalesFinancePage() {
                         </div>
                         <div>
                           <h5 className="text-xs font-extrabold text-slate-900 leading-tight">High Visibility</h5>
-                          <p className="text-[11px] text-slate-500 leading-none mt-0.5">Across every node</p>
+                          <p className="text-xs text-slate-500 leading-none mt-0.5">Across every node</p>
                         </div>
                       </div>
 
@@ -589,7 +589,7 @@ export default function NextOrbitSalesFinancePage() {
                         </div>
                         <div>
                           <h5 className="text-xs font-extrabold text-slate-900 leading-tight">Real-Time Control</h5>
-                          <p className="text-[11px] text-slate-500 leading-none mt-0.5">Faster decisions</p>
+                          <p className="text-xs text-slate-500 leading-none mt-0.5">Faster decisions</p>
                         </div>
                       </div>
 
@@ -599,7 +599,7 @@ export default function NextOrbitSalesFinancePage() {
                         </div>
                         <div>
                           <h5 className="text-xs font-extrabold text-slate-900 leading-tight">Operational Excellence</h5>
-                          <p className="text-[11px] text-slate-500 leading-none mt-0.5">Lower cost, higher output</p>
+                          <p className="text-xs text-slate-500 leading-none mt-0.5">Lower cost, higher output</p>
                         </div>
                       </div>
                     </div>
@@ -671,12 +671,12 @@ export default function NextOrbitSalesFinancePage() {
                       <div className="lg:col-span-5 flex flex-col justify-between gap-6">
                         <div>
                           {/* Title */}
-                          <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                          <h3 className="text-display-sm font-bold text-slate-900 tracking-tight leading-tight">
                             {currentTab.fullTitle}
                           </h3>
 
                           {/* Subtitle / Intro */}
-                          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal mt-2">
+                          <p className="text-sm text-slate-600 leading-relaxed font-normal mt-2">
                             {currentTab.intro}
                           </p>
 
@@ -689,7 +689,7 @@ export default function NextOrbitSalesFinancePage() {
                                 </div>
                                 <div>
                                   <h4 className="text-xs font-bold text-slate-900 leading-tight">{point.title}</h4>
-                                  <p className="text-[11px] text-slate-600 leading-relaxed mt-1 font-normal">{point.desc}</p>
+                                  <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">{point.desc}</p>
                                 </div>
                               </div>
                             ))}
@@ -722,9 +722,9 @@ export default function NextOrbitSalesFinancePage() {
                             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                               {currentTab.metrics.map((metric, mIdx) => (
                                 <div key={mIdx} className="flex flex-col">
-                                  <span className="text-[10px] text-slate-500 font-semibold truncate">{metric.label}</span>
+                                  <span className="text-2xs text-slate-500 font-semibold truncate">{metric.label}</span>
                                   <span className="text-sm font-extrabold text-slate-900 mt-0.5">{metric.val}</span>
-                                  <span className="text-[10px] text-emerald-600 font-bold truncate">{metric.change}</span>
+                                  <span className="text-2xs text-emerald-600 font-bold truncate">{metric.change}</span>
                                 </div>
                               ))}
                             </div>
@@ -734,7 +734,7 @@ export default function NextOrbitSalesFinancePage() {
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 flex-1">
                             {/* Mini Map Widget */}
                             <div className="bg-white rounded-xl border border-slate-200/80 p-3 flex flex-col justify-between">
-                              <h6 className="text-[11px] font-extrabold text-slate-900">{currentTab.widget1Title}</h6>
+                              <h6 className="text-2xs font-extrabold text-slate-900">{currentTab.widget1Title}</h6>
                               <div className="relative h-28 my-1 flex items-center justify-center overflow-hidden rounded-lg bg-teal-50/30">
                                 <svg viewBox="0 0 300 120" className="w-full h-full object-contain">
                                   <path d="M 40 70 Q 120 20 200 60 Q 240 30 270 50" stroke="#0d9488" strokeWidth="1.5" strokeDasharray="3 3" strokeOpacity="0.8" fill="none" />
@@ -755,7 +755,7 @@ export default function NextOrbitSalesFinancePage() {
                             {/* Mini Graph Widget */}
                             <div className="bg-white rounded-xl border border-slate-200/80 p-3 flex flex-col justify-between">
                               <div className="flex items-center justify-between">
-                                <h6 className="text-[11px] font-extrabold text-slate-900">{currentTab.widget2Title}</h6>
+                                <h6 className="text-2xs font-extrabold text-slate-900">{currentTab.widget2Title}</h6>
                                 <span className="text-[9px] text-slate-500 font-bold flex items-center gap-0.5 border px-1.5 py-0.5 rounded">Live <ChevronDown className="size-2.5" /></span>
                               </div>
                               <div className="relative h-28 my-1 flex items-center justify-center">
@@ -784,7 +784,7 @@ export default function NextOrbitSalesFinancePage() {
                       </div>
                       <div>
                         <h5 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Increase Throughput</h5>
-                        <p className="text-[11px] text-slate-600 leading-normal mt-0.5">Accelerate movement and improve order fulfillment.</p>
+                        <p className="text-sm text-slate-600 leading-normal mt-0.5">Accelerate movement and improve order fulfillment.</p>
                       </div>
                     </div>
 
@@ -794,7 +794,7 @@ export default function NextOrbitSalesFinancePage() {
                       </div>
                       <div>
                         <h5 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Reduce Costs</h5>
-                        <p className="text-[11px] text-slate-600 leading-normal mt-0.5">Optimize resources and minimize operational waste.</p>
+                        <p className="text-sm text-slate-600 leading-normal mt-0.5">Optimize resources and minimize operational waste.</p>
                       </div>
                     </div>
 
@@ -804,7 +804,7 @@ export default function NextOrbitSalesFinancePage() {
                       </div>
                       <div>
                         <h5 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Improve Accuracy</h5>
-                        <p className="text-[11px] text-slate-600 leading-normal mt-0.5">Real-time data ensures better decisions and fewer errors.</p>
+                        <p className="text-sm text-slate-600 leading-normal mt-0.5">Real-time data ensures better decisions and fewer errors.</p>
                       </div>
                     </div>
 
@@ -814,7 +814,7 @@ export default function NextOrbitSalesFinancePage() {
                       </div>
                       <div>
                         <h5 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Scale with Confidence</h5>
-                        <p className="text-[11px] text-slate-600 leading-normal mt-0.5">Built to grow across locations, partners, and business models.</p>
+                        <p className="text-sm text-slate-600 leading-normal mt-0.5">Built to grow across locations, partners, and business models.</p>
                       </div>
                     </div>
                   </div>
@@ -832,10 +832,10 @@ export default function NextOrbitSalesFinancePage() {
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-teal-600">
               SYSTEM DEEP-DIVE
             </span>
-            <h2 className="text-display-md sm:text-display-lg text-slate-900 font-extrabold tracking-tight mt-2">
+            <h2 className="text-display-md sm:text-display-lg text-slate-900 font-extrabold mt-2">
               Interactive Capabilities
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 mt-2">
+            <p className="text-lead text-slate-600 mt-2">
               Explore the functional components of the Sales and Financial Suite
             </p>
           </div>
@@ -891,14 +891,14 @@ export default function NextOrbitSalesFinancePage() {
 
                     <div className="relative z-10 flex flex-col items-start gap-2">
                       <div className="flex items-center gap-2">
-                        <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-teal-300">
+                        <span className="text-2xs font-mono font-bold uppercase tracking-widest text-teal-300">
                           0{tabIdx} {currentTab.label.replace(/^\d+\.\s*/, "").toUpperCase()}
                         </span>
                       </div>
-                      <h3 className="text-base sm:text-lg lg:text-xl font-extrabold text-white leading-snug tracking-tight">
+                      <h3 className="text-base sm:text-lg font-bold text-white leading-snug tracking-tight">
                         {currentTab.bannerTitle}
                       </h3>
-                      <p className="text-xs text-slate-200/90 leading-relaxed font-normal max-w-md line-clamp-3 mt-0.5">
+                      <p className="text-sm text-slate-200/90 leading-relaxed font-normal max-w-md line-clamp-3 mt-0.5">
                         {currentTab.bannerDesc}
                       </p>
                     </div>
@@ -922,7 +922,7 @@ export default function NextOrbitSalesFinancePage() {
                         </h4>
 
                         {/* Description */}
-                        <p className="mt-1.5 text-xs text-slate-600 leading-relaxed font-normal">
+                        <p className="mt-1.5 text-sm text-slate-600 leading-relaxed font-normal">
                           {point.desc}
                         </p>
                       </div>
@@ -970,7 +970,7 @@ export default function NextOrbitSalesFinancePage() {
             {/* Left side details */}
             <div className="flex flex-col justify-center">
               <Eyebrow tone="brand">AI FINANCIAL COGNITION</Eyebrow>
-              <h2 className="text-display-sm sm:text-display-md text-slate-900 font-extrabold tracking-tight mt-3 mb-6">
+              <h2 className="text-display-md sm:text-display-lg text-slate-900 font-extrabold mt-3 mb-6">
                 Cognitive Accounting: Stop Profit Leaks Instantly
               </h2>
               
@@ -981,7 +981,7 @@ export default function NextOrbitSalesFinancePage() {
                   </span>
                   <div className="flex-1 pt-0.5">
                     <h4 className="text-base font-bold text-slate-900">Job-Level Margin Analytics</h4>
-                    <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                    <p className="text-sm text-slate-600 mt-1.5 leading-relaxed">
                       Real-time variance tracking comparing quoted rates against final carrier invoices to flag "Silent Profit Leaks" before closing a job.
                     </p>
                   </div>
@@ -993,7 +993,7 @@ export default function NextOrbitSalesFinancePage() {
                   </span>
                   <div className="flex-1 pt-0.5">
                     <h4 className="text-base font-bold text-slate-900">AI-Powered Cash Flow & Aging Forecasts</h4>
-                    <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                    <p className="text-sm text-slate-600 mt-1.5 leading-relaxed">
                       Machine learning algorithms predict payment dates based on historical client settlement speed, highlighting high-risk receivables early.
                     </p>
                   </div>
@@ -1005,7 +1005,7 @@ export default function NextOrbitSalesFinancePage() {
                   </span>
                   <div className="flex-1 pt-0.5">
                     <h4 className="text-base font-bold text-slate-900">Conversational Financial Assistant</h4>
-                    <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                    <p className="text-sm text-slate-600 mt-1.5 leading-relaxed">
                       Query your financial engine in plain language ("Show outstanding invoices over 60 days for Client X" or "Compare profitability between Air Import and Sea Export for Q2") for instant visualization.
                     </p>
                   </div>
@@ -1036,7 +1036,7 @@ export default function NextOrbitSalesFinancePage() {
 
                 {/* Prompt clickers */}
                 <div className="bg-slate-950 border-t border-slate-800 p-4">
-                  <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider block mb-2 font-mono">Suggested Financial Queries:</span>
+                  <span className="text-2xs text-slate-500 font-bold uppercase tracking-wider block mb-2 font-mono">Suggested Financial Queries:</span>
                   <div className="flex flex-col gap-2">
                     {FINANCE_CHAT_PROMPTS.map((prompt, idx) => (
                       <button
@@ -1101,10 +1101,10 @@ export default function NextOrbitSalesFinancePage() {
         <Container>
           <div className="text-center max-w-2xl mx-auto mb-16">
             <Eyebrow tone="brand">DATA GOVERNANCE & COMPLIANCE</Eyebrow>
-            <h2 className="text-display-sm sm:text-display-md text-slate-900 font-extrabold tracking-tight mt-3">
+            <h2 className="text-display-md sm:text-display-lg text-slate-900 font-extrabold mt-3">
               Enterprise-Grade Infrastructure & ISO 9001 Quality
             </h2>
-            <p className="text-sm text-slate-600 mt-2">
+            <p className="text-lead text-slate-600 mt-2">
               Established protocols to protect all operational and shipping logs.
             </p>
           </div>
@@ -1128,12 +1128,12 @@ export default function NextOrbitSalesFinancePage() {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-base font-extrabold text-slate-900 tracking-tight leading-snug group-hover:text-teal-700 transition-colors">
+                    <h3 className="text-base sm:text-lg font-bold text-slate-900 tracking-tight leading-snug group-hover:text-teal-700 transition-colors">
                       {point.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-xs text-slate-600 mt-2 leading-relaxed font-normal">
+                    <p className="text-sm text-slate-600 mt-2 leading-relaxed font-normal">
                       {point.desc}
                     </p>
                   </div>

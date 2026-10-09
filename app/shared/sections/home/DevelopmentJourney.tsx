@@ -84,7 +84,7 @@ export function DevelopmentJourney() {
         {/* Section Heading */}
         <Reveal className="flex flex-col items-start gap-3 mb-14">
           <Eyebrow tone="light">OUR DEVELOPMENT JOURNEY</Eyebrow>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
+          <h2 className="text-display-md sm:text-display-lg font-extrabold text-white">
             From idea to launch—every step planned with purpose.
           </h2>
         </Reveal>

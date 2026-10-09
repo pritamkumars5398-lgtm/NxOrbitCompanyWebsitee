@@ -1,5 +1,6 @@
 "use client";
 
+import { Timer } from "lucide-react";
 import { Container, Eyebrow } from "@/app/shared/ui/Layout";
 import { Marquee } from "@/app/shared/ui/Marquee";
 import { Reveal } from "@/app/shared/motion/Reveal";
@@ -48,54 +49,79 @@ const REAL_LOGOS = [
   },
 ];
 
+const ROW_A = REAL_LOGOS.slice(0, 4);
+const ROW_B = REAL_LOGOS.slice(4);
+
+function LogoTile({ client }: { client: (typeof REAL_LOGOS)[number] }) {
+  return (
+    <div
+      className="group flex h-16 w-40 sm:w-44 shrink-0 items-center justify-center rounded-xl border border-slate-200/90 bg-white px-5 transition-colors duration-300 hover:border-teal-400"
+      title={client.name}
+    >
+      <img
+        src={client.image}
+        alt={client.alt}
+        className="h-7 sm:h-8 w-auto max-w-[120px] object-contain transition-transform duration-300 group-hover:scale-105"
+        loading="lazy"
+      />
+    </div>
+  );
+}
+
 /**
- * Enterprise client & partner logo rail displaying authentic brand logos in uniform size.
+ * Trust section: headline + client spotlight on the left, a two-row logo
+ * rail (opposite directions) on the right.
  */
 export function LogoRail() {
   return (
-    <section className="relative border-y border-slate-200/90 bg-white py-14 sm:py-18 overflow-hidden" id="trust">
-      {/* Pristine ambient brand radial illumination */}
+    <section className="relative overflow-hidden border-y border-slate-200/90 bg-slate-50/70 py-14 sm:py-20" id="trust">
+      {/* Subtle dot grid backdrop */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,187,169,0.08)_0%,transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(rgba(15,23,42,0.07)_1px,transparent_1px)] [background-size:22px_22px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_80%)]"
       />
 
       <Container className="relative z-10">
-        <div className="flex flex-col items-center gap-6 text-center">
-          <div className="flex flex-col items-center gap-2.5 max-w-2xl">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-14">
+          {/* Left: headline + client spotlight */}
+          <Reveal from="up" className="flex flex-col gap-5 lg:col-span-5">
             <Eyebrow tone="brand">TRUST & RELIABILITY</Eyebrow>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-display-md sm:text-display-lg font-extrabold text-slate-900">
               Trusted by teams who can&apos;t afford downtime.
             </h2>
-            {/* Real confirmed client outcome as requested in designer note */}
-            <div className="mt-2 inline-flex items-center gap-2.5 rounded-full border border-teal-200/80 bg-teal-50/50 px-4 py-1.5">
-              <span className="font-bold text-slate-900 text-xs sm:text-sm">Alisped</span>
-              <span className="text-teal-400">•</span>
-              <span className="text-xs sm:text-sm text-teal-700 font-semibold">Reduced warehouse processing time</span>
-            </div>
-          </div>
 
-          <Marquee duration={35} gap="2.5rem" className="w-full pt-4 pb-2">
-            {REAL_LOGOS.map((client) => (
-              <div
-                key={client.name}
-                className="group flex h-14 w-44 items-center justify-center rounded-2xl border border-slate-200/90 bg-white px-5 py-2.5 opacity-90 transition-all duration-300 hover:opacity-100 hover:scale-[1.04] hover:bg-white hover:border-teal-400 cursor-pointer"
-                title={client.name}
-              >
-                <img
-                  src={client.image}
-                  alt={client.alt}
-                  className="h-8 max-h-8 w-auto max-w-[130px] object-contain transition-all duration-300"
-                  loading="lazy"
-                />
+            {/* Real confirmed client outcome */}
+            <div className="flex items-start gap-4 rounded-2xl border border-teal-200/80 bg-white p-4 sm:p-5">
+              <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-teal-600 text-white">
+                <Timer className="size-5" />
               </div>
-            ))}
-          </Marquee>
+              <div className="flex min-w-0 flex-col gap-1">
+                <span className="text-2xs font-bold uppercase tracking-widest text-teal-700">
+                  Client spotlight
+                </span>
+                <h3 className="text-base sm:text-lg font-bold text-slate-900">Alisped</h3>
+                <p className="text-sm text-slate-600">Reduced warehouse processing time.</p>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Right: two-row logo rail */}
+          <Reveal from="up" delay={0.1} className="lg:col-span-7">
+            <div className="flex flex-col gap-4 rounded-3xl border border-slate-200/90 bg-white/80 py-6 sm:py-8 backdrop-blur-sm">
+              <Marquee duration={30} gap="1rem">
+                {ROW_A.map((client) => (
+                  <LogoTile key={client.name} client={client} />
+                ))}
+              </Marquee>
+              <Marquee duration={30} gap="1rem" reverse>
+                {ROW_B.map((client) => (
+                  <LogoTile key={client.name} client={client} />
+                ))}
+              </Marquee>
+            </div>
+          </Reveal>
         </div>
       </Container>
     </section>
   );
 }
-
-
-

@@ -160,7 +160,7 @@ const WMS_ROLE_TABS = [
 /* ── Integration Brand Logos (Option 1 Reference) ───────────────────────── */
 function SapLogo() {
   return (
-    <div className="flex size-8 items-center justify-center rounded-md bg-[#0070F2] text-white font-black text-[11px] tracking-tight">
+    <div className="flex size-8 items-center justify-center rounded-md bg-[#0070F2] text-white font-black text-2xs tracking-tight">
       SAP
     </div>
   );
@@ -284,7 +284,7 @@ export default function NextOrbitWmsPage() {
               </Reveal>
 
               <Reveal from="up" delay={0.06} className="mt-2">
-                <h1 className="max-w-2xl text-display-lg sm:text-display-xl text-ink-900 leading-[1.05]">
+                <h1 className="max-w-2xl text-display-lg sm:text-display-xl font-extrabold text-ink-900">
                   One Platform. <br />
                   <span className="bg-linear-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">
                     Total Warehouse Intelligence & Capacity Yield.
@@ -372,10 +372,10 @@ export default function NextOrbitWmsPage() {
                   {/* Left Header Info & 3 Value Badges */}
                   <div className="lg:col-span-6 flex flex-col items-start">
                     <Eyebrow tone="brand">STRATEGIC TRANSFORMATION</Eyebrow>
-                    <h2 className="text-display-sm sm:text-display-md font-extrabold text-slate-900 tracking-tight leading-tight mt-3">
+                    <h2 className="text-display-md sm:text-display-lg font-extrabold text-slate-900 mt-3">
                       Core Capabilities of Autonomous Warehouse Operations
                     </h2>
-                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl font-normal mt-3">
+                    <p className="text-lead text-slate-600 leading-relaxed max-w-xl font-normal mt-3">
                       Deep dive into WMS utilities designed for end-to-end optimization, intelligent automation, and real-time control.
                     </p>
 
@@ -387,7 +387,7 @@ export default function NextOrbitWmsPage() {
                         </div>
                         <div>
                           <h5 className="text-xs font-extrabold text-slate-900 leading-tight">High Visibility</h5>
-                          <p className="text-[11px] text-slate-500 leading-none mt-0.5">Across every node</p>
+                          <p className="text-xs text-slate-500 leading-none mt-0.5">Across every node</p>
                         </div>
                       </div>
 
@@ -397,7 +397,7 @@ export default function NextOrbitWmsPage() {
                         </div>
                         <div>
                           <h5 className="text-xs font-extrabold text-slate-900 leading-tight">Real-Time Control</h5>
-                          <p className="text-[11px] text-slate-500 leading-none mt-0.5">Faster decisions</p>
+                          <p className="text-xs text-slate-500 leading-none mt-0.5">Faster decisions</p>
                         </div>
                       </div>
 
@@ -407,7 +407,7 @@ export default function NextOrbitWmsPage() {
                         </div>
                         <div>
                           <h5 className="text-xs font-extrabold text-slate-900 leading-tight">Operational Excellence</h5>
-                          <p className="text-[11px] text-slate-500 leading-none mt-0.5">Lower cost, higher output</p>
+                          <p className="text-xs text-slate-500 leading-none mt-0.5">Lower cost, higher output</p>
                         </div>
                       </div>
                     </div>
@@ -486,10 +486,10 @@ export default function NextOrbitWmsPage() {
                     <div className="absolute inset-0 bg-linear-to-t from-slate-950/95 via-slate-950/60 to-transparent pointer-events-none" />
 
                     <div className="relative z-10 flex flex-col items-start gap-1.5">
-                      <h3 className="text-base sm:text-lg lg:text-xl font-extrabold text-white leading-snug tracking-tight">
+                      <h3 className="text-base sm:text-lg font-bold text-white leading-snug tracking-tight">
                         {currentTab.fullTitle}
                       </h3>
-                      <p className="text-xs text-slate-200/90 leading-relaxed font-normal max-w-md line-clamp-3 mt-0.5">
+                      <p className="text-sm text-slate-200/90 leading-relaxed font-normal max-w-md line-clamp-3 mt-0.5">
                         {currentTab.intro}
                       </p>
                     </div>
@@ -513,7 +513,7 @@ export default function NextOrbitWmsPage() {
                         </h4>
 
                         {/* Description */}
-                        <p className="mt-1.5 text-xs text-slate-600 leading-relaxed font-normal">
+                        <p className="mt-1.5 text-sm text-slate-600 leading-relaxed font-normal">
                           {point.desc}
                         </p>
                       </div>
@@ -562,7 +562,7 @@ export default function NextOrbitWmsPage() {
             {/* Left side details */}
             <div className="flex flex-col justify-center">
               <Eyebrow tone="brand">AUTONOMOUS WAREHOUSE AI</Eyebrow>
-              <h2 className="text-display-sm sm:text-display-md text-slate-900 font-extrabold tracking-tight mt-3 mb-6">
+              <h2 className="text-display-md sm:text-display-lg text-slate-900 font-extrabold mt-3 mb-6">
                 Predictive Spatial Intelligence & Real-Time Telemetry
               </h2>
               
@@ -573,7 +573,7 @@ export default function NextOrbitWmsPage() {
                   </span>
                   <div className="flex-1 pt-0.5">
                     <h4 className="text-base font-bold text-slate-900">Conversational Operations Assistant</h4>
-                    <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                    <p className="text-sm text-slate-600 mt-1.5 leading-relaxed">
                       Ask questions in plain language like "What is our average turnaround time for Supplier X?" or "Which warehouse has 20% free space next week?" for instant reports.
                     </p>
                   </div>
@@ -585,7 +585,7 @@ export default function NextOrbitWmsPage() {
                   </span>
                   <div className="flex-1 pt-0.5">
                     <h4 className="text-base font-bold text-slate-900">Predictive Demand & Inventory Forecasting</h4>
-                    <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                    <p className="text-sm text-slate-600 mt-1.5 leading-relaxed">
                       Machine-learning models project seasonal stock requirements to prevent stockouts and overstock costs before they manifest.
                     </p>
                   </div>
@@ -597,7 +597,7 @@ export default function NextOrbitWmsPage() {
                   </span>
                   <div className="flex-1 pt-0.5">
                     <h4 className="text-base font-bold text-slate-900">Executive Trend Dashboards</h4>
-                    <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                    <p className="text-sm text-slate-600 mt-1.5 leading-relaxed">
                       High-level visual summaries translating complex floor operational data into actionable business strategy for C-suite executives.
                     </p>
                   </div>
@@ -628,7 +628,7 @@ export default function NextOrbitWmsPage() {
 
                 {/* Prompt clickers */}
                 <div className="bg-slate-950 border-t border-slate-800 p-4">
-                  <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider block mb-2 font-mono">Suggested WMS Queries:</span>
+                  <span className="text-2xs text-slate-500 font-bold uppercase tracking-wider block mb-2 font-mono">Suggested WMS Queries:</span>
                   <div className="flex flex-col gap-2">
                     {WMS_CHAT_PROMPTS.map((prompt, idx) => (
                       <button

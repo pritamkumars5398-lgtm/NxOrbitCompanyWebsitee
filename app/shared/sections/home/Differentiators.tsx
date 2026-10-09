@@ -42,7 +42,7 @@ export function Differentiators() {
       <Container className="relative">
         <div className="mb-16 flex max-w-2xl flex-col gap-5">
           <Eyebrow tone="light">Why teams stay</Eyebrow>
-          <h2 className="text-display-md text-white sm:text-display-lg">
+          <h2 className="text-display-md sm:text-display-lg font-extrabold text-white">
             The parts of the engagement nobody puts in the pitch deck.
           </h2>
           <p className="text-lead text-ink-400">
@@ -66,7 +66,7 @@ export function Differentiators() {
                 <span className="inline-flex size-11 items-center justify-center rounded-xl bg-white/6 text-brand-200 transition-all duration-500 group-hover:bg-brand-300 group-hover:text-brand-950">
                   <Icon aria-hidden className="size-5" strokeWidth={1.6} />
                 </span>
-                <h3 className="text-base font-semibold text-white">{item.title}</h3>
+                <h3 className="text-base sm:text-lg font-bold text-white">{item.title}</h3>
                 <p className="text-sm leading-relaxed text-ink-400">{item.description}</p>
               </StaggerItem>
             );

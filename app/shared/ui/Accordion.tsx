@@ -53,7 +53,7 @@ export function Accordion({ items, className, defaultOpen = 0, tone = "dark" }: 
                     : "text-ink-900 hover:text-brand-500",
                 )}
               >
-                <span className="text-[0.9375rem] font-semibold sm:text-base">{item.question}</span>
+                <span className="text-base font-semibold sm:text-base">{item.question}</span>
                 <span
                   aria-hidden
                   className={cn(

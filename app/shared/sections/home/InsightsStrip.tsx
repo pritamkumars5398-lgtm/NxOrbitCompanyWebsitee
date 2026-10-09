@@ -108,10 +108,10 @@ export function InsightsStrip() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
           <Reveal className="flex flex-col items-start gap-3 max-w-2xl">
             <Eyebrow tone="light">INSIGHTS</Eyebrow>
-            <h2 className="text-display-sm sm:text-display-md lg:text-display-lg text-white font-extrabold tracking-tight leading-[1.2]">
+            <h2 className="text-display-md sm:text-display-lg text-white font-extrabold">
               Insights for business and technology leaders.
             </h2>
-            <p className="text-sm sm:text-base text-slate-300 font-normal leading-relaxed mt-1">
+            <p className="text-lead text-slate-300 font-normal leading-relaxed mt-1">
               Practical deployment strategies, modern software architectures, and battle-tested operational guidance.
             </p>
           </Reveal>
@@ -170,19 +170,19 @@ export function InsightsStrip() {
                       </div>
 
                       {/* Title */}
-                      <h3 className="text-sm sm:text-[15px] font-bold text-slate-900 leading-snug group-hover:text-[#008c83] transition-colors line-clamp-2">
+                      <h3 className="text-sm sm:text-base font-bold text-slate-900 leading-snug group-hover:text-[#008c83] transition-colors line-clamp-2">
                         {topic.title}
                       </h3>
 
                       {/* Description */}
-                      <p className="text-[11px] sm:text-xs text-slate-500 leading-relaxed mt-1.5 line-clamp-3">
+                      <p className="text-sm text-slate-500 leading-relaxed mt-1.5 line-clamp-3">
                         {topic.description}
                       </p>
                     </div>
 
                     {/* Bottom Action Footer with explicit "Read perspective" label & button */}
                     <div className="mt-3.5 pt-2.5 border-t border-slate-100 flex items-center justify-between">
-                      <span className="text-[11px] sm:text-xs font-bold text-slate-700 group-hover:text-[#008c83] transition-colors flex items-center gap-1">
+                      <span className="text-2xs sm:text-xs font-bold text-slate-700 group-hover:text-[#008c83] transition-colors flex items-center gap-1">
                         Read perspective
                       </span>
                       <span

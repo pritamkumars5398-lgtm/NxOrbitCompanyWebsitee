@@ -65,7 +65,7 @@ function StepRow({ phase, index, total, activeStep, setActiveStep }: StepRowProp
 
       {/* ── Phase Details (Title, Description, and Full Outputs) ── */}
       <div className="flex flex-1 flex-col pt-1">
-        <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
+        <h3 className="text-display-sm font-bold text-slate-900 tracking-tight leading-tight">
           {phase.title}
         </h3>
 
@@ -126,11 +126,11 @@ export function Process() {
             <Reveal className="flex flex-col gap-4">
               <Eyebrow tone="brand">DELIVERY PROCESS</Eyebrow>
 
-              <h2 className="text-display-sm sm:text-display-md lg:text-display-lg text-slate-900 font-extrabold tracking-tight leading-[1.16]">
+              <h2 className="text-display-md sm:text-display-lg text-slate-900 font-extrabold">
                 How We Work<br className="hidden sm:inline" /> — A process you can see through.
               </h2>
 
-              <p className="max-w-md text-xs sm:text-base text-slate-600 leading-relaxed font-normal">
+              <p className="max-w-md text-lead text-slate-600 leading-relaxed font-normal">
                 Four phases, each with a defined output you can hold us to — not a status deck standing in for working software.
               </p>
 

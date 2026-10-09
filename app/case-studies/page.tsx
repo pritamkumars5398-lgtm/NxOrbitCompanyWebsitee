@@ -53,7 +53,7 @@ export default function CaseStudiesPage() {
             </Reveal>
 
             <Reveal from="up" delay={0.06}>
-              <h1 className="max-w-3xl text-display-lg sm:text-display-xl text-slate-900 leading-[1.05]">
+              <h1 className="max-w-3xl text-display-lg sm:text-display-xl font-extrabold text-slate-900">
                 The work, <br />
                 <span className="bg-linear-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">
                   with the numbers attached.
@@ -107,11 +107,11 @@ export default function CaseStudiesPage() {
                   </div>
 
                   <div className="flex flex-col gap-3">
-                    <h2 className="text-display-md sm:text-display-lg text-slate-900 font-bold">{project.name}</h2>
+                    <h2 className="text-display-md sm:text-display-lg text-slate-900 font-extrabold">{project.name}</h2>
                     <p className="text-lead font-semibold text-[#006B7D]">{project.tagline}</p>
                   </div>
 
-                  <p className="max-w-xl text-base leading-relaxed text-slate-600">{project.desc}</p>
+                  <p className="max-w-xl text-lead leading-relaxed text-slate-600">{project.desc}</p>
 
                   <div className="flex flex-wrap gap-2">
                     <span className="rounded-full border border-slate-200 bg-white px-3.5 py-1.5 text-xs font-semibold text-slate-700">

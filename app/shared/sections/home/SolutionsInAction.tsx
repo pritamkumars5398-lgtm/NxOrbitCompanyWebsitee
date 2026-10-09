@@ -119,10 +119,10 @@ export function SolutionsInAction() {
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00d2c4]/15 text-[#00d2c4] text-xs font-bold tracking-wider uppercase border border-[#00d2c4]/25">
               OUR SOLUTIONS IN ACTION
             </span>
-            <h2 className="font-heading text-xl sm:text-3xl lg:text-5xl text-white font-bold leading-tight tracking-tight">
+            <h2 className="font-heading text-display-md sm:text-display-lg text-white font-extrabold">
               Proven Capability in Mission-Critical Environments
             </h2>
-            <p className="text-slate-300 text-xs sm:text-base lg:text-lg font-normal leading-relaxed">
+            <p className="text-slate-300 text-lead font-normal leading-relaxed">
               Four specialized platforms. One integrated ecosystem.
             </p>
           </Reveal>
@@ -156,7 +156,7 @@ export function SolutionsInAction() {
                   onClick={() => setActiveIndex(idx)}
                   type="button"
                   className={cn(
-                    "flex items-center gap-2 sm:gap-3 px-3 sm:px-5 py-2 sm:py-3 rounded-xl sm:rounded-2xl text-[11.5px] sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap cursor-pointer select-none",
+                    "flex items-center gap-2 sm:gap-3 px-3 sm:px-5 py-2 sm:py-3 rounded-xl sm:rounded-2xl text-2xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap cursor-pointer select-none",
                     isActive
                       ? "bg-white text-slate-900 shadow-md scale-[1.01]"
                       : "bg-white/10 hover:bg-white/15 text-slate-200 hover:text-white border border-white/10"
@@ -187,7 +187,7 @@ export function SolutionsInAction() {
             {/* Left Column: Product Data & Proof Layers */}
             <div className="lg:col-span-5 xl:col-span-5 p-6 sm:p-8 lg:p-10 flex flex-col justify-between z-10 bg-white">
               <div>
-                <h3 className="font-heading text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+                <h3 className="font-heading text-display-sm font-bold text-slate-900 tracking-tight">
                   {activeProduct.title}
                 </h3>
                 <p className="text-slate-600 text-sm sm:text-base font-normal mt-1 mb-5">
@@ -202,10 +202,10 @@ export function SolutionsInAction() {
                       <Check className="size-3 stroke-[2.5]" />
                     </div>
                     <div className="flex flex-col gap-0.5">
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-slate-700">
+                      <span className="text-2xs font-bold uppercase tracking-wider text-slate-700">
                         Operational Context
                       </span>
-                      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                      <p className="text-sm text-slate-600 leading-relaxed">
                         {activeProduct.context}
                       </p>
                     </div>
@@ -217,10 +217,10 @@ export function SolutionsInAction() {
                       <Check className="size-3 stroke-[2.5]" />
                     </div>
                     <div className="flex flex-col gap-0.5">
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-teal-800">
+                      <span className="text-2xs font-bold uppercase tracking-wider text-teal-800">
                         Engineered Solution
                       </span>
-                      <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                      <p className="text-sm text-slate-700 font-medium leading-relaxed">
                         {activeProduct.solution}
                       </p>
                     </div>
@@ -232,10 +232,10 @@ export function SolutionsInAction() {
                       <CheckCircle2 className="size-3.5" />
                     </div>
                     <div className="flex flex-col gap-0.5">
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-[#008c83]">
+                      <span className="text-2xs font-bold uppercase tracking-wider text-[#008c83]">
                         Business Result
                       </span>
-                      <p className="text-xs sm:text-sm font-semibold text-slate-900 leading-relaxed">
+                      <p className="text-sm font-semibold text-slate-900 leading-relaxed">
                         {activeProduct.result}
                       </p>
                     </div>

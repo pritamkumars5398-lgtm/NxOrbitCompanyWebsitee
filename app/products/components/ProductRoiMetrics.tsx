@@ -46,14 +46,14 @@ export function ProductRoiMetrics({
           )}
 
           <Reveal from="up" delay={eyebrow ? 0.06 : 0}>
-            <h2 className="text-display-sm sm:text-display-md font-extrabold text-slate-900 tracking-tight mt-3">
+            <h2 className="text-display-md sm:text-display-lg font-extrabold text-slate-900 mt-3">
               {title}
             </h2>
           </Reveal>
 
           {subtitle && (
             <Reveal from="up" delay={eyebrow ? 0.12 : 0.06}>
-              <p className="text-sm sm:text-base text-slate-600 font-normal mt-3 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-lead text-slate-600 font-normal mt-3 max-w-2xl mx-auto leading-relaxed">
                 {subtitle}
               </p>
             </Reveal>
@@ -81,7 +81,7 @@ export function ProductRoiMetrics({
                       <Icon className="size-5.5 stroke-[1.8]" />
                     </div>
 
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-100/90 px-2.5 py-1 text-[11px] font-semibold text-slate-600 border border-slate-200/70">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-100/90 px-2.5 py-1 text-2xs font-semibold text-slate-600 border border-slate-200/70">
                       <CheckCircle2 className="size-3 text-teal-500" />
                       {item.badge}
                     </span>
@@ -89,7 +89,7 @@ export function ProductRoiMetrics({
 
                   {/* High-Impact Numerical Stat */}
                   <div className="flex items-baseline gap-2">
-                    <span className="text-3xl sm:text-4xl lg:text-[42px] font-black tracking-tight text-slate-900 group-hover:text-teal-700 transition-colors leading-none">
+                    <span className="text-3xl sm:text-4xl lg:text-display-lg font-black tracking-tight text-slate-900 group-hover:text-teal-700 transition-colors leading-none">
                       {item.value}
                     </span>
                   </div>
@@ -99,14 +99,14 @@ export function ProductRoiMetrics({
                     {item.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed font-normal">
+                  <p className="text-sm text-slate-600 mt-2 leading-relaxed font-normal">
                     {item.description}
                   </p>
                 </div>
 
                 {/* Telemetry Progress & Metric Comparison Footer */}
                 <div className="mt-6 pt-4 border-t border-slate-100/90 flex flex-col gap-2">
-                  <div className="flex items-center justify-between text-[11px] font-semibold">
+                  <div className="flex items-center justify-between text-2xs font-semibold">
                     <span className="text-slate-500">{item.progressLabel}</span>
                     <span className="text-teal-700 font-mono font-bold">{item.benchmark}</span>
                   </div>

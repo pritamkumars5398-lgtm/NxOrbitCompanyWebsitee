@@ -136,7 +136,7 @@ export function SectionHeading({
         {eyebrow && <Eyebrow tone={tone === "light" ? "light" : "brand"}>{eyebrow}</Eyebrow>}
         <h2
           className={cn(
-            "text-display-md sm:text-display-lg",
+            "text-display-md sm:text-display-lg font-extrabold",
             tone === "light" && "text-white",
           )}
         >

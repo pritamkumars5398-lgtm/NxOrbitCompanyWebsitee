@@ -103,7 +103,7 @@ export function CookieConsent() {
                   <Cookie className="size-4.5 sm:size-5" />
                 </div>
                 <div>
-                  <span className="inline-block text-[10px] font-mono font-bold uppercase tracking-wider text-teal-400">
+                  <span className="inline-block text-2xs font-mono font-bold uppercase tracking-wider text-teal-400">
                     Cookie Preferences
                   </span>
                   <h3 className="text-sm sm:text-base font-bold tracking-tight text-white">
@@ -151,10 +151,10 @@ export function CookieConsent() {
                         <ShieldCheck className="size-4 shrink-0 text-teal-400" />
                         <div className="min-w-0">
                           <p className="text-xs font-semibold text-white">Strictly Necessary</p>
-                          <p className="text-[11px] text-slate-400 truncate">Core security & navigation</p>
+                          <p className="text-2xs text-slate-400 truncate">Core security & navigation</p>
                         </div>
                       </div>
-                      <span className="shrink-0 rounded-full bg-teal-500/10 px-2 py-0.5 text-[10px] font-semibold text-teal-300 border border-teal-500/20">
+                      <span className="shrink-0 rounded-full bg-teal-500/10 px-2 py-0.5 text-2xs font-semibold text-teal-300 border border-teal-500/20">
                         Always Active
                       </span>
                     </div>
@@ -165,7 +165,7 @@ export function CookieConsent() {
                         <BarChart3 className="size-4 shrink-0 text-blue-400" />
                         <div className="min-w-0">
                           <p className="text-xs font-semibold text-white">Performance & Analytics</p>
-                          <p className="text-[11px] text-slate-400 truncate">Speed, metrics & errors</p>
+                          <p className="text-2xs text-slate-400 truncate">Speed, metrics & errors</p>
                         </div>
                       </div>
                       <button
@@ -194,7 +194,7 @@ export function CookieConsent() {
                         <Sparkles className="size-4 shrink-0 text-amber-400" />
                         <div className="min-w-0">
                           <p className="text-xs font-semibold text-white">Marketing & Tailored Ads</p>
-                          <p className="text-[11px] text-slate-400 truncate">Relevant campaigns</p>
+                          <p className="text-2xs text-slate-400 truncate">Relevant campaigns</p>
                         </div>
                       </div>
                       <button
@@ -246,7 +246,7 @@ export function CookieConsent() {
               <button
                 type="button"
                 onClick={() => setIsCustomizing((prev) => !prev)}
-                className="inline-flex items-center justify-center gap-1.5 py-1 text-[11px] font-semibold text-slate-400 transition-colors hover:text-teal-400 cursor-pointer"
+                className="inline-flex items-center justify-center gap-1.5 py-1 text-2xs font-semibold text-slate-400 transition-colors hover:text-teal-400 cursor-pointer"
               >
                 <SlidersHorizontal className="size-3" />
                 {isCustomizing ? "Hide settings" : "Customize settings"}

@@ -255,7 +255,7 @@ export default function CourierExpressPage() {
               </Reveal>
 
               <Reveal from="up" delay={0.06} className="mt-2">
-                <h1 className="max-w-2xl text-display-lg sm:text-display-xl text-ink-900 leading-[1.05]">
+                <h1 className="max-w-2xl text-display-lg sm:text-display-xl font-extrabold text-ink-900">
                   The Intelligent Shipping & Fulfillment Engine <br />
                   <span className="bg-linear-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">
                     for Modern <span className="inline-block whitespace-nowrap">E-Commerce.</span>
@@ -336,10 +336,10 @@ export default function CourierExpressPage() {
         <Container>
           <div className="text-center max-w-3xl mx-auto mb-14 flex flex-col items-center">
             <Eyebrow tone="brand">THE LOGISTICS SHIFT</Eyebrow>
-            <h2 className="text-display-sm sm:text-display-md text-slate-900 font-extrabold tracking-tight mt-3">
+            <h2 className="text-display-md sm:text-display-lg text-slate-900 font-extrabold mt-3">
               Legacy Aggregation vs. Autonomous Shipping
             </h2>
-            <p className="text-sm sm:text-base text-slate-600 mt-3 max-w-2xl mx-auto leading-relaxed font-normal">
+            <p className="text-lead text-slate-600 mt-3 max-w-2xl mx-auto leading-relaxed font-normal">
               Standard aggregators only route packages based on simple cost rules. Courier Express combines predictive AI, instant WhatsApp verification, and automated SLA shielding.
             </p>
           </div>
@@ -357,11 +357,11 @@ export default function CourierExpressPage() {
                 {/* Column Header */}
                 <div className="flex items-center justify-between pb-6 mb-6 border-b border-slate-200/80">
                   <div>
-                    <h3 className="text-sm font-extrabold tracking-wider text-slate-800 uppercase">
+                    <h3 className="text-sm sm:text-base font-bold tracking-wider text-slate-800 uppercase">
                       LEGACY SHIPPING AGGREGATORS
                     </h3>
                   </div>
-                  <span className="inline-flex items-center gap-1 bg-slate-200/70 text-slate-600 px-3 py-1 rounded-full text-[11px] font-mono font-bold uppercase tracking-wider">
+                  <span className="inline-flex items-center gap-1 bg-slate-200/70 text-slate-600 px-3 py-1 rounded-full text-2xs font-mono font-bold uppercase tracking-wider">
                     THE OLD WAY
                   </span>
                 </div>
@@ -382,7 +382,7 @@ export default function CourierExpressPage() {
                           </div>
                           <div className="flex-1 min-w-0 pr-1">
                             <h4 className="text-xs font-bold text-slate-900 leading-tight">{row.dimension}</h4>
-                            <p className="text-[11px] text-slate-500 leading-relaxed mt-0.5">{row.oldWay}</p>
+                            <p className="text-sm text-slate-500 leading-relaxed mt-0.5">{row.oldWay}</p>
                           </div>
                         </div>
 
@@ -407,11 +407,11 @@ export default function CourierExpressPage() {
                 {/* Column Header */}
                 <div className="flex items-center justify-between pb-6 mb-6 border-b border-white/10">
                   <div>
-                    <h3 className="text-sm font-extrabold tracking-wider text-white uppercase">
+                    <h3 className="text-sm sm:text-base font-bold tracking-wider text-white uppercase">
                       COURIER EXPRESS
                     </h3>
                   </div>
-                  <span className="inline-flex items-center gap-1.5 bg-teal-500/20 text-teal-300 border border-teal-500/40 px-3 py-1 rounded-full text-[11px] font-mono font-bold uppercase tracking-wider">
+                  <span className="inline-flex items-center gap-1.5 bg-teal-500/20 text-teal-300 border border-teal-500/40 px-3 py-1 rounded-full text-2xs font-mono font-bold uppercase tracking-wider">
                     THE AI-NATIVE WAY
                   </span>
                 </div>
@@ -430,7 +430,7 @@ export default function CourierExpressPage() {
                         </div>
                         <div className="flex-1 min-w-0 pr-1">
                           <h4 className="text-xs font-bold text-white leading-tight">{row.dimension}</h4>
-                          <p className="text-[11px] text-slate-300 leading-relaxed mt-0.5">{row.newWay}</p>
+                          <p className="text-sm text-slate-300 leading-relaxed mt-0.5">{row.newWay}</p>
                         </div>
                       </div>
 
@@ -460,10 +460,10 @@ export default function CourierExpressPage() {
                   {/* Left Header Info & 3 Value Badges */}
                   <div className="lg:col-span-6 flex flex-col items-start">
                     <Eyebrow tone="brand">STRATEGIC TRANSFORMATION</Eyebrow>
-                    <h2 className="text-display-sm sm:text-display-md font-extrabold text-slate-900 tracking-tight leading-tight mt-3">
+                    <h2 className="text-display-md sm:text-display-lg font-extrabold text-slate-900 mt-3">
                       Core Capabilities of Autonomous <span className="inline-block whitespace-nowrap">E-Commerce</span> Fulfillment
                     </h2>
-                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl font-normal mt-3">
+                    <p className="text-lead text-slate-600 leading-relaxed max-w-xl font-normal mt-3">
                       Explore Courier Express capabilities engineered for high-growth operations and autonomous fulfillment resilience.
                     </p>
 
@@ -475,7 +475,7 @@ export default function CourierExpressPage() {
                         </div>
                         <div>
                           <h5 className="text-xs font-extrabold text-slate-900 leading-tight">High Visibility</h5>
-                          <p className="text-[11px] text-slate-500 leading-none mt-0.5">Across every node</p>
+                          <p className="text-xs text-slate-500 leading-none mt-0.5">Across every node</p>
                         </div>
                       </div>
 
@@ -485,7 +485,7 @@ export default function CourierExpressPage() {
                         </div>
                         <div>
                           <h5 className="text-xs font-extrabold text-slate-900 leading-tight">Real-Time Control</h5>
-                          <p className="text-[11px] text-slate-500 leading-none mt-0.5">Faster decisions</p>
+                          <p className="text-xs text-slate-500 leading-none mt-0.5">Faster decisions</p>
                         </div>
                       </div>
 
@@ -495,7 +495,7 @@ export default function CourierExpressPage() {
                         </div>
                         <div>
                           <h5 className="text-xs font-extrabold text-slate-900 leading-tight">Operational Excellence</h5>
-                          <p className="text-[11px] text-slate-500 leading-none mt-0.5">Lower cost, higher output</p>
+                          <p className="text-xs text-slate-500 leading-none mt-0.5">Lower cost, higher output</p>
                         </div>
                       </div>
                     </div>
@@ -574,10 +574,10 @@ export default function CourierExpressPage() {
                     <div className="absolute inset-0 bg-linear-to-t from-slate-950/95 via-slate-950/60 to-transparent pointer-events-none" />
 
                     <div className="relative z-10 flex flex-col items-start gap-1.5">
-                      <h3 className="text-base sm:text-lg lg:text-xl font-extrabold text-white leading-snug tracking-tight">
+                      <h3 className="text-base sm:text-lg font-bold text-white leading-snug tracking-tight">
                         {currentTab.fullTitle}
                       </h3>
-                      <p className="text-xs text-slate-200/90 leading-relaxed font-normal max-w-md line-clamp-3 mt-0.5">
+                      <p className="text-sm text-slate-200/90 leading-relaxed font-normal max-w-md line-clamp-3 mt-0.5">
                         {currentTab.intro}
                       </p>
                     </div>
@@ -601,7 +601,7 @@ export default function CourierExpressPage() {
                         </h4>
 
                         {/* Description */}
-                        <p className="mt-1.5 text-xs text-slate-600 leading-relaxed font-normal">
+                        <p className="mt-1.5 text-sm text-slate-600 leading-relaxed font-normal">
                           {point.desc}
                         </p>
                       </div>
@@ -650,10 +650,10 @@ export default function CourierExpressPage() {
             {/* Left side details */}
             <div className="flex flex-col justify-center">
               <Eyebrow tone="brand">PREDICTIVE SHIPPING AI</Eyebrow>
-              <h2 className="text-display-sm sm:text-display-md text-slate-900 font-extrabold tracking-tight mt-3">
+              <h2 className="text-display-md sm:text-display-lg text-slate-900 font-extrabold mt-3">
                 Cognitive Shipping: AI That Solves Bottlenecks Before They Happen
               </h2>
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal mt-3 mb-6 max-w-xl">
+              <p className="text-lead text-slate-600 leading-relaxed font-normal mt-3 mb-6 max-w-xl">
                 Real-time telemetry and autonomous exception routing that catch delivery failures, predict transit delays, and shield your bottom line before packages depart.
               </p>
               
@@ -664,7 +664,7 @@ export default function CourierExpressPage() {
                   </span>
                   <div className="flex-1 pt-0.5">
                     <h4 className="text-base font-bold text-slate-900">Predictive ETA Engine</h4>
-                    <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                    <p className="text-sm text-slate-600 mt-1.5 leading-relaxed">
                       Calculates pin-code specific delivery timelines based on live carrier performance data, setting realistic customer expectations and reducing "Where Is My Order?" (WISMO) support calls by up to 60%.
                     </p>
                   </div>
@@ -676,7 +676,7 @@ export default function CourierExpressPage() {
                   </span>
                   <div className="flex-1 pt-0.5">
                     <h4 className="text-base font-bold text-slate-900">Conversational AI Logistics Assistant</h4>
-                    <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                    <p className="text-sm text-slate-600 mt-1.5 leading-relaxed">
                       Type natural queries into your dashboard like: "Which pin-codes had the highest RTO rate this week?" or "Compare shipping costs between Courier A and Courier B for South Region," and get instant visual analytics.
                     </p>
                   </div>
@@ -688,7 +688,7 @@ export default function CourierExpressPage() {
                   </span>
                   <div className="flex-1 pt-0.5">
                     <h4 className="text-base font-bold text-slate-900">Automated Claim Settlement</h4>
-                    <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                    <p className="text-sm text-slate-600 mt-1.5 leading-relaxed">
                       AI automatically detects lost, damaged, or delayed shipments exceeding SLA limits and drafts insurance/reimbursement claims instantly.
                     </p>
                   </div>
@@ -719,7 +719,7 @@ export default function CourierExpressPage() {
 
                 {/* Prompt clickers */}
                 <div className="bg-slate-950 border-t border-slate-800 p-4">
-                  <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider block mb-2 font-mono">Suggested Queries:</span>
+                  <span className="text-2xs text-slate-500 font-bold uppercase tracking-wider block mb-2 font-mono">Suggested Queries:</span>
                   <div className="flex flex-col gap-2">
                     {COURIER_CHAT_PROMPTS.map((prompt, idx) => (
                       <button
@@ -793,10 +793,10 @@ export default function CourierExpressPage() {
         <Container>
           <div className="text-center max-w-2xl mx-auto mb-16 flex flex-col items-center">
             <Eyebrow tone="brand">DATA GOVERNANCE & COMPLIANCE</Eyebrow>
-            <h2 className="text-display-sm sm:text-display-md text-slate-900 font-extrabold tracking-tight mt-3">
+            <h2 className="text-display-md sm:text-display-lg text-slate-900 font-extrabold mt-3">
               Enterprise-Grade Infrastructure & ISO 9001 Quality
             </h2>
-            <p className="text-sm sm:text-base text-slate-600 mt-3 leading-relaxed font-normal">
+            <p className="text-lead text-slate-600 mt-3 leading-relaxed font-normal">
               Established protocols to protect all operational, buyer, and shipping telemetry logs.
             </p>
           </div>
@@ -820,12 +820,12 @@ export default function CourierExpressPage() {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-base font-extrabold text-slate-900 tracking-tight leading-snug group-hover:text-teal-700 transition-colors">
+                    <h3 className="text-base sm:text-lg font-bold text-slate-900 tracking-tight leading-snug group-hover:text-teal-700 transition-colors">
                       {point.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-xs text-slate-600 mt-2 leading-relaxed font-normal">
+                    <p className="text-sm text-slate-600 mt-2 leading-relaxed font-normal">
                       {point.desc}
                     </p>
                   </div>

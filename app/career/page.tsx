@@ -81,7 +81,7 @@ export default function CareerPage() {
             </Reveal>
 
             <Reveal from="up" delay={0.06}>
-              <h1 className="max-w-3xl text-display-lg sm:text-display-xl text-slate-900 leading-[1.05]">
+              <h1 className="max-w-3xl text-display-lg sm:text-display-xl font-extrabold text-slate-900">
                 Work on products <br />
                 <span className="bg-linear-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">
                   millions of people actually open.
@@ -158,7 +158,7 @@ export default function CareerPage() {
                   <span className="inline-flex size-10 items-center justify-center rounded-xl bg-brand-50 text-brand-500 transition-colors duration-400 group-hover:bg-white">
                     <Icon aria-hidden className="size-4.5" strokeWidth={1.6} />
                   </span>
-                  <h3 className="text-sm font-semibold text-ink-900">{perk.title}</h3>
+                  <h3 className="text-sm sm:text-base font-bold text-ink-900">{perk.title}</h3>
                   <p className="text-sm leading-relaxed text-ink-600">{perk.description}</p>
                 </StaggerItem>
               );

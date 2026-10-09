@@ -224,7 +224,7 @@ export function TechStack() {
                     <span className="size-2 rounded-full bg-emerald-500" />
                   </div>
 
-                  <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#008c83] transition-colors mb-2">
+                  <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#008c83] transition-colors mb-2">
                     {tech.name}
                   </h3>
 
@@ -236,7 +236,7 @@ export function TechStack() {
                     {tech.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-100 text-[11px] font-semibold text-slate-700"
+                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-100 text-2xs font-semibold text-slate-700"
                       >
                         <CheckCircle2 className="size-3 text-teal-600" />
                         {tag}

@@ -114,7 +114,7 @@ export default async function InsightDetailPage({
               </Reveal>
 
               <Reveal from="up" delay={0.06}>
-                <h1 className="text-display-md sm:text-display-lg lg:text-display-xl font-extrabold text-slate-900 tracking-tight leading-[1.14]">
+                <h1 className="text-display-lg sm:text-display-xl font-extrabold text-slate-900">
                   {data.title}
                 </h1>
               </Reveal>
@@ -136,7 +136,7 @@ export default async function InsightDetailPage({
                     />
                     <div>
                       <span className="block font-bold text-slate-900 text-sm">{data.author.name}</span>
-                      <span className="text-[11px] text-slate-500">{data.author.role}</span>
+                      <span className="text-2xs text-slate-500">{data.author.role}</span>
                     </div>
                   </div>
 
@@ -175,7 +175,7 @@ export default async function InsightDetailPage({
                         <Icon className="size-5" />
                       </div>
                       <div>
-                        <span className="text-[11px] font-mono uppercase tracking-wider text-teal-300 block">Perspective</span>
+                        <span className="text-2xs font-mono uppercase tracking-wider text-teal-300 block">Perspective</span>
                         <span className="text-sm font-bold text-white">{data.title}</span>
                       </div>
                     </div>
@@ -195,10 +195,10 @@ export default async function InsightDetailPage({
         <Container>
           <Reveal className="flex flex-col items-start gap-3 mb-12 max-w-2xl">
             <Eyebrow tone="brand">THE CORE CHALLENGE</Eyebrow>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-display-md sm:text-display-lg font-extrabold text-slate-900">
               Why Traditional Approaches Fail at Scale
             </h2>
-            <p className="text-sm sm:text-base text-slate-600">
+            <p className="text-lead text-slate-600">
               Enterprises rarely fail due to technology features; they fail when system changes create live operational friction across connected business units.
             </p>
           </Reveal>
@@ -214,8 +214,8 @@ export default async function InsightDetailPage({
                   <div className="flex size-10 items-center justify-center rounded-xl bg-red-50 text-red-600 mb-4 border border-red-200/60">
                     <AlertTriangle className="size-5" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2.5">{challenge.title}</h3>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                  <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-2.5">{challenge.title}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed font-normal">
                     {challenge.description}
                   </p>
                 </div>
@@ -230,10 +230,10 @@ export default async function InsightDetailPage({
         <Container>
           <Reveal className="flex flex-col items-start gap-3 mb-14 max-w-3xl">
             <Eyebrow tone="brand">STRATEGIC ARCHITECTURE</Eyebrow>
-            <h2 className="text-display-sm sm:text-display-md font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-display-md sm:text-display-lg font-extrabold text-slate-900">
               The Engineering Framework Behind Real Uptime
             </h2>
-            <p className="text-base text-slate-600 leading-relaxed">
+            <p className="text-lead text-slate-600 leading-relaxed">
               We apply proven architectural patterns that guarantee zero data loss, high operator adoption, and continuous operational visibility.
             </p>
           </Reveal>
@@ -246,12 +246,12 @@ export default async function InsightDetailPage({
               >
                 <div className="lg:col-span-4 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 leading-snug">
+                    <h3 className="text-display-sm font-bold text-slate-900 leading-snug">
                       {pillar.title}
                     </h3>
                   </div>
                   <div className="mt-4 pt-4 border-t border-slate-200/80">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500">
+                    <span className="text-2xs font-bold uppercase tracking-wider text-slate-500">
                       Core Implementation Method
                     </span>
                   </div>
@@ -293,7 +293,7 @@ export default async function InsightDetailPage({
         <Container className="relative z-10">
           <Reveal className="flex flex-col items-center text-center gap-3 mb-14 max-w-2xl mx-auto">
             <Eyebrow tone="light">MEASURABLE IMPACT</Eyebrow>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
+            <h2 className="text-display-md sm:text-display-lg font-extrabold text-white">
               Operational Metrics from Live Implementations
             </h2>
           </Reveal>
@@ -310,7 +310,7 @@ export default async function InsightDetailPage({
                     {metric.value}
                   </span>
                   <h3 className="text-base sm:text-lg font-bold text-white mb-2">{metric.label}</h3>
-                  <p className="text-xs sm:text-sm text-slate-400 leading-relaxed font-normal">
+                  <p className="text-sm text-slate-400 leading-relaxed font-normal">
                     {metric.detail}
                   </p>
                 </div>
@@ -339,10 +339,10 @@ export default async function InsightDetailPage({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             <Reveal className="lg:col-span-5 flex flex-col items-start gap-4 lg:sticky lg:top-32">
               <Eyebrow tone="brand">EXECUTIVE QUESTIONS</Eyebrow>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
+              <h2 className="text-display-md sm:text-display-lg font-extrabold text-slate-900">
                 Common Implementation Queries Answered
               </h2>
-              <p className="text-sm text-slate-600 leading-relaxed">
+              <p className="text-lead text-slate-600 leading-relaxed">
                 Have specific technical or contractual questions regarding your environment? Our engineering team is available for architectural consultations.
               </p>
               <Button href="/contact" variant="primary" withArrow className="mt-2">
@@ -359,8 +359,8 @@ export default async function InsightDetailPage({
                   <div className="flex items-start gap-3">
                     <HelpCircle className="size-5 shrink-0 text-[#008c83] mt-0.5" />
                     <div>
-                      <h3 className="text-base font-bold text-slate-900 mb-2">{faq.question}</h3>
-                      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                      <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-2">{faq.question}</h3>
+                      <p className="text-sm text-slate-600 leading-relaxed font-normal">
                         {faq.answer}
                       </p>
                     </div>
@@ -378,7 +378,7 @@ export default async function InsightDetailPage({
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <Reveal className="flex flex-col items-start gap-3 max-w-2xl">
               <Eyebrow tone="light">MORE PERSPECTIVES</Eyebrow>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+              <h2 className="text-display-md sm:text-display-lg font-extrabold text-white">
                 Explore Related Architectural Insights
               </h2>
             </Reveal>
@@ -402,13 +402,13 @@ export default async function InsightDetailPage({
                   className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal-400/40 hover:bg-white/[0.07] h-full"
                 >
                   <div>
-                    <span className="text-[11px] font-mono uppercase tracking-wider text-teal-400 block mb-2">
+                    <span className="text-2xs font-mono uppercase tracking-wider text-teal-400 block mb-2">
                       {item.category}
                     </span>
-                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-teal-300 transition-colors">
+                    <h3 className="text-base sm:text-lg font-bold text-white mb-2 group-hover:text-teal-300 transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-slate-400 line-clamp-3 leading-relaxed">
+                    <p className="text-sm text-slate-400 line-clamp-3 leading-relaxed">
                       {item.executiveSummary}
                     </p>
                   </div>

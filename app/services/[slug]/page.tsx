@@ -129,13 +129,13 @@ export default async function ServicePage({
               </Reveal>
 
               <Reveal from="up" delay={0.06} className="mt-1.5">
-                <h1 className="max-w-2xl text-2xl sm:text-3xl lg:text-[40px] font-extrabold text-slate-900 leading-tight">
+                <h1 className="max-w-2xl text-display-lg sm:text-display-xl font-extrabold text-slate-900">
                   {formatTwoColorTitle(data.tagline)}
                 </h1>
               </Reveal>
 
               <Reveal from="up" delay={0.14} className="mt-2 sm:mt-3">
-                <p className="max-w-xl text-xs sm:text-sm text-ink-600 leading-relaxed">{data.description}</p>
+                <p className="max-w-xl text-lead text-ink-600 leading-relaxed">{data.description}</p>
               </Reveal>
 
               <Reveal from="up" delay={0.22} className="mt-4 flex flex-wrap gap-2.5">
@@ -209,7 +209,7 @@ export default async function ServicePage({
         <Container className="mb-10">
           <Reveal className="flex flex-col items-center gap-4 text-center">
             <Eyebrow>Technology stack</Eyebrow>
-            <h2 className="max-w-xl text-display-sm sm:text-display-md">
+            <h2 className="max-w-xl text-display-md sm:text-display-lg font-extrabold">
               The tools we reach for on {data.title.toLowerCase()}.
             </h2>
           </Reveal>

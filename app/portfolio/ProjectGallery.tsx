@@ -75,7 +75,7 @@ export function ProjectGallery() {
 
                   <div className="flex flex-1 flex-col gap-3 p-6">
                     <div className="flex items-start justify-between gap-4">
-                      <h3 className="text-lg font-semibold text-ink-900 transition-colors duration-300 group-hover:text-brand-500">
+                      <h3 className="text-base sm:text-lg font-bold text-ink-900 transition-colors duration-300 group-hover:text-brand-500">
                         {project.name}
                       </h3>
                       <ArrowUpRight
@@ -87,10 +87,10 @@ export function ProjectGallery() {
                     <p className="text-sm leading-relaxed text-ink-600">{project.desc}</p>
 
                     <div className="mt-auto flex flex-wrap items-center gap-2 border-t border-hairline pt-4">
-                      <span className="rounded-full bg-ink-100 px-2.5 py-1 text-[0.6875rem] font-medium text-ink-600">
+                      <span className="rounded-full bg-ink-100 px-2.5 py-1 text-2xs font-medium text-ink-600">
                         {project.industry}
                       </span>
-                      <span className="rounded-full bg-ink-100 px-2.5 py-1 text-[0.6875rem] font-medium text-ink-600">
+                      <span className="rounded-full bg-ink-100 px-2.5 py-1 text-2xs font-medium text-ink-600">
                         {project.platform}
                       </span>
                       <span className="ml-auto text-xs font-semibold text-brand-600">

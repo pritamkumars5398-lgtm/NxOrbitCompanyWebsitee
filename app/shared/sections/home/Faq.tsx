@@ -38,7 +38,7 @@ export function Faq() {
         <div className="grid gap-12 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:gap-16 items-start">
           <Reveal className="flex flex-col gap-5 lg:sticky lg:top-32 lg:self-start">
             <Eyebrow tone="brand">QUESTIONS & ANSWERS</Eyebrow>
-            <h2 className="text-display-md sm:text-display-lg text-slate-900 font-extrabold tracking-tight">
+            <h2 className="text-display-md sm:text-display-lg text-slate-900 font-extrabold">
               The things people ask before signing.
             </h2>
             <p className="text-lead text-slate-600 font-normal">
@@ -54,7 +54,7 @@ export function Faq() {
             {/* ISO 9001 Quality Guaranteed & Certified Trust Card */}
             <div className="mt-4 rounded-2xl border border-slate-200/90 bg-white p-5 transition-all duration-300 hover:border-teal-500/50">
               <div className="flex items-center gap-2 mb-2.5">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-teal-700">
+                <span className="text-2xs font-bold uppercase tracking-wider text-teal-700">
                   Trust Certifications
                 </span>
               </div>
@@ -67,7 +67,7 @@ export function Faq() {
                     <span className="text-sm font-extrabold text-slate-900 tracking-wide">
                       ISO 9001:2015
                     </span>
-                    <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-bold text-emerald-700 border border-emerald-200">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2 py-0.5 text-2xs font-bold text-emerald-700 border border-emerald-200">
                       <Award className="size-3" /> Certified
                     </span>
                   </div>
@@ -76,7 +76,7 @@ export function Faq() {
                   </span>
                 </div>
               </div>
-              <p className="mt-3 text-xs text-slate-600 leading-relaxed">
+              <p className="mt-3 text-sm text-slate-600 leading-relaxed">
                 NXTorbit operates under strict international quality guidelines. Our products undergo rigorous functional testing, stress auditing, and regular third-party security audits to ensure enterprise compliance globally.
               </p>
             </div>

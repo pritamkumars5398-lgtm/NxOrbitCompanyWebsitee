@@ -27,7 +27,7 @@ export default function Footer() {
 
             {/* Sister Company */}
             <div className="pt-4 border-t border-white/10 flex flex-col items-start gap-2">
-              <span className="text-[11px] font-mono tracking-widest text-teal-300 font-bold uppercase">
+              <span className="text-2xs font-mono tracking-widest text-teal-300 font-bold uppercase">
                 Sister Company
               </span>
               <div className="group inline-flex items-center rounded-none bg-white px-4 py-2.5 shadow-sm transition-all duration-300 hover:shadow-md hover:scale-[1.02]">
@@ -116,7 +116,7 @@ export default function Footer() {
           <div className="flex items-center gap-6">
             <a href="#" className="text-xs text-slate-400 hover:text-nyt-green transition">Privacy Policy</a>
             <a href="#" className="text-xs text-slate-400 hover:text-nyt-green transition">Sitemap</a>
-            <div className="flex items-center gap-1.5 border border-white/20 px-3 py-1 rounded text-[10px] font-bold">
+            <div className="flex items-center gap-1.5 border border-white/20 px-3 py-1 rounded text-2xs font-bold">
               <AppIcon name="lock" size={11} color="primary" />
               <span className="text-white font-extrabold">DMCA</span>
               <span className="text-slate-300">PROTECTED</span>

@@ -366,10 +366,10 @@ export function IndustryProblemsSolved({
               <span className="text-xs font-mono font-bold uppercase tracking-widest text-teal-600 bg-teal-50 px-3 py-1 rounded-full border border-teal-200/70 mb-3 inline-block">
                 {eyebrow}
               </span>
-              <h2 className="text-display-md sm:text-display-lg font-extrabold text-slate-900 tracking-tight leading-tight">
+              <h2 className="text-display-md sm:text-display-lg font-extrabold text-slate-900">
                 {title}
               </h2>
-              <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+              <p className="mt-4 text-lead text-slate-600 leading-relaxed font-normal">
                 {description}
               </p>
             </div>
@@ -377,7 +377,7 @@ export function IndustryProblemsSolved({
             {/* Teal Callout Badge Box */}
             <div className="bg-teal-500/10 border border-teal-200/80 rounded-2xl p-4 flex items-start gap-3">
               <CheckCircle2 className="size-5 text-teal-600 shrink-0 mt-0.5" />
-              <p className="text-xs sm:text-sm text-teal-950 font-semibold leading-relaxed">
+              <p className="text-sm text-teal-950 font-semibold leading-relaxed">
                 Enterprise-grade solutions. Real-world impact. Built, shipped & supported for leading {industrySlug} businesses.
               </p>
             </div>
@@ -439,7 +439,7 @@ export function IndustryProblemsSolved({
                         </h3>
 
                         {/* Description Paragraph */}
-                        <p className="mt-1.5 text-xs text-slate-600 leading-relaxed font-normal line-clamp-3">
+                        <p className="mt-1.5 text-sm text-slate-600 leading-relaxed font-normal line-clamp-3">
                           {meta.desc}
                         </p>
                       </div>

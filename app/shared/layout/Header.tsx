@@ -375,7 +375,7 @@ function MobileDrawer({ open, onClose }: { open: boolean; onClose: () => void })
                               <Link
                                 href={link.href}
                                 onClick={onClose}
-                                className="flex items-center gap-2 border-l border-hairline py-2 pl-3 text-[12px] sm:text-xs font-medium text-ink-600 transition-colors hover:border-brand-300 hover:text-brand-500"
+                                className="flex items-center gap-2 border-l border-hairline py-2 pl-3 text-xs sm:text-xs font-medium text-ink-600 transition-colors hover:border-brand-300 hover:text-brand-500"
                               >
                                 <NavIcon name={link.icon} className="size-3.5 shrink-0 text-brand-400" />
                                 {link.label}

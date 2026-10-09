@@ -71,12 +71,12 @@ export function ProductStandardsIntegrations({
                 </div>
               )}
 
-              <h2 className="text-display-sm sm:text-display-md font-extrabold text-slate-900 tracking-tight leading-tight">
+              <h2 className="text-display-md sm:text-display-lg font-extrabold text-slate-900">
                 {title}
               </h2>
 
               {highlightTitle && (
-                <p className="text-lg sm:text-xl font-bold text-teal-600 mt-2 tracking-tight">
+                <p className="text-lead font-bold text-teal-600 mt-2 tracking-tight">
                   {highlightTitle}
                 </p>
               )}
@@ -91,7 +91,7 @@ export function ProductStandardsIntegrations({
                   {pills.map((pill, idx) => (
                     <span
                       key={idx}
-                      className="inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-teal-50/70 text-teal-800 border border-teal-200/80 hover:bg-teal-100/70 hover:border-teal-300 transition-all duration-200"
+                      className="inline-flex items-center px-2.5 py-1 rounded-lg text-2xs font-semibold bg-teal-50/70 text-teal-800 border border-teal-200/80 hover:bg-teal-100/70 hover:border-teal-300 transition-all duration-200"
                     >
                       {pill}
                     </span>
@@ -118,12 +118,12 @@ export function ProductStandardsIntegrations({
                     {/* Content Stack */}
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between gap-1.5">
-                        <h3 className="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-teal-700 transition-colors tracking-tight">
+                        <h3 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-teal-700 transition-colors tracking-tight">
                           {item.title}
                         </h3>
                         <ArrowRight className="size-3.5 text-slate-300 group-hover:text-teal-600 group-hover:translate-x-1 transition-all duration-200 shrink-0" />
                       </div>
-                      <p className="text-[11px] sm:text-xs text-slate-500 mt-1 leading-relaxed">
+                      <p className="text-sm text-slate-500 mt-1 leading-relaxed">
                         {item.description}
                       </p>
                     </div>

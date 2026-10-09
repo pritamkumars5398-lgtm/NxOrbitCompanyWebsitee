@@ -56,16 +56,16 @@ export function Capabilities() {
                     <span className="inline-flex size-9 sm:size-10 items-center justify-center rounded-xl bg-linear-to-br from-brand-500 to-teal-400 text-white">
                       <NavIcon name={item.icon} className="size-4 sm:size-5" />
                     </span>
-                    <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-teal-600">
+                    <span className="text-2xs sm:text-xs font-bold uppercase tracking-wider text-teal-600">
                       {item.title}
                     </span>
                   </div>
 
-                  <h3 className="text-display-xs sm:text-display-sm lg:text-display-md text-ink-900 group-hover/row:text-brand-600 transition-colors duration-300">
+                  <h3 className="text-display-sm font-bold text-ink-900 group-hover/row:text-brand-600 transition-colors duration-300">
                     {item.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm lg:text-base text-ink-600 leading-relaxed max-w-xl">
+                  <p className="text-sm sm:text-base text-ink-600 leading-relaxed max-w-xl">
                     {item.description}
                   </p>
 

@@ -87,11 +87,11 @@ export function TechStackEcosystem({
           <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#008c83] bg-teal-50 px-3.5 py-1 rounded-full border border-teal-200/80 mb-2 inline-block">
             {eyebrow}
           </span>
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-display-md sm:text-display-lg font-extrabold text-slate-900">
             {title}
           </h2>
           {description && (
-            <p className="text-xs sm:text-sm text-slate-600 font-normal mt-1.5 max-w-2xl leading-relaxed">
+            <p className="text-lead text-slate-600 font-normal mt-1.5 max-w-2xl leading-relaxed">
               {description}
             </p>
           )}
@@ -130,7 +130,7 @@ export function TechStackEcosystem({
                     <h3 className="text-sm sm:text-base font-bold text-slate-900 tracking-tight leading-tight group-hover:text-[#006B7D] transition-colors">
                       {item.name}
                     </h3>
-                    <span className="text-[11px] font-semibold text-slate-400 mt-0.5">
+                    <span className="text-2xs font-semibold text-slate-400 mt-0.5">
                       {item.category}
                     </span>
                   </div>

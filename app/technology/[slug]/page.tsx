@@ -144,13 +144,13 @@ export default async function TechnologyPage({
               </Reveal>
 
               <Reveal from="up" delay={0.06} className="mt-1.5">
-                <h1 className="max-w-2xl text-2xl sm:text-3xl lg:text-[40px] font-extrabold text-white leading-tight">
+                <h1 className="max-w-2xl text-display-lg sm:text-display-xl font-extrabold text-white">
                   {formatTwoColorTitle(data.tagline)}
                 </h1>
               </Reveal>
 
               <Reveal from="up" delay={0.14} className="mt-2 sm:mt-3">
-                <p className="max-w-xl text-xs sm:text-sm text-ink-300 leading-relaxed">{data.description}</p>
+                <p className="max-w-xl text-lead text-ink-300 leading-relaxed">{data.description}</p>
               </Reveal>
 
               <Reveal from="up" delay={0.22} className="mt-4 flex flex-wrap gap-2.5">
@@ -201,10 +201,10 @@ export default async function TechnologyPage({
 
                 {/* Subtitle Details */}
                 <div className="mt-3 flex flex-col items-center text-center">
-                  <span className="text-[10px] font-mono font-bold tracking-widest text-slate-400 uppercase">
+                  <span className="text-2xs font-mono font-bold tracking-widest text-slate-400 uppercase">
                     {asset.label}
                   </span>
-                  <div className="mt-1.5 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-[10px] font-mono font-medium text-teal-400">
+                  <div className="mt-1.5 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-2xs font-mono font-medium text-teal-400">
                     <span
                       className="size-1.5 rounded-full"
                       style={{ backgroundColor: `rgb(${asset.rgb})` }}

@@ -62,7 +62,7 @@ export function Stats({
               cn("rounded-xl p-3 sm:p-5", light ? "bg-white/5" : "bg-surface-muted border border-hairline"),
           )}
         >
-          <dt className={cn("text-[10px] sm:text-xs lg:text-sm font-semibold tracking-tight leading-tight line-clamp-2", light ? "text-slate-200" : "text-slate-800")}>
+          <dt className={cn("text-2xs sm:text-xs lg:text-sm font-semibold tracking-tight leading-tight line-clamp-2", light ? "text-slate-200" : "text-slate-800")}>
             {item.label}
           </dt>
           <dd

@@ -75,7 +75,7 @@ export function WhyChooseUs() {
           <div className="lg:col-span-7 flex flex-col items-start gap-8">
             <Reveal className="flex flex-col items-start gap-3">
               <Eyebrow tone="brand">OUR BUSINESS APPROACH</Eyebrow>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.2]">
+              <h2 className="text-display-md sm:text-display-lg font-extrabold text-slate-900">
                 Understanding Business. Delivering Technology. Creating Value.
               </h2>
             </Reveal>
@@ -96,10 +96,10 @@ export function WhyChooseUs() {
                         <Icon className="size-4.5" />
                       </div>
                     </div>
-                    <h3 className="text-sm font-bold text-slate-900 mb-1 leading-snug">
+                    <h3 className="text-sm sm:text-base font-bold text-slate-900 mb-1 leading-snug">
                       {feat.title}
                     </h3>
-                    <p className="text-xs text-slate-500 leading-relaxed font-normal">
+                    <p className="text-sm text-slate-500 leading-relaxed font-normal">
                       {feat.desc}
                     </p>
                   </Reveal>

@@ -43,7 +43,7 @@ export function TheChallenge() {
             </Reveal>
 
             <Reveal from="up" delay={0.06}>
-              <h2 className="text-display-md sm:text-display-lg font-bold text-white leading-tight">
+              <h2 className="text-display-md sm:text-display-lg font-extrabold text-white">
                 Growth shouldn't make your business <br className="hidden sm:inline" />
                 <span className="text-teal-300">more complicated.</span>
               </h2>
@@ -76,11 +76,11 @@ export function TheChallenge() {
                       <span className="flex size-8 items-center justify-center rounded-lg bg-teal-500/10 text-teal-300">
                         <Icon className="size-4" />
                       </span>
-                      <h3 className="text-sm font-bold text-white tracking-wide">
+                      <h3 className="text-sm sm:text-base font-bold text-white tracking-wide">
                         {item.symptom}
                       </h3>
                     </div>
-                    <p className="text-xs text-slate-300 leading-relaxed font-normal">
+                    <p className="text-sm text-slate-300 leading-relaxed font-normal">
                       {item.whatItLooksLike}
                     </p>
                   </StaggerItem>

@@ -66,7 +66,7 @@ export function Testimonials() {
         <div className="grid gap-8 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:gap-12">
           <Reveal className="flex flex-col gap-4 lg:pt-2">
             <Eyebrow>Client words</Eyebrow>
-            <h2 className="text-display-sm sm:text-display-md">
+            <h2 className="text-display-md sm:text-display-lg font-extrabold">
               What it&apos;s like on the other side of the contract.
             </h2>
 

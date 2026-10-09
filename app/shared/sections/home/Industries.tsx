@@ -22,15 +22,15 @@ export function Industries() {
         {/* Left: Sector Details */}
         <div className="flex flex-col gap-3.5 sm:gap-4">
           <div className="inline-flex items-center gap-2 rounded-full border border-teal-500/20 bg-teal-50/80 px-3 py-0.5 w-fit">
-            <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#008c83]">
+            <span className="text-2xs sm:text-xs font-bold uppercase tracking-wider text-[#008c83]">
               {industry.label} Sector
             </span>
           </div>
 
-          <h3 className="text-xl sm:text-2xl lg:text-[1.65rem] font-extrabold text-slate-900 tracking-tight leading-snug">
+          <h3 className="text-display-sm font-bold text-slate-900 tracking-tight leading-snug">
             {industry.headline}
           </h3>
-          <p className="max-w-xl text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+          <p className="max-w-xl text-sm text-slate-600 leading-relaxed font-normal">
             {industry.description}
           </p>
 
@@ -70,7 +70,7 @@ export function Industries() {
               <span className="font-mono text-base sm:text-lg font-black text-[#00d2c4] leading-none">
                 {industry.stat.value}
               </span>
-              <span className="text-[11px] text-slate-300 font-medium leading-tight max-w-[120px]">
+              <span className="text-2xs text-slate-300 font-medium leading-tight max-w-[120px]">
                 {industry.stat.label}
               </span>
             </div>
@@ -85,10 +85,10 @@ export function Industries() {
       <Container>
         <Reveal className="mb-5 sm:mb-6 text-center max-w-2xl mx-auto">
           <Eyebrow tone="brand" className="mb-1.5">INDUSTRIES</Eyebrow>
-          <h2 className="text-display-xs sm:text-display-sm lg:text-display-md font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-display-md sm:text-display-lg font-extrabold text-slate-900">
             Experience Across Industries
           </h2>
-          <p className="mt-2 text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
+          <p className="mt-2 text-lead text-slate-600 font-normal leading-relaxed">
             Every industry has unique workflows, compliance requirements, and operational priorities. Our solutions are designed around those realities.
           </p>
         </Reveal>

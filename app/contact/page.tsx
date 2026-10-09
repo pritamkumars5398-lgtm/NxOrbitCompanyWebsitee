@@ -61,7 +61,7 @@ export default function ContactPage() {
               <Eyebrow>Get in touch</Eyebrow>
             </Reveal>
             <Reveal from="up" delay={0.06}>
-              <h1 className="max-w-3xl text-display-lg sm:text-display-xl text-slate-900 leading-[1.05]">
+              <h1 className="max-w-3xl text-display-lg sm:text-display-xl font-extrabold text-slate-900">
                 Tell us what <br />
                 <span className="bg-linear-to-r from-[#006B7D] to-[#00d2c4] bg-clip-text text-transparent">
                   you&apos;re building.
@@ -91,7 +91,7 @@ export default function ContactPage() {
                   <div>
                     <div className="flex flex-col gap-1.5">
                       <Eyebrow tone="light">Direct line</Eyebrow>
-                      <p className="text-base sm:text-lg leading-snug font-medium text-white">
+                      <p className="text-lead leading-snug font-medium text-white">
                         Prefer to skip the form? Call or email and you&apos;ll reach the same people.
                       </p>
                     </div>
@@ -153,7 +153,7 @@ export default function ContactPage() {
           <Stagger className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center lg:gap-20">
             <StaggerItem from="up" className="flex flex-col gap-5">
               <Eyebrow>Where we are</Eyebrow>
-              <h2 className="text-display-md sm:text-display-lg">One studio, one time zone.</h2>
+              <h2 className="text-display-md sm:text-display-lg font-extrabold">One studio, one time zone.</h2>
               <p className="max-w-md text-lead text-ink-600">
                 Our whole team sits in Navi Mumbai. No offshore hand-off at 6pm, no work waking up
                 in a different country overnight.
@@ -166,7 +166,7 @@ export default function ContactPage() {
                   <Building2 aria-hidden className="size-5" strokeWidth={1.6} />
                 </span>
                 <div className="flex flex-col gap-1.5">
-                  <h3 className="text-base font-semibold text-ink-900">Navi Mumbai, India</h3>
+                  <h3 className="text-base sm:text-lg font-bold text-ink-900">Navi Mumbai, India</h3>
                   <p className="text-sm leading-relaxed text-ink-600">{CONTACT_DETAILS.address}</p>
                 </div>
                 <div className="flex flex-wrap gap-x-6 gap-y-2 border-t border-hairline pt-5 text-sm">

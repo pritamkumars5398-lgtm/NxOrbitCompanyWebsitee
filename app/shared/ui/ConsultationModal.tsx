@@ -179,7 +179,7 @@ export function ConsultationModal() {
           <div className="flex items-center justify-between z-10">
             <div>
               <h2 className="text-lg font-extrabold tracking-tight text-white">Request a Free Quote</h2>
-              <p className="text-[11px] text-brand-300 font-medium mt-0.5">Partner with global product engineering experts</p>
+              <p className="text-2xs text-brand-300 font-medium mt-0.5">Partner with global product engineering experts</p>
             </div>
             <button 
               type="button" 
@@ -216,7 +216,7 @@ export function ConsultationModal() {
             <form id="consultation-form" onSubmit={handleSubmit} className="space-y-3.5" noValidate>
               {/* Name field */}
               <div className="relative">
-                <label htmlFor="modal-name" className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">
+                <label htmlFor="modal-name" className="block text-2xs font-bold text-slate-500 uppercase tracking-widest mb-1">
                   Your Name
                 </label>
                 <div className="relative flex items-center">
@@ -237,12 +237,12 @@ export function ConsultationModal() {
                     )}
                   />
                 </div>
-                {errors.name && <p className="text-[10px] text-red-500 mt-1 pl-1 font-semibold">{errors.name}</p>}
+                {errors.name && <p className="text-2xs text-red-500 mt-1 pl-1 font-semibold">{errors.name}</p>}
               </div>
 
               {/* Email field */}
               <div className="relative">
-                <label htmlFor="modal-email" className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">
+                <label htmlFor="modal-email" className="block text-2xs font-bold text-slate-500 uppercase tracking-widest mb-1">
                   Your Email
                 </label>
                 <div className="relative flex items-center">
@@ -263,12 +263,12 @@ export function ConsultationModal() {
                     )}
                   />
                 </div>
-                {errors.email && <p className="text-[10px] text-red-500 mt-1 pl-1 font-semibold">{errors.email}</p>}
+                {errors.email && <p className="text-2xs text-red-500 mt-1 pl-1 font-semibold">{errors.email}</p>}
               </div>
 
               {/* Phone field */}
               <div className="relative">
-                <label htmlFor="modal-phone" className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">
+                <label htmlFor="modal-phone" className="block text-2xs font-bold text-slate-500 uppercase tracking-widest mb-1">
                   Your Phone No
                 </label>
                 <div className="relative flex items-center">
@@ -289,12 +289,12 @@ export function ConsultationModal() {
                     )}
                   />
                 </div>
-                {errors.phone && <p className="text-[10px] text-red-500 mt-1 pl-1 font-semibold">{errors.phone}</p>}
+                {errors.phone && <p className="text-2xs text-red-500 mt-1 pl-1 font-semibold">{errors.phone}</p>}
               </div>
 
               {/* Service field */}
               <div className="relative">
-                <label htmlFor="modal-service" className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">
+                <label htmlFor="modal-service" className="block text-2xs font-bold text-slate-500 uppercase tracking-widest mb-1">
                   Select Type of Services
                 </label>
                 <div className="relative flex items-center">
@@ -336,12 +336,12 @@ export function ConsultationModal() {
                     </optgroup>
                   </select>
                 </div>
-                {errors.service && <p className="text-[10px] text-red-500 mt-1 pl-1 font-semibold">{errors.service}</p>}
+                {errors.service && <p className="text-2xs text-red-500 mt-1 pl-1 font-semibold">{errors.service}</p>}
               </div>
 
               {/* Message field */}
               <div className="relative">
-                <label htmlFor="modal-message" className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">
+                <label htmlFor="modal-message" className="block text-2xs font-bold text-slate-500 uppercase tracking-widest mb-1">
                   Message Your Enquiry Here
                 </label>
                 <div className="relative flex">
@@ -362,7 +362,7 @@ export function ConsultationModal() {
                     )}
                   />
                 </div>
-                {errors.message && <p className="text-[10px] text-red-500 mt-1 pl-1 font-semibold">{errors.message}</p>}
+                {errors.message && <p className="text-2xs text-red-500 mt-1 pl-1 font-semibold">{errors.message}</p>}
               </div>
             </form>
           )}

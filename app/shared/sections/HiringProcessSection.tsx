@@ -73,13 +73,13 @@ export function HiringProcessSection({
           </Reveal>
 
           <Reveal from="up" delay={0.06}>
-            <h2 className="text-display-md sm:text-display-lg font-extrabold text-slate-900 tracking-tight leading-tight">
+            <h2 className="text-display-md sm:text-display-lg font-extrabold text-slate-900">
               {title}
             </h2>
           </Reveal>
 
           <Reveal from="up" delay={0.12}>
-            <p className="mt-3 sm:mt-4 text-sm sm:text-lg text-slate-600 font-normal max-w-2xl leading-relaxed">
+            <p className="mt-3 sm:mt-4 text-lead text-slate-600 font-normal max-w-2xl leading-relaxed">
               {subtitle}
             </p>
           </Reveal>
@@ -108,7 +108,7 @@ export function HiringProcessSection({
                   </div>
 
                   {/* Step Title */}
-                  <h3 className="mt-4 sm:mt-6 text-xs sm:text-base font-extrabold uppercase tracking-wider text-slate-900 group-hover:text-teal-700 transition-colors">
+                  <h3 className="mt-4 sm:mt-6 text-sm sm:text-base font-bold uppercase tracking-wider text-slate-900 group-hover:text-teal-700 transition-colors">
                     {item.title}
                   </h3>
 
@@ -116,7 +116,7 @@ export function HiringProcessSection({
                   <div className="w-6 sm:w-8 h-1 bg-teal-500 my-2 sm:my-2.5 rounded-full transition-all duration-300 group-hover:w-10 sm:group-hover:w-12 group-hover:bg-teal-600" />
 
                   {/* Step Description */}
-                  <p className="text-[11px] sm:text-sm text-slate-600 font-normal leading-relaxed max-w-xs">
+                  <p className="text-sm text-slate-600 font-normal leading-relaxed max-w-xs">
                     {item.description}
                   </p>
                 </StaggerItem>
