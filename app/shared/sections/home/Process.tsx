@@ -2,7 +2,6 @@
 
 import { Code2, PencilRuler, Rocket, Search } from "lucide-react";
 import { PROCESS } from "@/app/core/data/home";
-import { Button } from "@/app/shared/ui/Button";
 import { ProcessArcLayout } from "@/app/shared/sections/ProcessArcLayout";
 
 /** One icon per delivery phase, in PROCESS order. */
@@ -17,16 +16,17 @@ export function Process() {
     <ProcessArcLayout
       id="process"
       eyebrow="DELIVERY PROCESS"
-      title="How We Work — A process you can see through."
+      title={
+        <>
+          How We Work
+          <br />
+          A process you can see through.
+        </>
+      }
       subtitle="Four phases, each with a defined output you can hold us to — not a status deck standing in for working software."
       steps={PROCESS.map((phase, idx) => ({ ...phase, icon: PHASE_ICONS[idx] }))}
       rowHeight={150}
       hubClassName="lg:max-w-[440px] xl:max-w-[480px]"
-      action={
-        <Button href="/contact" variant="primary" withArrow className="rounded-full">
-          Start with discovery
-        </Button>
-      }
     />
   );
 }

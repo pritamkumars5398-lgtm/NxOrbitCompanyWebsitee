@@ -36,7 +36,7 @@ const DEFAULT_ICONS: LucideIcon[] = [
 interface ProcessArcLayoutProps {
   id?: string;
   eyebrow?: string;
-  title?: string;
+  title?: React.ReactNode;
   subtitle?: string;
   steps: ProcessStepItem[];
   className?: string;
