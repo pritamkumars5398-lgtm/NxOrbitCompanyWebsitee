@@ -84,7 +84,7 @@ export function TechStackEcosystem({
       <Container>
         {/* Header Row: Title */}
         <div className="mb-5 sm:mb-6">
-          <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#008c83] bg-teal-50 px-3.5 py-1 rounded-full border border-teal-200/80 mb-2 inline-block shadow-xs">
+          <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#008c83] bg-teal-50 px-3.5 py-1 rounded-full border border-teal-200/80 mb-2 inline-block">
             {eyebrow}
           </span>
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight">
@@ -98,7 +98,7 @@ export function TechStackEcosystem({
         </div>
 
         {/* ── Dark Slate Center Contrast Box with 3D White Cards Grid (Reference Image Parity) ── */}
-        <div className="relative rounded-2xl bg-[#07121B] p-4 sm:p-6 md:p-7 shadow-xl shadow-slate-950/20 border border-slate-800/80 overflow-hidden">
+        <div className="relative rounded-2xl bg-[#07121B] p-4 sm:p-6 md:p-7 border border-slate-800/80 overflow-hidden">
           {/* Ambient high-tech background glows */}
           <div
             aria-hidden
@@ -118,10 +118,10 @@ export function TechStackEcosystem({
                   key={item.name}
                   from="up"
                   distance={15}
-                  className="group relative flex items-center gap-3.5 rounded-xl bg-white p-3.5 sm:p-4 shadow-sm shadow-slate-950/20 border border-slate-100 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:border-teal-400"
+                  className="group relative flex items-center gap-3.5 rounded-xl bg-white p-3.5 sm:p-4 border border-slate-100 transition-all duration-300 hover:-translate-y-0.5 hover:border-teal-400"
                 >
                   {/* Left Circular Icon Badge */}
-                  <div className="flex size-10 sm:size-11 shrink-0 items-center justify-center rounded-full bg-slate-50 text-slate-800 border border-slate-200/80 shadow-xs transition-colors duration-300 group-hover:bg-teal-50 group-hover:text-[#008c83] group-hover:border-teal-200">
+                  <div className="flex size-10 sm:size-11 shrink-0 items-center justify-center rounded-full bg-slate-50 text-slate-800 border border-slate-200/80 transition-colors duration-300 group-hover:bg-teal-50 group-hover:text-[#008c83] group-hover:border-teal-200">
                     <IconComponent className="size-5 stroke-[1.8]" />
                   </div>
 

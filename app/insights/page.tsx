@@ -84,7 +84,7 @@ export default function InsightsIndexPage() {
                 <StaggerItem key={item.slug} from="up">
                   <Link
                     href={`/insights/${item.slug}`}
-                    className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/90 bg-white shadow-sm transition-all duration-300 hover:shadow-xl hover:border-teal-500 hover:-translate-y-1.5 h-full"
+                    className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/90 bg-white transition-all duration-300 hover:border-teal-500 hover:-translate-y-1.5 h-full"
                   >
                     <div>
                       {/* Image Thumbnail */}

@@ -123,7 +123,7 @@ export function TechHeroVisual({ slug, title, techStack }: TechHeroVisualProps) 
             <div className="absolute inset-0 bg-linear-to-tr from-[#0A2E4D]/10 to-[#00BBA9]/15 rounded-3xl blur-xl" />
             <div className="relative z-10 flex flex-col items-center">
               {/* Next.js Emblem Logo */}
-              <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-[#0A2E4D] flex items-center justify-center text-white text-5xl font-black shadow-2xl border-4 border-[#00BBA9] animate-float-slow">
+              <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-[#0A2E4D] flex items-center justify-center text-white text-5xl font-black border-4 border-[#00BBA9] animate-float-slow">
                 N
               </div>
               <div className="mt-4 bg-[#0A2E4D]/10 px-4 py-1.5 rounded-full border border-[#0A2E4D]/30 backdrop-blur-md">
@@ -136,7 +136,7 @@ export function TechHeroVisual({ slug, title, techStack }: TechHeroVisualProps) 
   };
 
   return (
-    <div className="rounded-2xl p-6 md:p-8 bg-white border border-slate-200/90 shadow-lg relative overflow-hidden">
+    <div className="rounded-2xl p-6 md:p-8 bg-white border border-slate-200/90 relative overflow-hidden">
       {/* Live Badge Header */}
       <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-4">
         <span className="text-xs font-black uppercase tracking-wider text-[#006B7D]">Technology Showcase</span>

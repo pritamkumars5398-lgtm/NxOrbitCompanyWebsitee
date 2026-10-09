@@ -381,7 +381,7 @@ export default function NextOrbitWmsPage() {
 
                     {/* 3 Horizontal Value Proof Badges */}
                     <div className="flex flex-wrap items-center gap-3 mt-5">
-                      <div className="flex items-center gap-3 bg-white border border-slate-200/80 rounded-2xl px-4 py-2.5 shadow-2xs">
+                      <div className="flex items-center gap-3 bg-white border border-slate-200/80 rounded-2xl px-4 py-2.5">
                         <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-teal-600">
                           <Box className="size-4" />
                         </div>
@@ -391,7 +391,7 @@ export default function NextOrbitWmsPage() {
                         </div>
                       </div>
 
-                      <div className="flex items-center gap-3 bg-white border border-slate-200/80 rounded-2xl px-4 py-2.5 shadow-2xs">
+                      <div className="flex items-center gap-3 bg-white border border-slate-200/80 rounded-2xl px-4 py-2.5">
                         <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-teal-600">
                           <Gauge className="size-4" />
                         </div>
@@ -401,7 +401,7 @@ export default function NextOrbitWmsPage() {
                         </div>
                       </div>
 
-                      <div className="flex items-center gap-3 bg-white border border-slate-200/80 rounded-2xl px-4 py-2.5 shadow-2xs">
+                      <div className="flex items-center gap-3 bg-white border border-slate-200/80 rounded-2xl px-4 py-2.5">
                         <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-teal-600">
                           <TrendingUp className="size-4" />
                         </div>
@@ -455,9 +455,9 @@ export default function NextOrbitWmsPage() {
                         type="button"
                         onClick={() => setActiveTab(tab.id)}
                         className={cn(
-                          "flex shrink-0 whitespace-nowrap items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full text-xs font-bold transition-all duration-300 cursor-pointer shadow-2xs border text-left",
+                          "flex shrink-0 whitespace-nowrap items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full text-xs font-bold transition-all duration-300 cursor-pointer border text-left",
                           isActive
-                            ? "bg-[#0a2328] border-[#0a2328] text-white shadow-md scale-[1.02]"
+                            ? "bg-[#0a2328] border-[#0a2328] text-white scale-[1.02]"
                             : "bg-white border-slate-200/90 text-slate-700 hover:border-teal-400 hover:text-teal-700 hover:bg-teal-50/50"
                         )}
                       >
@@ -475,7 +475,7 @@ export default function NextOrbitWmsPage() {
                 {/* 2-Column Showcase Container (Matching Freight Reference) */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-5 items-stretch">
                   {/* Left Hero Image Card */}
-                  <div className="lg:col-span-5 relative rounded-2xl overflow-hidden min-h-[290px] sm:min-h-[320px] lg:min-h-[340px] flex flex-col justify-end p-5 sm:p-6 shadow-md border border-slate-200/80 group">
+                  <div className="lg:col-span-5 relative rounded-2xl overflow-hidden min-h-[290px] sm:min-h-[320px] lg:min-h-[340px] flex flex-col justify-end p-5 sm:p-6 border border-slate-200/80 group">
                     <img
                       src={currentTab.topImage || "/assets/warehouse_wms_3d.jpg"}
                       alt={currentTab.fullTitle}
@@ -500,10 +500,10 @@ export default function NextOrbitWmsPage() {
                     {currentTab.points.map((point, index) => (
                       <div
                         key={index}
-                        className="group relative flex flex-col justify-start rounded-xl border border-slate-200/80 bg-white p-4 sm:p-5 shadow-2xs transition-all duration-300 hover:-translate-y-1 hover:border-teal-300 hover:shadow-md"
+                        className="group relative flex flex-col justify-start rounded-xl border border-slate-200/80 bg-white p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1 hover:border-teal-300"
                       >
                         {/* Circle Icon Badge */}
-                        <div className="flex size-9 items-center justify-center rounded-xl bg-teal-50 text-teal-600 border border-teal-100/80 transition-colors duration-300 group-hover:bg-teal-600 group-hover:text-white mb-3 shadow-2xs">
+                        <div className="flex size-9 items-center justify-center rounded-xl bg-teal-50 text-teal-600 border border-teal-100/80 transition-colors duration-300 group-hover:bg-teal-600 group-hover:text-white mb-3">
                           <CheckCircle2 className="size-4.5" />
                         </div>
 

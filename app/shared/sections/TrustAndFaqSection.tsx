@@ -58,7 +58,7 @@ export function TrustAndFaqSection({ faqs = DEFAULT_FAQS, className }: TrustAndF
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-12 items-start">
 
           {/* ── Left Column: Trust Certifications (Distinct Highlighted Visual Card) ── */}
-          <div className="lg:col-span-5 relative overflow-hidden rounded-3xl border border-teal-200/90 bg-linear-to-br from-[#f0fbf8] via-white to-[#edf9f6] p-6 sm:p-8 lg:p-8 shadow-sm shadow-teal-900/5">
+          <div className="lg:col-span-5 relative overflow-hidden rounded-3xl border border-teal-200/90 bg-linear-to-br from-[#f0fbf8] via-white to-[#edf9f6] p-6 sm:p-8 lg:p-8">
             {/* Top Teal Gradient Accent Line */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-teal-500 via-emerald-400 to-teal-600" />
             
@@ -78,9 +78,9 @@ export function TrustAndFaqSection({ faqs = DEFAULT_FAQS, className }: TrustAndF
               </p>
 
               {/* ISO Certification Badge Card */}
-              <div className="w-full group relative overflow-hidden rounded-2xl border border-teal-200/90 bg-white p-4.5 sm:p-5 shadow-xs transition-all duration-300 hover:shadow-md hover:border-teal-400">
+              <div className="w-full group relative overflow-hidden rounded-2xl border border-teal-200/90 bg-white p-4.5 sm:p-5 transition-all duration-300 hover:border-teal-400">
                 <div className="relative flex items-center gap-4">
-                  <div className="flex size-12 sm:size-13 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-teal-600 border border-teal-200/80 shadow-xs transition-transform duration-300 group-hover:scale-105">
+                  <div className="flex size-12 sm:size-13 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-teal-600 border border-teal-200/80 transition-transform duration-300 group-hover:scale-105">
                     <ShieldCheck className="size-6 sm:size-7" />
                   </div>
                   <div className="flex flex-col min-w-0">
@@ -142,8 +142,8 @@ export function TrustAndFaqSection({ faqs = DEFAULT_FAQS, className }: TrustAndF
                     key={index}
                     className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
                       isOpen
-                        ? "bg-white border-teal-500 shadow-md shadow-teal-500/10 ring-1 ring-teal-500/20"
-                        : "bg-white border-slate-300/80 shadow-xs hover:border-slate-400 hover:shadow-xs"
+                        ? "bg-white border-teal-500 ring-1 ring-teal-500/20"
+                        : "bg-white border-slate-300/80 hover:border-slate-400"
                     }`}
                   >
                     <button

@@ -46,7 +46,7 @@ const INDUSTRY_HERO_BG_IMAGES: Record<string, string> = {
 const FEATURE_IMAGES: Record<string, string> = {
   // Manufacturing
   "Manufacturing Execution Systems (MES)": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=600&auto=format&fit=crop",
-  "Industrial IoT & Machine Telemetry": "https://images.unsplash.com/photo-1581092335397-9583fe92d232?q=80&w=600&auto=format&fit=crop",
+  "Industrial IoT & Machine Telemetry": "https://images.unsplash.com/photo-1567789884554-0b844b597180?q=80&w=600&auto=format&fit=crop",
   "BOM & Work-in-Progress (WIP) Tracking": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=600&auto=format&fit=crop",
   "Bi-Directional ERP Sync": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop",
   "Quality Control & Visual Defect AI": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=600&auto=format&fit=crop",
@@ -63,13 +63,13 @@ const FEATURE_IMAGES: Record<string, string> = {
   // Healthcare
   "Telemedicine Platforms": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=600&auto=format&fit=crop",
   "Electronic Health Records": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=600&auto=format&fit=crop",
-  "Remote Patient Monitoring": "https://images.unsplash.com/photo-1510017808632-95f08e030633?q=80&w=600&auto=format&fit=crop",
-  "AI Diagnostics": "https://images.unsplash.com/photo-1530026405186-ed1ea0ac7a63?q=80&w=600&auto=format&fit=crop",
+  "Remote Patient Monitoring": "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?q=80&w=600&auto=format&fit=crop",
+  "AI Diagnostics": "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?q=80&w=600&auto=format&fit=crop",
   "Hospital Management Systems": "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=600&auto=format&fit=crop",
   "Health & Wellness Apps": "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?q=80&w=600&auto=format&fit=crop",
 
   // Fintech
-  "Digital Banking": "https://images.unsplash.com/photo-1563013544-824ae1d704d3?q=80&w=600&auto=format&fit=crop",
+  "Digital Banking": "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=600&auto=format&fit=crop",
   "Payment Gateways": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=600&auto=format&fit=crop",
   "Lending & Credit": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=600&auto=format&fit=crop",
   "Wealth Management": "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=600&auto=format&fit=crop",
@@ -86,7 +86,7 @@ const FEATURE_IMAGES: Record<string, string> = {
 
   // E-commerce
   "Headless Commerce": "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=600&auto=format&fit=crop",
-  "Multi-Vendor Marketplace": "https://images.unsplash.com/photo-1472851294608-062f824d296e?q=80&w=600&auto=format&fit=crop",
+  "Multi-Vendor Marketplace": "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=600&auto=format&fit=crop",
   "Mobile Shopping Apps": "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=600&auto=format&fit=crop",
   "Checkout Optimization": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=600&auto=format&fit=crop",
   "Inventory & Order Management": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=600&auto=format&fit=crop",
@@ -95,7 +95,7 @@ const FEATURE_IMAGES: Record<string, string> = {
   // Logistics
   "Fleet Management": "https://images.unsplash.com/photo-1516575150278-77136aed6920?q=80&w=600&auto=format&fit=crop",
   "Last-Mile Delivery": "https://images.unsplash.com/photo-1569003339405-ea396a5a8a90?q=80&w=600&auto=format&fit=crop",
-  "Warehouse Management": "https://images.unsplash.com/photo-1553413719-875871274712?q=80&w=600&auto=format&fit=crop",
+  "Warehouse Management": "https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=600&auto=format&fit=crop",
   "Supply Chain Visibility": "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=600&auto=format&fit=crop",
   "Route Optimization": "https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=600&auto=format&fit=crop",
   "Customer Tracking Portal": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=600&auto=format&fit=crop",
@@ -104,8 +104,8 @@ const FEATURE_IMAGES: Record<string, string> = {
   "Video Streaming Platforms": "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?q=80&w=600&auto=format&fit=crop",
   "Live Streaming": "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=600&auto=format&fit=crop",
   "Creator & Fan Platforms": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=600&auto=format&fit=crop",
-  "Social Entertainment": "https://images.unsplash.com/photo-1516280440614-37939bbacd6a?q=80&w=600&auto=format&fit=crop",
-  "Music & Podcast Apps": "https://images.unsplash.com/photo-1484755560695-a4c74891d06e?q=80&w=600&auto=format&fit=crop",
+  "Social Entertainment": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=600&auto=format&fit=crop",
+  "Music & Podcast Apps": "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?q=80&w=600&auto=format&fit=crop",
   "Gaming Backends": "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=600&auto=format&fit=crop",
 };
 

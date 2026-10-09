@@ -91,7 +91,7 @@ export function ContactForm() {
         exit={{ opacity: 0, scale: 0.95 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         role="status"
-        className="relative overflow-hidden flex min-h-[30rem] h-full flex-col items-center justify-center gap-6 rounded-2xl border border-teal-200/80 bg-white p-6 sm:p-10 text-center shadow-2xl shadow-teal-950/10"
+        className="relative overflow-hidden flex min-h-[30rem] h-full flex-col items-center justify-center gap-6 rounded-2xl border border-teal-200/80 bg-white p-6 sm:p-10 text-center"
       >
         {/* Top ambient color glow */}
         <div className="absolute top-0 inset-x-0 h-1.5 bg-linear-to-r from-teal-500 via-emerald-400 to-teal-600" />
@@ -171,7 +171,7 @@ export function ContactForm() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: EASE.outExpo }}
       onSubmit={handleSubmit}
-      className="relative overflow-hidden flex flex-col justify-between h-full gap-4 sm:gap-4.5 rounded-2xl border border-slate-200/90 bg-white/95 backdrop-blur-xl p-5 sm:p-7 shadow-xl shadow-teal-950/5 transition-all duration-300"
+      className="relative overflow-hidden flex flex-col justify-between h-full gap-4 sm:gap-4.5 rounded-2xl border border-slate-200/90 bg-white/95 backdrop-blur-xl p-5 sm:p-7 transition-all duration-300"
     >
       {/* Top Ambient Highlight Gradient Bar */}
       <div className="absolute top-0 inset-x-0 h-1.5 bg-linear-to-r from-teal-500 via-cyan-400 to-emerald-500" />
@@ -344,7 +344,7 @@ export function ContactForm() {
             className={cn(
               "select-none cursor-pointer rounded-xl border p-2 sm:p-2.5 flex items-center justify-between transition-all duration-200",
               isVerified
-                ? "border-emerald-400 bg-emerald-50/50 shadow-2xs"
+                ? "border-emerald-400 bg-emerald-50/50"
                 : error
                 ? "border-red-400 bg-red-50/40"
                 : "border-slate-200/90 bg-slate-50/60 hover:bg-slate-100/70 hover:border-slate-300"

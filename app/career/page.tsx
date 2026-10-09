@@ -111,7 +111,7 @@ export default function CareerPage() {
             </Reveal>
           </div>
 
-          <Reveal from="up" delay={0.1} className="mt-12 rounded-2xl border border-hairline bg-white/95 p-6 sm:p-8 shadow-xs backdrop-blur-md">
+          <Reveal from="up" delay={0.1} className="mt-12 rounded-2xl border border-hairline bg-white/95 p-6 sm:p-8 backdrop-blur-md">
             <Stats items={TEAM_STATS} layout="rail" columns={4} />
           </Reveal>
         </Container>

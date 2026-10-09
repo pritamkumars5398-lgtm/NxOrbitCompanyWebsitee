@@ -89,7 +89,7 @@ export function WhyChooseUs() {
                   <Reveal
                     key={feat.title}
                     delay={idx * 0.05}
-                    className="flex flex-col items-start p-5 rounded-2xl bg-white border border-slate-200/80 shadow-sm transition-all duration-300 hover:border-[#00d2c4] hover:shadow-md hover:-translate-y-1 group"
+                    className="flex flex-col items-start p-5 rounded-2xl bg-white border border-slate-200/80 transition-all duration-300 hover:border-[#00d2c4] hover:-translate-y-1 group"
                   >
                     <div className="flex items-center justify-between w-full mb-3">
                       <div className="flex size-10 items-center justify-center rounded-xl bg-teal-50 text-[#008c83] group-hover:bg-[#00d2c4] group-hover:text-[#01141b] transition-colors">
@@ -123,7 +123,7 @@ export function WhyChooseUs() {
                 <img
                   src="/assets/why_choose_us_woman.avif"
                   alt="Young businesswoman smiling warmly"
-                  className="w-full h-auto object-cover rounded-2xl transition-transform duration-700 hover:scale-[1.02] shadow-xl"
+                  className="w-full h-auto object-cover rounded-2xl transition-transform duration-700 hover:scale-[1.02]"
                   onError={(e) => {
                     const target = e.currentTarget;
                     if (!target.dataset.triedJpg) {

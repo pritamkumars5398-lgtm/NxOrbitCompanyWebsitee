@@ -157,7 +157,7 @@ export default async function InsightDetailPage({
 
             {/* Right Column: 3D Visual Artwork Card with subtle depth */}
             <Reveal from="up" delay={0.1}>
-              <div className="relative group overflow-hidden rounded-3xl border border-slate-200/90 bg-[#06131F] p-2.5 shadow-2xl">
+              <div className="relative group overflow-hidden rounded-3xl border border-slate-200/90 bg-[#06131F] p-2.5">
                 <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-slate-950 flex items-center justify-center">
                   <img
                     src={data.image}
@@ -208,10 +208,10 @@ export default async function InsightDetailPage({
               <StaggerItem
                 key={challenge.title}
                 from="up"
-                className="flex flex-col justify-between p-6 sm:p-7 rounded-2xl bg-white border border-slate-200/90 shadow-sm transition-all duration-300 hover:border-red-300 hover:shadow-md"
+                className="flex flex-col justify-between p-6 sm:p-7 rounded-2xl bg-white border border-slate-200/90 transition-all duration-300 hover:border-red-300"
               >
                 <div>
-                  <div className="flex size-10 items-center justify-center rounded-xl bg-red-50 text-red-600 mb-4 border border-red-200/60 shadow-xs">
+                  <div className="flex size-10 items-center justify-center rounded-xl bg-red-50 text-red-600 mb-4 border border-red-200/60">
                     <AlertTriangle className="size-5" />
                   </div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2.5">{challenge.title}</h3>
@@ -242,7 +242,7 @@ export default async function InsightDetailPage({
             {data.architecturalPillars.map((pillar) => (
               <Reveal
                 key={pillar.title}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 p-7 sm:p-9 rounded-3xl border border-slate-200/90 bg-slate-50/50 shadow-sm transition-all duration-300 hover:border-teal-400 hover:bg-white hover:shadow-xl"
+                className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 p-7 sm:p-9 rounded-3xl border border-slate-200/90 bg-slate-50/50 transition-all duration-300 hover:border-teal-400 hover:bg-white"
               >
                 <div className="lg:col-span-4 flex flex-col justify-between">
                   <div>
@@ -303,7 +303,7 @@ export default async function InsightDetailPage({
               <StaggerItem
                 key={metric.label}
                 from="up"
-                className="flex flex-col justify-between p-8 rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-md shadow-xl text-center"
+                className="flex flex-col justify-between p-8 rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-md text-center"
               >
                 <div>
                   <span className="font-mono text-4xl sm:text-5xl font-black text-[#00d2c4] tracking-tight block mb-2">
@@ -354,7 +354,7 @@ export default async function InsightDetailPage({
               {data.faqs.map((faq) => (
                 <Reveal
                   key={faq.question}
-                  className="rounded-2xl border border-slate-200/90 bg-white p-6 sm:p-7 shadow-sm"
+                  className="rounded-2xl border border-slate-200/90 bg-white p-6 sm:p-7"
                 >
                   <div className="flex items-start gap-3">
                     <HelpCircle className="size-5 shrink-0 text-[#008c83] mt-0.5" />
@@ -399,7 +399,7 @@ export default async function InsightDetailPage({
               <StaggerItem key={item.slug} from="up">
                 <Link
                   href={`/insights/${item.slug}`}
-                  className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] p-6 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-teal-400/40 hover:bg-white/[0.07] h-full"
+                  className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal-400/40 hover:bg-white/[0.07] h-full"
                 >
                   <div>
                     <span className="text-[11px] font-mono uppercase tracking-wider text-teal-400 block mb-2">

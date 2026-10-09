@@ -18,7 +18,7 @@ export function Industries() {
     id: industry.id,
     label: industry.label,
     content: (
-      <div className="grid gap-6 rounded-2xl border border-slate-200/80 bg-white p-5 sm:p-7 lg:p-8 lg:grid-cols-[1.25fr_1fr] lg:gap-10 shadow-xl shadow-slate-900/5 items-center">
+      <div className="grid gap-6 rounded-2xl border border-slate-200/80 bg-white p-5 sm:p-7 lg:p-8 lg:grid-cols-[1.25fr_1fr] lg:gap-10 items-center">
         {/* Left: Sector Details */}
         <div className="flex flex-col gap-3.5 sm:gap-4">
           <div className="inline-flex items-center gap-2 rounded-full border border-teal-500/20 bg-teal-50/80 px-3 py-0.5 w-fit">
@@ -58,7 +58,7 @@ export function Industries() {
         </div>
 
         {/* Right: Clean 3D Industry Visual with Sleek Floating Stat */}
-        <div className="relative group overflow-hidden rounded-xl border border-slate-200/90 bg-linear-to-br from-slate-50 to-slate-100/70 aspect-[16/11] max-h-[300px] lg:max-h-[320px] flex items-center justify-center shadow-sm">
+        <div className="relative group overflow-hidden rounded-xl border border-slate-200/90 bg-linear-to-br from-slate-50 to-slate-100/70 aspect-[16/11] max-h-[300px] lg:max-h-[320px] flex items-center justify-center">
           <img
             src={(industry as any).image3d || "/assets/logistics_map_truck.jpg"}
             alt={industry.headline}
@@ -66,7 +66,7 @@ export function Industries() {
           />
 
           {industry.stat && (
-            <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 z-10 flex items-center gap-2.5 rounded-xl bg-slate-950/85 backdrop-blur-md px-3.5 py-2 border border-white/10 shadow-lg text-white">
+            <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 z-10 flex items-center gap-2.5 rounded-xl bg-slate-950/85 backdrop-blur-md px-3.5 py-2 border border-white/10 text-white">
               <span className="font-mono text-base sm:text-lg font-black text-[#00d2c4] leading-none">
                 {industry.stat.value}
               </span>

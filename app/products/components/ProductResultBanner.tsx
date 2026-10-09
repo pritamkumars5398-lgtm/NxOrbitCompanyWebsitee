@@ -47,7 +47,7 @@ export function ProductResultBanner({
 }: ProductResultBannerProps) {
   return (
     <div
-      className={`relative isolate overflow-hidden rounded-2xl border-2 border-teal-300/80 bg-linear-to-r from-[#edf8f6] via-[#f4fbf9] to-[#edf8f6] p-5 sm:p-7 shadow-lg shadow-teal-500/10 transition-all duration-300 hover:border-teal-400 hover:shadow-xl hover:shadow-teal-500/15 ${className}`}
+      className={`relative isolate overflow-hidden rounded-2xl border-2 border-teal-300/80 bg-linear-to-r from-[#edf8f6] via-[#f4fbf9] to-[#edf8f6] p-5 sm:p-7 transition-colors duration-300 hover:border-teal-400 ${className}`}
     >
       {/* Soft background ambient gradient glow */}
       <div
@@ -63,7 +63,7 @@ export function ProductResultBanner({
         {/* Left Headline Area */}
         <div className="lg:w-[32%] flex flex-col justify-center gap-2 shrink-0">
           <div className="flex items-center gap-1.5 w-fit">
-            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-extrabold uppercase tracking-widest bg-teal-600 text-white shadow-xs">
+            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-extrabold uppercase tracking-widest bg-teal-600 text-white">
               <Sparkles className="size-2.5 text-teal-200" />
               {eyebrow}
             </span>
@@ -83,7 +83,7 @@ export function ProductResultBanner({
             const Icon = stat.icon;
             return (
               <div key={idx} className="flex flex-col gap-1.5 min-w-0">
-                <div className="flex size-8 sm:size-9 items-center justify-center rounded-xl bg-teal-100/90 text-teal-700 border border-teal-200 shadow-2xs">
+                <div className="flex size-8 sm:size-9 items-center justify-center rounded-xl bg-teal-100/90 text-teal-700 border border-teal-200">
                   <Icon className="size-4 sm:size-4.5 stroke-[2]" />
                 </div>
                 <h5 className="text-xs sm:text-sm font-extrabold text-slate-900 tracking-tight leading-tight mt-0.5">

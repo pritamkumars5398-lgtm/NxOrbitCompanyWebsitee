@@ -116,7 +116,7 @@ export function ProcessArcLayout({
 
           {/* ── Left Column: Circular Branding Hub (NXTorbit Brand Colors) ── */}
           <Reveal from="left" className="relative flex justify-center w-full">
-            <div className="relative flex flex-col items-center justify-center rounded-full bg-white p-6 sm:p-8 md:p-10 text-center shadow-2xl shadow-brand-500/10 border border-slate-200/90 aspect-square w-full max-w-[290px] sm:max-w-[350px] lg:max-w-[390px] xl:max-w-[430px] mx-auto shrink-0">
+            <div className="relative flex flex-col items-center justify-center rounded-full bg-white p-6 sm:p-8 md:p-10 text-center border border-slate-200/90 aspect-square w-full max-w-[290px] sm:max-w-[350px] lg:max-w-[390px] xl:max-w-[430px] mx-auto shrink-0">
 
               {/* Outer NXTorbit Brand Arc */}
               <svg
@@ -223,7 +223,7 @@ export function ProcessArcLayout({
                     }
                   >
                     {/* 3D Elevated Circular Icon Badge Centered Directly on Guide Line */}
-                    <div className="relative z-20 flex size-10 sm:size-11 lg:size-12 shrink-0 items-center justify-center rounded-full bg-white text-brand-600 shadow-lg shadow-slate-900/15 border border-slate-200 ring-4 ring-slate-100 transition-all duration-300 group-hover:scale-110 group-hover:border-brand-500 group-hover:ring-brand-100 group-hover:bg-brand-600 group-hover:text-white">
+                    <div className="relative z-20 flex size-10 sm:size-11 lg:size-12 shrink-0 items-center justify-center rounded-full bg-white text-brand-600 border border-slate-200 ring-4 ring-slate-100 transition-all duration-300 group-hover:scale-110 group-hover:border-brand-500 group-hover:ring-brand-100 group-hover:bg-brand-600 group-hover:text-white">
                       <IconComponent className="size-4 sm:size-5 lg:size-5.5" />
                     </div>
 

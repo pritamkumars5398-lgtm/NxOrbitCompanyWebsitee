@@ -67,7 +67,7 @@ export function HiringProcessSection({
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-12 sm:mb-20">
           <Reveal from="up">
             <div className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-mono font-bold tracking-widest uppercase mb-3 sm:mb-4">
-              <span className="bg-teal-600 text-white px-3 py-1 rounded-md shadow-xs">HIRING</span>
+              <span className="bg-teal-600 text-white px-3 py-1 rounded-md">HIRING</span>
               <span className="text-slate-900 font-extrabold px-1 tracking-wider">PROCESS</span>
             </div>
           </Reveal>
@@ -101,7 +101,7 @@ export function HiringProcessSection({
                   className="group flex flex-col items-center text-center relative p-2"
                 >
                   {/* Dashed Outer Circle Badge */}
-                  <div className="size-20 sm:size-28 rounded-full bg-white border-2 border-dashed border-slate-200 p-1.5 sm:p-2 flex items-center justify-center shadow-xs transition-all duration-300 group-hover:border-teal-500 group-hover:shadow-md group-hover:scale-105 relative z-10">
+                  <div className="size-20 sm:size-28 rounded-full bg-white border-2 border-dashed border-slate-200 p-1.5 sm:p-2 flex items-center justify-center transition-all duration-300 group-hover:border-teal-500 group-hover:scale-105 relative z-10">
                     <div className="size-full rounded-full bg-teal-50/80 flex items-center justify-center text-teal-600 transition-colors duration-300 group-hover:bg-teal-600 group-hover:text-white">
                       <IconComponent className="size-6 sm:size-10 stroke-[1.8]" />
                     </div>

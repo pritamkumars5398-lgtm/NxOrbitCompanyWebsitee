@@ -23,42 +23,42 @@ const TECH_HERO_ASSETS: Record<
 > = {
   "react-native": {
     logo: "https://icon.icepanel.io/Technology/svg/React.svg",
-    glowClass: "border-sky-500/20 bg-sky-950/20 shadow-sky-500/5",
+    glowClass: "border-sky-500/20 bg-sky-950/20",
     rgb: "14, 165, 233",
     label: "React Native Core Engine",
     version: "v0.74.x",
   },
   flutter: {
     logo: "https://icon.icepanel.io/Technology/svg/Flutter.svg",
-    glowClass: "border-cyan-500/20 bg-cyan-950/20 shadow-cyan-500/5",
+    glowClass: "border-cyan-500/20 bg-cyan-950/20",
     rgb: "6, 182, 212",
     label: "Flutter Rendering Engine",
     version: "v3.22.x",
   },
   ios: {
     logo: "https://icon.icepanel.io/Technology/svg/Swift.svg",
-    glowClass: "border-orange-500/20 bg-orange-950/20 shadow-orange-500/5",
+    glowClass: "border-orange-500/20 bg-orange-950/20",
     rgb: "249, 115, 22",
     label: "Swift Native SDK Compiler",
     version: "v5.10",
   },
   android: {
     logo: "https://icon.icepanel.io/Technology/svg/Kotlin.svg",
-    glowClass: "border-purple-500/20 bg-purple-950/20 shadow-purple-500/5",
+    glowClass: "border-purple-500/20 bg-purple-950/20",
     rgb: "168, 85, 247",
     label: "Kotlin JVM Runtime Environment",
     version: "v2.0.x",
   },
   nodejs: {
     logo: "https://icon.icepanel.io/Technology/svg/Node.js.svg",
-    glowClass: "border-emerald-500/20 bg-emerald-950/20 shadow-emerald-500/5",
+    glowClass: "border-emerald-500/20 bg-emerald-950/20",
     rgb: "16, 185, 129",
     label: "Node.js V8 Runtime Engine",
     version: "v20.x LTS",
   },
   nextjs: {
     logo: "https://icon.icepanel.io/Technology/svg/Next.js.svg",
-    glowClass: "border-white/10 bg-white/5 shadow-white/5",
+    glowClass: "border-white/10 bg-white/5",
     rgb: "255, 255, 255",
     label: "Next.js Production Server",
     version: "v14.2.x",
@@ -186,7 +186,7 @@ export default async function TechnologyPage({
 
               {/* Futuristic Glassmorphism Tech Card */}
               <div
-                className={`relative flex flex-col items-center justify-center p-5 sm:p-6 rounded-2xl border backdrop-blur-md aspect-square w-full max-w-[240px] sm:max-w-[260px] mx-auto shadow-xl transition-all duration-500 group-hover/hero:-translate-y-1 ${asset.glowClass}`}
+                className={`relative flex flex-col items-center justify-center p-5 sm:p-6 rounded-2xl border backdrop-blur-md aspect-square w-full max-w-[240px] sm:max-w-[260px] mx-auto transition-all duration-500 group-hover/hero:-translate-y-1 ${asset.glowClass}`}
               >
                 {/* Tech Logo */}
                 <div className="relative flex items-center justify-center p-4 bg-brand-950/40 rounded-xl border border-white/5 shadow-inner">

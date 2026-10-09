@@ -356,7 +356,7 @@ export default function NextOrbitFreightPage() {
       {/* ── 2.5 Infinite Possibilities Platform Banner ── */}
       <section className="relative isolate overflow-hidden bg-slate-50/70 py-6 sm:py-8 border-b border-hairline">
         <Container>
-          <div className="bg-[#04191d] rounded-2xl border border-teal-900/60 p-5 sm:p-7 shadow-lg flex flex-col md:flex-row items-center justify-between gap-5 sm:gap-6 text-white">
+          <div className="bg-[#04191d] rounded-2xl border border-teal-900/60 p-5 sm:p-7 flex flex-col md:flex-row items-center justify-between gap-5 sm:gap-6 text-white">
             <div className="flex items-center gap-4">
               <div className="size-11 sm:size-12 rounded-2xl bg-teal-500/20 text-teal-300 border border-teal-400/30 flex items-center justify-center shrink-0">
                 <Sparkles className="size-5 sm:size-6 text-teal-300" />
@@ -460,7 +460,7 @@ export default function NextOrbitFreightPage() {
             <div className="flex flex-col items-center text-center group">
               {/* Circular Icon with stem & dot */}
               <div className="flex flex-col items-center">
-                <div className="flex size-16 items-center justify-center rounded-full border border-slate-200 bg-white shadow-2xs transition-all duration-300 group-hover:border-[#00A896] group-hover:shadow-md">
+                <div className="flex size-16 items-center justify-center rounded-full border border-slate-200 bg-white transition-all duration-300 group-hover:border-[#00A896]">
                   <Database className="size-7 text-[#00A896]" />
                 </div>
                 <div className="w-[1.5px] h-3.5 bg-teal-200" />
@@ -486,7 +486,7 @@ export default function NextOrbitFreightPage() {
             <div className="flex flex-col items-center text-center group">
               {/* Circular Icon with stem & dot */}
               <div className="flex flex-col items-center">
-                <div className="flex size-16 items-center justify-center rounded-full border border-slate-200 bg-white shadow-2xs transition-all duration-300 group-hover:border-[#00A896] group-hover:shadow-md">
+                <div className="flex size-16 items-center justify-center rounded-full border border-slate-200 bg-white transition-all duration-300 group-hover:border-[#00A896]">
                   <Navigation className="size-7 text-[#00A896]" />
                 </div>
                 <div className="w-[1.5px] h-3.5 bg-teal-200" />
@@ -512,7 +512,7 @@ export default function NextOrbitFreightPage() {
             <div className="flex flex-col items-center text-center group">
               {/* Circular Icon with stem & dot */}
               <div className="flex flex-col items-center">
-                <div className="flex size-16 items-center justify-center rounded-full border border-slate-200 bg-white shadow-2xs transition-all duration-300 group-hover:border-[#00A896] group-hover:shadow-md">
+                <div className="flex size-16 items-center justify-center rounded-full border border-slate-200 bg-white transition-all duration-300 group-hover:border-[#00A896]">
                   <MessageSquarePlus className="size-7 text-[#00A896]" />
                 </div>
                 <div className="w-[1.5px] h-3.5 bg-teal-200" />
@@ -661,7 +661,7 @@ export default function NextOrbitFreightPage() {
             </div>
 
             {/* Right Subtitle & World Map Card */}
-            <div className="lg:col-span-5 relative bg-white/70 backdrop-blur-md rounded-xl border border-slate-200/80 p-3.5 sm:p-4 shadow-2xs overflow-hidden">
+            <div className="lg:col-span-5 relative bg-white/70 backdrop-blur-md rounded-xl border border-slate-200/80 p-3.5 sm:p-4 overflow-hidden">
               {/* World Map Vector Watermark */}
               <div className="absolute inset-0 select-none pointer-events-none opacity-[0.18] flex items-center justify-center">
                 <img
@@ -699,9 +699,9 @@ export default function NextOrbitFreightPage() {
                   type="button"
                   onClick={() => setActiveTab(tab.id)}
                   className={cn(
-                    "flex shrink-0 whitespace-nowrap items-center gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs font-bold transition-all duration-300 cursor-pointer shadow-2xs border",
+                    "flex shrink-0 whitespace-nowrap items-center gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs font-bold transition-all duration-300 cursor-pointer border",
                     isActive
-                      ? "bg-[#0d2a30] border-[#0d2a30] text-white shadow-md scale-[1.02]"
+                      ? "bg-[#0d2a30] border-[#0d2a30] text-white scale-[1.02]"
                       : "bg-white border-slate-200/90 text-slate-700 hover:border-teal-400 hover:text-teal-700 hover:bg-teal-50/50"
                   )}
                 >
@@ -722,7 +722,7 @@ export default function NextOrbitFreightPage() {
                 {/* 2-Column Showcase Container */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-5 items-stretch">
                   {/* Left Hero Image Card */}
-                  <div className="lg:col-span-5 relative rounded-2xl overflow-hidden min-h-[290px] sm:min-h-[320px] lg:min-h-[340px] flex flex-col justify-end p-5 sm:p-6 shadow-md border border-slate-200/80 group">
+                  <div className="lg:col-span-5 relative rounded-2xl overflow-hidden min-h-[290px] sm:min-h-[320px] lg:min-h-[340px] flex flex-col justify-end p-5 sm:p-6 border border-slate-200/80 group">
                     <img
                       src={currentTab.heroImage}
                       alt={currentTab.heroTitle}
@@ -752,10 +752,10 @@ export default function NextOrbitFreightPage() {
                     {currentTab.points.map((point, index) => (
                       <div
                         key={index}
-                        className="group relative flex flex-col justify-start rounded-xl border border-slate-200/80 bg-white p-4 sm:p-5 shadow-2xs transition-all duration-300 hover:-translate-y-1 hover:border-teal-300 hover:shadow-md"
+                        className="group relative flex flex-col justify-start rounded-xl border border-slate-200/80 bg-white p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1 hover:border-teal-300"
                       >
                         {/* Circle Icon Badge */}
-                        <div className="flex size-9 items-center justify-center rounded-xl bg-teal-50 text-teal-600 border border-teal-100/80 transition-colors duration-300 group-hover:bg-teal-600 group-hover:text-white mb-3 shadow-2xs">
+                        <div className="flex size-9 items-center justify-center rounded-xl bg-teal-50 text-teal-600 border border-teal-100/80 transition-colors duration-300 group-hover:bg-teal-600 group-hover:text-white mb-3">
                           <CheckCircle2 className="size-4.5" />
                         </div>
 
@@ -843,7 +843,7 @@ export default function NextOrbitFreightPage() {
                 <div
                   key={index}
                   onClick={handleRequestDemo}
-                  className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-6 shadow-2xs transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-300 hover:shadow-lg hover:shadow-teal-500/5 cursor-pointer overflow-hidden"
+                  className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-300 cursor-pointer overflow-hidden"
                 >
                   {/* Top Subtle Teal Gradient Accent Line */}
                   <div className="absolute top-0 left-0 right-0 h-0.5 bg-linear-to-r from-teal-500 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

@@ -53,7 +53,7 @@ const REAL_LOGOS = [
  */
 export function LogoRail() {
   return (
-    <section className="relative border-y border-slate-200/90 bg-white py-14 sm:py-18 overflow-hidden shadow-xs" id="trust">
+    <section className="relative border-y border-slate-200/90 bg-white py-14 sm:py-18 overflow-hidden" id="trust">
       {/* Pristine ambient brand radial illumination */}
       <div
         aria-hidden
@@ -68,7 +68,7 @@ export function LogoRail() {
               Trusted by teams who can&apos;t afford downtime.
             </h2>
             {/* Real confirmed client outcome as requested in designer note */}
-            <div className="mt-2 inline-flex items-center gap-2.5 rounded-full border border-teal-200/80 bg-teal-50/50 px-4 py-1.5 shadow-xs">
+            <div className="mt-2 inline-flex items-center gap-2.5 rounded-full border border-teal-200/80 bg-teal-50/50 px-4 py-1.5">
               <span className="font-bold text-slate-900 text-xs sm:text-sm">Alisped</span>
               <span className="text-teal-400">•</span>
               <span className="text-xs sm:text-sm text-teal-700 font-semibold">Reduced warehouse processing time</span>
@@ -79,7 +79,7 @@ export function LogoRail() {
             {REAL_LOGOS.map((client) => (
               <div
                 key={client.name}
-                className="group flex h-14 w-44 items-center justify-center rounded-2xl border border-slate-200/90 bg-white px-5 py-2.5 opacity-90 shadow-xs transition-all duration-300 hover:opacity-100 hover:scale-[1.04] hover:bg-white hover:shadow-md hover:border-teal-400 cursor-pointer"
+                className="group flex h-14 w-44 items-center justify-center rounded-2xl border border-slate-200/90 bg-white px-5 py-2.5 opacity-90 transition-all duration-300 hover:opacity-100 hover:scale-[1.04] hover:bg-white hover:border-teal-400 cursor-pointer"
                 title={client.name}
               >
                 <img

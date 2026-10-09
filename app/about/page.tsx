@@ -157,12 +157,12 @@ const ENGINEERING_PRACTICES = [
 ];
 
 const CHECKPOINT_SEQUENCE = [
-  { stepNumber: "STEP 01", title: "Architecture Review", icon: FileSearch },
-  { stepNumber: "STEP 02", title: "Peer Code Audit", icon: Code2 },
-  { stepNumber: "STEP 03", title: "Automated QA & Regression", icon: Settings },
-  { stepNumber: "STEP 04", title: "Security Scan", icon: ShieldCheck },
-  { stepNumber: "STEP 05", title: "UAT Sign-off", icon: UserCheck },
-  { stepNumber: "STEP 06", title: "Monitored Deployment", icon: Rocket },
+  { title: "Architecture Review", icon: FileSearch },
+  { title: "Peer Code Audit", icon: Code2 },
+  { title: "Automated QA & Regression", icon: Settings },
+  { title: "Security Scan", icon: ShieldCheck },
+  { title: "UAT Sign-off", icon: UserCheck },
+  { title: "Monitored Deployment", icon: Rocket },
 ];
 
 const WHY_PARTNERS_STAY = [
@@ -259,7 +259,7 @@ export default function AboutPage() {
         <Container className="relative z-10 w-full">
           <div className="max-w-3xl flex flex-col items-start gap-6">
             <Reveal from="up">
-              <div className="inline-flex items-center gap-2 rounded-full border border-teal-500/20 bg-white/90 px-4 py-1.5 backdrop-blur-md shadow-sm">
+              <div className="inline-flex items-center gap-2 rounded-full border border-teal-500/20 bg-white/90 px-4 py-1.5 backdrop-blur-md">
                 <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#008c83]">
                   THE WAY WE WORK
                 </span>
@@ -446,7 +446,7 @@ export default function AboutPage() {
               {/* Card 1: Vision */}
               <Reveal from="right" delay={0.12}>
                 <div className="group relative flex items-start gap-4 rounded-2xl border border-cyan-500/30 bg-[#07192f]/60 p-5 sm:p-6 backdrop-blur-sm transition-all duration-300 hover:border-cyan-400 hover:bg-[#07192f]/80 hover:-translate-y-0.5">
-                  <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-cyan-950/90 border border-cyan-400/40 text-[#00d2c4] shadow-[0_0_14px_rgba(0,210,196,0.25)] transition-transform duration-300 group-hover:scale-105 group-hover:border-cyan-300">
+                  <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-cyan-950/90 border border-cyan-400/40 text-[#00d2c4] transition-transform duration-300 group-hover:scale-105 group-hover:border-cyan-300">
                     <Target className="size-5" />
                   </div>
                   <div className="flex flex-col">
@@ -463,7 +463,7 @@ export default function AboutPage() {
               {/* Card 2: Mission */}
               <Reveal from="right" delay={0.18}>
                 <div className="group relative flex items-start gap-4 rounded-2xl border border-cyan-500/30 bg-[#07192f]/60 p-5 sm:p-6 backdrop-blur-sm transition-all duration-300 hover:border-cyan-400 hover:bg-[#07192f]/80 hover:-translate-y-0.5">
-                  <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-cyan-950/90 border border-cyan-400/40 text-[#00d2c4] shadow-[0_0_14px_rgba(0,210,196,0.25)] transition-transform duration-300 group-hover:scale-105 group-hover:border-cyan-300">
+                  <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-cyan-950/90 border border-cyan-400/40 text-[#00d2c4] transition-transform duration-300 group-hover:scale-105 group-hover:border-cyan-300">
                     <Compass className="size-5" />
                   </div>
                   <div className="flex flex-col">
@@ -506,7 +506,7 @@ export default function AboutPage() {
                 <StaggerItem
                   key={item.title}
                   from="up"
-                  className="group flex flex-col justify-between rounded-3xl border border-slate-200/90 bg-white p-7 shadow-xs transition-all duration-300 hover:border-[#00d2c4] hover:shadow-xl hover:-translate-y-1"
+                  className="group flex flex-col justify-between rounded-3xl border border-slate-200/90 bg-white p-7 transition-all duration-300 hover:border-[#00d2c4] hover:-translate-y-1"
                 >
                   <div>
                     <div className="flex size-12 items-center justify-center rounded-2xl bg-teal-50 text-[#008c83] mb-5 group-hover:bg-[#00d2c4] group-hover:text-[#01141b] transition-colors">
@@ -557,7 +557,7 @@ export default function AboutPage() {
             {ENGINEERING_PRACTICES.map((item) => (
               <div
                 key={item.title}
-                className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-xs"
+                className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6"
               >
                 <div className="flex items-center gap-2 mb-2">
                   <CheckCircle2 className="size-4 text-[#008c83] shrink-0" />
@@ -571,10 +571,10 @@ export default function AboutPage() {
           </div>
 
           {/* Bottom visual checkpoint sequence strip matching reference design */}
-          <div className="rounded-3xl border border-teal-200/90 bg-linear-to-br from-white via-white to-teal-50/25 p-5 sm:p-7 lg:p-8 shadow-[0_4px_24px_rgba(0,140,131,0.06)]">
+          <div className="rounded-3xl border border-teal-200/90 bg-linear-to-br from-white via-white to-teal-50/25 p-5 sm:p-7 lg:p-8">
             {/* Header: Shield Icon | QUALITY CHECKPOINT SEQUENCE */}
             <div className="flex items-center gap-3 mb-8 sm:mb-10">
-              <div className="flex size-8 items-center justify-center rounded-lg bg-teal-50 text-[#008c83] border border-teal-200/70 shadow-xs">
+              <div className="flex size-8 items-center justify-center rounded-lg bg-teal-50 text-[#008c83] border border-teal-200/70">
                 <ShieldCheck className="size-4 text-[#008c83]" />
               </div>
               <div className="h-4 w-px bg-slate-300" />
@@ -589,11 +589,11 @@ export default function AboutPage() {
                 const Icon = item.icon;
                 const isLast = idx === CHECKPOINT_SEQUENCE.length - 1;
                 return (
-                  <div key={item.stepNumber} className="relative flex flex-col items-center text-center group">
+                  <div key={item.title} className="relative flex flex-col items-center text-center group">
                     {/* Connecting line and center dot to the next step */}
                     {!isLast && (
                       <div className="absolute top-[28px] xl:top-[32px] left-1/2 w-full h-[2px] bg-teal-200/90 -z-0 pointer-events-none flex items-center justify-center">
-                        <div className="size-2 rounded-full bg-[#00d2c4] ring-2 ring-white shadow-xs" />
+                        <div className="size-2 rounded-full bg-[#00d2c4] ring-2 ring-white" />
                       </div>
                     )}
 
@@ -602,13 +602,8 @@ export default function AboutPage() {
                       <Icon className="size-6 text-[#008c83]" />
                     </div>
 
-                    {/* Step Pill */}
-                    <span className="mt-3.5 inline-flex items-center rounded-full bg-teal-50 border border-teal-200/70 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#008c83]">
-                      {item.stepNumber}
-                    </span>
-
                     {/* Step Title */}
-                    <h4 className="mt-2 text-xs xl:text-sm font-bold text-slate-900 leading-snug px-1 max-w-[130px]">
+                    <h4 className="mt-3.5 text-xs xl:text-sm font-bold text-slate-900 leading-snug px-1 max-w-[130px]">
                       {item.title}
                     </h4>
                   </div>
@@ -623,13 +618,13 @@ export default function AboutPage() {
                 const isLast = idx === CHECKPOINT_SEQUENCE.length - 1;
                 return (
                   <div
-                    key={item.stepNumber}
+                    key={item.title}
                     className="relative flex items-center gap-3.5 sm:gap-4 pb-6 last:pb-0 group"
                   >
                     {/* Vertical connecting line & center dot to next step */}
                     {!isLast && (
                       <div className="absolute left-[23px] sm:left-[27px] top-[48px] sm:top-[56px] bottom-0 w-[2px] bg-teal-200/90 -z-0 pointer-events-none flex items-center justify-center">
-                        <div className="size-2 rounded-full bg-[#00d2c4] ring-2 ring-white shadow-xs" />
+                        <div className="size-2 rounded-full bg-[#00d2c4] ring-2 ring-white" />
                       </div>
                     )}
 
@@ -638,11 +633,8 @@ export default function AboutPage() {
                       <Icon className="size-5 sm:size-6 text-[#008c83]" />
                     </div>
 
-                    {/* Step Pill & Title */}
+                    {/* Step Title */}
                     <div className="flex flex-col min-w-0">
-                      <span className="inline-flex self-start items-center rounded-full bg-teal-50 border border-teal-200/70 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#008c83] mb-1">
-                        {item.stepNumber}
-                      </span>
                       <h4 className="text-xs sm:text-sm font-bold text-slate-900 leading-snug">
                         {item.title}
                       </h4>
@@ -708,9 +700,9 @@ export default function AboutPage() {
                   className="group relative flex flex-col justify-between rounded-xl border border-cyan-500/25 bg-[#07192f]/75 p-4.5 sm:p-5 backdrop-blur-md transition-all duration-300 hover:border-cyan-400 hover:bg-[#0a2342]/90 hover:-translate-y-0.5"
                 >
                   <div>
-                    {/* Top Row with glowing icon badge */}
+                    {/* Top Row with icon badge */}
                     <div className="flex items-center gap-3 mb-2.5">
-                      <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-cyan-950/80 border border-cyan-400/40 text-[#00d2c4] shadow-[0_0_12px_rgba(0,210,196,0.25)] transition-transform duration-300 group-hover:scale-105 group-hover:border-cyan-300">
+                      <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-cyan-950/80 border border-cyan-400/40 text-[#00d2c4] transition-transform duration-300 group-hover:scale-105 group-hover:border-cyan-300">
                         <Icon className="size-4.5" />
                       </div>
                       <h3 className="text-sm sm:text-base font-bold text-white leading-snug group-hover:text-cyan-200 transition-colors">
@@ -805,33 +797,17 @@ export default function AboutPage() {
             {LEADERSHIP_TEAM.map((leader, index) => (
               <div
                 key={`${leader.name}-${index}`}
-                className="group relative flex flex-col justify-between rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-7 shadow-sm transition-all duration-300 hover:border-teal-400 hover:shadow-xl hover:-translate-y-1.5"
+                className="group relative flex flex-col justify-between rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-7 transition-all duration-300 hover:border-teal-400 hover:-translate-y-1.5"
               >
                 <div>
                   {/* Top Row: Avatar with Organic Decorative Backdrop + Name & Role */}
                   <div className="flex items-center gap-4 sm:gap-5 pr-5">
-                    {/* Avatar with Custom Decorative Backdrop Shape */}
-                    <div className="relative shrink-0 flex items-center justify-center size-20 sm:size-22">
-                      {/* Card 1: Organic Turquoise/Teal Fluid Splash */}
-                      {index === 0 && (
-                        <div className="absolute -inset-2 -z-10 rounded-[1.75rem] bg-[#00d2c4]/25 rotate-[-8deg] scale-105 transition-transform duration-500 group-hover:rotate-[-14deg] group-hover:scale-110" />
-                      )}
-
-                      {/* Card 2: Mint Rounded Squircle */}
-                      {index === 1 && (
-                        <div className="absolute -inset-1.5 -z-10 rounded-2xl bg-teal-200/40 rotate-[6deg] transition-transform duration-500 group-hover:rotate-[12deg] group-hover:scale-105" />
-                      )}
-
-                      {/* Card 3: Concentric Circular Arc Outline */}
-                      {index === 2 && (
-                        <>
-                          <div className="absolute -inset-2.5 -z-10 rounded-full border-2 border-teal-400/70 border-dashed animate-[spin_24s_linear_infinite]" />
-                          <div className="absolute -inset-1 -z-10 rounded-full bg-teal-100/30" />
-                        </>
-                      )}
+                    {/* Avatar with Decorative Backdrop Shape (same for every card) */}
+                    <div className="relative isolate shrink-0 flex items-center justify-center size-20 sm:size-22">
+                      <div className="absolute -inset-2 -z-10 rounded-[1.75rem] bg-[#00d2c4]/25 rotate-[-8deg] scale-105 transition-transform duration-500 group-hover:rotate-[-14deg] group-hover:scale-110" />
 
                       {/* Photo Image */}
-                      <div className="size-full overflow-hidden rounded-2xl border border-white/90 shadow-md bg-slate-100">
+                      <div className="size-full overflow-hidden rounded-2xl border border-white/90 bg-slate-100">
                         <img
                           src={leader.avatar}
                           alt={leader.name}
@@ -866,7 +842,7 @@ export default function AboutPage() {
                     <Mail className="size-3.5 shrink-0 text-teal-600 stroke-[2]" />
                     <span className="truncate">{leader.email}</span>
                   </a>
-                  <span className="shrink-0 rounded-full bg-teal-50/80 border border-teal-200/60 px-3 py-0.5 text-[11px] font-bold text-teal-800 shadow-2xs">
+                  <span className="shrink-0 rounded-full bg-teal-50/80 border border-teal-200/60 px-3 py-0.5 text-[11px] font-bold text-teal-800">
                     Executive
                   </span>
                 </div>

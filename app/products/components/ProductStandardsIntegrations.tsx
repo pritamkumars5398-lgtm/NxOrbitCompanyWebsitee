@@ -91,7 +91,7 @@ export function ProductStandardsIntegrations({
                   {pills.map((pill, idx) => (
                     <span
                       key={idx}
-                      className="inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-teal-50/70 text-teal-800 border border-teal-200/80 hover:bg-teal-100/70 hover:border-teal-300 transition-all duration-200 shadow-2xs"
+                      className="inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-teal-50/70 text-teal-800 border border-teal-200/80 hover:bg-teal-100/70 hover:border-teal-300 transition-all duration-200"
                     >
                       {pill}
                     </span>
@@ -107,10 +107,10 @@ export function ProductStandardsIntegrations({
               const Icon = item.icon;
               return (
                 <Reveal key={idx} from="up" delay={0.08 * (idx + 1)}>
-                  <div className="group relative flex items-start gap-3.5 sm:gap-4 rounded-xl border border-slate-200/80 bg-white p-4 sm:p-4.5 shadow-2xs transition-all duration-300 hover:border-teal-400 hover:shadow-md hover:shadow-teal-500/5 hover:-translate-y-0.5">
+                  <div className="group relative flex items-start gap-3.5 sm:gap-4 rounded-xl border border-slate-200/80 bg-white p-4 sm:p-4.5 transition-all duration-300 hover:border-teal-400 hover:-translate-y-0.5">
                     {/* Icon Badge */}
                     <div
-                      className={`flex size-10 sm:size-11 shrink-0 items-center justify-center rounded-xl ${item.iconBg} transition-all duration-300 group-hover:scale-105 shadow-2xs`}
+                      className={`flex size-10 sm:size-11 shrink-0 items-center justify-center rounded-xl ${item.iconBg} transition-all duration-300 group-hover:scale-105`}
                     >
                       <Icon className="size-5 stroke-[1.8]" />
                     </div>

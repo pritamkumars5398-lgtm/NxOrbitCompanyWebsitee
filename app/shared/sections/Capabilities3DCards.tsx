@@ -73,7 +73,7 @@ export function Capabilities3DCards({
               <StaggerItem
                 key={feature.title}
                 from="up"
-                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-5 sm:p-6 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-teal-400 hover:shadow-lg hover:shadow-teal-500/5"
+                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal-400"
               >
                 {/* Top Accent Bar */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-teal-500 via-brand-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -81,7 +81,7 @@ export function Capabilities3DCards({
                 <div>
                   {/* Top Row: Icon Badge & Number Pill */}
                   <div className="flex items-center mb-3.5">
-                    {/* Icon Disc without shadow */}
+                    {/* Icon Disc without */}
                     <div
                       className={cn(
                         "size-11 sm:size-12 rounded-xl bg-linear-to-br text-white shadow-none flex items-center justify-center border border-white/20 transition-transform duration-300 group-hover:scale-105",

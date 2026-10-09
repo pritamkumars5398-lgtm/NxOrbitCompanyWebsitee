@@ -52,14 +52,14 @@ export function Faq() {
             </div>
 
             {/* ISO 9001 Quality Guaranteed & Certified Trust Card */}
-            <div className="mt-4 rounded-2xl border border-slate-200/90 bg-white p-5 shadow-xs transition-all duration-300 hover:border-teal-500/50 hover:shadow-md">
+            <div className="mt-4 rounded-2xl border border-slate-200/90 bg-white p-5 transition-all duration-300 hover:border-teal-500/50">
               <div className="flex items-center gap-2 mb-2.5">
                 <span className="text-[11px] font-bold uppercase tracking-wider text-teal-700">
                   Trust Certifications
                 </span>
               </div>
               <div className="flex items-center gap-4">
-                <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-teal-50 border border-teal-200 text-teal-600 shadow-xs">
+                <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-teal-50 border border-teal-200 text-teal-600">
                   <ShieldCheck className="size-6 text-teal-600" />
                 </div>
                 <div className="flex flex-col">
@@ -83,7 +83,7 @@ export function Faq() {
           </Reveal>
 
           <Reveal from="up" delay={0.1}>
-            <div className="rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-8 shadow-sm">
+            <div className="rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-8">
               <Accordion items={items} defaultOpen={0} />
             </div>
           </Reveal>

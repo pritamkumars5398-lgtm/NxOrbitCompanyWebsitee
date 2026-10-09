@@ -135,7 +135,7 @@ export function InsightsStrip() {
               <StaggerItem key={topic.title} from="up">
                 <Link
                   href={topic.href}
-                  className="group relative flex overflow-hidden rounded-2xl border border-white/10 bg-white shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-cyan-500/10 hover:border-white/30 h-full"
+                  className="group relative flex overflow-hidden rounded-2xl border border-white/10 bg-white transition-all duration-300 hover:-translate-y-1.5 hover:border-white/30 h-full"
                 >
                   {/* Left Column: 3D Visual with Dark Gradient Overlay & Floating Badge */}
                   <div className="relative w-[38%] shrink-0 overflow-hidden bg-slate-950 flex items-center justify-center">
@@ -151,7 +151,7 @@ export function InsightsStrip() {
                       className={cn("absolute inset-0 bg-linear-to-t", topic.gradientOverlay)}
                     />
                     {/* Bottom-left icon overlay badge */}
-                    <div className="absolute bottom-2.5 left-2.5 size-7 rounded-lg bg-black/50 backdrop-blur-md border border-white/20 flex items-center justify-center text-white/90 shadow-sm">
+                    <div className="absolute bottom-2.5 left-2.5 size-7 rounded-lg bg-black/50 backdrop-blur-md border border-white/20 flex items-center justify-center text-white/90">
                       <Icon className="size-3.5" />
                     </div>
                   </div>
@@ -187,7 +187,7 @@ export function InsightsStrip() {
                       </span>
                       <span
                         className={cn(
-                          "size-7 sm:size-8 rounded-full flex items-center justify-center text-white shadow-sm transition-transform duration-300 group-hover:scale-110 group-hover:translate-x-0.5",
+                          "size-7 sm:size-8 rounded-full flex items-center justify-center text-white transition-transform duration-300 group-hover:scale-110 group-hover:translate-x-0.5",
                           topic.btnBg,
                         )}
                       >

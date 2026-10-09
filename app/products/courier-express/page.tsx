@@ -347,12 +347,12 @@ export default function CourierExpressPage() {
           {/* 2-Column Split Architectural Comparison with Side-by-Side Visual Graphics */}
           <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
             {/* Center Floating VS Badge for Desktop */}
-            <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 size-9 rounded-full bg-slate-950 border-2 border-teal-400 text-white font-extrabold text-xs items-center justify-center shadow-xl shadow-teal-500/30">
+            <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 size-9 rounded-full bg-slate-950 border-2 border-teal-400 text-white font-extrabold text-xs items-center justify-center">
               VS
             </div>
 
             {/* Left Card: Legacy Shipping Aggregators (The Old Way) */}
-            <div className="relative rounded-2xl border border-slate-200/90 bg-slate-50/70 p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg hover:shadow-slate-200/60">
+            <div className="relative rounded-2xl border border-slate-200/90 bg-slate-50/70 p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-slate-300">
               <div>
                 {/* Column Header */}
                 <div className="flex items-center justify-between pb-6 mb-6 border-b border-slate-200/80">
@@ -373,7 +373,7 @@ export default function CourierExpressPage() {
                     return (
                       <div
                         key={idx}
-                        className="group/item bg-white rounded-xl p-4 border border-slate-200/80 shadow-2xs transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-sm flex items-center justify-between gap-3"
+                        className="group/item bg-white rounded-xl p-4 border border-slate-200/80 transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-300 flex items-center justify-between gap-3"
                       >
                         {/* Left Icon + Text Content */}
                         <div className="flex items-start gap-3 flex-1 min-w-0">
@@ -469,7 +469,7 @@ export default function CourierExpressPage() {
 
                     {/* 3 Horizontal Value Proof Badges */}
                     <div className="flex flex-wrap items-center gap-3 mt-5">
-                      <div className="flex items-center gap-3 bg-white border border-slate-200/80 rounded-2xl px-4 py-2.5 shadow-2xs">
+                      <div className="flex items-center gap-3 bg-white border border-slate-200/80 rounded-2xl px-4 py-2.5">
                         <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-teal-600">
                           <Box className="size-4" />
                         </div>
@@ -479,7 +479,7 @@ export default function CourierExpressPage() {
                         </div>
                       </div>
 
-                      <div className="flex items-center gap-3 bg-white border border-slate-200/80 rounded-2xl px-4 py-2.5 shadow-2xs">
+                      <div className="flex items-center gap-3 bg-white border border-slate-200/80 rounded-2xl px-4 py-2.5">
                         <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-teal-600">
                           <Gauge className="size-4" />
                         </div>
@@ -489,7 +489,7 @@ export default function CourierExpressPage() {
                         </div>
                       </div>
 
-                      <div className="flex items-center gap-3 bg-white border border-slate-200/80 rounded-2xl px-4 py-2.5 shadow-2xs">
+                      <div className="flex items-center gap-3 bg-white border border-slate-200/80 rounded-2xl px-4 py-2.5">
                         <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-teal-600">
                           <TrendingUp className="size-4" />
                         </div>
@@ -543,9 +543,9 @@ export default function CourierExpressPage() {
                         type="button"
                         onClick={() => setActiveTab(tab.id)}
                         className={cn(
-                          "flex shrink-0 whitespace-nowrap items-center gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full text-xs font-bold transition-all duration-300 cursor-pointer shadow-2xs border",
+                          "flex shrink-0 whitespace-nowrap items-center gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full text-xs font-bold transition-all duration-300 cursor-pointer border",
                           isActive
-                            ? "bg-[#0a2328] border-[#0a2328] text-white shadow-md scale-[1.02]"
+                            ? "bg-[#0a2328] border-[#0a2328] text-white scale-[1.02]"
                             : "bg-white border-slate-200/90 text-slate-700 hover:border-teal-400 hover:text-teal-700 hover:bg-teal-50/50"
                         )}
                       >
@@ -563,7 +563,7 @@ export default function CourierExpressPage() {
                   {/* 2-Column Showcase Container (Matching Freight Reference) */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-5 items-stretch">
                   {/* Left Hero Image Card */}
-                  <div className="lg:col-span-5 relative rounded-2xl overflow-hidden min-h-[290px] sm:min-h-[320px] lg:min-h-[340px] flex flex-col justify-end p-5 sm:p-6 shadow-md border border-slate-200/80 group">
+                  <div className="lg:col-span-5 relative rounded-2xl overflow-hidden min-h-[290px] sm:min-h-[320px] lg:min-h-[340px] flex flex-col justify-end p-5 sm:p-6 border border-slate-200/80 group">
                     <img
                       src={currentTab.heroImage || "https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=1200&auto=format&fit=crop"}
                       alt={currentTab.fullTitle}
@@ -588,10 +588,10 @@ export default function CourierExpressPage() {
                     {currentTab.points.map((point, index) => (
                       <div
                         key={index}
-                        className="group relative flex flex-col justify-start rounded-xl border border-slate-200/80 bg-white p-4 sm:p-5 shadow-2xs transition-all duration-300 hover:-translate-y-1 hover:border-teal-300 hover:shadow-md"
+                        className="group relative flex flex-col justify-start rounded-xl border border-slate-200/80 bg-white p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1 hover:border-teal-300"
                       >
                         {/* Circle Icon Badge */}
-                        <div className="flex size-9 items-center justify-center rounded-xl bg-teal-50 text-teal-600 border border-teal-100/80 transition-colors duration-300 group-hover:bg-teal-600 group-hover:text-white mb-3 shadow-2xs">
+                        <div className="flex size-9 items-center justify-center rounded-xl bg-teal-50 text-teal-600 border border-teal-100/80 transition-colors duration-300 group-hover:bg-teal-600 group-hover:text-white mb-3">
                           <CheckCircle2 className="size-4.5" />
                         </div>
 
@@ -808,7 +808,7 @@ export default function CourierExpressPage() {
                 <div
                   key={index}
                   onClick={handleRequestDemo}
-                  className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-6 shadow-2xs transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-300 hover:shadow-lg hover:shadow-teal-500/5 cursor-pointer overflow-hidden"
+                  className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-300 cursor-pointer overflow-hidden"
                 >
                   {/* Top Subtle Teal Gradient Accent Line */}
                   <div className="absolute top-0 left-0 right-0 h-0.5 bg-linear-to-r from-teal-500 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

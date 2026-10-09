@@ -103,7 +103,7 @@ export function EnterpriseProficiency() {
   return (
     <Section tone="none" spacing="none" id="enterprise-proficiency" className="overflow-hidden pt-2 pb-4 sm:pt-4 sm:pb-6 lg:pt-6 lg:pb-8 bg-transparent">
       <Container>
-        <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#070D1B] p-8 sm:p-12 lg:p-16 shadow-2xl">
+        <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#070D1B] p-8 sm:p-12 lg:p-16">
           {/* Subtle background glow effect */}
           <div
             aria-hidden
@@ -168,7 +168,7 @@ export function EnterpriseProficiency() {
                             {item.pills.map((pill) => (
                               <span
                                 key={pill}
-                                className="inline-flex items-center rounded-full bg-teal-950/80 border border-teal-500/40 px-3 py-1 text-xs font-medium text-teal-300 shadow-sm"
+                                className="inline-flex items-center rounded-full bg-teal-950/80 border border-teal-500/40 px-3 py-1 text-xs font-medium text-teal-300"
                               >
                                 {pill}
                               </span>
@@ -194,7 +194,7 @@ export function EnterpriseProficiency() {
                     <StaggerItem
                       key={item.name}
                       from="up"
-                      className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 transition-all duration-300 hover:border-brand-300/40 hover:bg-white/[0.07] hover:-translate-y-1 hover:shadow-lg"
+                      className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 transition-all duration-300 hover:border-brand-300/40 hover:bg-white/[0.07] hover:-translate-y-1"
                     >
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2 font-semibold text-white text-sm">
@@ -225,7 +225,7 @@ export function EnterpriseProficiency() {
                     <StaggerItem
                       key={cert.title}
                       from="up"
-                      className="flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-center transition-all duration-300 hover:border-brand-300/40 hover:bg-white/[0.07] hover:-translate-y-1 hover:shadow-md"
+                      className="flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-center transition-all duration-300 hover:border-brand-300/40 hover:bg-white/[0.07] hover:-translate-y-1"
                     >
                       <span className={`size-2.5 rounded-full ${cert.dotColor} mb-2.5`} />
                       <span className="text-sm font-bold text-white">{cert.title}</span>

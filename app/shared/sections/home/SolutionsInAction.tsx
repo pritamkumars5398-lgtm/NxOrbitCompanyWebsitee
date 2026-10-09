@@ -182,7 +182,7 @@ export function SolutionsInAction() {
         </div>
 
         {/* Active Product Showcase Banner - Clean Panoramic Split Layout */}
-        <div className="rounded-2xl sm:rounded-3xl bg-white shadow-2xl border border-slate-100 text-slate-900 overflow-hidden relative">
+        <div className="rounded-2xl sm:rounded-3xl bg-white border border-slate-100 text-slate-900 overflow-hidden relative">
           <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[460px] lg:min-h-[500px]">
             {/* Left Column: Product Data & Proof Layers */}
             <div className="lg:col-span-5 xl:col-span-5 p-6 sm:p-8 lg:p-10 flex flex-col justify-between z-10 bg-white">

@@ -9,8 +9,8 @@ type CardTone = "plain" | "elevated" | "gradient" | "glass" | "dark" | "inset";
 
 const TONES: Record<CardTone, string> = {
   plain: "bg-surface border border-hairline",
-  elevated: "bg-surface border border-hairline shadow-md",
-  gradient: "border-gradient bg-surface shadow-sm",
+  elevated: "bg-surface border border-hairline",
+  gradient: "border-gradient bg-surface",
   glass: "surface-glass text-white",
   dark: "bg-brand-900 border border-white/8 text-ink-200",
   inset: "bg-surface-muted border border-hairline",
@@ -20,7 +20,7 @@ interface CardProps {
   children: React.ReactNode;
   className?: string;
   tone?: CardTone;
-  /** Lift + shadow on hover. */
+  /** Lift + on hover. */
   interactive?: boolean;
   /** Cursor-following glow. Requires `interactive` to read correctly. */
   spotlight?: boolean;

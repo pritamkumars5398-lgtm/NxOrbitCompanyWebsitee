@@ -70,7 +70,7 @@ export function ProjectGallery() {
               transition={{ duration: 0.45, ease: EASE.outExpo }}
             >
               <Tilt max={4}>
-                <article className="spotlight group flex h-full flex-col overflow-hidden rounded-2xl border border-hairline bg-white transition-shadow duration-500 hover:shadow-lg">
+                <article className="spotlight group flex h-full flex-col overflow-hidden rounded-2xl border border-hairline bg-white transition-shadow duration-500">
                   <ProjectCover seed={index} name={project.name} />
 
                   <div className="flex flex-1 flex-col gap-3 p-6">

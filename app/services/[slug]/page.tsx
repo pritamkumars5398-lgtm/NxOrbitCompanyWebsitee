@@ -238,7 +238,7 @@ export default async function ServicePage({
 
 function TechPill({ children, direction = "left" }: { children: React.ReactNode; direction?: "left" | "right" }) {
   return (
-    <span className="inline-flex shrink-0 items-center gap-2 rounded-full border border-hairline bg-white px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ink-700 shadow-xs transition-colors duration-300 hover:border-brand-300 hover:text-brand-600">
+    <span className="inline-flex shrink-0 items-center gap-2 rounded-full border border-hairline bg-white px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ink-700 transition-colors duration-300 hover:border-brand-300 hover:text-brand-600">
       {direction === "left" ? (
         <ArrowLeft aria-hidden className="size-3 text-brand-300" />
       ) : (

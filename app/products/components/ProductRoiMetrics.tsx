@@ -69,7 +69,7 @@ export function ProductRoiMetrics({
                 key={item.title}
                 from="up"
                 distance={30}
-                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-6 sm:p-7 shadow-xs transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-teal-500/10 hover:border-teal-400"
+                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-6 sm:p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400"
               >
                 {/* Top Accent Bar */}
                 <div className="absolute top-0 inset-x-0 h-1 bg-linear-to-r from-teal-500 via-brand-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

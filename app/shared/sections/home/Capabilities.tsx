@@ -102,7 +102,7 @@ export function Capabilities() {
                   />
 
                   {/* Premium Image Frame */}
-                  <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 shadow-md shadow-slate-200/50 w-full max-w-[500px] aspect-[4/3] group-hover/row:shadow-xl group-hover/row:shadow-teal-500/5 transition-all duration-500">
+                  <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 w-full max-w-[500px] aspect-[4/3] transition-all duration-500">
                     <img
                       src={imgPath}
                       alt={item.title}

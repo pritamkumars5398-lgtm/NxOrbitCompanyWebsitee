@@ -51,7 +51,7 @@ function StepRow({ phase, index, total, activeStep, setActiveStep }: StepRowProp
       {/* ── Numbered Circle Node on Timeline ── */}
       <div className="relative z-10 flex size-12 shrink-0 items-center justify-center">
         <div
-          className={`flex size-11 sm:size-12 items-center justify-center rounded-full border-2 bg-white transition-colors duration-300 shadow-xs ${
+          className={`flex size-11 sm:size-12 items-center justify-center rounded-full border-2 bg-white transition-colors duration-300 ${
             isActive || isPast
               ? "border-[#008c83] text-[#008c83]"
               : "border-slate-200 text-slate-400"

@@ -393,7 +393,7 @@ export function IndustryProblemsSolved({
             {(() => {
               const banner = INDUSTRY_BANNER_IMAGES[industrySlug] || INDUSTRY_BANNER_IMAGES["logistics"];
               return (
-                <div className="relative mt-4 overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-2 shadow-xs group">
+                <div className="relative mt-4 overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-2 group">
                   <div className="relative h-48 w-full overflow-hidden rounded-xl bg-slate-50">
                     <img
                       src={banner.src}
@@ -423,7 +423,7 @@ export function IndustryProblemsSolved({
                     key={useCaseName}
                     from="right"
                     distance={40}
-                    className="group relative flex items-center justify-between gap-4 overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-5 sm:p-6 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/5"
+                    className="group relative flex items-center justify-between gap-4 overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-blue-400"
                   >
                     {/* Left Column: Icon Badge, Title, Description, Arrow */}
                     <div className="flex-1 min-w-0 flex flex-col justify-between h-full pr-1">

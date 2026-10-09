@@ -109,7 +109,7 @@ export function DevelopmentJourney() {
                   className="flex flex-col items-center text-center group"
                 >
                   {/* Glowing Circular Icon Node */}
-                  <div className="relative flex size-14 items-center justify-center rounded-full bg-[#031b24] border-2 border-[#00d2c4]/40 text-[#00d2c4] shadow-lg shadow-[#00d2c4]/15 transition-all duration-300 group-hover:scale-110 group-hover:border-[#00d2c4] group-hover:bg-[#00d2c4] group-hover:text-[#01141b]">
+                  <div className="relative flex size-14 items-center justify-center rounded-full bg-[#031b24] border-2 border-[#00d2c4]/40 text-[#00d2c4] transition-all duration-300 group-hover:scale-110 group-hover:border-[#00d2c4] group-hover:bg-[#00d2c4] group-hover:text-[#01141b]">
                     <Icon className="size-6 transition-transform duration-300 group-hover:scale-110" />
                   </div>
 

@@ -114,10 +114,10 @@ export default function CaseStudiesPage() {
                   <p className="max-w-xl text-base leading-relaxed text-slate-600">{project.desc}</p>
 
                   <div className="flex flex-wrap gap-2">
-                    <span className="rounded-full border border-slate-200 bg-white px-3.5 py-1.5 text-xs font-semibold text-slate-700 shadow-2xs">
+                    <span className="rounded-full border border-slate-200 bg-white px-3.5 py-1.5 text-xs font-semibold text-slate-700">
                       {project.platform}
                     </span>
-                    <span className="rounded-full border border-teal-200/80 bg-teal-50 px-3.5 py-1.5 text-xs font-semibold text-[#008c83] shadow-2xs">
+                    <span className="rounded-full border border-teal-200/80 bg-teal-50 px-3.5 py-1.5 text-xs font-semibold text-[#008c83]">
                       {project.resultLabel}
                     </span>
                   </div>
@@ -135,7 +135,7 @@ export default function CaseStudiesPage() {
                 {/* Metric slab */}
                 <Parallax distance={22}>
                   <Reveal from={flipped ? "right" : "left"} scale={0.97}>
-                    <div className="relative isolate overflow-hidden rounded-2xl bg-brand-950 p-6 sm:p-8 lg:p-10 border border-white/10 shadow-2xl shadow-brand-950/20">
+                    <div className="relative isolate overflow-hidden rounded-2xl bg-brand-950 p-6 sm:p-8 lg:p-10 border border-white/10">
                       <GridField tone="dark" className="opacity-40" />
                       <div
                         aria-hidden
