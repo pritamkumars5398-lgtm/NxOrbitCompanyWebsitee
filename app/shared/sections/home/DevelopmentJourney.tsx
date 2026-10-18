@@ -68,7 +68,7 @@ const JOURNEY_STEPS: JourneyStep[] = [
  */
 export function DevelopmentJourney() {
   return (
-    <section className="relative isolate overflow-hidden bg-linear-to-r from-[#01141b] via-[#01252e] to-[#003844] py-10 lg:py-14 text-white">
+    <section className="relative isolate overflow-hidden bg-linear-to-r from-[#01141b] via-[#01252e] to-[#003844] py-10 lg:py-10 text-white">
 
       {/* Background Radial Spotlights */}
       <div
@@ -82,7 +82,7 @@ export function DevelopmentJourney() {
 
       <Container className="relative z-10">
         {/* Section Heading */}
-        <Reveal className="flex flex-col items-start gap-3 mb-14">
+        <Reveal className="flex flex-col items-start gap-3 mb-10">
           <Eyebrow tone="light">OUR DEVELOPMENT JOURNEY</Eyebrow>
           <h2 className="text-display-md sm:text-display-lg font-extrabold text-white">
             From idea to launch—every step planned with purpose.

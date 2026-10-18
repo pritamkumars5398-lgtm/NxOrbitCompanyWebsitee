@@ -7,7 +7,7 @@ import { CallToAction } from "@/app/shared/sections/CallToAction";
 import { Breadcrumb } from "@/app/shared/ui/Breadcrumb";
 import { Button } from "@/app/shared/ui/Button";
 import { Container, Eyebrow, Section } from "@/app/shared/ui/Layout";
-import { Stats } from "@/app/shared/ui/Stats";
+import { StatsBand } from "@/app/shared/sections/StatsBand";
 import { ProjectGallery } from "./ProjectGallery";
 import { TrustAndFaqSection } from "@/app/shared/sections/TrustAndFaqSection";
 
@@ -32,7 +32,7 @@ const REACH = [
 export default function PortfolioPage() {
   return (
     <>
-      <section className="relative isolate overflow-hidden pt-24 pb-16 lg:pt-28 lg:pb-20">
+      <section className="relative isolate overflow-hidden pt-24 pb-12 lg:pt-28 lg:pb-12">
         {/* Full-width hero background image container */}
         <div className="absolute inset-0 w-full h-full select-none pointer-events-none">
           <img
@@ -82,9 +82,6 @@ export default function PortfolioPage() {
             </Reveal>
           </div>
 
-          <Reveal from="up" delay={0.1} className="mt-12 rounded-2xl border border-hairline bg-white/95 p-6 sm:p-8 backdrop-blur-md">
-            <Stats items={REACH} layout="rail" columns={4} />
-          </Reveal>
         </Container>
       </section>
 
@@ -93,6 +90,8 @@ export default function PortfolioPage() {
           <ProjectGallery />
         </Container>
       </Section>
+
+      <StatsBand items={REACH} />
 
       <TrustAndFaqSection />
 

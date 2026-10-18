@@ -241,7 +241,7 @@ export default function NextOrbitFreightPage() {
   return (
     <>
       {/* ── 1. Hero Section ── */}
-      <section className="relative isolate overflow-hidden pt-24 pb-16 lg:pt-28 lg:pb-20">
+      <section className="relative isolate overflow-hidden pt-24 pb-12 lg:pt-28 lg:pb-12">
         <GradientMesh />
         <Grain />
         <div className="absolute inset-0 bg-brand-950/5 pointer-events-none" />
@@ -389,7 +389,7 @@ export default function NextOrbitFreightPage() {
       </section>
 
       {/* ── 3. Strategic Transformation (Core Pillars) ── */}
-      <Section tone="white" spacing="md" className="relative isolate overflow-hidden bg-white py-12 lg:py-16">
+      <Section tone="white" spacing="md" className="relative isolate overflow-hidden bg-white py-10 lg:py-12">
         {/* Abstract Flowing Cyan Wave Background Graphic (Matches Image 1) */}
         <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
           {/* Ambient Glows */}
@@ -636,7 +636,7 @@ export default function NextOrbitFreightPage() {
       </Section>
 
       {/* ── 5. Product Deep Dive (Tabbed menu by role) ── */}
-      <Section tone="sunken" spacing="none" className="relative overflow-hidden border-t border-slate-200/80 bg-[#f8fafc] py-8 sm:py-10 lg:py-12">
+      <Section tone="sunken" spacing="none" className="relative overflow-hidden border-t border-slate-200/80 bg-[#f8fafc] py-8 sm:py-10 lg:py-10">
         <Container>
           {/* Top Header: Title, Description & World Map Card */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center mb-6 sm:mb-8">
@@ -826,7 +826,7 @@ export default function NextOrbitFreightPage() {
       {/* ── 7. Enterprise Security & Infrastructure ── */}
       <Section tone="white" spacing="lg" className="border-t border-hairline">
         <Container>
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-10">
             <Eyebrow tone="brand">DATA GOVERNANCE & COMPLIANCE</Eyebrow>
             <h2 className="text-display-md sm:text-display-lg text-slate-900 font-extrabold mt-3">
               Enterprise-Grade Infrastructure & ISO 9001 Quality

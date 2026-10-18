@@ -30,7 +30,7 @@ export function SelectedWork() {
           title="Products in the hands of millions of people."
           description="A sample of what we have shipped — social platforms, marketplaces, media apps, and logistics systems, all still running."
           action={<TextLink href="/portfolio">View the full portfolio</TextLink>}
-          className="mb-14"
+          className="mb-10"
         />
 
         <Reveal>

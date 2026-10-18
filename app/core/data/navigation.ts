@@ -102,20 +102,30 @@ export const INDUSTRY_LINKS: NavLink[] = [
   { label: "Professional Services", href: "/industries/professional-services", description: "Practice management, client portals, and billing automation.", icon: "briefcase" },
   { label: "Healthcare", href: "/industries/healthcare", description: "HIPAA-compliant medical and health tech systems.", icon: "heart-pulse" },
   { label: "Fintech", href: "/industries/fintech", description: "PCI-DSS compliant banking, payments, and financial software.", icon: "landmark" },
-  { label: "Education", href: "/industries/education", description: "EdTech platforms, LMS, and interactive learning systems.", icon: "graduation-cap" },
   { label: "E-Commerce", href: "/industries/ecommerce", description: "High-conversion storefronts, inventory, and checkout engines.", icon: "shopping-bag" },
   { label: "Logistics", href: "/industries/logistics", description: "Fleet tracking, WMS, freight OS, and supply chain tech.", icon: "truck" },
-  { label: "Entertainment", href: "/industries/entertainment", description: "Media streaming, content platforms, and interactive apps.", icon: "clapperboard" },
 ];
 
 export const COMPANY_LINKS: NavLink[] = [
   { label: "About Us", href: "/about", description: "Our business-first approach & leadership.", icon: "compass" },
-  { label: "Our Work", href: "/portfolio", description: "Selected enterprise products shipped.", icon: "layers" },
+  { label: "Insights", href: "/insights", description: "Perspectives for business & technology leaders.", icon: "file-text" },
   { label: "Careers", href: "/career", description: "Open engineering roles & culture.", icon: "users" },
   { label: "Contact", href: "/contact", description: "Talk to an engineer, not a form.", icon: "mail" },
 ];
 
 export const NAV_GROUPS: NavGroup[] = [
+  {
+    label: "Products",
+    layout: "mega",
+    links: PRODUCT_LINKS,
+    feature: {
+      title: "NXT Enterprise Suite",
+      description:
+        "AI-native Operating Systems for Freight, Warehouse, Courier & Financial operations.",
+      href: "/products/nxt-orbit-freight",
+      cta: "Explore Suite",
+    },
+  },
   {
     label: "Services",
     layout: "mega",
@@ -129,15 +139,15 @@ export const NAV_GROUPS: NavGroup[] = [
     },
   },
   {
-    label: "Technology",
+    label: "Company",
     layout: "mega",
-    links: TECHNOLOGY_LINKS,
+    links: COMPANY_LINKS,
     feature: {
-      title: "Explore our tech capabilities",
+      title: "Enterprise Software Engineering",
       description:
-        "From React Native to cloud-native backends, we build on reliable and modern engineering standards.",
-      href: "/contact",
-      cta: "Talk to an engineer",
+        "Fourteen years of designing, modernizing, and scaling mission-critical systems for startups and enterprises.",
+      href: "/about",
+      cta: "Know about us",
     },
   },
   {
@@ -150,30 +160,6 @@ export const NAV_GROUPS: NavGroup[] = [
         "Tailored software engineering across Healthcare, Fintech, Logistics, and E-Commerce.",
       href: "/contact",
       cta: "Learn more",
-    },
-  },
-  {
-    label: "Company",
-    layout: "mega",
-    links: COMPANY_LINKS,
-    feature: {
-      title: "1,400+ products shipped",
-      description:
-        "Fourteen years of engineering for startups and enterprises across 35 countries.",
-      href: "/portfolio",
-      cta: "See our work",
-    },
-  },
-  {
-    label: "Products",
-    layout: "mega",
-    links: PRODUCT_LINKS,
-    feature: {
-      title: "NXT Enterprise Suite",
-      description:
-        "AI-native Operating Systems for Freight, Warehouse, Courier & Financial operations.",
-      href: "/products/nxt-orbit-freight",
-      cta: "Explore Suite",
     },
   },
 ];

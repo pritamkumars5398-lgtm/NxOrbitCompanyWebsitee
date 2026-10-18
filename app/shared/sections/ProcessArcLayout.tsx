@@ -107,7 +107,7 @@ export function ProcessArcLayout({
   const svgWidth = 310;
 
   return (
-    <Section id={id} tone="none" spacing="lg" className={`relative isolate overflow-hidden py-8 sm:py-12 lg:py-14 bg-slate-100 ${className || ""}`}>
+    <Section id={id} tone="none" spacing="lg" className={`relative isolate overflow-hidden py-8 sm:py-10 lg:py-10 bg-slate-100 ${className || ""}`}>
       {/* Background Image Layer - Clearly Visible */}
       {bgImage && (
         <div className="absolute inset-0 -z-20 overflow-hidden pointer-events-none">

@@ -22,17 +22,6 @@ const NAV_ITEMS: NavItem[] = [
     ],
   },
   {
-    label: "Technology",
-    items: [
-      { label: "React Native", href: "/technology/react-native" },
-      { label: "Flutter",      href: "/technology/flutter" },
-      { label: "iOS (Swift)",  href: "/technology/ios" },
-      { label: "Android",      href: "/technology/android" },
-      { label: "Node.js",      href: "/technology/nodejs" },
-      { label: "Next.js",      href: "/technology/nextjs" },
-    ],
-  },
-  {
     label: "Industries",
     items: [
       { label: "Healthcare",    href: "/industries/healthcare" },

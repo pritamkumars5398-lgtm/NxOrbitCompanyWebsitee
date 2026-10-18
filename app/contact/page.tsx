@@ -37,7 +37,7 @@ const PROMISES = [
 export default function ContactPage() {
   return (
     <>
-      <section className="relative isolate overflow-hidden pt-24 pb-16 lg:pt-28 lg:pb-20">
+      <section className="relative isolate overflow-hidden pt-24 pb-12 lg:pt-28 lg:pb-12">
         {/* Full-width hero background image container */}
         <div className="absolute inset-0 w-full h-full select-none pointer-events-none">
           <img

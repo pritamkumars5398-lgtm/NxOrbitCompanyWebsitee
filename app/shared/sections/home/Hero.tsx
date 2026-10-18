@@ -8,7 +8,6 @@ import { Aurora, Grain } from "@/app/shared/backdrop/Backdrops";
 import { Particles } from "@/app/shared/backdrop/Particles";
 import { Button } from "@/app/shared/ui/Button";
 import { Container, Eyebrow } from "@/app/shared/ui/Layout";
-import { CountUp } from "@/app/shared/motion/CountUp";
 import { TextReveal } from "@/app/shared/motion/TextReveal";
 import { HeroVisual } from "./HeroVisual";
 
@@ -21,7 +20,7 @@ import { HeroVisual } from "./HeroVisual";
  */
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden bg-slate-50/40 pt-24 pb-16 lg:pt-28 lg:pb-20">
+    <section className="relative isolate overflow-hidden bg-slate-50/40 pt-24 pb-12 lg:pt-28 lg:pb-12">
 
 
       <Container>
@@ -78,35 +77,6 @@ export function Hero() {
               </Button>
             </motion.div>
 
-            {/* Stat rail — clean 3-column ribbon as specified by designer */}
-            <motion.dl
-              initial="hidden"
-              animate="visible"
-              variants={{ visible: { transition: { staggerChildren: 0.09, delayChildren: 0.7 } } }}
-              className="mt-4 grid w-full grid-cols-3 gap-x-3 sm:gap-x-6 border-t border-hairline pt-6 sm:pt-8"
-            >
-              {HERO.stats.map((stat) => (
-                <motion.div
-                  key={stat.label}
-                  variants={{
-                    hidden: { opacity: 0, y: 14 },
-                    visible: {
-                      opacity: 1,
-                      y: 0,
-                      transition: { duration: 0.55, ease: EASE.outExpo },
-                    },
-                  }}
-                  // Reversed so the value reads first while the DOM keeps the
-                  // required <dt> before <dd> order.
-                  className="flex flex-col-reverse justify-end gap-1"
-                >
-                  <dt className="text-2xs sm:text-xs font-medium leading-snug text-ink-500">{stat.label}</dt>
-                  <dd className="text-xl sm:text-2xl font-bold tabular-nums text-brand-800">
-                    <CountUp value={stat.value} />
-                  </dd>
-                </motion.div>
-              ))}
-            </motion.dl>
           </div>
 
           {/* ── Visual column ── */}

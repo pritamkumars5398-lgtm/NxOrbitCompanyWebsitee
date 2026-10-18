@@ -86,7 +86,7 @@ const INSIGHT_TOPICS: InsightTopic[] = [
  */
 export function InsightsStrip() {
   return (
-    <section id="insights" className="relative isolate overflow-hidden bg-[#06131F] py-20 sm:py-24 text-white">
+    <section id="insights" className="relative isolate overflow-hidden bg-[#06131F] py-12 sm:py-16 text-white scroll-mt-20">
       {/* Ambient background glows */}
       <div
         aria-hidden
@@ -105,7 +105,7 @@ export function InsightsStrip() {
 
       <Container className="relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <Reveal className="flex flex-col items-start gap-3 max-w-2xl">
             <Eyebrow tone="light">INSIGHTS</Eyebrow>
             <h2 className="text-display-md sm:text-display-lg text-white font-extrabold">
@@ -118,10 +118,10 @@ export function InsightsStrip() {
 
           <Reveal delay={0.1}>
             <Link
-              href="/contact"
+              href="/insights"
               className="group inline-flex items-center gap-2 rounded-full bg-white/10 px-5 py-3 text-sm font-bold text-white backdrop-blur-md border border-white/15 transition-all duration-300 hover:bg-white/20 hover:border-white/30 hover:shadow-lg"
             >
-              Explore our tech guides
+              Explore all insights
               <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </Reveal>

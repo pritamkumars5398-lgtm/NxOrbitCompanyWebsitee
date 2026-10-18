@@ -13,7 +13,7 @@ import { Breadcrumb } from "@/app/shared/ui/Breadcrumb";
 import { Button } from "@/app/shared/ui/Button";
 import { Container, Eyebrow, Section, SectionHeading } from "@/app/shared/ui/Layout";
 import { Marquee } from "@/app/shared/ui/Marquee";
-import { Stats } from "@/app/shared/ui/Stats";
+import { StatsBand } from "@/app/shared/sections/StatsBand";
 import { SubNav } from "@/app/shared/ui/SubNav";
 import { ServiceHeroImage } from "@/app/shared/ui/ServiceHeroImage";
 import { TheChallenge } from "@/app/shared/sections/home/TheChallenge";
@@ -179,9 +179,6 @@ export default async function ServicePage({
 
           </div>
 
-          <Reveal from="up" delay={0.1} className="mt-6 sm:mt-8 border-t border-hairline pt-4 sm:pt-5">
-            <Stats items={[...data.heroStats]} layout="rail" columns={4} />
-          </Reveal>
         </Container>
       </section>
 
@@ -228,6 +225,8 @@ export default async function ServicePage({
           </Marquee>
         </div>
       </Section>
+
+      <StatsBand items={data.heroStats} />
 
       <TrustAndFaqSection />
 

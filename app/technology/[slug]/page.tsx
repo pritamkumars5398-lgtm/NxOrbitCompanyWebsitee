@@ -10,7 +10,7 @@ import { CallToAction } from "@/app/shared/sections/CallToAction";
 import { Breadcrumb } from "@/app/shared/ui/Breadcrumb";
 import { Button } from "@/app/shared/ui/Button";
 import { Container, Divider, Eyebrow, Section, SectionHeading } from "@/app/shared/ui/Layout";
-import { Stats } from "@/app/shared/ui/Stats";
+import { StatsBand } from "@/app/shared/sections/StatsBand";
 import { SubNav } from "@/app/shared/ui/SubNav";
 import { TrustAndFaqSection } from "@/app/shared/sections/TrustAndFaqSection";
 import { ProcessArcLayout } from "@/app/shared/sections/ProcessArcLayout";
@@ -216,9 +216,6 @@ export default async function TechnologyPage({
             </Reveal>
           </div>
 
-          <Reveal from="up" delay={0.1} className="mt-6 sm:mt-8 border-t border-white/10 pt-4 sm:pt-5">
-            <Stats items={[...data.heroStats]} tone="light" layout="rail" columns={4} />
-          </Reveal>
         </Container>
       </section>
 
@@ -245,6 +242,8 @@ export default async function TechnologyPage({
         description="Tested, scalable building blocks selected for performance and long-term stability."
         techStack={data.techStack}
       />
+
+      <StatsBand items={data.heroStats} />
 
       <TrustAndFaqSection />
 

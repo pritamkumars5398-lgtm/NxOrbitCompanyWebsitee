@@ -356,7 +356,7 @@ export function IndustryProblemsSolved({
   useCases,
 }: IndustryProblemsSolvedProps) {
   return (
-    <Section tone="none" spacing="lg" className="relative overflow-hidden py-16 sm:py-24 bg-[#f8fafc] border-t border-b border-slate-200/80">
+    <Section tone="none" spacing="lg" className="relative overflow-hidden py-12 sm:py-16 bg-[#f8fafc] border-t border-b border-slate-200/80">
       <Container>
         <div className="grid gap-12 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:gap-14 items-start">
           

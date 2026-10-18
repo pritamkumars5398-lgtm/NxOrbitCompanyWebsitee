@@ -127,7 +127,7 @@ export function CookieConsent() {
               We use cookies to secure platform features, analyze traffic, and personalize your experience.
               Review your options or accept all to continue.{" "}
               <Link
-                href="/contact"
+                href="/privacy"
                 className="font-medium text-teal-400 underline underline-offset-2 transition-colors hover:text-teal-300"
               >
                 Privacy Policy

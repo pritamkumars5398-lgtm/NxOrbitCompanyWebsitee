@@ -61,7 +61,7 @@ const FEATURES: FeatureCard[] = [
  */
 export function WhyChooseUs() {
   return (
-    <section className="relative isolate overflow-hidden bg-slate-50/70 py-12 lg:py-16" id="solutions">
+    <section className="relative isolate overflow-hidden bg-slate-50/70 py-10 lg:py-12" id="solutions">
 
       {/* Background Lighting Elements */}
       <div

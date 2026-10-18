@@ -263,7 +263,7 @@ export default function NextOrbitWmsPage() {
   return (
     <>
       {/* ── 1. Hero Section ── */}
-      <section className="relative isolate overflow-hidden pt-24 pb-16 lg:pt-28 lg:pb-20">
+      <section className="relative isolate overflow-hidden pt-24 pb-12 lg:pt-28 lg:pb-12">
         <GradientMesh />
         <Grain />
         <div className="absolute inset-0 bg-brand-950/5 pointer-events-none" />
@@ -360,7 +360,7 @@ export default function NextOrbitWmsPage() {
       />
 
       {/* ── 3. Core Enterprise Pillars (Redesigned to Match Image 1 Reference Mockup) ── */}
-      <Section tone="sunken" spacing="lg" className="relative overflow-hidden border-t border-slate-200/80 bg-[#f8fafc] py-20 sm:py-28">
+      <Section tone="sunken" spacing="lg" className="relative overflow-hidden border-t border-slate-200/80 bg-[#f8fafc] py-12 sm:py-16">
         <Container>
           {(() => {
             const currentTab = WMS_ROLE_TABS.find((t) => t.id === activeTab) || WMS_ROLE_TABS[0];

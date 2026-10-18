@@ -51,7 +51,7 @@ export function HiringProcessSection({
   subtitle = "No take-home that eats your weekend, no algorithm trivia, and a decision you won't have to chase.",
 }: HiringProcessSectionProps) {
   return (
-    <Section tone="none" spacing="lg" className="relative overflow-hidden py-20 sm:py-28 bg-[#f8fafc] border-t border-b border-slate-200/80">
+    <Section tone="none" spacing="lg" className="relative overflow-hidden py-12 sm:py-16 bg-[#f8fafc] border-t border-b border-slate-200/80">
       {/* Background World Map Vector Watermark - Soft & Subtle (Halki Halki) */}
       <div className="absolute inset-0 w-full h-full select-none pointer-events-none opacity-[0.10] flex items-center justify-center">
         <img
@@ -64,7 +64,7 @@ export function HiringProcessSection({
 
       <Container className="relative z-10">
         {/* Top Header: Brand Theme Highlighted Tag + Heading */}
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-12 sm:mb-20">
+        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-12 sm:mb-12">
           <Reveal from="up">
             <div className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-mono font-bold tracking-widest uppercase mb-3 sm:mb-4">
               <span className="bg-teal-600 text-white px-3 py-1 rounded-md">HIRING</span>

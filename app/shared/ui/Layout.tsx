@@ -43,9 +43,9 @@ type SectionSpacing = "sm" | "md" | "lg" | "none";
 
 const SPACING: Record<SectionSpacing, string> = {
   none: "",
-  sm: "py-8 sm:py-10 lg:py-12",
-  md: "py-12 sm:py-14 lg:py-16",
-  lg: "py-14 sm:py-16 lg:py-20",
+  sm: "py-6 sm:py-8 lg:py-10",
+  md: "py-8 sm:py-10 lg:py-12",
+  lg: "py-10 sm:py-12 lg:py-14",
 };
 
 

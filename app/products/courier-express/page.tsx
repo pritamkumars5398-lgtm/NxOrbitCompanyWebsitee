@@ -234,7 +234,7 @@ export default function CourierExpressPage() {
   return (
     <>
       {/* ── 1. Hero Section ── */}
-      <section className="relative isolate overflow-hidden pt-24 pb-16 lg:pt-28 lg:pb-20">
+      <section className="relative isolate overflow-hidden pt-24 pb-12 lg:pt-28 lg:pb-12">
         <GradientMesh />
         <Grain />
         <div className="absolute inset-0 bg-brand-950/5 pointer-events-none" />
@@ -332,9 +332,9 @@ export default function CourierExpressPage() {
       />
 
       {/* ── 3. The Shift: Legacy Aggregation vs. Autonomous Shipping ── */}
-      <Section tone="white" spacing="lg" className="relative overflow-hidden py-16 sm:py-24">
+      <Section tone="white" spacing="lg" className="relative overflow-hidden py-12 sm:py-16">
         <Container>
-          <div className="text-center max-w-3xl mx-auto mb-14 flex flex-col items-center">
+          <div className="text-center max-w-3xl mx-auto mb-10 flex flex-col items-center">
             <Eyebrow tone="brand">THE LOGISTICS SHIFT</Eyebrow>
             <h2 className="text-display-md sm:text-display-lg text-slate-900 font-extrabold mt-3">
               Legacy Aggregation vs. Autonomous Shipping
@@ -448,7 +448,7 @@ export default function CourierExpressPage() {
       </Section>
 
       {/* ── 4. The Four Core Value Pillars (Redesigned to Match Exact Parity) ── */}
-      <Section tone="sunken" spacing="lg" className="relative overflow-hidden border-t border-slate-200/80 bg-[#f8fafc] py-20 sm:py-28">
+      <Section tone="sunken" spacing="lg" className="relative overflow-hidden border-t border-slate-200/80 bg-[#f8fafc] py-12 sm:py-16">
         <Container>
           {(() => {
             const currentTab = COURIER_ROLE_TABS.find((t) => t.id === activeTab) || COURIER_ROLE_TABS[0];
@@ -791,7 +791,7 @@ export default function CourierExpressPage() {
       {/* ── 7. Enterprise Security & Infrastructure (Referred from WMS/Freight) ── */}
       <Section tone="sunken" spacing="lg" className="border-t border-hairline">
         <Container>
-          <div className="text-center max-w-2xl mx-auto mb-16 flex flex-col items-center">
+          <div className="text-center max-w-2xl mx-auto mb-10 flex flex-col items-center">
             <Eyebrow tone="brand">DATA GOVERNANCE & COMPLIANCE</Eyebrow>
             <h2 className="text-display-md sm:text-display-lg text-slate-900 font-extrabold mt-3">
               Enterprise-Grade Infrastructure & ISO 9001 Quality

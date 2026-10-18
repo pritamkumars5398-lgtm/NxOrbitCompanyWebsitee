@@ -329,7 +329,7 @@ export default function NextOrbitSalesFinancePage() {
   return (
     <>
       {/* ── 1. Hero Section ── */}
-      <section className="relative isolate overflow-hidden pt-24 pb-16 lg:pt-28 lg:pb-20">
+      <section className="relative isolate overflow-hidden pt-24 pb-12 lg:pt-28 lg:pb-12">
         <GradientMesh />
         <Grain />
         <div className="absolute inset-0 bg-brand-950/5 pointer-events-none" />
@@ -426,9 +426,9 @@ export default function NextOrbitSalesFinancePage() {
       />
 
       {/* ── 3. The Enterprise Advantage: Why Purpose-Built Logistics Accounting? ── */}
-      <Section tone="white" spacing="lg" className="relative overflow-hidden py-16 sm:py-24">
+      <Section tone="white" spacing="lg" className="relative overflow-hidden py-12 sm:py-16">
         <Container>
-          <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="text-center max-w-3xl mx-auto mb-10">
             <h2 className="text-display-md sm:text-display-lg text-slate-900 font-extrabold">
               The Enterprise Advantage: Why Purpose-Built Logistics Accounting?
             </h2>
@@ -552,7 +552,7 @@ export default function NextOrbitSalesFinancePage() {
       </Section>
 
       {/* ── 4. Strategic Pillars (Redesigned to Match Exact Parity) ── */}
-      <Section tone="sunken" spacing="lg" className="relative overflow-hidden border-t border-slate-200/80 bg-[#f8fafc] py-20 sm:py-28">
+      <Section tone="sunken" spacing="lg" className="relative overflow-hidden border-t border-slate-200/80 bg-[#f8fafc] py-12 sm:py-16">
         <Container>
           {(() => {
             const currentTab = FINANCE_PILLARS.find((t) => t.id === activePillarTab) || FINANCE_PILLARS[0];
@@ -826,7 +826,7 @@ export default function NextOrbitSalesFinancePage() {
       </Section>
 
       {/* ── 5. System Deep-Dive: Interactive Capabilities (Redesigned to Match Exact Mockup) ── */}
-      <Section tone="white" spacing="lg" className="relative overflow-hidden border-t border-slate-200/80 bg-white py-20 sm:py-28">
+      <Section tone="white" spacing="lg" className="relative overflow-hidden border-t border-slate-200/80 bg-white py-12 sm:py-16">
         <Container>
           <div className="text-center max-w-3xl mx-auto mb-12">
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-teal-600">
@@ -1099,7 +1099,7 @@ export default function NextOrbitSalesFinancePage() {
       {/* ── 8. Enterprise Security & Infrastructure (Referred from WMS/Freight) ── */}
       <Section tone="sunken" spacing="lg" className="border-t border-hairline">
         <Container>
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-10">
             <Eyebrow tone="brand">DATA GOVERNANCE & COMPLIANCE</Eyebrow>
             <h2 className="text-display-md sm:text-display-lg text-slate-900 font-extrabold mt-3">
               Enterprise-Grade Infrastructure & ISO 9001 Quality

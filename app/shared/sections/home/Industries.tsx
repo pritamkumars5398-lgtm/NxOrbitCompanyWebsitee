@@ -81,7 +81,7 @@ export function Industries() {
   }));
 
   return (
-    <section className="relative bg-white py-10 sm:py-12 lg:py-14 border-t border-b border-slate-200/80" id="industries">
+    <section className="relative bg-white py-10 sm:py-10 lg:py-10 border-t border-b border-slate-200/80" id="industries">
       <Container>
         <Reveal className="mb-5 sm:mb-6 text-center max-w-2xl mx-auto">
           <Eyebrow tone="brand" className="mb-1.5">INDUSTRIES</Eyebrow>

@@ -27,7 +27,7 @@ export function CallToAction({
   className,
 }: CallToActionProps) {
   return (
-    <section className={cn("relative isolate overflow-hidden bg-transparent py-12 sm:py-14 lg:py-16 text-white", className)}>
+    <section className={cn("relative isolate overflow-hidden bg-transparent py-10 sm:py-10 lg:py-12 text-white", className)}>
       {/* Ambient background glows */}
       <div
         aria-hidden

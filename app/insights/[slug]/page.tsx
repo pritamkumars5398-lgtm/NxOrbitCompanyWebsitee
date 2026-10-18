@@ -79,12 +79,12 @@ export default async function InsightDetailPage({
             <Breadcrumb
               items={[
                 { label: "Home", href: "/" },
-                { label: "Insights", href: "/#insights" },
+                { label: "Insights", href: "/insights" },
                 { label: data.title },
               ]}
             />
             <Link
-              href="/#insights"
+              href="/insights"
               className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-600 hover:text-[#008c83] transition-colors"
             >
               <ArrowLeft className="size-3.5" />
@@ -191,7 +191,7 @@ export default async function InsightDetailPage({
       </header>
 
       {/* ── Key Operational Challenges (The Problem) ── */}
-      <section className="py-16 sm:py-20 bg-slate-50/60 border-b border-slate-200/80">
+      <section className="py-12 sm:py-12 bg-slate-50/60 border-b border-slate-200/80">
         <Container>
           <Reveal className="flex flex-col items-start gap-3 mb-12 max-w-2xl">
             <Eyebrow tone="brand">THE CORE CHALLENGE</Eyebrow>
@@ -226,9 +226,9 @@ export default async function InsightDetailPage({
       </section>
 
       {/* ── Strategic Architectural Pillars (The Solution) ── */}
-      <section className="py-20 sm:py-24 bg-white border-b border-slate-200/80">
+      <section className="py-12 sm:py-16 bg-white border-b border-slate-200/80">
         <Container>
-          <Reveal className="flex flex-col items-start gap-3 mb-14 max-w-3xl">
+          <Reveal className="flex flex-col items-start gap-3 mb-10 max-w-3xl">
             <Eyebrow tone="brand">STRATEGIC ARCHITECTURE</Eyebrow>
             <h2 className="text-display-md sm:text-display-lg font-extrabold text-slate-900">
               The Engineering Framework Behind Real Uptime
@@ -283,7 +283,7 @@ export default async function InsightDetailPage({
       </section>
 
       {/* ── Measurable Impact Metrics & Proof Points ── */}
-      <section className="py-16 sm:py-20 bg-[#06131F] text-white relative overflow-hidden">
+      <section className="py-12 sm:py-12 bg-[#06131F] text-white relative overflow-hidden">
         {/* Subtle grid pattern */}
         <div
           aria-hidden
@@ -291,7 +291,7 @@ export default async function InsightDetailPage({
         />
 
         <Container className="relative z-10">
-          <Reveal className="flex flex-col items-center text-center gap-3 mb-14 max-w-2xl mx-auto">
+          <Reveal className="flex flex-col items-center text-center gap-3 mb-10 max-w-2xl mx-auto">
             <Eyebrow tone="light">MEASURABLE IMPACT</Eyebrow>
             <h2 className="text-display-md sm:text-display-lg font-extrabold text-white">
               Operational Metrics from Live Implementations
@@ -319,7 +319,7 @@ export default async function InsightDetailPage({
           </Stagger>
 
           {/* Pull quote banner */}
-          <Reveal from="up" delay={0.1} className="mt-14 max-w-3xl mx-auto">
+          <Reveal from="up" delay={0.1} className="mt-10 max-w-3xl mx-auto">
             <div className="relative overflow-hidden rounded-2xl border border-teal-500/30 bg-teal-950/40 p-8 sm:p-10 text-center">
               <Quote className="size-10 text-teal-400/40 mx-auto mb-4" />
               <blockquote className="text-lg sm:text-xl font-medium text-teal-100 italic leading-relaxed">
@@ -334,7 +334,7 @@ export default async function InsightDetailPage({
       </section>
 
       {/* ── Frequently Asked Questions ── */}
-      <section className="py-20 sm:py-24 bg-slate-50 border-b border-slate-200/80">
+      <section className="py-12 sm:py-16 bg-slate-50 border-b border-slate-200/80">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             <Reveal className="lg:col-span-5 flex flex-col items-start gap-4 lg:sticky lg:top-32">
@@ -373,7 +373,7 @@ export default async function InsightDetailPage({
       </section>
 
       {/* ── Explore Other Insights ── */}
-      <section className="py-20 sm:py-24 bg-[#06131F] text-white">
+      <section className="py-12 sm:py-16 bg-[#06131F] text-white">
         <Container>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <Reveal className="flex flex-col items-start gap-3 max-w-2xl">
@@ -385,7 +385,7 @@ export default async function InsightDetailPage({
 
             <Reveal delay={0.1}>
               <Link
-                href="/#insights"
+                href="/insights"
                 className="group inline-flex items-center gap-2 rounded-full bg-white/10 px-5 py-3 text-sm font-bold text-white backdrop-blur-md border border-white/15 transition-all hover:bg-white/20"
               >
                 View all insights

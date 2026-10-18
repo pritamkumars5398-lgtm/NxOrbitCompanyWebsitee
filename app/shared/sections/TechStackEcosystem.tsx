@@ -80,7 +80,7 @@ export function TechStackEcosystem({
   });
 
   return (
-    <Section tone="none" spacing="lg" className="relative overflow-hidden py-8 sm:py-12 lg:py-14 bg-[#f8fafc] border-t border-b border-slate-200/80">
+    <Section tone="none" spacing="lg" className="relative overflow-hidden py-8 sm:py-10 lg:py-10 bg-[#f8fafc] border-t border-b border-slate-200/80">
       <Container>
         {/* Header Row: Title */}
         <div className="mb-5 sm:mb-6">

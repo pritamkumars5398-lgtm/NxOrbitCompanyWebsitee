@@ -107,7 +107,7 @@ export function SolutionsInAction() {
   };
 
   return (
-    <section id="solutions-in-action" className="relative isolate overflow-hidden bg-linear-to-br from-[#072444] via-[#092c53] to-[#04162a] py-16 sm:py-24">
+    <section id="solutions-in-action" className="relative isolate overflow-hidden bg-linear-to-br from-[#072444] via-[#092c53] to-[#04162a] py-12 sm:py-16">
       {/* Subtle ambient lighting / mesh background accents */}
       <div className="absolute -top-32 -right-32 size-96 rounded-full bg-[#00d2c4]/10 blur-3xl pointer-events-none" />
       <div className="absolute -bottom-32 -left-32 size-96 rounded-full bg-blue-500/10 blur-3xl pointer-events-none" />
@@ -252,10 +252,6 @@ export function SolutionsInAction() {
                   <span>Explore</span>
                   <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
-
-                <span className="text-xs text-slate-400 font-medium hidden sm:inline">
-                  View architecture & workflows
-                </span>
               </div>
             </div>
 

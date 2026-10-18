@@ -236,7 +236,7 @@ export default function AboutPage() {
   return (
     <>
       {/* ── Section 1 — Hero & Vision ── */}
-      <section className="relative isolate overflow-hidden min-h-[580px] lg:min-h-[660px] flex items-center pt-28 pb-20 lg:pt-36 lg:pb-28">
+      <section className="relative isolate overflow-hidden min-h-[580px] lg:min-h-[660px] flex items-center pt-28 pb-12 lg:pt-36 lg:pb-16">
         {/* Full Hero Background Image */}
         <div className="absolute inset-0 -z-20">
           <img
@@ -302,32 +302,14 @@ export default function AboutPage() {
                 </Button>
               </div>
             </Reveal>
-
-            {/* 3 Executive Trust Pillars */}
-            <Reveal from="up" delay={0.24}>
-              <div className="grid grid-cols-3 gap-6 pt-8 mt-4 border-t border-slate-300/80 w-full max-w-lg">
-                <div>
-                  <span className="block text-2xl sm:text-3xl font-black text-slate-900">5+</span>
-                  <span className="text-xs text-slate-600 font-medium">Years Building</span>
-                </div>
-                <div>
-                  <span className="block text-2xl sm:text-3xl font-black text-[#008c83]">50+</span>
-                  <span className="text-xs text-slate-600 font-medium">Systems Delivered</span>
-                </div>
-                <div>
-                  <span className="block text-2xl sm:text-3xl font-black text-slate-900">100%</span>
-                  <span className="text-xs text-slate-600 font-medium">Business-Driven</span>
-                </div>
-              </div>
-            </Reveal>
           </div>
         </Container>
       </section>
 
       {/* ── Section 2 — The "Keep It Simple" Philosophy ── */}
-      <Section tone="muted" spacing="lg" id="philosophy" className="py-16 sm:py-24">
+      <Section tone="muted" spacing="lg" id="philosophy" className="py-12 sm:py-16">
         <Container>
-          <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-14">
+          <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-10">
             <Reveal from="up">
               <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#008c83]">
                 OUR PHILOSOPHY
@@ -388,7 +370,7 @@ export default function AboutPage() {
       {/* ── Section 3 — Our Story (Reference UI Design: Deep Tech Theme, Glowing Cyber Globe & Glass Cards) ── */}
       <section
         id="our-story"
-        className="relative isolate overflow-hidden bg-[#030b18] py-16 lg:py-24 text-white border-t border-cyan-900/30"
+        className="relative isolate overflow-hidden bg-[#030b18] py-12 lg:py-16 text-white border-t border-cyan-900/30"
       >
         {/* Ambient background glows */}
         <div
@@ -439,6 +421,26 @@ export default function AboutPage() {
                   Today, our capabilities span enterprise applications, digital platforms, cloud technologies, intelligent automation, and technology consulting. While technology continues to evolve, our focus remains unchanged: delivering solutions that create measurable business value.
                 </p>
               </Reveal>
+
+              {/* 3 Executive Trust Pillars */}
+              <Reveal from="up" delay={0.14}>
+                <div className="mt-3 grid grid-cols-3 divide-x divide-cyan-500/20 border-t border-cyan-500/20 pt-6 max-w-xl">
+                  {[
+                    { value: "5+", label: "Years Building" },
+                    { value: "50+", label: "Systems Delivered" },
+                    { value: "100%", label: "Business-Driven" },
+                  ].map((stat) => (
+                    <div key={stat.label} className="px-4 first:pl-0 sm:px-6">
+                      <span className="block text-3xl sm:text-4xl font-black tracking-tight text-transparent bg-clip-text bg-linear-to-r from-[#00d2c4] to-cyan-300">
+                        {stat.value}
+                      </span>
+                      <span className="mt-1 block font-mono text-2xs font-bold uppercase tracking-wider text-slate-400">
+                        {stat.label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </Reveal>
             </div>
 
             {/* Right Column: 2 Stacked Sleek Glowing Glass Cards matching Reference Image */}
@@ -482,9 +484,9 @@ export default function AboutPage() {
       </section>
 
       {/* ── Section 4 — How We Build Enterprise Technology ── */}
-      <Section tone="white" spacing="lg" id="how-we-build" className="py-16 sm:py-24 border-t border-hairline">
+      <Section tone="white" spacing="lg" id="how-we-build" className="py-12 sm:py-16 border-t border-hairline">
         <Container>
-          <div className="max-w-3xl mb-14">
+          <div className="max-w-3xl mb-10">
             <Reveal from="up">
               <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#008c83]">
                 OUR METHODOLOGY
@@ -536,7 +538,7 @@ export default function AboutPage() {
       </Section>
 
       {/* ── Section 5 — Engineering Excellence ── */}
-      <Section tone="muted" spacing="lg" id="engineering-excellence" className="py-16 sm:py-24">
+      <Section tone="muted" spacing="lg" id="engineering-excellence" className="py-12 sm:py-16">
         <Container>
           <div className="max-w-3xl mb-12">
             <Reveal from="up">
@@ -553,7 +555,7 @@ export default function AboutPage() {
           </div>
 
           {/* 6-box grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
             {ENGINEERING_PRACTICES.map((item) => (
               <div
                 key={item.title}
@@ -650,7 +652,7 @@ export default function AboutPage() {
       {/* ── Section 6 — Why Partners Stay (Reference UI Design: Deep Tech Handshake & Glowing Blue Cards) ── */}
       <section
         id="why-partners-stay"
-        className="relative isolate overflow-hidden bg-[#040d1a] py-12 lg:py-16 text-white"
+        className="relative isolate overflow-hidden bg-[#040d1a] py-10 lg:py-12 text-white"
       >
         {/* Ambient background glows */}
         <div
@@ -726,7 +728,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── Section 7 — Leadership Team (Exact Reference Parity) ── */}
-      <Section tone="none" spacing="lg" id="leadership" className="relative isolate overflow-hidden py-16 sm:py-24 bg-[#f8fcfb] border-t border-b border-slate-200/70">
+      <Section tone="none" spacing="lg" id="leadership" className="relative isolate overflow-hidden py-12 sm:py-16 bg-[#f8fcfb] border-t border-b border-slate-200/70">
         {/* Visible Organic Background Curved Wave Structures (Reference Parity) */}
         {/* Top-Right Sweeping Organic Wave */}
         <div
@@ -776,7 +778,7 @@ export default function AboutPage() {
 
         <Container>
           {/* Section Header */}
-          <div className="max-w-3xl mb-12 sm:mb-14">
+          <div className="max-w-3xl mb-12 sm:mb-10">
             <Reveal from="up">
               {/* Eyebrow: Our Team */}
               <div className="mb-3">

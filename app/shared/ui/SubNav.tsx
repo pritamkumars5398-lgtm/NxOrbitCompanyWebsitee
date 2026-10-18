@@ -7,22 +7,46 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/app/core/lib/cn";
 import type { NavLink } from "@/app/core/data/navigation";
 import { Container } from "@/app/shared/ui/Layout";
+import { NavIcon } from "@/app/shared/ui/NavIcon";
 
 /**
  * Sibling-page rail that sits directly under the header on detail pages.
- * Features smooth horizontal scrolling, left/right navigation arrows,
- * visible scroll indicator, mouse drag-to-scroll, and auto-centering.
+ * Features:
+ * - Dynamic header height synchronization so it never hides behind the fixed header
+ * - Smooth horizontal scrolling with auto-centering on the active tab
+ * - Left/right navigation arrows with fade affordances
+ * - Mouse drag-to-scroll and touch pan support
  */
 export function SubNav({ links, label }: { links: NavLink[]; label: string }) {
   const pathname = usePathname();
   const listRef = useRef<HTMLUListElement>(null);
   const activeTabRef = useRef<HTMLLIElement>(null);
 
+  const [headerHeight, setHeaderHeight] = useState<number>(73);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
   const [isDragging, setIsDragging] = useState(false);
   const startX = useRef(0);
   const scrollLeftStart = useRef(0);
+
+  // Measure fixed header height dynamically so SubNav never overlaps or hides under it
+  useEffect(() => {
+    const measureHeader = () => {
+      const header = document.querySelector("header");
+      if (header) {
+        setHeaderHeight(header.offsetHeight);
+      }
+    };
+
+    measureHeader();
+    window.addEventListener("resize", measureHeader);
+    const t = setTimeout(measureHeader, 150);
+
+    return () => {
+      window.removeEventListener("resize", measureHeader);
+      clearTimeout(t);
+    };
+  }, []);
 
   // Check scroll position to toggle left/right scroll affordance arrows
   const checkScroll = useCallback(() => {
@@ -99,7 +123,11 @@ export function SubNav({ links, label }: { links: NavLink[]; label: string }) {
     <nav
       aria-label={label}
       data-lenis-prevent="true"
-      className="sticky top-14 sm:top-18 z-40 border-y border-slate-200/90 bg-slate-50/95 backdrop-blur-xl mt-14 sm:mt-18 shadow-2xs"
+      style={{
+        top: `${headerHeight}px`,
+        marginTop: `${headerHeight}px`,
+      }}
+      className="sticky z-40 border-y border-slate-200/90 bg-slate-50/95 backdrop-blur-xl shadow-2xs transition-[top,margin-top] duration-200"
     >
       <Container className="relative">
         <div className="relative flex items-center w-full min-w-0">
@@ -144,12 +172,18 @@ export function SubNav({ links, label }: { links: NavLink[]; label: string }) {
                     aria-current={active ? "page" : undefined}
                     draggable={false}
                     className={cn(
-                      "relative inline-flex shrink-0 items-center rounded-full px-3.5 sm:px-4 py-1 sm:py-1.5 text-xs font-semibold whitespace-nowrap transition-all duration-200 select-none",
+                      "relative inline-flex shrink-0 items-center gap-1.5 rounded-full px-3.5 sm:px-4 py-1 sm:py-1.5 text-xs font-semibold whitespace-nowrap transition-all duration-200 select-none",
                       active
                         ? "bg-white text-teal-700 shadow-xs border-2 border-teal-500 font-bold"
                         : "bg-white/80 text-slate-700 hover:bg-white hover:text-teal-700 border border-slate-200/90 shadow-2xs",
                     )}
                   >
+                    {link.icon && (
+                      <NavIcon
+                        name={link.icon}
+                        className={cn("size-3.5 shrink-0", active ? "text-teal-600" : "text-slate-400")}
+                      />
+                    )}
                     {link.label}
                   </Link>
                 </li>
@@ -175,3 +209,5 @@ export function SubNav({ links, label }: { links: NavLink[]; label: string }) {
     </nav>
   );
 }
+
+

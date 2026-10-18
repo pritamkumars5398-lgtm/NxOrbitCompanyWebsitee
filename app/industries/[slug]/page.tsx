@@ -11,7 +11,7 @@ import { Breadcrumb } from "@/app/shared/ui/Breadcrumb";
 import { Button } from "@/app/shared/ui/Button";
 import { Card } from "@/app/shared/ui/Card";
 import { Container, Eyebrow, Section, SectionHeading } from "@/app/shared/ui/Layout";
-import { Stats } from "@/app/shared/ui/Stats";
+import { StatsBand } from "@/app/shared/sections/StatsBand";
 import { SubNav } from "@/app/shared/ui/SubNav";
 import { TrustAndFaqSection } from "@/app/shared/sections/TrustAndFaqSection";
 import { ProcessArcLayout } from "@/app/shared/sections/ProcessArcLayout";
@@ -215,9 +215,6 @@ export default async function IndustryPage({
           </div>
 
           {/* Boxed stat cells — the tinted hero needs the contrast of solid cards. */}
-          <Reveal from="up" delay={0.1} className="mt-6 sm:mt-8">
-            <Stats items={[...data.heroStats]} layout="grid" columns={4} />
-          </Reveal>
         </Container>
       </section>
 
@@ -237,7 +234,7 @@ export default async function IndustryPage({
             title={`What we build for ${data.title.toLowerCase()} teams`}
             description="Systems designed around the constraints this sector actually operates under."
             align="center"
-            className="mx-auto mb-14"
+            className="mx-auto mb-10"
           />
 
           <Stagger stagger={0.07} className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -277,6 +274,8 @@ export default async function IndustryPage({
         subtitle="End-to-end industry software delivery shaped around your sector requirements."
         steps={data.process}
       />
+
+      <StatsBand items={data.heroStats} />
 
       <TrustAndFaqSection />
 

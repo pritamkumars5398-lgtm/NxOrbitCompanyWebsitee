@@ -18,7 +18,7 @@ import { CallToAction } from "@/app/shared/sections/CallToAction";
 import { Breadcrumb } from "@/app/shared/ui/Breadcrumb";
 import { Button } from "@/app/shared/ui/Button";
 import { Container, Eyebrow, Section, SectionHeading } from "@/app/shared/ui/Layout";
-import { Stats } from "@/app/shared/ui/Stats";
+import { StatsBand } from "@/app/shared/sections/StatsBand";
 import { JobBoard } from "./JobBoard";
 import { HiringProcessSection } from "@/app/shared/sections/HiringProcessSection";
 
@@ -56,7 +56,7 @@ export default function CareerPage() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="relative isolate overflow-hidden pt-24 pb-16 lg:pt-28 lg:pb-20">
+      <section className="relative isolate overflow-hidden pt-24 pb-12 lg:pt-28 lg:pb-12">
         {/* Full-width hero background image container */}
         <div className="absolute inset-0 w-full h-full select-none pointer-events-none">
           <img
@@ -111,9 +111,6 @@ export default function CareerPage() {
             </Reveal>
           </div>
 
-          <Reveal from="up" delay={0.1} className="mt-12 rounded-2xl border border-hairline bg-white/95 p-6 sm:p-8 backdrop-blur-md">
-            <Stats items={TEAM_STATS} layout="rail" columns={4} />
-          </Reveal>
         </Container>
       </section>
 
@@ -140,7 +137,7 @@ export default function CareerPage() {
             eyebrow="What you get"
             title="The offer, stated plainly."
             align="center"
-            className="mx-auto mb-14"
+            className="mx-auto mb-10"
           />
 
           <Stagger
@@ -169,6 +166,8 @@ export default function CareerPage() {
 
       {/* ── Hiring process infographic matching reference mockup ── */}
       <HiringProcessSection steps={HIRING_STEPS} />
+
+      <StatsBand items={TEAM_STATS} />
 
       <CallToAction
         eyebrow="Don't see your role?"

@@ -114,7 +114,7 @@ function FaqList() {
  */
 export function Faq() {
   return (
-    <section className="relative isolate border-t border-slate-200/90 bg-white py-20 sm:py-24" id="faq">
+    <section className="relative isolate border-t border-slate-200/90 bg-white py-12 sm:py-16" id="faq">
       <Container>
         {/* ── FAQ ── */}
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
@@ -149,7 +149,7 @@ export function Faq() {
         </div>
 
         {/* ── Trust Certification Band ── */}
-        <Reveal from="up" className="mt-16 sm:mt-20">
+        <Reveal from="up" className="mt-10 sm:mt-12">
           <div className="grid gap-8 overflow-hidden rounded-3xl bg-[#0a2328] p-6 sm:p-10 lg:grid-cols-12 lg:items-center lg:gap-12">
             <div className="flex items-center gap-5 sm:gap-6 lg:col-span-6">
               {/* Certification seal */}

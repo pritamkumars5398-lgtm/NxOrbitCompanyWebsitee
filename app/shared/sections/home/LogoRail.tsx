@@ -74,7 +74,7 @@ function LogoTile({ client }: { client: (typeof REAL_LOGOS)[number] }) {
  */
 export function LogoRail() {
   return (
-    <section className="relative overflow-hidden border-y border-slate-200/90 bg-slate-50/70 py-14 sm:py-20" id="trust">
+    <section className="relative overflow-hidden border-y border-slate-200/90 bg-slate-50/70 py-10 sm:py-12" id="trust">
       {/* Subtle dot grid backdrop */}
       <div
         aria-hidden

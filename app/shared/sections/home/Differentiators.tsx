@@ -40,7 +40,7 @@ export function Differentiators() {
       />
 
       <Container className="relative">
-        <div className="mb-16 flex max-w-2xl flex-col gap-5">
+        <div className="mb-10 flex max-w-2xl flex-col gap-5">
           <Eyebrow tone="light">Why teams stay</Eyebrow>
           <h2 className="text-display-md sm:text-display-lg font-extrabold text-white">
             The parts of the engagement nobody puts in the pitch deck.

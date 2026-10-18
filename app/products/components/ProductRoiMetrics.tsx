@@ -29,7 +29,7 @@ export function ProductRoiMetrics({
   metrics,
 }: ProductRoiMetricsProps) {
   return (
-    <section className="relative isolate overflow-hidden py-12 sm:py-16 bg-linear-to-b from-[#f8fafc] via-[#f1f5f9] to-[#f8fafc] border-y border-slate-200/80">
+    <section className="relative isolate overflow-hidden py-10 sm:py-12 bg-linear-to-b from-[#f8fafc] via-[#f1f5f9] to-[#f8fafc] border-y border-slate-200/80">
       {/* Ambient background glows */}
       <div
         aria-hidden

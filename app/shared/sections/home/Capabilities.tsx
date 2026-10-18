@@ -32,7 +32,7 @@ export function Capabilities() {
           title="Four disciplines, one delivery team."
           description="Design, engineering, data, and infrastructure sit in the same room and ship on the same board — which is why the hand-offs that usually cost you a quarter don't happen here."
           action={<TextLink href="/contact">Discuss your project</TextLink>}
-          className="mb-14"
+          className="mb-10"
         />
 
         <div className="flex flex-col gap-12 lg:gap-20 mt-10">

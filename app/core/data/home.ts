@@ -7,13 +7,15 @@ export const HERO = {
   gradientFrom: 4,
   lead: "NXT Orbit helps manufacturing and service businesses simplify complex operations through customized enterprise technology. From ERP and CRM to AI, cloud, and digital platforms, we build solutions that integrate seamlessly with your business, improve operational visibility, and support long-term growth.",
   primaryCta: { label: "Book a Consultation", href: "/contact" },
-  secondaryCta: { label: "Explore Our Solutions", href: "#solutions" },
-  stats: [
-    { value: "5", label: "Years Building Enterprise Systems" },
-    { value: "50+", label: "Enterprise Systems Delivered" },
-    { value: "30+", label: "Manufacturing & Service Businesses Served" },
-  ],
+  secondaryCta: { label: "Explore Our Solutions", href: "/services" },
 } as const;
+
+/** Trust metrics shown in the impact band above the FAQ. */
+export const IMPACT_STATS = [
+  { value: "5", label: "Years Building Enterprise Systems" },
+  { value: "50+", label: "Enterprise Systems Delivered" },
+  { value: "30+", label: "Manufacturing & Service Businesses Served" },
+] as const;
 
 export const CLIENT_LOGOS = [
   "Airtel Xstream",

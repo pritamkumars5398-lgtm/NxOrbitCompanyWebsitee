@@ -48,7 +48,7 @@ export function ProductStandardsIntegrations({
     <section
       id={id}
       style={{ scrollMarginTop: "5rem" }}
-      className={`relative isolate overflow-hidden py-14 sm:py-20 bg-linear-to-b from-[#f8fafc] via-white to-[#f8fafc] border-t border-slate-200/80 ${className}`}
+      className={`relative isolate overflow-hidden py-10 sm:py-12 bg-linear-to-b from-[#f8fafc] via-white to-[#f8fafc] border-t border-slate-200/80 ${className}`}
     >
       {/* Ambient background glow */}
       <div
