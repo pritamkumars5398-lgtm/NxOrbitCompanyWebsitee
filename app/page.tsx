@@ -6,7 +6,6 @@ import { Industries } from "@/app/shared/sections/home/Industries";
 import { Process } from "@/app/shared/sections/home/Process";
 import { SolutionsInAction } from "@/app/shared/sections/home/SolutionsInAction";
 import { LogoRail } from "@/app/shared/sections/home/LogoRail";
-import { InsightsStrip } from "@/app/shared/sections/home/InsightsStrip";
 import { Faq } from "@/app/shared/sections/home/Faq";
 import { StatsBand } from "@/app/shared/sections/StatsBand";
 import { IMPACT_STATS } from "@/app/core/data/home";
@@ -22,10 +21,9 @@ import { IMPACT_STATS } from "@/app/core/data/home";
  * Section 5 — Delivery Process
  * Section 6 — Our Business Approach
  * Section 7 — Trust
- * Section 8 — Insights
- * Section 9 — Impact Metrics
- * Section 10 — FAQ
- * Section 11 — Final CTA
+ * Section 8 — Impact Metrics
+ * Section 9 — FAQ
+ * Section 10 — Final CTA
  */
 export default function HomePage() {
   return (
@@ -51,16 +49,13 @@ export default function HomePage() {
       {/* Section 7 — Trust */}
       <LogoRail />
 
-      {/* Section 8 — Insights */}
-      <InsightsStrip />
-
-      {/* Section 9 — Impact Metrics */}
+      {/* Section 8 — Impact Metrics */}
       <StatsBand items={IMPACT_STATS} />
 
-      {/* Section 10 — FAQ */}
+      {/* Section 9 — FAQ */}
       <Faq />
 
-      {/* Section 11 — Final CTA */}
+      {/* Section 10 — Final CTA */}
       <CallToAction
         eyebrow="READY TO START?"
         title="Let's build technology that moves your business forward."

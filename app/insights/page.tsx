@@ -161,13 +161,6 @@ export default function InsightsIndexPage() {
         </Container>
       </section>
 
-      {/* ── Proof Band ── */}
-      <StatsBand
-        items={INSIGHTS_STATS}
-        image="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=900&auto=format&fit=crop"
-        imageAlt="NXT Orbit enterprise architecture team"
-      />
-
       {/* ── Featured Editorial Spotlight ── */}
       {featured && (
         <Section tone="muted" spacing="md" id="featured-paper">
@@ -332,6 +325,13 @@ export default function InsightsIndexPage() {
           </Stagger>
         </Container>
       </Section>
+
+      {/* ── Proof Band ── */}
+      <StatsBand
+        items={INSIGHTS_STATS}
+        image="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=900&auto=format&fit=crop"
+        imageAlt="NXT Orbit enterprise architecture team"
+      />
 
       {/* ── Strategic Decision FAQs ── */}
       <TrustAndFaqSection faqs={STRATEGIC_FAQS} />
