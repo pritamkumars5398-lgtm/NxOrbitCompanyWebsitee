@@ -5,52 +5,72 @@ import { Container, Eyebrow } from "@/app/shared/ui/Layout";
 import { Marquee } from "@/app/shared/ui/Marquee";
 import { Reveal } from "@/app/shared/motion/Reveal";
 
-/** Real Enterprise & Global Brand Logo Images (Uniform Size) */
+/** Real Enterprise & Client Partner Logos - Crisp Vector Assets */
 const REAL_LOGOS = [
   {
-    name: "SAP Enterprise",
-    image: "https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg",
-    alt: "SAP Logo",
+    name: "Kisan Konnect",
+    image: "/assets/clients/kisan-konnect.svg",
+    alt: "Kisan Konnect Logo",
   },
   {
-    name: "Oracle Cloud",
-    image: "https://api.iconify.design/logos:oracle.svg",
-    alt: "Oracle Logo",
+    name: "Zurich Kotak General Insurance",
+    image: "/assets/clients/zurich-kotak.svg",
+    alt: "Zurich Kotak General Insurance Logo",
   },
   {
-    name: "DHL Express",
-    image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/DHL_Logo.svg",
-    alt: "DHL Logo",
+    name: "Godrej Körber",
+    image: "/assets/clients/godrej-korber.svg",
+    alt: "Godrej Körber Logo",
   },
   {
-    name: "FedEx Logistics",
-    image: "https://upload.wikimedia.org/wikipedia/commons/9/9d/FedEx_Express.svg",
-    alt: "FedEx Logo",
+    name: "Rudra Finance",
+    image: "/assets/clients/rudra-finance.svg",
+    alt: "Rudra Finance Logo",
   },
   {
-    name: "TATA Group",
-    image: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Tata_logo.svg",
-    alt: "TATA Logo",
+    name: "Will View Legal Services",
+    image: "/assets/clients/will-view.svg",
+    alt: "Will View Logo",
   },
   {
-    name: "Google Cloud",
-    image: "https://api.iconify.design/logos:google.svg",
-    alt: "Google Cloud Logo",
+    name: "e-Obituary",
+    image: "/assets/clients/e-obituary.svg",
+    alt: "e-Obituary Logo",
   },
   {
-    name: "AWS Enterprise",
-    image: "https://api.iconify.design/logos:aws.svg",
-    alt: "AWS Logo",
+    name: "Vastra",
+    image: "/assets/clients/vastra.svg",
+    alt: "Vastra Logo",
   },
   {
-    name: "Salesforce",
-    image: "https://api.iconify.design/logos:salesforce.svg",
-    alt: "Salesforce Logo",
+    name: "Chanakya Learning System",
+    image: "/assets/clients/chanakya.svg",
+    alt: "Chanakya Learning System Logo",
+  },
+  {
+    name: "Chaitanya Social Welfare",
+    image: "/assets/clients/chaitanya.svg",
+    alt: "Chaitanya Social Welfare Logo",
+  },
+  {
+    name: "BlokOn",
+    image: "/assets/clients/blokon.svg",
+    alt: "BlokOn Logo",
+  },
+  {
+    name: "India House Path Lab",
+    image: "/assets/clients/india-house-path-lab.svg",
+    alt: "India House Path Lab Logo",
+  },
+  {
+    name: "MottoFlip",
+    image: "/assets/clients/mottoflip.svg",
+    alt: "MottoFlip Logo",
   },
 ];
 
-const ROW_A = REAL_LOGOS.slice(0, 4);
-const ROW_B = REAL_LOGOS.slice(4);
+const ROW_A = REAL_LOGOS.slice(0, 6);
+const ROW_B = REAL_LOGOS.slice(6);
 
 function LogoTile({ client }: { client: (typeof REAL_LOGOS)[number] }) {
   return (

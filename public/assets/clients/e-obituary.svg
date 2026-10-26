@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" fill="none">
+  <!-- e-Obituary -->
+  <text x="12" y="36" font-family="'Times New Roman', Times, Georgia, serif" font-size="34" font-weight="500" fill="#18181b" letter-spacing="-0.5">
+    e-Obituar<tspan font-size="40" font-weight="600">Y</tspan>
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="76" y="52" font-family="'Times New Roman', Times, Georgia, serif" font-size="11" font-style="italic" font-weight="400" fill="#71717a">Shouldering grief</text>
+</svg>

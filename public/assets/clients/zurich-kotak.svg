@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 60" fill="none">
+  <!-- Zurich Emblem -->
+  <circle cx="30" cy="30" r="24" fill="#135AA7" />
+  <path d="M19 19h22l-15 22h15v3H19l15-22H19v-3z" fill="#ffffff" />
+  
+  <!-- ZURICH Text -->
+  <text x="66" y="32" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#135AA7" letter-spacing="-0.5">ZURICH</text>
+  
+  <!-- kotak Text -->
+  <text x="172" y="32" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#ED1C24" letter-spacing="-0.5">kotak</text>
+  
+  <!-- Subtitle -->
+  <text x="67" y="47" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="600" fill="#135AA7" letter-spacing="2.8">General Insurance</text>
+</svg>

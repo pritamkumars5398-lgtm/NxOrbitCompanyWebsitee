@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 60" fill="none">
+  <defs>
+    <radialGradient id="globeGrad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="60%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- 3D Diagnostic Globe -->
+  <g transform="translate(14, 12)">
+    <!-- Globe body -->
+    <circle cx="18" cy="18" r="16" fill="url(#globeGrad)" />
+    <!-- Grid lines / Continents hint -->
+    <ellipse cx="18" cy="18" rx="8" ry="15" stroke="#ffffff" stroke-width="1" stroke-opacity="0.6" fill="none" />
+    <line x1="2" y1="18" x2="34" y2="18" stroke="#ffffff" stroke-width="1" stroke-opacity="0.6" />
+    <!-- Orbit ring -->
+    <ellipse cx="18" cy="18" rx="22" ry="7" stroke="#0ea5e9" stroke-width="2" fill="none" transform="rotate(-25 18 18)" stroke-dasharray="45 5" />
+  </g>
+  
+  <!-- Typography -->
+  <text x="68" y="36" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14.5" font-weight="900" fill="#0f172a" letter-spacing="1">INDIA HOUSE</text>
+  <text x="180" y="36" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14.5" font-weight="900" fill="#0284c7" letter-spacing="1">PATH LAB</text>
+</svg>
